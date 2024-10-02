@@ -39,6 +39,7 @@ const ignoreAbstainVotes = defineModel<boolean>('ignoreAbstainVotes', {
 });
 
 const props = defineProps<{
+  snapshotChainId: string;
   space: Space;
 }>();
 
@@ -308,6 +309,9 @@ watchEffect(() => {
     <ModalSelectValidation
       type="voting"
       :open="isSelectValidationModalOpen"
+      :network-id="space.network"
+      :default-chain-id="snapshotChainId"
+      :space="space"
       :current="voteValidation"
       @close="isSelectValidationModalOpen = false"
       @save="value => (voteValidation = value)"

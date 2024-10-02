@@ -395,6 +395,9 @@ watchEffect(() => setTitle(`Edit settings - ${props.space.name}`));
         v-model:only-members="onlyMembers"
         v-model:guidelines="guidelines"
         v-model:template="template"
+        :network-id="space.network"
+        :snapshot-chain-id="snapshotChainId"
+        :space="space"
         :is-proposal-validation-valid="isProposalValidationValid"
         @update-validity="v => (hasProposalErrors = !v)"
       />
@@ -414,6 +417,7 @@ watchEffect(() => setTitle(`Edit settings - ${props.space.name}`));
         v-model:privacy="privacy"
         v-model:vote-validation="voteValidation"
         v-model:ignore-abstain-votes="ignoreAbstainVotes"
+        :snapshot-chain-id="snapshotChainId"
         :space="space"
         @update-validity="v => (hasVotingErrors = !v)"
       />
