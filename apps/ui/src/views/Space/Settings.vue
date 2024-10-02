@@ -181,6 +181,10 @@ const isTicketValid = computed(() => {
   );
 });
 
+const isProposalValidationValid = computed(
+  () => proposalValidation.value.name !== 'any' || onlyMembers.value === true
+);
+
 const error = computed(() => {
   if (Object.values(formErrors.value).length > 0) {
     return 'Space profile is invalid';
@@ -203,7 +207,7 @@ const error = computed(() => {
       return 'Strategies are invalid';
     }
 
-    if (hasProposalErrors.value) {
+    if (hasProposalErrors.value || !isProposalValidationValid.value) {
       return 'Proposal settings are invalid';
     }
 
@@ -391,6 +395,7 @@ watchEffect(() => setTitle(`Edit settings - ${props.space.name}`));
         v-model:only-members="onlyMembers"
         v-model:guidelines="guidelines"
         v-model:template="template"
+        :is-proposal-validation-valid="isProposalValidationValid"
         @update-validity="v => (hasProposalErrors = !v)"
       />
     </UiContainerSettings>
