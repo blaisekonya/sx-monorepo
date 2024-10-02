@@ -9,7 +9,13 @@ import {
   StrategyConfig,
   StrategyTemplate
 } from '@/networks/types';
-import { Member, Space, SpaceMetadata, StrategyParsedMetadata } from '@/types';
+import {
+  Member,
+  Space,
+  SpaceMetadata,
+  StrategyParsedMetadata,
+  Validation
+} from '@/types';
 
 export type OffchainSpaceSettings = {
   name: string;
@@ -149,6 +155,7 @@ export function useSpaceSettings(space: Ref<Space>) {
       | 'basic'
   );
   const privacy = ref('none' as 'none' | 'shutter');
+  const voteValidation = ref({ name: 'any', params: {} } as Validation);
   const ignoreAbstainVotes = ref(false);
   const snapshotChainId = ref('');
   const strategies = ref([] as StrategyConfig[]);
@@ -535,7 +542,7 @@ export function useSpaceSettings(space: Ref<Space>) {
         hideAbstain: ignoreAbstainVotes.value
       },
       validation: space.value.additionalRawData.validation,
-      voteValidation: space.value.additionalRawData.voteValidation,
+      voteValidation: voteValidation.value,
       boost: space.value.additionalRawData.boost
     };
 
@@ -663,6 +670,13 @@ export function useSpaceSettings(space: Ref<Space>) {
       privacy.value = initialVotingProperties.privacy;
       ignoreAbstainVotes.value = initialVotingProperties.ignoreAbstainVotes;
 
+      voteValidation.value = clone(
+        space.value.additionalRawData?.voteValidation ?? {
+          name: 'any',
+          params: {}
+        }
+      );
+
       snapshotChainId.value = space.value.snapshot_chain_id?.toString() ?? '1';
 
       if (space.value.additionalRawData?.type === 'offchain') {
@@ -699,6 +713,7 @@ export function useSpaceSettings(space: Ref<Space>) {
     const votingTypeValue = voteType.value;
     const privacyValue = privacy.value;
     const ignoreAbstainVotesValue = ignoreAbstainVotes.value;
+    const voteValidationValue = voteValidation.value;
     const snapshotChainIdValue = snapshotChainId.value;
     const strategiesValue = strategies.value;
     const membersValue = members.value;
@@ -791,6 +806,19 @@ export function useSpaceSettings(space: Ref<Space>) {
 
       if (
         ignoreAbstainVotesValue !== initialVotingProperties.ignoreAbstainVotes
+      ) {
+        isModified.value = true;
+        return;
+      }
+
+      const initialVoteValidation = space.value.additionalRawData
+        ?.voteValidation ?? {
+        name: 'any',
+        params: {}
+      };
+
+      if (
+        objectHash(voteValidationValue) !== objectHash(initialVoteValidation)
       ) {
         isModified.value = true;
         return;
@@ -912,6 +940,7 @@ export function useSpaceSettings(space: Ref<Space>) {
     quorum,
     votingType: voteType,
     privacy,
+    voteValidation,
     ignoreAbstainVotes,
     snapshotChainId,
     strategies,

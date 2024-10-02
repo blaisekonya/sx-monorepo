@@ -80,7 +80,7 @@ export type ApiSpace = {
   };
   voteValidation: {
     name: string;
-    params?: any;
+    params: Record<string, any>;
   };
 };
 
