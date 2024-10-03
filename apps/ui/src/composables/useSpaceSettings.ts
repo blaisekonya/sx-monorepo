@@ -6,6 +6,7 @@ import { evmNetworks, getNetwork, offchainNetworks } from '@/networks';
 import { ApiSpace as OffchainApiSpace } from '@/networks/offchain/api/types';
 import {
   GeneratedMetadata,
+  Network,
   StrategyConfig,
   StrategyTemplate
 } from '@/networks/types';
@@ -497,13 +498,18 @@ export function useSpaceSettings(space: Ref<Space>) {
         network: strategy.chainId?.toString() ?? snapshotChainId.value,
         params: strategy.params
       })),
-      treasuries: form.value.treasuries.map(treasury => ({
-        address: treasury.address || '',
-        name: treasury.name || '',
-        network: treasury.network
-          ? String(getNetwork(treasury.network).chainId)
-          : '1'
-      })),
+      treasuries: form.value.treasuries.map(treasury => {
+        let network: Network | null = null;
+        try {
+          network = treasury.network && getNetwork(treasury.network);
+        } catch {}
+
+        return {
+          address: treasury.address || '',
+          name: treasury.name || '',
+          network: String(network ? network.chainId : treasury.chainId ?? '1')
+        };
+      }),
       admins: members.value
         .filter(member => member.role === 'admin')
         .map(member => member.address),
