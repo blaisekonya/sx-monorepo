@@ -241,6 +241,12 @@ ajv.addKeyword({
 ajv.addKeyword('options');
 ajv.addKeyword('tooltip');
 
+// UiSelectorNetwork
+ajv.addFormat('network', {
+  validate: () => true
+});
+ajv.addKeyword('networkId');
+
 function getErrorMessage(errorObject: Partial<ErrorObject>): string {
   if (!errorObject.message) return 'Invalid field.';
 

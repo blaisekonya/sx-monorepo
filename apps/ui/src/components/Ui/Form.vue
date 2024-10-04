@@ -14,6 +14,7 @@ import InputStamp from './InputStamp.vue';
 import InputString from './InputString.vue';
 import Select from './Select.vue';
 import SelectMultiple from './SelectMultiple.vue';
+import SelectorNetwork from './SelectorNetwork.vue';
 import Textarea from './Textarea.vue';
 
 const model = defineModel<any>({ required: true });
@@ -70,6 +71,7 @@ const getComponent = (property: {
       if (property.format === 'address') return InputAddress;
       if (property.format === 'ens-or-address') return InputAddress;
       if (property.format === 'stamp') return InputStamp;
+      if (property.format === 'network') return SelectorNetwork;
       if (property.enum) return Select;
       return InputString;
     case 'number':
