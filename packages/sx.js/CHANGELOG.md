@@ -1,5 +1,13 @@
 # @snapshot-labs/sx
 
+## 0.1.5
+
+### Patch Changes
+
+- 94652af: disable estimation for initialize EthTx calls
+- 4627095: add updateSettings method to offchain EthereumSig client
+- aa87e0c: add deleteSpace method to offchain ethSig client
+
 ## 0.1.4
 
 ### Patch Changes
