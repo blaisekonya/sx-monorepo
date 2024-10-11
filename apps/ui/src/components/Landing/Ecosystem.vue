@@ -3,7 +3,7 @@
     <UiContainer class="!max-w-screen-lg">
       <div class="max-w-[560px]">
         <div class="eyebrow mb-3">Ecosystem</div>
-        <h1 class="mb-5 font-display !text-[40px] sm:!text-[44px]">
+        <h1 class="mb-5 font-display !text-[38px] sm:!text-[44px]">
           Supercharge governance with integrations
         </h1>
         <UiButton :to="{ name: 'site-ecosystem' }">

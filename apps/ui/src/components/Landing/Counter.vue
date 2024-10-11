@@ -10,8 +10,8 @@
   </div>
   <div class="border-b">
     <UiContainer class="!max-w-screen-lg">
-      <h1 class="font-display max-w-[680px] py-9 !text-[40px] sm:!text-[44px]">
-        Leveraging protocols trusted by millions
+      <h1 class="font-display max-w-[680px] py-9 !text-[38px] sm:!text-[44px]">
+        Leveraging governance protocols trusted by millions
       </h1>
     </UiContainer>
   </div>
