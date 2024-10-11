@@ -39,3 +39,6 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# project management
+PROJECT_MANAGEMENT.md

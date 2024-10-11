@@ -43,7 +43,7 @@ const SOCIALS = [
           <div class="eyebrow">Voting platform</div>
           <div class="space-y-1">
             <div>
-              <AppLink :to="{ name: 'my-explore' }"> Explore spaces </AppLink>
+              <AppLink :to="{ name: 'my-explore' }">Explore spaces</AppLink>
             </div>
             <div>
               <a href="https://v1.snapshot.box/#/setup" target="_blank">
@@ -54,7 +54,7 @@ const SOCIALS = [
               </a>
             </div>
             <div>
-              <AppLink :to="{ name: 'site-ecosystem' }"> Ecosystem </AppLink>
+              <AppLink :to="{ name: 'site-ecosystem' }">Ecosystem</AppLink>
             </div>
           </div>
         </div>
@@ -74,6 +74,14 @@ const SOCIALS = [
         <div class="space-y-2">
           <div class="eyebrow">Developers</div>
           <div class="space-y-1">
+            <div>
+              <a href="https://docs.snapshot.org" target="_blank">
+                Snapshot docs
+                <IH-arrow-sm-right
+                  class="inline-block -rotate-45 mb-0.5 -ml-0.5"
+                />
+              </a>
+            </div>
             <div>
               <a href="https://docs.snapshot.box" target="_blank">
                 Platform docs
