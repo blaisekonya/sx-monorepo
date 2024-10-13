@@ -9,6 +9,7 @@ useTitle(APP_NAME);
     <LandingHero />
     <LandingFlow />
     <LandingCounter />
+    <LandingUsers />
     <LandingFeatures />
     <LandingStart />
   </div>
