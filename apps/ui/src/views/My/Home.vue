@@ -10,7 +10,7 @@ const PROPOSALS_LIMIT = 20;
 useTitle('Home');
 
 const metaStore = useMetaStore();
-const router = useRouter();
+const { modalAccountOpen } = useModal();
 const followedSpacesStore = useFollowedSpacesStore();
 const { web3 } = useWeb3();
 const { loadVotes } = useAccount();
@@ -113,49 +113,51 @@ watch(
   [() => web3.value.account, () => web3.value.authLoading],
   ([account, authLoading]) => {
     if (!account && !authLoading) {
-      router.replace({ name: 'my-explore' });
+      modalAccountOpen.value = true;
     }
   },
   { immediate: true }
 );
+
+onUnmounted(() => {
+  modalAccountOpen.value = false;
+});
 </script>
 
 <template>
-  <div>
-    <Onboarding />
-    <div class="flex justify-between">
-      <div class="flex flex-row p-4 space-x-2">
-        <UiSelectDropdown
-          v-model="state"
-          title="Status"
-          gap="12"
-          placement="start"
-          :items="[
-            {
-              key: 'any',
-              label: 'Any'
-            },
-            {
-              key: 'pending',
-              label: 'Pending',
-              component: ProposalIconStatus,
-              componentProps: { ...selectIconBaseProps, state: 'pending' }
-            },
-            {
-              key: 'active',
-              label: 'Active',
-              component: ProposalIconStatus,
-              componentProps: { ...selectIconBaseProps, state: 'active' }
-            },
-            {
-              key: 'closed',
-              label: 'Closed',
-              component: ProposalIconStatus,
-              componentProps: { ...selectIconBaseProps, state: 'closed' }
-            }
-          ]"
-        />
-      </div>
+  <Onboarding />
+  <div class="flex justify-between">
+    <div class="flex flex-row p-4 space-x-2">
+      <UiSelectDropdown
+        v-model="state"
+        title="Status"
+        gap="12"
+        placement="start"
+        :items="[
+          {
+            key: 'any',
+            label: 'Any'
+          },
+          {
+            key: 'pending',
+            label: 'Pending',
+            component: ProposalIconStatus,
+            componentProps: { ...selectIconBaseProps, state: 'pending' }
+          },
+          {
+            key: 'active',
+            label: 'Active',
+            component: ProposalIconStatus,
+            componentProps: { ...selectIconBaseProps, state: 'active' }
+          },
+          {
+            key: 'closed',
+            label: 'Closed',
+            component: ProposalIconStatus,
+            componentProps: { ...selectIconBaseProps, state: 'passed' }
+          }
+        ]"
+      />
     </div>
     <ProposalsList
       title="Proposals"
@@ -167,4 +169,13 @@ watch(
       @end-reached="handleEndReached"
     />
   </div>
+  <ProposalsList
+    title="Proposals"
+    limit="off"
+    :loading="!loaded"
+    :loading-more="loadingMore"
+    :proposals="proposals"
+    show-space
+    @end-reached="handleEndReached"
+  />
 </template>
