@@ -201,8 +201,8 @@ router.afterEach(() => {
         @click="uiStore.sideMenuOpen = false"
       />
       <main class="flex-auto w-full flex">
-        <div class="flex-auto w-0 mt-[72px]">
-          <router-view class="h-full pb-6" />
+        <div class="flex-auto w-0 mt-[72px] mb-[48px]">
+          <router-view />
         </div>
         <div
           v-if="hasPlaceHolderSidebar"
