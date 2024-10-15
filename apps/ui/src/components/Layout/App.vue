@@ -161,7 +161,7 @@ router.afterEach(() => {
     :class="{ 'overflow-clip': scrollDisabled }"
   >
     <UiLoading v-if="app.loading || !app.init" class="overlay big" />
-    <div v-else :class="['flex min-h-screen']">
+    <div v-else :class="['flex min-h-screen pb-6']">
       <AppBottomNav
         v-if="web3.account && !isWhiteLabel"
         class="fixed bottom-0 inset-x-0 hidden app-bottom-nav z-20 app-bottom-nav-open"
@@ -173,7 +173,7 @@ router.afterEach(() => {
           { '!flex app-sidebar-open': uiStore.sideMenuOpen }
         ]"
       />
-      <AppTopnav :has-app-nav="hasAppNav" :class="{ hidden: !hasTopNav }">
+      <AppTopnav v-if="hasTopNav" :has-app-nav="hasAppNav">
         <template #toggle-sidebar-button>
           <button
             v-if="hasSwipeableContent"

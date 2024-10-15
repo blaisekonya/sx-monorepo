@@ -58,7 +58,8 @@ onUnmounted(() => notificationsStore.markAllAsRead());
                 :space="{
                   id: notification.proposal.space.id,
                   avatar: notification.proposal.space.avatar,
-                  network: notification.proposal.network
+                  network: notification.proposal.network,
+                  active_proposals: null
                 }"
                 :size="32"
                 class="mr-2 relative top-1.5"
