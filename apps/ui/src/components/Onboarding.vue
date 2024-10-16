@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { ethers } from 'ethers';
+import { GLOBAL_VOTER_ID_ZKME_ADDRESS } from '@/helpers/constants';
 import { useTasksStore } from '@/stores/tasks';
 import ButtonClaimID from './ButtonClaimID.vue';
 
@@ -18,6 +20,25 @@ const user = computed(() => {
     return null;
   }
 });
+
+const voterIdBalance = ref<string | null>(null);
+
+async function fetchVoterIdBalance() {
+  if (!web3.value.account) return;
+
+  const provider = new ethers.JsonRpcProvider('https://mainnet.base.org');
+  const abi = ['function balanceOf(address owner) view returns (uint256)'];
+  const contract = new ethers.Contract(
+    GLOBAL_VOTER_ID_ZKME_ADDRESS,
+    abi,
+    provider
+  );
+
+  const balance = await contract.balanceOf(web3.value.account);
+  voterIdBalance.value = ethers.formatUnits(balance, 18);
+}
+
+watch(() => web3.value.account, fetchVoterIdBalance, { immediate: true });
 
 const tasks = computed(() => ({
   voterId:
