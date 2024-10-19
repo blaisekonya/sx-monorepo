@@ -77,7 +77,6 @@ const initializeWidget = async () => {
     widget.value = null;
     console.log('Fetching flowrate data');
     if (!web3Account.value) {
-        console.log('No web3Account, skipping flowrate fetch');
         return;
     }
 
@@ -85,21 +84,16 @@ const initializeWidget = async () => {
     const contract = new ethers.Contract(CFA_V1_FORWARDER_ADDRESS, CFA_V1_FORWARDER_ABI, provider);
 
     try {
-        console.log('Calling getAccountFlowrate');
         const flowrate = await contract.getAccountFlowrate(DRACHMA_CONTRACT_ADDRESS, web3Account.value);
-        console.log('Flowrate fetched:', flowrate.toString());
         flowrateData.value = flowrate;
         isBasicIncomeSetUp.value = flowrate.gt(ethers.constants.Zero);
-        console.log('isBasicIncomeSetUp:', isBasicIncomeSetUp.value);
     } catch (error) {
         console.error('Error fetching flowrate:', error);
     }
 };
 
 const fetchBalanceData = async () => {
-    console.log('Fetching balance data');
     if (!web3Account.value) {
-        console.log('No web3Account, skipping balance fetch');
         return;
     }
 
@@ -108,9 +102,7 @@ const fetchBalanceData = async () => {
     const contract = new ethers.Contract(GLOBAL_VOTER_ID_ZKME_ADDRESS, abi, provider);
 
     try {
-        console.log('Calling balanceOf');
         const balance = await contract.balanceOf(web3Account.value);
-        console.log('Balance fetched:', balance.toString());
         balanceData.value = balance;
     } catch (error) {
         console.error('Error fetching balance:', error);
@@ -118,22 +110,18 @@ const fetchBalanceData = async () => {
 };
 
 watch(() => web3Account.value, () => {
-    console.log('web3Account changed:', web3Account.value);
     fetchFlowrateData();
     fetchBalanceData();
 }, { immediate: true });
 
 const initializeWidget = async () => {
-    console.log('Initializing widget');
     if (!web3Account.value) {
-        console.log('No web3Account, setting widget to null');
         widget.value = null;
         return;
     }
 
     try {
         const accessToken = await getZkMeToken();
-        console.log('ZkMe token obtained');
 
         const newProvider = {
             async getAccessToken() {
@@ -154,7 +142,6 @@ const initializeWidget = async () => {
                 mode: 'wallet'
             }
         );
-        console.log('Widget initialized successfully');
     } catch (error) {
         console.error('Error initializing widget:', error);
         widget.value = null;
