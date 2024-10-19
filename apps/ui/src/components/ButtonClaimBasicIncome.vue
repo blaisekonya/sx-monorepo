@@ -9,7 +9,8 @@ import {
   DRACHMA_CONTRACT_ADDRESS,
   DRACHMA_TREASURY_ADDRESS,
   FLOW_RATE,
-  STREAM_LINK_TEMPLATE
+  STREAM_LINK_TEMPLATE,
+  CFA_V1_FORWARDER_ABI
 } from '../helpers/constants';
 import '@zkmelabs/widget/dist/style.css';
 
@@ -72,10 +73,93 @@ const initializeWidget = async () => {
         mode: 'wallet'
       }
     );
-  } catch (error) {
     console.error('Error initializing widget:', error);
     widget.value = null;
-  }
+    console.log('Fetching flowrate data');
+    if (!web3Account.value) {
+        console.log('No web3Account, skipping flowrate fetch');
+        return;
+    }
+
+    const provider = new ethers.JsonRpcProvider('https://mainnet.base.org');
+    const contract = new ethers.Contract(CFA_V1_FORWARDER_ADDRESS, CFA_V1_FORWARDER_ABI, provider);
+
+    try {
+        console.log('Calling getAccountFlowrate');
+        const flowrate = await contract.getAccountFlowrate(DRACHMA_CONTRACT_ADDRESS, web3Account.value);
+        console.log('Flowrate fetched:', flowrate.toString());
+        flowrateData.value = flowrate;
+        isBasicIncomeSetUp.value = flowrate.gt(ethers.constants.Zero);
+        console.log('isBasicIncomeSetUp:', isBasicIncomeSetUp.value);
+    } catch (error) {
+        console.error('Error fetching flowrate:', error);
+    }
+};
+
+const fetchBalanceData = async () => {
+    console.log('Fetching balance data');
+    if (!web3Account.value) {
+        console.log('No web3Account, skipping balance fetch');
+        return;
+    }
+
+    const provider = new ethers.providers.JsonRpcProvider('https://mainnet.base.org');
+    const abi = ["function balanceOf(address owner) view returns (uint256)"];
+    const contract = new ethers.Contract(GLOBAL_VOTER_ID_ZKME_ADDRESS, abi, provider);
+
+    try {
+        console.log('Calling balanceOf');
+        const balance = await contract.balanceOf(web3Account.value);
+        console.log('Balance fetched:', balance.toString());
+        balanceData.value = balance;
+    } catch (error) {
+        console.error('Error fetching balance:', error);
+    }
+};
+
+watch(() => web3Account.value, () => {
+    console.log('web3Account changed:', web3Account.value);
+    fetchFlowrateData();
+    fetchBalanceData();
+}, { immediate: true });
+
+const initializeWidget = async () => {
+    console.log('Initializing widget');
+    if (!web3Account.value) {
+        console.log('No web3Account, setting widget to null');
+        widget.value = null;
+        return;
+    }
+
+    try {
+        const accessToken = await getZkMeToken();
+        console.log('ZkMe token obtained');
+
+        const newProvider = {
+            async getAccessToken() {
+                return accessToken;
+            },
+            async getUserAccounts() {
+                return [web3Account.value];
+            }
+        };
+
+        widget.value = new ZkMeWidget(
+            'M2024053066119595336406774111128',
+            'World Association',
+            '0x2105',
+            newProvider,
+            {
+                lv: 'MeID',
+                mode: 'wallet'
+            }
+        );
+        console.log('Widget initialized successfully');
+    } catch (error) {
+        console.error('Error initializing widget:', error);
+        widget.value = null;
+    }
+>>>>>>> 205bfcc7 (feat: move basic income claiming in-app)
 };
 
 watch(web3Account, initializeWidget, { immediate: true });
