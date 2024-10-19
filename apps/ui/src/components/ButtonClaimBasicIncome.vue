@@ -146,7 +146,6 @@ const initializeWidget = async () => {
         console.error('Error initializing widget:', error);
         widget.value = null;
     }
->>>>>>> 205bfcc7 (feat: move basic income claiming in-app)
 };
 
 watch(web3Account, initializeWidget, { immediate: true });
