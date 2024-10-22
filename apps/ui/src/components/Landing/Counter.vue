@@ -11,7 +11,7 @@
   <div class="border-b">
     <UiContainer class="!max-w-screen-lg">
       <h1 class="font-display max-w-[680px] py-9 !text-[36px] sm:!text-[44px]">
-        Using governance protocols trusted by millions
+        Using voting protocols trusted by millions
       </h1>
     </UiContainer>
   </div>
