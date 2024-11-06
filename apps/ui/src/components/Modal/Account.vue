@@ -286,25 +286,18 @@ function handleSignup() {
         <UiButton :to="{ name: 'settings-spaces' }" @click="emit('close')">
           Settings
         </UiButton>
-        <UiButton
-          @click="
-            () => {
-              step = 'connect';
-              showConnectors = true;
-            }
-          "
-        >
+        <UiButton @click="() => {
+            step = 'connect';
+            showConnectors = true;
+          }
+          ">
           {{ web3.account ? 'Change wallet' : 'Log in' }}
         </UiButton>
-        <UiButton
-          class="!text-skin-danger"
-          @click="
-            () => {
-              handleLogout();
-              handleLoginClick();
-            }
-          "
-        >
+        <UiButton class="!text-skin-danger" @click="() => {
+            handleLogout();
+            handleLoginClick();
+          }
+          ">
           Log out
         </UiButton>
       </template>
