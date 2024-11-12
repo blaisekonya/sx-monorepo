@@ -7,7 +7,7 @@ const followedSpacesStore = useFollowedSpacesStore();
 <template>
   <div class="flex flex-col border-r text-center">
     <AppLink :to="{ name: 'my-home' }" class="h-[72px] block">
-      <div class="inline-block box-border my-3 size-[36px] rounded-full border-[6px] border-skin-primary"></div>
+      <IC-zap class="inline-block my-[18px] size-[40px] text-skin-link" />
     </AppLink>
     <div class="bg-gradient-to-b from-skin-bg top-[72px] h-[8px] w-[71px] absolute z-10" />
     <UiLoading v-if="!followedSpacesStore.followedSpacesLoaded" />
