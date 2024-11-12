@@ -115,37 +115,37 @@ watch(() => web3Account.value, () => {
 }, { immediate: true });
 
 const initializeWidget = async () => {
-    if (!web3Account.value) {
-        widget.value = null;
-        return;
-    }
+  if (!web3Account.value) {
+    widget.value = null;
+    return;
+  }
 
-    try {
-        const accessToken = await getZkMeToken();
+  try {
+    const accessToken = await getZkMeToken();
 
-        const newProvider = {
-            async getAccessToken() {
-                return accessToken;
-            },
-            async getUserAccounts() {
-                return [web3Account.value];
-            }
-        };
+    const newProvider = {
+      async getAccessToken() {
+        return accessToken;
+      },
+      async getUserAccounts() {
+        return [web3Account.value];
+      }
+    };
 
-        widget.value = new ZkMeWidget(
-            'M2024053066119595336406774111128',
-            'World Association',
-            '0x2105',
-            newProvider,
-            {
-                lv: 'MeID',
-                mode: 'wallet'
-            }
-        );
-    } catch (error) {
-        console.error('Error initializing widget:', error);
-        widget.value = null;
-    }
+    widget.value = new ZkMeWidget(
+      'M2024053066119595336406774111128',
+      'World Association',
+      '0x2105',
+      newProvider,
+      {
+        lv: 'MeID',
+        mode: 'wallet'
+      }
+    );
+  } catch (error) {
+    console.error('Error initializing widget:', error);
+    widget.value = null;
+  }
 };
 
 watch(web3Account, initializeWidget, { immediate: true });
