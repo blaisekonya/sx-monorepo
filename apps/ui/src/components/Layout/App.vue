@@ -152,6 +152,15 @@ watch(
 router.afterEach(() => {
   uiStore.sideMenuOpen = false;
 });
+
+const { isVisible, isMobile } = useScrollVisibility();
+
+watch([isVisible, isMobile], () => {
+  document.documentElement.style.setProperty(
+    '--header-height',
+    (!isVisible.value && isMobile.value) ? '0' : '72px'
+  );
+}, { immediate: true });
 </script>
 
 <template>

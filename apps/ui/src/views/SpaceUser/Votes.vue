@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { getNetwork } from '@/networks';
 import { Proposal, Space, User, Vote } from '@/types';
+import { useScrollVisibility } from '@/composables/useScrollVisibility';
 
 const props = defineProps<{ space: Space; user: User }>();
 
@@ -9,6 +10,12 @@ const VOTES_LIMIT = 1000;
 
 const metaStore = useMetaStore();
 const { setTitle } = useTitle();
+const { isVisible, isMobile } = useScrollVisibility();
+
+const stickyHeaderClass = computed(() => {
+  if (!isMobile.value) return 'top-[112px]';
+  return isVisible.value ? 'top-[112px]' : 'top-[40px]';
+});
 
 const loaded = ref(false);
 const loadingMore = ref(false);
@@ -100,44 +107,27 @@ watchEffect(() =>
 
 <template>
   <div
-    class="bg-skin-bg sticky top-[112px] lg:top-[113px] z-40 border-b flex gap-3 font-medium leading-[18px] px-4 py-2"
-  >
+    class="bg-skin-bg sticky z-40 border-b flex gap-3 font-medium leading-[18px] px-4 py-2 transition-[top] duration-300"
+    :class="stickyHeaderClass">
     <div class="grow truncate">Proposal</div>
     <div class="shrink-0 w-[35%] md:w-[220px] truncate">Choice</div>
   </div>
+
   <UiLoading v-if="!loaded" class="block px-4 py-3" />
-  <div
-    v-else-if="!proposals.length || failed"
-    class="px-4 py-3 flex items-center text-skin-link gap-2"
-  >
+
+  <div v-else-if="!proposals.length || failed" class="px-4 py-3 flex items-center text-skin-link gap-2">
     <IH-exclamation-circle class="shrink-0" />
     <template v-if="failed">Failed to load the votes.</template>
     <template v-else>There are no votes here.</template>
   </div>
-  <UiContainerInfiniteScroll
-    v-else
-    :loading-more="loadingMore"
-    class="mx-4"
-    @end-reached="handleEndReached"
-  >
-    <div
-      v-for="(proposal, i) in proposals"
-      :key="i"
-      class="border-b py-[14px] flex gap-3"
-    >
-      <ProposalsListItemHeading
-        :proposal="proposal"
-        :show-author="true"
-        :show-space="false"
-        :show-voted-indicator="false"
-        class="grow truncate w-0"
-      />
+
+  <UiContainerInfiniteScroll v-else :loading-more="loadingMore" class="mx-4" @end-reached="handleEndReached">
+    <div v-for="(proposal, i) in proposals" :key="i" class="border-b py-[14px] flex gap-3">
+      <ProposalsListItemHeading :proposal="proposal" :show-author="true" :show-space="false"
+        :show-voted-indicator="false" class="grow truncate w-0" />
       <div class="w-[35%] md:w-[220px] shrink-0 flex items-center">
-        <ProposalVoteChoice
-          :proposal="proposal"
-          :vote="votes[`${proposal.network}:${proposal.id}`]"
-          :show-reason="false"
-        />
+        <ProposalVoteChoice :proposal="proposal" :vote="votes[`${proposal.network}:${proposal.id}`]"
+          :show-reason="false" />
       </div>
     </div>
   </UiContainerInfiniteScroll>

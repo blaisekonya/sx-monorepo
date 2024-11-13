@@ -20,6 +20,7 @@ const wrapperEl = ref<HTMLDivElement | null>(null);
 const lastScrollY = ref(0);
 const ticking = ref<boolean>(false);
 const stickStatus = ref<StickStatus>(StickStatus.SCROLL);
+const { isVisible, isMobile } = useScrollVisibility();
 
 const el = computed(
   () => wrapperEl.value?.getElementsByTagName('div')[0] as HTMLDivElement
@@ -40,7 +41,9 @@ function updatePosition(scrollY: number) {
   const stickedToTop = stickStatus.value === StickStatus.TOP;
   const canScroll = !isTopReached || !isBottomReached;
 
-  if (scrollingDown && !stickedToBottom && canScroll) {
+  if (!isVisible.value) {
+    changeStickStatus(StickStatus.SCROLL);
+  } else if (scrollingDown && !stickedToBottom && canScroll) {
     changeStickStatus(
       isBottomReached ? StickStatus.BOTTOM : StickStatus.SCROLL
     );
@@ -70,13 +73,13 @@ function stickToBottom() {
 }
 
 function stickToTop() {
+  const headerOffset = (isVisible.value && isMobile.value) ? props.top : 0;
   el.value.style.position = 'sticky';
-  el.value.style.top = `${props.top}px`;
+  el.value.style.top = `${headerOffset}px`;
 }
 
 function unstick() {
   const offset = el.value.offsetTop;
-
   el.value.style.position = 'relative';
   el.value.style.top = `${offset}px`;
 }
@@ -87,6 +90,10 @@ function handlePositionUpdate() {
   }
   ticking.value = true;
 }
+
+watch(isVisible, () => {
+  handlePositionUpdate();
+});
 
 onMounted(() => {
   changeStickStatus(StickStatus.TOP);

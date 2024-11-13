@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { sanitizeUrl } from '@braintree/sanitize-url';
 import removeMarkdown from 'remove-markdown';
+import { useScrollVisibility } from '@/composables/useScrollVisibility';
 import { getGenericExplorerUrl } from '@/helpers/explorer';
 import { _n, _p, _vp, shorten } from '@/helpers/utils';
 import { DelegationType, Space, SpaceMetadataDelegation } from '@/types';
@@ -38,6 +39,7 @@ const {
   props.space
 );
 const { web3 } = useWeb3();
+const { isVisible, isMobile } = useScrollVisibility();
 
 const spaceKey = computed(() => `${props.space.network}:${props.space.id}`);
 
@@ -89,6 +91,11 @@ watch([sortBy], () => {
 });
 
 watchEffect(() => setTitle(`Delegates - ${props.space.name}`));
+
+const stickyHeaderClass = computed(() => {
+  if (!isMobile.value) return 'top-[112px]';
+  return isVisible.value ? 'top-[112px]' : 'top-[40px]';
+});
 </script>
 
 <template>
@@ -120,10 +127,11 @@ watchEffect(() => setTitle(`Delegates - ${props.space.name}`));
         </UiButton>
       </UiTooltip>
     </div>
-    <UiLabel label="Delegates" sticky />
+    <UiLabel label="Delegates" :sticky-offset="72" />
     <div class="text-left table-fixed w-full">
       <div
-        class="bg-skin-bg border-b sticky top-[112px] lg:top-[113px] z-40 flex w-full font-medium space-x-3 px-4"
+        class="bg-skin-bg border-b sticky z-40 flex w-full font-medium space-x-3 px-4 transition-[top] duration-300"
+        :class="stickyHeaderClass"
       >
         <div
           class="w-[190px] grow sm:grow-0 sm:shrink-0 flex items-center truncate"
@@ -197,7 +205,7 @@ watchEffect(() => setTitle(`Delegates - ${props.space.name}`));
                   user: delegate.user
                 }
               }"
-              class="flex w-full space-x-3 truncate"
+              class="flex w-full space-x-3"
             >
               <div
                 class="flex grow sm:grow-0 sm:shrink-0 items-center w-[190px] py-3 gap-x-3 leading-[22px] truncate"

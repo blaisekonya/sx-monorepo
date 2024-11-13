@@ -1,10 +1,17 @@
 <script setup lang="ts">
+import { useScrollVisibility } from '@/composables/useScrollVisibility';
 import { _rt } from '@/helpers/utils';
 
 const notificationsStore = useNotificationsStore();
 const { modalAccountWithoutDismissOpen } = useModal();
 const { web3 } = useWeb3();
 const { setTitle } = useTitle();
+const { isVisible, isMobile } = useScrollVisibility();
+
+const stickyHeaderClass = computed(() => {
+  if (!isMobile.value) return 'top-[72px]';
+  return isVisible.value ? 'top-[72px]' : 'top-0';
+});
 
 watchEffect(async () => {
   setTitle(

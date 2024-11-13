@@ -7,6 +7,8 @@ import IHUser from '~icons/heroicons-outline/user';
 const { web3 } = useWeb3();
 const route = useRoute();
 
+const { isVisible, isMobile } = useScrollVisibility({ threshold: 100 });
+
 const menu = [
   {
     link: { name: 'my-home' },

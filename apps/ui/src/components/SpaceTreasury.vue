@@ -1,15 +1,10 @@
 <script setup lang="ts">
+import { useScrollVisibility } from '@/composables/useScrollVisibility';
 import { Token } from '@/helpers/alchemy';
 import { ETH_CONTRACT } from '@/helpers/constants';
 import { _c, _n, sanitizeUrl, shorten } from '@/helpers/utils';
-import { enabledNetworks, evmNetworks, getNetwork } from '@/networks';
-import {
-  ChainId,
-  Contact,
-  Space,
-  SpaceMetadataTreasury,
-  Transaction
-} from '@/types';
+import { evmNetworks } from '@/networks';
+import { Contact, Space, SpaceMetadataTreasury, Transaction } from '@/types';
 
 const STAKING_CHAIN_IDS: ChainId[] = [1, 11155111];
 const EVM_CHAIN_IDS: ChainId[] = evmNetworks
@@ -31,6 +26,7 @@ const { loading: nftsLoading, loaded: nftsLoaded, nfts, loadNfts } = useNfts();
 const { treasury, getExplorerUrl } = useTreasury(props.treasuryData);
 const { strategiesWithTreasuries } = useTreasuries(props.space);
 const { createDraft } = useEditor();
+const { isVisible, isMobile } = useScrollVisibility();
 
 const page: Ref<'tokens' | 'nfts'> = computed(() => {
   return route.params.tab === 'nfts' ? 'nfts' : 'tokens';
@@ -132,6 +128,11 @@ onMounted(() => {
 });
 
 watchEffect(() => setTitle(`Treasury - ${props.space.name}`));
+
+const stickyTabsClass = computed(() => {
+  if (!isMobile.value) return 'top-[112px]';
+  return isVisible.value ? 'top-[112px]' : 'top-[40px]';
+});
 </script>
 
 <template>
@@ -144,7 +145,11 @@ watchEffect(() => setTitle(`Treasury - ${props.space.name}`));
       <div class="flex-auto" />
 
       <UiTooltip
-        v-if="!isReadOnly && EVM_CHAIN_IDS.includes(treasury.network)"
+        v-if="
+          !isReadOnly &&
+          currentNetworkId &&
+          evmNetworks.includes(currentNetworkId)
+        "
         title="Connect to apps"
       >
         <UiButton
@@ -182,7 +187,11 @@ watchEffect(() => setTitle(`Treasury - ${props.space.name}`));
     </div>
     <div class="space-y-3">
       <div>
-        <UiLabel label="Treasury" sticky />
+        <UiLabel
+          label="Treasury"
+          :sticky-offset="72"
+          class="transition-[top] duration-300"
+        />
         <a
           :href="treasuryExplorerUrl || '#'"
           target="_blank"
@@ -191,7 +200,11 @@ watchEffect(() => setTitle(`Treasury - ${props.space.name}`));
             'pointer-events-none': !treasuryExplorerUrl
           }"
         >
-          <UiBadgeNetwork :chain-id="treasury.network" class="mr-3">
+          <UiBadgeNetwork
+            :id="treasury.networkId"
+            :chain-id="treasury.network"
+            class="mr-3"
+          >
             <UiStamp
               :id="treasury.wallet"
               type="avatar"
@@ -243,7 +256,10 @@ watchEffect(() => setTitle(`Treasury - ${props.space.name}`));
         </a>
       </div>
       <div>
-        <div class="flex pl-4 border-b space-x-3">
+        <div
+          class="flex pl-4 border-b space-x-3 sticky bg-skin-bg z-40 transition-[top] duration-300"
+          :class="stickyTabsClass"
+        >
           <AppLink
             :to="{
               params: {
@@ -295,9 +311,12 @@ watchEffect(() => setTitle(`Treasury - ${props.space.name}`));
             class="mx-4 py-3 border-b flex"
           >
             <div class="flex-auto flex items-center min-w-0 space-x-3">
-              <UiBadgeNetwork :chain-id="treasury.network">
+              <UiBadgeNetwork
+                :id="treasury.networkId"
+                :chain-id="treasury.network"
+              >
                 <UiStamp
-                  :id="`eip155:${treasury.network}:${asset.contractAddress}`"
+                  :id="`${treasury.networkId}:${asset.contractAddress}`"
                   type="token"
                   :size="32"
                 />
@@ -413,15 +432,17 @@ watchEffect(() => setTitle(`Treasury - ${props.space.name}`));
     </div>
     <teleport to="#modal">
       <ModalSendToken
-        v-if="!isReadOnly && treasury.supportsTokens"
+        v-if="!isReadOnly && currentNetworkId && treasury.supportsTokens"
         :open="modalOpen.tokens"
         :address="treasury.wallet"
         :network="treasury.network"
+        :network-id="currentNetworkId"
         :extra-contacts="extraContacts"
         @close="modalOpen.tokens = false"
         @add="addTx"
       />
       <ModalSendNft
+        v-if="currentNetworkId"
         :open="modalOpen.nfts"
         :address="treasury.wallet"
         :network="treasury.network"
@@ -430,19 +451,20 @@ watchEffect(() => setTitle(`Treasury - ${props.space.name}`));
         @add="addTx"
       />
       <ModalStakeToken
-        v-if="hasStakeableAssets"
+        v-if="hasStakeableAssets && currentNetworkId"
         :open="modalOpen.stake"
         :address="treasury.wallet"
         :network="treasury.network"
+        :network-id="currentNetworkId"
         @close="modalOpen.stake = false"
         @add="addTx"
       />
       <ModalLinkWalletConnect
-        v-if="executionStrategy"
+        v-if="executionStrategy && currentNetworkId"
         :open="modalOpen.walletConnectLink"
         :address="treasury.wallet"
         :network="treasury.network"
-        :network-id="space.network"
+        :network-id="currentNetworkId"
         :space-key="spaceKey"
         :execution-strategy="executionStrategy"
         @close="modalOpen.walletConnectLink = false"

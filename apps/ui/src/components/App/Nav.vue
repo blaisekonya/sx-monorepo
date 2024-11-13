@@ -16,6 +16,7 @@ import IHStop from '~icons/heroicons-outline/stop';
 import IHUser from '~icons/heroicons-outline/user';
 import IHUserGroup from '~icons/heroicons-outline/user-group';
 import IHUsers from '~icons/heroicons-outline/users';
+import { useScrollVisibility } from '@/composables/useScrollVisibility';
 
 type NavigationItem = {
   name: string;
@@ -30,6 +31,7 @@ const route = useRoute();
 const spacesStore = useSpacesStore();
 const notificationsStore = useNotificationsStore();
 const { isWhiteLabel } = useWhiteLabel();
+const { isVisible, isMobile } = useScrollVisibility();
 
 const { param } = useRouteParser('space');
 const { resolved, address, networkId } = useResolve(param);
@@ -83,38 +85,38 @@ const navigationConfig = computed<
     },
     ...(space.value?.delegations && space.value.delegations.length > 0
       ? {
-          delegates: {
-            name: 'Delegates',
-            icon: IHLightningBolt
-          }
+        delegates: {
+          name: 'Delegates',
+          icon: IHLightningBolt
         }
+      }
       : undefined),
     ...(SPACES_DISCUSSIONS[`${networkId.value}:${address.value}`]
       ? {
-          discussions: {
-            name: 'Discussions',
-            icon: IHAnnotation,
-            active: ['space-discussions', 'space-discussions-topic'].includes(
-              route.name as string
-            )
-          }
+        discussions: {
+          name: 'Discussions',
+          icon: IHAnnotation,
+          active: ['space-discussions', 'space-discussions-topic'].includes(
+            route.name as string
+          )
         }
+      }
       : undefined),
     ...(space.value?.treasuries?.length
       ? {
-          treasury: {
-            name: 'Treasury',
-            icon: IHCash
-          }
+        treasury: {
+          name: 'Treasury',
+          icon: IHCash
         }
+      }
       : undefined),
     ...(canSeeSettings.value
       ? {
-          settings: {
-            name: 'Settings',
-            icon: IHCog
-          }
+        settings: {
+          name: 'Settings',
+          icon: IHCog
         }
+      }
       : undefined)
   },
   settings: {
@@ -194,21 +196,19 @@ const navigationItems = computed(() =>
 </script>
 
 <template>
-  <div class="border-r bg-skin-bg py-4">
-    <AppLink
-      v-for="(item, key) in navigationItems"
-      :key="key"
-      :to="item.link"
-      class="px-4 py-1.5 space-x-2 flex items-center"
-      :class="item.active ? 'text-skin-link' : 'text-skin-text'"
-    >
+  <nav class="fixed z-10 transition-[top] duration-300" :class="[
+    'w-[240px]',
+    {
+      'top-[72px]': isVisible || !isMobile,
+      'top-0': !isVisible && isMobile
+    }
+  ]">
+    <AppLink v-for="(item, key) in navigationItems" :key="key" :to="item.link"
+      class="px-4 py-1.5 space-x-2 flex items-center" :class="item.active ? 'text-skin-link' : 'text-skin-text'">
       <component :is="item.icon" class="inline-block"></component>
       <span class="grow" v-text="item.name" />
-      <span
-        v-if="item.count"
-        class="bg-skin-border text-skin-link text-[13px] rounded-full px-1.5"
-        v-text="item.count"
-      />
+      <span v-if="item.count" class="bg-skin-border text-skin-link text-[13px] rounded-full px-1.5"
+        v-text="item.count" />
     </AppLink>
-  </div>
+  </nav>
 </template>
