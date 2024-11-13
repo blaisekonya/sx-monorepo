@@ -196,7 +196,7 @@ const navigationItems = computed(() =>
 </script>
 
 <template>
-  <nav class="fixed z-10 transition-[top] duration-300" :class="[
+  <nav class="border-r bg-skin-bg py-4 fixed z-10 transition-[top] duration-300" :class="[
     'w-[240px]',
     {
       'top-[72px]': isVisible || !isMobile,
