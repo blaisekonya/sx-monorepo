@@ -18,7 +18,7 @@ const stickyHeaderClass = computed(() => {
 
 <template>
   <div>
-    <UiLabel v-if="title" :label="title" :sticky-offset="72" class="transition-[top] duration-300"
+    <UiLabel v-if="title" :label="title" :sticky-offset="72" class="transition-[top] duration-200"
       :class="stickyHeaderClass" />
     <UiLoading v-if="loading" class="block px-4 py-3" />
     <div v-else>

@@ -65,7 +65,7 @@ watch(
 
 <template>
   <div
-    class="flex justify-between sticky bg-skin-bg z-40 transition-[top] duration-300"
+    class="flex justify-between sticky bg-skin-bg z-40 transition-[top] duration-200"
     :class="stickyHeaderClass"
   >
     <div class="flex flex-row p-4 space-x-2">
@@ -82,7 +82,7 @@ watch(
   <UiLabel
     label="My spaces"
     :sticky-offset="72"
-    class="transition-[top] duration-300"
+    class="transition-[top] duration-200"
   />
 
   <UiLoading v-if="loading" class="block m-4" />

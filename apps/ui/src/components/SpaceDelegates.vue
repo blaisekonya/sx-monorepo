@@ -130,7 +130,7 @@ const stickyHeaderClass = computed(() => {
     <UiLabel label="Delegates" :sticky-offset="72" />
     <div class="text-left table-fixed w-full">
       <div
-        class="bg-skin-bg border-b sticky z-40 flex w-full font-medium space-x-3 px-4 transition-[top] duration-300"
+        class="bg-skin-bg border-b sticky z-40 flex w-full font-medium space-x-3 px-4 transition-[top] duration-200"
         :class="stickyHeaderClass"
       >
         <div

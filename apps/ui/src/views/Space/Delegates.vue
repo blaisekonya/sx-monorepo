@@ -30,7 +30,7 @@ watchEffect(() => setTitle(`Delegates - ${props.space.name}`));
   <template v-else>
     <UiScrollerHorizontal
       v-if="space.delegations.length > 1"
-      class="z-40 sticky transition-[top] duration-300"
+      class="z-40 sticky transition-[top] duration-200"
       :class="stickyTabsClass"
       with-buttons
       gradient="xxl"

@@ -53,7 +53,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="relative sticky z-40 transition-[top] duration-300 bg-skin-bg" :class="stickyTopClass">
+  <div class="sticky z-40 transition-[top] duration-200 bg-skin-bg" :class="stickyTopClass">
     <div class="relative">
       <button v-if="gradient && (!withButtons || canScrollTabs.canScrollLeft)" type="button" tabindex="-1"
         :disabled="!withButtons" class="bg-gradient-to-r from-skin-bg left-0 top-[1px] bottom-[1px] absolute z-10"

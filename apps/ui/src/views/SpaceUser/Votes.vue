@@ -107,7 +107,7 @@ watchEffect(() =>
 
 <template>
   <div
-    class="bg-skin-bg sticky z-40 border-b flex gap-3 font-medium leading-[18px] px-4 py-2 transition-[top] duration-300"
+    class="bg-skin-bg sticky z-40 border-b flex gap-3 font-medium leading-[18px] px-4 py-2 transition-[top] duration-200"
     :class="stickyHeaderClass">
     <div class="grow truncate">Proposal</div>
     <div class="shrink-0 w-[35%] md:w-[220px] truncate">Choice</div>

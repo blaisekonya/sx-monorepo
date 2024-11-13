@@ -120,10 +120,10 @@ watchEffect(() => setTitle(`Leaderboard - ${props.space.name}`));
 </script>
 
 <template>
-  <UiLabel label="Leaderboard" :sticky-offset="72" class="transition-[top] duration-300" />
+  <UiLabel label="Leaderboard" :sticky-offset="72" class="transition-[top] duration-200" />
 
   <div
-class="bg-skin-bg sticky z-40 border-b w-full flex font-medium space-x-1 transition-[top] duration-300"
+class="bg-skin-bg sticky z-40 border-b w-full flex font-medium space-x-1 transition-[top] duration-200"
     :class="stickyHeaderClass">
     <div class="pl-4 w-[40%] lg:w-[50%] flex items-center truncate">
       User

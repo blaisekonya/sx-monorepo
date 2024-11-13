@@ -39,7 +39,8 @@ const menu = [
     icon: defineComponent({
       render() {
         return h('div', {
-          class: 'box-border h-[18px] w-[18px] rounded-full border-[3px] border-skin-primary'
+          class:
+            'box-border h-[18px] w-[18px] rounded-full border-[3px] border-skin-primary'
         });
       }
     })
