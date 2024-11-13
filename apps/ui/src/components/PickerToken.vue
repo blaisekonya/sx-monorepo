@@ -142,9 +142,9 @@ watch(
       @click="handlePick(asset)"
     >
       <div class="flex items-center min-w-0 pr-2">
-        <UiBadgeNetwork :chain-id="network">
+        <UiBadgeNetwork :id="networkId">
           <UiStamp
-            :id="`eip155:${network}:${asset.contractAddress}`"
+            :id="`${networkId}:${asset.contractAddress}`"
             type="token"
             :size="32"
           />

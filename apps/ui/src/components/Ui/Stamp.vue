@@ -18,16 +18,12 @@ withDefaults(
 </script>
 
 <template>
-  <img
-    :src="getStampUrl(type, id, width && height ? { width, height } : size, cb)"
-    class="rounded-full inline-block bg-skin-border"
-    :style="
-      !width && !height
+  <img :src="getStampUrl(type, id, width && height ? { width, height } : size, cb)"
+    class="rounded-full inline-block bg-skin-border" :style="!width && !height
         ? {
-            width: `${size}px`,
-            height: `${size}px`
-          }
+          width: `${size}px`,
+          height: `${size}px`
+        }
         : {}
-    "
-  />
+      " />
 </template>

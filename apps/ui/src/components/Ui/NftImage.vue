@@ -21,17 +21,11 @@ function handleError(e) {
 </script>
 
 <template>
-  <img
-    :src="url"
-    class="aspect-square rounded bg-skin-border"
-    :style="
-      size
-        ? {
-            width: `${size}px`,
-            height: `${size}px`
-          }
-        : {}
-    "
-    @error="handleError"
-  />
+  <img :src="url" class="aspect-square rounded bg-skin-border" :style="size
+      ? {
+        width: `${size}px`,
+        height: `${size}px`
+      }
+      : {}
+    " @error="handleError" />
 </template>

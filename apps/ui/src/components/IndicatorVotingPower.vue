@@ -31,38 +31,21 @@ function handleModalOpen() {
 </script>
 
 <template>
-  <slot
-    :voting-power="votingPower"
-    :formatted-voting-power="formattedVotingPower"
-    :on-click="handleModalOpen"
-    v-bind="$attrs"
-  >
+  <slot :voting-power="votingPower" :formatted-voting-power="formattedVotingPower" :on-click="handleModalOpen"
+    v-bind="$attrs">
     <UiTooltip title="Your voting power" class="flex truncate">
-      <UiButton
-        v-if="
-          web3.account &&
-          !(evmNetworks.includes(networkId) && web3.type === 'argentx')
-        "
-        :loading="loading"
-        class="flex flex-row items-center justify-center gap-1 truncate"
-        @click="handleModalOpen"
-      >
+      <UiButton v-if="
+        web3.account &&
+        !(evmNetworks.includes(networkId) && web3.type === 'argentx')
+      " :loading="loading" class="flex flex-row items-center justify-center gap-1 truncate" @click="handleModalOpen">
         <IH-lightning-bolt class="inline-block -ml-1 shrink-0" />
-        <IH-exclamation
-          v-if="props.votingPower?.status === 'error'"
-          class="inline-block text-rose-500"
-        />
+        <IH-exclamation v-if="props.votingPower?.status === 'error'" class="inline-block text-rose-500" />
         <span v-else class="truncate">{{ formattedVotingPower }}</span>
       </UiButton>
     </UiTooltip>
   </slot>
   <teleport to="#modal">
-    <ModalVotingPower
-      :open="modalOpen"
-      :network-id="networkId"
-      :voting-power="props.votingPower"
-      @close="modalOpen = false"
-      @fetch-voting-power="$emit('fetchVotingPower')"
-    />
+    <ModalVotingPower :open="modalOpen" :network-id="networkId" :voting-power="props.votingPower"
+      @close="modalOpen = false" @fetch-voting-power="$emit('fetchVotingPower')" />
   </teleport>
 </template>

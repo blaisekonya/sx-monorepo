@@ -101,54 +101,34 @@ watch(
 
 <template>
   <UiModal :open="open" class="text-skin-heading" @close="$emit('close')">
-    <div
-      class="flex flex-col px-4 py-5 space-y-4 text-center items-center text-skin-text"
-    >
-      <div
-        v-if="['approve', 'confirming'].includes(step)"
-        class="bg-skin-border rounded-full p-[12px]"
-      >
+    <div class="flex flex-col px-4 py-5 space-y-4 text-center items-center text-skin-text">
+      <div v-if="['approve', 'confirming'].includes(step)" class="bg-skin-border rounded-full p-[12px]">
         <UiLoading :size="28" />
       </div>
 
-      <div
-        v-if="step === 'success'"
-        class="bg-skin-success rounded-full p-[12px]"
-      >
+      <div v-if="step === 'success'" class="bg-skin-success rounded-full p-[12px]">
         <IS-check :width="28" :height="28" class="text-skin-bg" />
       </div>
       <div v-if="step === 'fail'" class="bg-skin-danger rounded-full p-[12px]">
         <IS-x-mark :width="28" :height="28" class="text-skin-bg" />
       </div>
       <div class="flex flex-col space-y-1 leading-6">
-        <h4
-          class="font-semibold text-skin-heading text-lg"
-          v-text="text.title"
-        />
+        <h4 class="font-semibold text-skin-heading text-lg" v-text="text.title" />
         <div v-text="text.subtitle" />
       </div>
     </div>
     <slot id="content" :step="step" :tx-id="txId" />
-    <div
-      class="p-4 flex items-center justify-center text-skin-text"
-      :class="{
-        'pt-2': step !== 'fail',
-        'border-t': step === 'fail'
-      }"
-    >
+    <div class="p-4 flex items-center justify-center text-skin-text" :class="{
+      'pt-2': step !== 'fail',
+      'border-t': step === 'fail'
+    }">
       <div v-if="step === 'approve'" v-text="'Proceed in your wallet'" />
-      <a
-        v-else-if="['confirming', 'success'].includes(step) && txId"
-        :href="network.helpers.getExplorerUrl(txId, 'transaction')"
-        target="_blank"
-      >
+      <a v-else-if="['confirming', 'success'].includes(step) && txId"
+        :href="network.helpers.getExplorerUrl(txId, 'transaction')" target="_blank">
         View on explorer
         <IH-arrow-sm-right class="inline-block -rotate-45" />
       </a>
-      <div
-        v-else-if="step === 'fail'"
-        class="w-full flex justify-between space-x-[10px]"
-      >
+      <div v-else-if="step === 'fail'" class="w-full flex justify-between space-x-[10px]">
         <UiButton class="w-full" @click="$emit('close')">Cancel</UiButton>
         <UiButton primary class="w-full" @click="handleExecute">
           Try again

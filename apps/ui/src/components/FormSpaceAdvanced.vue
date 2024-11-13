@@ -148,7 +148,7 @@ watchEffect(() => {
   <h4 class="eyebrow mb-2 font-medium">Sub-spaces</h4>
   <UiMessage
     type="info"
-    :learn-more-link="'https://docs.snapshot.box/user-guides/spaces/sub-spaces'"
+    :learn-more-link="'https://docs.snapshot.org/user-guides/spaces/sub-spaces'"
   >
     Add a sub-space to display its proposals within your space. If you want the
     current space to be displayed on the sub-space's page, the space need to be
@@ -178,11 +178,11 @@ watchEffect(() => {
   </div>
   <div class="flex flex-wrap gap-2">
     <div
-      v-for="(childSpace, i) in children"
-      :key="childSpace"
+      v-for="(space, i) in children"
+      :key="space"
       class="flex items-center gap-2 rounded-lg border px-3 py-2 w-fit"
     >
-      <span>{{ childSpace }}</span>
+      <span>{{ space }}</span>
       <button type="button" @click="deleteChild(i)">
         <IH-x-mark class="w-[16px]" />
       </button>
@@ -201,16 +201,14 @@ watchEffect(() => {
     type="info"
     :learn-more-link="'https://docs.snapshot.org/spaces/add-custom-domain'"
   >
-    To set up a custom domain, you must subscribe to the Turbo plan and create a
-    CNAME record pointing to "cname.snapshot.box" with your DNS provider or
-    registrar.
+    To setup a custom domain you additionally need to open a pull request on
+    GitHub after you have created the space.
   </UiMessage>
   <div class="s-box mt-3">
     <UiInputString
       v-model="customDomain"
       :definition="CUSTOM_DOMAIN_DEFINITION"
       :error="formErrors.customDomain"
-      :disabled="!space.turbo && !space.additionalRawData?.domain"
     />
     <UiSwitch v-model="isPrivate" title="Hide space from homepage" />
   </div>
@@ -239,7 +237,7 @@ watchEffect(() => {
   <teleport to="#modal">
     <ModalDeleteSpace
       :open="isDeleteSpaceModalOpen"
-      :space-id="space.id"
+      :space-id="spaceId"
       @confirm="emit('deleteSpace')"
       @close="isDeleteSpaceModalOpen = false"
     />

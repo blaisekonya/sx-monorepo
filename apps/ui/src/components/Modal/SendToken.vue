@@ -256,6 +256,7 @@ watchEffect(async () => {
         :assets="allAssets"
         :address="address"
         :network="network"
+        :network-id="networkId"
         :loading="loading"
         :search-value="searchValue"
         @pick="
@@ -292,7 +293,7 @@ watchEffect(async () => {
           <div class="flex items-center">
             <UiStamp
               v-if="currentToken"
-              :id="`eip155:${network}:${currentToken.contractAddress}`"
+              :id="`${networkId}:${currentToken.contractAddress}`"
               type="token"
               class="mr-2"
               :size="20"

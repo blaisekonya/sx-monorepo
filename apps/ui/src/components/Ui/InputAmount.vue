@@ -50,23 +50,9 @@ watch(model, () => {
 </script>
 
 <template>
-  <UiWrapperInput
-    v-slot="{ id }"
-    :definition="definition"
-    :error="error"
-    :dirty="dirty"
-    :input-value-length="inputValue?.length"
-  >
-    <input
-      :id="id"
-      :value="inputValue"
-      type="text"
-      class="s-input"
-      pattern="^[0-9]*[.,]?[0-9]*$"
-      inputmode="decimal"
-      v-bind="$attrs"
-      :placeholder="definition.examples && definition.examples[0]"
-      @input="handleInput"
-    />
+  <UiWrapperInput v-slot="{ id }" :definition="definition" :error="error" :dirty="dirty"
+    :input-value-length="inputValue?.length">
+    <input :id="id" :value="inputValue" type="text" class="s-input" pattern="^[0-9]*[.,]?[0-9]*$" inputmode="decimal"
+      v-bind="$attrs" :placeholder="definition.examples && definition.examples[0]" @input="handleInput" />
   </UiWrapperInput>
 </template>

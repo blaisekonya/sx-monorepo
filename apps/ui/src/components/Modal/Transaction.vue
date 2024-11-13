@@ -87,11 +87,11 @@ const formValidator = computed(() =>
       },
       ...(currentMethod.value?.payable
         ? {
-            amount: {
-              type: 'string',
-              format: 'ethValue'
-            }
+          amount: {
+            type: 'string',
+            format: 'ethValue'
           }
+        }
         : {})
     },
     additionalProperties: true
@@ -267,92 +267,52 @@ watchEffect(async () => {
     <template #header>
       <h3 v-text="'Add transaction'" />
       <template v-if="showPicker">
-        <button
-          type="button"
-          class="absolute left-0 -top-1 p-4"
-          @click="showPicker = false"
-        >
+        <button type="button" class="absolute left-0 -top-1 p-4" @click="showPicker = false">
           <IH-arrow-narrow-left class="mr-2" />
         </button>
         <div class="flex items-center border-t px-2 py-3 mt-3 -mb-3">
           <IH-search class="mx-2" />
-          <input
-            ref="searchInput"
-            v-model="searchValue"
-            type="text"
-            placeholder="Search"
-            class="flex-auto bg-transparent text-skin-link"
-          />
+          <input ref="searchInput" v-model="searchValue" type="text" placeholder="Search"
+            class="flex-auto bg-transparent text-skin-link" />
         </div>
       </template>
     </template>
     <template v-if="showPicker">
-      <PickerContact
-        :loading="false"
-        :search-value="searchValue"
-        :extra-contacts="extraContacts"
-        @pick="handlePickerSelect"
-      />
+      <PickerContact :loading="false" :search-value="searchValue" :extra-contacts="extraContacts"
+        @pick="handlePickerSelect" />
     </template>
-    <div
-      v-show="
-        !showPicker /* has to use v-show so dirty flag works, need to find a better way to handle it */
-      "
-      class="s-box p-4"
-    >
+    <div v-show="!showPicker /* has to use v-show so dirty flag works, need to find a better way to handle it */
+      " class="s-box p-4">
       <div class="relative">
         <UiLoading v-if="loading" class="absolute top-[14px] right-3 z-10" />
-        <UiInputAddress
-          v-model="form.to"
-          :error="errors.to"
-          :show-picker="!loading"
-          :definition="{
-            type: 'string',
-            title: 'Contract address',
-            examples: ['Address or ENS']
-          }"
-          @pick="handlePickerClick('to')"
-        />
-      </div>
-      <UiTextarea
-        v-if="showAbiInput"
-        v-model="abiStr"
-        :error="errors.abi"
-        :definition="{
+        <UiInputAddress v-model="form.to" :error="errors.to" :show-picker="!loading" :definition="{
           type: 'string',
-          format: 'abi',
-          title: 'ABI'
-        }"
-      />
+          title: 'Contract address',
+          examples: ['Address or ENS']
+        }" @pick="handlePickerClick('to')" />
+      </div>
+      <UiTextarea v-if="showAbiInput" v-model="abiStr" :error="errors.abi" :definition="{
+        type: 'string',
+        format: 'abi',
+        title: 'ABI'
+      }" />
       <div v-if="methods.length > 0" class="s-base">
         <div class="s-label" v-text="'Method'" />
         <select v-model="form.method" class="s-input h-[45px]">
           <option v-for="(method, i) in methods" :key="i" v-text="method" />
         </select>
       </div>
-      <UiInputString
-        v-if="currentMethod?.payable"
-        v-model="form.amount"
-        :error="errors.amount"
-        :definition="{
-          format: 'ethValue',
-          title: 'ETH amount',
-          examples: ['Payable amount']
-        }"
-      />
+      <UiInputString v-if="currentMethod?.payable" v-model="form.amount" :error="errors.amount" :definition="{
+        format: 'ethValue',
+        title: 'ETH amount',
+        examples: ['Payable amount']
+      }" />
       <div v-if="definition">
-        <UiForm
-          v-model="form.args"
-          :error="argsErrors"
-          :definition="definition"
-          @pick="handlePickerClick"
-        />
+        <UiForm v-model="form.args" :error="argsErrors" :definition="definition" @pick="handlePickerClick" />
       </div>
     </div>
     <template v-if="!showPicker" #footer>
-      <UiButton class="w-full" :disabled="!formValid" @click="handleSubmit"
-        >Confirm</UiButton
-      >
+      <UiButton class="w-full" :disabled="!formValid" @click="handleSubmit">Confirm</UiButton>
     </template>
   </UiModal>
 </template>

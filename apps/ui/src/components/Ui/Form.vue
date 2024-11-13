@@ -90,14 +90,6 @@ const getComponent = (property: {
 </script>
 
 <template>
-  <component
-    :is="getComponent(property)"
-    v-for="(property, i) in definition.properties"
-    :key="i"
-    v-bind="$attrs"
-    v-model="inputValue[i]"
-    :path="path ? `${path}.${i}` : i"
-    :definition="property"
-    :error="error?.[i]"
-  />
+  <component :is="getComponent(property)" v-for="(property, i) in definition.properties" :key="i" v-bind="$attrs"
+    v-model="inputValue[i]" :path="path ? `${path}.${i}` : i" :definition="property" :error="error?.[i]" />
 </template>

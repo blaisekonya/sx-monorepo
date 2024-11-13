@@ -93,13 +93,6 @@ function handleAcceptTerms() {
     </div>
   </div>
   <teleport to="#modal">
-    <ModalTerms
-      v-if="proposal.space.terms"
-      :open="modalOpenTerms"
-      :space="proposal.space"
-      @close="modalOpenTerms = false"
-      @accept="handleAcceptTerms"
-    />
     <ModalVote
       :choice="selectedChoice"
       :proposal="proposal"

@@ -110,14 +110,12 @@ function isInThePast(timestamp: number): boolean {
       >
         <div
           class="absolute size-[15px] inline-block rounded-full left-[-7px] border-4 border-skin-bg"
-          :class="
-            isInThePast(state.value) ? 'bg-skin-heading' : 'bg-skin-border'
-          "
+          :class="state.value <= now ? 'bg-skin-heading' : 'bg-skin-border'"
         />
         <div
           v-if="states[i + 1]"
           class="border-l pr-4 mt-3"
-          :class="isInThePast(states[i + 1].value) && 'border-skin-heading'"
+          :class="states[i + 1].value <= now && 'border-skin-heading'"
         />
       </div>
     </div>

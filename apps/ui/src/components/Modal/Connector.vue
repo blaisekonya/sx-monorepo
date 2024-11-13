@@ -50,20 +50,11 @@ const availableConnectors = computed(() => {
     </template>
     <div>
       <div class="m-4 space-y-2 flex flex-col">
-        <button
-          v-for="connector in availableConnectors"
-          :key="connector.id"
-          type="button"
-          @click="emit('pick', connector.id)"
-        >
+        <button v-for="connector in availableConnectors" :key="connector.id" type="button"
+          @click="emit('pick', connector.id)">
           <UiButton class="w-full flex justify-center items-center">
-            <img
-              :src="getConnectorIconUrl(connector.icon)"
-              height="28"
-              width="28"
-              class="mr-2 -mt-1"
-              :alt="connector.name"
-            />
+            <img :src="getConnectorIconUrl(connector.icon)" height="28" width="28" class="mr-2 -mt-1"
+              :alt="connector.name" />
             {{ connector.name }}
           </UiButton>
         </button>

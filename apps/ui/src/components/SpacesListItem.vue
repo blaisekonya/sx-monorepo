@@ -29,7 +29,6 @@ const compositeSpaceId = `${props.space.network}:${props.space.id}`;
         class="mb-2"
       >
         <SpaceAvatar
-          show-active-proposals
           :space="space"
           :size="50"
           class="border-skin-bg rounded-md border-[3px]"

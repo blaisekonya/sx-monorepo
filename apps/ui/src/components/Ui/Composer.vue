@@ -48,13 +48,9 @@ watch(model, () => {
 </script>
 
 <template>
-  <div
-    ref="editorContainerRef"
-    class="s-base"
-    :class="{
-      's-error': showError
-    }"
-  >
+  <div ref="editorContainerRef" class="s-base" :class="{
+    's-error': showError
+  }">
     <div class="s-label s-toolbar">
       <label class="text-sm hidden s-label-char-count whitespace-nowrap">
         <template v-if="inputValueLength >= 0 && definition.maxLength">
@@ -63,67 +59,44 @@ watch(model, () => {
       </label>
       <div class="grow"></div>
       <UiTooltip title="Add heading text">
-        <button
-          type="button"
-          class="p-1 size-[26px] leading-[18px] hover:text-skin-link rounded focus-visible:ring-1"
-          @click="editor.heading"
-        >
+        <button type="button" class="p-1 size-[26px] leading-[18px] hover:text-skin-link rounded focus-visible:ring-1"
+          @click="editor.heading">
           H
         </button>
       </UiTooltip>
       <UiTooltip title="Add bold text">
-        <button
-          type="button"
+        <button type="button"
           class="p-1 size-[26px] leading-[18px] font-bold hover:text-skin-link rounded focus-visible:ring-1"
-          @click="editor.bold"
-        >
+          @click="editor.bold">
           B
         </button>
       </UiTooltip>
       <UiTooltip title="Add italic text">
-        <button
-          type="button"
+        <button type="button"
           class="p-1 size-[26px] leading-[18px] italic hover:text-skin-link rounded focus-visible:ring-1"
-          @click="editor.italic"
-        >
+          @click="editor.italic">
           <span class="font-display !text-[17px] !font-normal">I</span>
         </button>
       </UiTooltip>
       <UiTooltip title="Add a link" class="size-[26px]">
-        <button
-          type="button"
+        <button type="button"
           class="p-1 size-[26px] leading-[18px] italic hover:text-skin-link rounded focus-visible:ring-1"
-          @click="editor.link"
-        >
+          @click="editor.link">
           <IS-link class="size-[18px]" />
         </button>
       </UiTooltip>
       <UiTooltip title="Add an image" class="size-[26px]">
         <label
-          class="flex justify-center p-1 size-[26px] leading-[18px] italic hover:text-skin-link rounded focus-visible:ring-1"
-        >
-          <input
-            ref="editorFileInputRef"
-            type="file"
-            accept="image/*"
-            class="hidden"
-            :disabled="editor.uploading.value"
-          />
-          <UiLoading
-            v-if="editor.uploading.value"
-            :size="14"
-            class="inline-block"
-          />
+          class="flex justify-center p-1 size-[26px] leading-[18px] italic hover:text-skin-link rounded focus-visible:ring-1">
+          <input ref="editorFileInputRef" type="file" accept="image/*" class="hidden"
+            :disabled="editor.uploading.value" />
+          <UiLoading v-if="editor.uploading.value" :size="14" class="inline-block" />
           <IS-photo v-else class="size-[18px]" />
         </label>
       </UiTooltip>
     </div>
-    <textarea
-      ref="editorRef"
-      v-model.trim="model"
-      :placeholder="definition?.examples ? definition.examples[0] : ''"
-      class="s-input h-[260px]"
-    />
+    <textarea ref="editorRef" v-model.trim="model" :placeholder="definition?.examples ? definition.examples[0] : ''"
+      class="s-input h-[260px]" />
     <div v-if="showError" class="s-input-error-message leading-6 mt-2">
       <span v-text="error" />
       <slot name="error-suffix" />

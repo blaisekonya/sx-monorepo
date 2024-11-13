@@ -17,10 +17,8 @@ defineEmits<{
     <template #header>
       <h3 v-text="'Reason'" />
     </template>
-    <div
-      class="vote-reason p-4 whitespace-pre-line text-skin-link break-words"
-      v-html="autoLinkText(vote?.reason || '')"
-    />
+    <div class="vote-reason p-4 whitespace-pre-line text-skin-link break-words"
+      v-html="autoLinkText(vote?.reason || '')" />
   </UiModal>
 </template>
 

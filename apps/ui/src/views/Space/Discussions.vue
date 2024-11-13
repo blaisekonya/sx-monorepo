@@ -31,12 +31,7 @@ watchEffect(() => setTitle(`Discussions - ${props.space.name}`));
   <div>
     <div v-if="discussionsUrl" class="flex p-4">
       <div class="flex-grow">
-        <a
-          :href="discussionsUrl"
-          target="_blank"
-          class="inline-block"
-          tabindex="-1"
-        >
+        <a :href="discussionsUrl" target="_blank" class="inline-block" tabindex="-1">
           <UiButton class="flex items-center gap-2 justify-center">
             <IC-discourse class="size-[22px] shrink-0" />
             Join the discussion

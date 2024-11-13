@@ -80,4 +80,11 @@ function handleContactEdit(contact) {
       />
     </teleport>
   </div>
+  <teleport to="#modal">
+    <ModalEditContact
+      :open="modalOpen.editContact"
+      :initial-state="modalState.editContact"
+      @close="modalOpen.editContact = false"
+    />
+  </teleport>
 </template>

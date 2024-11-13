@@ -81,39 +81,19 @@ function handleStrategySave(value: Record<string, any>) {
     <h4 class="eyebrow mb-2 font-medium">Active</h4>
     <div class="space-y-3 mb-4">
       <div v-if="model.length === 0">No strategies selected</div>
-      <FormStrategiesStrategyActive
-        v-for="strategy in model"
-        :key="strategy.id"
-        :network-id="networkId"
-        :strategy="strategy"
-        @edit-strategy="editStrategy"
-        @delete-strategy="removeStrategy"
-      />
+      <FormStrategiesStrategyActive v-for="strategy in model" :key="strategy.id" :network-id="networkId"
+        :strategy="strategy" @edit-strategy="editStrategy" @delete-strategy="removeStrategy" />
     </div>
     <h4 class="eyebrow mb-2 font-medium">Available</h4>
     <div v-if="availableStrategies.length === 0">No strategies available</div>
     <div v-else class="space-y-3">
-      <ButtonStrategy
-        v-for="strategy in availableStrategies"
-        :key="strategy.address"
-        :disabled="
-          limitReached || (unique && !!activeStrategiesMap[strategy.name])
-        "
-        :strategy="strategy"
-        @click="addStrategy(strategy)"
-      />
+      <ButtonStrategy v-for="strategy in availableStrategies" :key="strategy.address" :disabled="limitReached || (unique && !!activeStrategiesMap[strategy.name])
+        " :strategy="strategy" @click="addStrategy(strategy)" />
     </div>
     <teleport to="#modal">
-      <ModalEditStrategy
-        v-if="editedStrategy"
-        :open="editStrategyModalOpen"
-        :network-id="networkId"
-        :strategy-address="editedStrategy.address"
-        :definition="editedStrategy.paramsDefinition"
-        :initial-state="editedStrategy.params"
-        @close="editStrategyModalOpen = false"
-        @save="handleStrategySave"
-      />
+      <ModalEditStrategy v-if="editedStrategy" :open="editStrategyModalOpen" :network-id="networkId"
+        :strategy-address="editedStrategy.address" :definition="editedStrategy.paramsDefinition"
+        :initial-state="editedStrategy.params" @close="editStrategyModalOpen = false" @save="handleStrategySave" />
     </teleport>
   </div>
 </template>

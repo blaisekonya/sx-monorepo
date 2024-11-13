@@ -38,19 +38,13 @@ function handleRemoveDraft(id: string) {
     </template>
     <div>
       <div v-if="spaceDrafts.length > 0">
-        <div
-          v-for="proposal in spaceDrafts"
-          :key="proposal.id"
-          class="py-3 px-4 border-b last:border-b-0 flex justify-between items-center space-x-2"
-        >
-          <AppLink
-            :to="{
-              name: 'space-editor',
-              params: { space: `${networkId}:${space}`, key: proposal.key },
-              query: route.query
-            }"
-            @click="$emit('close')"
-          >
+        <div v-for="proposal in spaceDrafts" :key="proposal.id"
+          class="py-3 px-4 border-b last:border-b-0 flex justify-between items-center space-x-2">
+          <AppLink :to="{
+            name: 'space-editor',
+            params: { space: `${networkId}:${space}`, key: proposal.key },
+            query: route.query
+          }" @click="$emit('close')">
             {{ proposal.title || 'Untitled' }}
             <span class="text-skin-text">#{{ proposal.key }}</span>
           </AppLink>

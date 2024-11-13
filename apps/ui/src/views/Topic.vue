@@ -77,10 +77,7 @@ onMounted(async () => {
     <div v-if="loading" class="text-center p-4">
       <UiLoading />
     </div>
-    <div
-      v-else-if="failed"
-      class="flex items-center text-skin-link space-x-2 p-4"
-    >
+    <div v-else-if="failed" class="flex items-center text-skin-link space-x-2 p-4">
       <IH-exclamation-circle class="shrink-0" />
       <span>Error while loading the topic.</span>
     </div>
@@ -88,34 +85,17 @@ onMounted(async () => {
       <h1 class="text-[40px] leading-[1.1em]">
         {{ topic?.title }}
       </h1>
-      <div
-        v-for="(reply, i) in replies"
-        :key="i"
-        class="border-b last:border-b-0 py-4"
-      >
+      <div v-for="(reply, i) in replies" :key="i" class="border-b last:border-b-0 py-4">
         <div class="flex gap-2.5 items-center">
-          <a
-            :href="reply.user_url"
-            target="_blank"
-            class="shrink-0 rounded-full"
-          >
-            <img
-              :src="reply.avatar_template"
-              class="rounded-full inline-block bg-skin-border size-[32px]"
-            />
+          <a :href="reply.user_url" target="_blank" class="shrink-0 rounded-full">
+            <img :src="reply.avatar_template" class="rounded-full inline-block bg-skin-border size-[32px]" />
           </a>
           <div class="flex flex-col leading-4 gap-1">
             <a :href="reply.user_url" target="_blank" v-text="reply.name" />
-            <span
-              class="text-skin-text text-sm"
-              v-text="_rt(reply.created_at)"
-            />
+            <span class="text-skin-text text-sm" v-text="_rt(reply.created_at)" />
           </div>
         </div>
-        <UiMarkdown
-          class="text-md pt-3 pb-2"
-          :body="toMarkdown(reply.cooked)"
-        />
+        <UiMarkdown class="text-md pt-3 pb-2" :body="toMarkdown(reply.cooked)" />
         <div class="text-sm space-x-2.5 flex mt-2">
           <div class="items-center flex gap-1">
             <IH-thumb-up /> {{ reply.like_count }}

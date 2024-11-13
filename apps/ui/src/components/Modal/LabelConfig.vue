@@ -81,20 +81,13 @@ watch(
       <h3 v-text="initialState ? 'Edit label' : 'Add label'" />
     </template>
     <div class="flex items-center max-w-md gap-3 pt-4 px-4">
-      <UiProposalLabel
-        :label="form.name || 'label preview'"
-        :color="form.color"
-      />
+      <UiProposalLabel :label="form.name || 'label preview'" :color="form.color" />
       <div class="truncate">
         {{ form.description || 'This is a description preview' }}
       </div>
     </div>
     <div class="s-box p-4">
-      <UiForm
-        :model-value="form"
-        :error="formErrors"
-        :definition="definition"
-      />
+      <UiForm :model-value="form" :error="formErrors" :definition="definition" />
     </div>
     <template #footer>
       <UiButton class="w-full" :disabled="!formValid" @click="handleSubmit">

@@ -33,28 +33,24 @@ function downloadExecution(execution: ProposalExecution) {
 <template>
   <div
     v-for="execution in executions"
-    :key="`${execution.chainId}:${execution.safeAddress}`"
+    :key="`${execution.networkId}:${execution.safeAddress}`"
     class="x-block !border-x rounded-lg mb-3 last:mb-0"
   >
     <a
       :href="
-        getGenericExplorerUrl(
-          execution.chainId,
-          execution.safeAddress,
-          'address'
-        ) || undefined
+        getTreasuryExplorerUrl(execution.networkId, execution.safeAddress) ||
+        undefined
       "
       target="_blank"
       class="flex justify-between items-center px-4 py-3"
       :class="{
-        'pointer-events-none': !getGenericExplorerUrl(
-          execution.chainId,
-          execution.safeAddress,
-          'address'
+        'pointer-events-none': !getTreasuryExplorerUrl(
+          execution.networkId,
+          execution.safeAddress
         )
       }"
     >
-      <UiBadgeNetwork :chain-id="execution.chainId" class="mr-3 shrink-0">
+      <UiBadgeNetwork :id="execution.networkId" class="mr-3 shrink-0">
         <UiStamp
           :id="execution.safeAddress"
           type="avatar"
@@ -94,7 +90,7 @@ function downloadExecution(execution: ProposalExecution) {
     <TransactionsListItem
       v-for="(tx, i) in execution.transactions"
       :key="i"
-      :chain-id="execution.chainId"
+      :network-id="execution.networkId"
       :tx="tx"
     />
     <ProposalExecutionActions
@@ -102,8 +98,8 @@ function downloadExecution(execution: ProposalExecution) {
         proposal.executions &&
         proposal.executions.length > 0 &&
         proposal.scores.length > 0 &&
-        getProposalCurrentQuorum(proposal.network, proposal) >=
-          proposal.quorum &&
+        toBigIntOrNumber(proposal.scores_total) >=
+          toBigIntOrNumber(proposal.quorum) &&
         toBigIntOrNumber(proposal.scores[0]) >
           toBigIntOrNumber(proposal.scores[1]) &&
         proposal.has_execution_window_opened

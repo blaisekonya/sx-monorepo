@@ -55,33 +55,18 @@ debouncedWatch(
 </script>
 
 <template>
-  <div
-    v-if="preview?.meta || (showDefault && !previewLoading)"
-    class="flex items-center px-4 py-3 border rounded-lg"
+  <div v-if="preview?.meta || (showDefault && !previewLoading)" class="flex items-center px-4 py-3 border rounded-lg"
     :class="{
       'gap-2': showDefault,
       '!gap-4': preview?.meta?.title || previewIconResolved
-    }"
-  >
+    }">
     <template v-if="preview && (preview?.meta?.title || previewIconResolved)">
-      <img
-        v-if="previewIconResolved"
-        :src="preview.links.icon[0].href"
-        width="32"
-        height="32"
-        class="bg-white rounded shrink-0"
-        :alt="preview.meta.title"
-      />
+      <img v-if="previewIconResolved" :src="preview.links.icon[0].href" width="32" height="32"
+        class="bg-white rounded shrink-0" :alt="preview.meta.title" />
       <div class="flex flex-col truncate">
-        <div
-          class="text-skin-link truncate"
-          v-text="preview.meta.title || props.url"
-        />
-        <div
-          v-if="preview.meta.description"
-          class="text-[17px] text-skin-text truncate"
-          v-text="preview.meta.description"
-        />
+        <div class="text-skin-link truncate" v-text="preview.meta.title || props.url" />
+        <div v-if="preview.meta.description" class="text-[17px] text-skin-text truncate"
+          v-text="preview.meta.description" />
       </div>
     </template>
     <template v-else-if="showDefault">

@@ -103,34 +103,23 @@ watch(loading, () => {
     <div class="s-box p-4">
       <template v-if="logged && proposal">
         <div class="flex flex-col items-center">
-          <img
-            :src="proposal.proposer.metadata.icons[0]"
-            class="w-[48px] mb-3"
-          />
+          <img :src="proposal.proposer.metadata.icons[0]" class="w-[48px] mb-3" />
           <span class="text-center mb-2">
             <span class="font-medium text-skin-link">{{
               proposal.proposer.metadata.name
-            }}</span>
+              }}</span>
             <span> is connected</span>
           </span>
           <span>You can start interacting with the app.</span>
         </div>
       </template>
-      <UiForm
-        v-else-if="step === 'INIT'"
-        :model-value="form"
-        :error="formErrors"
-        :definition="definition"
-      />
-      <div
-        v-else-if="step === 'APPROVE' && proposal"
-        class="flex flex-col items-center"
-      >
+      <UiForm v-else-if="step === 'INIT'" :model-value="form" :error="formErrors" :definition="definition" />
+      <div v-else-if="step === 'APPROVE' && proposal" class="flex flex-col items-center">
         <img :src="proposal.proposer.metadata.icons[0]" class="w-[48px] mb-3" />
         <span class="text-center mb-2">
           <span class="font-medium text-skin-link">{{
             proposal.proposer.metadata.name
-          }}</span>
+            }}</span>
           <span> wants to connect</span>
         </span>
         <div class="text-[17px] font-medium text-skin-link">
@@ -139,33 +128,19 @@ watch(loading, () => {
       </div>
     </div>
     <template #footer>
-      <UiButton
-        v-if="logged"
-        class="w-full"
-        @click="
-          logout();
-          step = 'INIT';
-        "
-      >
+      <UiButton v-if="logged" class="w-full" @click="
+        logout();
+      step = 'INIT';
+      ">
         Disconnect
       </UiButton>
-      <UiButton
-        v-else-if="step === 'INIT'"
-        class="w-full"
-        :loading="loading"
-        :disabled="Object.keys(formErrors).length > 0"
-        @click="handleSubmit"
-      >
+      <UiButton v-else-if="step === 'INIT'" class="w-full" :loading="loading"
+        :disabled="Object.keys(formErrors).length > 0" @click="handleSubmit">
         Confirm
       </UiButton>
       <div v-else-if="step === 'APPROVE' && approveFn" class="flex space-x-3">
         <UiButton class="w-full" @click="handleApprove(false)">Reject</UiButton>
-        <UiButton
-          :primary="true"
-          :loading="approving"
-          class="w-full"
-          @click="handleApprove(true)"
-        >
+        <UiButton :primary="true" :loading="approving" class="w-full" @click="handleApprove(true)">
           Approve
         </UiButton>
       </div>

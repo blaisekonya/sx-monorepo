@@ -180,7 +180,6 @@ watchEffect(() => setTitle('Create space'));
       :voting-strategies="votingStrategies"
       :execution-strategies="executionStrategies"
       :controller="controller"
-      @back="confirming = false"
     />
     <div v-else class="pt-5 flex max-w-[50rem] mx-auto px-4">
       <div

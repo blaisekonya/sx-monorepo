@@ -125,18 +125,10 @@ watch(
       <h3>Add members</h3>
     </template>
     <div class="s-box p-4">
-      <UiForm
-        :model-value="form"
-        :error="formErrors"
-        :definition="definition"
-      />
+      <UiForm :model-value="form" :error="formErrors" :definition="definition" />
     </div>
     <template #footer>
-      <UiButton
-        class="w-full"
-        :disabled="Object.keys(formErrors).length > 0"
-        @click="handleSubmit"
-      >
+      <UiButton class="w-full" :disabled="Object.keys(formErrors).length > 0" @click="handleSubmit">
         Add
       </UiButton>
     </template>

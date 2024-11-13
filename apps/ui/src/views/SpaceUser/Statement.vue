@@ -68,58 +68,33 @@ watchEffect(() =>
   <div class="p-4">
     <UiLoading v-if="loading" class="block" />
     <template v-else-if="statement">
-      <EditorStatement
-        v-if="isEditMode"
-        v-model="statement"
-        @close="isEditMode = false"
-      />
+      <EditorStatement v-if="isEditMode" v-model="statement" @close="isEditMode = false" />
       <div v-else class="flex flex-col space-y-2.5">
         <div class="relative">
-          <div
-            class="inline-block border rounded-full pl-2 pr-[10px] pb-0.5 text-skin-heading"
-          >
+          <div class="inline-block border rounded-full pl-2 pr-[10px] pb-0.5 text-skin-heading">
             <template v-if="statement.status === 'ACTIVE'">
-              <IS-status-online
-                class="text-skin-success inline-block size-[17px] mb-[1px]"
-              />
+              <IS-status-online class="text-skin-success inline-block size-[17px] mb-[1px]" />
               Active
             </template>
             <template v-else>
-              <div
-                class="size-[8px] mx-1 bg-gray-500 rounded-full inline-block"
-              />
+              <div class="size-[8px] mx-1 bg-gray-500 rounded-full inline-block" />
               Inactive
             </template>
           </div>
-          <UiTooltip
-            v-if="compareAddresses(web3.account, userId)"
-            title="Edit"
-            class="!absolute right-0"
-          >
+          <UiTooltip v-if="compareAddresses(web3.account, userId)" title="Edit" class="!absolute right-0">
             <UiButton class="!px-0 w-[46px]" @click="isEditMode = true">
               <IH-pencil class="inline-block" />
             </UiButton>
           </UiTooltip>
         </div>
         <template v-if="statement.statement">
-          <UiMarkdown
-            class="text-skin-heading max-w-[592px]"
-            :body="statement.statement"
-          />
+          <UiMarkdown class="text-skin-heading max-w-[592px]" :body="statement.statement" />
           <div v-if="shouldShowSource && statement.source">
             <h4 class="eyebrow text-skin-text mb-2">Source</h4>
-            <a
-              :href="SOURCE_ICONS[statement.source].link"
-              target="_blank"
-              class="flex items-center space-x-1"
-            >
-              <component
-                :is="SOURCE_ICONS[statement.source].icon"
-                class="max-h-[25px] max-w-[85px] w-auto text-skin-link"
-              />
-              <IH-arrow-sm-right
-                class="-rotate-45 text-skin-link relative top-[1px]"
-              />
+            <a :href="SOURCE_ICONS[statement.source].link" target="_blank" class="flex items-center space-x-1">
+              <component :is="SOURCE_ICONS[statement.source].icon"
+                class="max-h-[25px] max-w-[85px] w-auto text-skin-link" />
+              <IH-arrow-sm-right class="-rotate-45 text-skin-link relative top-[1px]" />
             </a>
           </div>
         </template>

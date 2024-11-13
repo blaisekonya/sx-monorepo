@@ -94,7 +94,6 @@ const space = computed(() =>
             :labels="proposal.labels"
             :space="space"
             inline
-            with-link
           />
           <IH-check
             v-if="

@@ -23,13 +23,8 @@ withDefaults(
 
 <template>
   <UiContainerSettings :title="title" :description="description">
-    <StrategiesConfigurator
-      :model-value="model"
-      :network-id="networkId"
-      :unique="unique"
-      :available-strategies="availableStrategies"
-      :default-params="defaultParams"
-      @update:model-value="value => (model = value)"
-    />
+    <StrategiesConfigurator :model-value="model" :network-id="networkId" :unique="unique"
+      :available-strategies="availableStrategies" :default-params="defaultParams"
+      @update:model-value="value => (model = value)" />
   </UiContainerSettings>
 </template>

@@ -33,11 +33,7 @@ onMounted(() => load());
           </div>
           <div class="md:flex items-center mb-5">
             <div class="flex items-center flex-1 mb-3 md:mb-0">
-              <img
-                class="size-[80px] rounded-lg mr-3"
-                :src="getUrl(app.avatar) || ''"
-                :alt="app.name"
-              />
+              <img class="size-[80px] rounded-lg mr-3" :src="getUrl(app.avatar) || ''" :alt="app.name" />
               <div class="flex-1 leading-5 mb-1">
                 <h1 v-text="app.name" />
                 <div v-text="app.category" />
@@ -49,38 +45,21 @@ onMounted(() => load());
           </div>
           <div class="md:flex md:space-x-4">
             <div class="space-y-5 p-4 flex-grow border rounded-lg h-fit mb-4">
-              <div
-                v-if="app.images"
-                class="flex overflow-y-scroll no-scrollbar space-x-2"
-              >
-                <img
-                  v-for="(image, i) in app.images.split(',')"
-                  :key="i"
-                  :src="image"
-                  :alt="app.name"
-                  class="max-w-[96%]"
-                />
+              <div v-if="app.images" class="flex overflow-y-scroll no-scrollbar space-x-2">
+                <img v-for="(image, i) in app.images.split(',')" :key="i" :src="image" :alt="app.name"
+                  class="max-w-[96%]" />
               </div>
               <div>
                 <div class="eyebrow mb-2">Overview</div>
-                <div
-                  class="text-md text-skin-link whitespace-pre-line"
-                  v-text="app.overview"
-                />
+                <div class="text-md text-skin-link whitespace-pre-line" v-text="app.overview" />
               </div>
               <div v-if="app.how">
                 <div class="eyebrow mb-2">How it works</div>
-                <div
-                  class="text-md text-skin-link whitespace-pre-line"
-                  v-text="app.how"
-                />
+                <div class="text-md text-skin-link whitespace-pre-line" v-text="app.how" />
               </div>
               <div v-if="app.start">
                 <div class="eyebrow mb-2">Get started</div>
-                <div
-                  class="text-md text-skin-link whitespace-pre-line"
-                  v-text="app.start"
-                />
+                <div class="text-md text-skin-link whitespace-pre-line" v-text="app.start" />
               </div>
               <div v-if="app.form">
                 <a :href="app.form" target="_blank" class="text-skin-text">
@@ -88,9 +67,7 @@ onMounted(() => load());
                 </a>
               </div>
             </div>
-            <div
-              class="border rounded-lg md:w-[300px] shrink-0 h-fit p-4 space-y-3 mb-4"
-            >
+            <div class="border rounded-lg md:w-[300px] shrink-0 h-fit p-4 space-y-3 mb-4">
               <div>
                 <h4 class="eyebrow" v-text="'Built by'" />
                 {{ app.author }}

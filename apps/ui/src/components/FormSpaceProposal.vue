@@ -73,18 +73,13 @@ watchEffect(() => {
 <template>
   <h4 class="eyebrow mb-2 font-medium">Proposal Validation</h4>
   <div class="s-box">
-    <UiWrapperInput
-      :definition="{
-        title: 'Validation',
-        tooltip:
-          'The type of validation used to determine if a user can create a proposal. (Enforced on all future proposals)'
-      }"
-    >
-      <button
-        type="button"
-        class="s-input !flex flex-row justify-between items-center"
-        @click="isSelectValidationModalOpen = true"
-      >
+    <UiWrapperInput :definition="{
+      title: 'Validation',
+      tooltip:
+        'The type of validation used to determine if a user can create a proposal. (Enforced on all future proposals)'
+    }">
+      <button type="button" class="s-input !flex flex-row justify-between items-center"
+        @click="isSelectValidationModalOpen = true">
         <div>
           {{ VALIDATION_TYPES_INFO[proposalValidation.name].label }}
         </div>
@@ -94,28 +89,12 @@ watchEffect(() => {
   </div>
   <h4 class="eyebrow mb-2 font-medium">Proposal</h4>
   <div class="s-box mb-4">
-    <UiInputString
-      v-model="guidelines"
-      :definition="GUIDELINES_DEFINITION"
-      :error="errors.guidelines"
-    />
-    <UiTextarea
-      v-model="template"
-      :definition="TEMPLATE_DEFINITION"
-      :error="errors.template"
-      class="!min-h-[140px]"
-    />
+    <UiInputString v-model="guidelines" :definition="GUIDELINES_DEFINITION" :error="errors.guidelines" />
+    <UiTextarea v-model="template" :definition="TEMPLATE_DEFINITION" :error="errors.template" class="!min-h-[140px]" />
   </div>
   <teleport to="#modal">
-    <ModalSelectValidation
-      type="proposal"
-      :open="isSelectValidationModalOpen"
-      :network-id="networkId"
-      :default-chain-id="snapshotChainId"
-      :space="space"
-      :current="proposalValidation"
-      @close="isSelectValidationModalOpen = false"
-      @save="value => (proposalValidation = value)"
-    />
+    <ModalSelectValidation type="proposal" :open="isSelectValidationModalOpen" :network-id="networkId"
+      :default-chain-id="snapshotChainId" :space="space" :current="proposalValidation"
+      @close="isSelectValidationModalOpen = false" @save="value => (proposalValidation = value)" />
   </teleport>
 </template>

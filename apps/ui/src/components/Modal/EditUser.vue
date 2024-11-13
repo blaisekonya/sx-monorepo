@@ -103,12 +103,7 @@ async function handleSubmit() {
       <UiForm v-model="form" :error="formErrors" :definition="definition" />
     </div>
     <template #footer>
-      <UiButton
-        class="w-full"
-        :disabled="Object.keys(formErrors).length > 0"
-        :loading="sending"
-        @click="handleSubmit"
-      >
+      <UiButton class="w-full" :disabled="Object.keys(formErrors).length > 0" :loading="sending" @click="handleSubmit">
         Save
       </UiButton>
     </template>

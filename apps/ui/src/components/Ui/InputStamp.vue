@@ -45,42 +45,22 @@ async function handleFileChange(e: Event) {
 </script>
 
 <template>
-  <button
-    type="button"
-    v-bind="$attrs"
+  <button type="button" v-bind="$attrs"
     class="relative group max-w-max cursor-pointer mb-3 border-4 border-skin-bg rounded-lg overflow-hidden bg-skin-border"
-    @click="openFilePicker()"
-  >
-    <img
-      v-if="imgUrl"
-      :src="imgUrl"
-      class="size-[80px] object-cover group-hover:opacity-80"
-      :class="{
+    @click="openFilePicker()">
+    <img v-if="imgUrl" :src="imgUrl" class="size-[80px] object-cover group-hover:opacity-80" :class="{
+      'opacity-80': isUploadingImage
+    }" />
+    <UiStamp v-else :id="definition.default" :size="80" class="pointer-events-none !rounded-none group-hover:opacity-80"
+      type="space" :class="{
         'opacity-80': isUploadingImage
-      }"
-    />
-    <UiStamp
-      v-else
-      :id="definition.default"
-      :size="80"
-      class="pointer-events-none !rounded-none group-hover:opacity-80"
-      type="space"
-      :class="{
-        'opacity-80': isUploadingImage
-      }"
-    />
+      }" />
     <div
-      class="pointer-events-none absolute group-hover:visible inset-0 z-10 flex flex-row size-full items-center content-center justify-center"
-    >
+      class="pointer-events-none absolute group-hover:visible inset-0 z-10 flex flex-row size-full items-center content-center justify-center">
       <UiLoading v-if="isUploadingImage" class="block z-10" />
       <IH-pencil v-else class="invisible text-skin-link group-hover:visible" />
     </div>
   </button>
-  <input
-    ref="fileInput"
-    type="file"
-    accept="image/jpg, image/jpeg, image/png"
-    class="hidden"
-    @change="handleFileChange"
-  />
+  <input ref="fileInput" type="file" accept="image/jpg, image/jpeg, image/png" class="hidden"
+    @change="handleFileChange" />
 </template>

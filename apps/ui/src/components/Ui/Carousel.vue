@@ -1,11 +1,8 @@
 <template>
   <div class="relative">
+    <div class="absolute z-10 top-0 bottom-0 left-0 w-[320px] max-w-[20%] bg-gradient-to-r from-skin-bg to-skin-bg/0" />
     <div
-      class="absolute z-10 top-0 bottom-0 left-0 w-[320px] max-w-[20%] bg-gradient-to-r from-skin-bg to-skin-bg/0"
-    />
-    <div
-      class="absolute z-10 top-0 bottom-0 right-0 w-[320px] max-w-[20%] bg-gradient-to-l from-skin-bg to-skin-bg/0"
-    />
+      class="absolute z-10 top-0 bottom-0 right-0 w-[320px] max-w-[20%] bg-gradient-to-l from-skin-bg to-skin-bg/0" />
     <div class="relative flex overflow-hidden">
       <div class="carousel flex">
         <slot />

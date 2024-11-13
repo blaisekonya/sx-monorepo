@@ -116,7 +116,7 @@ watch(
         class="w-full flex justify-between items-center px-4 py-3"
       >
         <UiBadgeNetwork
-          :chain-id="treasury.network"
+          :id="treasury.networkId"
           class="mr-3 shrink-0 size-fit"
           :class="{
             'opacity-40': disabled
@@ -247,17 +247,18 @@ watch(
 
     <teleport to="#modal">
       <ModalSendToken
-        v-if="treasury"
+        v-if="treasury && treasury.networkId"
         :open="modalOpen.sendToken"
         :address="treasury.wallet"
         :network="treasury.network"
+        :network-id="treasury.networkId"
         :extra-contacts="extraContacts"
         :initial-state="modalState.sendToken"
         @close="modalOpen.sendToken = false"
         @add="addTx"
       />
       <ModalSendNft
-        v-if="treasury"
+        v-if="treasury && treasury.networkId"
         :open="modalOpen.sendNft"
         :address="treasury.wallet"
         :network="treasury.network"
@@ -267,16 +268,17 @@ watch(
         @add="addTx"
       />
       <ModalStakeToken
-        v-if="treasury"
+        v-if="treasury && treasury.networkId"
         :open="modalOpen.stakeToken"
         :address="treasury.wallet"
         :network="treasury.network"
+        :network-id="treasury.networkId"
         :initial-state="modalState.stakeToken"
         @close="modalOpen.stakeToken = false"
         @add="addTx"
       />
       <ModalTransaction
-        v-if="treasury"
+        v-if="treasury && treasury.networkId"
         :open="modalOpen.contractCall"
         :network="treasury.network"
         :extra-contacts="extraContacts"

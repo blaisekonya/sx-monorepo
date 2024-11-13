@@ -44,14 +44,9 @@ function handleDeleteLabel(id: string) {
 <template>
   <div class="flex flex-col gap-3">
     <div v-for="(label, i) in labels" :key="i">
-      <div
-        class="flex justify-between items-center rounded-lg border px-4 py-3 text-skin-link"
-      >
+      <div class="flex justify-between items-center rounded-lg border px-4 py-3 text-skin-link">
         <div class="flex items-center max-w-md gap-3">
-          <UiProposalLabel
-            :label="label.name || 'label preview'"
-            :color="label.color"
-          />
+          <UiProposalLabel :label="label.name || 'label preview'" :color="label.color" />
           <div class="truncate">
             {{ label.description }}
           </div>
@@ -66,21 +61,14 @@ function handleDeleteLabel(id: string) {
         </div>
       </div>
     </div>
-    <UiButton
-      v-if="labels.length < 10"
-      class="w-full flex items-center justify-center gap-1"
-      @click="() => setModalStatus(true)"
-    >
+    <UiButton v-if="labels.length < 10" class="w-full flex items-center justify-center gap-1"
+      @click="() => setModalStatus(true)">
       <IH-plus class="shrink-0 size-[16px]" />
       Add label
     </UiButton>
   </div>
   <teleport to="#modal">
-    <ModalLabelConfig
-      :open="modalOpen"
-      :initial-state="labels.find(l => l.id === activeLabelId)"
-      @close="setModalStatus"
-      @add="handleSubmit"
-    />
+    <ModalLabelConfig :open="modalOpen" :initial-state="labels.find(l => l.id === activeLabelId)"
+      @close="setModalStatus" @add="handleSubmit" />
   </teleport>
 </template>

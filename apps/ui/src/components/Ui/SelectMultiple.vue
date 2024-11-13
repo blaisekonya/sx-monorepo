@@ -65,26 +65,15 @@ watch(model, () => {
 </script>
 
 <template>
-  <UiWrapperInput
-    :definition="definition"
-    :error="error"
-    :dirty="dirty"
-    class="relative"
-  >
+  <UiWrapperInput :definition="definition" :error="error" :dirty="dirty" class="relative">
     <Listbox v-slot="{ open }" v-model="inputValue" multiple as="div">
       <Float adaptive-width strategy="fixed" placement="bottom-end">
-        <ListboxButton
-          class="s-input !flex items-start justify-between"
-          :class="{
-            '!rounded-b-none': open
-          }"
-        >
-          <span
-            class="text-left"
-            :class="{
-              '!text-skin-text/40': inputValue.length === 0
-            }"
-          >
+        <ListboxButton class="s-input !flex items-start justify-between" :class="{
+          '!rounded-b-none': open
+        }">
+          <span class="text-left" :class="{
+            '!text-skin-text/40': inputValue.length === 0
+          }">
             {{ currentValue }}
           </span>
           <div class="shrink-0 relative top-1">
@@ -93,31 +82,18 @@ watch(model, () => {
           </div>
         </ListboxButton>
         <ListboxOptions
-          class="w-full bg-skin-border rounded-b-lg border-t-skin-text/10 border shadow-xl overflow-hidden"
-        >
+          class="w-full bg-skin-border rounded-b-lg border-t-skin-text/10 border shadow-xl overflow-hidden">
           <div class="max-h-[208px] overflow-y-auto">
-            <ListboxOption
-              v-for="item in definition.options"
-              v-slot="{ active, selected, disabled }"
-              :key="item.id"
-              :value="item.id"
-              :disabled="isItemDisabled(item.id)"
-              as="template"
-            >
-              <li
-                class="flex items-center justify-between px-3"
-                :class="{
-                  'bg-skin-bg/25': active
-                }"
-              >
+            <ListboxOption v-for="item in definition.options" v-slot="{ active, selected, disabled }" :key="item.id"
+              :value="item.id" :disabled="isItemDisabled(item.id)" as="template">
+              <li class="flex items-center justify-between px-3" :class="{
+                'bg-skin-bg/25': active
+              }">
                 <component :is="item.icon" class="size-[20px] mr-2" />
-                <span
-                  class="w-full py-2 text-skin-link"
-                  :class="{
-                    'opacity-40': disabled,
-                    'cursor-pointer': !disabled
-                  }"
-                >
+                <span class="w-full py-2 text-skin-link" :class="{
+                  'opacity-40': disabled,
+                  'cursor-pointer': !disabled
+                }">
                   {{ item.name || item.id }}
                 </span>
                 <IH-check v-if="selected" class="text-skin-success" />

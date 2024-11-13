@@ -94,13 +94,10 @@ onMounted(() => {
 </script>
 
 <template>
-  <Combobox
-    v-model="network"
-    :definition="{
-      ...definition,
-      enum: options.map(c => c.id),
-      options: options,
-      examples: ['Select network']
-    }"
-  />
+  <Combobox v-model="network" :definition="{
+    ...definition,
+    enum: options.map(c => c.id),
+    options: options,
+    examples: ['Select network']
+  }" />
 </template>

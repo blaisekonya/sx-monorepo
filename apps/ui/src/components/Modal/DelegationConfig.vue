@@ -35,14 +35,14 @@ const definition = computed(() => {
     properties: {
       ...(!offchainNetworks.includes(props.networkId)
         ? {
-            name: {
-              type: 'string',
-              title: 'Name',
-              minLength: 1,
-              maxLength: 32,
-              examples: ['Delegation API name']
-            }
+          name: {
+            type: 'string',
+            title: 'Name',
+            minLength: 1,
+            maxLength: 32,
+            examples: ['Delegation API name']
           }
+        }
         : {}),
       apiType: {
         type: ['string', 'null'],
@@ -56,34 +56,34 @@ const definition = computed(() => {
       },
       ...(form.value.apiType !== null
         ? {
-            apiUrl: {
-              type: 'string',
-              format: 'uri',
-              title: 'Delegation API URL',
-              examples: [
-                'https://api.thegraph.com/subgraphs/name/arr00/uniswap-governance-v2'
-              ]
-            },
-            chainId: {
-              type: ['string', 'number', 'null'],
-              format: 'network',
-              networkId: props.networkId,
-              networksListKind: 'full',
-              title: 'Delegation contract network',
-              nullable: true
-            },
-            ...(form.value.chainId !== null
-              ? {
-                  contractAddress: {
-                    type: 'string',
-                    title: 'Delegation contract address',
-                    examples: ['0x0000…'],
-                    format: 'address',
-                    minLength: 1
-                  }
-                }
-              : {})
-          }
+          apiUrl: {
+            type: 'string',
+            format: 'uri',
+            title: 'Delegation API URL',
+            examples: [
+              'https://api.thegraph.com/subgraphs/name/arr00/uniswap-governance-v2'
+            ]
+          },
+          chainId: {
+            type: ['string', 'number', 'null'],
+            format: 'network',
+            networkId: props.networkId,
+            networksListKind: 'full',
+            title: 'Delegation contract network',
+            nullable: true
+          },
+          ...(form.value.chainId !== null
+            ? {
+              contractAddress: {
+                type: 'string',
+                title: 'Delegation contract address',
+                examples: ['0x0000…'],
+                format: 'address',
+                minLength: 1
+              }
+            }
+            : {})
+        }
         : {})
     }
   };
@@ -128,48 +128,26 @@ watch(
     <template #header>
       <h3 v-text="'Add delegation'" />
       <template v-if="showPicker">
-        <button
-          type="button"
-          class="absolute left-0 -top-1 p-4"
-          @click="showPicker = false"
-        >
+        <button type="button" class="absolute left-0 -top-1 p-4" @click="showPicker = false">
           <IH-arrow-narrow-left class="mr-2" />
         </button>
         <div class="flex items-center border-t px-2 py-3 mt-3 -mb-3">
           <IH-search class="mx-2" />
-          <input
-            ref="searchInput"
-            v-model="searchValue"
-            type="text"
-            placeholder="Search name or paste address"
-            class="flex-auto bg-transparent text-skin-link"
-          />
+          <input ref="searchInput" v-model="searchValue" type="text" placeholder="Search name or paste address"
+            class="flex-auto bg-transparent text-skin-link" />
         </div>
       </template>
     </template>
-    <PickerContact
-      v-if="showPicker"
-      :loading="false"
-      :search-value="searchValue"
-      @pick="
-        value => {
-          form.contractAddress = value;
-          showPicker = false;
-        }
-      "
-    />
+    <PickerContact v-if="showPicker" :loading="false" :search-value="searchValue" @pick="value => {
+        form.contractAddress = value;
+        showPicker = false;
+      }
+      " />
     <div v-else class="s-box p-4">
-      <UiForm
-        :model-value="form"
-        :error="formErrors"
-        :definition="definition"
-        @pick="showPicker = true"
-      />
+      <UiForm :model-value="form" :error="formErrors" :definition="definition" @pick="showPicker = true" />
     </div>
     <template #footer>
-      <UiButton class="w-full" :disabled="!formValid" @click="handleSubmit"
-        >Confirm</UiButton
-      >
+      <UiButton class="w-full" :disabled="!formValid" @click="handleSubmit">Confirm</UiButton>
     </template>
   </UiModal>
 </template>

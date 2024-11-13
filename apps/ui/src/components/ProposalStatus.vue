@@ -18,10 +18,10 @@ defineProps<{ state: ProposalState }>();
     :class="{
       'bg-gray-400': state === 'pending',
       'bg-skin-success': state === 'active',
-      'bg-skin-link': ['passed', 'closed'].includes(state),
+      'bg-skin-link': state === 'passed',
       'bg-purple-500': state === 'executed',
       'bg-skin-danger': state === 'rejected',
-      '!text-skin-bg': ['passed', 'closed'].includes(state)
+      '!text-skin-bg': state === 'passed'
     }"
     class="inline-block rounded-full pl-2 pr-[10px] pb-0.5 text-white mb-2"
   >
@@ -35,10 +35,6 @@ defineProps<{ state: ProposalState }>();
     />
     <IS-check-circle
       v-else-if="state === 'passed'"
-      class="text-skin-bg inline-block size-[17px] mb-[1px]"
-    />
-    <IS-minus-circle
-      v-else-if="state === 'closed'"
       class="text-skin-bg inline-block size-[17px] mb-[1px]"
     />
     <IS-play

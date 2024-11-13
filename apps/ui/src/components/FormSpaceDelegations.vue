@@ -55,14 +55,9 @@ function deleteDelegation(index: number) {
   <h4 v-bind="$attrs" class="eyebrow mb-2 font-medium">Delegations</h4>
   <Draggable v-model="model" handle=".handle" :item-key="() => undefined">
     <template #item="{ element: delegation, index: i }">
-      <div
-        class="flex justify-between items-center rounded-lg border px-4 py-3 mb-3 text-skin-link"
-      >
+      <div class="flex justify-between items-center rounded-lg border px-4 py-3 mb-3 text-skin-link">
         <div class="flex items-center">
-          <div
-            v-if="model.length > 1"
-            class="handle mr-4 text-skin-link cursor-pointer opacity-50 hover:opacity-100"
-          >
+          <div v-if="model.length > 1" class="handle mr-4 text-skin-link cursor-pointer opacity-50 hover:opacity-100">
             <IH-switch-vertical />
           </div>
           <div class="flex min-w-0">
@@ -80,20 +75,11 @@ function deleteDelegation(index: number) {
       </div>
     </template>
   </Draggable>
-  <UiButton
-    v-if="limit ? model.length < limit : true"
-    class="w-full"
-    @click="addDelegation"
-  >
+  <UiButton v-if="limit ? model.length < limit : true" class="w-full" @click="addDelegation">
     Add delegation
   </UiButton>
   <teleport to="#modal">
-    <ModalDelegationConfig
-      :open="modalOpen"
-      :network-id="networkId"
-      :initial-state="delegationInitialState ?? undefined"
-      @close="modalOpen = false"
-      @add="addDelegationConfig"
-    />
+    <ModalDelegationConfig :open="modalOpen" :network-id="networkId"
+      :initial-state="delegationInitialState ?? undefined" @close="modalOpen = false" @add="addDelegationConfig" />
   </teleport>
 </template>

@@ -34,19 +34,9 @@ watch(model, () => {
 </script>
 
 <template>
-  <UiWrapperInput
-    v-slot="{ id }"
-    :definition="definition"
-    :error="error"
-    :dirty="dirty"
-    :input-value-length="inputValue?.length"
-  >
-    <textarea
-      :id="id"
-      v-model="inputValue"
-      class="s-input"
-      v-bind="$attrs"
-      :placeholder="definition.examples && definition.examples[0]"
-    />
+  <UiWrapperInput v-slot="{ id }" :definition="definition" :error="error" :dirty="dirty"
+    :input-value-length="inputValue?.length">
+    <textarea :id="id" v-model="inputValue" class="s-input" v-bind="$attrs"
+      :placeholder="definition.examples && definition.examples[0]" />
   </UiWrapperInput>
 </template>

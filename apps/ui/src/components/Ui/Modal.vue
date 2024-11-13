@@ -48,12 +48,7 @@ watch(open, val => {
         <div v-if="$slots.footer" class="border-t p-4 text-center">
           <slot name="footer" />
         </div>
-        <button
-          v-if="closeable"
-          type="button"
-          class="absolute right-0 -top-1 p-4"
-          @click="$emit('close')"
-        >
+        <button v-if="closeable" type="button" class="absolute right-0 -top-1 p-4" @click="$emit('close')">
           <IH-x />
         </button>
       </div>

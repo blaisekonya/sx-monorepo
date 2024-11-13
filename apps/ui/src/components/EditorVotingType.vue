@@ -49,31 +49,18 @@ watch(
 <template>
   <div class="s-base">
     <h4 class="eyebrow mb-2.5">Voting system</h4>
-    <button
-      type="button"
-      class="border rounded-xl py-2.5 px-3 flex text-left relative border-skin-content w-full"
+    <button type="button" class="border rounded-xl py-2.5 px-3 flex text-left relative border-skin-content w-full"
       :class="{
         '!border-skin-border cursor-not-allowed': !hasMultipleVotingType
-      }"
-      :disabled="!hasMultipleVotingType"
-      @click="handleVotingTypeClick"
-    >
+      }" :disabled="!hasMultipleVotingType" @click="handleVotingTypeClick">
       <h4 class="text-skin-link mr-3" v-text="activeVotingType.label" />
-      <div
-        v-if="hasMultipleVotingType"
-        class="w-[20px] text-right text-skin-link absolute right-3 top-3"
-      >
+      <div v-if="hasMultipleVotingType" class="w-[20px] text-right text-skin-link absolute right-3 top-3">
         <IH-chevron-down />
       </div>
     </button>
   </div>
   <teleport to="#modal">
-    <ModalSelectVotingType
-      :open="modalOpen"
-      :voting-types="votingTypes"
-      :initial-state="proposal.type"
-      @save="voteType => handleVoteTypeSelected(voteType as VoteType)"
-      @close="modalOpen = false"
-    />
+    <ModalSelectVotingType :open="modalOpen" :voting-types="votingTypes" :initial-state="proposal.type"
+      @save="voteType => handleVoteTypeSelected(voteType as VoteType)" @close="modalOpen = false" />
   </teleport>
 </template>

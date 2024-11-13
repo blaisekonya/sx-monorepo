@@ -69,44 +69,25 @@ function handleStrategySave(value: Record<string, any>) {
   <UiContainerSettings :title="title" :description="description">
     <div class="mb-3">
       <div v-if="!model">No strategy selected</div>
-      <FormStrategiesStrategyActive
-        v-else
-        :network-id="networkId"
-        :strategy="model"
-        @edit-strategy="editStrategy"
-        @delete-strategy="removeStrategy"
-      />
+      <FormStrategiesStrategyActive v-else :network-id="networkId" :strategy="model" @edit-strategy="editStrategy"
+        @delete-strategy="removeStrategy" />
     </div>
     <div v-if="!model" class="flex flex-wrap gap-2">
-      <ButtonStrategy
-        v-for="strategy in availableStrategies"
-        :key="strategy.address"
-        :strategy="strategy"
-        @click="addStrategy(strategy)"
-      />
+      <ButtonStrategy v-for="strategy in availableStrategies" :key="strategy.address" :strategy="strategy"
+        @click="addStrategy(strategy)" />
     </div>
     <div v-else-if="model.type === 'VotingPower'">
       <h3 class="eyebrow mb-2 font-medium">Included strategies</h3>
       <span class="mb-3 inline-block">
         Select strategies that will be used to compute proposal
       </span>
-      <StrategiesConfigurator
-        v-model="votingStrategies"
-        :network-id="networkId"
-        :available-strategies="availableVotingStrategies"
-      />
+      <StrategiesConfigurator v-model="votingStrategies" :network-id="networkId"
+        :available-strategies="availableVotingStrategies" />
     </div>
     <teleport to="#modal">
-      <ModalEditStrategy
-        v-if="editedStrategy"
-        :open="editStrategyModalOpen"
-        :network-id="networkId"
-        :strategy-address="editedStrategy.address"
-        :definition="editedStrategy.paramsDefinition"
-        :initial-state="editedStrategy.params"
-        @close="editStrategyModalOpen = false"
-        @save="handleStrategySave"
-      />
+      <ModalEditStrategy v-if="editedStrategy" :open="editStrategyModalOpen" :network-id="networkId"
+        :strategy-address="editedStrategy.address" :definition="editedStrategy.paramsDefinition"
+        :initial-state="editedStrategy.params" @close="editStrategyModalOpen = false" @save="handleStrategySave" />
     </teleport>
   </UiContainerSettings>
 </template>

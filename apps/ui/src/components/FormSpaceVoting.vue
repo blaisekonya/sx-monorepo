@@ -123,156 +123,101 @@ watchEffect(() => {
   <div class="space-y-3">
     <div>
       <div class="s-label !mb-0">Voting delay</div>
-      <UiEditable
-        editable
-        :initial-value="votingDelay || currentToMinutesOnly(space.voting_delay)"
-        :definition="{
-          type: 'integer',
-          format: 'duration',
-          maximum: isOffchainNetwork ? 2592000 : undefined,
-          errorMessage: {
-            maximum: 'Voting delay must be less than 30 days'
-          }
-        }"
-        @save="value => (votingDelay = Number(value))"
-      >
-        <h4
-          class="text-skin-link text-md"
-          v-text="
-            (votingDelay !== null
-              ? _d(votingDelay)
-              : formatCurrentValue(space.voting_delay)) || 'No delay'
-          "
-        />
+      <UiEditable editable :initial-value="votingDelay || currentToMinutesOnly(space.voting_delay)" :definition="{
+        type: 'integer',
+        format: 'duration',
+        maximum: isOffchainNetwork ? 2592000 : undefined,
+        errorMessage: {
+          maximum: 'Voting delay must be less than 30 days'
+        }
+      }" @save="value => (votingDelay = Number(value))">
+        <h4 class="text-skin-link text-md" v-text="(votingDelay !== null
+            ? _d(votingDelay)
+            : formatCurrentValue(space.voting_delay)) || 'No delay'
+          " />
       </UiEditable>
     </div>
     <div v-if="!isOffchainNetwork">
       <div class="s-label !mb-0">Min. voting period</div>
-      <UiEditable
-        editable
-        :initial-value="
-          minVotingPeriod || currentToMinutesOnly(space.min_voting_period)
-        "
-        :definition="{
+      <UiEditable editable :initial-value="minVotingPeriod || currentToMinutesOnly(space.min_voting_period)
+        " :definition="{
           type: 'integer',
           format: 'duration'
-        }"
-        :custom-error-validation="
-          value =>
+        }" :custom-error-validation="value =>
             !getIsMinVotingPeriodValid(Number(value))
               ? 'Must be equal to or lower than max. voting period'
               : undefined
-        "
-        @save="value => (minVotingPeriod = Number(value))"
-      >
-        <h4
-          class="text-skin-link text-md"
-          v-text="
-            (minVotingPeriod !== null
-              ? _d(minVotingPeriod)
-              : formatCurrentValue(space.min_voting_period)) || 'No min.'
-          "
-        />
+          " @save="value => (minVotingPeriod = Number(value))">
+        <h4 class="text-skin-link text-md" v-text="(minVotingPeriod !== null
+            ? _d(minVotingPeriod)
+            : formatCurrentValue(space.min_voting_period)) || 'No min.'
+          " />
       </UiEditable>
     </div>
     <div>
       <div class="s-label !mb-0">
         {{ isOffchainNetwork ? 'Voting period' : 'Max. voting period' }}
       </div>
-      <UiEditable
-        editable
-        :initial-value="
-          maxVotingPeriod || currentToMinutesOnly(space.max_voting_period)
-        "
-        :definition="{
+      <UiEditable editable :initial-value="maxVotingPeriod || currentToMinutesOnly(space.max_voting_period)
+        " :definition="{
           type: 'integer',
           format: 'duration',
           maximum: isOffchainNetwork ? 15552000 : undefined,
           errorMessage: {
             maximum: 'Voting period must be less than 180 days'
           }
-        }"
-        :custom-error-validation="
-          value =>
+        }" :custom-error-validation="value =>
             !getIsMaxVotingPeriodValid(Number(value))
               ? 'Must be equal to or higher than min. voting period'
               : undefined
-        "
-        @save="value => (maxVotingPeriod = Number(value))"
-      >
-        <h4
-          class="text-skin-link text-md"
-          v-text="
-            (maxVotingPeriod !== null
-              ? _d(maxVotingPeriod)
-              : formatCurrentValue(space.max_voting_period)) || '0m'
-          "
-        />
+          " @save="value => (maxVotingPeriod = Number(value))">
+        <h4 class="text-skin-link text-md" v-text="(maxVotingPeriod !== null
+            ? _d(maxVotingPeriod)
+            : formatCurrentValue(space.max_voting_period)) || '0m'
+          " />
       </UiEditable>
     </div>
     <div v-if="isOffchainNetwork" class="s-box">
-      <UiSelect
-        v-model="quorumType"
-        :definition="{
-          type: 'string',
-          title: 'Quorum type',
-          enum: ['default', 'rejection'],
-          options: [
-            { id: 'default', name: 'Default' },
-            { id: 'rejection', name: 'Quorum of rejection' }
-          ],
-          tooltip: 'The type of quorum used for this space.'
-        }"
-      />
-      <UiInputNumber
-        v-model="quorum"
-        :definition="QUORUM_DEFINITION"
-        :error="errors.quorum"
-      />
-      <UiWrapperInput
-        :definition="{
-          title: 'Type',
-          tooltip:
-            'The type of voting system used for this space. (Enforced on all future proposals)'
-        }"
-      >
-        <button
-          type="button"
-          class="s-input !flex flex-row justify-between items-center"
-          @click="isSelectVotingTypeModalOpen = true"
-        >
+      <UiSelect v-model="quorumType" :definition="{
+        type: 'string',
+        title: 'Quorum type',
+        enum: ['default', 'rejection'],
+        options: [
+          { id: 'default', name: 'Default' },
+          { id: 'rejection', name: 'Quorum of rejection' }
+        ],
+        tooltip: 'The type of quorum used for this space.'
+      }" />
+      <UiInputNumber v-model="quorum" :definition="QUORUM_DEFINITION" :error="errors.quorum" />
+      <UiWrapperInput :definition="{
+        title: 'Type',
+        tooltip:
+          'The type of voting system used for this space. (Enforced on all future proposals)'
+      }">
+        <button type="button" class="s-input !flex flex-row justify-between items-center"
+          @click="isSelectVotingTypeModalOpen = true">
           <div>{{ VOTING_TYPES_INFO[votingType].label }}</div>
           <IH-chevron-down />
         </button>
       </UiWrapperInput>
-      <UiWrapperInput
-        :definition="{
-          title: 'Privacy',
-          tooltip:
-            'The type of privacy used on proposals. (Enforced on all future proposals)'
-        }"
-      >
-        <button
-          type="button"
-          class="s-input !flex flex-row justify-between items-center"
-          @click="isSelectPrivacyModalOpen = true"
-        >
+      <UiWrapperInput :definition="{
+        title: 'Privacy',
+        tooltip:
+          'The type of privacy used on proposals. (Enforced on all future proposals)'
+      }">
+        <button type="button" class="s-input !flex flex-row justify-between items-center"
+          @click="isSelectPrivacyModalOpen = true">
           <div>{{ PRIVACY_TYPES_INFO[privacy].label }}</div>
           <IH-chevron-down />
         </button>
       </UiWrapperInput>
-      <UiWrapperInput
-        :definition="{
-          title: 'Validation',
-          tooltip:
-            'The type of validation used to determine if a user can vote. (Enforced on all future proposals)'
-        }"
-      >
-        <button
-          type="button"
-          class="s-input !flex flex-row justify-between items-center"
-          @click="isSelectValidationModalOpen = true"
-        >
+      <UiWrapperInput :definition="{
+        title: 'Validation',
+        tooltip:
+          'The type of validation used to determine if a user can vote. (Enforced on all future proposals)'
+      }">
+        <button type="button" class="s-input !flex flex-row justify-between items-center"
+          @click="isSelectValidationModalOpen = true">
           <div>
             {{
               VALIDATION_TYPES_INFO[
@@ -285,36 +230,17 @@ watchEffect(() => {
           <IH-chevron-down />
         </button>
       </UiWrapperInput>
-      <UiSwitch
-        v-model="ignoreAbstainVotes"
-        title="Ignore abstain votes in basic voting results"
-      />
+      <UiSwitch v-model="ignoreAbstainVotes" title="Ignore abstain votes in basic voting results" />
     </div>
   </div>
   <teleport to="#modal">
-    <ModalSelectVotingType
-      :open="isSelectVotingTypeModalOpen"
-      :with-any="true"
-      :initial-state="votingType"
-      :voting-types="network.constants.EDITOR_VOTING_TYPES"
-      @save="value => (votingType = value)"
-      @close="isSelectVotingTypeModalOpen = false"
-    />
-    <ModalSelectPrivacy
-      :open="isSelectPrivacyModalOpen"
-      :initial-state="privacy"
-      @save="value => (privacy = value)"
-      @close="isSelectPrivacyModalOpen = false"
-    />
-    <ModalSelectValidation
-      type="voting"
-      :open="isSelectValidationModalOpen"
-      :network-id="space.network"
-      :default-chain-id="snapshotChainId"
-      :space="space"
-      :current="voteValidation"
-      @close="isSelectValidationModalOpen = false"
-      @save="value => (voteValidation = value)"
-    />
+    <ModalSelectVotingType :open="isSelectVotingTypeModalOpen" :with-any="true" :initial-state="votingType"
+      :voting-types="network.constants.EDITOR_VOTING_TYPES" @save="value => (votingType = value)"
+      @close="isSelectVotingTypeModalOpen = false" />
+    <ModalSelectPrivacy :open="isSelectPrivacyModalOpen" :initial-state="privacy" @save="value => (privacy = value)"
+      @close="isSelectPrivacyModalOpen = false" />
+    <ModalSelectValidation type="voting" :open="isSelectValidationModalOpen" :network-id="space.network"
+      :default-chain-id="snapshotChainId" :space="space" :current="voteValidation"
+      @close="isSelectValidationModalOpen = false" @save="value => (voteValidation = value)" />
   </teleport>
 </template>

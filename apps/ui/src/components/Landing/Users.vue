@@ -63,18 +63,9 @@ const ORGS = [
   <div class="border-b">
     <div class="py-6">
       <UiCarousel>
-        <AppLink
-          v-for="(org, i) in ORGS"
-          :key="i"
-          :to="{ name: 'space-overview', params: { space: `s:${org}` } }"
-          class="size-[56px] ml-6"
-          tabindex="-1"
-        >
-          <img
-            :alt="org"
-            :src="`https://cdn.stamp.fyi/space/s:${org}?s=120`"
-            class="rounded-full"
-          />
+        <AppLink v-for="(org, i) in ORGS" :key="i" :to="{ name: 'space-overview', params: { space: `s:${org}` } }"
+          class="size-[56px] ml-6" tabindex="-1">
+          <img :alt="org" :src="`https://cdn.stamp.fyi/space/s:${org}?s=120`" class="rounded-full" />
         </AppLink>
       </UiCarousel>
     </div>
@@ -98,6 +89,7 @@ $duration: 180s;
   0% {
     transform: translateX(100%);
   }
+
   100% {
     transform: translateX(-100%);
   }
@@ -107,6 +99,7 @@ $duration: 180s;
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-200%);
   }

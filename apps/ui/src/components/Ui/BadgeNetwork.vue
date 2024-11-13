@@ -55,9 +55,8 @@ const networkData = computed<NetworkData | null>(() => {
 
 <template>
   <div class="relative">
-    <slot />
     <img
-      v-if="networkData && size !== 0"
+      v-if="networkData"
       :src="getUrl(networkData.avatar) ?? undefined"
       :title="networkData.name"
       :style="{
@@ -67,5 +66,6 @@ const networkData = computed<NetworkData | null>(() => {
       :alt="networkData.name"
       class="absolute rounded-full -bottom-1 -right-1 border-2 bg-skin-border border-skin-bg"
     />
+    <slot />
   </div>
 </template>

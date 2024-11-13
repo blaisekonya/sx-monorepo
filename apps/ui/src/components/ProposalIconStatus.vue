@@ -43,11 +43,6 @@ const style = computed(() => ({
       class="text-skin-link bg-skin-bg rounded-full border-[1px] border-skin-bg"
       :style="style"
     />
-    <IS-minus-circle
-      v-else-if="state === 'closed'"
-      class="text-skin-link"
-      :style="style"
-    />
     <IS-play
       v-else-if="state === 'executed'"
       class="text-purple-500 bg-skin-bg rounded-full border-2 border-skin-bg"

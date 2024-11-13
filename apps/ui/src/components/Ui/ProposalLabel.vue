@@ -49,8 +49,7 @@ function checkColorProximity(color: string): {
 </script>
 
 <template>
-  <AppLink
-    :to="to"
+  <div
     class="rounded-full w-fit max-w-[220px] shrink-0 flex"
     :class="{
       border: colorProperties.showBorder
@@ -64,5 +63,5 @@ function checkColorProximity(color: string): {
       class="truncate text-sm leading-[11px] whitespace-nowrap px-2 py-[6px]"
       v-text="label"
     />
-  </AppLink>
+  </div>
 </template>

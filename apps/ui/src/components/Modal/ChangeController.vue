@@ -63,49 +63,28 @@ watchEffect(async () => {
     <template #header>
       <h3>Change controller</h3>
       <template v-if="showPicker">
-        <button
-          type="button"
-          class="absolute left-0 -top-1 p-4"
-          @click="showPicker = false"
-        >
+        <button type="button" class="absolute left-0 -top-1 p-4" @click="showPicker = false">
           <IH-arrow-narrow-left class="mr-2" />
         </button>
         <div class="flex items-center border-t px-2 py-3 mt-3 -mb-3">
           <IH-search class="mx-2" />
-          <input
-            ref="searchInput"
-            v-model="searchValue"
-            type="text"
-            placeholder="Search name or paste address"
-            class="flex-auto bg-transparent text-skin-link"
-          />
+          <input ref="searchInput" v-model="searchValue" type="text" placeholder="Search name or paste address"
+            class="flex-auto bg-transparent text-skin-link" />
         </div>
       </template>
     </template>
     <template v-if="showPicker">
-      <PickerContact
-        :loading="false"
-        :search-value="searchValue"
-        @pick="
-          form.controller = $event;
-          showPicker = false;
-        "
-      />
+      <PickerContact :loading="false" :search-value="searchValue" @pick="
+        form.controller = $event;
+      showPicker = false;
+      " />
     </template>
     <div v-else class="s-box p-4">
-      <UiInputAddress
-        v-model="form.controller"
-        :definition="CONTROLLER_DEFINITION"
-        :error="formErrors.delegatee"
-        @pick="showPicker = true"
-      />
+      <UiInputAddress v-model="form.controller" :definition="CONTROLLER_DEFINITION" :error="formErrors.delegatee"
+        @pick="showPicker = true" />
     </div>
     <template v-if="!showPicker" #footer>
-      <UiButton
-        class="w-full"
-        :disabled="Object.keys(formErrors).length > 0"
-        @click="emit('save', form.controller)"
-      >
+      <UiButton class="w-full" :disabled="Object.keys(formErrors).length > 0" @click="emit('save', form.controller)">
         Confirm
       </UiButton>
     </template>

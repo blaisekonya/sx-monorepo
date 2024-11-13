@@ -50,19 +50,13 @@ watch(
         and you will not be able to use {{ spaceId }} again to create another
         space.
       </UiMessage>
-      <UiInputString
-        v-model="form.id"
-        class="my-3"
-        :definition="{
-          type: 'string',
-          title: `Enter ${spaceId} to continue`,
-          minLength: 1
-        }"
-      />
-      <UiCheckbox
-        v-model="form.confirmed"
-        :title="`I acknowledge that I will not be able to use ${spaceId} again to create a new space.`"
-      />
+      <UiInputString v-model="form.id" class="my-3" :definition="{
+        type: 'string',
+        title: `Enter ${spaceId} to continue`,
+        minLength: 1
+      }" />
+      <UiCheckbox v-model="form.confirmed"
+        :title="`I acknowledge that I will not be able to use ${spaceId} again to create a new space.`" />
     </div>
     <template #footer>
       <UiButton class="w-full" :disabled="!isValid" @click="handleSubmit">

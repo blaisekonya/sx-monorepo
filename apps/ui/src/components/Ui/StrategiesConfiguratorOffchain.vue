@@ -87,44 +87,23 @@ function handleRemoveStrategy(strategy: StrategyConfig) {
       <slot v-if="strategies.length === 0" name="empty">
         <div>No strategies selected</div>
       </slot>
-      <FormStrategiesStrategyActive
-        v-for="strategy in strategies"
-        :key="strategy.id"
-        class="mb-3"
-        :network-id="networkId"
-        :strategy="strategy"
-        @edit-strategy="handleEditStrategy"
-        @delete-strategy="handleRemoveStrategy"
-      />
+      <FormStrategiesStrategyActive v-for="strategy in strategies" :key="strategy.id" class="mb-3"
+        :network-id="networkId" :strategy="strategy" @edit-strategy="handleEditStrategy"
+        @delete-strategy="handleRemoveStrategy" />
     </div>
-    <UiButton
-      v-if="!props.limit || strategies.length < props.limit"
-      class="w-full flex items-center justify-center gap-1"
-      @click="isStrategiesModalOpen = true"
-    >
+    <UiButton v-if="!props.limit || strategies.length < props.limit"
+      class="w-full flex items-center justify-center gap-1" @click="isStrategiesModalOpen = true">
       <IH-plus class="shrink-0 size-[16px]" />
       Add strategy
     </UiButton>
     <teleport to="#modal">
-      <ModalStrategies
-        :open="isStrategiesModalOpen"
-        :network-id="networkId"
-        @add-strategy="handleAddStrategy"
-        @close="isStrategiesModalOpen = false"
-      />
-      <ModalEditStrategy
-        v-if="editedStrategy"
-        with-network-selector
-        :open="isEditStrategyModalOpen"
-        :network-id="networkId"
-        :initial-network="editedStrategy.chainId ?? defaultChainId"
-        :strategy-address="editedStrategy.address"
-        :definition="editedStrategy.paramsDefinition"
-        :initial-state="editedStrategy.params"
-        :custom-error-validation="validateStrategy"
-        @save="handleSaveStrategy"
-        @close="isEditStrategyModalOpen = false"
-      />
+      <ModalStrategies :open="isStrategiesModalOpen" :network-id="networkId" @add-strategy="handleAddStrategy"
+        @close="isStrategiesModalOpen = false" />
+      <ModalEditStrategy v-if="editedStrategy" with-network-selector :open="isEditStrategyModalOpen"
+        :network-id="networkId" :initial-network="editedStrategy.chainId ?? defaultChainId"
+        :strategy-address="editedStrategy.address" :definition="editedStrategy.paramsDefinition"
+        :initial-state="editedStrategy.params" :custom-error-validation="validateStrategy" @save="handleSaveStrategy"
+        @close="isEditStrategyModalOpen = false" />
     </teleport>
   </div>
 </template>

@@ -33,11 +33,7 @@ function toggleQuestion(id) {
         <h1 class="mb-6 font-display max-w-[600px] mx-auto text-[46px]">
           Unlock governance for your ecosystem
         </h1>
-        <a
-          :href="LINK"
-          target="_blank"
-          class="px-4 py-3 space-x-2 bg-skin-link text-skin-bg rounded-full"
-        >
+        <a :href="LINK" target="_blank" class="px-4 py-3 space-x-2 bg-skin-link text-skin-bg rounded-full">
           Talk to sales
           <IH-arrow-sm-right class="inline-block -rotate-45" />
         </a>
@@ -53,9 +49,7 @@ function toggleQuestion(id) {
         Our network plan is designed to provide the infrastructure and support
         needed for effective governance.
       </div>
-      <div
-        class="text-skin-link text-lg space-y-4 px-5 py-4 text-left border rounded-lg max-w-[500px] mx-auto"
-      >
+      <div class="text-skin-link text-lg space-y-4 px-5 py-4 text-left border rounded-lg max-w-[500px] mx-auto">
         <div>
           <h3 class="font-display mb-3">Basic plan</h3>
           <div class="text-left">
@@ -154,11 +148,7 @@ function toggleQuestion(id) {
     <UiContainer class="!max-w-[880px] text-center">
       <div class="eyebrow mb-2">Get started</div>
       <h2 class="font-display text-[36px] mb-5">Get network support today</h2>
-      <a
-        :href="LINK"
-        target="_blank"
-        class="px-4 py-3 space-x-2 bg-skin-link text-skin-bg rounded-full"
-      >
+      <a :href="LINK" target="_blank" class="px-4 py-3 space-x-2 bg-skin-link text-skin-bg rounded-full">
         Talk to sales
         <IH-arrow-sm-right class="inline-block -rotate-45" />
       </a>
@@ -182,11 +172,7 @@ function toggleQuestion(id) {
       <div class="mb-2 eyebrow text-center">Frequently asked questions</div>
       <h2 class="text-[36px] font-display mb-5 text-center">Questions?</h2>
       <div v-for="(question, i) in FAQ" :key="i" class="border-b">
-        <button
-          type="button"
-          class="flex items-center w-full text-left"
-          @click="toggleQuestion(i)"
-        >
+        <button type="button" class="flex items-center w-full text-left" @click="toggleQuestion(i)">
           <h3 class="py-3 flex-auto h3" v-text="question.question" />
           <IH-minus-sm v-if="currentQuestion === i" class="text-skin-text" />
           <IH-plus-sm v-else class="text-skin-text" />

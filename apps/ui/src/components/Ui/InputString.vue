@@ -54,21 +54,9 @@ watch(model, () => {
 </script>
 
 <template>
-  <UiWrapperInput
-    v-slot="{ id }"
-    :definition="definition"
-    :loading="loading"
-    :error="error"
-    :dirty="dirty"
-    :input-value-length="inputLength"
-  >
-    <input
-      :id="id"
-      v-model.trim="inputValue"
-      type="text"
-      class="s-input"
-      v-bind="$attrs"
-      :placeholder="definition.examples && definition.examples[0]"
-    />
+  <UiWrapperInput v-slot="{ id }" :definition="definition" :loading="loading" :error="error" :dirty="dirty"
+    :input-value-length="inputLength">
+    <input :id="id" v-model.trim="inputValue" type="text" class="s-input" v-bind="$attrs"
+      :placeholder="definition.examples && definition.examples[0]" />
   </UiWrapperInput>
 </template>

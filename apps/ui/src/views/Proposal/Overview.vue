@@ -391,21 +391,6 @@ onBeforeUnmount(() => destroyAudio());
                 </button>
               </UiDropdownItem>
               <UiDropdownItem
-                v-if="flaggable"
-                v-slot="{ active, disabled }"
-                :disabled="flagging"
-              >
-                <button
-                  type="button"
-                  class="flex items-center gap-2"
-                  :class="{ 'opacity-80': active, 'opacity-40': disabled }"
-                  @click="handleFlagClick"
-                >
-                  <IH-flag :width="16" />
-                  Flag proposal
-                </button>
-              </UiDropdownItem>
-              <UiDropdownItem
                 v-if="cancellable"
                 v-slot="{ active, disabled }"
                 :disabled="cancelling"
@@ -468,25 +453,6 @@ onBeforeUnmount(() => destroyAudio());
           <span>Execution</span>
         </h4>
         <div class="mb-4">
-          <UiAlert
-            v-if="proposal.execution_strategy_type === 'safeSnap'"
-            type="warning"
-          >
-            <div>
-              This proposal uses SafeSnap execution which is currently not
-              supported on the new interface. You can view execution details on
-              the
-              <a
-                :href="`${SNAPSHOT_URLS[proposal.network]}/#/${proposal.space.id}/proposal/${proposal.id}`"
-                target="_blank"
-                class="inline-flex items-center font-bold"
-              >
-                previous interface
-                <IH-arrow-sm-right class="inline-block -rotate-45" />
-              </a>
-              .
-            </div>
-          </UiAlert>
           <ProposalExecutionsList
             :proposal="proposal"
             :executions="proposal.executions"

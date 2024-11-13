@@ -126,28 +126,26 @@ onMounted(() => {
 </script>
 
 <template>
-  <div v-if="isFinalizing" class="border rounded-lg px-3 py-2.5">
-    <div class="flex items-center gap-2 text-skin-link">
-      <IH-exclamation-circle class="shrink-0" />
-      Finalizing results
-    </div>
-    Please allow few minutes while final results are being calculated.
-  </div>
   <div
-    v-else-if="
-      props.proposal.privacy !== 'none' &&
-      props.proposal.state === 'active' &&
-      withDetails
-    "
-    class="space-y-1"
+    v-if="!!props.proposal.privacy && !props.proposal.completed && withDetails"
   >
-    <div>
+    <div class="mb-1">
       All votes are encrypted and will be decrypted only after the voting period
       is over, making the results visible.
     </div>
-    <div v-if="proposal.quorum">
-      {{ quorumLabel(proposal.quorum_type) }}:
-      <span class="text-skin-link">{{ formatQuorum(totalProgress) }}</span>
+    <div>
+      <a
+        :href="SHUTTER_URL"
+        class="flex items-center text-skin-link"
+        target="_blank"
+      >
+        <IC-Shutter class="w-[80px]" />
+        <IH-arrow-sm-right class="-rotate-45" />
+      </a>
+      <div v-if="proposal.quorum" class="mt-3.5">
+        {{ quorumLabel(proposal.quorum_type) }}:
+        <span class="text-skin-link">{{ _p(totalProgress) }}</span>
+      </div>
     </div>
   </div>
   <template v-else>
@@ -192,16 +190,10 @@ onMounted(() => {
           class="truncate grow"
           v-text="proposal.choices[result.choice - 1]"
         />
-        <IH-lock-closed
-          v-if="proposal.privacy !== 'none' && !proposal.completed"
-          class="size-[16px] shrink-0"
-        />
-        <template v-else>
-          <div>
-            {{ _vp(result.score / 10 ** decimals) }}
-          </div>
-          <div v-text="_p(result.progress / 100)" />
-        </template>
+        <div>
+          {{ _vp(result.score / 10 ** decimals) }}
+        </div>
+        <div v-text="_p(result.progress / 100)" />
       </div>
       <button
         v-if="!displayAllChoices && otherResultsSummary.count > 0"
@@ -232,11 +224,21 @@ onMounted(() => {
       </button>
       <div v-if="proposal.quorum">
         {{ quorumLabel(proposal.quorum_type) }}:
-        <span class="text-skin-link">{{ formatQuorum(totalProgress) }}</span>
+        <span class="text-skin-link">{{ _p(totalProgress) }}</span>
+      </div>
+      <div v-if="proposal.privacy === 'shutter'" class="mt-2.5">
+        <a
+          :href="SHUTTER_URL"
+          class="flex items-center text-skin-link"
+          target="_blank"
+        >
+          <IC-Shutter class="w-[80px]" />
+          <IH-arrow-sm-right class="-rotate-45" />
+        </a>
       </div>
     </div>
     <div
-      v-else-if="props.proposal.privacy === 'none' || props.proposal.completed"
+      v-else-if="!props.proposal.privacy || props.proposal.completed"
       class="h-full flex items-center"
     >
       <div

@@ -82,60 +82,34 @@ watch(
 </script>
 
 <template>
-  <div
-    class="flex items-center gap-2"
-    :class="{
-      'mt-2': editing,
-      'w-fit': definition.format !== 'duration',
-      's-box w-full max-w-xl': definition.format === 'duration'
-    }"
-  >
+  <div class="flex items-center gap-2" :class="{
+    'mt-2': editing,
+    'w-fit': definition.format !== 'duration',
+    's-box w-full max-w-xl': definition.format === 'duration'
+  }">
     <UiLoading v-if="loading" />
     <template v-else>
-      <component
-        :is="Component"
-        v-if="editing"
-        v-model="inputValue"
-        class="!mb-0 flex-1"
-        :definition="definition"
-        :error="formErrors.value"
-      />
+      <component :is="Component" v-if="editing" v-model="inputValue" class="!mb-0 flex-1" :definition="definition"
+        :error="formErrors.value" />
       <slot v-else />
       <template v-if="editing">
-        <div
-          class="flex gap-2 relative"
-          :class="{
-            'top-[-19.5px]':
-              definition.format !== 'duration' && !!formErrors.value,
-            'top-[-18.5px]':
-              definition.format === 'duration' && !!formErrors.value,
-            '-top-1.5': definition.format === 'duration'
-          }"
-        >
-          <button
-            type="button"
-            :disabled="!!formErrors.value"
-            class="hover:opacity-80"
-            @click="handleSave"
-          >
+        <div class="flex gap-2 relative" :class="{
+          'top-[-19.5px]':
+            definition.format !== 'duration' && !!formErrors.value,
+          'top-[-18.5px]':
+            definition.format === 'duration' && !!formErrors.value,
+          '-top-1.5': definition.format === 'duration'
+        }">
+          <button type="button" :disabled="!!formErrors.value" class="hover:opacity-80" @click="handleSave">
             <IH-check />
           </button>
-          <button
-            type="button"
-            class="hover:opacity-80"
-            @click="editing = !editing"
-          >
+          <button type="button" class="hover:opacity-80" @click="editing = !editing">
             <IH-x />
           </button>
         </div>
       </template>
       <template v-else>
-        <button
-          v-if="editable"
-          type="button"
-          class="hover:opacity-80"
-          @click="handleEdit"
-        >
+        <button v-if="editable" type="button" class="hover:opacity-80" @click="handleEdit">
           <IH-pencil />
         </button>
       </template>

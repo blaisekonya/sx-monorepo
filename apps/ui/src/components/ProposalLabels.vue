@@ -29,15 +29,6 @@ const validLabels = computed(() => {
       :key="label.id"
       :label="label.name"
       :color="label.color"
-      :to="
-        withLink
-          ? {
-              name: 'space-proposals',
-              params: { space: `${space.network}:${space.id}` },
-              query: { labels: label.id }
-            }
-          : undefined
-      "
       v-bind="$attrs"
       class="inline-flex !max-w-[160px] mr-1 last:mr-0"
     />

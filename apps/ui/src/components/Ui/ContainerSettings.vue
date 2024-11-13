@@ -7,12 +7,9 @@ defineProps<{
 
 <template>
   <div class="mb-4">
-    <h3
-      class="text-md leading-6"
-      :class="{
-        'mb-4': !description
-      }"
-    >
+    <h3 class="text-md leading-6" :class="{
+      'mb-4': !description
+    }">
       {{ title }}
     </h3>
     <span v-if="description" class="mb-4 inline-block">

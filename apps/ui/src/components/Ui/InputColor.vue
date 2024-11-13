@@ -88,27 +88,13 @@ function validateAndConvertColor(color: string): string {
 </script>
 
 <template>
-  <UiWrapperInput
-    v-slot="{ id }"
-    :definition="definition"
-    :loading="loading"
-    :error="error"
-    :dirty="dirty"
-    :input-value-length="inputValue?.length"
-  >
+  <UiWrapperInput v-slot="{ id }" :definition="definition" :loading="loading" :error="error" :dirty="dirty"
+    :input-value-length="inputValue?.length">
     <div class="flex">
-      <div
-        class="absolute size-[18px] mt-[30px] ml-3 rounded border border-skin-text border-opacity-20"
-        :style="{ backgroundColor: backgroundColor }"
-      />
-      <input
-        :id="id"
-        v-model.trim="inputValue"
-        type="text"
-        class="s-input !pl-6"
-        v-bind="$attrs"
-        :placeholder="definition.examples && definition.examples[0]"
-      />
+      <div class="absolute size-[18px] mt-[30px] ml-3 rounded border border-skin-text border-opacity-20"
+        :style="{ backgroundColor: backgroundColor }" />
+      <input :id="id" v-model.trim="inputValue" type="text" class="s-input !pl-6" v-bind="$attrs"
+        :placeholder="definition.examples && definition.examples[0]" />
       <button class="absolute right-3 mt-[20px]" @click="generateRandomColor">
         <IH-refresh class="text-skin-link" />
       </button>

@@ -123,83 +123,46 @@ watchEffect(async () => {
     <template #header>
       <h3 v-text="'Send NFT'" />
       <template v-if="showPicker">
-        <button
-          type="button"
-          class="absolute left-0 -top-1 p-4"
-          @click="showPicker = false"
-        >
+        <button type="button" class="absolute left-0 -top-1 p-4" @click="showPicker = false">
           <IH-arrow-narrow-left class="mr-2" />
         </button>
         <div class="flex items-center border-t px-2 py-3 mt-3 -mb-3">
           <IH-search class="mx-2" />
-          <input
-            ref="searchInput"
-            v-model="searchValue"
-            type="text"
-            placeholder="Search"
-            class="flex-auto bg-transparent text-skin-link"
-          />
+          <input ref="searchInput" v-model="searchValue" type="text" placeholder="Search"
+            class="flex-auto bg-transparent text-skin-link" />
         </div>
       </template>
     </template>
     <template v-if="showPicker">
-      <PickerNft
-        v-if="pickerType === 'nft'"
-        :nfts="nfts"
-        :loading="loading"
-        :search-value="searchValue"
-        @pick="
-          form.nft = $event;
-          showPicker = false;
-        "
-      />
-      <PickerContact
-        v-else-if="pickerType === 'contact'"
-        :loading="false"
-        :search-value="searchValue"
-        :extra-contacts="extraContacts"
-        @pick="
+      <PickerNft v-if="pickerType === 'nft'" :nfts="nfts" :loading="loading" :search-value="searchValue" @pick="
+        form.nft = $event;
+      showPicker = false;
+      " />
+      <PickerContact v-else-if="pickerType === 'contact'" :loading="false" :search-value="searchValue"
+        :extra-contacts="extraContacts" @pick="
           form.to = $event;
-          showPicker = false;
-        "
-      />
+        showPicker = false;
+        " />
     </template>
     <div v-if="!showPicker" class="s-box p-4">
-      <UiInputAddress
-        v-model="form.to"
-        :definition="RECIPIENT_DEFINITION"
-        :error="formErrors.to"
-        @pick="handlePickerClick('contact')"
-      />
+      <UiInputAddress v-model="form.to" :definition="RECIPIENT_DEFINITION" :error="formErrors.to"
+        @pick="handlePickerClick('contact')" />
       <div class="s-base">
         <div class="s-label" v-text="'NFT'" />
-        <button
-          type="button"
-          class="s-input text-left h-[61px]"
-          @click="handlePickerClick('nft')"
-        >
+        <button type="button" class="s-input text-left h-[61px]" @click="handlePickerClick('nft')">
           <div class="flex items-center">
-            <UiNftImage
-              v-if="currentNft"
-              :item="currentNft"
-              class="mr-2"
-              :size="20"
-            />
+            <UiNftImage v-if="currentNft" :item="currentNft" class="mr-2" :size="20" />
             <div class="truncate">
               {{ currentNft?.displayTitle || 'Select NFT' }}
             </div>
           </div>
         </button>
       </div>
-      <UiInputNumber
-        v-if="currentNft?.type === 'erc1155'"
-        v-model="form.amount"
-        :definition="{
-          type: 'number',
-          title: 'Amount',
-          examples: ['0']
-        }"
-      />
+      <UiInputNumber v-if="currentNft?.type === 'erc1155'" v-model="form.amount" :definition="{
+        type: 'number',
+        title: 'Amount',
+        examples: ['0']
+      }" />
     </div>
     <template v-if="!showPicker" #footer>
       <UiButton class="w-full" :disabled="!formValid" @click="handleSubmit">

@@ -182,9 +182,7 @@ const parsedTitle = computedAsync(async () => {
         <a
           class="inline-flex items-center"
           target="_blank"
-          :href="
-            getGenericExplorerUrl(chainId, call.to, 'address') || undefined
-          "
+          :href="network.helpers.getExplorerUrl(call.to, 'address')"
         >
           {{ shorten(call.to) }}
           <IH-arrow-sm-right class="inline-block ml-1 -rotate-45" />
@@ -195,10 +193,7 @@ const parsedTitle = computedAsync(async () => {
         <a
           class="inline-flex items-center"
           target="_blank"
-          :href="
-            getGenericExplorerUrl(chainId, interaction.to, 'address') ||
-            undefined
-          "
+          :href="network.helpers.getExplorerUrl(interaction.to, 'address')"
         >
           {{ shorten(interaction.to) }}
           <IH-arrow-sm-right class="inline-block ml-1 -rotate-45" />
@@ -212,10 +207,7 @@ const parsedTitle = computedAsync(async () => {
             v-if="param.type === 'address'"
             class="inline-flex items-center"
             target="_blank"
-            :href="
-              getGenericExplorerUrl(chainId, param.value, 'address') ||
-              undefined
-            "
+            :href="network.helpers.getExplorerUrl(param.value, 'address')"
           >
             {{ shorten(param.value) }}
             <IH-arrow-sm-right class="inline-block ml-1 -rotate-45" />
