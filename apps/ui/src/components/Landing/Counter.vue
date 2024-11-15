@@ -10,9 +10,12 @@
   </div>
   <div class="border-b">
     <UiContainer class="!max-w-screen-lg">
-      <h1 class="font-display max-w-[680px] py-9 !text-[36px] sm:!text-[44px]">
-        Using voting protocols trusted by millions
-      </h1>
+      <div class="pb-6 max-w-[600px]">
+        <div class="eyebrow mb-3">Battle-tested tools</div>
+        <h1 class="mb-4 font-display !text-[36px] sm:!text-[44px]">
+          Using voting protocols trusted by millions
+        </h1>
+      </div>
     </UiContainer>
   </div>
   <div class="border-b">
