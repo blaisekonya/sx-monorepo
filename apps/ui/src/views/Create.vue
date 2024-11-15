@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useScrollVisibility } from '@/composables/useScrollVisibility';
 import { clone, getSalt } from '@/helpers/utils';
 import { enabledReadWriteNetworks, getNetwork } from '@/networks';
 import { StrategyConfig } from '@/networks/types';
@@ -44,6 +45,7 @@ type PageID = (typeof PAGES)[number]['id'];
 const { setTitle } = useTitle();
 const { predictSpaceAddress } = useActions();
 const { web3 } = useWeb3();
+const { isVisible, isMobile } = useScrollVisibility();
 
 const pagesRefs = ref([] as HTMLElement[]);
 const sending = ref(false);
@@ -111,6 +113,11 @@ const nextDisabled = computed(() => !validatePage(currentPage.value));
 const submitDisabled = computed(() =>
   PAGES.some(page => !validatePage(page.id))
 );
+
+const stickyNavClass = computed(() => {
+  if (!isMobile.value) return 'top-[72px]';
+  return isVisible.value ? 'top-[72px]' : 'top-0';
+});
 
 function validatePage(page: PageID) {
   if (page === 'strategies') return votingStrategies.value.length > 0;
@@ -183,7 +190,8 @@ watchEffect(() => setTitle('Create space'));
     />
     <div v-else class="pt-5 flex max-w-[50rem] mx-auto px-4">
       <div
-        class="flex fixed lg:sticky top-[72px] inset-x-0 p-3 border-b z-10 bg-skin-bg lg:top-auto lg:inset-x-auto lg:p-0 lg:pr-5 lg:border-0 lg:flex-col gap-1 min-w-[180px] overflow-auto"
+        class="flex fixed lg:sticky inset-x-0 p-3 border-b z-10 bg-skin-bg lg:inset-x-auto lg:p-0 lg:pr-5 lg:border-0 lg:flex-col gap-1 min-w-[180px] overflow-auto transition-[top] duration-200"
+        :class="stickyNavClass"
       >
         <button
           v-for="page in PAGES"
@@ -257,6 +265,7 @@ watchEffect(() => setTitle('Create space'));
             :available-voting-strategies="
               selectedNetwork.constants
                 .EDITOR_PROPOSAL_VALIDATION_VOTING_STRATEGIES
+<<<<<<< HEAD
             "
             title="Proposal validation"
             description="Proposal validation strategies are used to determine if a user is allowed to create a proposal."
@@ -283,6 +292,29 @@ watchEffect(() => setTitle('Create space'));
             v-model="controller"
             @errors="v => handleErrors('controller', v)"
           />
+          <FormStrategies
+            v-else-if="currentPage === 'executions'"
+            v-model="executionStrategies"
+            :network-id="selectedNetworkId"
+            :available-strategies="
+              selectedNetwork.constants.EDITOR_EXECUTION_STRATEGIES
+            "
+            :default-params="{ controller }"
+            title="Execution strategies"
+            description="Execution strategies are used to determine the status of a proposal and execute its payload if it's accepted."
+          />
+          <FormVoting
+            v-else-if="currentPage === 'voting'"
+            :form="settingsForm"
+            :selected-network-id="selectedNetworkId"
+            @errors="v => handleErrors('voting', v)"
+          />
+          <FormController
+            v-else-if="currentPage === 'controller'"
+            v-model="controller"
+            @errors="v => handleErrors('controller', v)"
+          />
+          >>>>>>> 71e5f0a5 (Fix smart scrolling)
         </div>
 
         <UiButton
