@@ -206,7 +206,7 @@ const navigationItems = computed(() =>
     <AppLink v-for="(item, key) in navigationItems" :key="key" :to="item.link"
       class="px-4 py-1.5 space-x-2 flex items-center" :class="item.active ? 'text-skin-link' : 'text-skin-text'">
       <component :is="item.icon" class="inline-block"></component>
-      <span class="grow" v-text="item.name" />
+      <span class="grow relative top-[1px]" v-text="item.name" />
       <span v-if="item.count" class="bg-skin-border text-skin-link text-[13px] rounded-full px-1.5"
         v-text="item.count" />
     </AppLink>
