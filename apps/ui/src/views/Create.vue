@@ -190,7 +190,7 @@ watchEffect(() => setTitle('Create space'));
     />
     <div v-else class="pt-5 flex max-w-[50rem] mx-auto px-4">
       <div
-        class="flex fixed lg:sticky inset-x-0 p-3 border-b z-10 bg-skin-bg lg:inset-x-auto lg:p-0 lg:pr-5 lg:border-0 lg:flex-col gap-1 min-w-[180px] overflow-auto transition-[top] duration-200"
+        class="flex fixed lg:sticky text-skin-text inset-x-0 p-3 border-b z-10 bg-skin-bg lg:inset-x-auto lg:p-0 lg:pr-5 lg:border-0 lg:flex-col gap-1 min-w-[180px] overflow-auto transition-[top] duration-200"
         :class="stickyNavClass"
       >
         <button
@@ -199,7 +199,7 @@ watchEffect(() => setTitle('Create space'));
           :key="page.id"
           type="button"
           :disabled="!accessiblePages[page.id]"
-          class="px-3 py-1 block lg:w-full rounded text-left scroll-mr-3 first:ml-auto last:mr-auto whitespace-nowrap"
+          class="px-3 py-1 block lg:w-full rounded text-skin-border text-left scroll-mr-3 first:ml-auto last:mr-auto whitespace-nowrap"
           :class="{
             'bg-skin-active-bg': page.id === currentPage,
             'hover:bg-skin-hover-bg': page.id !== currentPage,
