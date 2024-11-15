@@ -89,13 +89,13 @@ export const explorePageProtocols: Record<ExplorePageProtocol, ProtocolConfig> =
   {
     snapshot: {
       key: 'snapshot',
-      label: 'Snapshot',
+      label: 'Offchain',
       networks: [metadataNetwork],
       limit: 18
     },
     snapshotx: {
       key: 'snapshotx',
-      label: 'Snapshot X',
+      label: 'Onchain',
       networks: enabledNetworks.filter(
         network => !offchainNetworks.includes(network)
       ),
