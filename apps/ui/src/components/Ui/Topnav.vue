@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const { isVisible, isMobile } = useScrollVisibility();
+</script>
 
 <template>
   <header

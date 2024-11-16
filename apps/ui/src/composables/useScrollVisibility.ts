@@ -1,4 +1,4 @@
-import { ref, onMounted, onUnmounted, computed } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 
 export type ScrollVisibilityOptions = {
   threshold?: number;
@@ -17,10 +17,6 @@ export function useScrollVisibility(options: ScrollVisibilityOptions = {}) {
   const lastScrollY = ref(0);
   const ticking = ref(false);
   const isMobile = ref(false);
-  const scrollProgress = ref(0);
-  const accumulatedProgress = ref(0);
-
-  const fullyVisible = computed(() => scrollProgress.value === 0);
 
   function checkMobile() {
     isMobile.value = window.innerWidth <= mobileBreakpoint;
@@ -30,24 +26,12 @@ export function useScrollVisibility(options: ScrollVisibilityOptions = {}) {
     if (!ticking.value && isMobile.value) {
       window.requestAnimationFrame(() => {
         const currentScrollY = window.scrollY;
-        const scrollDelta = currentScrollY - lastScrollY.value;
-
-        // Accumulate progress based on scroll direction
-        accumulatedProgress.value = Math.max(
-          0,
-          Math.min(1, accumulatedProgress.value + scrollDelta / threshold)
-        );
-
-        // Update scroll progress based on accumulated value
-        scrollProgress.value = accumulatedProgress.value;
-
         isVisible.value =
           lastScrollY.value > currentScrollY || // Show when scrolling up
           currentScrollY < threshold || // Show when near top
           (showAtBottom &&
             currentScrollY + window.innerHeight >=
-              document.documentElement.scrollHeight - 100);
-
+              document.documentElement.scrollHeight - 100); // Optionally show when near bottom
         lastScrollY.value = currentScrollY;
         ticking.value = false;
       });
@@ -68,8 +52,6 @@ export function useScrollVisibility(options: ScrollVisibilityOptions = {}) {
 
   return {
     isVisible,
-    isMobile,
-    scrollProgress,
-    fullyVisible
+    isMobile
   };
 }
