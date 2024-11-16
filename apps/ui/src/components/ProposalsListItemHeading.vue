@@ -70,12 +70,8 @@ const space = computed(() =>
               space: `${proposal.network}:${proposal.space.id}`
             }
           }"
-          class="text-[18px] font-bold inline shrink-0"
+          class="text-md text-skin-text mr-2 font-bold inline shrink-0"
         >
-          name: 'space-overview', params: { space:
-          `${proposal.network}:${proposal.space.id}` } }" class="text-[20px]
-          text-skin-text mr-2 font-bold inline shrink-0"> >>>>>>> 0ef8fec7
-          (Proposal list item restyle)
           {{ proposal.space.name }}
         </AppLink>
 
