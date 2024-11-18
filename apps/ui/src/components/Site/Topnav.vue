@@ -23,6 +23,12 @@ const { toggleSkin, currentMode } = useUserSkin();
       <li>
         <AppLink to="/#counter">Platform</AppLink>
       </li>
+      <li>
+        <a href="https://github.com/worldassociation/constitution" target="_blank">
+          Constitution
+          <IH-arrow-sm-right class="inline-block -ml-0.5 mb-0.5 -rotate-45" />
+        </a>
+      </li>
     </ul>
     <div class="shrink-0 space-x-3 items-center flex">
       <UiButton class="!px-0 w-[46px]" @click="toggleSkin">
