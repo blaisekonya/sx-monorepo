@@ -21,7 +21,7 @@ const { toggleSkin, currentMode } = useUserSkin();
         <AppLink to="/#community">Community</AppLink>
       </li>
       <li>
-        <AppLink to="/#features">App</AppLink>
+        <AppLink to="/#counter">Platform</AppLink>
       </li>
     </ul>
     <div class="shrink-0 space-x-3 items-center flex">
