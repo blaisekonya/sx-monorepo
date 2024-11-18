@@ -37,6 +37,9 @@ const menu = [
   {
     link: { path: '/s:worldassociation.eth' },
     icon: defineComponent({
+      props: {
+        isActive: Boolean
+      },
       render() {
         return h('div', {
           class:
