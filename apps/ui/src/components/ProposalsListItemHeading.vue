@@ -70,7 +70,7 @@ const space = computed(() =>
               space: `${proposal.network}:${proposal.space.id}`
             }
           }"
-          class="text-md text-skin-text mr-2 font-bold inline shrink-0"
+          class="text-md text-skin-text font-bold inline shrink-0"
         >
           {{ proposal.space.name }}
         </AppLink>
