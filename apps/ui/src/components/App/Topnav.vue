@@ -94,8 +94,7 @@ watch(
     ) {
       modalAccountOpen.value = true;
     }
-  },
-  { immediate: true }
+  }
 );
 
 onUnmounted(() => {

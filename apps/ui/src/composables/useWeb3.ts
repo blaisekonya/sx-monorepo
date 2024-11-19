@@ -77,33 +77,6 @@ export function useWeb3() {
 
     if (!connector) return;
 
-    // Check if injected wallet is still available and connected
-    if (connector === 'injected') {
-      try {
-        // Check if ethereum provider exists and is connected
-        if (!window.ethereum) {
-          throw new Error('No ethereum provider');
-        }
-
-        // Request accounts to check connection status
-        const accounts = await window.ethereum.request({
-          method: 'eth_accounts'
-        });
-
-        if (!accounts || accounts.length === 0) {
-          throw new Error('No accounts available');
-        }
-      } catch (error) {
-        // Clear stored connection data if wallet is not available
-        auth.logout();
-        state.account = '';
-        state.name = '';
-        state.type = '';
-        state.walletconnect = '';
-        return;
-      }
-    }
-
     state.authLoading = true;
     try {
       await auth.autoLogin(connector as string);

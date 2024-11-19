@@ -109,16 +109,6 @@ watch(state, (toState, fromState) => {
   if (toState !== fromState && web3.value.account) fetch();
 });
 
-watch(
-  [() => web3.value.account, () => web3.value.authLoading],
-  ([account, authLoading]) => {
-    if (!account && !authLoading) {
-      modalAccountOpen.value = true;
-    }
-  },
-  { immediate: true }
-);
-
 onUnmounted(() => {
   modalAccountOpen.value = false;
 });
