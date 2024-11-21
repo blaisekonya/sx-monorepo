@@ -73,30 +73,33 @@ const canSubmit = computed<boolean>(
 
 async function handleSubmit() {
   loading.value = true;
+  selectedChoice.value = props.choice;
 
-  if (!props.choice) {
+  if (offchainProposal.value) {
+    try {
+      await voteFn();
+      handleConfirmed();
+    } finally {
+      loading.value = false;
+    }
+  } else {
+    emit('close');
     loading.value = false;
-    return;
+    modalTransactionOpen.value = true;
   }
+}
+
+async function voteFn() {
+  if (!selectedChoice.value) return null;
 
   const appName = (route.query.app as LocationQueryValue) || '';
 
-  try {
-    if (offchainProposal.value) {
-      await vote(
-        props.proposal,
-        props.choice,
-        form.value.reason,
-        appName.length <= 128 ? appName : ''
-      );
-      handleConfirmed();
-    } else {
-      emit('close');
-      modalTransactionOpen.value = true;
-    }
-  } finally {
-    loading.value = false;
-  }
+  return vote(
+    props.proposal,
+    selectedChoice.value,
+    form.value.reason,
+    appName.length <= 128 ? appName : ''
+  );
 }
 
 async function handleConfirmed(tx?: string | null) {
