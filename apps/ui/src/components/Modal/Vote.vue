@@ -50,7 +50,7 @@ const state = reactive({
 const authInitiated = ref(false);
 const loadedProviders = ref(new Set<Connector>());
 
-export function useWeb3() {
+function useWeb3() {
   async function login(connector: string | undefined | boolean = 'injected') {
     authInitiated.value = true;
 
