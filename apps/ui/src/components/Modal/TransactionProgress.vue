@@ -35,7 +35,6 @@ const emit = defineEmits<{
 
 const step: Ref<'approve' | 'confirming' | 'success' | 'fail'> = ref('approve');
 const txId: Ref<string | null> = ref(null);
-
 const network = computed(() => getNetwork(props.networkId));
 const text = computed(() => {
   if (step.value === 'approve') {
@@ -71,7 +70,7 @@ const text = computed(() => {
   throw new Error('Invalid step');
 });
 
-async function handleExecute() {
+async function handleClick() {
   step.value = 'approve';
   try {
     txId.value = await props.execute();
@@ -86,17 +85,9 @@ async function handleExecute() {
     step.value = 'success';
   } catch (e) {
     console.warn('Transaction failed', e);
-
     step.value = 'fail';
   }
 }
-
-watch(
-  () => props.open,
-  open => {
-    if (open) handleExecute();
-  }
-);
 </script>
 
 <template>
@@ -122,7 +113,11 @@ watch(
       'pt-2': step !== 'fail',
       'border-t': step === 'fail'
     }">
-      <div v-if="step === 'approve'" v-text="'Proceed in your wallet'" />
+      <div v-if="step === 'approve'" class="w-full">
+        <UiButton primary class="w-full" @click="handleClick">
+          Confirm transaction
+        </UiButton>
+      </div>
       <a v-else-if="['confirming', 'success'].includes(step) && txId"
         :href="network.helpers.getExplorerUrl(txId, 'transaction')" target="_blank">
         View on explorer
@@ -130,7 +125,7 @@ watch(
       </a>
       <div v-else-if="step === 'fail'" class="w-full flex justify-between space-x-[10px]">
         <UiButton class="w-full" @click="$emit('close')">Cancel</UiButton>
-        <UiButton primary class="w-full" @click="handleExecute">
+        <UiButton primary class="w-full" @click="handleClick">
           Try again
         </UiButton>
       </div>
