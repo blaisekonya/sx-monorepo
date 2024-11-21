@@ -74,11 +74,22 @@ const canSubmit = computed<boolean>(
 async function handleSubmit() {
   loading.value = true;
   selectedChoice.value = props.choice;
+  if (!selectedChoice.value) return null;
+
+  const appName = (route.query.app as LocationQueryValue) || '';
 
   if (offchainProposal.value) {
     try {
-      await voteFn();
-      handleConfirmed();
+      const result = await vote(
+        props.proposal,
+        selectedChoice.value,
+        form.value.reason,
+        appName.length <= 128 ? appName : ''
+      );
+
+      if (result) {
+        await handleConfirmed(result);
+      }
     } finally {
       loading.value = false;
     }
@@ -87,19 +98,6 @@ async function handleSubmit() {
     loading.value = false;
     modalTransactionOpen.value = true;
   }
-}
-
-async function voteFn() {
-  if (!selectedChoice.value) return null;
-
-  const appName = (route.query.app as LocationQueryValue) || '';
-
-  return vote(
-    props.proposal,
-    selectedChoice.value,
-    form.value.reason,
-    appName.length <= 128 ? appName : ''
-  );
 }
 
 async function handleConfirmed(tx?: string | null) {
