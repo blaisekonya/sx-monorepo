@@ -1,12 +1,9 @@
 <script setup lang="ts">
-import { getInstance } from '@snapshot-labs/lock/plugins/vue3';
 import { LocationQueryValue } from 'vue-router';
-import { registerTransaction } from '@/helpers/mana';
 import { getChoiceText, getFormattedVotingPower } from '@/helpers/utils';
 import { getValidator } from '@/helpers/validation';
-import { getNetwork, offchainNetworks } from '@/networks';
-import { Choice, NetworkID, Proposal } from '@/types';
-import { Connector } from '@/networks/types';
+import { offchainNetworks } from '@/networks';
+import { Choice, Proposal } from '@/types';
 
 const REASON_DEFINITION = {
   title: 'Reason',
@@ -27,14 +24,12 @@ const emit = defineEmits<{
   (e: 'voted');
 }>();
 
-const uiStore = useUiStore();
-const { modalAccountOpen } = useModal();
+const { vote } = useActions();
 const { web3 } = useWeb3();
 const { get: getVotingPower, fetch: fetchVotingPower } = useVotingPower();
 const proposalsStore = useProposalsStore();
-const { addPendingVote, loadVotes, votes } = useAccount();
+const { loadVotes, votes } = useAccount();
 const route = useRoute();
-const auth = getInstance();
 
 const loading = ref(false);
 const form = ref<Record<string, string>>({ reason: '' });
@@ -75,118 +70,6 @@ const canSubmit = computed<boolean>(
     Object.keys(formErrors.value).length === 0 &&
     !!votingPower.value?.canVote
 );
-
-async function handleCommitEnvelope(envelope: any, networkId: NetworkID) {
-  // TODO: it should work with WalletConnect, should be done before L1 transaction is broadcasted
-  const network = getNetwork(networkId);
-
-  if (envelope?.signatureData?.commitHash && network.baseNetworkId) {
-    await registerTransaction(network.chainId, {
-      type: envelope.signatureData.primaryType,
-      sender: envelope.signatureData.address,
-      hash: envelope.signatureData.commitHash,
-      payload: envelope.data
-    });
-
-    if (envelope.signatureData.commitTxId) {
-      uiStore.addPendingTransaction(
-        envelope.signatureData.commitTxId,
-        network.baseNetworkId
-      );
-    }
-
-    uiStore.addNotification(
-      'success',
-      'Transaction set up. It will be processed once received on L2 network automatically.'
-    );
-
-    return true;
-  }
-
-  return false;
-}
-
-async function forceLogin() {
-  modalAccountOpen.value = true;
-}
-
-function handleSafeEnvelope(envelope: any) {
-  if (envelope !== null) return false;
-
-  uiStore.addNotification('success', 'Transaction set up.');
-  return true;
-}
-
-async function wrapPromise(
-  networkId: NetworkID,
-  promise: Promise<any>,
-  opts: { transactionNetworkId?: NetworkID } = {}
-): Promise<string | null> {
-  const network = getNetwork(networkId);
-
-  const envelope = await promise;
-
-  if (handleSafeEnvelope(envelope)) return null;
-  if (await handleCommitEnvelope(envelope, networkId)) return null;
-
-  let hash;
-  if (envelope.payloadType === 'HIGHLIGHT_VOTE') {
-    console.log('Receipt', envelope.signatureData);
-  } else if (envelope.signatureData || envelope.sig) {
-    const receipt = await network.actions.send(envelope);
-    hash = receipt.transaction_hash || receipt.hash;
-
-    console.log('Receipt', receipt);
-
-    if (envelope.signatureData.signature === '0x')
-      uiStore.addNotification(
-        'success',
-        'Your vote is pending! waiting for other signers'
-      );
-    hash && uiStore.addPendingTransaction(hash, networkId);
-  } else {
-    hash = envelope.transaction_hash || envelope.hash;
-    console.log('Receipt', envelope);
-
-    uiStore.addPendingTransaction(
-      hash,
-      opts.transactionNetworkId || networkId
-    );
-  }
-
-  return hash;
-}
-
-async function vote(
-  proposal: Proposal,
-  choice: Choice,
-  reason: string,
-  app: string
-): Promise<string | null> {
-  if (!web3.value.account) {
-    await forceLogin();
-    return null;
-  }
-
-  const network = getNetwork(proposal.network);
-
-  const txHash = await wrapPromise(
-    proposal.network,
-    network.actions.vote(
-      auth.web3,
-      web3.value.type as Connector,
-      web3.value.account,
-      proposal,
-      choice,
-      reason,
-      app
-    )
-  );
-
-  addPendingVote(proposal.id);
-
-  return txHash;
-}
 
 async function handleSubmit() {
   loading.value = true;
