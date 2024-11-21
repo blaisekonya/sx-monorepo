@@ -83,9 +83,9 @@ async function handleSubmit() {
       loading.value = false;
     }
   } else {
-    modalTransactionOpen.value = true;
-    loading.value = false;
     emit('close');
+    loading.value = false;
+    modalTransactionOpen.value = true;
   }
 }
 

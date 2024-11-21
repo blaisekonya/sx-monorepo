@@ -93,28 +93,9 @@ async function handleExecute() {
 
 watch(
   () => props.open,
-  async (open) => {
-    if (open) {
-      step.value = 'approve';
-      try {
-        const tx = await props.execute();
-        txId.value = tx;
-
-        if (txId.value) {
-          step.value = 'confirming';
-          await network.value.helpers.waitForTransaction(txId.value);
-          await sleep(API_DELAY);
-        }
-
-        emit('confirmed', txId.value);
-        step.value = 'success';
-      } catch (e) {
-        console.warn('Transaction failed', e);
-        step.value = 'fail';
-      }
-    }
-  },
-  { immediate: true }
+  open => {
+    if (open) handleExecute();
+  }
 );
 </script>
 
