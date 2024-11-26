@@ -96,10 +96,16 @@ async function handleLogin(connector: string) {
     <div class="m-4 flex flex-col gap-2">
       <template v-if="isLoggedOut">
         <template v-if="!showConnectors">
-          <UiButton primary @click="handleLogin('walletlink')">
+          <UiButton primary class="w-full flex justify-center items-center gap-2" @click="handleLogin('walletlink')">
+            <img :src="getConnectorIconUrl(connectors.walletlink.icon)" height="28" width="28"
+              :alt="connectors.walletlink.name" />
             Log in
           </UiButton>
-          <UiButton @click="handleLogin('walletlink')"> Sign up </UiButton>
+          <UiButton class="w-full flex justify-center items-center gap-2" @click="handleLogin('walletlink')">
+            <img :src="getConnectorIconUrl(connectors.walletlink.icon)" height="28" width="28"
+              :alt="connectors.walletlink.name" />
+            Sign up
+          </UiButton>
           <div class="flex items-center my-1">
             <div class="flex-grow border-t border-skin-border"></div>
             <span class="mx-2 text-skin-content text-sm">OR</span>
@@ -120,7 +126,11 @@ async function handleLogin(connector: string) {
             <span class="mx-2 text-skin-content text-sm">OR</span>
             <div class="flex-grow border-t border-skin-border"></div>
           </div>
-          <UiButton @click="handleLogin('walletlink')"> Sign up </UiButton>
+          <UiButton class="w-full flex justify-center items-center gap-2" @click="handleLogin('walletlink')">
+            <img :src="getConnectorIconUrl(connectors.walletlink.icon)" height="28" width="28"
+              :alt="connectors.walletlink.name" />
+            Sign up
+          </UiButton>
         </template>
       </template>
       <template v-else>
