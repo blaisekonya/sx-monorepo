@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import ICGitHub from '~icons/c/github';
-import ISGlobe from '~icons/heroicons-solid/globe-asia-australia';
+import ISGlobe from '~icons/heroicons-solid/globe';
 import ISBanknotes from '~icons/heroicons-solid/banknotes';
 import ISCursorClick from '~icons/heroicons-solid/cursor-click';
 import ISShieldCheck from '~icons/heroicons-solid/shield-check';
@@ -10,37 +10,37 @@ const FEATURES = [
   {
     title: 'Democratic legitimacy',
     about:
-      'Using proof of personhood methods, we ensure that every participant is a real, unique individual.',
+      'Harnessing proof-of-personhood methods to ensure every voice belongs to a real, unique individual.',
     icon: ISUserGroup
   },
   {
-    title: 'Self-sustaining economy',
+    title: 'Self-sustaining community',
     about:
-      "Our world drachma enables us to support global initiatives without relying on donations.",
+      "Powered by the world drachma, we support initiatives without depending on external donations.",
     icon: ISBanknotes
   },
   {
-    title: 'Radical transparency',
+    title: 'Universal accessibility',
     about:
-      'Built on open-source principles to offer complete accountability and capture-resistance.',
-    icon: ICGitHub
-  },
-  {
-    title: 'Shared leadership',
-    about:
-      'Every member can propose solutions, vote on key decisions, or even run for leadership roles.',
+      'Breaking down barriers so anyone, anywhere, can participate and contribute equally.',
     icon: ISGlobe
   },
   {
     title: 'Empowered advocacy',
     about:
-      'Free tools to inspire global action through democratic polls, petitions, and open letters.',
+      'Access free tools to drive global action through democratic polls, petitions, and open letters.',
     icon: ISCursorClick
+  },
+  {
+    title: 'Radical transparency',
+    about:
+      'Built on open-source principles to guarantee full accountability and capture-resistance.',
+    icon: ICGitHub
   },
   {
     title: 'Secure, flexible voting',
     about:
-      'Adaptable voting systems with advanced encryption to protect voter privacy and suit a variety of decisions.',
+      'Adaptable, encrypted voting systems to protect voter privacy and suit a variety of decisions.',
     icon: ISShieldCheck
   }
 ];
@@ -51,7 +51,7 @@ const FEATURES = [
     <UiContainer class="!max-w-screen-lg">
       <div class="pb-6 max-w-[600px]">
         <h1 class="mb-4 font-display !text-[36px] sm:!text-[44px]">
-          Foundations for decentralized global governance
+          The essentials for fair and inclusive global governance
         </h1>
       </div>
     </UiContainer>
