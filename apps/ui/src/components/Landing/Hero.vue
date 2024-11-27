@@ -4,8 +4,8 @@
     <UiContainer class="relative w-full !max-w-screen-lg flex items-center py-8">
       <div class="max-w-[640px]">
         <div class="eyebrow mb-3">World Association</div>
-        <h1 class="mb-5 font-display !text-[56px] sm:!text-[64px]">
-          Uniting humanity
+        <h1 class="mb-5 font-display !text-[52px] sm:!text-[64px]">
+          Experiment with global democracy
         </h1>
         <UiButton :to="{ name: 'my-home' }" class="primary">
           Get started

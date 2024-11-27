@@ -10,31 +10,31 @@ const FEATURES = [
   {
     title: 'Democratic legitimacy',
     about:
-      'We ensure that all voters are real and unique humans through innovative proof of personhood methods.',
+      'Using different proof of personhood methods, we verify that all our members are real and unique humans.',
     icon: ISUserGroup
   },
   {
     title: 'Sustainable funding',
     about:
-      "The world drachma supports the community and eliminates your need to rely on charity.",
+      "The world drachma supports the community and eliminates our need to rely on charity.",
     icon: ISBanknotes
   },
   {
     title: 'Radical transparency',
     about:
-      'Our open-source approach and transparent operations ensure accountability and capture-resistance.',
+      'Accountability and capture-resistance ensured by our transparent operations and open-source approach.',
     icon: ICGitHub
   },
   {
     title: 'Flexible voting systems',
     about:
-      'Supporting various voting methods so that the most suitable one can be chosen for each decision.',
+      'Supporting various voting protocols and choosing the most suitable one for each decision.',
     icon: ISAdjustments
   },
   {
     title: 'Empowered advocacy',
     about:
-      'We provide free tools for petitions and open letters to mobilize communities like never before.',
+      'We provide free tools for polls, petitions, and open letters to mobilize communities like never before.',
     icon: ISCursorClick
   },
   {
@@ -51,7 +51,7 @@ const FEATURES = [
     <UiContainer class="!max-w-screen-lg">
       <div class="pb-6 max-w-[600px]">
         <h1 class="mb-4 font-display !text-[36px] sm:!text-[44px]">
-          Everything you need for global governance
+          All we need to decentralize global governance
         </h1>
       </div>
     </UiContainer>
