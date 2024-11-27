@@ -28,7 +28,7 @@ const FEATURES = [
   {
     title: 'Shared leadership',
     about:
-      'Every member can propose solutions, vote on key decisions, or even run for leadership.',
+      'Every member can propose solutions, vote on key decisions, or even run for leadership roles.',
     icon: ISGlobe
   },
   {
