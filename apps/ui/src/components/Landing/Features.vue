@@ -28,7 +28,7 @@ const FEATURES = [
   {
     title: 'Empowered advocacy',
     about:
-      'Access free tools to drive global action through democratic polls, petitions, and open letters.',
+      'Providing free tools to drive global action through democratic polls, petitions, and open letters.',
     icon: ISCursorClick
   },
   {
