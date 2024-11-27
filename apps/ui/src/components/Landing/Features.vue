@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import ICGitHub from '~icons/c/github';
-import ISAdjustments from '~icons/heroicons-solid/adjustments';
+import ISGlobe from '~icons/heroicons-solid/globe-asia-australia';
 import ISBanknotes from '~icons/heroicons-solid/banknotes';
 import ISCursorClick from '~icons/heroicons-solid/cursor-click';
 import ISShieldCheck from '~icons/heroicons-solid/shield-check';
@@ -10,37 +10,37 @@ const FEATURES = [
   {
     title: 'Democratic legitimacy',
     about:
-      'Using different proof of personhood methods, we verify that all our members are real and unique humans.',
+      'Using proof of personhood methods, we ensure that every participant is a real, unique individual.',
     icon: ISUserGroup
   },
   {
-    title: 'Sustainable funding',
+    title: 'Self-sustaining economy',
     about:
-      "The world drachma supports the community and eliminates our need to rely on charity.",
+      "Our world drachma enables us to support global initiatives without relying on donations.",
     icon: ISBanknotes
   },
   {
     title: 'Radical transparency',
     about:
-      'Accountability and capture-resistance ensured by our transparent operations and open-source approach.',
+      'Built on open-source principles to offer complete accountability and capture-resistance.',
     icon: ICGitHub
   },
   {
-    title: 'Flexible voting systems',
+    title: 'Shared leadership',
     about:
-      'Supporting various voting protocols and choosing the most suitable one for each decision.',
-    icon: ISAdjustments
+      'Every member can propose solutions, vote on key decisions, or even run for leadership.',
+    icon: ISGlobe
   },
   {
     title: 'Empowered advocacy',
     about:
-      'We provide free tools for polls, petitions, and open letters to mobilize communities like never before.',
+      'Free tools to inspire global action through democratic polls, petitions, and open letters.',
     icon: ISCursorClick
   },
   {
-    title: 'Secure voting',
+    title: 'Secure, flexible voting',
     about:
-      'Voter choices are encrypted until voting ends, preventing manipulation and promoting fair outcomes.',
+      'Adaptable voting systems with advanced encryption to protect voter privacy and suit a variety of decisions.',
     icon: ISShieldCheck
   }
 ];
@@ -51,7 +51,7 @@ const FEATURES = [
     <UiContainer class="!max-w-screen-lg">
       <div class="pb-6 max-w-[600px]">
         <h1 class="mb-4 font-display !text-[36px] sm:!text-[44px]">
-          All we need to decentralize global governance
+          Foundations for decentralized global governance
         </h1>
       </div>
     </UiContainer>
