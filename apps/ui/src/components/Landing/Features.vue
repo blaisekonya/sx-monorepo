@@ -10,7 +10,7 @@ const FEATURES = [
   {
     title: 'Democratic legitimacy',
     about:
-      'Harnessing proof-of-personhood methods to ensure every voice belongs to a real, unique individual.',
+      'Harnessing proof of personhood methods to ensure every voice belongs to a real, unique individual.',
     icon: ISUserGroup
   },
   {
@@ -22,13 +22,13 @@ const FEATURES = [
   {
     title: 'Universal accessibility',
     about:
-      'Breaking down barriers so anyone, anywhere, can participate and contribute equally.',
+      'Breaking down barriers so anyone, anywhere can participate and contribute equally.',
     icon: ISGlobe
   },
   {
     title: 'Empowered advocacy',
     about:
-      'Providing free tools to drive global action through democratic polls, petitions, and open letters.',
+      'Providing free tools to drive global action with democratic polls, petitions, and open letters.',
     icon: ISCursorClick
   },
   {
@@ -51,7 +51,7 @@ const FEATURES = [
     <UiContainer class="!max-w-screen-lg">
       <div class="pb-6 max-w-[600px]">
         <h1 class="mb-4 font-display !text-[36px] sm:!text-[44px]">
-          Essentials for fair and inclusive global governance
+          Building the democratic United Nations alternative
         </h1>
       </div>
     </UiContainer>
