@@ -10,7 +10,7 @@ const FEATURES = [
   {
     title: 'Democratic legitimacy',
     about:
-      'Harnessing proof of personhood methods to ensure every voice belongs to a real, unique individual.',
+      'Harnessing proof of personhood methods to ensure every voice belongs to a real, unique person.',
     icon: ISUserGroup
   },
   {
