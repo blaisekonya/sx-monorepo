@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import ICGitHub from '~icons/c/github';
-import ISGlobe from '~icons/heroicons-solid/globe';
+import ISGlobe from '~icons/heroicons-solid/globe-alt';
 import ISBanknotes from '~icons/heroicons-solid/banknotes';
 import ISCursorClick from '~icons/heroicons-solid/cursor-click';
 import ISShieldCheck from '~icons/heroicons-solid/shield-check';
