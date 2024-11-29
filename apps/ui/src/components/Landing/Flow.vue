@@ -62,6 +62,12 @@ const STEPS = [
 
 .dark {
   .flow {
+
+    .step-1,
+    .step-2 {
+      filter: contrast(1.15) brightness(0.95);
+    }
+
     .step-1 {
       background-image: url('@/assets/site/flow-1-dark.png');
     }
