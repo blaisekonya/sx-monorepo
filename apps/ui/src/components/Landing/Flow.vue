@@ -65,7 +65,7 @@ const STEPS = [
 
     .step-1,
     .step-2 {
-      filter: contrast(1.15) brightness(0.95);
+      filter: contrast(1.17) brightness(0.93);
     }
 
     .step-1 {
