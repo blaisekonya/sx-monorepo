@@ -54,7 +54,7 @@ const space = computed(() =>
           params: {
             space: `${proposal.network}:${proposal.space.id}`
           }
-        }" class="text-[19px] text-skin-text font-bold inline shrink-0">
+        }" class="text-[18px] text-skin-text font-bold inline shrink-0 sm:text-[19px]">
           {{ proposal.space.name }}
         </AppLink>
 
@@ -65,16 +65,16 @@ const space = computed(() =>
             space: `${proposal.network}:${proposal.space.id}`
           }
         }">
-          <h3 class="text-[19px] inline [overflow-wrap:anywhere] min-w-0"
+          <h3 class="text-[18px] inline [overflow-wrap:anywhere] min-w-0 sm:text-[19px]"
             v-text="proposal.title || `Proposal #${proposal.proposal_id}`" />
           <ProposalLabels v-if="space?.labels && proposal.labels.length" :labels="proposal.labels" :space="space"
             inline />
           <IH-check v-if="
             showVotedIndicator && votes[`${proposal.network}:${proposal.id}`]
-          " class="text-skin-success inline-block shrink-0 relative" />
+          " class="text-skin-success inline-block shrink-0 relative ml-0.5 mb-0.5" />
         </AppLink>
 
-        <div class="text-sm flex flex-wrap items-center leading-5 gap-1 mt-0.5">
+        <div class="text-sm flex flex-wrap items-center leading-5 gap-1">
           <template v-if="showAuthor">
             <span>By</span>
             <AppLink class="text-skin-text" :to="{

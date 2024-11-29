@@ -43,7 +43,7 @@ onUnmounted(() => notificationsStore.markAllAsRead());
                 :space="{ id: notification.proposal.space.id, avatar: notification.proposal.space.avatar, network: notification.proposal.network }"
                 :size="32" class="mr-2 relative top-1.5" />
               <div class="flex flex-col">
-                <div class="flex items-center gap-1">
+                <div class="flex items-baseline gap-1">
                   <AppLink :to="{
                     name: 'space-overview',
                     params: {
@@ -52,7 +52,7 @@ onUnmounted(() => notificationsStore.markAllAsRead());
                   }">
                     {{ notification.proposal.space.name }}
                   </AppLink>
-                  <span class="text-skin-text">
+                  <span class="text-skin-text text-sm">
                     voting {{ notification.type }}
                     {{ _rt(notification.timestamp) }}
                   </span>
@@ -64,7 +64,7 @@ onUnmounted(() => notificationsStore.markAllAsRead());
                     space: `${notification.proposal.network}:${notification.proposal.space.id}`
                   }
                 }" class="mt-0.5">
-                  <h3 class="font-normal text-[19px] mt-0.5 [overflow-wrap:anywhere] leading-[26px]"
+                  <h3 class="font-normal text-[18px] mt-0.5 [overflow-wrap:anywhere] leading-6 sm:text-[19px]"
                     v-text="notification.proposal.title || `#${notification.proposal.proposal_id}`" />
                 </AppLink>
               </div>
