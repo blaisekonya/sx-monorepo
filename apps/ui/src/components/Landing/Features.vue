@@ -8,7 +8,7 @@ import ISUserGroup from '~icons/heroicons-solid/user-group';
 
 const FEATURES = [
   {
-    title: 'Democratic legitimacy',
+    title: 'Democratic decisions',
     about:
       'Harnessing proof of personhood methods to ensure every voice belongs to a real and unique person.',
     icon: ISUserGroup
