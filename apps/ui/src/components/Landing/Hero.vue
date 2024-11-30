@@ -5,7 +5,7 @@
       <div class="max-w-[600px]">
         <div class="eyebrow mb-3">World Association</div>
         <h1 class="mb-5 font-display !text-[52px] sm:!text-[60px]">
-          Experiment with global democracy
+          The democratic DAO uniting humanity
         </h1>
         <UiButton :to="{ name: 'my-home' }" class="primary">
           Get started
