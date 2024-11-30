@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import ICGitHub from '~icons/c/github';
-import ISGlobe from '~icons/heroicons-solid/globe-alt';
+import ISGlobe from '~icons/heroicons-solid/globe';
 import ISBanknotes from '~icons/heroicons-solid/banknotes';
 import ISCursorClick from '~icons/heroicons-solid/cursor-click';
 import ISShieldCheck from '~icons/heroicons-solid/shield-check';
@@ -8,40 +8,40 @@ import ISUserGroup from '~icons/heroicons-solid/user-group';
 
 const FEATURES = [
   {
-    title: 'Democratic legitimacy',
+    title: 'Democratic decisions',
     about:
-      'Harnessing proof of personhood methods to ensure every voice belongs to a real and unique person.',
+      'Utilizing proof of personhood methods to ensure every voice is real, unique, and counts equally.',
     icon: ISUserGroup
   },
   {
-    title: 'Self-sustaining community',
+    title: 'Radical transparency',
+    about:
+      'Rooted in open source principles to guarantee full accountability and capture-resistance.',
+    icon: ICGitHub
+  },
+  {
+    title: 'Subsidiarity in action',
+    about:
+      'Focusing on issues best addressed at the global level for maximum effectiveness.',
+    icon: ISGlobe
+  },
+  {
+    title: 'Secure, flexible voting',
+    about:
+      'Encrypted, adaptable voting systems to protect privacy and suit diverse decision-making needs.',
+    icon: ISShieldCheck
+  },
+  {
+    title: 'Self-financing organization',
     about:
       "Powered by the world drachma, we support initiatives without depending on external donations.",
     icon: ISBanknotes
   },
   {
-    title: 'Radical transparency',
-    about:
-      'Built on open-source principles to guarantee full accountability and capture-resistance.',
-    icon: ICGitHub
-  },
-  {
-    title: 'Secure, flexible voting',
-    about:
-      'Adaptable, encrypted voting systems to protect voter privacy and suit a variety of decisions.',
-    icon: ISShieldCheck
-  },
-  {
     title: 'Empowered advocacy',
     about:
-      'Providing free tools to drive global action with democratic polls, petitions, and open letters.',
+      'Providing free tools to drive global change with democratic polls, petitions, and open letters.',
     icon: ISCursorClick
-  },
-  {
-    title: 'Universal accessibility',
-    about:
-      'Breaking down barriers so anyone, anywhere can participate and contribute equally.',
-    icon: ISGlobe
   }
 ];
 </script>
@@ -51,7 +51,7 @@ const FEATURES = [
     <UiContainer class="!max-w-screen-lg">
       <div class="pb-6 max-w-[600px]">
         <h1 class="mb-4 font-display !text-[36px] sm:!text-[44px]">
-          Addressing the most pressing global challenges
+          The future of global governance
         </h1>
       </div>
     </UiContainer>
