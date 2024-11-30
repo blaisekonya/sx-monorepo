@@ -20,18 +20,6 @@ const FEATURES = [
     icon: ISBanknotes
   },
   {
-    title: 'Universal accessibility',
-    about:
-      'Breaking down barriers so anyone, anywhere can participate and contribute equally.',
-    icon: ISGlobe
-  },
-  {
-    title: 'Empowered advocacy',
-    about:
-      'Providing free tools to drive global action with democratic polls, petitions, and open letters.',
-    icon: ISCursorClick
-  },
-  {
     title: 'Radical transparency',
     about:
       'Built on open-source principles to guarantee full accountability and capture-resistance.',
@@ -42,6 +30,18 @@ const FEATURES = [
     about:
       'Adaptable, encrypted voting systems to protect voter privacy and suit a variety of decisions.',
     icon: ISShieldCheck
+  },
+  {
+    title: 'Empowered advocacy',
+    about:
+      'Providing free tools to drive global action with democratic polls, petitions, and open letters.',
+    icon: ISCursorClick
+  },
+  {
+    title: 'Universal accessibility',
+    about:
+      'Breaking down barriers so anyone, anywhere can participate and contribute equally.',
+    icon: ISGlobe
   }
 ];
 </script>
