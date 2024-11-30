@@ -23,7 +23,7 @@ const STEPS = [
     <UiContainer class="!max-w-screen-lg">
       <div class="pb-6 max-w-[600px] text-center mx-auto">
         <h1 class="mb-4 font-display !text-[36px] sm:!text-[44px]">
-          Tackling the most pressing global challenges
+          Tackling our most pressing global challenges
         </h1>
       </div>
     </UiContainer>
