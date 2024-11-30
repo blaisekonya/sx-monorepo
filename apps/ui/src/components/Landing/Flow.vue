@@ -6,7 +6,7 @@ const STEPS = [
   {
     title: 'Join',
     about:
-      'Prove your personhood, claim your basic income stream, and discuss solutions to pressing global challenges – all while preserving your privacy by default.',
+      'Prove your personhood, set up your basic income, and discuss issues of human survival, development and welfare – all while preserving your privacy by default.',
     icon: ISUserPlus
   },
   {
@@ -23,7 +23,7 @@ const STEPS = [
     <UiContainer class="!max-w-screen-lg">
       <div class="pb-6 max-w-[600px] text-center mx-auto">
         <h1 class="mb-4 font-display !text-[36px] sm:!text-[44px]">
-          A democratic community anyone can join
+          Tackling the most pressing global challenges
         </h1>
       </div>
     </UiContainer>
