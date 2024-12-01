@@ -8,8 +8,6 @@ useTitle(APP_NAME);
   <div class="relative">
     <LandingHero />
     <LandingFlow />
-    <LandingCounter />
-    <LandingUsers />
     <LandingFeatures />
     <LandingStart />
   </div>
