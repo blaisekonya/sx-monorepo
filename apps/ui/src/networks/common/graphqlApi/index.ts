@@ -296,7 +296,8 @@ function formatProposal(
     state: getProposalState(proposal, current),
     network: networkId,
     privacy: null,
-    quorum: +proposal.quorum
+    quorum: +proposal.quorum,
+    flagged: false
   };
 }
 
@@ -451,7 +452,10 @@ export function createApi(
       filters?: ProposalsFilter,
       searchQuery = ''
     ): Promise<Proposal[]> => {
-      const _filters: Record<string, any> = clone(filters || {});
+      const _filters: ProposalsFilter = clone(filters || {});
+      const metadataFilters: Record<string, any> = {
+        title_contains_nocase: searchQuery
+      };
       const state = _filters.state;
 
       if (state === 'active') {
@@ -465,6 +469,12 @@ export function createApi(
 
       delete _filters.state;
 
+      if (_filters.labels?.length) {
+        metadataFilters.labels_contains = _filters.labels;
+      }
+
+      delete _filters.labels;
+
       const { data } = await apollo.query({
         query: PROPOSALS_QUERY,
         variables: {
@@ -473,7 +483,7 @@ export function createApi(
           where: {
             space_in: spaceIds,
             cancelled: false,
-            metadata_: { title_contains_nocase: searchQuery },
+            metadata_: metadataFilters,
             ..._filters
           }
         }

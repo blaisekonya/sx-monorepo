@@ -12,6 +12,12 @@ import { SpaceMetadataLabel } from '@/types';
 
 const props = defineProps<{
   labels: SpaceMetadataLabel[];
+  buttonProps?: Record<string, any>;
+  panelProps?: Record<string, any>;
+}>();
+
+defineSlots<{
+  button(props: { close: () => void }): any;
 }>();
 
 const selectedLabels = defineModel<string[]>({
@@ -32,18 +38,17 @@ const filteredLabels = computed(() =>
 </script>
 
 <template>
-  <Popover v-slot="{ open }" class="relative contents">
-    <PopoverButton class="outline-none focus-within:text-skin-link w-full"
-      :class="open ? 'text-skin-link' : 'text-skin-text'">
-      <slot name="button">
+  <Popover v-slot="{ open, close }" class="relative contents">
+    <PopoverButton class="w-full" :class="open ? 'text-skin-link' : 'text-skin-text'" v-bind="buttonProps">
+      <slot name="button" :close="close">
         <IH-pencil />
       </slot>
     </PopoverButton>
-
     <transition enter-active-class="transition duration-200 ease-out" enter-from-class="translate-y-1 opacity-0"
       enter-to-class="translate-y-0 opacity-100" leave-active-class="transition duration-150 ease-in"
       leave-from-class="translate-y-0 opacity-100" leave-to-class="translate-y-1 opacity-0">
-      <PopoverPanel focus class="absolute z-10 left-0 -mt-2 mx-4 pb-3" style="width: calc(100% - 48px)">
+      <PopoverPanel focus class="absolute z-[11] left-0 -mt-2 mx-4 pb-3" style="width: calc(100% - 48px)"
+        v-bind="panelProps">
         <Combobox v-slot="{ activeOption }" v-model="selectedLabels" multiple nullable>
           <div class="bg-skin-bg rounded-xl overflow-hidden shadow-bottom">
             <div class="flex items-center px-3 py-[14px] bg-skin-border border-b border-skin-heading border-opacity-5">

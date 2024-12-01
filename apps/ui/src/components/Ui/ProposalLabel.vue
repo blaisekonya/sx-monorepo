@@ -1,7 +1,10 @@
 <script setup lang="ts">
+import { RouteLocationNamedRaw } from 'vue-router';
+
 const props = defineProps<{
   label: string;
   color: string;
+  to?: RouteLocationNamedRaw;
 }>();
 
 const { currentMode } = useUserSkin();
@@ -46,12 +49,12 @@ function checkColorProximity(color: string): {
 </script>
 
 <template>
-  <div class="rounded-full w-fit max-w-[220px] shrink-0 flex" :class="{
+  <AppLink :to="to" class="rounded-full w-fit max-w-[220px] shrink-0 flex" :class="{
     border: colorProperties.showBorder
   }" :style="{
       backgroundColor: colorProperties.backgroundColor,
       color: colorProperties.textColor
     }">
     <span class="truncate text-sm leading-[11px] whitespace-nowrap px-2 py-[6px]" v-text="label" />
-  </div>
+  </AppLink>
 </template>

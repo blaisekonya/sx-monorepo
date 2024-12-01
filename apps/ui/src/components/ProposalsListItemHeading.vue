@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { quorumLabel, quorumProgress } from '@/helpers/quorum';
-import { _n, _p, _rt, getProposalId, shortenAddress } from '@/helpers/utils';
+import { formatQuorum, quorumLabel, quorumProgress } from '@/helpers/quorum';
+import { _n, _rt, shortenAddress } from '@/helpers/utils';
 import { Proposal as ProposalType } from '@/types';
 import SpaceAvatar from './SpaceAvatar.vue';
 
@@ -67,8 +67,8 @@ const space = computed(() =>
         }">
           <h3 class="text-[18px] inline [overflow-wrap:anywhere] min-w-0 sm:text-[19px]"
             v-text="proposal.title || `Proposal #${proposal.proposal_id}`" />
-          <ProposalLabels v-if="space?.labels && proposal.labels.length" :labels="proposal.labels" :space="space"
-            inline />
+          <ProposalLabels v-if="space?.labels && proposal.labels.length" :labels="proposal.labels" :space="space" inline
+            with-link />
           <IH-check v-if="
             showVotedIndicator && votes[`${proposal.network}:${proposal.id}`]
           " class="text-skin-success inline-block shrink-0 relative ml-0.5 mb-0.5" />
@@ -96,7 +96,7 @@ const space = computed(() =>
           <template v-if="proposal.quorum">
             <span>·</span>
             <span class="lowercase">
-              {{ _p(totalProgress) }} {{ quorumLabel(proposal.quorum_type) }}
+              {{ formatQuorum(totalProgress) }} {{ quorumLabel(proposal.quorum_type) }}
             </span>
           </template>
           <span>·</span>

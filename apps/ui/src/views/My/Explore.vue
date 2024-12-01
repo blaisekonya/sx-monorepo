@@ -144,8 +144,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex justify-between">
-    <div class="flex flex-row flex-wrap p-4 gap-2">
+  <div class="flex justify-between p-4 gap-2 gap-y-3 flex-row">
+    <div class="flex flex-row flex-wrap gap-2">
       <UiSelectDropdown v-model="protocol" class="min-h-[46px]" title="Protocol" gap="12" placement="start"
         :items="protocols" />
       <Combobox v-model="network" class="mb-0" inline :gap="12" :definition="{
@@ -157,6 +157,12 @@ onMounted(() => {
       <UiSelectDropdown v-if="protocol === 'snapshot'" v-model="category" class="min-h-[46px]" title="Category" gap="12"
         placement="start" :items="categories" />
     </div>
+    <UiTooltip title="Create new space">
+      <UiButton :to="protocol === 'snapshot' ? 'https://snapshot.org/#/setup' : 'create'
+        " class="!px-0 w-[46px]">
+        <IH-plus-sm />
+      </UiButton>
+    </UiTooltip>
   </div>
   <div>
     <UiLabel label="Explore" />

@@ -13,9 +13,21 @@ const { toggleSkin, currentMode } = useUserSkin();
     </div>
     <ul class="hidden lg:flex text-md text-skin-link space-x-4 mr-6">
       <li>
-        <a href="https://github.com/worldassociation/constitution" target="_blank">
-          Constitution
-          <IH-arrow-sm-right class="inline-block -ml-0.5 mb-0.5 -rotate-45" />
+        <AppLink to="/#features">Features</AppLink>
+      </li>
+      <li>
+        <AppLink to="/#ecosystem">Ecosystem</AppLink>
+      </li>
+      <li>
+        <a href="https://docs.snapshot.org" target="_blank">
+          Developers
+          <IH-arrow-sm-right class="inline-block -rotate-45" />
+        </a>
+      </li>
+      <li>
+        <a href="https://snapshot.mirror.xyz" target="_blank">
+          Blog
+          <IH-arrow-sm-right class="inline-block -rotate-45" />
         </a>
       </li>
     </ul>
