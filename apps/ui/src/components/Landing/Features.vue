@@ -10,7 +10,7 @@ const FEATURES = [
   {
     title: 'Democratic decisions',
     about:
-      'Utilizing proof of personhood methods to ensure every voice is real, unique, and counts equally.',
+      'Using proof of personhood methods to ensure that every voice is real, unique, and counts equally.',
     icon: ISUserGroup
   },
   {
@@ -20,7 +20,7 @@ const FEATURES = [
     icon: ICGitHub
   },
   {
-    title: 'Respecting subsidiarity',
+    title: 'Guided by subsidiarity',
     about:
       'Focusing exclusively on issues where global coordination is the most effective approach.',
     icon: ISGlobe
@@ -32,7 +32,7 @@ const FEATURES = [
     icon: ISShieldCheck
   },
   {
-    title: 'Self-financing organization',
+    title: 'Financial self-reliance',
     about:
       "Powered by the world drachma, we support initiatives without depending on external donations.",
     icon: ISBanknotes
@@ -49,7 +49,7 @@ const FEATURES = [
 <template>
   <div id="features" class="pt-8 border-b">
     <UiContainer class="!max-w-screen-lg">
-      <div class="pb-6 max-w-[600px]">
+      <div class="pb-6 max-w-[440px]">
         <h1 class="mb-4 font-display !text-[36px] sm:!text-[44px]">
           The future of global governance
         </h1>

@@ -12,7 +12,7 @@ const STEPS = [
   {
     title: 'Govern',
     about:
-      'Create referendums, run for leadership roles, or make your voice heard through voting. Decisions are turned into action using our official currency, the world drachma.',
+      'Create referendums, run for leadership roles, or make your voice heard by voting. Decisions are turned into action using our official currency, the world drachma.',
     icon: ISLibrary
   }
 ];
@@ -21,9 +21,9 @@ const STEPS = [
 <template>
   <div id="community" class="pt-8">
     <UiContainer class="!max-w-screen-lg">
-      <div class="pb-6 max-w-[600px] text-center mx-auto">
+      <div class="pb-6 max-w-[440px] text-center mx-auto">
         <h1 class="mb-4 font-display !text-[36px] sm:!text-[44px]">
-          A democratic DAO anyone can join
+          A democratic DAO open to all
         </h1>
       </div>
     </UiContainer>
