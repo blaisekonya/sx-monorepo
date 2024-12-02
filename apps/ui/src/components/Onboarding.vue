@@ -95,8 +95,6 @@ onMounted(async () => {
     await usersStore.fetchUser(web3.value.account, true);
   }
 });
-
-const isVoterIdBalanceLoaded = computed(() => voterIdBalance.value !== null);
 </script>
 
 <template>
