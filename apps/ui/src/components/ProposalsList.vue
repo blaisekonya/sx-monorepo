@@ -35,7 +35,7 @@ const currentLimit = computed(() => {
 <template>
   <div>
     <UiLabel v-if="title" :label="title" />
-    <ProposalsListSkeleton v-if="loading" :count="6" :is-home="$route.path === '/home'" />
+    <ProposalsListSkeleton v-if="loading" :count="3" :is-home="$route.path === '/home'" />
     <div v-else>
       <UiContainerInfiniteScroll :loading-more="loadingMore" @end-reached="emit('endReached')">
         <ProposalsListItem v-for="(proposal, i) in proposals.slice(0, currentLimit)" :key="i" :proposal="proposal"
