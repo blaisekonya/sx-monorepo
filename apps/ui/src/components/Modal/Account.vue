@@ -93,7 +93,8 @@ async function handleLogin(connector: string) {
         <button v-for="connector in availableConnectors" :key="connector.id" type="button"
           @click="handleLogin(connector.id)">
           <UiButton class="w-full flex justify-center items-center gap-2">
-            <img :src="getConnectorIconUrl(connector.icon)" height="28" width="28" :alt="connector.name" />
+            <img :src="getConnectorIconUrl(connector.icon)" height="28" width="28" class="rounded-lg"
+              :alt="connector.name" />
             {{ connector.name }}
           </UiButton>
         </button>
