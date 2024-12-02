@@ -18,10 +18,10 @@ const props = withDefaults(
         <div class="flex-auto mr-1 w-0">
           <div class="space-x-2 flex">
             <div class="flex flex-shrink-0">
-              <div v-if="isHome" class="my-2 bg-skin-border rounded-full w-[40px] h-[40px]" />
+              <div v-if="isHome" class="my-1 bg-skin-border rounded-full w-[40px] h-[40px]" />
               <div :class="[
                 'rounded-full bg-skin-border',
-                isHome ? 'relative top-[30px] right-[13px] -mr-[12px] w-[18px] h-[18px]' : 'relative top-[3px] w-[18px] h-[18px]'
+                isHome ? 'relative top-[30px] right-[13px] -mr-[16px] md:-mr-[12px] w-[18px] h-[18px]' : 'relative top-[3px] w-[18px] h-[18px]'
               ]" />
             </div>
 
@@ -46,10 +46,10 @@ const props = withDefaults(
         <div class="flex-auto mr-1 w-0">
           <div class="space-x-2 flex">
             <div class="flex flex-shrink-0">
-              <div v-if="isHome" class="my-2 bg-skin-border rounded-full w-[40px] h-[40px]" />
+              <div v-if="isHome" class="my-1 bg-skin-border rounded-full w-[40px] h-[40px]" />
               <div :class="[
                 'rounded-full bg-skin-border',
-                isHome ? 'relative top-[30px] right-[13px] -mr-[12px] w-[18px] h-[18px]' : 'relative top-[3px] w-[18px] h-[18px]'
+                isHome ? 'relative top-[30px] right-[13px] -mr-[16px] md:-mr-[12px] w-[18px] h-[18px]' : 'relative top-[3px] w-[18px] h-[18px]'
               ]" />
             </div>
 
@@ -74,10 +74,10 @@ const props = withDefaults(
         <div class="flex-auto mr-1 w-0">
           <div class="space-x-2 flex">
             <div class="flex flex-shrink-0">
-              <div v-if="isHome" class="my-2 bg-skin-border rounded-full w-[40px] h-[40px]" />
+              <div v-if="isHome" class="my-1 bg-skin-border rounded-full w-[40px] h-[40px]" />
               <div :class="[
                 'rounded-full bg-skin-border',
-                isHome ? 'relative top-[30px] right-[13px] -mr-[12px] w-[18px] h-[18px]' : 'relative top-[3px] w-[18px] h-[18px]'
+                isHome ? 'relative top-[30px] right-[13px] -mr-[16px] md:-mr-[12px] w-[18px] h-[18px]' : 'relative top-[3px] w-[18px] h-[18px]'
               ]" />
             </div>
 
