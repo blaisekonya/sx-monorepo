@@ -35,7 +35,7 @@ onUnmounted(() => notificationsStore.markAllAsRead());
     <UiLoading v-if="notificationsStore.loading" class="block px-4 py-3" />
     <div v-else-if="notificationsStore.notifications.length">
       <div v-for="(notification, i) in notificationsStore.notifications" :key="i">
-        <div class="border-b px-3 sm:px-4 py-2.5 sm:py-[14px] flex space-x-3"
+        <div class="border-b px-3 sm:px-4 py-2.5 sm:py-[13px] flex space-x-3"
           :class="{ 'bg-skin-border/20': notification.unread }">
           <div class="flex flex-col">
             <div class="flex items-start">
