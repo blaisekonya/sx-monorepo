@@ -70,7 +70,7 @@ const space = computed(() =>
               space: `${proposal.network}:${proposal.space.id}`
             }
           }"
-          class="text-[18px] text-skin-text font-bold inline shrink-0 sm:text-[19px]"
+          class="text-[18px] font-bold inline shrink-0"
         >
           {{ proposal.space.name }}
         </AppLink>
@@ -94,6 +94,7 @@ const space = computed(() =>
             :labels="proposal.labels"
             :space="space"
             inline
+            with-link
           />
           <IH-check
             v-if="
