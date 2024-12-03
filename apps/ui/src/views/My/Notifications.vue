@@ -49,7 +49,7 @@ onUnmounted(() => notificationsStore.markAllAsRead());
                     params: {
                       space: `${notification.proposal.network}:${notification.proposal.space.id}`
                     }
-                  }">
+                  }" class="font-bold">
                     {{ notification.proposal.space.name }}
                   </AppLink>
                   <span class="text-skin-text text-sm">
@@ -64,7 +64,7 @@ onUnmounted(() => notificationsStore.markAllAsRead());
                     space: `${notification.proposal.network}:${notification.proposal.space.id}`
                   }
                 }">
-                  <h3 class="font-normal text-[18px] mt-0.5 [overflow-wrap:anywhere] leading-6"
+                  <h3 class="text-[17px] font-normal [overflow-wrap:anywhere] leading-6"
                     v-text="notification.proposal.title || `#${notification.proposal.proposal_id}`" />
                 </AppLink>
               </div>

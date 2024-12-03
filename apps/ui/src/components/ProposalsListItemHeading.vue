@@ -54,7 +54,7 @@ const space = computed(() =>
           params: {
             space: `${proposal.network}:${proposal.space.id}`
           }
-        }" class="text-[18px] font-bold inline shrink-0">
+        }" class="text-[18px] inline shrink-0">
           {{ proposal.space.name }}
         </AppLink>
 
@@ -65,7 +65,7 @@ const space = computed(() =>
             space: `${proposal.network}:${proposal.space.id}`
           }
         }">
-          <h3 class="text-[18px] inline [overflow-wrap:anywhere] min-w-0"
+          <h3 class="text-[18px] font-normal inline [overflow-wrap:anywhere] min-w-0"
             v-text="proposal.title || `Proposal #${proposal.proposal_id}`" />
           <ProposalLabels v-if="space?.labels && proposal.labels.length" :labels="proposal.labels" :space="space" inline
             with-link />
