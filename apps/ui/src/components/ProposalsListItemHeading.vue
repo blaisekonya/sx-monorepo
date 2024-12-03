@@ -54,7 +54,7 @@ const space = computed(() =>
           params: {
             space: `${proposal.network}:${proposal.space.id}`
           }
-        }" class="text-[18px] inline shrink-0">
+        }" class="text-[18px] font-bold inline shrink-0">
           {{ proposal.space.name }}
         </AppLink>
 
