@@ -3,7 +3,7 @@ const { toggleSkin, currentMode } = useUserSkin();
 </script>
 
 <template>
-  <div class="p-4 lg:px-6 flex justify-center items-center z-10 left-0 right-0">
+  <div class="p-4 lg:px-6 flex justify-center items-center absolute z-10 left-0 right-0">
     <div class="grow flex items-center">
       <AppLink :to="{ name: 'site-landing' }" class="inline-block">
         <div class="flex justify-center items-center">
