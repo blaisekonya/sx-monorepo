@@ -2,7 +2,7 @@
   <div class="py-9 flex items-center justify-center relative">
     <div class="absolute blocks-x top-0 right-[50%] left-0 bottom-0 !bg-right-top -z-10" />
     <UiContainer class="!max-w-screen-lg">
-      <div class="text-center max-w-[440px] mx-auto">
+      <div class="text-center max-w-[680px] mx-auto">
         <div class="eyebrow mb-3">Join the World Association</div>
         <h1 class="mb-4 font-display !text-[36px] sm:!text-[44px]">
           Experiment with global democracy
