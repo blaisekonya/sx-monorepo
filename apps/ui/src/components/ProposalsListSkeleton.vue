@@ -14,7 +14,7 @@ const props = withDefaults(
 <template>
   <div class="animate-pulse">
     <div v-for="i in count" :key="i">
-      <div class="border-b mx-3 sm:mx-4 py-[11px] flex">
+      <div class="border-b mx-3 sm:mx-4 py-[9px] flex">
         <div class="flex-auto mr-1 w-0">
           <div class="space-x-2 flex">
             <div class="flex flex-shrink-0">
