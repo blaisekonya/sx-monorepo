@@ -48,7 +48,7 @@ const space = computed(() =>
           <ProposalIconStatus size="18" :state="proposal.state" class="top-1" />
         </AppLink>
       </div>
-      <div class="flex flex-col min-w-0 leading-6">
+      <div class="flex flex-col min-w-0 leading-[22px]">
         <AppLink v-if="showSpace" :to="{
           name: 'space-overview',
           params: {
@@ -64,7 +64,7 @@ const space = computed(() =>
             proposal: proposal.proposal_id,
             space: `${proposal.network}:${proposal.space.id}`
           }
-        }" class="!leading-[22px]">
+        }">
           <h3 class="text-[18px] font-normal inline [overflow-wrap:anywhere] min-w-0"
             v-text="proposal.title || `Proposal #${proposal.proposal_id}`" />
           <ProposalLabels v-if="space?.labels && proposal.labels.length" :labels="proposal.labels" :space="space" inline
