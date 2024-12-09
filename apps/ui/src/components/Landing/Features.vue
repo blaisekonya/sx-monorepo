@@ -20,7 +20,7 @@ const FEATURES = [
     icon: ISUserGroup
   },
   {
-    title: 'Fueled by its own currency',
+    title: 'Fueled by our own currency',
     about:
       "Powered by the world drachma, we support members and initiatives without relying on charity.",
     icon: ISBanknotes
