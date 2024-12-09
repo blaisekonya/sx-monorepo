@@ -14,15 +14,15 @@ const FEATURES = [
     icon: ISGlobe
   },
   {
-    title: 'Verifiably democratic',
+    title: 'Democratic legitimacy',
     about:
       'Using proof of personhood methods to ensure that every voice is real, unique, and counts equally.',
     icon: ISUserGroup
   },
   {
-    title: 'Fueled by our own currency',
+    title: 'With an own currency',
     about:
-      "Powered by the world drachma, we support members and initiatives without relying on charity.",
+      "Powered by the world drachma, we support members and initiatives without the need to rely on charity.",
     icon: ISBanknotes
   },
   {
