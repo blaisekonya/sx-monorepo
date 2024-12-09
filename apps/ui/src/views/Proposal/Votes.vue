@@ -2,7 +2,6 @@
 import { _n, _rt, _t, _vp, shortenAddress } from '@/helpers/utils';
 import { getNetwork, offchainNetworks } from '@/networks';
 import { Proposal as ProposalType, Vote } from '@/types';
-import { useScrollVisibility } from '@/composables/useScrollVisibility';
 
 const LIMIT = 20;
 
@@ -34,13 +33,6 @@ const votingPowerDecimals = computed(() => {
     ),
     0
   );
-});
-
-const { isVisible, isMobile } = useScrollVisibility();
-
-const stickyHeaderClass = computed(() => {
-  if (!isMobile.value) return 'top-[112px]';
-  return isVisible.value ? 'top-[112px]' : 'top-[40px]';
 });
 
 function reset() {
@@ -121,8 +113,7 @@ watch([sortBy, choiceFilter], () => {
 </script>
 
 <template>
-  <div ref="votesHeader" class="bg-skin-bg sticky z-40 border-b overflow-hidden transition-[top] duration-200"
-    :class="stickyHeaderClass">
+  <div ref="votesHeader" class="bg-skin-bg sticky top-[112px] lg:top-[113px] z-40 border-b overflow-hidden">
     <div class="flex space-x-3 font-medium min-w-[735px]">
       <div class="ml-4 max-w-[218px] w-[218px] truncate">Voter</div>
       <div class="grow w-[40%]">
@@ -162,7 +153,7 @@ watch([sortBy, choiceFilter], () => {
       <div class="min-w-[44px] lg:w-[60px]" />
     </div>
   </div>
-  <UiScrollerHorizontal :sticky-offset="112" @scroll="handleScrollEvent">
+  <UiScrollerHorizontal @scroll="handleScrollEvent">
     <div class="min-w-[735px] min-h-[calc(100vh-141px)]">
       <UiLoading v-if="!loaded" class="px-4 py-3 block absolute" />
       <template v-else>
@@ -173,7 +164,7 @@ watch([sortBy, choiceFilter], () => {
 
         <UiContainerInfiniteScroll :loading-more="loadingMore" @end-reached="handleEndReached">
           <template #loading>
-            <UiLoading class="px-4 py-3 block absolute" />
+            <UiLoading class="px-4 py-3 block" />
           </template>
           <div v-for="(vote, i) in votes" :key="i" class="border-b flex space-x-3">
             <div class="right-0 h-[8px] absolute" :style="{
@@ -257,21 +248,3 @@ watch([sortBy, choiceFilter], () => {
     " />
   </teleport>
 </template>
-
-<style scoped>
-.choice-bg {
-  @apply bg-skin-border;
-}
-
-.choice-bg._1 {
-  @apply bg-skin-success;
-}
-
-.choice-bg._2 {
-  @apply bg-skin-danger;
-}
-
-.choice-bg._3 {
-  @apply bg-skin-text;
-}
-</style>

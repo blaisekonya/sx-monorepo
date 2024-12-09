@@ -3,7 +3,6 @@ import { clone, getSalt } from '@/helpers/utils';
 import { enabledReadWriteNetworks, getNetwork } from '@/networks';
 import { StrategyConfig } from '@/networks/types';
 import { NetworkID, SpaceMetadata, SpaceSettings } from '@/types';
-import { useScrollVisibility } from '@/composables/useScrollVisibility';
 
 const PAGES = [
   {
@@ -45,7 +44,6 @@ type PageID = (typeof PAGES)[number]['id'];
 const { setTitle } = useTitle();
 const { predictSpaceAddress } = useActions();
 const { web3 } = useWeb3();
-const { isVisible, isMobile } = useScrollVisibility();
 
 const pagesRefs = ref([] as HTMLElement[]);
 const sending = ref(false);
@@ -114,11 +112,6 @@ const submitDisabled = computed(() =>
   PAGES.some(page => !validatePage(page.id))
 );
 
-const stickyNavClass = computed(() => {
-  if (!isMobile.value) return 'top-[72px]';
-  return isVisible.value ? 'top-[72px]' : 'top-0';
-});
-
 function validatePage(page: PageID) {
   if (page === 'strategies') return votingStrategies.value.length > 0;
   if (page === 'auths') return authenticators.value.length > 0;
@@ -182,10 +175,9 @@ watchEffect(() => setTitle('Create space'));
       :execution-strategies="executionStrategies" :controller="controller" />
     <div v-else class="pt-5 flex max-w-[50rem] mx-auto px-4">
       <div
-        class="flex fixed lg:sticky text-skin-text inset-x-0 p-3 border-b z-10 bg-skin-bg lg:inset-x-auto lg:p-0 lg:pr-5 lg:border-0 lg:flex-col gap-1 min-w-[180px] overflow-auto transition-[top] duration-200"
-        :class="stickyNavClass">
+        class="flex fixed lg:sticky top-[72px] inset-x-0 p-3 border-b z-10 bg-skin-bg lg:top-auto lg:inset-x-auto lg:p-0 lg:pr-5 lg:border-0 lg:flex-col gap-1 min-w-[180px] overflow-auto">
         <button v-for="page in PAGES" ref="pagesRefs" :key="page.id" type="button" :disabled="!accessiblePages[page.id]"
-          class="px-3 py-1 block lg:w-full rounded text-skin-border text-left scroll-mr-3 first:ml-auto last:mr-auto whitespace-nowrap"
+          class="px-3 py-1 block lg:w-full rounded text-left scroll-mr-3 first:ml-auto last:mr-auto whitespace-nowrap"
           :class="{
             'bg-skin-active-bg': page.id === currentPage,
             'hover:bg-skin-hover-bg': page.id !== currentPage,
@@ -197,7 +189,7 @@ watchEffect(() => setTitle('Create space'));
       <div class="flex-1">
         <div class="mt-8 lg:mt-0">
           <template v-if="currentPage === 'profile'">
-            <h3 class="mb-4">Create space</h3>
+            <h3 class="mb-4">Space profile</h3>
             <FormSpaceProfile :form="metadataForm" @errors="v => handleErrors('profile', v)" />
             <div class="s-box p-4 -mt-6">
               <FormSpaceTreasuries v-model="metadataForm.treasuries" :network-id="selectedNetworkId" />

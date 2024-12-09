@@ -31,7 +31,6 @@ const { loading: nftsLoading, loaded: nftsLoaded, nfts, loadNfts } = useNfts();
 const { treasury, getExplorerUrl } = useTreasury(props.treasuryData);
 const { strategiesWithTreasuries } = useTreasuries(props.space);
 const { createDraft } = useEditor();
-const { isVisible, isMobile } = useScrollVisibility();
 
 const page: Ref<'tokens' | 'nfts'> = computed(() => {
   return route.params.tab === 'nfts' ? 'nfts' : 'tokens';
@@ -133,11 +132,6 @@ onMounted(() => {
 });
 
 watchEffect(() => setTitle(`Treasury - ${props.space.name}`));
-
-const stickyTabsClass = computed(() => {
-  if (!isMobile.value) return 'top-[112px]';
-  return isVisible.value ? 'top-[112px]' : 'top-[40px]';
-});
 </script>
 
 <template>
@@ -149,25 +143,12 @@ const stickyTabsClass = computed(() => {
     <div class="p-4 space-x-2 flex">
       <div class="flex-auto" />
 
-      <UiTooltip
-        v-if="!isReadOnly && EVM_CHAIN_IDS.includes(treasury.network)"
-        title="Connect to apps"
-      >
-        <UiButton
-          class="!px-0 w-[46px]"
-          @click="modalOpen.walletConnectLink = true"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="480"
-            height="332"
-            viewBox="0 0 480 332"
-            class="inline-block size-[26px]"
-          >
-            <path
-              fill="rgba(var(--link))"
-              d="m126.613 93.9842c62.622-61.3123 164.152-61.3123 226.775 0l7.536 7.3788c3.131 3.066 3.131 8.036 0 11.102l-25.781 25.242c-1.566 1.533-4.104 1.533-5.67 0l-10.371-10.154c-43.687-42.7734-114.517-42.7734-158.204 0l-11.107 10.874c-1.565 1.533-4.103 1.533-5.669 0l-25.781-25.242c-3.132-3.066-3.132-8.036 0-11.102zm280.093 52.2038 22.946 22.465c3.131 3.066 3.131 8.036 0 11.102l-103.463 101.301c-3.131 3.065-8.208 3.065-11.339 0l-73.432-71.896c-.783-.767-2.052-.767-2.835 0l-73.43 71.896c-3.131 3.065-8.208 3.065-11.339 0l-103.4657-101.302c-3.1311-3.066-3.1311-8.036 0-11.102l22.9456-22.466c3.1311-3.065 8.2077-3.065 11.3388 0l73.4333 71.897c.782.767 2.051.767 2.834 0l73.429-71.897c3.131-3.065 8.208-3.065 11.339 0l73.433 71.897c.783.767 2.052.767 2.835 0l73.431-71.895c3.132-3.066 8.208-3.066 11.339 0z"
-            />
+      <UiTooltip v-if="!isReadOnly && EVM_CHAIN_IDS.includes(treasury.network)" title="Connect to apps">
+        <UiButton class="!px-0 w-[46px]" @click="modalOpen.walletConnectLink = true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="480" height="332" viewBox="0 0 480 332"
+            class="inline-block size-[26px]">
+            <path fill="rgba(var(--link))"
+              d="m126.613 93.9842c62.622-61.3123 164.152-61.3123 226.775 0l7.536 7.3788c3.131 3.066 3.131 8.036 0 11.102l-25.781 25.242c-1.566 1.533-4.104 1.533-5.67 0l-10.371-10.154c-43.687-42.7734-114.517-42.7734-158.204 0l-11.107 10.874c-1.565 1.533-4.103 1.533-5.669 0l-25.781-25.242c-3.132-3.066-3.132-8.036 0-11.102zm280.093 52.2038 22.946 22.465c3.131 3.066 3.131 8.036 0 11.102l-103.463 101.301c-3.131 3.065-8.208 3.065-11.339 0l-73.432-71.896c-.783-.767-2.052-.767-2.835 0l-73.43 71.896c-3.131 3.065-8.208 3.065-11.339 0l-103.4657-101.302c-3.1311-3.066-3.1311-8.036 0-11.102l22.9456-22.466c3.1311-3.065 8.2077-3.065 11.3388 0l73.4333 71.897c.782.767 2.051.767 2.834 0l73.429-71.897c3.131-3.065 8.208-3.065 11.339 0l73.433 71.897c.783.767 2.052.767 2.835 0l73.431-71.895c3.132-3.066 8.208-3.066 11.339 0z" />
           </svg>
         </UiButton>
       </UiTooltip>
@@ -185,19 +166,13 @@ const stickyTabsClass = computed(() => {
     </div>
     <div class="space-y-3">
       <div>
-        <UiLabel label="Treasury" :sticky-offset="72" class="transition-[top] duration-200" />
+        <UiLabel label="Treasury" sticky />
         <a :href="treasuryExplorerUrl || '#'" target="_blank"
           class="flex justify-between items-center mx-4 py-3 border-b" :class="{
             'pointer-events-none': !treasuryExplorerUrl
-          }"
-        >
+          }">
           <UiBadgeNetwork :chain-id="treasury.network" class="mr-3">
-            <UiStamp
-              :id="treasury.wallet"
-              type="avatar"
-              :size="32"
-              class="rounded-md"
-            />
+            <UiStamp :id="treasury.wallet" type="avatar" :size="32" class="rounded-md" />
           </UiBadgeNetwork>
           <div class="flex-1 leading-[22px]">
             <h4 class="text-skin-link" v-text="treasury.name || shorten(treasury.wallet)" />
@@ -216,8 +191,7 @@ const stickyTabsClass = computed(() => {
         </a>
       </div>
       <div>
-        <div class="flex pl-4 border-b space-x-3 sticky bg-skin-bg z-40 transition-[top] duration-200"
-          :class="stickyTabsClass">
+        <div class="flex pl-4 border-b space-x-3">
           <AppLink :to="{
             params: {
               tab: 'tokens'
@@ -253,11 +227,7 @@ const stickyTabsClass = computed(() => {
             " target="_blank" class="mx-4 py-3 border-b flex">
             <div class="flex-auto flex items-center min-w-0 space-x-3">
               <UiBadgeNetwork :chain-id="treasury.network">
-                <UiStamp
-                  :id="`eip155:${treasury.network}:${asset.contractAddress}`"
-                  type="token"
-                  :size="32"
-                />
+                <UiStamp :id="`eip155:${treasury.network}:${asset.contractAddress}`" type="token" :size="32" />
               </UiBadgeNetwork>
               <div class="flex flex-col leading-[22px] min-w-0 pr-2 md:pr-0">
                 <h4 class="truncate" v-text="asset.symbol" />
@@ -312,41 +282,15 @@ const stickyTabsClass = computed(() => {
       </div>
     </div>
     <teleport to="#modal">
-      <ModalSendToken
-        v-if="!isReadOnly && treasury.supportsTokens"
-        :open="modalOpen.tokens"
-        :address="treasury.wallet"
-        :network="treasury.network"
-        :extra-contacts="extraContacts"
-        @close="modalOpen.tokens = false"
-        @add="addTx"
-      />
-      <ModalSendNft
-        :open="modalOpen.nfts"
-        :address="treasury.wallet"
-        :network="treasury.network"
-        :extra-contacts="extraContacts"
-        @close="modalOpen.nfts = false"
-        @add="addTx"
-      />
-      <ModalStakeToken
-        v-if="hasStakeableAssets"
-        :open="modalOpen.stake"
-        :address="treasury.wallet"
-        :network="treasury.network"
-        @close="modalOpen.stake = false"
-        @add="addTx"
-      />
-      <ModalLinkWalletConnect
-        v-if="executionStrategy"
-        :open="modalOpen.walletConnectLink"
-        :address="treasury.wallet"
-        :network="treasury.network"
-        :network-id="space.network"
-        :space-key="spaceKey"
-        :execution-strategy="executionStrategy"
-        @close="modalOpen.walletConnectLink = false"
-      />
+      <ModalSendToken v-if="!isReadOnly && treasury.supportsTokens" :open="modalOpen.tokens" :address="treasury.wallet"
+        :network="treasury.network" :extra-contacts="extraContacts" @close="modalOpen.tokens = false" @add="addTx" />
+      <ModalSendNft :open="modalOpen.nfts" :address="treasury.wallet" :network="treasury.network"
+        :extra-contacts="extraContacts" @close="modalOpen.nfts = false" @add="addTx" />
+      <ModalStakeToken v-if="hasStakeableAssets" :open="modalOpen.stake" :address="treasury.wallet"
+        :network="treasury.network" @close="modalOpen.stake = false" @add="addTx" />
+      <ModalLinkWalletConnect v-if="executionStrategy" :open="modalOpen.walletConnectLink" :address="treasury.wallet"
+        :network="treasury.network" :network-id="space.network" :space-key="spaceKey"
+        :execution-strategy="executionStrategy" @close="modalOpen.walletConnectLink = false" />
     </teleport>
   </template>
 </template>

@@ -4,7 +4,6 @@ import removeMarkdown from 'remove-markdown';
 import { getGenericExplorerUrl } from '@/helpers/explorer';
 import { _n, _p, _vp, shorten } from '@/helpers/utils';
 import { DelegationType, Space, SpaceMetadataDelegation } from '@/types';
-import { useScrollVisibility } from '@/composables/useScrollVisibility';
 
 const props = defineProps<{
   space: Space;
@@ -39,7 +38,6 @@ const {
   props.space
 );
 const { web3 } = useWeb3();
-const { isVisible, isMobile } = useScrollVisibility();
 
 const spaceKey = computed(() => `${props.space.network}:${props.space.id}`);
 
@@ -91,11 +89,6 @@ watch([sortBy], () => {
 });
 
 watchEffect(() => setTitle(`Delegates - ${props.space.name}`));
-
-const stickyHeaderClass = computed(() => {
-  if (!isMobile.value) return 'top-[112px]';
-  return isVisible.value ? 'top-[112px]' : 'top-[40px]';
-});
 </script>
 
 <template>
@@ -122,10 +115,9 @@ const stickyHeaderClass = computed(() => {
         </UiButton>
       </UiTooltip>
     </div>
-    <UiLabel label="Delegates" :sticky-offset="72" />
+    <UiLabel label="Delegates" sticky />
     <div class="text-left table-fixed w-full">
-      <div class="bg-skin-bg border-b sticky z-40 flex w-full font-medium space-x-3 px-4 transition-[top] duration-200"
-        :class="stickyHeaderClass">
+      <div class="bg-skin-bg border-b sticky top-[112px] lg:top-[113px] z-40 flex w-full font-medium space-x-3 px-4">
         <div class="w-[190px] grow sm:grow-0 sm:shrink-0 flex items-center truncate">
           <span class="truncate">Delegatee</span>
         </div>
@@ -168,7 +160,7 @@ const stickyHeaderClass = computed(() => {
                 space: spaceKey,
                 user: delegate.user
               }
-            }" class="flex w-full space-x-3">
+            }" class="flex w-full space-x-3 truncate">
               <div class="flex grow sm:grow-0 sm:shrink-0 items-center w-[190px] py-3 gap-x-3 leading-[22px] truncate">
                 <UiStamp :id="delegate.user" :size="32" />
                 <div class="flex flex-col truncate">

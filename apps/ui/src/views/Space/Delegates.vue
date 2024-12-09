@@ -1,20 +1,14 @@
 <script setup lang="ts">
 import { Space } from '@/types';
-import { useScrollVisibility } from '@/composables/useScrollVisibility';
 
 const props = defineProps<{ space: Space }>();
+
 const { setTitle } = useTitle();
-const { isVisible, isMobile } = useScrollVisibility();
 
 const activeDelegationId = ref(0);
 const delegateData = computed(
   () => props.space.delegations[activeDelegationId.value]
 );
-
-const stickyTabsClass = computed(() => {
-  if (!isMobile.value) return 'top-[72px]';
-  return isVisible.value ? 'top-[72px]' : 'top-0';
-});
 
 watchEffect(() => setTitle(`Delegates - ${props.space.name}`));
 </script>
@@ -24,9 +18,9 @@ watchEffect(() => setTitle(`Delegates - ${props.space.name}`));
     <IH-exclamation-circle class="inline-block" />
     <span>No delegations configured.</span>
   </div>
-  <template v-else>
-    <UiScrollerHorizontal v-if="space.delegations.length > 1" class="z-40 sticky transition-[top] duration-200"
-      :class="stickyTabsClass" with-buttons gradient="xxl" :sticky-offset="72">
+  <div v-else>
+    <UiScrollerHorizontal v-if="space.delegations.length > 1" class="z-40 sticky top-[71px] lg:top-[72px]" with-buttons
+      gradient="xxl">
       <div class="flex px-4 space-x-3 bg-skin-bg border-b min-w-max">
         <button v-for="(delegation, i) in space.delegations" :key="i" type="button" @click="activeDelegationId = i">
           <UiLink :is-active="activeDelegationId === i" :text="delegation.name || `Delegates ${i + 1}`" />
@@ -34,5 +28,5 @@ watchEffect(() => setTitle(`Delegates - ${props.space.name}`));
       </div>
     </UiScrollerHorizontal>
     <SpaceDelegates v-if="delegateData" :key="activeDelegationId" :space="space" :delegation="delegateData" />
-  </template>
+  </div>
 </template>

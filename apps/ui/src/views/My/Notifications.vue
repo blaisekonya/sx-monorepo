@@ -1,15 +1,8 @@
 <script setup lang="ts">
 import { _rt } from '@/helpers/utils';
-import { useScrollVisibility } from '@/composables/useScrollVisibility';
 
 const notificationsStore = useNotificationsStore();
 const { setTitle } = useTitle();
-const { isVisible, isMobile } = useScrollVisibility();
-
-const stickyHeaderClass = computed(() => {
-  if (!isMobile.value) return 'top-[72px]';
-  return isVisible.value ? 'top-[72px]' : 'top-0';
-});
 
 watchEffect(async () => {
   setTitle(
@@ -30,8 +23,7 @@ onUnmounted(() => notificationsStore.markAllAsRead());
 
 <template>
   <div>
-    <UiLabel label="Notifications" :sticky-offset="72" class="transition-[top] duration-200"
-      :class="stickyHeaderClass" />
+    <UiLabel label="Notifications" sticky />
     <UiLoading v-if="notificationsStore.loading" class="block px-4 py-3" />
     <div v-else-if="notificationsStore.notifications.length">
       <div v-for="(notification, i) in notificationsStore.notifications" :key="i">
