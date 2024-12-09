@@ -317,7 +317,7 @@ watchEffect(() => setTitle(`${user.value?.name || id.value} user profile`));
           <!-- First column -->
           <div class="flex-1">
             <h4 class="mb-2 eyebrow leading-8">Proofs of Personhood</h4>
-            <div class="flex flex-col gap-3">
+            <div class="flex flex-col gap-2.5">
               <!-- First proof -->
               <div>
                 <div v-if="loadingVoterId">
