@@ -36,13 +36,6 @@ const votingPowerDecimals = computed(() => {
   );
 });
 
-const { isVisible, isMobile } = useScrollVisibility();
-
-const stickyHeaderClass = computed(() => {
-  if (!isMobile.value) return 'top-[112px]';
-  return isVisible.value ? 'top-[112px]' : 'top-[40px]';
-});
-
 function reset() {
   votes.value = [];
   loaded.value = false;
@@ -182,7 +175,7 @@ watch([sortBy, choiceFilter], () => {
       <div class="min-w-[44px] lg:w-[60px]" />
     </div>
   </div>
-  <UiScrollerHorizontal :sticky-offset="112" @scroll="handleScrollEvent">
+  <UiScrollerHorizontal @scroll="handleScrollEvent">
     <div class="min-w-[735px] min-h-[calc(100vh-141px)]">
       <UiLoading v-if="!loaded" class="px-4 py-3 block absolute" />
       <template v-else>
@@ -331,21 +324,3 @@ watch([sortBy, choiceFilter], () => {
     />
   </teleport>
 </template>
-
-<style scoped>
-.choice-bg {
-  @apply bg-skin-border;
-}
-
-.choice-bg._1 {
-  @apply bg-skin-success;
-}
-
-.choice-bg._2 {
-  @apply bg-skin-danger;
-}
-
-.choice-bg._3 {
-  @apply bg-skin-text;
-}
-</style>

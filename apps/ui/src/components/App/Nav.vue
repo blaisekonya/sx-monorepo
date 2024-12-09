@@ -16,7 +16,6 @@ import IHStop from '~icons/heroicons-outline/stop';
 import IHUser from '~icons/heroicons-outline/user';
 import IHUserGroup from '~icons/heroicons-outline/user-group';
 import IHUsers from '~icons/heroicons-outline/users';
-import { useScrollVisibility } from '@/composables/useScrollVisibility';
 
 type NavigationItem = {
   name: string;
@@ -31,7 +30,6 @@ const route = useRoute();
 const spacesStore = useSpacesStore();
 const notificationsStore = useNotificationsStore();
 const { isWhiteLabel } = useWhiteLabel();
-const { isVisible, isMobile } = useScrollVisibility();
 
 const { param } = useRouteParser('space');
 const { resolved, address, networkId } = useResolve(param);
@@ -196,19 +194,13 @@ const navigationItems = computed(() =>
 </script>
 
 <template>
-  <nav class="border-r bg-skin-bg py-4 fixed z-10 transition-[top] duration-200" :class="[
-    'w-[240px]',
-    {
-      'top-[72px]': isVisible || !isMobile,
-      'top-0': !isVisible && isMobile
-    }
-  ]">
+  <div class="border-r bg-skin-bg py-4">
     <AppLink v-for="(item, key) in navigationItems" :key="key" :to="item.link"
       class="px-4 py-1.5 space-x-2 flex items-center" :class="item.active ? 'text-skin-link' : 'text-skin-text'">
       <component :is="item.icon" class="inline-block"></component>
-      <span class="grow relative" v-text="item.name" />
+      <span class="grow" v-text="item.name" />
       <span v-if="item.count" class="bg-skin-border text-skin-link text-[13px] rounded-full px-1.5"
         v-text="item.count" />
     </AppLink>
-  </nav>
+  </div>
 </template>

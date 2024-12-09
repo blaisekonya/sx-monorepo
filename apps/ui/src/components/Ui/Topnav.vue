@@ -1,5 +1,4 @@
 <script setup lang="ts">
-const { isVisible, isMobile } = useScrollVisibility();
 </script>
 
 <template>

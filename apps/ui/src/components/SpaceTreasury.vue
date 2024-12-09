@@ -26,7 +26,6 @@ const { loading: nftsLoading, loaded: nftsLoaded, nfts, loadNfts } = useNfts();
 const { treasury, getExplorerUrl } = useTreasury(props.treasuryData);
 const { strategiesWithTreasuries } = useTreasuries(props.space);
 const { createDraft } = useEditor();
-const { isVisible, isMobile } = useScrollVisibility();
 
 const page: Ref<'tokens' | 'nfts'> = computed(() => {
   return route.params.tab === 'nfts' ? 'nfts' : 'tokens';
@@ -128,11 +127,6 @@ onMounted(() => {
 });
 
 watchEffect(() => setTitle(`Treasury - ${props.space.name}`));
-
-const stickyTabsClass = computed(() => {
-  if (!isMobile.value) return 'top-[112px]';
-  return isVisible.value ? 'top-[112px]' : 'top-[40px]';
-});
 </script>
 
 <template>
@@ -145,11 +139,7 @@ const stickyTabsClass = computed(() => {
       <div class="flex-auto" />
 
       <UiTooltip
-        v-if="
-          !isReadOnly &&
-          currentNetworkId &&
-          evmNetworks.includes(currentNetworkId)
-        "
+        v-if="!isReadOnly && EVM_CHAIN_IDS.includes(treasury.network)"
         title="Connect to apps"
       >
         <UiButton
@@ -187,11 +177,7 @@ const stickyTabsClass = computed(() => {
     </div>
     <div class="space-y-3">
       <div>
-        <UiLabel
-          label="Treasury"
-          :sticky-offset="72"
-          class="transition-[top] duration-200"
-        />
+        <UiLabel label="Treasury" sticky />
         <a
           :href="treasuryExplorerUrl || '#'"
           target="_blank"
@@ -200,11 +186,7 @@ const stickyTabsClass = computed(() => {
             'pointer-events-none': !treasuryExplorerUrl
           }"
         >
-          <UiBadgeNetwork
-            :id="treasury.networkId"
-            :chain-id="treasury.network"
-            class="mr-3"
-          >
+          <UiBadgeNetwork :chain-id="treasury.network" class="mr-3">
             <UiStamp
               :id="treasury.wallet"
               type="avatar"
@@ -256,10 +238,7 @@ const stickyTabsClass = computed(() => {
         </a>
       </div>
       <div>
-        <div
-          class="flex pl-4 border-b space-x-3 sticky bg-skin-bg z-40 transition-[top] duration-200"
-          :class="stickyTabsClass"
-        >
+        <div class="flex pl-4 border-b space-x-3">
           <AppLink
             :to="{
               params: {
@@ -311,12 +290,9 @@ const stickyTabsClass = computed(() => {
             class="mx-4 py-3 border-b flex"
           >
             <div class="flex-auto flex items-center min-w-0 space-x-3">
-              <UiBadgeNetwork
-                :id="treasury.networkId"
-                :chain-id="treasury.network"
-              >
+              <UiBadgeNetwork :chain-id="treasury.network">
                 <UiStamp
-                  :id="`${treasury.networkId}:${asset.contractAddress}`"
+                  :id="`eip155:${treasury.network}:${asset.contractAddress}`"
                   type="token"
                   :size="32"
                 />
@@ -432,17 +408,15 @@ const stickyTabsClass = computed(() => {
     </div>
     <teleport to="#modal">
       <ModalSendToken
-        v-if="!isReadOnly && currentNetworkId && treasury.supportsTokens"
+        v-if="!isReadOnly && treasury.supportsTokens"
         :open="modalOpen.tokens"
         :address="treasury.wallet"
         :network="treasury.network"
-        :network-id="currentNetworkId"
         :extra-contacts="extraContacts"
         @close="modalOpen.tokens = false"
         @add="addTx"
       />
       <ModalSendNft
-        v-if="currentNetworkId"
         :open="modalOpen.nfts"
         :address="treasury.wallet"
         :network="treasury.network"
@@ -451,20 +425,19 @@ const stickyTabsClass = computed(() => {
         @add="addTx"
       />
       <ModalStakeToken
-        v-if="hasStakeableAssets && currentNetworkId"
+        v-if="hasStakeableAssets"
         :open="modalOpen.stake"
         :address="treasury.wallet"
         :network="treasury.network"
-        :network-id="currentNetworkId"
         @close="modalOpen.stake = false"
         @add="addTx"
       />
       <ModalLinkWalletConnect
-        v-if="executionStrategy && currentNetworkId"
+        v-if="executionStrategy"
         :open="modalOpen.walletConnectLink"
         :address="treasury.wallet"
         :network="treasury.network"
-        :network-id="currentNetworkId"
+        :network-id="space.network"
         :space-key="spaceKey"
         :execution-strategy="executionStrategy"
         @close="modalOpen.walletConnectLink = false"
