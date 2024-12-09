@@ -67,10 +67,6 @@ const hasTopNav = computed(() => {
   return 'space-editor' !== String(route.matched[1]?.name);
 });
 
-const bottomPadding = computed(
-  () => !['space-proposal-votes'].includes(String(route.name))
-);
-
 async function handleTransactionAccept() {
   if (
     !walletConnectSpaceKey.value ||
@@ -161,7 +157,7 @@ router.afterEach(() => {
 <template>
   <div ref="el" class="min-h-screen" :class="{ 'overflow-clip': scrollDisabled }">
     <UiLoading v-if="app.loading || !app.init" class="overlay big" />
-    <div v-else :class="['flex min-h-screen', { 'pb-6': bottomPadding }]">
+    <div v-else :class="['flex min-h-screen']">
       <AppBottomNav v-if="web3.account && !isWhiteLabel"
         class="fixed bottom-0 inset-x-0 hidden app-bottom-nav z-20 app-bottom-nav-open" />
       <AppSidebar v-if="hasSidebar" :class="[
@@ -184,8 +180,8 @@ router.afterEach(() => {
       ]" />
       <button v-if="uiStore.sideMenuOpen" type="button" class="backdrop" @click="uiStore.sideMenuOpen = false" />
       <main class="flex-auto w-full flex">
-        <div class="flex-auto w-0 mt-[72px] mb-[48px]">
-          <router-view />
+        <div class="flex-auto w-0 mt-[72px]">
+          <router-view class="pb-6" />
         </div>
         <div v-if="hasPlaceHolderSidebar" class="app-placeholder-sidebar hidden xl:block" />
       </main>

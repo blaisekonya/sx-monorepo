@@ -64,8 +64,8 @@ watch(
       </div>
       <UiTooltip title="Create new space">
         <UiButton :to="spacesStore.protocol === 'snapshot'
-          ? 'https://v1.snapshot.box/#/setup'
-          : 'create'
+            ? 'https://v1.snapshot.box/#/setup'
+            : 'create'
           " class="!px-0 w-[46px]">
           <IH-plus-sm />
         </UiButton>

@@ -26,17 +26,9 @@ const LABELS = {
 
 const { getTsFromCurrent, getDurationFromCurrent } = useMetaStore();
 
-const now = ref(parseInt((Date.now() / 1000).toFixed()));
+const timestamp = useTimestamp({ interval: 1000 });
 
-onMounted(() => {
-  const interval = setInterval(() => {
-    now.value = parseInt((Date.now() / 1000).toFixed());
-  }, 1000);
-
-  onUnmounted(() => {
-    clearInterval(interval);
-  });
-});
+const now = computed(() => Math.floor(timestamp.value / 1000));
 
 function formatTimelineValues(): ProposalTimelineValues {
   const data = props.data;
@@ -94,16 +86,22 @@ const states: ComputedRef<State[]> = computed(() => {
 
   return initial;
 });
+
+// Use an offset to compare timestamps to avoid issues when comparing
+// timestamps that are not refreshed synchronously
+function isInThePast(timestamp: number): boolean {
+  return timestamp <= now.value + 1;
+}
 </script>
 
 <template>
   <div class="flex">
     <div class="mt-1 ml-2">
       <div v-for="(state, i) in states" :key="state.id" class="flex relative h-[60px]">
-        <div class="absolute size-[15px] inline-block rounded-full left-[-7px] border-4 border-skin-bg"
-          :class="state.value <= now ? 'bg-skin-heading' : 'bg-skin-border'" />
+        <div class="absolute size-[15px] inline-block rounded-full left-[-7px] border-4 border-skin-bg" :class="isInThePast(state.value) ? 'bg-skin-heading' : 'bg-skin-border'
+          " />
         <div v-if="states[i + 1]" class="border-l pr-4 mt-3"
-          :class="states[i + 1].value <= now && 'border-skin-heading'" />
+          :class="isInThePast(states[i + 1].value) && 'border-skin-heading'" />
       </div>
     </div>
     <div class="flex-auto leading-6">

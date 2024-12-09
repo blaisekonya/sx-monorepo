@@ -299,7 +299,7 @@ watchEffect(() => setTitle(`Edit settings - ${props.space.name}`));
   <div v-if="loading" class="p-4">
     <UiLoading />
   </div>
-  <div v-else class="space-y-4 pb-8" :class="{
+  <div v-else class="space-y-4 pb-[100px]" :class="{
     'mx-4 max-w-[592px]': activeTab !== 'profile'
   }">
     <div v-show="activeTab === 'profile'">

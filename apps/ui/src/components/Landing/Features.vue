@@ -50,7 +50,7 @@ const FEATURES = [
   <div id="features" class="pt-8 border-b">
     <UiContainer class="!max-w-screen-lg">
       <div class="pb-6 max-w-[680px]">
-        <h1 class="mb-4 font-display !text-[36px] sm:!text-[44px]">
+        <h1 class="mb-4 font-display text-[36px] xs:text-[44px]">
           Addressing pressing global challenges, together
         </h1>
       </div>

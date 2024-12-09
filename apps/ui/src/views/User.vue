@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { getUserStats } from '@/helpers/efp';
 import {
   _n,
   _p,
@@ -42,6 +43,13 @@ const attestationId = ref<string | null>(null);
 const loadingBabt = ref(true);
 const babtBalance = ref<string | null>(null);
 
+const userMetadata = reactive({
+  loading: false,
+  loaded: false,
+  followers_count: 0,
+  following_count: 0
+});
+
 const id = computed(() => route.params.user as string);
 
 const user = computed(() => usersStore.getUser(id.value));
@@ -49,6 +57,21 @@ const user = computed(() => usersStore.getUser(id.value));
 const socials = computed(() => getSocialNetworksLink(user.value));
 
 const cb = computed(() => getCacheHash(user.value?.avatar));
+
+async function loadUserMetadata(userId: string) {
+  userMetadata.loading = true;
+
+  try {
+    const userStats = await getUserStats(userId);
+
+    userMetadata.followers_count = userStats.followers_count;
+    userMetadata.following_count = userStats.following_count;
+    userMetadata.loading = false;
+    userMetadata.loaded = true;
+  } catch (e) {
+    userMetadata.loading = false;
+  }
+}
 
 async function loadActivities(userId: string) {
   loadingActivities.value = true;
@@ -194,6 +217,7 @@ watch(
   id,
   async userId => {
     loaded.value = false;
+    userMetadata.loaded = false;
 
     if (!isValidAddress(userId)) {
       loaded.value = true;
@@ -202,6 +226,7 @@ watch(
 
     await usersStore.fetchUser(userId);
     loadActivities(userId);
+    loadUserMetadata(userId);
 
     loaded.value = true;
   },
@@ -264,6 +289,18 @@ watchEffect(() => setTitle(`${user.value?.name || id.value} user profile`));
               <IH-check v-else class="inline-block" />
             </button>
           </UiTooltip>
+          <span v-if="userMetadata.loaded">
+            ·
+            <a :href="`https://ethfollow.xyz/${user.id}`" target="_blank">
+              {{ _n(userMetadata.following_count) }}
+              <span class="text-skin-text">following</span>
+            </a>
+            ·
+            <a :href="`https://ethfollow.xyz/${user.id}`" target="_blank">
+              {{ _n(userMetadata.followers_count) }}
+              <span class="text-skin-text">followers</span>
+            </a>
+          </span>
         </div>
         <div v-if="user.about" class="max-w-[540px] text-skin-link text-md leading-[26px] mb-3 break-words"
           v-html="autoLinkText(user.about)" />
