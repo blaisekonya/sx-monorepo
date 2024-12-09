@@ -8,22 +8,28 @@ import ISUserGroup from '~icons/heroicons-solid/user-group';
 
 const FEATURES = [
   {
-    title: 'Democratic decisions',
+    title: 'Guided by subsidiarity',
+    about:
+      'Focusing only on issues where global coordination is the most effective approach.',
+    icon: ISGlobe
+  },
+  {
+    title: 'Verifiably democratic',
     about:
       'Using proof of personhood methods to ensure that every voice is real, unique, and counts equally.',
     icon: ISUserGroup
   },
   {
-    title: 'Radical transparency',
+    title: 'Fueled by its own currency',
+    about:
+      "Powered by the world drachma, we support members and initiatives without relying on charity.",
+    icon: ISBanknotes
+  },
+  {
+    title: 'Radically transparent',
     about:
       'Rooted in open source principles to guarantee full accountability and capture-resistance.',
     icon: ICGitHub
-  },
-  {
-    title: 'Guided by subsidiarity',
-    about:
-      'Focusing exclusively on issues where global coordination is the most effective approach.',
-    icon: ISGlobe
   },
   {
     title: 'Secure, flexible voting',
@@ -32,13 +38,7 @@ const FEATURES = [
     icon: ISShieldCheck
   },
   {
-    title: 'Financial self-reliance',
-    about:
-      "Powered by the world drachma, we support initiatives without depending on external donations.",
-    icon: ISBanknotes
-  },
-  {
-    title: 'Empowered advocacy',
+    title: 'Empowering advocacy',
     about:
       'Providing free tools to drive global change with democratic polls, petitions, and open letters.',
     icon: ISCursorClick
@@ -51,7 +51,7 @@ const FEATURES = [
     <UiContainer class="!max-w-screen-lg">
       <div class="pb-6 max-w-[680px]">
         <h1 class="mb-4 font-display !text-[36px] sm:!text-[44px]">
-          Democratic solutions to pressing global challenges
+          Addressing pressing global challenges, together
         </h1>
       </div>
     </UiContainer>
