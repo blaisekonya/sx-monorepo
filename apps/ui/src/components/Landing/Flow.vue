@@ -23,7 +23,7 @@ const STEPS = [
     <UiContainer class="!max-w-screen-lg">
       <div class="pb-6 max-w-[680px] text-center mx-auto">
         <h1 class="mb-4 font-display text-[36px] xs:text-[44px]">
-          A democratic organization open to all
+          The first democratic organization open to all
         </h1>
       </div>
     </UiContainer>
