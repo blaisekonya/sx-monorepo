@@ -9,7 +9,7 @@ const { toast } = useToast();
 const referralLink = computed(() => {
   if (!web3Account.value) return '';
   const baseUrl = window.location.origin;
-  return `${baseUrl}/join?ref=${web3Account.value}`;
+  return `${baseUrl}/?ref=${web3Account.value}`;
 });
 
 const copyReferralLink = async () => {
