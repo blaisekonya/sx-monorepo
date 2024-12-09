@@ -15,6 +15,7 @@ import { ref, computed, watch } from 'vue';
 import { ethers } from 'ethers';
 import { GLOBAL_VOTER_ID_ZKME_ADDRESS } from '@/helpers/constants';
 import ButtonClaimID from '@/components/ButtonClaimID.vue';
+import ButtonReferral from '@/components/ButtonReferral.vue';
 
 const route = useRoute();
 const usersStore = useUsersStore();
@@ -368,9 +369,13 @@ watchEffect(() => setTitle(`${user.value?.name || id.value} user profile`));
           </div>
         </div>
       </div>
-      <div v-if="compareAddresses(web3.account, user.id)" class="mb-3">
+      <div v-if="compareAddresses(web3.account, user.id)">
         <h4 class="mb-2 eyebrow leading-8">Basic Income</h4>
         <ButtonUserBasicIncome />
+        <div class="my-3">
+          <h4 class="mb-2 eyebrow leading-8">Referrals</h4>
+          <ButtonReferral />
+        </div>
       </div>
       <h4 class="mb-2 eyebrow leading-8">Activity</h4>
     </div>

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import defaultRoutes from '@/routes/default';
 import whiteLabelRoutes from '@/routes/whiteLabel';
+import Toast from '@/components/Toast.vue';
 
 const route = useRoute();
 const router = useRouter();
@@ -43,8 +44,11 @@ onMounted(() => {
 </script>
 
 <template>
-  <LayoutSplashScreen v-if="!whiteLabelResolved" />
-  <LayoutSite v-else-if="routeName === 'site'" />
-  <LayoutApp v-else />
-  <Messenger />
+  <div id="app">
+    <LayoutSplashScreen v-if="!whiteLabelResolved" />
+    <LayoutSite v-else-if="routeName === 'site'" />
+    <LayoutApp v-else />
+    <Messenger />
+    <Toast />
+  </div>
 </template>

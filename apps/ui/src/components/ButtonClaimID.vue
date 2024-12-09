@@ -2,7 +2,7 @@
 import { ref, watch, toRaw } from 'vue';
 import { ZkMeWidget } from '@zkmelabs/widget';
 import { Engine } from '@thirdweb-dev/engine';
-import { CHAIN, GLOBAL_VOTER_ID_ZKME_ADDRESS } from '../helpers/constants';
+import { CHAIN, GLOBAL_VOTER_ID_ZKME_ADDRESS, DRACHMA_CONTRACT_ADDRESS, REFERRAL_REWARD } from '../helpers/constants';
 import { ethers } from 'ethers';
 import '@zkmelabs/widget/dist/style.css'
 
@@ -172,7 +172,7 @@ const emit = defineEmits<{
 
 const mintMembership = async () => {
   if (
-    !web3Account ||
+    !web3Account.value ||
     (balanceData &&
       balanceData.value !== null &&
       balanceData.value !== undefined &&
@@ -190,14 +190,41 @@ const mintMembership = async () => {
   showResultDialog.value = true;
 
   try {
+    // Mint Global Voter ID
     await mintMembershipZkMe(web3Account.value);
+
+    // Check for referral in URL params
+    const urlParams = new URLSearchParams(window.location.search);
+    const referrer = urlParams.get('ref');
+
+    // Send referral reward if applicable
+    if (referrer && ethers.utils.isAddress(referrer) && referrer !== web3Account.value) {
+      const engine = new Engine({
+        url: THIRDWEB_ENGINE_URL as string,
+        accessToken: THIRDWEB_ENGINE_ACCESS_TOKEN as string
+      });
+
+      await engine.erc20.mintTo(
+        CHAIN,
+        DRACHMA_CONTRACT_ADDRESS,
+        THIRDWEB_BACKEND_WALLET_ADDRESS as string,
+        {
+          toAddress: referrer,
+          amount: ethers.utils.formatUnits(REFERRAL_REWARD, 18)
+        },
+        false,
+        '',
+        THIRDWEB_BACKEND_SMART_ACCOUNT_ADDRESS
+      );
+    }
+
     resultDialogContent.value = {
       title: 'Success',
       description: 'Your Global Voter ID has been successfully created!'
     };
     emit('voter-id-claimed', '1');
   } catch (error) {
-    console.error('Error minting membership SBT:', error);
+    console.error('Error in membership process:', error);
     resultDialogContent.value = {
       title: 'Error',
       description: 'There was an error while creating your Global Voter ID.'
