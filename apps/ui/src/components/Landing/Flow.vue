@@ -6,13 +6,13 @@ const STEPS = [
   {
     title: 'Join',
     about:
-      'Prove your personhood, set up your basic income, and discuss solutions to humanity’s pressing problems – all while preserving your privacy by default.',
+      'Prove your personhood, set up your basic income, and discuss solutions to pressing global problems – all while preserving your privacy by default.',
     icon: ISUserPlus
   },
   {
     title: 'Govern',
     about:
-      'Create referendums, run for leadership roles, or make your voice heard by voting. Decisions are turned into action using our official currency, the world drachma.',
+      'Create referendums, run on elections, or make your voice heard by voting. Decisions are turned into action using our official currency, the world drachma.',
     icon: ISLibrary
   }
 ];
@@ -23,7 +23,7 @@ const STEPS = [
     <UiContainer class="!max-w-screen-lg">
       <div class="pb-6 max-w-[680px] text-center mx-auto">
         <h1 class="mb-4 font-display !text-[36px] sm:!text-[44px]">
-          Addressing the most pressing global challenges
+          A democratic organization open to all
         </h1>
       </div>
     </UiContainer>
