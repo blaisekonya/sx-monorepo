@@ -74,7 +74,7 @@ const space = computed(() =>
           " class="text-skin-success inline-block shrink-0 relative ml-0.5 mb-0.5" />
         </AppLink>
 
-        <div class="mt-0.5 text-sm flex flex-wrap items-center leading-[18px] gap-1">
+        <div class="mt-0.5 text-sm flex flex-wrap items-center leading-[18px] gap-x-1 gap-y-0.5">
           <template v-if="showAuthor">
             <span>By</span>
             <AppLink class="text-skin-text" :to="{

@@ -271,27 +271,33 @@ const closeResultDialog = () => {
 
 <template>
   <template v-if="isLoading">
-    <span class="flex items-center gap-2.5">
-      <UiSkeleton class="h-[46px] w-[46px] !rounded-full" />
-      <UiSkeleton class="h-[18px] w-[133px]" />
+    <span class="flex items-center justify-between w-full">
+      <span class="text-skin-link">Basic Income</span>
+      <div class="2xl:ml-3">
+        <UiSkeleton class="h-[46px] w-[46px] !rounded-full" />
+      </div>
     </span>
   </template>
   <template v-else>
-    <span class="cursor-pointer text-skin-link flex items-center gap-2.5">
+    <span class="w-full">
       <template v-if="isBasicIncomeSetUp">
-        <div class="flex items-center gap-2.5 cursor-pointer" @click="showStreamModal = true">
-          <UiButton class="!px-0 w-[46px]">
-            <IH-banknotes class="inline-block" />
-          </UiButton>
-          <span class="text-skin-link">Basic income <span class="text-skin-text">active</span></span>
+        <div class="flex items-center justify-between w-full cursor-pointer" @click="showStreamModal = true">
+          <span class="text-skin-link">Basic Income <span class="text-skin-text">active</span></span>
+          <div class="2xl:ml-3">
+            <UiButton class="!px-0 w-[46px]">
+              <IH-banknotes class="inline-block" />
+            </UiButton>
+          </div>
         </div>
       </template>
       <template v-else>
-        <div class="flex items-center gap-2.5 cursor-pointer" @click="handleLaunchWidget">
-          <UiButton class="!px-0 w-[46px]">
-            <IH-plus class="inline-block" />
-          </UiButton>
+        <div class="flex items-center justify-between w-full cursor-pointer" @click="handleLaunchWidget">
           <span class="text-skin-text">Claim your <span class="text-skin-link">basic income</span></span>
+          <div class="2xl:ml-3">
+            <UiButton class="!px-0 w-[46px]">
+              <IH-plus class="inline-block" />
+            </UiButton>
+          </div>
         </div>
       </template>
     </span>

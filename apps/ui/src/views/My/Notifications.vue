@@ -56,7 +56,7 @@ onUnmounted(() => notificationsStore.markAllAsRead());
                     space: `${notification.proposal.network}:${notification.proposal.space.id}`
                   }
                 }">
-                  <h3 class="text-[17px] font-normal [overflow-wrap:anywhere] leading-6"
+                  <h3 class="text-[17px] font-normal [overflow-wrap:anywhere] leading-[22px] mb-[1px]"
                     v-text="notification.proposal.title || `#${notification.proposal.proposal_id}`" />
                 </AppLink>
               </div>

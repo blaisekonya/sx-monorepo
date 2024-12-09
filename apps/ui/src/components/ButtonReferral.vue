@@ -47,29 +47,27 @@ const shareOptions = [
 </script>
 
 <template>
-  <div class="max-w-2xl">
-    <div class="flex items-center justify-between mb-3">
-      <span>Invite friends</span>
-      <span class="px-3 py-1 bg-skin-link/10 text-skin-link rounded-full text-sm">
-        10 drachma per referral
-      </span>
+  <div class="flex items-center justify-between mb-3 pt-2 sm:pb-1.5">
+    <span>Invite friends</span>
+    <span class="px-3 py-1 bg-skin-link/10 text-skin-link rounded-full text-sm">
+      10 drachma per referral
+    </span>
+  </div>
+
+  <div class="space-y-3">
+    <div class="flex gap-2">
+      <input type="text" :value="referralLink" readonly
+        class="flex-1 px-3 py-2 rounded-lg border bg-skin-bg text-skin-text font-mono text-sm" />
+      <UiButton @click="copyReferralLink" class="!px-0 w-[46px]">
+        <IH-clipboard-document class="inline-block" />
+      </UiButton>
     </div>
 
-    <div class="space-y-3">
-      <div class="flex gap-2">
-        <input type="text" :value="referralLink" readonly
-          class="flex-1 px-3 py-2 rounded-lg border bg-skin-bg text-skin-text font-mono text-sm" />
-        <UiButton @click="copyReferralLink" class="!px-0 w-[46px]">
-          <IH-clipboard-document class="inline-block" />
-        </UiButton>
-      </div>
-
-      <div class="flex gap-2">
-        <UiButton v-for="option in shareOptions" :key="option.name" @click="option.action" class="flex-1 !py-2">
-          <component :is="option.icon" class="h-4 w-4 mr-2" />
-          Share on {{ option.name }}
-        </UiButton>
-      </div>
+    <div class="flex gap-2">
+      <UiButton v-for="option in shareOptions" :key="option.name" @click="option.action" class="flex-1 !py-2 !px-0">
+        <component :is="option.icon" class="h-4 w-4" />
+        Share on {{ option.name }}
+      </UiButton>
     </div>
   </div>
 </template>
