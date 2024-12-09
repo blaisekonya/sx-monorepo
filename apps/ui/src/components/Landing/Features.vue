@@ -26,7 +26,7 @@ const FEATURES = [
     icon: ISBanknotes
   },
   {
-    title: 'Radically transparent',
+    title: 'Radical transparency',
     about:
       'Rooted in open source principles to guarantee full accountability and capture-resistance.',
     icon: ICGitHub
