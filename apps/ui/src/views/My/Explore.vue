@@ -160,8 +160,8 @@ onMounted(() => {
       </div>
       <UiTooltip title="Create new space">
         <UiButton :to="protocol === 'snapshot'
-            ? 'https://v1.snapshot.box/#/setup'
-            : 'create'
+          ? 'https://v1.snapshot.box/#/setup'
+          : 'create'
           " class="!px-0 w-[46px]">
           <IH-plus-sm />
         </UiButton>
@@ -169,7 +169,7 @@ onMounted(() => {
     </div>
     <div>
       <UiLabel label="Explore" sticky />
-      <UiLoading v-if="spacesStore.loading" class="block m-4" />
+      <SpacesListSkeleton v-if="spacesStore.loading" />
       <div v-else-if="spacesStore.loaded">
         <UiContainerInfiniteScroll v-if="spacesStore.explorePageSpaces.length" :loading-more="spacesStore.loadingMore"
           class="justify-center max-w-screen-md 2xl:max-w-screen-xl 3xl:max-w-screen-2xl mx-auto p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-explore-3 2xl:grid-cols-explore-4 3xl:grid-cols-explore-5 gap-3"

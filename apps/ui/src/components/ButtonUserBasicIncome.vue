@@ -272,7 +272,7 @@ const closeResultDialog = () => {
 <template>
   <template v-if="isLoading">
     <span class="flex items-center justify-between w-full">
-      <span class="text-skin-link">Basic Income</span>
+      <UiSkeleton class="h-[18px] w-[152px]" />
       <div class="2xl:ml-3">
         <UiSkeleton class="h-[46px] w-[46px] !rounded-full" />
       </div>
@@ -282,7 +282,7 @@ const closeResultDialog = () => {
     <span class="w-full">
       <template v-if="isBasicIncomeSetUp">
         <div class="flex items-center justify-between w-full cursor-pointer" @click="showStreamModal = true">
-          <span>Basic Income active</span>
+          <span>Basic income active</span>
           <div class="2xl:ml-3">
             <UiButton class="!px-0 w-[46px]">
               <IH-banknotes class="inline-block" />
