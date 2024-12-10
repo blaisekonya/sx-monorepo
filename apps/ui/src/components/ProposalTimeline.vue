@@ -107,7 +107,10 @@ function isInThePast(timestamp: number): boolean {
     <div class="flex-auto leading-6">
       <div v-for="state in states" :key="state.id" class="mb-3 last:mb-0 h-[44px]">
         <h4 v-text="LABELS[state.id]" />
-        {{ _t(state.value) }}
+        <div class="flex gap-2 items-center">
+          <div v-text="_t(state.value)" />
+          <slot :name="`${state.id}-date-suffix`" />
+        </div>
       </div>
     </div>
   </div>
