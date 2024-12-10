@@ -145,7 +145,8 @@ watchEffect(() => {
         type: ['string', 'number'],
         title: 'Network',
         examples: ['Select network'],
-        networkId
+        networkId,
+        networksListKind: 'offchain'
       }" />
       <UiForm v-if="definition" v-model="form" :error="formErrors" :definition="definition" @pick="handlePickerClick" />
       <UiTextarea v-else v-model:model-value="rawParams" :definition="{
