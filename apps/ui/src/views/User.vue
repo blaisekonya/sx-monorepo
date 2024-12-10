@@ -322,7 +322,7 @@ watchEffect(() => setTitle(`${user.value?.name || id.value} user profile`));
               <div>
                 <div v-if="loadingVoterId">
                   <span class="flex items-center justify-between w-full">
-                    <span class="text-skin-link">Global Voter ID</span>
+                    <span>Global Voter ID</span>
                     <div class="2xl:ml-3">
                       <UiSkeleton class="h-[46px] w-[46px] !rounded-full" />
                     </div>
@@ -330,13 +330,13 @@ watchEffect(() => setTitle(`${user.value?.name || id.value} user profile`));
                 </div>
                 <div v-else-if="!voterIdBalance || parseFloat(voterIdBalance) === 0"
                   class="flex items-center justify-between w-full">
-                  <span class="text-skin-link">Global Voter ID</span>
+                  <span>Global Voter ID</span>
                   <div class="2xl:ml-3">
                     <ButtonClaimID :user="true" @voter-id-claimed="balance => voterIdBalance = balance" />
                   </div>
                 </div>
                 <div v-else class="flex items-center justify-between w-full">
-                  <span class="text-skin-link">Global Voter ID</span>
+                  <span>Global Voter ID</span>
                   <div class="2xl:ml-3">
                     <ButtonClaimID :user="true" :done="true" @voter-id-claimed="balance => voterIdBalance = balance" />
                   </div>
@@ -347,7 +347,7 @@ watchEffect(() => setTitle(`${user.value?.name || id.value} user profile`));
               <div>
                 <div v-if="loadingBabt">
                   <span class="flex items-center justify-between w-full">
-                    <span class="text-skin-link">Binance Account Bound Token</span>
+                    <span>Binance Account Bound Token</span>
                     <div class="2xl:ml-3">
                       <UiSkeleton class="h-[46px] w-[46px] !rounded-full" />
                     </div>
@@ -355,7 +355,7 @@ watchEffect(() => setTitle(`${user.value?.name || id.value} user profile`));
                 </div>
                 <div v-else-if="babtBalance && parseFloat(babtBalance) > 0"
                   class="flex items-center justify-between w-full">
-                  <span class="text-skin-link">Binance Account Bound Token</span>
+                  <span>Binance Account Bound Token</span>
                   <div class="2xl:ml-3">
                     <a href="https://www.binance.com/en/BABT" target="_blank">
                       <UiButton class="!px-0 w-[46px]">
@@ -365,7 +365,7 @@ watchEffect(() => setTitle(`${user.value?.name || id.value} user profile`));
                   </div>
                 </div>
                 <div v-else class="flex items-center justify-between w-full">
-                  <span class="text-skin-link">Binance Account Bound Token</span>
+                  <span>Binance Account Bound Token</span>
                   <div class="2xl:ml-3">
                     <a href="https://www.binance.com/en/BABT" target="_blank">
                       <UiButton class="!px-0 w-[46px]">
@@ -380,14 +380,14 @@ watchEffect(() => setTitle(`${user.value?.name || id.value} user profile`));
               <div>
                 <div v-if="loadingAttestation">
                   <span class="flex items-center justify-between w-full">
-                    <span class="text-skin-link">Coinbase Verification</span>
+                    <span>Coinbase Verification</span>
                     <div class="2xl:ml-3">
                       <UiSkeleton class="h-[46px] w-[46px] !rounded-full" />
                     </div>
                   </span>
                 </div>
                 <div v-else-if="hasAttestation" class="flex items-center justify-between w-full">
-                  <span class="text-skin-link">Coinbase Verification</span>
+                  <span>Coinbase Verification</span>
                   <div class="2xl:ml-3">
                     <a :href="`https://base.easscan.org/attestation/view/${attestationId}`" target="_blank">
                       <UiButton class="!px-0 w-[46px]">
@@ -397,7 +397,7 @@ watchEffect(() => setTitle(`${user.value?.name || id.value} user profile`));
                   </div>
                 </div>
                 <div v-else class="flex items-center justify-between w-full">
-                  <span class="text-skin-link">Coinbase Verification</span>
+                  <span>Coinbase Verification</span>
                   <div class="2xl:ml-3">
                     <a href="https://www.coinbase.com/onchain-verify" target="_blank">
                       <UiButton class="!px-0 w-[46px]">

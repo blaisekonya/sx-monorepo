@@ -282,7 +282,7 @@ const closeResultDialog = () => {
     <span class="w-full">
       <template v-if="isBasicIncomeSetUp">
         <div class="flex items-center justify-between w-full cursor-pointer" @click="showStreamModal = true">
-          <span class="text-skin-link">Basic Income <span class="text-skin-text">active</span></span>
+          <span>Basic Income active</span>
           <div class="2xl:ml-3">
             <UiButton class="!px-0 w-[46px]">
               <IH-banknotes class="inline-block" />
@@ -292,7 +292,7 @@ const closeResultDialog = () => {
       </template>
       <template v-else>
         <div class="flex items-center justify-between w-full cursor-pointer" @click="handleLaunchWidget">
-          <span class="text-skin-text">Claim your <span class="text-skin-link">basic income</span></span>
+          <span>Claim your basic income</span>
           <div class="2xl:ml-3">
             <UiButton class="!px-0 w-[46px]">
               <IH-plus class="inline-block" />
