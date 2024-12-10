@@ -190,7 +190,6 @@ router.afterEach(() => {
     <ModalTransaction v-if="route.name !== 'space-editor' && transaction && network" :open="!!transaction"
       :network="network" :initial-state="transaction._form" @add="handleTransactionAccept"
       @close="handleTransactionReject" />
-    <FlashMessageWelcome />
   </div>
 </template>
 
