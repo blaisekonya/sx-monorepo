@@ -85,7 +85,8 @@ watch(
     if (initiated && !account && !authLoading && !modalAccountWithoutDismissOpen.value) {
       modalAccountOpen.value = true;
     }
-  }
+  },
+  { immediate: true }
 );
 
 onUnmounted(() => {
