@@ -20,9 +20,9 @@ const FEATURES = [
     icon: ISUserGroup
   },
   {
-    title: 'With an own currency',
+    title: 'Powered by our own currency',
     about:
-      "Powered by the world drachma, we support members and initiatives without the need to rely on charity.",
+      "Thanks to the world drachma, we can support members and initiatives without relying on external donations.",
     icon: ISBanknotes
   },
   {
@@ -51,7 +51,7 @@ const FEATURES = [
     <UiContainer class="!max-w-screen-lg">
       <div class="pb-6 max-w-[680px]">
         <h1 class="mb-4 font-display text-[36px] xs:text-[44px]">
-          Addressing the most pressing global challenges
+          Addressing the world's most pressing challenges
         </h1>
       </div>
     </UiContainer>
