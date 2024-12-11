@@ -10,7 +10,7 @@ const PROPOSALS_LIMIT = 20;
 useTitle('Home');
 
 const metaStore = useMetaStore();
-const { modalAccountOpen } = useModal();
+const router = useRouter();
 const followedSpacesStore = useFollowedSpacesStore();
 const { web3 } = useWeb3();
 const { loadVotes } = useAccount();
@@ -109,9 +109,15 @@ watch(state, (toState, fromState) => {
   if (toState !== fromState && web3.value.account) fetch();
 });
 
-onUnmounted(() => {
-  modalAccountOpen.value = false;
-});
+watch(
+  [() => web3.value.account, () => web3.value.authLoading],
+  ([account, authLoading]) => {
+    if (!account && !authLoading) {
+      router.replace({ name: 'my-explore' });
+    }
+  },
+  { immediate: true }
+);
 </script>
 
 <template>

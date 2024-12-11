@@ -135,6 +135,7 @@ export const useNotificationsStore = defineStore('notifications', () => {
       } else if (refreshNotificationInterval) {
         clearInterval(refreshNotificationInterval);
         refreshNotificationInterval = 0;
+        notifications.value = [];
       }
 
       loading.value = false;
