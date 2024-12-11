@@ -313,13 +313,25 @@ const closeResultDialog = () => {
       <template #header>
         <h3>{{ resultDialogContent.title }}</h3>
       </template>
-      <div class="p-4 flex flex-col space-y-2 text-center">
-        <p class="text-muted-foreground text-sm p-0">
-          {{ resultDialogContent.description }}
-        </p>
+      <div class="p-4 flex flex-col items-center space-y-3 text-center">
+        <template v-if="isProcessing">
+          <UiLoading class="mb-2" />
+          <p class="text-muted-foreground text-sm">{{ resultDialogContent.description }}</p>
+        </template>
+        <template v-else>
+          <div v-if="resultDialogContent.title === 'Stream created'" class="bg-skin-success rounded-full p-[12px]">
+            <IS-check :width="28" :height="28" class="text-skin-bg" />
+          </div>
+          <div v-else-if="resultDialogContent.title === 'Error'" class="bg-skin-danger rounded-full p-[12px]">
+            <IS-x-mark :width="28" :height="28" class="text-skin-bg" />
+          </div>
+          <p class="text-muted-foreground text-sm">
+            {{ resultDialogContent.description }}
+          </p>
+        </template>
       </div>
       <template #footer>
-        <div class="flex flex-row items-center justify-center gap-2">
+        <div class="flex flex-row items-center gap-2" :class="isSuccess ? 'justify-between' : 'justify-center'">
           <UiButton @click="closeResultDialog" class="w-40" :variant="isSuccess ? 'outline' : 'default'">
             Close
           </UiButton>
@@ -335,4 +347,55 @@ const closeResultDialog = () => {
       </template>
     </UiModal>
   </Teleport>
+
+  <div class="fixed bottom-4 right-4 z-50 bg-white p-4 rounded-lg shadow-lg border">
+    <h4 class="font-bold mb-2">Test Modal States</h4>
+    <div class="space-y-2">
+      <UiButton class="w-full" @click="() => {
+        showResultDialog = true;
+        isProcessing = true;
+        resultDialogContent = {
+          title: 'Processing',
+          description: 'Creating your basic income stream...'
+        }
+      }">
+        Show Processing
+      </UiButton>
+
+      <UiButton class="w-full" @click="() => {
+        showResultDialog = true;
+        isProcessing = false;
+        isSuccess = true;
+        resultDialogContent = {
+          title: 'Stream created',
+          description: 'Your basic income stream has been successfully created.'
+        }
+      }">
+        Show Success
+      </UiButton>
+
+      <UiButton class="w-full" @click="() => {
+        showResultDialog = true;
+        isProcessing = false;
+        isSuccess = false;
+        resultDialogContent = {
+          title: 'Error',
+          description: 'Failed to create basic income stream. Please try again.'
+        }
+      }">
+        Show Error
+      </UiButton>
+
+      <UiButton class="w-full" @click="() => {
+        showResultDialog = true;
+        isProcessing = false;
+        isSuccess = true;
+        isButtonDisabled = true;
+        countdown = 8;
+        startCountdown();
+      }">
+        Show Countdown
+      </UiButton>
+    </div>
+  </div>
 </template>

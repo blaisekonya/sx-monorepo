@@ -245,13 +245,25 @@ const closeResultDialog = () => {
       <template #header>
         <h3>{{ resultDialogContent.title }}</h3>
       </template>
-      <div class="p-4 flex flex-col space-y-2 text-center">
-        <p class="text-muted-foreground text-sm p-0">
-          {{ resultDialogContent.description }}
-        </p>
+      <div class="p-4 flex flex-col items-center space-y-3 text-center">
+        <template v-if="isProcessing">
+          <UiLoading class="mb-2" />
+          <p class="text-muted-foreground text-sm">{{ resultDialogContent.description }}</p>
+        </template>
+        <template v-else>
+          <div v-if="resultDialogContent.title === 'Stream created'" class="bg-skin-success rounded-full p-[12px]">
+            <IS-check :width="28" :height="28" class="text-skin-bg" />
+          </div>
+          <div v-else-if="resultDialogContent.title === 'Error'" class="bg-skin-danger rounded-full p-[12px]">
+            <IS-x-mark :width="28" :height="28" class="text-skin-bg" />
+          </div>
+          <p class="text-muted-foreground text-sm">
+            {{ resultDialogContent.description }}
+          </p>
+        </template>
       </div>
       <template #footer>
-        <div class="flex flex-row items-center justify-center gap-2">
+        <div class="flex flex-row items-center gap-2" :class="isSuccess ? 'justify-between' : 'justify-center'">
           <UiButton @click="closeResultDialog" class="w-40" :variant="isSuccess ? 'outline' : 'default'">
             Close
           </UiButton>

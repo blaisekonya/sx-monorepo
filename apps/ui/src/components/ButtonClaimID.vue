@@ -279,10 +279,24 @@ watch(() => web3Account, initializeWidget, { immediate: true });
       <template #header>
         <h3>{{ resultDialogContent.title }}</h3>
       </template>
-      <div class="p-4 flex flex-col space-y-2 text-center">
-        <p class="text-muted-foreground text-sm p-0">
-          {{ resultDialogContent.description }}
-        </p>
+      <div class="flex flex-col items-center space-y-3 p-4">
+        <template v-if="isProcessing">
+          <UiLoading class="mb-2" />
+          <p class="text-muted-foreground text-sm">
+            {{ resultDialogContent.description }}
+          </p>
+        </template>
+        <template v-else>
+          <div v-if="resultDialogContent.title === 'Success'" class="bg-skin-success rounded-full p-[12px]">
+            <IS-check :width="28" :height="28" class="text-skin-bg" />
+          </div>
+          <div v-else-if="resultDialogContent.title === 'Error'" class="bg-skin-danger rounded-full p-[12px]">
+            <IS-x-mark :width="28" :height="28" class="text-skin-bg" />
+          </div>
+          <p class="text-muted-foreground text-sm">
+            {{ resultDialogContent.description }}
+          </p>
+        </template>
       </div>
       <template #footer>
         <div class="flex flex-row items-center justify-center">
