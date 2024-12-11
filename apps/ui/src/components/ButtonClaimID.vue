@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, watch, toRaw } from 'vue';
-import { ZkMeWidget } from '@zkmelabs/widget';
+import { ZkMeWidget, verifyMeidWithZkMeServices } from '@zkmelabs/widget';
 import { Engine } from '@thirdweb-dev/engine';
 import { CHAIN, GLOBAL_VOTER_ID_ZKME_ADDRESS, DRACHMA_CONTRACT_ADDRESS, REFERRAL_REWARD } from '../helpers/constants';
 import { ethers } from 'ethers';
@@ -105,37 +105,51 @@ const initializeWidget = async () => {
   }
 };
 
-const launchWidget = () => {
-  if (widget.value) {
-    try {
-      const widgetInstance = toRaw(widget.value);
-
-      if (typeof widgetInstance.launch !== 'function') {
-        throw new Error('Widget launch method is not a function');
-      }
-
-      widgetInstance.launch();
-
-      widgetInstance.on('meidFinished', async results => {
-        if (results.isGrant) {
-          await mintMembership();
-        }
-      });
-    } catch (error) {
-      console.error('Error launching widget:', error);
-      resultDialogContent.value = {
-        title: 'Error',
-        description: `Failed to launch widget: ${(error as Error).message || 'Unknown error'
-          }. Please try again later or contact support.`
-      };
-      showResultDialog.value = true;
-    }
-  } else {
+const launchWidget = async () => {
+  if (!widget.value) {
     console.error('Widget is not initialized');
     resultDialogContent.value = {
       title: 'Error',
-      description:
-        'Widget is not initialized. Please refresh the page and try again.'
+      description: 'Widget is not initialized. Please refresh the page and try again.'
+    };
+    showResultDialog.value = true;
+    return;
+  }
+
+  // Check if user already has a Global Voter ID
+  if (balanceData.value !== null && parseFloat(balanceData.value) > 0) {
+    resultDialogContent.value = {
+      title: 'Congratulations!',
+      description: 'You already have a Global Voter ID.'
+    };
+    showResultDialog.value = true;
+    return;
+  }
+
+  try {
+    const { isGrant } = await verifyMeidWithZkMeServices(
+      'M2024053066119595336406774111128',
+      web3Account.value
+    );
+
+    if (isGrant) {
+      // User already has MeID, proceed directly to minting
+      await mintMembership();
+      return;
+    }
+
+    const widgetInstance = toRaw(widget.value);
+    widgetInstance.launch();
+    widgetInstance.on('meidFinished', async results => {
+      if (results.isGrant) {
+        await mintMembership();
+      }
+    });
+  } catch (error) {
+    console.error('Error launching widget:', error);
+    resultDialogContent.value = {
+      title: 'Error',
+      description: `Failed to launch widget: ${(error as Error).message || 'Unknown error'}. Please try again later or contact support.`
     };
     showResultDialog.value = true;
   }

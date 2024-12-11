@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed, watch } from 'vue';
-import { ZkMeWidget } from '@zkmelabs/widget';
+import { ZkMeWidget, verifyMeidWithZkMeServices } from '@zkmelabs/widget';
 import { ethers } from 'ethers';
 import {
   CFA_V1_FORWARDER_ADDRESS,
@@ -145,16 +145,37 @@ async function getZkMeToken() {
 }
 
 const handleLaunchWidget = async () => {
-  const widgetInstance = toRaw(widget.value);
-  if (widgetInstance) {
+  if (!widget.value || !web3Account.value) {
+    console.log('Widget is null or no web3 account');
+    return;
+  }
+
+  try {
+    const { isGrant } = await verifyMeidWithZkMeServices(
+      'M2024053066119595336406774111128',
+      web3Account.value
+    );
+
+    if (isGrant) {
+      // User already has MeID, proceed directly to stream creation
+      await handleCreateDrachmaStream();
+      return;
+    }
+
+    const widgetInstance = toRaw(widget.value);
     widgetInstance.launch();
     widgetInstance.on('meidFinished', async (results) => {
       if (results.isGrant) {
         await handleCreateDrachmaStream();
       }
     });
-  } else {
-    console.log('Widget is null, cannot launch');
+  } catch (error) {
+    console.error('Error launching widget:', error);
+    resultDialogContent.value = {
+      title: 'Error',
+      description: `Failed to launch widget: ${(error as Error).message || 'Unknown error'}. Please try again later or contact support.`
+    };
+    showResultDialog.value = true;
   }
 };
 
