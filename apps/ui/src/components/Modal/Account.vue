@@ -86,28 +86,52 @@ async function handleLogin(connector: string) {
 <template>
   <UiModal :open="open" @close="$emit('close')">
     <template #header>
-      <h3 v-text="isLoggedOut ? 'Connect wallet' : 'Account'" />
+      <div class="relative">
+        <h3 v-text="isLoggedOut
+          ? showConnectors
+            ? 'Connect wallet'
+            : 'Sign in'
+          : 'Account'
+          " />
+      </div>
     </template>
     <div class="m-4 flex flex-col gap-2">
       <template v-if="isLoggedOut">
-        <button v-for="connector in availableConnectors" :key="connector.id" type="button"
-          @click="handleLogin(connector.id)">
-          <UiButton class="w-full flex justify-center items-center gap-2">
-            <img :src="getConnectorIconUrl(connector.icon)" height="28" width="28" class="rounded-lg"
-              :alt="connector.name" />
-            {{ connector.name }}
+        <template v-if="!showConnectors">
+          <UiButton class="w-full flex justify-center items-center gap-2" @click="handleLogin('walletlink')">
+            <img :src="getConnectorIconUrl(connectors.walletlink.icon)" height="28" width="28"
+              :alt="connectors.walletlink.name" />
+            Log in
           </UiButton>
-        </button>
-        <div class="flex items-center my-1">
-          <div class="flex-grow border-t border-skin-border"></div>
-          <span class="mx-2 text-skin-content text-sm">OR</span>
-          <div class="flex-grow border-t border-skin-border"></div>
-        </div>
-        <UiButton class="w-full flex justify-center items-center gap-2" @click="handleLogin('walletlink')">
-          <img :src="getConnectorIconUrl(connectors.walletlink.icon)" height="28" width="28"
-            :alt="connectors.walletlink.name" />
-          Create Smart Wallet
-        </UiButton>
+          <UiButton class="w-full flex justify-center items-center gap-2" @click="handleLogin('walletlink')">
+            <img :src="getConnectorIconUrl(connectors.walletlink.icon)" height="28" width="28"
+              :alt="connectors.walletlink.name" />
+            Sign up
+          </UiButton>
+          <div class="flex items-center my-1">
+            <div class="flex-grow border-t border-skin-border"></div>
+            <span class="mx-2 text-skin-content text-sm">OR</span>
+            <div class="flex-grow border-t border-skin-border"></div>
+          </div>
+          <UiButton @click="handleLoginClick"> Connect wallet </UiButton>
+        </template>
+        <template v-else>
+          <button v-for="connector in availableConnectors" :key="connector.id" type="button"
+            @click="handleLogin(connector.id)">
+            <UiButton class="w-full flex justify-center items-center gap-2">
+              <img :src="getConnectorIconUrl(connector.icon)" height="28" width="28" :alt="connector.name" />
+              {{ connector.name }}
+            </UiButton>
+          </button>
+          <div class="flex items-center my-1">
+            <div class="flex-grow border-t border-skin-border"></div>
+            <span class="mx-2 text-skin-content text-sm">OR</span>
+            <div class="flex-grow border-t border-skin-border"></div>
+          </div>
+          <UiButton class="w-full flex justify-center items-center gap-2" @click="showConnectors = false">
+            Sign in
+          </UiButton>
+        </template>
       </template>
       <template v-else>
         <UiButton :to="{ name: 'user', params: { user: web3.account } }" class="gap-2" @click="emit('close')">
@@ -117,10 +141,18 @@ async function handleLogin(connector: string) {
         <UiButton :to="{ name: 'settings-spaces' }" @click="emit('close')">
           Settings
         </UiButton>
-        <UiButton @click="step = 'connect'">
+        <UiButton @click="() => {
+          step = 'connect';
+          showConnectors = true;
+        }
+          ">
           {{ web3.account ? 'Change wallet' : 'Log in' }}
         </UiButton>
-        <UiButton class="!text-skin-danger" @click="handleLogout">
+        <UiButton class="!text-skin-danger" @click="() => {
+          handleLogout();
+          handleLoginClick();
+        }
+          ">
           Log out
         </UiButton>
       </template>

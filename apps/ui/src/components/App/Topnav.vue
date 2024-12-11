@@ -123,7 +123,7 @@ onUnmounted(() => {
           <span class="hidden sm:block truncate max-w-[120px]" v-text="user.name || shorten(user.id)" />
         </span>
         <template v-else>
-          <span class="hidden sm:block" v-text="'Log in'" />
+          <span class="hidden sm:block" v-text="'Sign in'" />
           <IH-login class="sm:hidden inline-block" />
         </template>
       </UiButton>
