@@ -2,9 +2,9 @@
   <div class="py-9 flex items-center justify-center relative">
     <div class="absolute blocks-x top-0 right-[50%] left-0 bottom-0 !bg-right-top -z-10" />
     <UiContainer class="!max-w-screen-lg">
-      <div class="text-center max-w-[680px] mx-auto">
+      <div class="text-center max-w-[560px] mx-auto">
         <div class="eyebrow mb-3">Join the World Association</div>
-        <h1 class="mb-4 font-display text-[36px] xs:text-[44px]">
+        <h1 class="mb-4 font-display text-[32px] xs:text-[40px]">
           Ready to shape the future of humanity?
         </h1>
         <UiButton :to="{ name: 'my-home' }" class="primary">
