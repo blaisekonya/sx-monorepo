@@ -22,7 +22,9 @@ export default {
     options: {
       projectId: 'cc8fce167e9b87d538f58ac46a9f30ba',
       chains: [],
-      optionalChains: [1, 10, 56, 100, 250, 4002, 42161, 137, 1088, 11155111],
+      optionalChains: [
+        1, 10, 56, 100, 250, 4002, 8453, 42161, 137, 1088, 11155111
+      ],
       optionalMethods: ['eth_sendTransaction', 'eth_signTypedData_v4'],
       showQrModal: true
     }
