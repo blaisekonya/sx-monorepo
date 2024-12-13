@@ -140,8 +140,14 @@ const launchWidget = async () => {
     );
 
     if (isGrant) {
-      // User already has MeID, proceed directly to minting
-      await mintMembership();
+      resultDialogContent.value = {
+        title: 'Verification complete',
+        description: 'You have already completed the verification check. Creating your Global Voter ID now...'
+      };
+      showResultDialog.value = true;
+      isProcessing.value = true;
+
+      await mintMembership(false);
       return;
     }
 
@@ -149,7 +155,7 @@ const launchWidget = async () => {
     widgetInstance.launch();
     widgetInstance.on('meidFinished', async results => {
       if (results.isGrant) {
-        await mintMembership();
+        await mintMembership(false);
       }
     });
   } catch (error) {
