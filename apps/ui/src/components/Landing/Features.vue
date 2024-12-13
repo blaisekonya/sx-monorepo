@@ -16,7 +16,7 @@ const FEATURES = [
   {
     title: 'Democratic legitimacy',
     about:
-      'Using proof of personhood methods to ensure that every voice is real, unique, and counts equally.',
+      'Using proof of personhood methods to ensure every voice is real, unique, and counts equally.',
     icon: ISUserGroup
   },
   {
@@ -51,7 +51,7 @@ const FEATURES = [
     <UiContainer class="!max-w-screen-lg">
       <div class="pb-6 max-w-[640px]">
         <h1 class="mb-4 font-display text-[36px] xs:text-[44px]">
-          Addressing the most pressing global challenges
+          The future of global governance
         </h1>
       </div>
     </UiContainer>
