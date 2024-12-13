@@ -135,7 +135,7 @@ function handleSignup() {
                   </div>
 
                   <!-- Passkeys Benefits -->
-                  <div class="bg-skin-block-bg rounded-xl p-4">
+                  <div class="p-4">
                     <h4 class="mb-3 text-[17px] font-medium">Why Smart Wallet?</h4>
                     <div class="space-y-2">
                       <div class="flex items-center gap-3">
@@ -160,7 +160,7 @@ function handleSignup() {
                   </div>
 
                   <!-- Wallet Benefits -->
-                  <div class="bg-skin-block-bg rounded-xl px-4 pb-3">
+                  <div class="px-4 pb-3">
                     <h4 class="mb-3 text-[17px] font-medium">Your wallet enables you to:</h4>
                     <div class="space-y-2">
                       <div class="flex items-center gap-3">
