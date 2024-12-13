@@ -51,6 +51,7 @@ const isButtonDisabled = ref(false);
 const countdown = ref(8);
 const isLoading = ref(true);
 const showStreamModal = ref(false);
+const showBasicIncomeInfo = ref(false);
 
 const fetchFlowrateData = async () => {
   if (!web3Account.value) {
@@ -267,6 +268,15 @@ const getUserStreamLink = computed(() => {
 const closeResultDialog = () => {
   showResultDialog.value = false;
 };
+
+const closeBasicIncomeInfo = () => {
+  showBasicIncomeInfo.value = false;
+};
+
+const handleStartVerification = () => {
+  closeBasicIncomeInfo();
+  handleLaunchWidget();
+};
 </script>
 
 <template>
@@ -291,7 +301,7 @@ const closeResultDialog = () => {
         </div>
       </template>
       <template v-else>
-        <div class="flex items-center justify-between w-full cursor-pointer" @click="handleLaunchWidget">
+        <div class="flex items-center justify-between w-full cursor-pointer" @click="showBasicIncomeInfo = true">
           <span>Claim your basic income</span>
           <div class="2xl:ml-3">
             <UiButton class="!px-0 w-[46px]">
@@ -347,4 +357,73 @@ const closeResultDialog = () => {
       </template>
     </UiModal>
   </Teleport>
+
+  <UiModal :open="showBasicIncomeInfo" @close="closeBasicIncomeInfo" :maxWidth="480">
+    <template #header>
+      <div class="relative">
+        <h3 class="text-[22px]">Global Basic Income</h3>
+      </div>
+    </template>
+
+    <div class="flex flex-col gap-4 p-4">
+      <!-- Hero Section -->
+      <div class="flex flex-col items-center text-center gap-3">
+        <div class="bg-skin-block-bg rounded-full p-3">
+          <IH-banknotes class="w-4 h-4 text-skin-link" />
+        </div>
+        <div class="text-md font-medium">1 world drachma a day</div>
+        <div class="text-skin-text">
+          Increase your financial freedom by joining our basic income program and receive a continuous stream of our
+          official currency.
+        </div>
+      </div>
+
+      <!-- Steps -->
+      <div>
+        <div class="flex items-start gap-3 py-2">
+          <div
+            class="flex-shrink-0 w-5 h-5 flex items-center justify-center rounded-full bg-skin-text text-skin-bg font-medium">
+            1
+          </div>
+          <div>
+            <h4 class="font-medium mb-1">Verify your identity</h4>
+            <p class="text-sm text-skin-text">Complete a simple biometric check to ensure fair distribution - one
+              person,
+              one income</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3 py-2">
+          <div
+            class="flex-shrink-0 w-5 h-5 flex items-center justify-center rounded-full bg-skin-text text-skin-bg font-medium">
+            2
+          </div>
+          <div>
+            <h4 class="font-medium mb-1">Activate your stream</h4>
+            <p class="text-sm text-skin-text">Your income starts flowing immediately after verification</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3 pt-2">
+          <div
+            class="flex-shrink-0 w-5 h-5 flex items-center justify-center rounded-full bg-skin-text text-skin-bg font-medium">
+            3
+          </div>
+          <div>
+            <h4 class="font-medium mb-1">Spend anywhere</h4>
+            <p class="text-sm text-skin-text">Use your drachma freely for everyday transactions and payments</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <template #footer>
+      <div class="flex justify-between">
+        <UiButton @click="closeBasicIncomeInfo">Later</UiButton>
+        <UiButton class="primary" @click="handleStartVerification">
+          Get started
+        </UiButton>
+      </div>
+    </template>
+  </UiModal>
 </template>

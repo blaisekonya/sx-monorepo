@@ -253,10 +253,21 @@ const closeResultDialog = () => {
 };
 
 watch(() => web3Account, initializeWidget, { immediate: true });
+
+const showVoterIdInfo = ref(false);
+
+const closeVoterIdInfo = () => {
+  showVoterIdInfo.value = false;
+};
+
+const handleStartVerification = () => {
+  closeVoterIdInfo();
+  launchWidget();
+};
 </script>
 
 <template>
-  <span class="cursor-pointer text-skin-link flex items-center gap-2.5" @click="launchWidget">
+  <span class="cursor-pointer text-skin-link flex items-center gap-2.5" @click="showVoterIdInfo = true">
     <template v-if="props.user">
       <template v-if="props.done">
         <UiButton class="!px-0 w-[46px]">
@@ -302,6 +313,75 @@ watch(() => web3Account, initializeWidget, { immediate: true });
         <div class="flex flex-row items-center justify-center">
           <UiButton @click="closeResultDialog" class="w-40" variant="white">
             Close
+          </UiButton>
+        </div>
+      </template>
+    </UiModal>
+
+    <UiModal :open="showVoterIdInfo" @close="closeVoterIdInfo" :maxWidth="480">
+      <template #header>
+        <div class="relative">
+          <h3 class="text-[22px]">Global Voter ID</h3>
+        </div>
+      </template>
+
+      <div class="flex flex-col gap-4 p-4">
+        <!-- Hero Section -->
+        <div class="flex flex-col items-center text-center gap-3">
+          <div class="bg-skin-block-bg rounded-full p-3">
+            <IH-user class="w-4 h-4 text-skin-link" />
+          </div>
+          <div class="text-md font-medium">Your digital citizenship</div>
+          <div class="text-skin-text">
+            Join our global community by creating your digital identity that enables participation in global
+            democracy.
+          </div>
+        </div>
+
+        <!-- Steps -->
+        <div>
+          <div class="flex items-start gap-3 py-2">
+            <div
+              class="flex-shrink-0 w-5 h-5 flex items-center justify-center rounded-full bg-skin-text text-skin-bg font-medium">
+              1
+            </div>
+            <div>
+              <h4 class="font-medium mb-1">Verify your identity</h4>
+              <p class="text-sm text-skin-text">Complete a simple biometric check to ensure one person, one vote
+                principle
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3 py-2">
+            <div
+              class="flex-shrink-0 w-5 h-5 flex items-center justify-center rounded-full bg-skin-text text-skin-bg font-medium">
+              2
+            </div>
+            <div>
+              <h4 class="font-medium mb-1">Receive your ID</h4>
+              <p class="text-sm text-skin-text">Get your non-transferable Global Voter ID</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3 pt-2">
+            <div
+              class="flex-shrink-0 w-5 h-5 flex items-center justify-center rounded-full bg-skin-text text-skin-bg font-medium">
+              3
+            </div>
+            <div>
+              <h4 class="font-medium mb-1">Start participating</h4>
+              <p class="text-sm text-skin-text">Vote on proposals and help shape the future of humanity</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <template #footer>
+        <div class="flex justify-between">
+          <UiButton @click="closeVoterIdInfo">Later</UiButton>
+          <UiButton class="primary" @click="handleStartVerification">
+            Get started
           </UiButton>
         </div>
       </template>
