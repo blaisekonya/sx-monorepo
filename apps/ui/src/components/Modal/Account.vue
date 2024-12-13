@@ -129,8 +129,8 @@ function handleSignup() {
               <div class="m-4">
                 <div class="space-y-3">
                   <!-- Introduction -->
-                  <div class="text-skin-text">
-                    To get started, we'll create your Smart Wallet using passkeys - the next generation of
+                  <div class="text-skin-text text-center">
+                    To get started, we'll create you a Smart Wallet using a passkey - the next generation of
                     authentication.
                   </div>
 
@@ -161,13 +161,13 @@ function handleSignup() {
 
                   <!-- Wallet Benefits -->
                   <div class="px-4 pb-3">
-                    <h4 class="mb-3 text-[17px] font-medium">Your wallet enables you to:</h4>
+                    <h4 class="mb-3 text-[17px] font-medium">Your Smart Wallet enables you to:</h4>
                     <div class="space-y-2">
                       <div class="flex items-center gap-3">
                         <div class="mt-1 text-skin-link">
                           <IH-user class="w-4 h-4" />
                         </div>
-                        <div class="text-sm">Create your Global Voter ID</div>
+                        <div class="text-sm">Create and hold your Global Voter ID</div>
                       </div>
                       <div class="flex items-center gap-3">
                         <div class="mt-1 text-skin-link">

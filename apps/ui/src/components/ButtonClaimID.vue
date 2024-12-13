@@ -328,12 +328,12 @@ const handleStartVerification = () => {
       <div class="flex flex-col gap-4 p-4">
         <!-- Hero Section -->
         <div class="flex flex-col items-center text-center gap-3">
-          <div class="bg-skin-block-bg rounded-full p-3">
-            <IH-user class="w-4 h-4 text-skin-link" />
+          <div class="bg-skin-primary rounded-full p-3">
+            <IH-user class="w-4 h-4 text-skin-bg" />
           </div>
-          <div class="text-md font-medium">Your digital citizenship</div>
-          <div class="text-skin-text">
-            Join our global community by creating your digital identity that enables participation in global
+          <h4 class="font-medium">Your digital citizenship</h4>
+          <div class="text-skin-text text-sm">
+            Join our community by creating your digital identity and start experimenting with global
             democracy.
           </div>
         </div>
@@ -342,7 +342,7 @@ const handleStartVerification = () => {
         <div>
           <div class="flex items-start gap-3 py-2">
             <div
-              class="flex-shrink-0 w-5 h-5 flex items-center justify-center rounded-full bg-skin-text text-skin-bg font-medium">
+              class="flex-shrink-0 w-5 h-5 flex items-center justify-center rounded-full bg-skin-primary text-skin-bg font-medium">
               1
             </div>
             <div>
@@ -355,7 +355,7 @@ const handleStartVerification = () => {
 
           <div class="flex items-start gap-3 py-2">
             <div
-              class="flex-shrink-0 w-5 h-5 flex items-center justify-center rounded-full bg-skin-text text-skin-bg font-medium">
+              class="flex-shrink-0 w-5 h-5 flex items-center justify-center rounded-full bg-skin-primary text-skin-bg font-medium">
               2
             </div>
             <div>
@@ -366,7 +366,7 @@ const handleStartVerification = () => {
 
           <div class="flex items-start gap-3 pt-2">
             <div
-              class="flex-shrink-0 w-5 h-5 flex items-center justify-center rounded-full bg-skin-text text-skin-bg font-medium">
+              class="flex-shrink-0 w-5 h-5 flex items-center justify-center rounded-full bg-skin-primary text-skin-bg font-medium">
               3
             </div>
             <div>

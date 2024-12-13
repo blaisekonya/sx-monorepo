@@ -261,11 +261,11 @@ const handleStartVerification = () => {
       <div class="flex flex-col gap-4 p-4">
         <!-- Hero Section -->
         <div class="flex flex-col items-center text-center gap-3">
-          <div class="bg-skin-block-bg rounded-full p-3">
-            <IH-banknotes class="w-4 h-4 text-skin-link" />
+          <div class="bg-skin-primary rounded-full p-3">
+            <IH-banknotes class="w-4 h-4 text-skin-bg" />
           </div>
-          <div class="text-md font-medium">1 world drachma a day</div>
-          <div class="text-skin-text">
+          <h4 class="font-medium">1 world drachma a day</h4>
+          <div class="text-skin-text text-sm">
             Increase your financial freedom by joining our basic income program and receive a continuous stream of our
             official currency.
           </div>
@@ -275,7 +275,7 @@ const handleStartVerification = () => {
         <div>
           <div class="flex items-start gap-3 py-2">
             <div
-              class="flex-shrink-0 w-5 h-5 flex items-center justify-center rounded-full bg-skin-text text-skin-bg font-medium">
+              class="flex-shrink-0 w-5 h-5 flex items-center justify-center rounded-full bg-skin-primary text-skin-bg font-medium">
               1
             </div>
             <div>
@@ -288,7 +288,7 @@ const handleStartVerification = () => {
 
           <div class="flex items-start gap-3 py-2">
             <div
-              class="flex-shrink-0 w-5 h-5 flex items-center justify-center rounded-full bg-skin-text text-skin-bg font-medium">
+              class="flex-shrink-0 w-5 h-5 flex items-center justify-center rounded-full bg-skin-primary text-skin-bg font-medium">
               2
             </div>
             <div>
@@ -299,7 +299,7 @@ const handleStartVerification = () => {
 
           <div class="flex items-start gap-3 pt-2">
             <div
-              class="flex-shrink-0 w-5 h-5 flex items-center justify-center rounded-full bg-skin-text text-skin-bg font-medium">
+              class="flex-shrink-0 w-5 h-5 flex items-center justify-center rounded-full bg-skin-primary text-skin-bg font-medium">
               3
             </div>
             <div>
