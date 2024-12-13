@@ -49,9 +49,9 @@ const FEATURES = [
 <template>
   <div id="features" class="pt-8 border-b">
     <UiContainer class="!max-w-screen-lg">
-      <div class="pb-6 max-w-[560px]">
-        <h1 class="mb-4 font-display text-[32px] xs:text-[40px]">
-          Addressing the world's most pressing challenges
+      <div class="pb-6 max-w-[640px]">
+        <h1 class="mb-4 font-display text-[36px] xs:text-[44px]">
+          Tackling the most pressing global challenges
         </h1>
       </div>
     </UiContainer>

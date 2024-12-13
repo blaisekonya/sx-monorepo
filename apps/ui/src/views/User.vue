@@ -289,7 +289,21 @@ watchEffect(() => setTitle(`${user.value?.name || id.value} user profile`));
               <IH-check v-else class="inline-block" />
             </button>
           </UiTooltip>
-          <span v-if="userMetadata.loaded">
+          <span v-if="userMetadata.loading">
+            <span class="flex items-center space-x-[3px]">
+              <span class="text-skin-text">·</span>
+              <span class="flex items-center space-x-[3px]">
+                <UiSkeleton class="h-[18px] w-[11px]" />
+                <span class="text-skin-text">following</span>
+              </span>
+              <span class="text-skin-text ml-[3px]">·</span>
+              <span class="flex items-center space-x-[3px]">
+                <UiSkeleton class="h-[18px] w-[11px]" />
+                <span class="text-skin-text">followers</span>
+              </span>
+            </span>
+          </span>
+          <span v-else-if="userMetadata.loaded">
             ·
             <a :href="`https://ethfollow.xyz/${user.id}`" target="_blank">
               {{ _n(userMetadata.following_count) }}
@@ -412,8 +426,21 @@ watchEffect(() => setTitle(`${user.value?.name || id.value} user profile`));
 
           <!-- Second column -->
           <div class="flex-1">
-            <h4 class="mb-2 eyebrow leading-8">Basic Income</h4>
-            <ButtonUserBasicIncome />
+            <h4 class="mb-2 eyebrow leading-8">World Drachma</h4>
+            <div class="flex flex-col gap-2.5">
+              <ButtonUserBasicIncome />
+              <div class="flex items-center justify-between w-full">
+                <span>Trade world drachma on Uniswap</span>
+                <div class="2xl:ml-3">
+                  <a href="https://app.uniswap.org/explore/tokens/base/0x2ce6f5e18EE4278Dc33DF82A28286F006d7d5730"
+                    target="_blank">
+                    <UiButton class="!px-0 w-[46px]">
+                      <IH-arrow-sm-right class="mt-0.5 inline-block -rotate-45" />
+                    </UiButton>
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
 
           <!-- Third column -->

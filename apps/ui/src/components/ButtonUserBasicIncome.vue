@@ -291,20 +291,20 @@ const handleStartVerification = () => {
   <template v-else>
     <span class="w-full">
       <template v-if="isBasicIncomeSetUp">
-        <div class="flex items-center justify-between w-full cursor-pointer" @click="showStreamModal = true">
+        <div class="flex items-center justify-between w-full">
           <span>Basic income active</span>
           <div class="2xl:ml-3">
-            <UiButton class="!px-0 w-[46px]">
+            <UiButton class="!px-0 w-[46px]" @click="showStreamModal = true">
               <IH-banknotes class="inline-block" />
             </UiButton>
           </div>
         </div>
       </template>
       <template v-else>
-        <div class="flex items-center justify-between w-full cursor-pointer" @click="showBasicIncomeInfo = true">
+        <div class="flex items-center justify-between w-full">
           <span>Claim your basic income</span>
           <div class="2xl:ml-3">
-            <UiButton class="!px-0 w-[46px]">
+            <UiButton class="!px-0 w-[46px]" @click="showBasicIncomeInfo = true">
               <IH-plus class="inline-block" />
             </UiButton>
           </div>
@@ -361,20 +361,15 @@ const handleStartVerification = () => {
   <UiModal :open="showBasicIncomeInfo" @close="closeBasicIncomeInfo" :maxWidth="480">
     <template #header>
       <div class="relative">
-        <h3 class="text-[22px]">Global Basic Income</h3>
+        <h3 class="text-[22px]">Set up your basic income</h3>
       </div>
     </template>
 
     <div class="flex flex-col gap-4 p-4">
       <!-- Hero Section -->
       <div class="flex flex-col items-center text-center gap-3">
-        <div class="bg-skin-primary rounded-full p-3">
-          <IH-banknotes class="w-4 h-4 text-skin-bg" />
-        </div>
-        <h4 class="font-medium">1 world drachma a day</h4>
         <div class="text-skin-text text-sm">
-          Increase your financial freedom by joining our basic income program and receive a continuous stream of our
-          official currency.
+          Join our basic income program and receive a continuous stream of our official currency.
         </div>
       </div>
 
@@ -386,8 +381,10 @@ const handleStartVerification = () => {
             1
           </div>
           <div>
-            <h4 class="font-medium mb-1">Verify your identity</h4>
-            <p class="text-sm text-skin-text">Complete a simple biometric check to ensure fair distribution - one
+            <h4 class="font-medium mb-1">Prove your personhood</h4>
+            <p class="text-sm text-skin-text">Complete a privacy-preserving biometric check to ensure fair distribution
+              -
+              one
               person,
               one income</p>
           </div>
@@ -411,7 +408,7 @@ const handleStartVerification = () => {
           </div>
           <div>
             <h4 class="font-medium mb-1">Spend anywhere</h4>
-            <p class="text-sm text-skin-text">Use your drachma freely for everyday transactions and payments</p>
+            <p class="text-sm text-skin-text">Use your drachma freely for everyday transactions</p>
           </div>
         </div>
       </div>

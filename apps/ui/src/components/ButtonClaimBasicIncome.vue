@@ -247,27 +247,22 @@ const handleStartVerification = () => {
 
 <template>
   <span class="cursor-pointer text-skin-link" @click="showBasicIncomeInfo = true">
-    <span class="text-skin-text">Claim your</span> basic income
+    <span class="text-skin-text">Join our</span> basic income <span class="text-skin-text">program</span>
   </span>
 
   <Teleport to="body">
     <UiModal :open="showBasicIncomeInfo" @close="closeBasicIncomeInfo" :maxWidth="480">
       <template #header>
         <div class="relative">
-          <h3 class="text-[22px]">Global Basic Income</h3>
+          <h3 class="text-[22px]">Set up your basic income</h3>
         </div>
       </template>
 
       <div class="flex flex-col gap-4 p-4">
         <!-- Hero Section -->
         <div class="flex flex-col items-center text-center gap-3">
-          <div class="bg-skin-primary rounded-full p-3">
-            <IH-banknotes class="w-4 h-4 text-skin-bg" />
-          </div>
-          <h4 class="font-medium">1 world drachma a day</h4>
           <div class="text-skin-text text-sm">
-            Increase your financial freedom by joining our basic income program and receive a continuous stream of our
-            official currency.
+            Join our basic income program and receive a continuous stream of our official currency.
           </div>
         </div>
 
@@ -304,7 +299,7 @@ const handleStartVerification = () => {
             </div>
             <div>
               <h4 class="font-medium mb-1">Spend anywhere</h4>
-              <p class="text-sm text-skin-text">Use your drachma freely for everyday transactions and payments</p>
+              <p class="text-sm text-skin-text">Use your drachma freely for everyday transactions</p>
             </div>
           </div>
         </div>

@@ -133,8 +133,14 @@ const launchWidget = async () => {
     );
 
     if (isGrant) {
-      // User already has MeID, proceed directly to minting
-      await mintMembership();
+      resultDialogContent.value = {
+        title: 'Verification complete',
+        description: 'You have already completed the verification check. Creating your Global Voter ID now...'
+      };
+      showResultDialog.value = true;
+      isProcessing.value = true;
+
+      await mintMembership(false);
       return;
     }
 
@@ -142,7 +148,7 @@ const launchWidget = async () => {
     widgetInstance.launch();
     widgetInstance.on('meidFinished', async results => {
       if (results.isGrant) {
-        await mintMembership();
+        await mintMembership(false);
       }
     });
   } catch (error) {
@@ -184,7 +190,7 @@ const emit = defineEmits<{
   (e: 'voter-id-claimed', balance: string): void;
 }>();
 
-const mintMembership = async () => {
+const mintMembership = async (updateDialog = true) => {
   if (
     !web3Account.value ||
     (balanceData &&
@@ -195,10 +201,12 @@ const mintMembership = async () => {
     return;
   }
 
-  resultDialogContent.value = {
-    title: 'Processing',
-    description: 'Creating your Global Voter ID...'
-  };
+  if (updateDialog) {
+    resultDialogContent.value = {
+      title: 'Processing',
+      description: 'Creating your Global Voter ID...'
+    };
+  }
 
   isProcessing.value = true;
   showResultDialog.value = true;
@@ -267,21 +275,23 @@ const handleStartVerification = () => {
 </script>
 
 <template>
-  <span class="cursor-pointer text-skin-link flex items-center gap-2.5" @click="showVoterIdInfo = true">
+  <span class="cursor-pointer text-skin-link flex items-center gap-2.5">
     <template v-if="props.user">
       <template v-if="props.done">
-        <UiButton class="!px-0 w-[46px]">
-          <IH-check class="inline-block" />
-        </UiButton>
+        <a href="https://basescan.org/token/0x762CEc1f35e517Da6C178262F8864Fd92b70A20b" target="_blank"
+          rel="noopener noreferrer" class="!px-0 w-[46px] inline-flex items-center justify-center">
+          <UiButton class="!px-0 w-[46px]"><IH-check class="inline-block" /></UiButton>
+        </a>
       </template>
       <template v-else>
-        <UiButton class="!px-0 w-[46px]">
+        <UiButton class="!px-0 w-[46px]" @click="showVoterIdInfo = true">
           <IH-plus class="inline-block" />
         </UiButton>
       </template>
     </template>
     <template v-else>
-      <span><span class="text-skin-text">Create your</span> Global Voter ID</span>
+      <span @click="showVoterIdInfo = true"><span class="text-skin-text">Create your</span>
+        Global Voter ID</span>
     </template>
   </span>
 
@@ -321,24 +331,17 @@ const handleStartVerification = () => {
     <UiModal :open="showVoterIdInfo" @close="closeVoterIdInfo" :maxWidth="480">
       <template #header>
         <div class="relative">
-          <h3 class="text-[22px]">Global Voter ID</h3>
+          <h3 class="text-[22px]">Create your Global Voter ID</h3>
         </div>
       </template>
 
       <div class="flex flex-col gap-4 p-4">
-        <!-- Hero Section -->
         <div class="flex flex-col items-center text-center gap-3">
-          <div class="bg-skin-primary rounded-full p-3">
-            <IH-user class="w-4 h-4 text-skin-bg" />
-          </div>
-          <h4 class="font-medium">Your digital citizenship</h4>
           <div class="text-skin-text text-sm">
-            Join our community by creating your digital identity and start experimenting with global
-            democracy.
+            Claim your digital voter ID and start experimenting with global democracy.
           </div>
         </div>
 
-        <!-- Steps -->
         <div>
           <div class="flex items-start gap-3 py-2">
             <div
@@ -346,9 +349,9 @@ const handleStartVerification = () => {
               1
             </div>
             <div>
-              <h4 class="font-medium mb-1">Verify your identity</h4>
-              <p class="text-sm text-skin-text">Complete a simple biometric check to ensure one person, one vote
-                principle
+              <h4 class="font-medium mb-1">Prove your personhood</h4>
+              <p class="text-sm text-skin-text">Complete a privacy-preserving biometric check to verify that you are a
+                real and unique person
               </p>
             </div>
           </div>
@@ -371,7 +374,8 @@ const handleStartVerification = () => {
             </div>
             <div>
               <h4 class="font-medium mb-1">Start participating</h4>
-              <p class="text-sm text-skin-text">Vote on proposals and help shape the future of humanity</p>
+              <p class="text-sm text-skin-text">Vote on global governance proposals and start shaping the future of
+                humanity</p>
             </div>
           </div>
         </div>

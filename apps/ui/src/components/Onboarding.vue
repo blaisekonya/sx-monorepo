@@ -71,6 +71,15 @@ onMounted(async () => {
       </div>
     </div>
 
+    <div v-if="tasks.followingWorldAssociation" class="border-b mx-4 py-[14px] flex gap-x-2.5">
+      <div><IS-flag class="text-skin-link mt-0.5" /></div>
+      <div class="grow">
+        <AppLink :to="'/s:worldassociation.eth'">
+          <span class="text-skin-text">Follow the</span> World Association
+        </AppLink>
+      </div>
+    </div>
+
     <div v-if="tasks.voterId" class="border-b mx-4 py-[14px] flex gap-x-2.5">
       <div><IS-flag class="text-skin-link mt-0.5" /></div>
       <div class="grow">
@@ -82,15 +91,6 @@ onMounted(async () => {
       <div><IS-flag class="text-skin-link mt-0.5" /></div>
       <div class="grow">
         <ButtonClaimBasicIncome />
-      </div>
-    </div>
-
-    <div v-if="tasks.followingWorldAssociation" class="border-b mx-4 py-[14px] flex gap-x-2.5">
-      <div><IS-flag class="text-skin-link mt-0.5" /></div>
-      <div class="grow">
-        <AppLink :to="'/s:worldassociation.eth'">
-          <span class="text-skin-text">Follow the</span> World Association
-        </AppLink>
       </div>
     </div>
 
