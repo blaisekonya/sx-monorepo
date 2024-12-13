@@ -349,7 +349,7 @@ const handleStartVerification = () => {
               1
             </div>
             <div>
-              <h4 class="font-medium mb-1">Prove your personhood</h4>
+              <h4 class="font-medium text-[18px] mb-1">Prove your personhood</h4>
               <p class="text-sm text-skin-text">Complete a privacy-preserving biometric check to verify that you are a
                 real and unique person
               </p>
@@ -362,7 +362,7 @@ const handleStartVerification = () => {
               2
             </div>
             <div>
-              <h4 class="font-medium mb-1">Receive your ID</h4>
+              <h4 class="font-medium text-[18px] mb-1">Receive your ID</h4>
               <p class="text-sm text-skin-text">Get your non-transferable Global Voter ID</p>
             </div>
           </div>
@@ -373,7 +373,7 @@ const handleStartVerification = () => {
               3
             </div>
             <div>
-              <h4 class="font-medium mb-1">Start participating</h4>
+              <h4 class="font-medium text-[18px] mb-1">Start participating</h4>
               <p class="text-sm text-skin-text">Vote on global governance proposals and start shaping the future of
                 humanity</p>
             </div>

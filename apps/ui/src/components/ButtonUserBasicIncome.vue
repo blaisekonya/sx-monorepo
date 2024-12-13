@@ -381,7 +381,7 @@ const handleStartVerification = () => {
             1
           </div>
           <div>
-            <h4 class="font-medium mb-1">Prove your personhood</h4>
+            <h4 class="font-medium text-[18px] mb-1">Prove your personhood</h4>
             <p class="text-sm text-skin-text">Complete a privacy-preserving biometric check to ensure fair distribution
               -
               one
@@ -396,7 +396,7 @@ const handleStartVerification = () => {
             2
           </div>
           <div>
-            <h4 class="font-medium mb-1">Activate your stream</h4>
+            <h4 class="font-medium text-[18px] mb-1">Activate your stream</h4>
             <p class="text-sm text-skin-text">Your income starts flowing immediately after verification</p>
           </div>
         </div>
@@ -407,7 +407,7 @@ const handleStartVerification = () => {
             3
           </div>
           <div>
-            <h4 class="font-medium mb-1">Spend anywhere</h4>
+            <h4 class="font-medium text-[18px] mb-1">Spend anywhere</h4>
             <p class="text-sm text-skin-text">Use your drachma freely for everyday transactions</p>
           </div>
         </div>

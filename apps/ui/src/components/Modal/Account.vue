@@ -127,60 +127,60 @@ function handleSignup() {
               </template>
 
               <div class="m-4">
-                <div class="space-y-3">
-                  <!-- Introduction -->
-                  <div class="text-skin-text text-center">
-                    To get started, we'll create you a Smart Wallet using a passkey - the next generation of
-                    authentication.
-                  </div>
+                <!-- Introduction -->
+                <div class="text-skin-text text-sm text-center">
+                  To get started, first we'll create you a Smart Wallet.
+                </div>
 
-                  <!-- Passkeys Benefits -->
-                  <div class="p-4">
-                    <h4 class="mb-3 text-[17px] font-medium">Why Smart Wallet?</h4>
-                    <div class="space-y-2">
-                      <div class="flex items-center gap-3">
-                        <div class="mt-1 text-skin-link">
-                          <IH-shield-check class="w-4 h-4" />
-                        </div>
-                        <div class="text-sm">Create an account in seconds with just your device's biometrics</div>
+
+                <!-- Wallet Benefits -->
+                <div class="px-3 py-4">
+                  <h4 class="mb-2 text-[18px] font-medium pt-2 pb-1.5">Your Smart Wallet enables you to:</h4>
+                  <div class="space-y-2.5">
+                    <div class="flex items-center gap-3">
+                      <div class="bg-skin-primary rounded-full p-2">
+                        <IH-user class="w-[20px] h-[20px] text-skin-bg" />
                       </div>
-                      <div class="flex items-center gap-3">
-                        <div class="mt-1 text-skin-link">
-                          <IH-finger-print class="w-4 h-4" />
-                        </div>
-                        <div class="text-sm">Your keys are generated and stored securely on your device</div>
+                      <div class="text-sm">Create and hold your Global Voter ID</div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <div class="bg-skin-primary rounded-full p-2">
+                        <IH-banknotes class="w-[20px] h-[20px] text-skin-bg" />
                       </div>
-                      <div class="flex items-center gap-3">
-                        <div class="mt-1 text-skin-link">
-                          <IH-device-phone-mobile class="w-4 h-4" />
-                        </div>
-                        <div class="text-sm">Zero cost, unified account across all apps</div>
+                      <div class="text-sm">Receive a basic income</div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <div class="bg-skin-primary rounded-full p-2">
+                        <IH-check-badge class="w-[20px] h-[20px] text-skin-bg" />
                       </div>
+                      <div class="text-sm">Experiment with global democracy</div>
                     </div>
                   </div>
+                </div>
 
-                  <!-- Wallet Benefits -->
-                  <div class="px-4 pb-3">
-                    <h4 class="mb-3 text-[17px] font-medium">Your Smart Wallet enables you to:</h4>
-                    <div class="space-y-2">
-                      <div class="flex items-center gap-3">
-                        <div class="mt-1 text-skin-link">
-                          <IH-user class="w-4 h-4" />
-                        </div>
-                        <div class="text-sm">Create and hold your Global Voter ID</div>
+                <!-- Passkeys Benefits -->
+                <div class="px-3 pt-2 pb-4">
+                  <h4 class="mb-2 text-[18px] font-medium pb-1.5">Why Smart Wallet?</h4>
+                  <div class="space-y-2.5">
+                    <div class="flex items-center gap-3">
+                      <div class="bg-skin-primary rounded-full p-2">
+                        <IH-finger-print class="w-[20px] h-[20px] text-skin-bg" />
                       </div>
-                      <div class="flex items-center gap-3">
-                        <div class="mt-1 text-skin-link">
-                          <IH-banknotes class="w-4 h-4" />
-                        </div>
-                        <div class="text-sm">Receive and manage your basic income</div>
+                      <div class="text-sm leading-[22px]">You can create an account in seconds with just your device's
+                        biometrics</div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <div class="bg-skin-primary rounded-full p-2">
+                        <IH-shield-check class="w-[20px] h-[20px] text-skin-bg" />
                       </div>
-                      <div class="flex items-center gap-3">
-                        <div class="mt-1 text-skin-link">
-                          <IH-check-badge class="w-4 h-4" />
-                        </div>
-                        <div class="text-sm">Participate in global governance</div>
+                      <div class="text-sm leading-[22px]">Your keys are generated and stored securely on your device
                       </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <div class="bg-skin-primary rounded-full p-2">
+                        <IH-device-phone-mobile class="w-[20px] h-[20px] text-skin-bg" />
+                      </div>
+                      <div class="text-sm">Zero cost, unified account across apps</div>
                     </div>
                   </div>
                 </div>
