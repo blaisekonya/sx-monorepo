@@ -6,7 +6,7 @@ const STEPS = [
   {
     title: 'Join',
     about:
-      'Create your Global Voter ID, claim your basic income, and discuss solutions to pressing global challenges – all while preserving your privacy by default.',
+      'Prove your personhood, claim your basic income, and discuss solutions to pressing global challenges – all while preserving your privacy by default.',
     icon: ISUserPlus
   },
   {
