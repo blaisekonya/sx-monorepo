@@ -81,6 +81,13 @@ async function handleLogin(connector: string) {
     loading.value = false;
   }
 }
+
+const showSignupInfo = ref(false);
+
+function handleSignup() {
+  showSignupInfo.value = false;
+  handleLogin('walletlink');
+}
 </script>
 
 <template>
@@ -103,17 +110,99 @@ async function handleLogin(connector: string) {
               :alt="connectors.walletlink.name" />
             Log in
           </UiButton>
-          <UiButton class="w-full flex justify-center items-center gap-2" @click="handleLogin('walletlink')">
-            <img :src="getConnectorIconUrl(connectors.walletlink.icon)" height="28" width="28"
-              :alt="connectors.walletlink.name" />
-            Sign up
-          </UiButton>
+
+          <div class="relative">
+            <UiButton class="w-full flex justify-center items-center gap-2" @click="showSignupInfo = true">
+              <img :src="getConnectorIconUrl(connectors.walletlink.icon)" height="28" width="28"
+                :alt="connectors.walletlink.name" />
+              Sign up
+            </UiButton>
+
+            <!-- Enhanced signup info modal -->
+            <UiModal :open="showSignupInfo" @close="showSignupInfo = false">
+              <template #header>
+                <div class="relative">
+                  <h3 class="text-[22px]">Welcome to the World Association</h3>
+                </div>
+              </template>
+
+              <div class="m-4">
+                <div class="space-y-3">
+                  <!-- Introduction -->
+                  <div class="text-skin-text">
+                    To get started, we'll create your Smart Wallet using passkeys - the next generation of
+                    authentication.
+                  </div>
+
+                  <!-- Passkeys Benefits -->
+                  <div class="bg-skin-block-bg rounded-xl p-4">
+                    <h4 class="mb-3 text-[17px] font-medium">Why Smart Wallet?</h4>
+                    <div class="space-y-2">
+                      <div class="flex items-center gap-3">
+                        <div class="mt-1 text-skin-link">
+                          <IH-shield-check class="w-4 h-4" />
+                        </div>
+                        <div class="text-sm">Create an account in seconds with just your device's biometrics</div>
+                      </div>
+                      <div class="flex items-center gap-3">
+                        <div class="mt-1 text-skin-link">
+                          <IH-finger-print class="w-4 h-4" />
+                        </div>
+                        <div class="text-sm">Your keys are generated and stored securely on your device</div>
+                      </div>
+                      <div class="flex items-center gap-3">
+                        <div class="mt-1 text-skin-link">
+                          <IH-device-phone-mobile class="w-4 h-4" />
+                        </div>
+                        <div class="text-sm">Zero cost, unified account across all apps</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Wallet Benefits -->
+                  <div class="bg-skin-block-bg rounded-xl px-4 pb-3">
+                    <h4 class="mb-3 text-[17px] font-medium">Your wallet enables you to:</h4>
+                    <div class="space-y-2">
+                      <div class="flex items-center gap-3">
+                        <div class="mt-1 text-skin-link">
+                          <IH-user class="w-4 h-4" />
+                        </div>
+                        <div class="text-sm">Create your Global Voter ID</div>
+                      </div>
+                      <div class="flex items-center gap-3">
+                        <div class="mt-1 text-skin-link">
+                          <IH-banknotes class="w-4 h-4" />
+                        </div>
+                        <div class="text-sm">Receive and manage your basic income</div>
+                      </div>
+                      <div class="flex items-center gap-3">
+                        <div class="mt-1 text-skin-link">
+                          <IH-check-badge class="w-4 h-4" />
+                        </div>
+                        <div class="text-sm">Participate in global governance</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <template #footer>
+                <div class="flex justify-between">
+                  <UiButton @click="showSignupInfo = false">Cancel</UiButton>
+                  <UiButton class="primary" @click="handleSignup">
+                    Create Smart Wallet
+                  </UiButton>
+                </div>
+              </template>
+            </UiModal>
+          </div>
+
           <div class="flex items-center my-1">
             <div class="flex-grow border-t border-skin-border"></div>
             <span class="mx-2 text-skin-content text-sm">OR</span>
             <div class="flex-grow border-t border-skin-border"></div>
           </div>
-          <UiButton @click="handleLoginClick"> Connect wallet </UiButton>
+          <UiButton @click="handleLoginClick">Connect wallet</UiButton>
         </template>
         <template v-else>
           <button v-for="connector in availableConnectors" :key="connector.id" type="button"
