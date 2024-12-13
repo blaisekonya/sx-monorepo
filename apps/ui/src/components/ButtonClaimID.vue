@@ -373,7 +373,7 @@ const handleStartVerification = () => {
               3
             </div>
             <div>
-              <h4 class="font-medium text-[18px] mb-1">Start participating</h4>
+              <h4 class="font-medium text-[18px] mb-1">Make your voice heard</h4>
               <p class="text-sm text-skin-text">Vote on global governance proposals and start shaping the future of
                 humanity</p>
             </div>

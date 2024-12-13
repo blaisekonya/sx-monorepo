@@ -51,7 +51,7 @@ const FEATURES = [
     <UiContainer class="!max-w-screen-lg">
       <div class="pb-6 max-w-[640px]">
         <h1 class="mb-4 font-display text-[36px] xs:text-[44px]">
-          Tackling the most pressing global challenges
+          Addressing the most pressing global challenges
         </h1>
       </div>
     </UiContainer>
