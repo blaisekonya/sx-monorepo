@@ -12,7 +12,7 @@ const STEPS = [
   {
     title: 'Govern',
     about:
-      'Create referendums, run for leadership, or make your voice heard by voting. Decisions are turned into action using our official currency, the world drachma.',
+      'Create referendums, run on elections, or make your voice heard by voting. Decisions are turned into action using our official currency, the world drachma.',
     icon: ISLibrary
   }
 ];
