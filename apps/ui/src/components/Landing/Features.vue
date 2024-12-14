@@ -26,9 +26,9 @@ const FEATURES = [
     icon: ISBanknotes
   },
   {
-    title: 'Digital foundations',
+    title: 'Digital democracy',
     about:
-      'We leverage technology to create democratic systems that are secure, flexible, and inclusive.',
+      'Everyone has an equal opportunity to participate in decisions about our shared future.',
     icon: ISCursorClick
   },
   {
