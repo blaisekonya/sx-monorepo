@@ -3,27 +3,33 @@ import ICGitHub from '~icons/c/github';
 import ISGlobe from '~icons/heroicons-solid/globe';
 import ISBanknotes from '~icons/heroicons-solid/banknotes';
 import ISCursorClick from '~icons/heroicons-solid/cursor-click';
-import ISShieldCheck from '~icons/heroicons-solid/shield-check';
+import ISLightBulb from '~icons/heroicons-solid/light-bulb';
 import ISUserGroup from '~icons/heroicons-solid/user-group';
 
 const FEATURES = [
   {
-    title: 'Guided by subsidiarity',
+    title: 'A bold vision',
     about:
-      'Focusing only on issues where global coordination is the most effective approach.',
-    icon: ISGlobe
+      'We experiment with new forms of governance to inspire and build the systems of the future.',
+    icon: ISLightBulb
   },
   {
-    title: 'Democratic legitimacy',
+    title: 'Open membership',
     about:
-      'Using proof of personhood methods to ensure every voice is real, unique, and counts equally.',
+      'Anyone, anywhere can join and participate, ensuring inclusivity and diversity.',
     icon: ISUserGroup
   },
   {
-    title: 'Powered by our own currency',
+    title: 'Economic freedom',
     about:
-      "Thanks to the world drachma, we can support members and initiatives without relying on external donations.",
+      'The world drachma funds initiatives, supports members, and enables financial indepence.',
     icon: ISBanknotes
+  },
+  {
+    title: 'Digital foundations',
+    about:
+      'We leverage technology to create democratic systems that are secure, flexible, and inclusive.',
+    icon: ISCursorClick
   },
   {
     title: 'Radical transparency',
@@ -32,17 +38,11 @@ const FEATURES = [
     icon: ICGitHub
   },
   {
-    title: 'Secure, flexible voting',
+    title: 'Cloud to ground',
     about:
-      'Encrypted, adaptable voting systems to protect privacy and suit diverse decision-making needs.',
-    icon: ISShieldCheck
+      "Starting in the digital space, we aim to create physical hubs united by shared values.",
+    icon: ISGlobe
   },
-  {
-    title: 'Empowering advocacy',
-    about:
-      'Providing free tools to drive global change with democratic polls, petitions, and open letters.',
-    icon: ISCursorClick
-  }
 ];
 </script>
 
@@ -51,7 +51,7 @@ const FEATURES = [
     <UiContainer class="!max-w-screen-lg">
       <div class="pb-6 max-w-[640px]">
         <h1 class="mb-4 font-display text-[36px] xs:text-[44px]">
-          The future of global governance
+          A global society, built together on shared values
         </h1>
       </div>
     </UiContainer>
