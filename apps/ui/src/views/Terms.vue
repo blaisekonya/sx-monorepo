@@ -4,56 +4,56 @@ useTitle('Terms of use');
 const terms = `
 ## PREAMBLE
 
-These Terms of Use for worldassociation.org ("**Terms**") are entered into between the World Association, a non-profit association established under the laws of Switzerland with its registered office in Zug, Switzerland ("**Association**") and you as a user ("you", "your" or "**User**") of worldassociation.org and/or the World Association technology as further specified herein ("**World Association**").
+These Terms of Use for worldrepublic.org ("**Terms**") are entered into between the World Republic, a non-profit republic established under the laws of Switzerland with its registered office in Zug, Switzerland ("**Republic**") and you as a user ("you", "your" or "**User**") of worldrepublic.org and/or the World Republic technology as further specified herein ("**World Republic**").
 
-The Terms, together with any documents incorporated by reference herein, govern your access and use of World Association, consisting of the World Association user interface accessible on worldassociation.org and all related tools, applications, smart contracts, and application programming interfaces (APIs) made available. By accessing, interacting with and/or using World Association in any form and capacity, you agree to be bound by these Terms.
+The Terms, together with any documents incorporated by reference herein, govern your access and use of World Republic, consisting of the World Republic user interface accessible on worldrepublic.org and all related tools, applications, smart contracts, and application programming interfaces (APIs) made available. By accessing, interacting with and/or using World Republic in any form and capacity, you agree to be bound by these Terms.
 
-The Association reserves the right to modify these Terms at any time at its sole discretion. In this case, the Association will provide notice by changing the “last updated” date above. By continuing to access or use the World Association application, you confirm that you accept the updated Terms and all documents incorporated therein by reference. If you do not agree with these Terms, please immediately cease all use of the World Association application.
+The Republic reserves the right to modify these Terms at any time at its sole discretion. In this case, the Republic will provide notice by changing the “last updated” date above. By continuing to access or use the World Republic application, you confirm that you accept the updated Terms and all documents incorporated therein by reference. If you do not agree with these Terms, please immediately cease all use of the World Republic application.
 
 ## 1. Eligibility and prohibited jurisdictions
 
-By accessing or using the World Association application, you represent and warrant that you:
+By accessing or using the World Republic application, you represent and warrant that you:
 
 a) have the right, authority, and legal capacity to accept these Terms;
-b) will not use the World Association application if the laws of your countries of residency and/or citizenship prohibit you from doing so in accordance with these Terms;
+b) will not use the World Republic application if the laws of your countries of residency and/or citizenship prohibit you from doing so in accordance with these Terms;
 c) are not subject to personal sanctions issued by the UN, US, EU or Switzerland;
-d) only access or use the World Association application for your own personal use; and
-e) are not accessing the World Association application from one of the countries embargoed or restricted by the Swiss State Secretariat for Economic Affairs (SECO), including, but not limited to: Belarus, Burundi, Central African Republic, Congo, DPRK (North Korea), Guinea, Guinea-Bissau, Iran, Iraq, Lebanon, Libya, Mali, Myanmar (Burma), Republic of South Sudan, Russia, Somalia, Sudan, Syria, Ukraine, Venezuela, Yemen, or Zimbabwe ("**Prohibited Jurisdictions**").
+d) only access or use the World Republic application for your own personal use; and
+e) are not accessing the World Republic application from one of the countries embargoed or restricted by the Swiss State Secretariat for Economic Affairs (SECO), including, but not limited to: Belarus, Burundi, Central African Republic, Congo, DPRK (North Korea), Guinea, Guinea-Bissau, Iran, Iraq, Lebanon, Libya, Mali, Myanmar (Burma), Republic of South Sudan, Russia, Somalia, Sudan, Syria, Ukraine, Venezuela, Yemen, or Zimbabwe ("**Prohibited Jurisdictions**").
 
-The Association reserves the right to technically restrict access to the World Association application and the content provided thereon based on your geographical location.
+The Republic reserves the right to technically restrict access to the World Republic application and the content provided thereon based on your geographical location.
 
-## 2. Interaction with the World Association application
+## 2. Interaction with the World Republic application
 
-### 2.1 Connecting wallet to the World Association application
+### 2.1 Connecting wallet to the World Republic application
 
-In order to interact with the World Association application, you must first connect one of the non-custodial third-party wallet solutions listed under the “Log in” tab ("**Wallet**") to the World Association application. Your Wallet stores and manages the private keys (PIK) to your blockchain addresses that were created with the Wallet or manually imported into the Wallet. As these Wallets store your private keys, which are required to sign transactions on-chain, they can be used to execute transactions and publish them to the Ethereum blockchain.
+In order to interact with the World Republic application, you must first connect one of the non-custodial third-party wallet solutions listed under the “Log in” tab ("**Wallet**") to the World Republic application. Your Wallet stores and manages the private keys (PIK) to your blockchain addresses that were created with the Wallet or manually imported into the Wallet. As these Wallets store your private keys, which are required to sign transactions on-chain, they can be used to execute transactions and publish them to the Ethereum blockchain.
 
-When you connect your Wallet, the World Association application will ask for permission to send Sign Requests (as defined in Section 2.2 below) to the Wallet. During this process, your Wallet will show the blockchain addresses managed by the Wallet that can be connected to the World Association application. You can modify these permissions at any time in the settings of the Wallet. Please note that you can only interact with blockchain addresses that are both managed by the Wallet and connected to the World Association application.
+When you connect your Wallet, the World Republic application will ask for permission to send Sign Requests (as defined in Section 2.2 below) to the Wallet. During this process, your Wallet will show the blockchain addresses managed by the Wallet that can be connected to the World Republic application. You can modify these permissions at any time in the settings of the Wallet. Please note that you can only interact with blockchain addresses that are both managed by the Wallet and connected to the World Republic application.
 
-The use of the Wallets is subject to the terms and conditions of the respective provider. The Association has no control over the respective PIKs and/or the blockchain addresses that are managed by your Wallet and connected to the World Association application, and no ability to access any assets that are held thereon. You are solely responsible for the security of the Wallet as well as the corresponding private keys and passwords. The Association does not assume any responsibility for the connected Wallets, regardless of whether or not they are used to effectuate transactions, and shall not be liable for any damages arising out of or related to your use of the Wallets and/or your inability to connect and/or use the Wallets to execute transactions.
+The use of the Wallets is subject to the terms and conditions of the respective provider. The Republic has no control over the respective PIKs and/or the blockchain addresses that are managed by your Wallet and connected to the World Republic application, and no ability to access any assets that are held thereon. You are solely responsible for the security of the Wallet as well as the corresponding private keys and passwords. The Republic does not assume any responsibility for the connected Wallets, regardless of whether or not they are used to effectuate transactions, and shall not be liable for any damages arising out of or related to your use of the Wallets and/or your inability to connect and/or use the Wallets to execute transactions.
 
 ### 2.2 Sign requests
 
-Once you have connected your Wallet to the World Association application, you can use the World Association application to initiate transactions from your blockchain address by generating standardized transaction messages ("**Sign Requests**"). Sign Requests that are generated by the World Association application are sent to the connected Wallet for approval. To complete the transaction, you must approve the Sign Request by signing the transaction with the connected Wallet. Your Wallet will then display whether the transaction was successful and inform you once it is finalized.
+Once you have connected your Wallet to the World Republic application, you can use the World Republic application to initiate transactions from your blockchain address by generating standardized transaction messages ("**Sign Requests**"). Sign Requests that are generated by the World Republic application are sent to the connected Wallet for approval. To complete the transaction, you must approve the Sign Request by signing the transaction with the connected Wallet. Your Wallet will then display whether the transaction was successful and inform you once it is finalized.
 
-Except when you are voting on Proposals, transactions that are signed with a Wallet are executed on the Ethereum blockchain without any involvement of the Association. The World Association application does not execute transactions on your behalf and does not control the execution of transactions initiated by you. You are fully responsible for all inputs you make while using the World Association application.
+Except when you are voting on Proposals, transactions that are signed with a Wallet are executed on the Ethereum blockchain without any involvement of the Republic. The World Republic application does not execute transactions on your behalf and does not control the execution of transactions initiated by you. You are fully responsible for all inputs you make while using the World Republic application.
 
 ## 3. Features
 
-The World Association application offers the following features (together "**Features**"):
+The World Republic application offers the following features (together "**Features**"):
 
 - **Spaces** (see Section 4 below)
 - **Creation and Voting on Proposals** (see Section 5 below)
 - **Archiving on IPFS** (see Section 6)
 - **Boost Application ("Boost App";** see Section 8 below)
 
-The Association reserves the right to modify, suspend, or discontinue, temporarily or permanently, the World Association application (or any Feature or part thereof) at any time in its sole discretion without liability.
+The Republic reserves the right to modify, suspend, or discontinue, temporarily or permanently, the World Republic application (or any Feature or part thereof) at any time in its sole discretion without liability.
 
 ## 4. Spaces
 
-The World Association application is a platform that allows Users to create and manage spaces ("**Spaces**") for organizations and communities (together "**Organizations**"). The Space is a dedicated area where such organization’s community ("**Community**") can participate in the governance of the organization by creating, managing, and participating in gasless and off-chain proposal-based voting.
+The World Republic application is a platform that allows Users to create and manage spaces ("**Spaces**") for organizations and communities (together "**Organizations**"). The Space is a dedicated area where such organization’s community ("**Community**") can participate in the governance of the organization by creating, managing, and participating in gasless and off-chain proposal-based voting.
 
-Any User can create a new Space on the the World Association platform tailored to their specific organization's and community's needs and branding. The creator of the Space becomes the administrator of such Space and can customize the Space with specific settings, roles, and permissions to allow the Community to engage in governance activities.
+Any User can create a new Space on the the World Republic platform tailored to their specific organization's and community's needs and branding. The creator of the Space becomes the administrator of such Space and can customize the Space with specific settings, roles, and permissions to allow the Community to engage in governance activities.
 
 Within each Space, Community members can:
 
@@ -85,7 +85,7 @@ Users are encouraged to thoroughly understand how each Voting Strategy works and
 
 Voting Strategies should be considered in conjunction with other Space settings such as Proposal validation rules and voter eligibility criteria.
 
-The Space [Controller or Author] should ensure that the combination of Voting Strategies and other settings aligns with the desired governance model and objectives of the Space. We do not guarantee the accuracy, reliability, or suitability of any information, content, or Voting Strategies provided by any Users or third parties. Further, the World Association application does not endorse, verify, or take responsibility for actions, decisions, or outcomes resulting from the use of any one or more Voting Strategies.
+The Space [Controller or Author] should ensure that the combination of Voting Strategies and other settings aligns with the desired governance model and objectives of the Space. We do not guarantee the accuracy, reliability, or suitability of any information, content, or Voting Strategies provided by any Users or third parties. Further, the World Republic application does not endorse, verify, or take responsibility for actions, decisions, or outcomes resulting from the use of any one or more Voting Strategies.
 
 ### 4.3 Validation strategies
 
@@ -125,23 +125,23 @@ You can only vote for a Proposal if you connect your Wallet and you are in compl
 
 By voting on a Proposal, you are required to vote with your Wallet. The signature process with your Wallet does not require the payment of any gas fees to the underlying blockchain network as the casting of a vote is gasless.
 
-You agree that you will not vote on Proposals whose content may be illegal, fraudulent, offensive, abusive, indecent, harmful, defamatory, obscene, or menacing, abusive, threatening, objectionable, invasive of privacy, in breach of confidentiality toward a third party, infringe intellectual property rights, or which may threaten the safety of any User or third party. The World Association application reserves the right to hide such Proposals. The World Association application is not liable for the content of Proposals.
+You agree that you will not vote on Proposals whose content may be illegal, fraudulent, offensive, abusive, indecent, harmful, defamatory, obscene, or menacing, abusive, threatening, objectionable, invasive of privacy, in breach of confidentiality toward a third party, infringe intellectual property rights, or which may threaten the safety of any User or third party. The World Republic application reserves the right to hide such Proposals. The World Republic application is not liable for the content of Proposals.
 
 #### Delegation of Voting Power
 
-You can delegate your voting power to other Wallets. When you delegate your voting power, you have to enter the Wallet to which you want to delegate and specify whether the delegation is limited to a specific Space. If no Space is selected, the delegation applies to all Spaces on the World Association application.
+You can delegate your voting power to other Wallets. When you delegate your voting power, you have to enter the Wallet to which you want to delegate and specify whether the delegation is limited to a specific Space. If no Space is selected, the delegation applies to all Spaces on the World Republic application.
 
 ## 6. Archiving on IPFS
 
-By using the Features, you acknowledge that information which is published on the World Association application, including but not limited to the Proposals’ content and voting results, will be permanently and publicly stored on the InterPlanetary File System (IPFS) and will be available to anyone, and that neither we nor any third party will have the power to restrict access to the data or delete such data stored on IPFS. Please be aware that the permanence of data on IPFS means that even if the original data is removed from the World Association application, copies of the data may still exist and be accessible on IPFS. While the World Association application facilitates the creation and voting process for Proposals, the World Association application does not have control over any data stored on IPFS and does not store any data on IPFS but rather relies on the decentralized nature of IPFS for storage and retrieval.
+By using the Features, you acknowledge that information which is published on the World Republic application, including but not limited to the Proposals’ content and voting results, will be permanently and publicly stored on the InterPlanetary File System (IPFS) and will be available to anyone, and that neither we nor any third party will have the power to restrict access to the data or delete such data stored on IPFS. Please be aware that the permanence of data on IPFS means that even if the original data is removed from the World Republic application, copies of the data may still exist and be accessible on IPFS. While the World Republic application facilitates the creation and voting process for Proposals, the World Republic application does not have control over any data stored on IPFS and does not store any data on IPFS but rather relies on the decentralized nature of IPFS for storage and retrieval.
 
 This information can also contain data which is considered personal data relating to an identified or identifiable natural person. If you want to ensure that your or third party’s privacy rights are not affected in any way, you should not use our Features as certain rights arising out of data protection laws may not be fully available or exercisable by you or us due to the technological infrastructure of IPFS.
 
-By using the World Association application, you acknowledge and accept the implications of data permanence on IPFS. You should carefully consider the content you include in Proposals and your voting actions as they cannot be undone or removed once stored on IPFS.
+By using the World Republic application, you acknowledge and accept the implications of data permanence on IPFS. You should carefully consider the content you include in Proposals and your voting actions as they cannot be undone or removed once stored on IPFS.
 
-## 7. No Influence of Association over Spaces and Proposals
+## 7. No Influence of Republic over Spaces and Proposals
 
-The execution of Proposals lies at the discretion of the organizations. The Association – as well as any other private individual and/or legal entity related to the Association – has neither access to nor any other possibility to control and/or influence Spaces and their corresponding Proposals created and voted on by the Community.
+The execution of Proposals lies at the discretion of the organizations. The Republic – as well as any other private individual and/or legal entity related to the Republic – has neither access to nor any other possibility to control and/or influence Spaces and their corresponding Proposals created and voted on by the Community.
 
 ## 8. Boost app
 
@@ -173,7 +173,7 @@ You will be able to select between the following distribution criteria ("**Distr
 
 Once a Governance Participant has complied with the Conditions, they will be able to collect the relevant Governance Rewards from the Boost App in accordance with the Distribution Criteria.
 
-You accept and acknowledge that the Association will rely on the authenticity and integrity of your Conditions and Distribution Criteria set by you and does not conduct any due diligence or similar investigations as to the factual circumstances of the compliance with the Conditions and Distribution Criteria. The Association will not assume any liability associated with the (non-)compliance with the Conditions and Distribution Criteria, including but not limited to issues arising from fraud, misconduct of Governance Participants, and/or defects in the Distribution Criteria, etc.
+You accept and acknowledge that the Republic will rely on the authenticity and integrity of your Conditions and Distribution Criteria set by you and does not conduct any due diligence or similar investigations as to the factual circumstances of the compliance with the Conditions and Distribution Criteria. The Republic will not assume any liability associated with the (non-)compliance with the Conditions and Distribution Criteria, including but not limited to issues arising from fraud, misconduct of Governance Participants, and/or defects in the Distribution Criteria, etc.
 
 At the end of the Claim Period, you will be able to unlock the remaining Governance Rewards by transferring the NFT to the Boost App.
 
@@ -186,27 +186,27 @@ The creation of Boost Events (i.e., when locking Governance Rewards in the Boost
 
 ### 8.6 Gas fees
 
-All interactions with the Boost App require the payment of a transaction fee ("**Gas Fee**"), which is paid to the validators of the Ethereum blockchain. The Gas Fee required to execute a transaction depends on the activity on the Ethereum blockchain and is entirely outside of the control of the Association. By using the Boost App to initiate transactions and generate Sign Requests, you acknowledge and agree that Gas Fees are non-refundable under any circumstances.
+All interactions with the Boost App require the payment of a transaction fee ("**Gas Fee**"), which is paid to the validators of the Ethereum blockchain. The Gas Fee required to execute a transaction depends on the activity on the Ethereum blockchain and is entirely outside of the control of the Republic. By using the Boost App to initiate transactions and generate Sign Requests, you acknowledge and agree that Gas Fees are non-refundable under any circumstances.
 
 ## 9. Risks
 
-By accessing or using the World Association application, you understand and accept the risks connected to the Boost App. In particular, but not exhaustively, you understand the inherent risks listed hereinafter:
+By accessing or using the World Republic application, you understand and accept the risks connected to the Boost App. In particular, but not exhaustively, you understand the inherent risks listed hereinafter:
 
-- the Association does not control the public blockchains that Users are interacting with, nor any smart contracts and protocols that may be integral to Users’ ability to complete transactions on these public blockchains. On-chain transactions may be irreversible, and accordingly, losses due to fraudulent or accidental transactions may not be recoverable. Some transactions shall be deemed to be made when recorded on a public ledger, which is not necessarily the date or time that the User initiated the transaction.
-- the Association is not responsible for the title, value, validity, or genuineness of any of the Governance Rewards (or any evidence of title thereto);
+- the Republic does not control the public blockchains that Users are interacting with, nor any smart contracts and protocols that may be integral to Users’ ability to complete transactions on these public blockchains. On-chain transactions may be irreversible, and accordingly, losses due to fraudulent or accidental transactions may not be recoverable. Some transactions shall be deemed to be made when recorded on a public ledger, which is not necessarily the date or time that the User initiated the transaction.
+- the Republic is not responsible for the title, value, validity, or genuineness of any of the Governance Rewards (or any evidence of title thereto);
 - the nature of Governance Rewards as digital assets and the Boost App may lead to an increased risk of fraud or cyberattacks and may mean that technological difficulties experienced may lead to limited access to and use of the Boost App;
-- The Association reserves the right to stop any Boost Events for any reason.
+- The Republic reserves the right to stop any Boost Events for any reason.
 
 ## 10. Intellectual property rights
 
-While the rights in the World Association application are held by the Association, the Association has published the source code of the World Association application ("**The World Association Application Code**") on its public GitHub repository and released it under the MIT open-source license. You are free to use the The World Association Application Code to create another World Association application for any other purpose.
+While the rights in the World Republic application are held by the Republic, the Republic has published the source code of the World Republic application ("**The World Republic Application Code**") on its public GitHub repository and released it under the MIT open-source license. You are free to use the The World Republic Application Code to create another World Republic application for any other purpose.
 
 ## 11. Your representations and warranties
 
 By accepting these Terms, you warrant and represent that:
 
-- you will not create or manage Spaces for any purpose that is fraudulent, illegal, offensive, defamatory, or otherwise tortious or unlawful, including but not limited to illegal gambling, money laundering, fraud, blackmail, extortion, ransoming data, the financing of terrorism, intellectual property infringement, or violent or abusive activities. The Association reserves the right to hide such Spaces on the World Association application;
-- you will not create, submit, and vote on any Proposal whose content may be illegal, fraudulent, offensive, abusive, indecent, harmful, defamatory, obscene, or menacing, abusive, threatening, objectionable, invasive of privacy, in breach of confidentiality toward a third party, infringing intellectual property rights, or which may threaten the safety of any User or third party. The World Association application reserves the right to hide such Proposals on the World Association application. The World Association application is not liable for the content of Proposals.
+- you will not create or manage Spaces for any purpose that is fraudulent, illegal, offensive, defamatory, or otherwise tortious or unlawful, including but not limited to illegal gambling, money laundering, fraud, blackmail, extortion, ransoming data, the financing of terrorism, intellectual property infringement, or violent or abusive activities. The Republic reserves the right to hide such Spaces on the World Republic application;
+- you will not create, submit, and vote on any Proposal whose content may be illegal, fraudulent, offensive, abusive, indecent, harmful, defamatory, obscene, or menacing, abusive, threatening, objectionable, invasive of privacy, in breach of confidentiality toward a third party, infringing intellectual property rights, or which may threaten the safety of any User or third party. The World Republic application reserves the right to hide such Proposals on the World Republic application. The World Republic application is not liable for the content of Proposals.
 - you have provided all necessary notices to and obtained all necessary consents from the relevant parties for the collection and processing of their personal data for the purposes including but not limited to the archiving of the relevant personal data at IPFS;
 - any Governance Rewards locked in the Boost App are: (a) good, clean, clear, and are of non-criminal origin; (b) completely free and clear of any liens or encumbrances of any kind, of any rights of third-party interests; and (c) have no origins that may be connected to any breach of money laundering regulations whatsoever as defined in the jurisdiction of origin or internationally;
 - any Governance Rewards qualify as utility tokens within the meaning of Swiss financial market regulations and are not payment instruments, means of payment, payment tokens, and/or securities under any applicable laws;
@@ -215,43 +215,43 @@ By accepting these Terms, you warrant and represent that:
 - you have done sufficient research before making any decisions to create a Boost Event, lock, and/or collect any Governance Rewards;
 - you are legally permitted to receive, hold, and make use of Governance Rewards in your jurisdiction.
 - you have the sole control over your Wallet.
-- you will not upload, distribute, or otherwise make available through the World Association application any unlawful, defamatory, harassing, abusive, fraudulent, obscene, or otherwise objectionable content;
-- you will not upload, distribute, or otherwise make available through the World Association application any content that infringes intellectual property rights of any party;
+- you will not upload, distribute, or otherwise make available through the World Republic application any unlawful, defamatory, harassing, abusive, fraudulent, obscene, or otherwise objectionable content;
+- you will not upload, distribute, or otherwise make available through the World Republic application any content that infringes intellectual property rights of any party;
 - you will not distribute malware, viruses, worms, defects, or other items of a destructive or captive nature;
-- you will not use the World Association application for any illegal activity, including without limitation terrorism, tax evasion, or money laundering;
+- you will not use the World Republic application for any illegal activity, including without limitation terrorism, tax evasion, or money laundering;
 - you will not facilitate transactions involving individuals sanctioned by the Swiss, US, or any European government;
-- you will not use the World Association application to carry out any financial activities subject to registration or licensing, including but not limited to creating, selling, or buying securities, commodities, options, or debt instruments;
-- you will not use the World Association application to create, sell, or buy tokens or other items that give other users rights to participate in an ICO or any securities offering or that are redeemable for securities, commodities, or other financial instruments;
+- you will not use the World Republic application to carry out any financial activities subject to registration or licensing, including but not limited to creating, selling, or buying securities, commodities, options, or debt instruments;
+- you will not use the World Republic application to create, sell, or buy tokens or other items that give other users rights to participate in an ICO or any securities offering or that are redeemable for securities, commodities, or other financial instruments;
 - you will not defame, abuse, extort, harass, stalk, threaten, or otherwise violate or infringe the legal rights of others, including without limitation privacy rights and intellectual property rights;
-- you will not remove any copyright, trademark, or other proprietary rights notices contained in or on the World Association application or any part of it;
-- you will not use any data mining, robot, spider, crawler, scraper, script, browser extension, offline reader, or other automated means or interface not authorized by us to access the World Association application, extract data, or otherwise interfere with or modify the rendering of service pages or functionality;
-- you will not attempt to circumvent any fees charged by the Association;
-- you will not use the World Association application in a manner that breaches or causes the breach of any applicable export and re-export control laws and regulations.
+- you will not remove any copyright, trademark, or other proprietary rights notices contained in or on the World Republic application or any part of it;
+- you will not use any data mining, robot, spider, crawler, scraper, script, browser extension, offline reader, or other automated means or interface not authorized by us to access the World Republic application, extract data, or otherwise interfere with or modify the rendering of service pages or functionality;
+- you will not attempt to circumvent any fees charged by the Republic;
+- you will not use the World Republic application in a manner that breaches or causes the breach of any applicable export and re-export control laws and regulations.
 
 ## 12. Disclaimers & limited warranty
 
-The Association does not guarantee that the World Association application is free from defects, errors, bugs, and security vulnerabilities or that it will be available at any time. The access to and use of the World Association application is made at your own risk.
+The Republic does not guarantee that the World Republic application is free from defects, errors, bugs, and security vulnerabilities or that it will be available at any time. The access to and use of the World Republic application is made at your own risk.
 
-The Association gives no assurance that any functionalities and Features of the World Association application will satisfy your requirements or provide the intended results or meet any performance or reliability standards. You understand and agree that the World Association application is provided on an “as is” and “as available” basis and that the World Association application expressly disclaims all warranties or conditions of any kind, whether express, implied, statutory, or otherwise.
+The Republic gives no assurance that any functionalities and Features of the World Republic application will satisfy your requirements or provide the intended results or meet any performance or reliability standards. You understand and agree that the World Republic application is provided on an “as is” and “as available” basis and that the World Republic application expressly disclaims all warranties or conditions of any kind, whether express, implied, statutory, or otherwise.
 
-The Association makes no warranties as to the security, functionality, or availability of the Boost App, including but not limited to the corresponding smart contracts and Boost Events, as it may contain bugs, defects, or errors (including any bugs, defects, or errors relating to or resulting from the display, manipulation, processing, locking, transfer, or distribution of Governance Rewards) that may materially and adversely affect the use or functionality of the Boost App or any product or system containing or used in conjunction with the Boost App.
+The Republic makes no warranties as to the security, functionality, or availability of the Boost App, including but not limited to the corresponding smart contracts and Boost Events, as it may contain bugs, defects, or errors (including any bugs, defects, or errors relating to or resulting from the display, manipulation, processing, locking, transfer, or distribution of Governance Rewards) that may materially and adversely affect the use or functionality of the Boost App or any product or system containing or used in conjunction with the Boost App.
 
-The Governance Rewards exist only by virtue of the ownership record maintained in the associated blockchain (e.g., Ethereum blockchain). Any transfers occur on the Ethereum blockchain. The Association and/or any other Association Party (as defined in margin 46) cannot effect or otherwise control the transfer of title or right in any Governance Rewards.
+The Governance Rewards exist only by virtue of the ownership record maintained in the associated blockchain (e.g., Ethereum blockchain). Any transfers occur on the Ethereum blockchain. The Republic and/or any other Republic Party (as defined in margin 46) cannot effect or otherwise control the transfer of title or right in any Governance Rewards.
 
 ## 13. Limitation of liability
 
-The liability of the Association is limited to direct damages arising out of acts of intent and gross negligence. Any liability for indirect damages or consequential damages, including loss of profit and/or damages arising out of negligent conduct, is expressly excluded. In particular, the Association does not assume any responsibility for the World Association application (or any feature or part thereof) and shall not be liable for any damages arising out of or related to your use of the World Association application, including but not limited to your creation and management of Spaces, submission, voting, and execution of Proposals, use of Boost Events, or your inability to collect and/or distribute Governance Rewards.
+The liability of the Republic is limited to direct damages arising out of acts of intent and gross negligence. Any liability for indirect damages or consequential damages, including loss of profit and/or damages arising out of negligent conduct, is expressly excluded. In particular, the Republic does not assume any responsibility for the World Republic application (or any feature or part thereof) and shall not be liable for any damages arising out of or related to your use of the World Republic application, including but not limited to your creation and management of Spaces, submission, voting, and execution of Proposals, use of Boost Events, or your inability to collect and/or distribute Governance Rewards.
 
 ## 14. Indemnification
 
-You agree to the fullest extent permitted by applicable law to indemnify, defend, and hold harmless the Association and the Association Parties from and against all actual or alleged any claims, damages, awards, judgments, losses, liabilities, obligations, penalties, interests, fees, expenses (including without limitation attorneys’ fees and expenses), and costs (including without limitation court costs, costs of settlement, and costs of pursuing indemnification and insurance) of every kind and nature whatsoever, whether known or unknown, foreseen or unforeseen, matured or unmatured, or suspected or unsuspected, in law or equity, whether in tort, contract, or otherwise ("**Claims**") that are caused by, arise out of, or are related to:
+You agree to the fullest extent permitted by applicable law to indemnify, defend, and hold harmless the Republic and the Republic Parties from and against all actual or alleged any claims, damages, awards, judgments, losses, liabilities, obligations, penalties, interests, fees, expenses (including without limitation attorneys’ fees and expenses), and costs (including without limitation court costs, costs of settlement, and costs of pursuing indemnification and insurance) of every kind and nature whatsoever, whether known or unknown, foreseen or unforeseen, matured or unmatured, or suspected or unsuspected, in law or equity, whether in tort, contract, or otherwise ("**Claims**") that are caused by, arise out of, or are related to:
 
-- your use or misuse of the World Association application;
+- your use or misuse of the World Republic application;
 - your violation or breach of any term of these Terms, applicable law;
 - your violation of the rights of or obligations to a third party, including another User or third-party; and
 - your negligence or willful misconduct.
 
-You agree to promptly notify the Association of any Claims and cooperate with the Association and all past, present, and future employees, officers, council members, directors, contractors, consultants, founders, suppliers, vendors, service providers, subsidiaries, affiliates, agents, representatives, predecessors, successors, and assignees of the Association ("**Association Parties**") in defending such Claims. You further agree that the Association, respectively the Association Parties, shall have control of the defense or settlement of any Claims. This indemnity is in addition to and not in lieu of any other indemnities as set forth in a written agreement between you and the Association, respectively the Association Parties.
+You agree to promptly notify the Republic of any Claims and cooperate with the Republic and all past, present, and future employees, officers, council members, directors, contractors, consultants, founders, suppliers, vendors, service providers, subsidiaries, affiliates, agents, representatives, predecessors, successors, and assignees of the Republic ("**Republic Parties**") in defending such Claims. You further agree that the Republic, respectively the Republic Parties, shall have control of the defense or settlement of any Claims. This indemnity is in addition to and not in lieu of any other indemnities as set forth in a written agreement between you and the Republic, respectively the Republic Parties.
 
 ## 15. Privacy notice and cookie declaration
 
@@ -261,19 +261,19 @@ Please refer to our Privacy Notice to understand how we collect and use and disc
 
 ### 16.1 User feedback
 
-The Association appreciates and encourages you to provide feedback to the World Association application. If you provide feedback, you agree that the Association is free to use it and may permit others to use it without any restriction or compensation to you.
+The Republic appreciates and encourages you to provide feedback to the World Republic application. If you provide feedback, you agree that the Republic is free to use it and may permit others to use it without any restriction or compensation to you.
 
 ### 16.2 Tax
 
-It is your sole responsibility to seek appropriate tax advice to comply with any applicable tax and duties or similar obligations in whichever jurisdiction and to assess the tax impact of the use of the World Association application, including the Boost App, and the use of the features offered thereon.
+It is your sole responsibility to seek appropriate tax advice to comply with any applicable tax and duties or similar obligations in whichever jurisdiction and to assess the tax impact of the use of the World Republic application, including the Boost App, and the use of the features offered thereon.
 
-The User has no right to request a refund of any taxes, duties, or charges from the Association.
+The User has no right to request a refund of any taxes, duties, or charges from the Republic.
 
-All fees payable to the Association are to be understood as exclusive of Swiss VAT. If Swiss VAT is due by the Association, the Association is free to charge the Swiss VAT to the User.
+All fees payable to the Republic are to be understood as exclusive of Swiss VAT. If Swiss VAT is due by the Republic, the Republic is free to charge the Swiss VAT to the User.
 
 ### 16.3 Entire agreement and severability
 
-These Terms contain the entire agreement between the Association and the Users regarding the subject matter hereof and supersedes all understandings and agreements, whether written or oral. If any provision of these Terms is invalid, illegal, or unenforceable in any jurisdiction, such invalidity, illegality, or unenforceability shall not affect any other provision of these Terms or invalidate or render unenforceable such provision in any other jurisdiction. Upon such determination that any provision is invalid, illegal, or unenforceable, these Terms shall be modified to effectuate the original intent of the Parties as closely as possible.
+These Terms contain the entire agreement between the Republic and the Users regarding the subject matter hereof and supersedes all understandings and agreements, whether written or oral. If any provision of these Terms is invalid, illegal, or unenforceable in any jurisdiction, such invalidity, illegality, or unenforceability shall not affect any other provision of these Terms or invalidate or render unenforceable such provision in any other jurisdiction. Upon such determination that any provision is invalid, illegal, or unenforceable, these Terms shall be modified to effectuate the original intent of the Parties as closely as possible.
 
 ### 16.4 Governing law and jurisdiction
 

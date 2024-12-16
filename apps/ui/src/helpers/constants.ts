@@ -1,6 +1,6 @@
 import { ChainId, NetworkID, VoteType, VoteTypeInfo } from '@/types';
 
-export const APP_NAME = 'World Association';
+export const APP_NAME = 'World Republic';
 
 export const SIDEKICK_URL = 'https://sh5.co';
 

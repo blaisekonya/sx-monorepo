@@ -23,8 +23,7 @@ const tasks = computed(() => ({
   profile: !user.value?.created,
   voterId: !tasksStore.voterIdBalance || parseFloat(tasksStore.voterIdBalance) === 0,
   basicIncome: !tasksStore.basicIncomeSetUp,
-  followingWorldAssociation: !followedSpacesStore.isFollowed('s:worldassociation.eth'),
-  followingGlobalDemocracy: !followedSpacesStore.isFollowed('s:globaldemocracy.eth'),
+  followingWorldRepublic: !followedSpacesStore.isFollowed('s:worldrepublic.eth'),
   votes: !user.value?.votesCount
 }));
 
@@ -71,11 +70,11 @@ onMounted(async () => {
       </div>
     </div>
 
-    <div v-if="tasks.followingWorldAssociation" class="border-b mx-4 py-[14px] flex gap-x-2.5">
+    <div v-if="tasks.followingWorldRepublic" class="border-b mx-4 py-[14px] flex gap-x-2.5">
       <div><IS-flag class="text-skin-link mt-0.5" /></div>
       <div class="grow">
-        <AppLink :to="'/s:worldassociation.eth'">
-          <span class="text-skin-text">Follow the</span> World Association
+        <AppLink :to="'/s:worldrepublic.eth'">
+          <span class="text-skin-text">Follow the</span> World Republic
         </AppLink>
       </div>
     </div>
@@ -91,15 +90,6 @@ onMounted(async () => {
       <div><IS-flag class="text-skin-link mt-0.5" /></div>
       <div class="grow">
         <ButtonClaimBasicIncome />
-      </div>
-    </div>
-
-    <div v-if="tasks.followingGlobalDemocracy" class="border-b mx-4 py-[14px] flex gap-x-2.5">
-      <div><IS-flag class="text-skin-link mt-0.5" /></div>
-      <div class="grow">
-        <AppLink :to="'/s:globaldemocracy.eth'">
-          <span class="text-skin-text">Follow the</span> Global Democracy <span class="text-skin-text">space</span>
-        </AppLink>
       </div>
     </div>
 

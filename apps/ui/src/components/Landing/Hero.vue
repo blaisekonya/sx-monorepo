@@ -3,7 +3,7 @@
     <div class="absolute blocks-x top-0 left-[50%] right-0 bottom-0 !bg-left-top border-l" />
     <UiContainer class="relative w-full !max-w-screen-lg flex items-center py-8">
       <div class="max-w-[800px]">
-        <div class="eyebrow mb-3">World Association</div>
+        <div class="eyebrow mb-3">World Republic</div>
         <h1 class="mb-5 font-display text-[48px] xs:text-[56px]">
           Democratic network state open to all
         </h1>

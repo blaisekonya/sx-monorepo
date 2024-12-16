@@ -1,8 +1,8 @@
-# World Association UI
+# World Republic UI
 
 An open source interface for the Snapshot and Snapshot X protocols.
 
-**[Website](https://worldassociation.org)**
+**[Website](https://worldrepublic.org)**
 
 ## Development guide
 
@@ -14,4 +14,4 @@ file in `./src/networks`.
 
 ## License
 
-The World Association UI is open-sourced software licensed under the © [MIT license](LICENSE).
+The World Republic UI is open-sourced software licensed under the © [MIT license](LICENSE).
