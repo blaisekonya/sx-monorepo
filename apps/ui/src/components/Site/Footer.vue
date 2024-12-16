@@ -1,21 +1,21 @@
 <script setup lang="ts">
 import { repository, version } from '@/../package.json';
-import ICDiscord from '~icons/c/discord';
+import ICTelegram from '~icons/c/telegram';
 import ICGithub from '~icons/c/github';
 import ICX from '~icons/c/x';
 const COMMIT_SHA = import.meta.env.VITE_COMMIT_SHA || '';
 
 const SOCIALS = [
   {
-    href: 'https://x.com/worldassociatio',
+    href: 'https://t.me/+F_ShmAFT8lozNzQ8',
+    icon: ICTelegram
+  },
+  {
+    href: 'https://x.com/worldrepublicx',
     icon: ICX
   },
   {
-    href: 'https://discord.gg/J9A4g6axjR',
-    icon: ICDiscord
-  },
-  {
-    href: 'https://github.com/worldassociation',
+    href: 'https://github.com/worldrepublicorg',
     icon: ICGithub
   }
 ];
@@ -65,7 +65,7 @@ const SOCIALS = [
               </a>
             </div>
             <div>
-              <a href="https://github.com/worldassociation" target="_blank">
+              <a href="https://github.com/worldrepublicorg" target="_blank">
                 GitHub
                 <IH-arrow-sm-right class="inline-block -rotate-45 mb-0.5 -ml-0.5" />
               </a>
