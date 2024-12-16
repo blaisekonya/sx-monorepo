@@ -5,7 +5,7 @@
       <div class="max-w-[800px]">
         <div class="eyebrow mb-3">World Republic</div>
         <h1 class="mb-5 font-display text-[48px] xs:text-[56px]">
-          Democratic network state open to all
+          Democratic network society open to all
         </h1>
         <UiButton :to="{ name: 'my-home' }" class="primary">
           Get started
