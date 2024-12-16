@@ -242,7 +242,7 @@ function handleSignup() {
             <span class="mx-2 text-skin-content text-sm">OR</span>
             <div class="flex-grow border-t border-skin-border"></div>
           </div>
-          <UiButton @click="handleLoginClick">Connect wallet</UiButton>
+          <UiButton @click="handleLoginClick">Other wallets</UiButton>
         </template>
         <template v-else>
           <button
