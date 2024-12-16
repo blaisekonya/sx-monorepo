@@ -54,7 +54,7 @@ const space = computed(() =>
           }"
           :class="
             $route.path === '/home'
-              ? 'relative top-[26px] right-[13px] -mr-[16px] md:-mr-[12px]'
+              ? 'relative top-[26px] right-[14px] -mr-[16px] md:-mr-[12px]'
               : 'relative -top-[1px]'
           "
         >
