@@ -91,7 +91,7 @@ const SOCIALS = [
               </a>
             </div>
             <div>
-              <a href="https://github.com/worldassociation" target="_blank">
+              <a href="https://github.com/worldrepublicorg" target="_blank">
                 GitHub
                 <IH-arrow-sm-right
                   class="inline-block -rotate-45 mb-0.5 -ml-0.5"
