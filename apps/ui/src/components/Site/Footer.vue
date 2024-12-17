@@ -7,15 +7,15 @@ const COMMIT_SHA = import.meta.env.VITE_COMMIT_SHA || '';
 
 const SOCIALS = [
   {
-    href: 'https://t.me/+F_ShmAFT8lozNzQ8',
+    href: 'https://t.me/worldassociationcommunity',
     icon: ICTelegram
   },
   {
-    href: 'https://x.com/worldrepublicx',
+    href: 'https://x.com/worldassociation',
     icon: ICX
   },
   {
-    href: 'https://github.com/worldrepublicorg',
+    href: 'https://github.com/worldassociation',
     icon: ICGithub
   }
 ];
@@ -65,7 +65,7 @@ const SOCIALS = [
               </a>
             </div>
             <div>
-              <a href="https://github.com/worldrepublicorg" target="_blank">
+              <a href="https://github.com/worldassociation" target="_blank">
                 GitHub
                 <IH-arrow-sm-right class="inline-block -rotate-45 mb-0.5 -ml-0.5" />
               </a>
