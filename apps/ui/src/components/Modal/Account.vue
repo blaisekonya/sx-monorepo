@@ -122,7 +122,7 @@ function handleSignup() {
             <UiModal :open="showSignupInfo" @close="showSignupInfo = false">
               <template #header>
                 <div class="relative">
-                  <h3 class="text-[22px]">Welcome to the World Republic</h3>
+                  <h3 class="text-[22px]">Welcome to the World Association</h3>
                 </div>
               </template>
 
@@ -148,6 +148,12 @@ function handleSignup() {
                         <IH-banknotes class="w-[20px] h-[20px] text-skin-bg" />
                       </div>
                       <div class="text-sm">Receive a basic income</div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <div class="bg-skin-primary rounded-full p-2">
+                        <IH-check-badge class="w-[20px] h-[20px] text-skin-bg" />
+                      </div>
+                      <div class="text-sm">Experiment with global democracy</div>
                     </div>
                   </div>
                 </div>
@@ -196,7 +202,7 @@ function handleSignup() {
             <span class="mx-2 text-skin-content text-sm">OR</span>
             <div class="flex-grow border-t border-skin-border"></div>
           </div>
-          <UiButton @click="handleLoginClick">Other wallets</UiButton>
+          <UiButton @click="handleLoginClick">Connect wallet</UiButton>
         </template>
         <template v-else>
           <button v-for="connector in availableConnectors" :key="connector.id" type="button"

@@ -93,7 +93,7 @@ const SOCIALS = [
             <AppLink :to="{ name: 'site-policy' }">Privacy policy</AppLink>
           </div>
           <div>
-            <a href="mailto:info@worldrepublic.org"> Contact us </a>
+            <a href="mailto:info@worldassociation.org"> Contact us </a>
           </div>
         </div>
       </div>
@@ -101,7 +101,7 @@ const SOCIALS = [
         <div class="flex-grow flex items-center">
           <div class="box-border size-[24px] mr-3 rounded-full border-[4px] border-skin-primary">
           </div>
-          © {{ new Date().getFullYear() }} World Republic
+          © {{ new Date().getFullYear() }} World Association
           <a :href="`https://github.com/${repository}${COMMIT_SHA && `/tree/${COMMIT_SHA}`}`" target="_blank"
             class="ml-1.5">
             <span v-text="`v${version}${COMMIT_SHA ? `#${COMMIT_SHA.slice(0, 7)}` : ''}`
