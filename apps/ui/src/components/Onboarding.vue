@@ -121,8 +121,8 @@ onMounted(async () => {
     >
       <div><IS-flag class="text-skin-link mt-0.5" /></div>
       <div class="grow">
-        <AppLink :to="'/s:worldrepublic.eth'">
-          <span class="text-skin-text">Follow the</span> World Republic
+        <AppLink :to="'/s:worldassociation.eth'">
+          <span class="text-skin-text">Follow the</span> World Association
         </AppLink>
       </div>
     </div>

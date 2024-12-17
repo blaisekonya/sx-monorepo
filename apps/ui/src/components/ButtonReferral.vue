@@ -28,7 +28,7 @@ const shareOptions = [
     icon: 'IH-x-mark',
     action: () => {
       const text = encodeURIComponent(
-        `Join the World Republic and claim your basic income! ${referralLink.value}`
+        `Join the World Association and claim your basic income! ${referralLink.value}`
       );
       window.open(`https://x.com/intent/tweet?text=${text}`, '_blank');
     }
@@ -38,7 +38,7 @@ const shareOptions = [
     icon: 'IH-paper-airplane',
     action: () => {
       const text = encodeURIComponent(
-        `Join the World Republic and claim your basic income! ${referralLink.value}`
+        `Join the World Association and claim your basic income! ${referralLink.value}`
       );
       window.open(`https://t.me/share/url?url=${text}`, '_blank');
     }

@@ -17,7 +17,7 @@ const menu = [
     icon: IHSearch
   },
   {
-    link: { path: '/s:worldrepublic.eth' },
+    link: { path: '/s:worldassociation.eth' },
     icon: defineComponent({
       props: {
         isActive: Boolean

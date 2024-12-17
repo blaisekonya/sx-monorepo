@@ -1,8 +1,8 @@
-# World Republic UI
+# World Association UI
 
 An open source interface for the World Republic.
 
-**[Website](https://worldrepublic.org)**
+**[Website](https://worldassociation.org)**
 
 ## Development guide
 
@@ -14,4 +14,4 @@ file in `./src/networks`.
 
 ## License
 
-The World Republic UI is open-sourced software licensed under the © [MIT license](LICENSE).
+The World Association UI is open-sourced software licensed under the © [MIT license](LICENSE).

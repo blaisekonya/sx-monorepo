@@ -181,6 +181,12 @@ function handleSignup() {
                         Experiment with global democracy
                       </div>
                     </div>
+                    <div class="flex items-center gap-3">
+                      <div class="bg-skin-primary rounded-full p-2">
+                        <IH-check-badge class="w-[20px] h-[20px] text-skin-bg" />
+                      </div>
+                      <div class="text-sm">Experiment with global democracy</div>
+                    </div>
                   </div>
                 </div>
 
@@ -242,7 +248,7 @@ function handleSignup() {
             <span class="mx-2 text-skin-content text-sm">OR</span>
             <div class="flex-grow border-t border-skin-border"></div>
           </div>
-          <UiButton @click="handleLoginClick">Other wallets</UiButton>
+          <UiButton @click="handleLoginClick">Connect wallet</UiButton>
         </template>
         <template v-else>
           <button
