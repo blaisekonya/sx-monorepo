@@ -122,7 +122,7 @@ function handleSignup() {
             <UiModal :open="showSignupInfo" @close="showSignupInfo = false">
               <template #header>
                 <div class="relative">
-                  <h3 class="text-[22px]">Welcome to the World Association</h3>
+                  <h3 class="text-[22px]">Welcome to the World Republic</h3>
                 </div>
               </template>
 

@@ -7,7 +7,7 @@ const COMMIT_SHA = import.meta.env.VITE_COMMIT_SHA || '';
 
 const SOCIALS = [
   {
-    href: 'https://t.me/worldassociationcommunity',
+    href: 'https://t.me/worldrepublicorg',
     icon: ICTelegram
   },
   {

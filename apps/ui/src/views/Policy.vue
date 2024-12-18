@@ -7,7 +7,7 @@ This Privacy Notice (“Privacy Notice”) explains and sets out the basis for o
 If you provide information to us about any person other than yourself, you must ensure that the data is accurate and that these people understand how their information will be used, that they have given their permission for you to disclose it to us and for you to allow us, and our service providers, to use it. You are welcome to provide them with a copy of this Privacy Notice.
 
 ## Who we are
-The responsible person for processing your data under this Privacy Notice (“Controller”) unless we tell you otherwise in an individual case is: World Association, Weinberghöhe 31, 6340 Baar, Switzerland.
+The responsible person for processing your data under this Privacy Notice (“Controller”) unless we tell you otherwise in an individual case is: World Republic, Weinberghöhe 31, 6340 Baar, Switzerland.
 
 You may contact us regarding data protection matters and exercise your rights at info@worldassociation.org
 

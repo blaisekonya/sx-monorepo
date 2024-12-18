@@ -6,6 +6,7 @@ import Explore from '@/views/My/Explore.vue';
 import Home from '@/views/My/Home.vue';
 import Notifications from '@/views/My/Notifications.vue';
 import My from '@/views/My.vue';
+import Constitution from '@/views/Constitution.vue';
 import Network from '@/views/Network.vue';
 import Policy from '@/views/Policy.vue';
 import Contacts from '@/views/Settings/Contacts.vue';
@@ -24,6 +25,11 @@ export default [
     component: Site,
     children: [
       { path: '', name: 'site-landing', component: Landing },
+      {
+        path: '/constitution',
+        name: 'site-constitution',
+        component: Constitution
+      },
       { path: '/network', name: 'site-network', component: Network },
       { path: '/ecosystem', name: 'site-ecosystem', component: Ecosystem },
       { path: '/ecosystem/:app', name: 'site-app', component: App },

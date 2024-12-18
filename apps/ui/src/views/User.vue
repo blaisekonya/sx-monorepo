@@ -428,7 +428,7 @@ watchEffect(() => setTitle(`${user.value?.name || id.value} user profile`));
           <div class="flex-1">
             <h4 class="mb-2 eyebrow leading-8">World Drachma</h4>
             <div class="flex flex-col gap-2.5">
-              <ButtonUserBasicIncome />
+              <!-- <ButtonUserBasicIncome /> -->
               <div class="flex items-center justify-between w-full">
                 <span>Trade world drachma on Uniswap</span>
                 <div class="2xl:ml-3">
