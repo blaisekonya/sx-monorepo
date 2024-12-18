@@ -16,10 +16,7 @@ const { toggleSkin, currentMode } = useUserSkin();
     </div>
     <ul class="hidden lg:flex text-md text-skin-link space-x-4 mr-6">
       <li>
-        <a href="https://github.com/worldassociation/constitution" target="_blank">
-          Constitution
-          <IH-arrow-sm-right class="inline-block -ml-0.5 mb-0.5 -rotate-45" />
-        </a>
+        <AppLink :to="{ name: 'site-constitution' }">Constitution</AppLink>
       </li>
     </ul>
     <div class="shrink-0 space-x-3 items-center flex">
