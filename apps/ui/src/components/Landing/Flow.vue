@@ -6,7 +6,7 @@ const STEPS = [
   {
     title: 'Join',
     about:
-      'Prove your personhood, accept our constitution, and discuss solutions to pressing global challenges – all while preserving your privacy by default.',
+      'Accept our constitution, create your Global Voter ID, and discuss solutions to pressing global challenges – all while preserving your privacy by default.',
     icon: ISUserPlus
   },
   {
@@ -23,7 +23,7 @@ const STEPS = [
     <UiContainer class="!max-w-screen-lg">
       <div class="pb-6 max-w-[640px] text-center mx-auto">
         <h1 class="mb-4 font-display text-[36px] xs:text-[44px]">
-          A crypto-powered governance experiment
+          The crypto-powered global democracy experiment
         </h1>
       </div>
     </UiContainer>

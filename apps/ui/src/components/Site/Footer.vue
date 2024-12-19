@@ -26,7 +26,24 @@ const SOCIALS = [
     <UiContainer class="!max-w-screen-lg space-y-7">
       <div class="grid grid-col-2 md:grid-cols-4 space-y-4 md:space-y-0">
         <div class="space-y-2">
-          <div class="eyebrow">Platform</div>
+          <div class="eyebrow">Organization</div>
+          <div class="space-y-1">
+            <div>
+              <AppLink :to="{ name: 'site-constitution' }">Constitution</AppLink>
+            </div>
+            <div>
+              <AppLink :to="{ name: 'site-terms' }">Terms of use</AppLink>
+            </div>
+            <div>
+              <AppLink :to="{ name: 'site-policy' }">Privacy policy</AppLink>
+            </div>
+            <div>
+              <a href="mailto:info@worldassociation.org"> Contact us </a>
+            </div>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <div class="eyebrow">Voting platform</div>
           <div class="space-y-1">
             <div>
               <AppLink :to="{ name: 'my-explore' }"> Explore spaces </AppLink>
@@ -39,9 +56,6 @@ const SOCIALS = [
             </div>
             <div>
               <AppLink :to="{ name: 'site-ecosystem' }"> Ecosystem </AppLink>
-            </div>
-            <div>
-              <AppLink :to="{ name: 'site-network' }"> Add network </AppLink>
             </div>
           </div>
         </div>
@@ -60,7 +74,7 @@ const SOCIALS = [
           <div class="space-y-1">
             <div>
               <a href="https://docs.snapshot.box" target="_blank">
-                Docs
+                Platform docs
                 <IH-arrow-sm-right class="inline-block -rotate-45 mb-0.5 -ml-0.5" />
               </a>
             </div>
@@ -76,24 +90,6 @@ const SOCIALS = [
                 <IH-arrow-sm-right class="inline-block -rotate-45 mb-0.5 -ml-0.5" />
               </a>
             </div>
-          </div>
-        </div>
-        <div class="space-y-2">
-          <div class="eyebrow">Organization</div>
-          <div>
-            <a href="https://github.com/worldassociation/constitution" target="_blank">
-              Constitution
-              <IH-arrow-sm-right class="inline-block -ml-0.5 mb-0.5 -rotate-45" />
-            </a>
-          </div>
-          <div>
-            <AppLink :to="{ name: 'site-terms' }">Terms of use</AppLink>
-          </div>
-          <div>
-            <AppLink :to="{ name: 'site-policy' }">Privacy policy</AppLink>
-          </div>
-          <div>
-            <a href="mailto:info@worldassociation.org"> Contact us </a>
           </div>
         </div>
       </div>
