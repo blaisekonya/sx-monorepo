@@ -14,7 +14,7 @@ const { toggleSkin, currentMode } = useUserSkin();
         </div>
       </AppLink>
     </div>
-    <ul class="hidden lg:flex text-md text-skin-link space-x-4 mr-6">
+    <ul class="text-md text-skin-link space-x-4 mr-4 sm:mr-6">
       <li>
         <AppLink :to="{ name: 'site-constitution' }">Constitution</AppLink>
       </li>
