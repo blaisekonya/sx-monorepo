@@ -108,6 +108,7 @@ Sec. E — First Actions of the Provisional World Government
 
 *We, citizens of the world, hereby resolve to establish a world federation to be governed in accordance with this constitution for the World Republic.*
 
+*Conscious of the inescapable reality that the greatest hope for the survival of life on earth is the establishment of a democratic world government;*
 
 # Article 1 - Broad Functions of the Federation of Earth
 The broad functions of the Federation of Earth shall be:
