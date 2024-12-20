@@ -2,31 +2,49 @@
 useTitle('Constitution');
 
 const constitution = `
-# Contents:
- Preamble
- Article 1 — Broad Functions of the World Government
- Article 2 — Basic Structure of World Federation and World Government
- Article 3 — Organs of the World Government
- Article 4 — Grant of Specific Powers to the World Government
- Article 5 — The World Parliament
+# Background
+The *World Constitution* is an interpretation of the *Constitution for the Federation of Earth*, aimed at creating a democratic federal global government that fosters cooperation, peace, and sustainability. This effort has its roots in the mid-20th century, during a period of heightened global tensions and an urgent search for frameworks to address humanity's collective challenges.
+
+### Origins and key events
+
+1. **Albert Einstein and early advocacy**
+After World War II, influential figures like Albert Einstein advocated for a world government. In his 1947 open letter to the United Nations, Einstein argued for the establishment of a global authority to ensure peace and cooperation. He later supported initiatives like the *United World Federalists* and the *Peoples' World Convention (1950–51)*, which convened 500 delegates from 45 nations to explore constitutional frameworks for a unified world.
+
+2. **The 1968 World Constitutional Convention**
+Convened in Interlaken, Switzerland, and Wolfach, Germany, the 1968 *World Constitutional Convention* brought together over 200 participants from 27 countries. Delegates aimed to draft a constitution for a federal world government. Key supporters included Nobel laureates, renowned intellectuals, and global leaders such as Martin Luther King Jr. The convention laid the foundation for the "Constitution for the Federation of Earth."
+
+3. **Subsequent assemblies and refinement**
+The work continued in the 1970s, culminating in the adoption of the *Constitution for the Federation of Earth* during the Second World Constituent Assembly in Innsbruck, Austria (1977). The constitution was envisioned as a framework for global governance, promoting democratic representation, human rights, and ecological sustainability.
+
+### Vision for the World Republic
+
+The *World Republic* embraces the *Earth Constitution* as the cornerstone of a new global democratic order. By establishing a federal structure, the World Republic seeks to empower humanity to address pressing challenges—ranging from climate change to international conflicts—through a unified and inclusive governance model. Visitors to this platform are invited to participate in this visionary initiative to build a future defined by equity, peace, and collective action.
+
+# Contents
+### Preamble
+### Article 1 — Broad Functions of the World Government
+### Article 2 — Basic Structure of World Federation and World Government
+### Article 3 — Organs of the World Government
+### Article 4 — Grant of Specific Powers to the World Government
+### Article 5 — The World Parliament
 Sec. A — Functions and Powers of the World Parliament
 Sec. B — Composition of the World Parliament
 Sec. C — The House of Peoples
 Sec. D — The House of Nations
 Sec. E — The House of Counsellors
 Sec. F — Procedures of the World Parliament
- Article 6 — The World Executive
+### Article 6 — The World Executive
 Sec. A — Functions and Powers of the World Executive
 Sec. B — Composition of the World Executive
 Sec. C — The Presidium
 Sec. D — The Executive Cabinet
 Sec. E — Procedures of the World Executive
 Sec. F — Limitations on the World Executive
- Article 7 — The World Administration
+### Article 7 — The World Administration
 Sec. A — Functions of the World Administration
 Sec. B — Structure and Procedures of the World Administration
 Sec. C — Departments of the World Administration
- Article 8 — The Integrative Complex
+### Article 8 — The Integrative Complex
 Sec. A — Definition
 Sec. B — The World Civil Service Administration
 Sec. C — The World Boundaries and Elections Administration
@@ -35,34 +53,34 @@ Sec. E — The Agency for Research and Planning
 Sec. F — The Agency for Technological and Environmental Assessment
 Sec. G — The World Financial Administration
 Sec. H — Commission for Legislative Review
- Article 9 — The World Judiciary
+### Article 9 — The World Judiciary
 Sec. A — Jurisdiction of the World Supreme Court
 Sec. B — Benches of the World Supreme Court
 Sec. C — Seats of the World Supreme Court
 Sec. D — The Collegium of World Judges
 Sec. E — The Superior Tribunal of the World Supreme Court
- Article 10 — The Enforcement System
+### Article 10 — The Enforcement System
 Sec. A — Basic Principles
 Sec. B — The Structure for Enforcement
 Sec. C — The World Police
 Sec. D — The Means of Enforcement
- Article 11 — The World Ombudsmus
+### Article 11 — The World Ombudsmus
 Sec. A — Functions and Powers of the World Ombudsmus
 Sec. B — Composition of the World Ombudsmus
- Article 12 — Bill of Rights for the Citizens of Earth
- Article 13 — Directive Principles for the World Government
- Article 14 — Safeguards and Reservations
- Article 15 — World Federal Zones and the World Capitals
- Article 16 — World Territories and Exterior Relations
- Article 17 — Ratification and Implementation
+### Article 12 — Bill of Rights for the Citizens of Earth
+### Article 13 — Directive Principles for the World Government
+### Article 14 — Safeguards and Reservations
+### Article 15 — World Federal Zones and the World Capitals
+### Article 16 — World Territories and Exterior Relations
+### Article 17 — Ratification and Implementation
 Sec. A — Ratification of the World Constitution
 Sec. B — Stages of Implementation
 Sec. C — First Operative Stage of World Government
 Sec. D — Second Operative Stage of World Government
 Sec. E — Full Operative Stage of World Government
 Sec. F — Costs of Ratification
- Article 18 — Amendments
- Article 19 — Provisional World Government
+### Article 18 — Amendments
+### Article 19 — Provisional World Government
 Sec. A — Actions to be Taken by the World Constituent Assembly
 Sec. B — Work of the Preparatory Commissions
 Sec. C — Composition of the Provisional World Parliament
@@ -71,41 +89,39 @@ Sec. E — First Actions of the Provisional World Government
 
 # Preamble
 
-Realizing that Humanity today has come to a turning point in history and that we are on the threshold of an new world order which promises to usher in an era of peace, prosperity, justice and harmony;
+*Realizing that Humanity today has come to a turning point in history and that we are on the threshold of an new world order which promises to usher in an era of peace, prosperity, justice and harmony;*
 
-Aware of the interdependence of people, nations and all life;
+*Aware of the interdependence of people, nations and all life;*
 
-Aware that man’s abuse of science and technology has brought Humanity to the brink of disaster through the production of horrendous weaponry of mass destruction and to the brink of ecological and social catastrophe;
+*Aware that man’s abuse of science and technology has brought Humanity to the brink of disaster through the production of horrendous weaponry of mass destruction and to the brink of ecological and social catastrophe;*
 
-Aware that the traditional concept of security through military defense is a total illusion both for the present and for the future;
+*Aware that the traditional concept of security through military defense is a total illusion both for the present and for the future;*
 
-Aware of the misery and conflicts caused by ever increasing disparity between rich and poor;
+*Aware of the misery and conflicts caused by ever increasing disparity between rich and poor;*
 
-Conscious of our obligation to posterity to save Humanity from imminent and total annihilation;
+*Conscious of our obligation to posterity to save Humanity from imminent and total annihilation;*
 
-Conscious that Humanity is One despite the existence of diverse nations, races, creeds, ideologies and cultures and that the principle of unity in diversity is the basis for a new age when war shall be outlawed and peace prevail; when the earth’s total resources shall be equitably used for human welfare; and when basic human rights and responsibilities shall be shared by all without discrimination;
+*Conscious that Humanity is One despite the existence of diverse nations, races, creeds, ideologies and cultures and that the principle of unity in diversity is the basis for a new age when war shall be outlawed and peace prevail; when the earth’s total resources shall be equitably used for human welfare; and when basic human rights and responsibilities shall be shared by all without discrimination;*
 
-Conscious of the inescapable reality that the greatest hope for the survival of life on earth is the establishment of a democratic world government;
+*Conscious of the inescapable reality that the greatest hope for the survival of life on earth is the establishment of a democratic world government;*
 
-We, citizens of the world, hereby resolve to establish a world federation to be governed in accordance with this constitution for the Federation of Earth.
-
-
+*We, citizens of the world, hereby resolve to establish a world federation to be governed in accordance with this constitution for the World Republic.*
 
 # Article 1 — Broad Functions of the World Government
-The broad functions of the Federation of Earth shall be:
+The broad functions of the World Republic shall be:
 
-To prevent war, secure disarmament, and resolve territorial and other disputes which endanger peace and human rights.
-To protect universal human rights, including life, liberty, security, democracy, and equal opportunities in life.
-To obtain for all people on earth the conditions required for equitable economic and social development and for diminishing social differences.
-To regulate world trade, communications, transportation, currency, standards, use of world resources, and other global and international processes.
-To protect the environment and the ecological fabric of life from all sources of damage, and to control technological innovations whose effects transcend national boundaries, for the purpose of keeping Earth a safe, healthy and happy home for humanity.
-To devise and implement solutions to all problems which are beyond the capacity of national governments, or which are now or may become of global or international concern or consequence.
+1. To prevent war, secure disarmament, and resolve territorial and other disputes which endanger peace and human rights.
+2. To protect universal human rights, including life, liberty, security, democracy, and equal opportunities in life.
+3. To obtain for all people on earth the conditions required for equitable economic and social development and for diminishing social differences.
+4. To regulate world trade, communications, transportation, currency, standards, use of world resources, and other global and international processes.
+5. To protect the environment and the ecological fabric of life from all sources of damage, and to control technological innovations whose effects transcend national boundaries, for the purpose of keeping Earth a safe, healthy and happy home for humanity.
+6. To devise and implement solutions to all problems which are beyond the capacity of national governments, or which are now or may become of global or international concern or consequence.
 
 
 # Article 2 — Basic Structure of World Federation and World Government
-The Federation of Earth shall be organized as a universal federation, to include all nations and all people, and to encompass all oceans, seas and lands of Earth, inclusive of non-self governing territories, together with the surrounding atmosphere.
-The World Government for the Federation of Earth shall be non-military and shall be democratic in its own structure, with ultimate sovereignty residing in all the people who live on Earth.
-The authority and powers granted to the World Government shall be limited to those defined in this Constitution for the Federation of Earth, applicable to problems and affairs which transcend national boundaries, leaving to national governments jurisd iction over the internal affairs of the respective nations but consistent with the authority of the World Government to protect universal human rights as defined in this World Constitution.
+The World Republic shall be organized as a universal federation, to include all nations and all people, and to encompass all oceans, seas and lands of Earth, inclusive of non-self governing territories, together with the surrounding atmosphere.
+The World Government for the World Republic shall be non-military and shall be democratic in its own structure, with ultimate sovereignty residing in all the people who live on Earth.
+The authority and powers granted to the World Government shall be limited to those defined in this Constitution for the World Republic, applicable to problems and affairs which transcend national boundaries, leaving to national governments jurisd iction over the internal affairs of the respective nations but consistent with the authority of the World Government to protect universal human rights as defined in this World Constitution.
 The basic direct electoral and administrative units of the World Government shall be World Electoral and Administrative Districts. A total of not more than 1000 World Electoral and Administrative Districts shall be defined, and shall be nearly equal i n population, within the limits of plus or minus ten percent.
 Contiguous World Electoral and Administrative Districts shall be combined as may be appropriate to compose a total of twenty World Electoral and Administrative Regions for the following purposes, but not limited thereto: for the election or appointment of certain world government officials; for administrative purposes; for composing various organs of the world government as enumerated in Article IV; for the functioning of the Judiciary, the Enforcement System, and the Ombudsmus, as well as for the functioning of any other organ or agency of the World Government.
 The World Electoral and Administrative Regions may be composed of a variable number of World Electoral and Administrative Districts, taking into consideration geographic, cultural, ecological and other factors as well as population.
@@ -132,7 +148,7 @@ The powers of the World government to be exercised through its several organs an
 Prevent wars and armed conflicts among the nations, regions, districts, parts and peoples of Earth.
 Supervise disarmament and prevent re-armament; prohibit and eliminate the design, testing, manufacture, sale, purchase, use and possession of weapons of mass destruction, and prohibit or regulate all lethal weapons which the World Parliament may decide.
 Prohibit incitement to war, and discrimination against or defamation of conscientious objectors.
-Provide the means for peaceful and just solutions of disputes and conflicts among or between nations, peoples, and/or other components within the Federation of Earth.
+Provide the means for peaceful and just solutions of disputes and conflicts among or between nations, peoples, and/or other components within the World Republic.
 Supervise boundary settlements and conduct plebiscites as needed.
 Define the boundaries for the districts, regions and divisions which are established for electoral, administrative, judicial and other purposes of the World Government.
 Define and regulate procedures for the nomination and election of the members of each House of the World Parliament, and for the nomination, election, appointment and employment of all World Government officials and personnel.
@@ -192,7 +208,7 @@ Sec. B — Composition of the World Parliament
 
 The World Parliament shall be composed of three houses, designated as follows:
 The House of Peoples, to represent the people of Earth directly and equally;
-The House of Nations, to represent the nations which are joined together in the Federation of Earth; and a
+The House of Nations, to represent the nations which are joined together in the World Republic; and a
 House of Counsellors with particular functions to represent the highest good and best interests of humanity as a whole.
 All members of the World Parliament, regardless of House, shall be designated as Members of the World Parliament.
 Sec. C — The House of Peoples
@@ -447,7 +463,7 @@ Bench for Human Rights: To deal with issues of human rights arising under the gu
 Bench for Criminal Cases: To deal with issues arising from the violation of world laws and world legislation by individuals, corporations, groups and associations, but not issues primarily concerned with human rights.
 Bench for Civil Cases: To deal with issues involving civil law suits and disputes between individuals, corporations, groups and associations arising under world legislation and world law and the administration thereof.
 Bench for Constitutional Cases: To deal with the interpretation of the World Constitution and with issues and actions arising in connection with the interpretation of the World Constitution.
-Bench for International Conflicts: To deal with disputes, conflicts and legal contest arising between or among the nations which have joined in the Federation of Earth.
+Bench for International Conflicts: To deal with disputes, conflicts and legal contest arising between or among the nations which have joined in the World Republic.
 Bench for Public Cases: To deal with issues not under the jurisdiction of another bench arising from conflicts, disputes, civil suits or other legal contests between the World Government and corporations, groups or individuals, or between national governments and corporations, groups or individuals in cases involving world legislation and world law.
 Appellate Bench: To deal with issues involving world legislation and world law which may be appealed from national courts; and to decide which bench to assign a case or action or litigation when a question or disagreement arises over the proper jurisdiction.
 Advisory Bench: To give opinions upon request on any legal question arising under world law or world legislation, exclusive of contests or actions involving interpretation of the World Constitution. Advisory opinions may be requested by any House or committee of the World Parliament, by the Presidium, any Administrative Department, the Office of World Attorneys General, the World Ombudsmus, or by any agency of the Integrative Complex.
@@ -486,7 +502,7 @@ Sec. A — Basic Principles
 The enforcement of world law and world legislation shall apply directly to individual, and individuals shall be held responsible for compliance with world law and world legislation regardless of whether the individuals are acting in their own capacity or as agents or officials of governments at any level or of the institutions of governments, or as agents or officials of corporations, organizations, associations or groups of any kind.
 When world law or world legislation or decisions of the world courts are violated, the Enforcement System shall operate to identify and apprehend the individuals responsible for violations.
 Any enforcement action shall not violate the civil and human rights guaranteed under this World Constitution.
-The enforcement of world law and world legislation shall be carried out in the context of a non-military world federation wherein all member nations shall disarm as a condition for joining and benefiting from the world federation, subject to Article X VII, Sec. C-8 and D-6. The Federation of Earth and World Government under this World Constitution shall neither keep nor use weapons of mass destruction.
+The enforcement of world law and world legislation shall be carried out in the context of a non-military world federation wherein all member nations shall disarm as a condition for joining and benefiting from the world federation, subject to Article X VII, Sec. C-8 and D-6. The World Republic and World Government under this World Constitution shall neither keep nor use weapons of mass destruction.
 Those agents of the enforcement system whose function shall be to apprehend and bring to court violators of world law and world legislation shall be equipped only with such weapons as are appropriate for the apprehension of the individuals responsible for violations.
 The enforcement of world law and world legislation under this World Constitution shall be conceived and developed primarily as the processes of effective design and administration of world law and world legislation to serve the welfare of all people on Earth, with equity and justice for all, in which the resources of Earth and the funds and the credits of the World Government are used only to serve peaceful human needs, and none used for weapons of mass destruction or for war making capabilities.
 Sec. B — The Structure for Enforcement: World Attorneys General
@@ -553,10 +569,10 @@ Qualifications for World Ombudsan and for World Advocate shall be at least thirt
 
 
 # Article 12 — Bill of Rights for the Citizens of Earth
-The inhabitants and citizens of Earth who are within the Federation of Earth shall have certain inalienable rights defined hereunder. It shall be mandatory for the World Parliament, the World Executive, and all organs and agencies of the World Government to honor, implement and enforce these rights, as well as for the national governments of all member nations in the Federation of Earth to do likewise. Individuals or groups suffering violation or neglect of such rights shall have full recourse through the World Ombudsmus, the Enforcement System and the World Courts for redress of grievances. The inalienable rights shall include the following:
+The inhabitants and citizens of Earth who are within the World Republic shall have certain inalienable rights defined hereunder. It shall be mandatory for the World Parliament, the World Executive, and all organs and agencies of the World Government to honor, implement and enforce these rights, as well as for the national governments of all member nations in the World Republic to do likewise. Individuals or groups suffering violation or neglect of such rights shall have full recourse through the World Ombudsmus, the Enforcement System and the World Courts for redress of grievances. The inalienable rights shall include the following:
 
-Equal rights for all citizens of the Federation of Earth, with no discrimination on grounds of race, color, caste, nationality, sex, religion, political affiliation, property, or social status.
-Equal protection and application of world legislation and world laws for all citizens of the Federation of Earth.
+Equal rights for all citizens of the World Republic, with no discrimination on grounds of race, color, caste, nationality, sex, religion, political affiliation, property, or social status.
+Equal protection and application of world legislation and world laws for all citizens of the World Republic.
 Freedom of thought and conscience, speech, press, writing, communication, expression, publication, broadcasting, telecasting, and cinema, except as an overt part of or incitement to violence, armed riot or insurrection.
 Freedom of assembly, association, organization, petition and peaceful demonstration.
 Freedom to vote without duress, and freedom for political organization and campaigning without censorship or recrimination.
@@ -576,7 +592,7 @@ Right of privacy of person, family and association; prohibition against surveill
 
 
 # Article 13 — Directive Principles for the World Government
-It shall be the aim of the World Government to secure certain other rights for all inhabitants within the Federation of Earth, but without immediate guarantee of universal achievement and enforcement. These rights are defined as Directive Principles, obligating the World Government to pursue every reasonable means for universal realization and implementation, and shall include the following:
+It shall be the aim of the World Government to secure certain other rights for all inhabitants within the World Republic, but without immediate guarantee of universal achievement and enforcement. These rights are defined as Directive Principles, obligating the World Government to pursue every reasonable means for universal realization and implementation, and shall include the following:
 
 Equal opportunity for useful employment for everyone, with wages or remuneration sufficient to assure human dignity.
 Freedom of choice in work, occupation, employment or profession.
@@ -602,15 +618,15 @@ Prohibition against the death penalty.
 # Article 14 — Safeguards and Reservations
 Sec. A — Certain Safeguards
 
-The World Government shall operate to secure for all nations and peoples within the Federation of Earth the safeguards which are defined hereunder:
+The World Government shall operate to secure for all nations and peoples within the World Republic the safeguards which are defined hereunder:
 
-Guarantee that full faith and credit shall be given to the public acts, records, legislation and judicial proceedings of the member nations within the Federation of Earth, consistent with the several provisions of this World Constitution.
-Assure freedom of choice within the member nations and countries of the Federation of Earth to determine their internal political, economic and social systems, consistent with the guarantees and protections given under this World Constitution to assure civil liberties and human rights and a safe environment for life, and otherwise consistent with the several provisions of this World Constitution.
-Grant the right of asylum within the Federation of Earth for persons who may seek refuge from countries or nations which are not yet included within the Federation of Earth.
-Grant the right of individuals and groups, after the Federation of Earth includes 90 percent of the territory of Earth, to peacefully leave the hegemony of the Federation of Earth and to live in suitable territory set aside by the Federation neither restricted nor protected by the World Government, provided that such territory does not extend beyond five percent of Earth’s habitable territory, is kept completely disarmed and not used as a base for inciting violence or insurrection within or against the Federation of Earth or any member nation, and is kept free of acts of environmental or technological damage which seriously affect Earth outside such territory.
+Guarantee that full faith and credit shall be given to the public acts, records, legislation and judicial proceedings of the member nations within the World Republic, consistent with the several provisions of this World Constitution.
+Assure freedom of choice within the member nations and countries of the World Republic to determine their internal political, economic and social systems, consistent with the guarantees and protections given under this World Constitution to assure civil liberties and human rights and a safe environment for life, and otherwise consistent with the several provisions of this World Constitution.
+Grant the right of asylum within the World Republic for persons who may seek refuge from countries or nations which are not yet included within the World Republic.
+Grant the right of individuals and groups, after the World Republic includes 90 percent of the territory of Earth, to peacefully leave the hegemony of the World Republic and to live in suitable territory set aside by the Federation neither restricted nor protected by the World Government, provided that such territory does not extend beyond five percent of Earth’s habitable territory, is kept completely disarmed and not used as a base for inciting violence or insurrection within or against the World Republic or any member nation, and is kept free of acts of environmental or technological damage which seriously affect Earth outside such territory.
 Sec. B — Reservation of Powers
 
-The powers not delegated to the World Government by this World Constitution shall be reserved to the nations of the Federation of Earth and to the people of Earth.
+The powers not delegated to the World Government by this World Constitution shall be reserved to the nations of the World Republic and to the people of Earth.
 
 
 
@@ -639,19 +655,19 @@ Additional World Federal Zones may be designated if found necessary by proposal 
 # Article 16 — World Territories and Exterior Relations
 Sec. A — World Territory
 
-Those areas of the Earth and Earth’s moon which are not under the jurisdiction of existing nations at the time of forming the Federation of Earth, or which are not reasonably within the province of national ownership and administration, or which are declared to be World Territory subsequent to establishment of the Federation of Earth, shall be designated as World Territory and shall belong to all of the people of Earth.
+Those areas of the Earth and Earth’s moon which are not under the jurisdiction of existing nations at the time of forming the World Republic, or which are not reasonably within the province of national ownership and administration, or which are declared to be World Territory subsequent to establishment of the World Republic, shall be designated as World Territory and shall belong to all of the people of Earth.
 The administration of World Territory shall be determined by the World Parliament and implemented by the World Executive, and shall apply to the following areas:
 All oceans and seas having an international or supra-national character, together with the seabeds and resources thereof, beginning at a distance of twenty kilometers offshore, excluding inland seas of traditional national ownership.
 Vital straits, channels, and canals.
 The atmosphere enveloping Earth, beginning at an elevation of one kilometer above the general surface of the land, excluding the depressions in areas of much variation in elevation.
 Man-made satellites and Earth’s moon.
 Colonies which may choose the status of World Territory; non-independent territories under the trust administration of nations or of the United Nations; any islands or atolls which are unclaimed by any nation; independent lands or countries which choose the status of World Territory; and disputed lands which choose the status of World Territory.
-The residents of any World Territory, except designated World Federal Zones, shall have the right within reason to decide by plebiscite to become a self-governing nation within the Federation of Earth, either singly or in combination with other World Territories, or to unite with an existing nation with the Federation of Earth.
+The residents of any World Territory, except designated World Federal Zones, shall have the right within reason to decide by plebiscite to become a self-governing nation within the World Republic, either singly or in combination with other World Territories, or to unite with an existing nation with the World Republic.
 Sec. B — Exterior Relations
 
-The World Government shall maintain exterior relations with those nations of Earth which have not joined the Federation of Earth. Exterior relations shall be under the administration of the Presidium, subject at all times to specific instructions and approval by the World Parliament.
-All treaties and agreements with nations remaining outside the Federation of Earth shall be negotiated by the Presidium and must be ratified by a simple majority vote of the three Houses of the World Parliament.
-The World Government for the Federation of Earth shall establish and maintain peaceful relations with other planets and celestial bodies where and when it may become possible to establish communications with the possible inhabitants thereof.
+The World Government shall maintain exterior relations with those nations of Earth which have not joined the World Republic. Exterior relations shall be under the administration of the Presidium, subject at all times to specific instructions and approval by the World Parliament.
+All treaties and agreements with nations remaining outside the World Republic shall be negotiated by the Presidium and must be ratified by a simple majority vote of the three Houses of the World Parliament.
+The World Government for the World Republic shall establish and maintain peaceful relations with other planets and celestial bodies where and when it may become possible to establish communications with the possible inhabitants thereof.
 All explorations into outer space, both within and beyond the solar system in which Planet Earth is located, shall be under the exclusive direction and control of the World Government, and shall be conducted in such manner as shall be determined by the World Parliament.
 
 
@@ -668,9 +684,9 @@ In the event that a national government, after six months, fails to submit the W
 In the event of a direct ratification referendum, final ratification shall be accomplished by a majority of the votes cast whether for an entire nation or for a World Electoral and Administrative District, provided that ballots are cast by a minimum of twenty-five percent of eligible voters of the area who are over eighteen years of age.
 For ratification by existing communities within a nation, the procedure shall be to request local communities, cities, counties, states, provinces, cantons, prefectures, tribal jurisdictions, or other defined political units within a nation to ratify the World Constitution, and to submit the World Constitution for a referendum vote by the citizens of the community or political unit. Ratification may be accomplished by proceeding in this way until all eligible voters of age eighteen and above within t he nation or World Electoral and Administrative District have had the opportunity to vote, provided that ballots are cast by a minimum of twenty-five percent of those eligible to vote.
 Prior to the Full Operative Stage of World Government, as defined under Section E of Article XVII, the universities, colleges and scientific academies and institutes in any country may ratify the World Constitution, thus qualifying them for participation in the nomination of Members of the World Parliament to the House of Counsellors.
-In the case of those nations currently involved in serious international disputes or where traditional enmities and chronic disputes may exist among two or more nations, a procedure for concurrent paired ratification shall be instituted whereby the nations which are parties to a current or chronic international dispute or conflict may simultaneously ratify the World Constitution. In such cases, the paired nations shall be admitted into the Federation of Earth simultaneously, with the obligation for each such nation to immediately turn over all weapons of mass destruction to the World Government, and to turn over the conflict or dispute for mandatory peaceful settlement by the World Government.
-Each nation or political unit which ratifies this World Constitution, either by preliminary ratification or final ratification, shall be bound never to use any armed forces or weapons of mass destruction against another member or unit of the Federation of Earth, regardless of how long it may take to achieve full disarmament of all the nations and political units which ratify this World Constitution.
-When ratified, the Constitution for the Federation of Earth becomes the supreme law of Earth. By the act of ratifying this Earth Constitution, any provision in the Constitution or Legislation of any country so ratifying, which is contrary to this Earth Constitution, is either repealed or amended to conform with the Constitution for the Federation of Earth, effective as soon as 25 countries have so ratified. The amendment of National or State Constitutions to allow entry into World Federation is not necessary prior to ratification of the Constitution for the Federation of Earth.
+In the case of those nations currently involved in serious international disputes or where traditional enmities and chronic disputes may exist among two or more nations, a procedure for concurrent paired ratification shall be instituted whereby the nations which are parties to a current or chronic international dispute or conflict may simultaneously ratify the World Constitution. In such cases, the paired nations shall be admitted into the World Republic simultaneously, with the obligation for each such nation to immediately turn over all weapons of mass destruction to the World Government, and to turn over the conflict or dispute for mandatory peaceful settlement by the World Government.
+Each nation or political unit which ratifies this World Constitution, either by preliminary ratification or final ratification, shall be bound never to use any armed forces or weapons of mass destruction against another member or unit of the World Republic, regardless of how long it may take to achieve full disarmament of all the nations and political units which ratify this World Constitution.
+When ratified, the Constitution for the World Republic becomes the supreme law of Earth. By the act of ratifying this Earth Constitution, any provision in the Constitution or Legislation of any country so ratifying, which is contrary to this Earth Constitution, is either repealed or amended to conform with the Constitution for the World Republic, effective as soon as 25 countries have so ratified. The amendment of National or State Constitutions to allow entry into World Federation is not necessary prior to ratification of the Constitution for the World Republic.
 Sec. B — Stages of Implementation
 
 Implementation of this World Constitution and the establishment of World Government pursuant to the terms of this World Constitution, may be accomplished in three stages, as follows, in addition to the stage of a Provisional World Government as provided under Article 19:
@@ -690,8 +706,8 @@ The appointment or election of Members of the World Parliament to the House of N
 One-fourth of the Members of the World Parliament to the House of Counsellors may be elected from nominees submitted by universities and colleges which have ratified the World Constitution.
 The World Presidium and the Executive Cabinet shall be elected according to the provisions in article VI, except that in the absence of a House of Counsellors, the nominations shall be made by the members of the House of Peoples and of the House of Nations in joint session. Until this is accomplished, the Presidium and Executive Cabinet of the Provisional World Government as provided in Article 19, shall continue to serve.
 When composed, the Presidium for the first operative stage of World Government shall assign or re-assign Ministerial posts among Cabinet and Presidium members, and shall immediately establish or confirm a World Disarmament Agency and a World Economic and Development Organization.
-Those nations which ratify this World Constitution and thereby join the Federation of Earth, shall immediately transfer all weapons of mass destruction as defined and designated by the World Disarmament Agency to that Agency. (See Article 19, Sections A-2-d, B-6 and E-5). The World Disarmament Agency shall immediately immobilize all such weapons and shall proceed with dispatch to dismantle, convert to peacetime use, re-cycle the materials thereof or otherwise destroy all such weapons. During the first operative stage of World Government, the ratifying nations may retain armed forces equipped with weapons other than weapons of mass destruction as defined and designated by the World Disarmament Agency.
-Concurrently with the reduction or elimination of such weapons of mass destruction and other military expenditures as can be accomplished during the first operative stage of World Government, the member nations of the Federation of Earth shall pay annually to the Treasury of the World Government amounts equal to one-half the amounts saved from their respective national military budgets during the last year before joining the Federation, and shall continue such payments until the full operative stage o f World Government is reached. The World Government shall use fifty percent of the funds thus received to finance the work and projects of the World Economic Development Organization.
+Those nations which ratify this World Constitution and thereby join the World Republic, shall immediately transfer all weapons of mass destruction as defined and designated by the World Disarmament Agency to that Agency. (See Article 19, Sections A-2-d, B-6 and E-5). The World Disarmament Agency shall immediately immobilize all such weapons and shall proceed with dispatch to dismantle, convert to peacetime use, re-cycle the materials thereof or otherwise destroy all such weapons. During the first operative stage of World Government, the ratifying nations may retain armed forces equipped with weapons other than weapons of mass destruction as defined and designated by the World Disarmament Agency.
+Concurrently with the reduction or elimination of such weapons of mass destruction and other military expenditures as can be accomplished during the first operative stage of World Government, the member nations of the World Republic shall pay annually to the Treasury of the World Government amounts equal to one-half the amounts saved from their respective national military budgets during the last year before joining the Federation, and shall continue such payments until the full operative stage o f World Government is reached. The World Government shall use fifty percent of the funds thus received to finance the work and projects of the World Economic Development Organization.
 The World Parliament and the World Executive shall continue to develop the organs, departments, agencies and activities originated under the Provisional World Government, with such amendments as deemed necessary; and shall proceed to establish and beg in the following organs, departments and agencies of the World Government, if not already underway, together with such other departments, and agencies as are considered desirable and feasible during the first operative stage of World Government:
 The World Supreme Court;
 The Enforcement System;
@@ -712,7 +728,7 @@ Expedite the organization and work of an Emergency Earth Rescue Administration, 
 Expedite the new finance, credit and monetary system, to serve human needs;
 Expedite an integrated global energy system, utilizing solar energy, hydrogen energy, and other safe and sustainable sources of energy;
 Push forward a global program for agricultural production to achieve maximum sustained yield under conditions which are ecologically sound;
-Establish conditions for free trade within the Federation of Earth;
+Establish conditions for free trade within the World Republic;
 Call for and find ways to implement a moratorium on nuclear energy projects until all problems are solved concerning safety, disposal of toxic wastes and the dangers of use or diversion of materials for the production of nuclear weapons;
 Outlaw and find ways to completely terminate the production of nuclear weapons and all weapons of mass destruction;
 Push forward programs to assure adequate and non-polluted water supplies and clean air supplies for everybody on Earth;
@@ -725,14 +741,14 @@ The election and appointment of Members of the World Parliament to the several H
 The terms of office of the Members of the World Parliament elected or appointed for the first operative stage of World Government, shall be extended into the second operative stage unless they have already served five year terms, in which case new elections or appointments shall be arranged. The terms of holdover Members of the World Parliament into the second operative stage shall be adjusted to run concurrently with the terms of those who are newly elected at the beginning of the second operative stage.
 The World Presidium and the Executive Cabinet shall be re-constituted or reconfirmed, as needed, at the beginning of the second operative stage of World Government.
 The World Parliament and the World Executive shall continue to develop the organs, departments, agencies and activities which are already underway from the first operative stage of World Government, with such amendments as deemed necessary; and shall proceed to establish and develop all other organs and major departments and agencies of the World Government to the extent deemed feasible during the second operative stage.
-All nations joining the Federation of Earth to compose the second operative stage of World Government, shall immediately transfer all weapons of mass destruction and all other military weapons and equipment to the World Disarmament Agency, which shall immediately immobilize such weapons and equipment and shall proceed forthwith to dismantle, convert to peacetime uses, recycle the materials thereof, or otherwise destroy such weapons and equipment. During the second operative stage, all armed forces and para-military forces of the nations which have joined the Federation of Earth shall be completely disarmed and either disbanded or converted on a voluntary basis into elements of the non-military World Service Corps.
-Concurrently with the reduction or elimination of such weapons, equipment and other military expenditures as can be accomplished during the second operative stage of World Government, the member nations of the Federation of Earth shall pay annually to the Treasury of the World Government amounts equal to one-half of the amounts saved from their national military budgets during the last year before joining the Federation and shall continue such payments until the full operative stage of World Government is reached. The World Government shall use fifty percent of the funds thus received to finance the work and projects of the World Economic Development Organization.
-Upon formation of the Executive Cabinet for the second operative stage, the Presidium shall issue an invitation to the General Assembly of the United Nations Organization and to each of the specialized agencies of the United Nations, as well as to other useful international agencies, to transfer personnel, facilities, equipment, resources and allegiance to the Federation of Earth and to the World Government thereof. The agencies and functions of the United Nations Organization and of its specialized agencies and of other international agencies which may be thus transferred, shall be reconstituted as needed and integrated into the several organs, departments, offices and agencies of the World Government.
+All nations joining the World Republic to compose the second operative stage of World Government, shall immediately transfer all weapons of mass destruction and all other military weapons and equipment to the World Disarmament Agency, which shall immediately immobilize such weapons and equipment and shall proceed forthwith to dismantle, convert to peacetime uses, recycle the materials thereof, or otherwise destroy such weapons and equipment. During the second operative stage, all armed forces and para-military forces of the nations which have joined the World Republic shall be completely disarmed and either disbanded or converted on a voluntary basis into elements of the non-military World Service Corps.
+Concurrently with the reduction or elimination of such weapons, equipment and other military expenditures as can be accomplished during the second operative stage of World Government, the member nations of the World Republic shall pay annually to the Treasury of the World Government amounts equal to one-half of the amounts saved from their national military budgets during the last year before joining the Federation and shall continue such payments until the full operative stage of World Government is reached. The World Government shall use fifty percent of the funds thus received to finance the work and projects of the World Economic Development Organization.
+Upon formation of the Executive Cabinet for the second operative stage, the Presidium shall issue an invitation to the General Assembly of the United Nations Organization and to each of the specialized agencies of the United Nations, as well as to other useful international agencies, to transfer personnel, facilities, equipment, resources and allegiance to the World Republic and to the World Government thereof. The agencies and functions of the United Nations Organization and of its specialized agencies and of other international agencies which may be thus transferred, shall be reconstituted as needed and integrated into the several organs, departments, offices and agencies of the World Government.
 Near the beginning of the second operative stage, the Presidium in consultation with the Executive cabinet, shall formulate and put forward a proposed program for solving the most urgent world problems currently confronting the people of Earth.
 The World Parliament shall proceed with legislation necessary for implementing a complete program for solving the current urgent world problems.
 The World Parliament and the World Executive working together shall develop through the several organs, departments and agencies of the World Government whatever means shall seem appropriate and feasible to implement legislation for solving world problems; and in particular shall take certain decisive actions for the welfare of all people on Earth, including but not limited to the following:
-Declaring all oceans, seas and canals having supra-national character (but not including inland seas traditionally belonging to particular nations) from twenty kilometers offshore, and all the seabeds thereof, to be under the ownership of the Federation of Earth as the common heritage of humanity, and subject to the control and management of the World Government.
-Declare the polar caps and surrounding polar areas, including the continent of Antarctica but not areas which are traditionally a part of particular nations, to be world territory owned by the Federation of Earth as the common heritage of humanity, and subject to control and management by the World Government.
+Declaring all oceans, seas and canals having supra-national character (but not including inland seas traditionally belonging to particular nations) from twenty kilometers offshore, and all the seabeds thereof, to be under the ownership of the World Republic as the common heritage of humanity, and subject to the control and management of the World Government.
+Declare the polar caps and surrounding polar areas, including the continent of Antarctica but not areas which are traditionally a part of particular nations, to be world territory owned by the World Republic as the common heritage of humanity, and subject to control and management by the World Government.
 Outlaw the possession, stockpiling, sale and use of all nuclear weapons, all weapons of mass destruction, and all other military weapons and equipment.
 Establish an ever-normal granary and food supply system for the people of Earth.
 Develop and carry forward insofar as feasible all actions defined under Sec. C-10 and C-12 of the First Operative Stage.
@@ -754,7 +770,7 @@ All viable agencies of the United Nations Organization and other viable internat
 The World Parliament and the World Executive shall continue to develop the activities and projects which are already underway from the second operative stage of World Government, with such amendments as deemed necessary; and shall proceed with a complete and full scale program to solve world problems and serve the welfare of all people on Earth, in accordance with the provisions of this World Constitution.
 Sec. F — Costs of Ratification
 
-The work and costs of private Citizens of Earth for the achievement of a ratified Constitution for the Federation of Earth, are recognized as legitimate costs for the establishment of constitutional world government by which present and future generations will benefit, and shall be repaid double the original amount by the World Financial Administration of the World Government when it becomes operational after 25 countries have ratified this Constitution for the Federation of Earth. Repayment specifically includes contributions to the World Government Funding Corporation and other costs and expenses recognized by standards and procedures to be established by the World Financial Administration.
+The work and costs of private Citizens of Earth for the achievement of a ratified Constitution for the World Republic, are recognized as legitimate costs for the establishment of constitutional world government by which present and future generations will benefit, and shall be repaid double the original amount by the World Financial Administration of the World Government when it becomes operational after 25 countries have ratified this Constitution for the World Republic. Repayment specifically includes contributions to the World Government Funding Corporation and other costs and expenses recognized by standards and procedures to be established by the World Financial Administration.
 
 
 # Article 18 — Amendments
@@ -764,7 +780,7 @@ By petitions signed by a total of 200,000 persons eligible to vote in world elec
 Passage of any amendment proposed by a House of the World Parliament shall require an absolute two-thirds majority vote of each of the three Houses of the World Parliament voting separately.
 An amendment proposed by popular petition shall first require a simple majority vote of the House of Peoples, which shall be obliged to take a vote upon the proposed amendment. Passage of the amendment shall then require an absolute two-thirds majori ty vote of each of the three Houses of the World Parliament voting separately.
 Periodically, but no later than ten years after first convening the World Parliament for the First Operative Stage of World Government, and every 20 years thereafter, the Members of the World Parliament shall meet in special session comprising a Const itutional Convention to conduct a review of this World Constitution to consider and propose possible amendments, which shall then require action as specified in Clause 2 of Article XVIII for passage.
-If the First Operative Stage of World Government is not reached by the year 1995, then the Provisional World Parliament, as provided under Article XIX, may convene another session of the World Constituent Assembly to review the Constitution for the Federation of Earth and consider possible amendments according to procedure established by the Provisional World Parliament.
+If the First Operative Stage of World Government is not reached by the year 1995, then the Provisional World Parliament, as provided under Article XIX, may convene another session of the World Constituent Assembly to review the Constitution for the World Republic and consider possible amendments according to procedure established by the Provisional World Parliament.
 Except by following the amendment procedures specified herein, no part of this World Constitution may be set aside, suspended or subverted, neither for emergencies nor caprice nor convenience.
 
 
@@ -804,7 +820,7 @@ The several commissions on particular world problems shall work on the preparati
 Sec. C — Composition of the Provisional World Parliament
 
 The Provisional World Parliament shall be composed of the following members:
-All those who were accredited as delegates to the 1977 and 1991 Sessions of the World Constituent Assembly, as well as to any previous Session of the Provisional World Parliament, and who re-confirm their support for the Constitution for the Federation of Earth, as amended.
+All those who were accredited as delegates to the 1977 and 1991 Sessions of the World Constituent Assembly, as well as to any previous Session of the Provisional World Parliament, and who re-confirm their support for the Constitution for the World Republic, as amended.
 Persons who obtain the required number of signatures on election petitions, or who are designated by Non-Governmental Organizations which adopt approved resolutions for this purpose, or who are otherwise accredited according to terms specified in Calls which may be issued to convene particular sessions of the Provisional World Parliament.
 Members of the World Parliament to the House of Peoples who are elected from World Electoral and Administrative Districts up to the time of convening the Provisional World Parliament. Members of the World Parliament elected to the House of Peoples ma y continue to be added to the Provisional World Parliament until the first operative stage of World Government is reached.
 Members of the World Parliament to the House of Nations who are elected by national legislatures or appointed by national governments up to the time of convening the Provisional World Parliament. Members of the World Parliament to the House of Nation s may continue to be added to the Provisional World Parliament until the first operative stage of World Government is reached.
@@ -827,7 +843,7 @@ Insofar as considered appropriate and feasible, the Provisional World Parliament
 The World Economic Development Organization and the World Disarmament Agency shall be established, for correlated actions.
 The World Parliament and the Executive Cabinet of the Provisional World Government shall proceed with the organization of other organs and agencies of the World Government on a provisional basis, insofar as considered desirable and feasible, in particular those specified under Section C-10 of Article 17.
 The several preparatory commissions on urgent world problems may be reconstituted as Administrative Departments of the Provisional World Government.
-In all of its work and activities, the Provisional World Government shall function in accordance with the provisions of this Constitution for the Federation of Earth.
+In all of its work and activities, the Provisional World Government shall function in accordance with the provisions of this Constitution for the World Republic.
 `
 </script>
 
@@ -836,7 +852,6 @@ In all of its work and activities, the Provisional World Government shall functi
     <UiContainer class="!max-w-screen-md pt-6">
       <div class="mb-6">
         <h1 class="font-display mb-2">The World Constitution</h1>
-        <div>Last updated: 18 December 2024</div>
       </div>
       <UiMarkdown :body="constitution" />
     </UiContainer>
