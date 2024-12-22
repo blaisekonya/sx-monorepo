@@ -2,25 +2,26 @@
 useTitle('Constitution');
 
 const constitution = `
-# Background
-The *World Constitution* is an interpretation of the *Constitution for the Federation of Earth*, aimed at creating a democratic federal global government that fosters cooperation, peace, and sustainability. This effort has its roots in the mid-20th century, during a period of heightened global tensions and an urgent search for frameworks to address humanity's collective challenges.
+## Background and Vision
+The *World Constitution* is an unmodified copy of the [*Constitution for the Federation of Earth*](https://en.wikipedia.org/wiki/World_constitution#Constitution_for_the_Federation_of_Earth_(1960s_onwards)), the most ambitious blueprints for global democracy ever written. Drafted over decades by visionaries and legal experts, it offers a framework for creating a democratic world federation—uniting humanity to address the urgent challenges of our interconnected planet.
 
-### Origins and key events
+Though the Constitution has inspired movements and initiatives in the past, these efforts faced significant obstacles. Without the tools to engage millions of people directly or sustainably finance their work, these early attempts to establish a democratic world federation could only go so far.
 
-1. **Albert Einstein and early advocacy**
-After World War II, influential figures like Albert Einstein advocated for a world government. In his 1947 open letter to the United Nations, Einstein argued for the establishment of a global authority to ensure peace and cooperation. He later supported initiatives like the *United World Federalists* and the *Peoples' World Convention (1950–51)*, which convened 500 delegates from 45 nations to explore constitutional frameworks for a unified world.
+#### Why Try Again?
 
-2. **The 1968 World Constitutional Convention**
-Convened in Interlaken, Switzerland, and Wolfach, Germany, the 1968 *World Constitutional Convention* brought together over 200 participants from 27 countries. Delegates aimed to draft a constitution for a federal world government. Key supporters included Nobel laureates, renowned intellectuals, and global leaders such as Martin Luther King Jr. The convention laid the foundation for the "Constitution for the Federation of Earth."
+Today, we have unprecedented tools that can bring this vision to life as a truly grassroots movement:
 
-3. **Subsequent assemblies and refinement**
-The work continued in the 1970s, culminating in the adoption of the *Constitution for the Federation of Earth* during the Second World Constituent Assembly in Innsbruck, Austria (1977). The constitution was envisioned as a framework for global governance, promoting democratic representation, human rights, and ecological sustainability.
+- **Global accessibility**: The widespread availability of internet access enables people from every corner of the world to connect, organize, and act collectively across borders like never before.
+- **Proof of personhood methods**: Modern, secure technologies like zero-knowledge proofs make it possible to verify unique human participation without compromising privacy, allowing for inclusive and verifiably democratic global voting.
+- **Digital currencies**: The World Republic can issue and manage its own cryptocurrency to sustain its operations, ensuring financial independence.
 
-### Vision for the World Republic
+By leveraging these developments, the World Republic is not just revisiting the Constitution for the Federation of Earth—it’s transforming it into a living experiment for global democracy. Through this grassroots, technology-driven approach, we aim to empower individuals everywhere to take part in the founding of the democratic world federation.
 
-The *World Republic* embraces the *Earth Constitution* as the cornerstone of a new global democratic order. By establishing a federal structure, the World Republic seeks to empower humanity to address pressing challenges—ranging from climate change to international conflicts—through a unified and inclusive governance model. Visitors to this platform are invited to participate in this visionary initiative to build a future defined by equity, peace, and collective action.
+Explore the Constitution below and join us in making this bold vision a reality.
 
-# Contents
+# The World Constitution
+
+## Contents
 ### Preamble
 ### Article 1 — Broad Functions of the World Government
 ### Article 2 — Basic Structure of World Federation and World Government
@@ -107,7 +108,9 @@ Sec. E — First Actions of the Provisional World Government
 
 *We, citizens of the world, hereby resolve to establish a world federation to be governed in accordance with this constitution for the World Republic.*
 
+
 # Article 1 — Broad Functions of the World Government
+
 The broad functions of the World Republic shall be:
 
 1. To prevent war, secure disarmament, and resolve territorial and other disputes which endanger peace and human rights.
@@ -119,343 +122,371 @@ The broad functions of the World Republic shall be:
 
 
 # Article 2 — Basic Structure of World Federation and World Government
-The World Republic shall be organized as a universal federation, to include all nations and all people, and to encompass all oceans, seas and lands of Earth, inclusive of non-self governing territories, together with the surrounding atmosphere.
-The World Government for the World Republic shall be non-military and shall be democratic in its own structure, with ultimate sovereignty residing in all the people who live on Earth.
-The authority and powers granted to the World Government shall be limited to those defined in this Constitution for the World Republic, applicable to problems and affairs which transcend national boundaries, leaving to national governments jurisd iction over the internal affairs of the respective nations but consistent with the authority of the World Government to protect universal human rights as defined in this World Constitution.
-The basic direct electoral and administrative units of the World Government shall be World Electoral and Administrative Districts. A total of not more than 1000 World Electoral and Administrative Districts shall be defined, and shall be nearly equal i n population, within the limits of plus or minus ten percent.
-Contiguous World Electoral and Administrative Districts shall be combined as may be appropriate to compose a total of twenty World Electoral and Administrative Regions for the following purposes, but not limited thereto: for the election or appointment of certain world government officials; for administrative purposes; for composing various organs of the world government as enumerated in Article IV; for the functioning of the Judiciary, the Enforcement System, and the Ombudsmus, as well as for the functioning of any other organ or agency of the World Government.
-The World Electoral and Administrative Regions may be composed of a variable number of World Electoral and Administrative Districts, taking into consideration geographic, cultural, ecological and other factors as well as population.
-Contiguous World Electoral and Administrative Regions shall be grouped together in pairs to compose Magna-Regions.
-The boundaries for World Electoral and Administrative Regions shall not cross the boundaries of the World Electoral and Administrative Districts, and shall be common insofar as feasible for the various administrative departments and for the several organs and agencies of the World Government. Boundaries for the World Electoral and Administrative Districts as well as for the Regions need not conform to existing national boundaries, but shall conform as far as practicable.
-The World Electoral and Administrative Regions shall be grouped to compose at least five Continental Divisions of the Earth, for the election or appointment of certain world government officials, and for certain aspects of the composition and functioning of the several organs and agencies of the World Government as specified hereinafter. The boundaries of Continental Divisions shall not cross existing national boundaries as far as practicable. Continental Divisions may be composed of a variable number of World Electoral and Administrative Regions.
+
+1. The World Republic shall be organized as a universal federation, to include all nations and all people, and to encompass all oceans, seas and lands of Earth, inclusive of non-self governing territories, together with the surrounding atmosphere.
+2. The World Government for the World Republic shall be non-military and shall be democratic in its own structure, with ultimate sovereignty residing in all the people who live on Earth.
+3. The authority and powers granted to the World Government shall be limited to those defined in this Constitution for the World Republic, applicable to problems and affairs which transcend national boundaries, leaving to national governments jurisdiction over the internal affairs of the respective nations but consistent with the authority of the World Government to protect universal human rights as defined in this World Constitution.
+4. The basic direct electoral and administrative units of the World Government shall be World Electoral and Administrative Districts. A total of not more than 1000 World Electoral and Administrative Districts shall be defined, and shall be nearly equal in population, within the limits of plus or minus ten percent.
+5. Contiguous World Electoral and Administrative Districts shall be combined as may be appropriate to compose a total of twenty World Electoral and Administrative Regions for the following purposes, but not limited thereto: for the election or appointment of certain world government officials; for administrative purposes; for composing various organs of the world government as enumerated in Article IV; for the functioning of the Judiciary, the Enforcement System, and the Ombudsmus, as well as for the functioning of any other organ or agency of the World Government.
+6. The World Electoral and Administrative Regions may be composed of a variable number of World Electoral and Administrative Districts, taking into consideration geographic, cultural, ecological and other factors as well as population.
+7. Contiguous World Electoral and Administrative Regions shall be grouped together in pairs to compose Magna-Regions.
+8. The boundaries for World Electoral and Administrative Regions shall not cross the boundaries of the World Electoral and Administrative Districts, and shall be common insofar as feasible for the various administrative departments and for the several organs and agencies of the World Government. Boundaries for the World Electoral and Administrative Districts as well as for the Regions need not conform to existing national boundaries, but shall conform as far as practicable.
+9. The World Electoral and Administrative Regions shall be grouped to compose at least five Continental Divisions of the Earth, for the election or appointment of certain world government officials, and for certain aspects of the composition and functioning of the several organs and agencies of the World Government as specified hereinafter. The boundaries of Continental Divisions shall not cross existing national boundaries as far as practicable. Continental Divisions may be composed of a variable number of World Electoral and Administrative Regions.
 
 
 # Article 3 — Organs of the World Government
+
 The organs of the World Government shall be:
 
-The World Parliament.
-The World Executive.
-The World Administration.
-The Integrative Complex.
-The World Judiciary.
-The Enforcement System.
-The World Ombudsmus.
+1. The World Parliament.
+2. The World Executive.
+3. The World Administration.
+4. The Integrative Complex.
+5. The World Judiciary.
+6. The Enforcement System.
+7. The World Ombudsmus.
 
 
 # Article 4 — Grant of Specific Powers to the World Government
+
 The powers of the World government to be exercised through its several organs and agencies shall comprise the following:
 
-Prevent wars and armed conflicts among the nations, regions, districts, parts and peoples of Earth.
-Supervise disarmament and prevent re-armament; prohibit and eliminate the design, testing, manufacture, sale, purchase, use and possession of weapons of mass destruction, and prohibit or regulate all lethal weapons which the World Parliament may decide.
-Prohibit incitement to war, and discrimination against or defamation of conscientious objectors.
-Provide the means for peaceful and just solutions of disputes and conflicts among or between nations, peoples, and/or other components within the World Republic.
-Supervise boundary settlements and conduct plebiscites as needed.
-Define the boundaries for the districts, regions and divisions which are established for electoral, administrative, judicial and other purposes of the World Government.
-Define and regulate procedures for the nomination and election of the members of each House of the World Parliament, and for the nomination, election, appointment and employment of all World Government officials and personnel.
-Codify world laws, including the body of international law developed prior to adoption of the world constitution, but not inconsistent therewith, and which is approved by the World Parliament.
-Establish universal standards for weights, measurements, accounting and records.
-Provide assistance in the event of large scale calamities, including drought, famine, pestilence, flood, earthquake, hurricane, ecological disruptions and other disasters.
-Guarantee and enforce the civil liberties and the basic human rights which are defined in the Bill of Rights for the Citizens of Earth which is made a part of this World Constitution under Article 12.
-Define standards and promote the worldwide improvement in working conditions, nutrition, health, housing, human settlements, environmental conditions, education, economic security, and other conditions defined under Article 13 of this World Constitution.
-Regulate and supervise international transportation, communications, postal services, and migrations of people.
-Regulate and supervise supra-national trade, industry, corporations, businesses, cartels, professional services, labor supply, finances, investments and insurance.
-Secure and supervise the elimination of tariffs and other trade barriers among nations, but with provisions to prevent or minimize hardship for those previously protected by tariffs.
-Raise the revenues and funds, by direct and/or indirect means, which are necessary for the purposes and activities of the World Government.
-Establish and operate world financial, banking, credit and insurance institutions designed to serve human needs; establish, issue and regulate world currency, credit and exchange.
-Plan for and regulate the development, use, conservation and recycling of the natural resources of Earth as the common heritage of Humanity; protect the environment in every way for the benefit of both present and future generations.
-Create and operate a World Economic Development Organization to serve equitably the needs of all nations and people included within the World Federation.
-Develop and implement solutions to transnational problems of food supply, agricultural production, soil fertility, soil conservation, pest control, diet, nutrition, drugs and poisons, and the disposal of toxic wastes.
-Develop and implement means to control population growth in relation to the life-support capacities of Earth, and solve problems of population distribution.
-Develop, protect, regulate and conserve the water supplies of Earth; develop, operate and/or coordinate transnational irrigation and other water supply and control projects; assure equitable allocation of trans- national water supplies, and protect against adverse trans-national effects of water or moisture diversion or weather control projects within national boundaries.
-Own, administer and supervise the development and conservation of the oceans and sea-beds of Earth and all resources thereof, and protect from damage.
-Protect from damage, and control and supervise the uses of the atmosphere of Earth.
-Conduct inter-planetary and cosmic explorations and research; have exclusive jurisdiction over the Moon and over all satellites launched from Earth.
-Establish, operate and/or coordinate global air lines, ocean transport systems, international railways and highways, global communication systems, and means for interplanetary travel and communications; control and administer vital waterways.
-Develop, operate and/or coordinate transnational power systems, or networks of small units, integrating into the systems or networks power derived from the sun, wind, water, tides, heat differentials, magnetic forces, and any other source of safe, ecologically sound and continuing energy supply.
-Control the mining, production, transportation and use of fossil sources of energy to the extent necessary to reduce and prevent damages to the environment and the ecology, as well as to prevent conflicts and conserve supplies for sustained use by succeeding generations.
-Exercise exclusive jurisdiction and control over nuclear energy research and testing and nuclear power production, including the right to prohibit any form of testing or production considered hazardous.
-Place under world controls essential natural resources which may be limited or unevenly distributed about the Earth. Find and implement ways to reduce wastes and find ways to minimize disparities when development or production is insufficient to supply everybody with all that may be needed.
-Provide for the examination and assessment of technological innovations which are or may be of supranational consequence, to determine possible hazards or perils to humanity or the environment; institute such controls and regulations of technology as may be found necessary to prevent or correct widespread hazards or perils to human health and welfare.
-Carry out intensive programs to develop safe alternatives to any technology or technological processes which may be hazardous to the environment, the ecological system, or human health and welfare.
-Resolve supra-national problems caused by gross disparities in technological development or capability, capital formation, availability of natural resources, educational opportunity, economic opportunity, and wage and price differentials. Assist the processes of technology transfer under conditions which safeguard human welfare and the environment and contribute to minimizing disparities.
-Intervene under procedures to be defined by the World Parliament in cases of either intra-state violence and intra-state problems which seriously affect world peace or universal human rights.
-Develop a world university system. Obtain the correction of prejudicial communicative materials which cause misunderstandings or conflicts due to differences of race, religion, sex, national origin or affiliation.
-Organize, coordinate and/or administer a voluntary, non-military World Service Corps, to carry out a wide variety of projects designed to serve human welfare.
-Designate as may be found desirable an official world language or official world languages.
-Establish and operate a system of world parks, wild life preserves, natural places, and wilderness areas.
-Define and establish procedures for initiative and referendum by the Citizens of Earth on matters of supra-national legislation not prohibited by this World Constitution.
-Establish such departments, bureaus, commissions, institutes, corporations, administrations, or agencies as may by needed to carry out any and all of the functions and powers of the World Government.
-Serve the needs of humanity in any and all ways which are now, or may prove in the future to be, beyond the capacity of national and local governments.
+1. Prevent wars and armed conflicts among the nations, regions, districts, parts and peoples of Earth.
+2. Supervise disarmament and prevent re-armament; prohibit and eliminate the design, testing, manufacture, sale, purchase, use and possession of weapons of mass destruction, and prohibit or regulate all lethal weapons which the World Parliament may decide.
+3. Prohibit incitement to war, and discrimination against or defamation of conscientious objectors.
+4. Provide the means for peaceful and just solutions of disputes and conflicts among or between nations, peoples, and/or other components within the World Republic.
+5. Supervise boundary settlements and conduct plebiscites as needed.
+6. Define the boundaries for the districts, regions and divisions which are established for electoral, administrative, judicial and other purposes of the World Government.
+7. Define and regulate procedures for the nomination and election of the members of each House of the World Parliament, and for the nomination, election, appointment and employment of all World Government officials and personnel.
+8. Codify world laws, including the body of international law developed prior to adoption of the world constitution, but not inconsistent therewith, and which is approved by the World Parliament.
+9. Establish universal standards for weights, measurements, accounting and records.
+10. Provide assistance in the event of large scale calamities, including drought, famine, pestilence, flood, earthquake, hurricane, ecological disruptions and other disasters.
+11. Guarantee and enforce the civil liberties and the basic human rights which are defined in the Bill of Rights for the Citizens of Earth which is made a part of this World Constitution under Article 12.
+12. Define standards and promote the worldwide improvement in working conditions, nutrition, health, housing, human settlements, environmental conditions, education, economic security, and other conditions defined under Article 13 of this World Constitution.
+13. Regulate and supervise international transportation, communications, postal services, and migrations of people.
+14. Regulate and supervise supra-national trade, industry, corporations, businesses, cartels, professional services, labor supply, finances, investments and insurance.
+15. Secure and supervise the elimination of tariffs and other trade barriers among nations, but with provisions to prevent or minimize hardship for those previously protected by tariffs.
+16. Raise the revenues and funds, by direct and/or indirect means, which are necessary for the purposes and activities of the World Government.
+17. Establish and operate world financial, banking, credit and insurance institutions designed to serve human needs; establish, issue and regulate world currency, credit and exchange.
+18. Plan for and regulate the development, use, conservation and recycling of the natural resources of Earth as the common heritage of Humanity; protect the environment in every way for the benefit of both present and future generations.
+19. Create and operate a World Economic Development Organization to serve equitably the needs of all nations and people included within the World Federation.
+20. Develop and implement solutions to transnational problems of food supply, agricultural production, soil fertility, soil conservation, pest control, diet, nutrition, drugs and poisons, and the disposal of toxic wastes.
+21. Develop and implement means to control population growth in relation to the life-support capacities of Earth, and solve problems of population distribution.
+22. Develop, protect, regulate and conserve the water supplies of Earth; develop, operate and/or coordinate transnational irrigation and other water supply and control projects; assure equitable allocation of trans- national water supplies, and protect against adverse trans-national effects of water or moisture diversion or weather control projects within national boundaries.
+23. Own, administer and supervise the development and conservation of the oceans and sea-beds of Earth and all resources thereof, and protect from damage.
+24. Protect from damage, and control and supervise the uses of the atmosphere of Earth.
+25. Conduct inter-planetary and cosmic explorations and research; have exclusive jurisdiction over the Moon and over all satellites launched from Earth.
+26. Establish, operate and/or coordinate global air lines, ocean transport systems, international railways and highways, global communication systems, and means for interplanetary travel and communications; control and administer vital waterways.
+27. Develop, operate and/or coordinate transnational power systems, or networks of small units, integrating into the systems or networks power derived from the sun, wind, water, tides, heat differentials, magnetic forces, and any other source of safe, ecologically sound and continuing energy supply.
+28. Control the mining, production, transportation and use of fossil sources of energy to the extent necessary to reduce and prevent damages to the environment and the ecology, as well as to prevent conflicts and conserve supplies for sustained use by succeeding generations.
+29. Exercise exclusive jurisdiction and control over nuclear energy research and testing and nuclear power production, including the right to prohibit any form of testing or production considered hazardous.
+30. Place under world controls essential natural resources which may be limited or unevenly distributed about the Earth. Find and implement ways to reduce wastes and find ways to minimize disparities when development or production is insufficient to supply everybody with all that may be needed.
+31. Provide for the examination and assessment of technological innovations which are or may be of supranational consequence, to determine possible hazards or perils to humanity or the environment; institute such controls and regulations of technology as may be found necessary to prevent or correct widespread hazards or perils to human health and welfare.
+32. Carry out intensive programs to develop safe alternatives to any technology or technological processes which may be hazardous to the environment, the ecological system, or human health and welfare.
+33. Resolve supra-national problems caused by gross disparities in technological development or capability, capital formation, availability of natural resources, educational opportunity, economic opportunity, and wage and price differentials. Assist the processes of technology transfer under conditions which safeguard human welfare and the environment and contribute to minimizing disparities.
+34. Intervene under procedures to be defined by the World Parliament in cases of either intra-state violence and intra-state problems which seriously affect world peace or universal human rights.
+35. Develop a world university system. Obtain the correction of prejudicial communicative materials which cause misunderstandings or conflicts due to differences of race, religion, sex, national origin or affiliation.
+36. Organize, coordinate and/or administer a voluntary, non-military World Service Corps, to carry out a wide variety of projects designed to serve human welfare.
+37. Designate as may be found desirable an official world language or official world languages.
+38. Establish and operate a system of world parks, wild life preserves, natural places, and wilderness areas.
+39. Define and establish procedures for initiative and referendum by the Citizens of Earth on matters of supra-national legislation not prohibited by this World Constitution.
+40. Establish such departments, bureaus, commissions, institutes, corporations, administrations, or agencies as may by needed to carry out any and all of the functions and powers of the World Government.
+41. Serve the needs of humanity in any and all ways which are now, or may prove in the future to be, beyond the capacity of national and local governments.
 
 
 # Article 5 — The World Parliament
-Sec. A — Functions and Powers of the World Parliament
+
+### Sec. A — Functions and Powers of the World Parliament
 
 The functions and powers of the World Parliament shall comprise the following:
 
-To prepare and enact detailed legislation in all areas of authority and jurisdiction granted to the World Government under Article IV of this World Constitution.
-To amend or repeal world laws as may be found necessary or desirable.
-To approve, amend or reject the international laws developed prior to the advent of World Government, and to codify and integrate the system of world law and world legislation under the World Government.
-To establish such regulations and directions as may be needed, consistent with this world constitution, for the proper functioning of all organs, branches, departments, bureaus, commissions, institutes, agencies or parts of the World Government.
-To review, amend and give final approval to each budget for the World Government, as submitted by the World Executive; to devise the specific means for directly raising funds needed to fulfill the budget, including taxes, licenses, fees, globally accounted social and public costs which must be added into the prices for goods and services, loans and credit advances, and any other appropriate means; and to appropriate and allocate funds for all operations and functions of the World Government in accordance with approved budgets, but subject to the right of the Parliament to revise any appropriation not yet spent or contractually committed.
-To create, alter, abolish or consolidate the departments, bureaus, commissions, institutes, agencies or other parts of the World Government as may be needed for the best functioning of the several organs of the World Government, subject to the specific provisions of this World Constitution.
-To approve the appointments of the heads of all major departments, commissions, offices, agencies and other parts of the several organs of the World Government, except those chosen by electoral or civil service procedures.
-To remove from office for cause any member of the World Executive, and any elective or appointive head of any organ, department, office, agency or other part of the World Government, subject to the specific provisions in this World Constitution concerning specific offices.
-To define and revise the boundaries of the World Electoral and Administrative Districts, the World Electoral and Administrative Regions and Magna Regions, and the Continental Divisions.
-To schedule the implementation of those provisions of the World Constitution which require implementation by stages during the several stages of Provisional World Government, First Operative Stage of World Government, Second Operative Stage of World Government, and Full Operative Stage of World Government, as defined in Articles XVII and XIX of this World Constitution.
-To plan and schedule the implementation of those provisions of the World Constitution which may require a period of years to be accomplished.
-Sec. B — Composition of the World Parliament
+1. To prepare and enact detailed legislation in all areas of authority and jurisdiction granted to the World Government under Article IV of this World Constitution.
+2. To amend or repeal world laws as may be found necessary or desirable.
+3. To approve, amend or reject the international laws developed prior to the advent of World Government, and to codify and integrate the system of world law and world legislation under the World Government.
+4. To establish such regulations and directions as may be needed, consistent with this world constitution, for the proper functioning of all organs, branches, departments, bureaus, commissions, institutes, agencies or parts of the World Government.
+5. To review, amend and give final approval to each budget for the World Government, as submitted by the World Executive; to devise the specific means for directly raising funds needed to fulfill the budget, including taxes, licenses, fees, globally accounted social and public costs which must be added into the prices for goods and services, loans and credit advances, and any other appropriate means; and to appropriate and allocate funds for all operations and functions of the World Government in accordance with approved budgets, but subject to the right of the Parliament to revise any appropriation not yet spent or contractually committed.
+6. To create, alter, abolish or consolidate the departments, bureaus, commissions, institutes, agencies or other parts of the World Government as may be needed for the best functioning of the several organs of the World Government, subject to the specific provisions of this World Constitution.
+7. To approve the appointments of the heads of all major departments, commissions, offices, agencies and other parts of the several organs of the World Government, except those chosen by electoral or civil service procedures.
+8. To remove from office for cause any member of the World Executive, and any elective or appointive head of any organ, department, office, agency or other part of the World Government, subject to the specific provisions in this World Constitution concerning specific offices.
+9. To define and revise the boundaries of the World Electoral and Administrative Districts, the World Electoral and Administrative Regions and Magna Regions, and the Continental Divisions.
+10. To schedule the implementation of those provisions of the World Constitution which require implementation by stages during the several stages of Provisional World Government, First Operative Stage of World Government, Second Operative Stage of World Government, and Full Operative Stage of World Government, as defined in Articles XVII and XIX of this World Constitution.
+11. To plan and schedule the implementation of those provisions of the World Constitution which may require a period of years to be accomplished.
 
-The World Parliament shall be composed of three houses, designated as follows:
-The House of Peoples, to represent the people of Earth directly and equally;
-The House of Nations, to represent the nations which are joined together in the World Republic; and a
-House of Counsellors with particular functions to represent the highest good and best interests of humanity as a whole.
-All members of the World Parliament, regardless of House, shall be designated as Members of the World Parliament.
-Sec. C — The House of Peoples
+### Sec. B — Composition of the World Parliament
 
-The House of Peoples shall be composed of the peoples delegates directly elected in proportion to population from the World Electoral and Administrative Districts, as defined in Article 2-4.
-Peoples delegates shall be elected by universal adult suffrage, open to all persons of age 18 and above.
-One peoples delegate shall be elected from each World Electoral and Administrative District to serve a five year term in the House of Peoples. Peoples delegates may be elected to serve successive terms without limit. Each peoples delegate shall have one vote.
-A candidate for election to serve as a peoples delegate must be at least 21 years of age, a resident for at least one year of the electoral district from which the candidate is seeking election, and shall take a pledge of service to humanity.
-Sec. D — The House of Nations
+1. The World Parliament shall be composed of three houses, designated as follows:
+1.1. The House of Peoples, to represent the people of Earth directly and equally;
+1.2. The House of Nations, to represent the nations which are joined together in the World Republic; and
+1.3. House of Counsellors with particular functions to represent the highest good and best interests of humanity as a whole.
+2. All members of the World Parliament, regardless of House, shall be designated as Members of the World Parliament.
 
-The House of Nations shall be composed of national delegates elected or appointed by procedures to be determined by each national government on the following basis:
-One national delegate from each nation of at least 100,000 population, but less than 10,000,000 population.
-Two national delegates from each nation of at least 10,000,000 population, but less than 100,000,000 population.
-Three national delegates from each nation of 100,000,000 population or more.
-Nations of less than 100,000 population may join in groups with other nations for purposes of representation in the House of Nations.
-National delegates shall be elected or appointed to serve for terms of five years, and may be elected or appointed to serve successive terms without limit. Each national delegate shall have one vote.
-Any person to serve as a national delegate shall be a citizen for at least two years of the nation to be represented, must be at least 21 years of age, and shall take a pledge of service to humanity.
-Sec. E — The House of Counsellors
+### Sec. C — The House of Peoples
 
-The House of Counsellors shall be composed of 200 counsellors chosen in equal numbers from nominations submitted from the twenty World Electoral and Administrative Regions, as defined in Article II-5 and II-6, ten from each Region.
-Nominations for members of the House of Counsellors shall be made by the teachers and students of universities and colleges and of scientific academies and institutes within each world electoral and administrative region. Nominees may be persons who are off campus in any walk of life as well as on campus.
-Nominees to the House of Counsellors from each World Electoral and Administrative Region shall, by vote taken among themselves, reduce the number of nominees to no less than two times and no more than three times the number to be elected.
-Nominees to serve as members of the House of Counsellors must be at least 25 years of age, and shall take a pledge of service to humanity. There shall be no residence requirement, and a nominee need not be a resident of the region from which nominated or elected.
-The members of the House of Counsellors from each region shall be elected by the members of the other two houses of the World Parliament from the particular region.
-Counsellors shall be elected to serve terms of ten years. One-half of the members of the House of Counsellors shall be elected every five years. Counsellors may serve successive terms without limit. Each Counsellor shall have one vote.
-Sec. F — Procedures of the World Parliament
+1. The House of Peoples shall be composed of the peoples delegates directly elected in proportion to population from the World Electoral and Administrative Districts, as defined in Article 2-4.
+2. Peoples delegates shall be elected by universal adult suffrage, open to all persons of age 18 and above.
+3. One peoples delegate shall be elected from each World Electoral and Administrative District to serve a five year term in the House of Peoples. Peoples delegates may be elected to serve successive terms without limit. Each peoples delegate shall have one vote.
+4. A candidate for election to serve as a peoples delegate must be at least 21 years of age, a resident for at least one year of the electoral district from which the candidate is seeking election, and shall take a pledge of service to humanity.
 
-Each house of the World Parliament during its first session after general elections shall elect a panel of five chairpersons from among its own members, one from each of five Continental Divisions. The chairpersons shall rotate annually so that each w ill serve for one year as chief presiding officer, while the other four serve as vice-chairpersons.
-The panels of Chairpersons from each House shall meet together, as needed, for the purpose of coordinating the work of the Houses of the World Parliament, both severally and jointly.
-Any legislative measure or action may be initiated in either House of Peoples or House of Nations or both concurrently, and shall become effective when passed by a simple majority vote of both the House of Peoples and of the House of Nations, except in those cases where an absolute majority vote or other voting majority is specified in this World Constitution.
-In case of deadlock on a measure initiated in either the House of Peoples or House of Nations, the measure shall then automatically go to the House of Counsellors for decision by simple majority vote of the House of Counsellors, except in the cases where other majority vote is required in this World Constitution. Any measure may be referred for decision to the House of Counsellors by a concurrent vote of the other two houses.
-The House of Counsellors may initiate any legislative measure, which shall then be submitted to the other two houses and must be passed by simple majority vote of both the House of Peoples and House of Nations to become effective, unless other voting majority is required by some provision of this World Constitution.
-The House of Counsellors may introduce an opinion or resolution on any measure pending before either of the other two houses; either of the other houses may request the opinion of the House of Counsellors before acting upon a measure.
-Each house of the World Parliament shall adopt its own detailed rules of procedure, which shall by consistent with the procedures set forth in this World Constitution, and which shall be designed to facilitate coordinated functioning of the three houses.
-Approval of appointments by the World Parliament or any house thereof shall require simple majority votes, while removals for cause shall require absolute majority votes.
-After the full operative stage of World Government is declared, general elections for members of the World Parliament to the House of Peoples shall be held every five years. The first general elections shall be held within the first two years followin g the declaration of the full operative stage of World Government.
-Until the full operative stage of World Government is declared, elections for members of the World Parliament to the House of Peoples may be conducted whenever feasible in relation to the campaign for ratification of this World Constitution.
-Regular sessions of the House of Peoples and House of Nations of the World Parliament shall convene on the second Monday of January of each and every year.
-Each nation, according to its own procedures, shall appoint or elect members of the World Parliament to the House of Nations at least thirty days prior to the date for convening the World Parliament in January.
-The House of Peoples together with the House of Nations shall elect the members of the World Parliament to the House of Counsellors during the month of January after the general elections. For its first session after general elections, the House of Co unsellors shall convene on the second Monday of March, and thereafter concurrently with the other two houses.
-Bi-elections to fill vacancies shall be held within three months from occurrence of the vacancy or vacancies.
-The World Parliament shall remain in session for a minimum of nine months of each year. One or two breaks may be taken during each year, at times and for durations to be decided by simple majority vote of the House of Peoples and House of Nations sitting jointly.
-Annual salaries for members of the World Parliament of all three houses shall be the same, except for those who serve also as members of the Presidium and of the Executive Cabinet.
-Salary schedules for members of the World Parliament and for members of the Presidium and of the Executive Cabinet shall be determined by the World Parliament.
+### Sec. D — The House of Nations
+
+1. The House of Nations shall be composed of national delegates elected or appointed by procedures to be determined by each national government on the following basis:
+1.1. One national delegate from each nation of at least 100,000 population, but less than 10,000,000 population.
+1.2. Two national delegates from each nation of at least 10,000,000 population, but less than 100,000,000 population.
+1.3. Three national delegates from each nation of 100,000,000 population or more.
+2. Nations of less than 100,000 population may join in groups with other nations for purposes of representation in the House of Nations.
+3. National delegates shall be elected or appointed to serve for terms of five years, and may be elected or appointed to serve successive terms without limit. Each national delegate shall have one vote.
+4. Any person to serve as a national delegate shall be a citizen for at least two years of the nation to be represented, must be at least 21 years of age, and shall take a pledge of service to humanity.
+
+### Sec. E — The House of Counsellors
+
+1. The House of Counsellors shall be composed of 200 counsellors chosen in equal numbers from nominations submitted from the twenty World Electoral and Administrative Regions, as defined in Article II-5 and II-6, ten from each Region.
+2. Nominations for members of the House of Counsellors shall be made by the teachers and students of universities and colleges and of scientific academies and institutes within each world electoral and administrative region. Nominees may be persons who are off campus in any walk of life as well as on campus.
+3. Nominees to the House of Counsellors from each World Electoral and Administrative Region shall, by vote taken among themselves, reduce the number of nominees to no less than two times and no more than three times the number to be elected.
+4. Nominees to serve as members of the House of Counsellors must be at least 25 years of age, and shall take a pledge of service to humanity. There shall be no residence requirement, and a nominee need not be a resident of the region from which nominated or elected.
+5. The members of the House of Counsellors from each region shall be elected by the members of the other two houses of the World Parliament from the particular region.
+6. Counsellors shall be elected to serve terms of ten years. One-half of the members of the House of Counsellors shall be elected every five years. Counsellors may serve successive terms without limit. Each Counsellor shall have one vote.
+
+### Sec. F — Procedures of the World Parliament
+
+1. Each house of the World Parliament during its first session after general elections shall elect a panel of five chairpersons from among its own members, one from each of five Continental Divisions. The chairpersons shall rotate annually so that each will serve for one year as chief presiding officer, while the other four serve as vice-chairpersons.
+2. The panels of Chairpersons from each House shall meet together, as needed, for the purpose of coordinating the work of the Houses of the World Parliament, both severally and jointly.
+3. Any legislative measure or action may be initiated in either House of Peoples or House of Nations or both concurrently, and shall become effective when passed by a simple majority vote of both the House of Peoples and of the House of Nations, except in those cases where an absolute majority vote or other voting majority is specified in this World Constitution.
+4. In case of deadlock on a measure initiated in either the House of Peoples or House of Nations, the measure shall then automatically go to the House of Counsellors for decision by simple majority vote of the House of Counsellors, except in the cases where other majority vote is required in this World Constitution. Any measure may be referred for decision to the House of Counsellors by a concurrent vote of the other two houses.
+5. The House of Counsellors may initiate any legislative measure, which shall then be submitted to the other two houses and must be passed by simple majority vote of both the House of Peoples and House of Nations to become effective, unless other voting majority is required by some provision of this World Constitution.
+6. The House of Counsellors may introduce an opinion or resolution on any measure pending before either of the other two houses; either of the other houses may request the opinion of the House of Counsellors before acting upon a measure.
+7. Each house of the World Parliament shall adopt its own detailed rules of procedure, which shall by consistent with the procedures set forth in this World Constitution, and which shall be designed to facilitate coordinated functioning of the three houses.
+8. Approval of appointments by the World Parliament or any house thereof shall require simple majority votes, while removals for cause shall require absolute majority votes.
+9. After the full operative stage of World Government is declared, general elections for members of the World Parliament to the House of Peoples shall be held every five years. The first general elections shall be held within the first two years followin g the declaration of the full operative stage of World Government.
+10. Until the full operative stage of World Government is declared, elections for members of the World Parliament to the House of Peoples may be conducted whenever feasible in relation to the campaign for ratification of this World Constitution.
+11. Regular sessions of the House of Peoples and House of Nations of the World Parliament shall convene on the second Monday of January of each and every year.
+12. Each nation, according to its own procedures, shall appoint or elect members of the World Parliament to the House of Nations at least thirty days prior to the date for convening the World Parliament in January.
+13. The House of Peoples together with the House of Nations shall elect the members of the World Parliament to the House of Counsellors during the month of January after the general elections. For its first session after general elections, the House of Co unsellors shall convene on the second Monday of March, and thereafter concurrently with the other two houses.
+14. Bi-elections to fill vacancies shall be held within three months from occurrence of the vacancy or vacancies.
+15. The World Parliament shall remain in session for a minimum of nine months of each year. One or two breaks may be taken during each year, at times and for durations to be decided by simple majority vote of the House of Peoples and House of Nations sitting jointly.
+16. Annual salaries for members of the World Parliament of all three houses shall be the same, except for those who serve also as members of the Presidium and of the Executive Cabinet.
+17. Salary schedules for members of the World Parliament and for members of the Presidium and of the Executive Cabinet shall be determined by the World Parliament.
+
 
 # Article 6 — The World Executive
-Sec. A — Functions and Powers of the World Executive
 
-To implement the basic system of world law as defined in the World Constitution and in the codified system of world law after approval by the World Parliament.
-To implement legislation enacted by the World Parliament.
-To propose and recommend legislation for enactment by the World Parliament.
-To convene the World Parliament in special sessions when necessary.
-To supervise the World Administration and the Integrative Complex and all of the departments, bureaus, offices, institutes and agencies thereof.
-To nominate, select and remove the heads of various organs, branches, departments, bureaus, offices, commissions, institutes, agencies and other parts of the World Government, in accordance with the provisions of this World Constitution and as specified in measures enacted by the World Parliament.
-To prepare and submit annually to the World Parliament a comprehensive budget for the operations of the World Government, and to prepare and submit periodically budget projections over periods of several years.
-To define and propose priorities for world legislation and budgetary allocations.
-To be held accountable to the World Parliament for the expenditures of appropriations made by the World Parliament in accordance with approved and longer term budgets, subject to revisions approved by the World Parliament.
-Sec. B — Composition of the World Executive
+### Sec. A — Functions and Powers of the World Executive
+
+1. To implement the basic system of world law as defined in the World Constitution and in the codified system of world law after approval by the World Parliament.
+2. To implement legislation enacted by the World Parliament.
+3. To propose and recommend legislation for enactment by the World Parliament.
+4. To convene the World Parliament in special sessions when necessary.
+5. To supervise the World Administration and the Integrative Complex and all of the departments, bureaus, offices, institutes and agencies thereof.
+6. To nominate, select and remove the heads of various organs, branches, departments, bureaus, offices, commissions, institutes, agencies and other parts of the World Government, in accordance with the provisions of this World Constitution and as specified in measures enacted by the World Parliament.
+7. To prepare and submit annually to the World Parliament a comprehensive budget for the operations of the World Government, and to prepare and submit periodically budget projections over periods of several years.
+8. To define and propose priorities for world legislation and budgetary allocations.
+9. To be held accountable to the World Parliament for the expenditures of appropriations made by the World Parliament in accordance with approved and longer term budgets, subject to revisions approved by the World Parliament.
+
+### Sec. B — Composition of the World Executive
 
 The World Executive shall consist of a Presidium of five members, and of an Executive Cabinet of from twenty to thirty members, all of whom shall be members of the World Parliament.
 
-Sec. C — The Presidium
+### Sec. C — The Presidium
 
-The Presidium shall be composed of five members, one to be designated as President and the other four to be designated as Vice Presidents. Each member of the Presidium shall be from a different Continental Division.
-The Presidency of the Presidium shall rotate each year, with each member in turn to serve as President, while the other four serve as Vice Presidents. The order of rotation shall be decided by the Presidium.
-The decisions of the Presidium shall be taken collectively, on the basis of majority decisions.
-Each member of the Presidium shall be a member of the World Parliament, either elected to the House of Peoples or to the House of Counsellors, or appointed or elected to the House of Nations.
-Nominations for the Presidium shall be made by the House of Counsellors. The number of nominees shall be from two to three times the number to be elected. No more than one-third of the nominees shall be from the House of Counsellors or from the House of Nations, and nominees must be included from all Continental Divisions.
-From among the nominees submitted by the House of Counsellors, the Presidium shall be elected by vote of the combined membership of all three houses of the World Parliament in joint session. A plurality vote equal to at least 40 percent of the total membership of the World Parliament shall be required for the election of each member to the Presidium, with successive elimination votes taken as necessary until the required plurality is achieved.
-Members of the Presidium may be removed for cause, either individually or collectively, by an absolute majority vote of the combined membership of the three houses of the World Parliament in joint session.
-The term of office for the Presidium shall be five years and shall run concurrently with the terms of office for the members as Members of the World Parliament, except that at the end of each five year period, the Presidium members in office shall con tinue to serve until the new Presidium for the succeeding term is elected. Membership in the Presidium shall be limited to two consecutive terms.
-Sec. D — The Executive Cabinet
+1. The Presidium shall be composed of five members, one to be designated as President and the other four to be designated as Vice Presidents. Each member of the Presidium shall be from a different Continental Division.
+2. The Presidency of the Presidium shall rotate each year, with each member in turn to serve as President, while the other four serve as Vice Presidents. The order of rotation shall be decided by the Presidium.
+3. The decisions of the Presidium shall be taken collectively, on the basis of majority decisions.
+4. Each member of the Presidium shall be a member of the World Parliament, either elected to the House of Peoples or to the House of Counsellors, or appointed or elected to the House of Nations.
+5. Nominations for the Presidium shall be made by the House of Counsellors. The number of nominees shall be from two to three times the number to be elected. No more than one-third of the nominees shall be from the House of Counsellors or from the House of Nations, and nominees must be included from all Continental Divisions.
+6. From among the nominees submitted by the House of Counsellors, the Presidium shall be elected by vote of the combined membership of all three houses of the World Parliament in joint session. A plurality vote equal to at least 40 percent of the total membership of the World Parliament shall be required for the election of each member to the Presidium, with successive elimination votes taken as necessary until the required plurality is achieved.
+7. Members of the Presidium may be removed for cause, either individually or collectively, by an absolute majority vote of the combined membership of the three houses of the World Parliament in joint session.
+8. The term of office for the Presidium shall be five years and shall run concurrently with the terms of office for the members as Members of the World Parliament, except that at the end of each five year period, the Presidium members in office shall continue to serve until the new Presidium for the succeeding term is elected. Membership in the Presidium shall be limited to two consecutive terms.
 
-The Executive Cabinet shall be composed of from twenty to thirty members, with at least one member from each of the ten World Electoral and Administrative Magna Regions of the world.
-All members of the Executive Cabinet shall be Members of the World Parliament.
-There shall be no more than two members of the Executive Cabinet from any single nation of the World Federation. There may be only one member of the Executive Cabinet from a nation from which a Member of the World Parliament is serving as a member of the Presidium.
-Each member of the Executive Cabinet shall serve as the head of a department or agency of the World Administration or Integrative Complex, and in this capacity shall be designated as Minister of the particular department or agency.
-Nominations for members of the Executive Cabinet shall be made by the Presidium, taking into consideration the various functions which Executive Cabinets members are to perform. The Presidium shall nominate no more than two times the number to be elected.
-The Executive Cabinet shall be elected by simple majority vote of the combined membership of all three houses of the World Parliament in joint session.
-Members of the Executive Cabinet either individually or collectively may be removed for cause by an absolute majority vote of the combined membership of all three houses of the World Parliament sitting in joint session.
-The term of office in the Executive Cabinet shall be five years, and shall run concurrently with the terms of office for the members as Members of the World Parliament, except that at the end of each five year period, the Cabinet members in office s hall continue to serve until the new Executive Cabinet for the succeeding term is elected. Membership in the Executive Cabinet shall be limited to three consecutive terms, regardless of change in ministerial position.
-Sec. E — Procedures of the World Executive
+### Sec. D — The Executive Cabinet
 
-The Presidium shall assign the ministerial positions among the Cabinet members to head the several administrative departments and major agencies of the Administration and of the Integrative Complex. Each Vice President may also serve as a Minister to head an administrative department, but not the President. Ministerial positions may be changed at the discretion of the Presidium. A Cabinet member or Vice President may hold more than one ministerial post, but no more than three, providing that no Cabine t member is without a Ministerial post.
-The Presidium, in consultation with the Executive Cabinet, shall prepare and present to the World Parliament near the beginning of each year a proposed program of world legislation. The Presidium may propose other legislation during the year.
-The Presidium, in consultation with the Executive Cabinet, and in consultation with the World Financial Administration, (see Article VIII, Sec. G-1-i) shall be responsible for preparing and submitting to the World Parliament the proposed annual budget, and budgetary projections over periods of years.
-Each Cabinet Member and Vice President as Minister of a particular department or agency shall prepare an annual report for the particular department or agency, to be submitted both to the Presidium and to the World Parliament.
-The members of the Presidium and of the Executive Cabinet at all times shall be responsible both individually and collectively to the World Parliament.
-Vacancies occurring at any time in the World Executive shall be filled within sixty days by nomination and election in the same manner as specified for filling the offices originally.
-Sec. F — Limitations on the World Executive
+1. The Executive Cabinet shall be composed of from twenty to thirty members, with at least one member from each of the ten World Electoral and Administrative Magna Regions of the world.
+2. All members of the Executive Cabinet shall be Members of the World Parliament.
+3. There shall be no more than two members of the Executive Cabinet from any single nation of the World Federation. There may be only one member of the Executive Cabinet from a nation from which a Member of the World Parliament is serving as a member of the Presidium.
+4. Each member of the Executive Cabinet shall serve as the head of a department or agency of the World Administration or Integrative Complex, and in this capacity shall be designated as Minister of the particular department or agency.
+5. Nominations for members of the Executive Cabinet shall be made by the Presidium, taking into consideration the various functions which Executive Cabinets members are to perform. The Presidium shall nominate no more than two times the number to be elected.
+6. The Executive Cabinet shall be elected by simple majority vote of the combined membership of all three houses of the World Parliament in joint session.
+7. Members of the Executive Cabinet either individually or collectively may be removed for cause by an absolute majority vote of the combined membership of all three houses of the World Parliament sitting in joint session.
+8. The term of office in the Executive Cabinet shall be five years, and shall run concurrently with the terms of office for the members as Members of the World Parliament, except that at the end of each five year period, the Cabinet members in office shall continue to serve until the new Executive Cabinet for the succeeding term is elected. Membership in the Executive Cabinet shall be limited to three consecutive terms, regardless of change in ministerial position.
 
-The World Executive shall not at any time alter, suspend, abridge, infringe or otherwise violate any provision of this World Constitution or any legislation or world law enacted or approved by the World Parliament in accordance with the provisions of this World Constitution.
-The World Executive shall not have veto power over any legislation passed by the World Parliament.
-The World Executive may not dissolve the World Parliament or any House of the World Parliament.
-The World Executive may not act contrary to decisions of the World Courts.
-The World Executive shall be bound to faithfully execute all legislation passed by the World Parliament in accordance with the provisions of this World Constitution, and may not impound or refuse to spend funds appropriated by the World Parliament, nor spend more funds than are appropriated by the World Parliament.
-The World Executive may not transcend or contradict the decisions or controls of the World Parliament, the World Judiciary or the Provisions of this World Constitution by any device of executive order or executive privilege or emergency declaration or decree.
+### Sec. E — Procedures of the World Executive
+
+1. The Presidium shall assign the ministerial positions among the Cabinet members to head the several administrative departments and major agencies of the Administration and of the Integrative Complex. Each Vice President may also serve as a Minister to head an administrative department, but not the President. Ministerial positions may be changed at the discretion of the Presidium. A Cabinet member or Vice President may hold more than one ministerial post, but no more than three, providing that no Cabine t member is without a Ministerial post.
+2. The Presidium, in consultation with the Executive Cabinet, shall prepare and present to the World Parliament near the beginning of each year a proposed program of world legislation. The Presidium may propose other legislation during the year.
+3. The Presidium, in consultation with the Executive Cabinet, and in consultation with the World Financial Administration, (see Article VIII, Sec. G-1-i) shall be responsible for preparing and submitting to the World Parliament the proposed annual budget, and budgetary projections over periods of years.
+4. Each Cabinet Member and Vice President as Minister of a particular department or agency shall prepare an annual report for the particular department or agency, to be submitted both to the Presidium and to the World Parliament.
+5. The members of the Presidium and of the Executive Cabinet at all times shall be responsible both individually and collectively to the World Parliament.
+6. Vacancies occurring at any time in the World Executive shall be filled within sixty days by nomination and election in the same manner as specified for filling the offices originally.
+
+### Sec. F — Limitations on the World Executive
+
+1. The World Executive shall not at any time alter, suspend, abridge, infringe or otherwise violate any provision of this World Constitution or any legislation or world law enacted or approved by the World Parliament in accordance with the provisions of this World Constitution.
+2. The World Executive shall not have veto power over any legislation passed by the World Parliament.
+3. The World Executive may not dissolve the World Parliament or any House of the World Parliament.
+4. The World Executive may not act contrary to decisions of the World Courts.
+5. The World Executive shall be bound to faithfully execute all legislation passed by the World Parliament in accordance with the provisions of this World Constitution, and may not impound or refuse to spend funds appropriated by the World Parliament, nor spend more funds than are appropriated by the World Parliament.
+6. The World Executive may not transcend or contradict the decisions or controls of the World Parliament, the World Judiciary or the Provisions of this World Constitution by any device of executive order or executive privilege or emergency declaration or decree.
 
 
 # Article 7 — The World Administration
-Sec. A — Functions of the World Administration
 
-The World Administration shall be organized to carry out the detailed and continuous administration and implementation of world legislation and world law.
-The World Administration shall be under the direction of the World Executive, and shall at all times be responsible to the World Executive.
-The World Administration shall be organized so as to give professional continuity to the work of administration and implementation.
-Sec. B — Structure and Procedures of the World Administration
+### Sec. A — Functions of the World Administration
 
-The World Administration shall be composed of professionally organized departments and other agencies in all areas of activity requiring continuity of administration and implementation by the World Government.
-Each Department or major agency of the World Administration shall be headed by a Minister who shall be either a member of the Executive Cabinet or a Vice President of the Presidium.
-Each Department or major agency of the World Administration shall have as chief of staff a Senior Administrator, who shall assist the Minister and supervise the detailed work of the Department or agency.
-Each Senior Administrator shall be nominated by the Minister of the particular Department or agency from among persons in the senior lists of the World Civil Service Administration, as soon as senior lists have been established by the World Civil Service Administration, and shall be confirmed by the Presidium. Temporary qualified appointments shall be made by the Ministers, with confirmation by the Presidium, pending establishment of the senior lists.
-There shall be a Secretary General of the World Administration, who shall be nominated by the Presidium and confirmed by absolute majority vote of the entire Executive Cabinet.
-The functions and responsibilities of the Secretary General of the World Administration shall be to assist in coordinating the work of the Senior Administrators of the several Departments and agencies of the World Administration. The Secretary General shall at all times be subject to the direction of the Presidium, and shall be directly responsible to the Presidium.
-The employment of any Senior Administrator and of the Secretary General may be terminated for cause by absolute majority vote of both the Executive Cabinet and Presidium combined, but not contrary to civil service rules which protect tenure on grounds of competence.
-Each Minister of a Department or agency of the World Administration, being also a Member of the World Parliament, shall provide continuous liaison between the particular Department or agency and the World Parliament, shall respond at any time to any questions or requests for information from the Parliament, including committees of any House of the World Parliament.
-The Presidium, in cooperation with the particular Ministers in each case, shall be responsible for the original organization of each of the Departments and major agencies of the World Administration.
-The assignment of legislative measures, constitutional provisions and areas of world law to particular Departments and agencies for administration and implementation shall be done by the Presidium in consultation with the Executive Cabinet and Secretary General, unless specifically provided in legislation passed by the World Parliament.
-The Presidium, in consultation with the Executive Cabinet, may propose the creation of other departments and agencies to have ministerial status; and may propose the alteration, combination or termination of existing Departments and agencies of ministerial status as may seem necessary or desirable. Any such creation, alteration, combination or termination shall require a simple majority vote of approval of the three houses of the World Parliament in joint session.
-The World Parliament by absolute majority vote of the three houses in joint session may specify the creation of new departments or agencies of ministerial status in the World Administration, or may direct the World Executive to alter, combine, or terminate existing departments or agencies of ministerial status.
-The Presidium and the World Executive may not create, establish or maintain any administrative or executive department or agency for the purpose of circumventing control by the World Parliament.
-Sec. C — Departments of the World Administration
+1. The World Administration shall be organized to carry out the detailed and continuous administration and implementation of world legislation and world law.
+2. The World Administration shall be under the direction of the World Executive, and shall at all times be responsible to the World Executive.
+3. The World Administration shall be organized so as to give professional continuity to the work of administration and implementation.
+
+### Sec. B — Structure and Procedures of the World Administration
+
+1. The World Administration shall be composed of professionally organized departments and other agencies in all areas of activity requiring continuity of administration and implementation by the World Government.
+2. Each Department or major agency of the World Administration shall be headed by a Minister who shall be either a member of the Executive Cabinet or a Vice President of the Presidium.
+3. Each Department or major agency of the World Administration shall have as chief of staff a Senior Administrator, who shall assist the Minister and supervise the detailed work of the Department or agency.
+4. Each Senior Administrator shall be nominated by the Minister of the particular Department or agency from among persons in the senior lists of the World Civil Service Administration, as soon as senior lists have been established by the World Civil Service Administration, and shall be confirmed by the Presidium. Temporary qualified appointments shall be made by the Ministers, with confirmation by the Presidium, pending establishment of the senior lists.
+5. There shall be a Secretary General of the World Administration, who shall be nominated by the Presidium and confirmed by absolute majority vote of the entire Executive Cabinet.
+6. The functions and responsibilities of the Secretary General of the World Administration shall be to assist in coordinating the work of the Senior Administrators of the several Departments and agencies of the World Administration. The Secretary General shall at all times be subject to the direction of the Presidium, and shall be directly responsible to the Presidium.
+7. The employment of any Senior Administrator and of the Secretary General may be terminated for cause by absolute majority vote of both the Executive Cabinet and Presidium combined, but not contrary to civil service rules which protect tenure on grounds of competence.
+8. Each Minister of a Department or agency of the World Administration, being also a Member of the World Parliament, shall provide continuous liaison between the particular Department or agency and the World Parliament, shall respond at any time to any questions or requests for information from the Parliament, including committees of any House of the World Parliament.
+9. The Presidium, in cooperation with the particular Ministers in each case, shall be responsible for the original organization of each of the Departments and major agencies of the World Administration.
+10. The assignment of legislative measures, constitutional provisions and areas of world law to particular Departments and agencies for administration and implementation shall be done by the Presidium in consultation with the Executive Cabinet and Secretary General, unless specifically provided in legislation passed by the World Parliament.
+11. The Presidium, in consultation with the Executive Cabinet, may propose the creation of other departments and agencies to have ministerial status; and may propose the alteration, combination or termination of existing Departments and agencies of ministerial status as may seem necessary or desirable. Any such creation, alteration, combination or termination shall require a simple majority vote of approval of the three houses of the World Parliament in joint session.
+12. The World Parliament by absolute majority vote of the three houses in joint session may specify the creation of new departments or agencies of ministerial status in the World Administration, or may direct the World Executive to alter, combine, or terminate existing departments or agencies of ministerial status.
+13. The Presidium and the World Executive may not create, establish or maintain any administrative or executive department or agency for the purpose of circumventing control by the World Parliament.
+
+### Sec. C — Departments of the World Administration
 
 Among the Departments and agencies of the World Administration of ministerial status, but not limited thereto and subject to combinations and to changes in descriptive terminology, shall be those listed under this Section. Each major area of administration shall be headed by a Cabinet Minister and a Senior Administrator, or by a Vice President and a Senior Administrator.
 
-Disarmament and War Prevention.
-Population.
-Food and Agriculture.
-Water Supplies and Waterways.
-Health and Nutrition.
-Education.
-Cultural Diversity and the Arts.
-Habitat and Settlements.
-Environment and Ecology.
-World Resources.
-Oceans and Seabeds.
-Atmosphere and Space.
-Energy.
-Science and Technology.
-Genetic Research and Engineering.
-Labor and Income.
-Economic and Social Development.
-Commerce and Industry.
-Transportation and Travel.
-Multi-National Corporations.
-Communications and Information.
-Human Rights.
-Distributive Justice.
-World Service Corps.
-World Territories, Capitals and Parks.
-Exterior Relations.
-Democratic Procedures.
-Revenue.
+1. Disarmament and War Prevention.
+2. Population.
+3. Food and Agriculture.
+4. Water Supplies and Waterways.
+5. Health and Nutrition.
+6. Education.
+7. Cultural Diversity and the Arts.
+8. Habitat and Settlements.
+9. Environment and Ecology.
+10. World Resources.
+11. Oceans and Seabeds.
+12. Atmosphere and Space.
+13. Energy.
+14. Science and Technology.
+15. Genetic Research and Engineering.
+16. Labor and Income.
+17. Economic and Social Development.
+18. Commerce and Industry.
+19. Transportation and Travel.
+20. Multi-National Corporations.
+21. Communications and Information.
+22. Human Rights.
+23. Distributive Justice.
+24. World Service Corps.
+25. World Territories, Capitals and Parks.
+26. Exterior Relations.
+27. Democratic Procedures.
+28. Revenue.
 
 
 # Article 8 – The Integrative Complex
-Sec. A — Definition
 
-Certain administrative, research, planning and facilitative agencies of the World Government which are particularly essential for the satisfactory functioning of all or most aspects of the World Government, shall be designated as the Integrative Complex. The Integrative Complex shall include the agencies listed under this Section, with the proviso that other such agencies may be added upon recommendation of the Presidium followed by decision of the World Parliament.
-The World Civil Service Administration.
-The World Boundaries and Elections Administration.
-The Institute on Governmental Procedures and World Problems.
-The Agency for Research and Planning.
-The Agency for Technological and Environmental Assessment.
-The World Financial Administration.
-Commission for Legislative Review.
-Each agency of the Integrative Complex shall be headed by a Cabinet Minister and a Senior Administrator, or by a Vice President and a Senior Administrator, together with a Commission as provided hereunder. The rules of procedure for each agency shall be decided by majority decision of the Commission members together with the Administrator and the Minister or Vice President.
-The World Parliament may at any time define further the responsibilities, functioning and organization of the several agencies of the Integrative Complex, consistent with the provisions of Article VIII and other provisions of the World Constitution.
-Each agency of the Integrative Complex shall make an annual report to the World Parliament and to the Presidium.
-Sec. B — The World Civil Service Administration
+### Sec. A — Definition
 
-The functions of the World Civil Service Administration shall be the following, but not limited thereto:
-To formulate and define standards, qualifications, tests, examinations and salary scales for the personnel of all organs, departments, bureaus, offices, commissions and agencies of the World Government, in conformity with the provisions of this World Constitution and requiring approval by the Presidium and Executive Cabinet, subject to review and approval by the World Parliament.
-To establish rosters or lists of competent personnel for all categories of personnel to be appointed or employed in the service of the World Government.
-To select and employ upon request by any government organ, department, bureau, office, institute, commission, agency or authorized official, such competent personnel as may be needed and authorized, except for those positions which are made elective or appointive under provisions of the World Constitution or by specific legislation of the World Parliament.
-The World Civil Service Administration shall be headed by a ten member commission in addition to the Cabinet Minister or Vice President and Senior Administrator. The Commission shall be composed of one commissioner from each of ten World Electoral and Administrative Magna-Regions. The persons to serve as Commissioners shall be nominated by the House of Counsellors and then appointed by the Presidium for five year terms. Commissioners may serve consecutive terms.
-Sec. C — The World Boundaries and Elections Administration
+1. Certain administrative, research, planning and facilitative agencies of the World Government which are particularly essential for the satisfactory functioning of all or most aspects of the World Government, shall be designated as the Integrative Complex. The Integrative Complex shall include the agencies listed under this Section, with the proviso that other such agencies may be added upon recommendation of the Presidium followed by decision of the World Parliament.
+1.1. The World Civil Service Administration.
+1.2. The World Boundaries and Elections Administration.
+1.3. The Institute on Governmental Procedures and World Problems.
+1.4. The Agency for Research and Planning.
+1.5. The Agency for Technological and Environmental Assessment.
+1.6. The World Financial Administration.
+1.7. Commission for Legislative Review.
+2. Each agency of the Integrative Complex shall be headed by a Cabinet Minister and a Senior Administrator, or by a Vice President and a Senior Administrator, together with a Commission as provided hereunder. The rules of procedure for each agency shall be decided by majority decision of the Commission members together with the Administrator and the Minister or Vice President.
+3. The World Parliament may at any time define further the responsibilities, functioning and organization of the several agencies of the Integrative Complex, consistent with the provisions of Article VIII and other provisions of the World Constitution.
+4. Each agency of the Integrative Complex shall make an annual report to the World Parliament and to the Presidium.
 
-The functions of the World Boundaries and Elections Administration shall include the following, but not limited thereto:
-To define the boundaries for the basic World Electoral and Administrative Districts, the World Electoral and Administrative Regions and Magna-Regions, and the Continental Divisions, for submission to the World Parliament for approval by legislative action.
-To make periodic adjustments every ten or five years, as needed, of the boundaries for the World Electoral and Administrative Districts, the World Electoral and Administrative Regions and Magna-Regions, and of the Continental Divisions, subject to approval by the World Parliament.
-To define the detailed procedures for the nomination and election of Members of the World Parliament to the House of Peoples and to the House of Counsellors, subject to approval by the World Parliament.
-To conduct the elections for Members of the World Parliament to the House of Peoples and to the House of Counsellors.
-Before each World Parliamentary Election, to prepare Voters’ Information Booklets which shall summarize major current public issues, and shall list each candidate for elective office together with standard information about each candidate, and give sp ace for each candidate to state his or her views on the defined major issues as well as on any other major issue of choice; to include information on any initiatives or referendums which are to be voted upon; to distribute the Voter’s Information Booklets for each World Electoral District, or suitable group of Districts; and to obtain the advice of the Institute on Governmental Procedures and World Problems, the Agency for Research and Planning, and the Agency for Technological and Environmental Assessment in preparing the booklets.
-To define the rules for world political parties, subject to approval by the World Parliament, and subject to review and recommendations of the World Ombudsmus.
-To define the detailed procedures for legislative initiative and referendum by the Citizens of Earth, and to conduct voting on supra-national or global initiatives and referendums in conjunction with world parliamentary elections.
-To conduct plebiscites when requested by other Organs of the World Government, and to make recommendations for the settlement of boundary disputes.
-To conduct a global census every five years, and to prepare and maintain complete demographic analyses for Earth.
-The World Boundaries and Elections Administration shall be headed by a ten member commission in addition to the Senior Administrator and the Cabinet Minister or Vice President. The commission shall be composed of one commissioner each from ten World Electoral and Administrative Magna-Regions. The persons to serve as commissioners shall be nominated by the House of Counsellors and then appointed by the World Presidium for five year terms. Commissioners may serve consecutive terms.
-Sec. D — Institute on Governmental Procedures and World Problems
+### Sec. B — The World Civil Service Administration
 
-The functions of the Institute on Governmental Procedures and World Problems shall be as follows, but not limited thereto:
-To prepare and conduct courses of information, education and training for all personnel in the service of the World Government, including Members of the World Parliament and of all other elective, appointive and civil service personnel, so that every person in the service of the World Government may have a better understanding of the functions, structure, procedures and inter-relationships of the various organs, departments, bureaus, offices, institutes, commissions, agencies and other parts of the World Government.
-To prepare and conduct courses and seminars for information, education, discussion, updating and new ideas in all areas of world problems, particularly for Members of the World Parliament and of the World Executive, and for the chief personnel of all organs, departments and agencies of the World Government, but open to all in the service of the World Government.
-To bring in qualified persons from private and public universities, colleges and research and action organizations of many countries, as well as other qualified persons, to lecture and to be resource persons for the courses and seminars organized by the Institute on Governmental Procedures and World Problems.
-To contract with private or public universities and colleges or other agencies to conduct courses and seminars for the Institute.
-The Institute on Governmental Procedures and World Problems shall be supervised by a ten member commission in addition to the Senior Administrator and Cabinet Minister or Vice President. The commission shall be composed of one commissioner each to be named by the House of Peoples, the House of Nations, the House of Counsellors, the Presidium, the Collegium of World Judges, The World Ombudsmus, The World Attorneys General Office, the Agency for Research and Planning, the Agency for Technological and Environmental Assessment, and the World Financial Administration. Commissioners shall serve five year terms, and may serve consecutive terms.
-Sec. E — The Agency for Research and Planning
+1. The functions of the World Civil Service Administration shall be the following, but not limited thereto:
+1.1. To formulate and define standards, qualifications, tests, examinations and salary scales for the personnel of all organs, departments, bureaus, offices, commissions and agencies of the World Government, in conformity with the provisions of this World Constitution and requiring approval by the Presidium and Executive Cabinet, subject to review and approval by the World Parliament.
+1.2. To establish rosters or lists of competent personnel for all categories of personnel to be appointed or employed in the service of the World Government.
+1.3. To select and employ upon request by any government organ, department, bureau, office, institute, commission, agency or authorized official, such competent personnel as may be needed and authorized, except for those positions which are made elective or appointive under provisions of the World Constitution or by specific legislation of the World Parliament.
+2. The World Civil Service Administration shall be headed by a ten member commission in addition to the Cabinet Minister or Vice President and Senior Administrator. The Commission shall be composed of one commissioner from each of ten World Electoral and Administrative Magna-Regions. The persons to serve as Commissioners shall be nominated by the House of Counsellors and then appointed by the Presidium for five year terms. Commissioners may serve consecutive terms.
 
-The functions of the Agency for Research and Planning shall be as follows, but not limited thereto:
-To serve the World Parliament, the World Executive, the World Administration, and other organs, departments and agencies of the World Government in any matter requiring research and planning within the competence of the agency.
-To prepare and maintain a comprehensive inventory of world resources.
-To prepare comprehensive long-range plans for the development, conservation, recycling and equitable sharing of the resources of Earth for the benefit of all people on Earth, subject to legislative action by the World Parliament.
-To prepare and maintain a comprehensive list and description of all world problems, including their inter-relationships, impact time projections and proposed solutions, together with bibliographies.
-To do research and help prepare legislative measures at the request of any Member of the World Parliament or of any committee of any House of the World Parliament.
-To do research and help prepare proposed legislation or proposed legislative programs and schedules at the request of the Presidium or Executive Cabinet or of any Cabinet Minister.
-To do research and prepare reports at the request of any other organ, department or agency of the World Government.
-To enlist the help of public and private universities, colleges, research agencies, and other associations and organizations for various research and planning projects.
-To contract with public and private universities, colleges, research agencies and other organizations for the preparation of specific reports, studies and proposals.
-To maintain a comprehensive World Library for the use of all Members of the World Parliament, and for the use of all other officials and persons in the service of the World Government, as well as for public information.
-The Agency for Research and Planning shall be supervised by a ten member commission in addition to the Senior Administrator and Cabinet Minister or Vice President. The commission shall be composed of one commissioner each to be named by the House of Peoples, the House of Nations, the House of Counsellors, the Presidium, the Collegium of World Judges, the Office of World Attorneys General, World Ombudsmus, the Agency for Technological and Environmental Assessment, the Institute on Governmental Procedures and World Problems, and the World Financial Administration. Commissioners shall serve five year terms, and may serve consecutive terms.
-Sec. F — The Agency for Technological and Environmental Assessment
+### Sec. C — The World Boundaries and Elections Administration
 
-The functions of the agency for Technological and Environmental Assessment shall include the following, but not limited thereto:
-To establish and maintain a registration and description of all significant technological innovations, together with impact projections.
-To examine, analyze and assess the impacts and consequences of technological innovations which may have either significant beneficial or significant harmful or dangerous consequences for human life or for the ecology of life on Earth, or which may require particular regulations or prohibitions to prevent or eliminate dangers or to assure benefits.
-To examine, analyze and assess environmental and ecological problems, in particular the environmental and ecological problems which may result from any intrusions or changes of the environment or ecological relationships which may be caused by technological innovations, processes of resource development, patterns of human settlements, the production of energy, patterns of economic and industrial development, or other man-made intrusions and changes of the environment, or which may result from natural causes.
-To maintain a global monitoring network to measure possible harmful effects of technological innovations and environmental disturbances so that corrective measures can be designed.
-To prepare recommendations based on technological and environmental analyses and assessments, which can serve as guides to the World Parliament, the World Executive, the World Administration, the Agency for Research and Planning, and to the other organs, departments and agencies of the World Government, as well as to individuals in the service of the World Government and to national and local governments and legislative bodies.
-To enlist the voluntary or contractual aid and participation of private and public universities, colleges, research institutions and other associations and organizations in the work of technological and environmental assessment.
-To enlist the voluntary or contractual aid and participation of private and public universities and colleges, research institutions and other organizations in devising and developing alternatives to harmful or dangerous technologies and environmentally disruptive activities, and in devising controls to assure beneficial results from technological innovations or to prevent harmful results from either technological innovations or environmental changes, all subject to legislation for implementation by the World Parliament.
-The Agency for Technological and Environmental Assessment shall be supervised by a ten member commission in addition to the Senior Administrator and Cabinet Minister or Vice President. The commission shall be composed of one commissioner from each of ten World Electoral and Administrative Magna-Regions. The persons to serve as commissioners shall be nominated by the House of Counsellors, and then appointed by the World Presidium for five year terms. Commissioners may serve consecutive terms.
-Sec. G — The World Financial Administration
+1. The functions of the World Boundaries and Elections Administration shall include the following, but not limited thereto:
+1.1. To define the boundaries for the basic World Electoral and Administrative Districts, the World Electoral and Administrative Regions and Magna-Regions, and the Continental Divisions, for submission to the World Parliament for approval by legislative action.
+1.2. To make periodic adjustments every ten or five years, as needed, of the boundaries for the World Electoral and Administrative Districts, the World Electoral and Administrative Regions and Magna-Regions, and of the Continental Divisions, subject to approval by the World Parliament.
+1.3. To define the detailed procedures for the nomination and election of Members of the World Parliament to the House of Peoples and to the House of Counsellors, subject to approval by the World Parliament.
+1.4. To conduct the elections for Members of the World Parliament to the House of Peoples and to the House of Counsellors.
+1.5. Before each World Parliamentary Election, to prepare Voters’ Information Booklets which shall summarize major current public issues, and shall list each candidate for elective office together with standard information about each candidate, and give sp ace for each candidate to state his or her views on the defined major issues as well as on any other major issue of choice; to include information on any initiatives or referendums which are to be voted upon; to distribute the Voter’s Information Booklets for each World Electoral District, or suitable group of Districts; and to obtain the advice of the Institute on Governmental Procedures and World Problems, the Agency for Research and Planning, and the Agency for Technological and Environmental Assessment in preparing the booklets.
+1.6. To define the rules for world political parties, subject to approval by the World Parliament, and subject to review and recommendations of the World Ombudsmus.
+1.7. To define the detailed procedures for legislative initiative and referendum by the Citizens of Earth, and to conduct voting on supra-national or global initiatives and referendums in conjunction with world parliamentary elections.
+1.8. To conduct plebiscites when requested by other Organs of the World Government, and to make recommendations for the settlement of boundary disputes.
+1.9. To conduct a global census every five years, and to prepare and maintain complete demographic analyses for Earth.
+2. The World Boundaries and Elections Administration shall be headed by a ten member commission in addition to the Senior Administrator and the Cabinet Minister or Vice President. The commission shall be composed of one commissioner each from ten World Electoral and Administrative Magna-Regions. The persons to serve as commissioners shall be nominated by the House of Counsellors and then appointed by the World Presidium for five year terms. Commissioners may serve consecutive terms.
 
-The functions of the World Financial Administration shall include the following, but not limited thereto:
-To establish and operate the procedures for the collection of revenues for the World Government, pursuant to legislation by the World Parliament, inclusive of taxes, globally accounted social and public costs, licenses, fees, revenue sharing arrangements, income derived from supra-national public enterprises or projects or resource developments, and all other sources.
-To operate a Planetary Accounting Office, and thereunder to make cost/benefit studies and reports of the functioning and activities of the World Government and of its several organs, departments, branches, bureaus, offices, commissions, institutes, agencies and other parts or projects. In making such studies and reports, account shall be taken not only of direct financial costs and benefits, but also of human, social, environmental, indirect, long-term and other costs and benefits, and of actual or possible hazards and damages. Such studies and reports shall also be designed to uncover any wastes, inefficiencies, misapplications, corruptions, diversions, unnecessary costs, and other possible irregularities.
-To make cost/benefit studies and reports at the request of any House or committee of the World Parliament, and of the Presidium, the Executive Cabinet, the World Ombudsmus, the Office of World Attorneys General, the World Supreme Court, or of any administrative department or any agency of the Integrative Complex, as well as upon its own initiative.
-To operate a Planetary Comptrollers Office and thereunder to supervise the disbursement of the funds of the World Government for all purposes, projects and activities duly authorized by this World Constitution, the World Parliament, the World Executive, and other organs, departments and agencies of the World Government.
-To establish and operate a Planetary Banking System, making the transition to a common global currency, under the terms of specific legislation passed by the World Parliament.
-Pursuant to specific legislation enacted by the World Parliament, and in conjunction with the Planetary Banking System, to establish and implement the procedures of a Planetary Monetary and Credit System based upon useful productive capacity and performance, both in goods and services. Such a monetary and credit system shall be designed for use within the Planetary Banking System for the financing of the activities and projects of the World Government, and for all other financial purposes approved by the World Parliament, without requiring the payment of interest on bonds, investments or other claims of financial ownership or debt.
-To establish criteria for the extension of financial credit based upon such considerations as people available to work, usefulness, cost/benefit accounting, human and social values, environmental health and esthetics, minimizing disparities, integrity, competent management, appropriate technology, potential production and performance.
-To establish and operate a Planetary Insurance System in areas of world need which transcend national boundaries and in accordance with legislation passed by the World Parliament.
-To assist the Presidium as may be requested in the technical preparation of budgets for the operation of the World Government.
-The World Financial Administration shall be supervised by a commission of ten members, together with a Senior Administrator and a Cabinet Minister or Vice President. The commission shall be composed of one commissioner each to be named by the House of Peoples, the House of Nations, the House of Counsellors, the Presidium, the Collegium of World Judges, the Office of Attorneys General, the World Ombudsmus, the Agency for Research and Planning, the Agency for Technological and Environmental Assessment, and the Institute on Governmental Procedures and World Problems. Commissioners shall serve terms of five years, and may serve consecutive terms.
-Sec. H — Commission for Legislative Review
+### Sec. D — Institute on Governmental Procedures and World Problems
 
-The functions of the Commission for Legislative Review shall be to examine World Legislation and World Laws which the World Parliament enacts or adopts from the previous Body of International Law for the purpose of analyzing whether any particular legislation or law has become obsolete or obstructive or defective in serving the purposes intended; and to make recommendations to the World Parliament accordingly for repeal or amendment or replacement.
-The Commission for Legislative Review shall be composed of twelve members, including two each to be elected by the House of Peoples, the House of Nations, the House of Counsellors, the Collegium of World Judges, the World Ombudsmus and the Presidium. Members of the Commission shall serve terms of ten years, and may be re-elected to serve consecutive terms. One half of the Commission members after the Commission is first formed shall be elected every five years, with the first terms for one half of the members to be only five years.
+1. The functions of the Institute on Governmental Procedures and World Problems shall be as follows, but not limited thereto:
+1.1. To prepare and conduct courses of information, education and training for all personnel in the service of the World Government, including Members of the World Parliament and of all other elective, appointive and civil service personnel, so that every person in the service of the World Government may have a better understanding of the functions, structure, procedures and inter-relationships of the various organs, departments, bureaus, offices, institutes, commissions, agencies and other parts of the World Government.
+1.2. To prepare and conduct courses and seminars for information, education, discussion, updating and new ideas in all areas of world problems, particularly for Members of the World Parliament and of the World Executive, and for the chief personnel of all organs, departments and agencies of the World Government, but open to all in the service of the World Government.
+1.3. To bring in qualified persons from private and public universities, colleges and research and action organizations of many countries, as well as other qualified persons, to lecture and to be resource persons for the courses and seminars organized by the Institute on Governmental Procedures and World Problems.
+1.4. To contract with private or public universities and colleges or other agencies to conduct courses and seminars for the Institute.
+1.5. The Institute on Governmental Procedures and World Problems shall be supervised by a ten member commission in addition to the Senior Administrator and Cabinet Minister or Vice President. The commission shall be composed of one commissioner each to be named by the House of Peoples, the House of Nations, the House of Counsellors, the Presidium, the Collegium of World Judges, The World Ombudsmus, The World Attorneys General Office, the Agency for Research and Planning, the Agency for Technological and Environmental Assessment, and the World Financial Administration. Commissioners shall serve five year terms, and may serve consecutive terms.
+
+### Sec. E — The Agency for Research and Planning
+
+1. The functions of the Agency for Research and Planning shall be as follows, but not limited thereto:
+1.1. To serve the World Parliament, the World Executive, the World Administration, and other organs, departments and agencies of the World Government in any matter requiring research and planning within the competence of the agency.
+1.2. To prepare and maintain a comprehensive inventory of world resources.
+1.3. To prepare comprehensive long-range plans for the development, conservation, recycling and equitable sharing of the resources of Earth for the benefit of all people on Earth, subject to legislative action by the World Parliament.
+1.4. To prepare and maintain a comprehensive list and description of all world problems, including their inter-relationships, impact time projections and proposed solutions, together with bibliographies.
+1.5. To do research and help prepare legislative measures at the request of any Member of the World Parliament or of any committee of any House of the World Parliament.
+1.6. To do research and help prepare proposed legislation or proposed legislative programs and schedules at the request of the Presidium or Executive Cabinet or of any Cabinet Minister.
+1.7. To do research and prepare reports at the request of any other organ, department or agency of the World Government.
+1.8. To enlist the help of public and private universities, colleges, research agencies, and other associations and organizations for various research and planning projects.
+1.9. To contract with public and private universities, colleges, research agencies and other organizations for the preparation of specific reports, studies and proposals.
+1.10. To maintain a comprehensive World Library for the use of all Members of the World Parliament, and for the use of all other officials and persons in the service of the World Government, as well as for public information.
+2. The Agency for Research and Planning shall be supervised by a ten member commission in addition to the Senior Administrator and Cabinet Minister or Vice President. The commission shall be composed of one commissioner each to be named by the House of Peoples, the House of Nations, the House of Counsellors, the Presidium, the Collegium of World Judges, the Office of World Attorneys General, World Ombudsmus, the Agency for Technological and Environmental Assessment, the Institute on Governmental Procedures and World Problems, and the World Financial Administration. Commissioners shall serve five year terms, and may serve consecutive terms.
+
+### Sec. F — The Agency for Technological and Environmental Assessment
+
+1. The functions of the agency for Technological and Environmental Assessment shall include the following, but not limited thereto:
+1.1. To establish and maintain a registration and description of all significant technological innovations, together with impact projections.
+1.2. To examine, analyze and assess the impacts and consequences of technological innovations which may have either significant beneficial or significant harmful or dangerous consequences for human life or for the ecology of life on Earth, or which may require particular regulations or prohibitions to prevent or eliminate dangers or to assure benefits.
+1.3. To examine, analyze and assess environmental and ecological problems, in particular the environmental and ecological problems which may result from any intrusions or changes of the environment or ecological relationships which may be caused by technological innovations, processes of resource development, patterns of human settlements, the production of energy, patterns of economic and industrial development, or other man-made intrusions and changes of the environment, or which may result from natural causes.
+1.4. To maintain a global monitoring network to measure possible harmful effects of technological innovations and environmental disturbances so that corrective measures can be designed.
+1.5. To prepare recommendations based on technological and environmental analyses and assessments, which can serve as guides to the World Parliament, the World Executive, the World Administration, the Agency for Research and Planning, and to the other organs, departments and agencies of the World Government, as well as to individuals in the service of the World Government and to national and local governments and legislative bodies.
+1.6. To enlist the voluntary or contractual aid and participation of private and public universities, colleges, research institutions and other associations and organizations in the work of technological and environmental assessment.
+1.7. To enlist the voluntary or contractual aid and participation of private and public universities and colleges, research institutions and other organizations in devising and developing alternatives to harmful or dangerous technologies and environmentally disruptive activities, and in devising controls to assure beneficial results from technological innovations or to prevent harmful results from either technological innovations or environmental changes, all subject to legislation for implementation by the World Parliament.
+2. The Agency for Technological and Environmental Assessment shall be supervised by a ten member commission in addition to the Senior Administrator and Cabinet Minister or Vice President. The commission shall be composed of one commissioner from each of ten World Electoral and Administrative Magna-Regions. The persons to serve as commissioners shall be nominated by the House of Counsellors, and then appointed by the World Presidium for five year terms. Commissioners may serve consecutive terms.
+
+### Sec. G — The World Financial Administration
+
+1. The functions of the World Financial Administration shall include the following, but not limited thereto:
+1.1. To establish and operate the procedures for the collection of revenues for the World Government, pursuant to legislation by the World Parliament, inclusive of taxes, globally accounted social and public costs, licenses, fees, revenue sharing arrangements, income derived from supra-national public enterprises or projects or resource developments, and all other sources.
+1.2. To operate a Planetary Accounting Office, and thereunder to make cost/benefit studies and reports of the functioning and activities of the World Government and of its several organs, departments, branches, bureaus, offices, commissions, institutes, agencies and other parts or projects. In making such studies and reports, account shall be taken not only of direct financial costs and benefits, but also of human, social, environmental, indirect, long-term and other costs and benefits, and of actual or possible hazards and damages. Such studies and reports shall also be designed to uncover any wastes, inefficiencies, misapplications, corruptions, diversions, unnecessary costs, and other possible irregularities.
+1.3. To make cost/benefit studies and reports at the request of any House or committee of the World Parliament, and of the Presidium, the Executive Cabinet, the World Ombudsmus, the Office of World Attorneys General, the World Supreme Court, or of any administrative department or any agency of the Integrative Complex, as well as upon its own initiative.
+1.4. To operate a Planetary Comptrollers Office and thereunder to supervise the disbursement of the funds of the World Government for all purposes, projects and activities duly authorized by this World Constitution, the World Parliament, the World Executive, and other organs, departments and agencies of the World Government.
+1.5. To establish and operate a Planetary Banking System, making the transition to a common global currency, under the terms of specific legislation passed by the World Parliament.
+1.6. Pursuant to specific legislation enacted by the World Parliament, and in conjunction with the Planetary Banking System, to establish and implement the procedures of a Planetary Monetary and Credit System based upon useful productive capacity and performance, both in goods and services. Such a monetary and credit system shall be designed for use within the Planetary Banking System for the financing of the activities and projects of the World Government, and for all other financial purposes approved by the World Parliament, without requiring the payment of interest on bonds, investments or other claims of financial ownership or debt.
+1.7. To establish criteria for the extension of financial credit based upon such considerations as people available to work, usefulness, cost/benefit accounting, human and social values, environmental health and esthetics, minimizing disparities, integrity, competent management, appropriate technology, potential production and performance.
+1.8. To establish and operate a Planetary Insurance System in areas of world need which transcend national boundaries and in accordance with legislation passed by the World Parliament.
+1.9. To assist the Presidium as may be requested in the technical preparation of budgets for the operation of the World Government.
+2. The World Financial Administration shall be supervised by a commission of ten members, together with a Senior Administrator and a Cabinet Minister or Vice President. The commission shall be composed of one commissioner each to be named by the House of Peoples, the House of Nations, the House of Counsellors, the Presidium, the Collegium of World Judges, the Office of Attorneys General, the World Ombudsmus, the Agency for Research and Planning, the Agency for Technological and Environmental Assessment, and the Institute on Governmental Procedures and World Problems. Commissioners shall serve terms of five years, and may serve consecutive terms.
+
+### Sec. H — Commission for Legislative Review
+
+1. The functions of the Commission for Legislative Review shall be to examine World Legislation and World Laws which the World Parliament enacts or adopts from the previous Body of International Law for the purpose of analyzing whether any particular legislation or law has become obsolete or obstructive or defective in serving the purposes intended; and to make recommendations to the World Parliament accordingly for repeal or amendment or replacement.
+2. The Commission for Legislative Review shall be composed of twelve members, including two each to be elected by the House of Peoples, the House of Nations, the House of Counsellors, the Collegium of World Judges, the World Ombudsmus and the Presidium. Members of the Commission shall serve terms of ten years, and may be re-elected to serve consecutive terms. One half of the Commission members after the Commission is first formed shall be elected every five years, with the first terms for one half of the members to be only five years.
 
 
 # Article 9 — The World Judiciary
-Sec. A — Jurisdiction of the World Supreme Court
+
+### Sec. A — Jurisdiction of the World Supreme Court
 
 A World Supreme Court shall be established, together with such regional and district World Courts as may subsequently be found necessary. The World Supreme Court shall comprise a number of benches.
 The World Supreme Court, together with such regional and district World Courts as may be established, shall have mandatory jurisdiction in all cases, actions, disputes, conflicts, violations of law, civil suits, guarantees of civil and human rights, constitutional interpretations, and other litigations arising under the provisions of this World Constitution, world legislation, and the body of world law approved by the World Parliament.
 Decisions of the World Supreme Court shall be binding on all parties involved in all cases, actions and litigations brought before any bench of the World Supreme Court for settlement. Each bench of the World Supreme Court shall constitute a court of highest appeal, except when matters of extra-ordinary public importance are assigned or transferred to the Superior Tribunal of the World Supreme Court, as provided in Section E of # Article IX.
-Sec. B — Benches of the World Supreme Court
+
+### Sec. B — Benches of the World Supreme Court
 
 The benches of the World Supreme Court and their respective jurisdictions shall be as follows:
 
@@ -468,7 +499,8 @@ Bench for Public Cases: To deal with issues not under the jurisdiction of anothe
 Appellate Bench: To deal with issues involving world legislation and world law which may be appealed from national courts; and to decide which bench to assign a case or action or litigation when a question or disagreement arises over the proper jurisdiction.
 Advisory Bench: To give opinions upon request on any legal question arising under world law or world legislation, exclusive of contests or actions involving interpretation of the World Constitution. Advisory opinions may be requested by any House or committee of the World Parliament, by the Presidium, any Administrative Department, the Office of World Attorneys General, the World Ombudsmus, or by any agency of the Integrative Complex.
 Other benches may be established, combined or terminated upon recommendation of the Collegium of World Judges with approval by the World Parliament; but benches number one through eight may not be combined nor terminated except by amendment of this World Constitution.
-Sec. C — Seats of the World Supreme Court
+
+### Sec. C — Seats of the World Supreme Court
 
 The primary seat of the World Supreme Court and all benches shall be the same as for the location of the Primary World Capital and for the location of the World Parliament and the World Executive.
 Continental seats of the World Supreme Court shall be established in the four secondary capitals of the World Government located in four different Continental Divisions of Earth, as provided in Article XV.
@@ -476,7 +508,8 @@ The following permanent benches of the World Supreme Court shall be established 
 The following permanent benches of the World Supreme Court shall be located only at the primary seat of the World Supreme Court: Constitutional Cases, International Conflicts, Appellate Bench, and Advisory Bench.
 Benches which are located permanently only at the primary seat of the World Supreme Court may hold special sessions at the other continental seats of the World Supreme Court when necessary, or may establish continental circuits if needed.
 Benches of the World Supreme Court which have permanent continental locations may hold special sessions at other locations when needed, or may establish regional circuits if needed.
-Sec. D — The Collegium of World Judges
+
+### Sec. D — The Collegium of World Judges
 
 A Collegium of World Judges shall be established by the World Parliament. The Collegium shall consist of a minimum of twenty member judges, and may be expanded as needed but not to exceed sixty members.
 The World Judges to compose the Collegium of World Judges shall be nominated by the House of Counsellors and shall be elected by plurality vote of the three Houses of the World Parliament in joint session. The House of Counsellors shall nominate between two and three times the number of world judges to be elected at any one time. An equal number of World Judges shall be elected from each of ten World Electoral and Administrative Magna-Regions, if not immediately then by rotation.
@@ -490,14 +523,16 @@ Qualifications for Judges of the World Supreme Court shall be at least ten years
 The salaries, expenses, remunerations and prerogatives of the World Judges shall be determined by the World Parliament, and shall be reviewed every five years, but shall not be changed to the disadvantage of any World Judge during a term of office. All members of the Collegium of World Judges shall receive the same salaries, except that additional compensation may be given to the Presiding Council of World Judges.
 Upon recommendation by the Collegium of World Judges, the World Parliament shall have the authority to establish regional and district world courts below the World Supreme Court, and to establish the jurisdictions thereof, and the procedures for appeal to the World Supreme Court or to the several benches thereof.
 The detailed rules of procedure for the functioning of the World Supreme Court, the Collegium of World Judges, and for each bench of the World Supreme Court, shall be decided and amended by absolute majority vote of the Collegium of World Judges.
-Sec. E — The Superior Tribunal of the World Supreme Court
+
+### Sec. E — The Superior Tribunal of the World Supreme Court
 
 A Superior Tribunal of the World Supreme Court shall be established to take cases which are considered to be of extra-ordinary public importance. The Superior Tribunal for any calendar year shall consist of the Presiding Council of World Judges together with one World Judge named by the Presiding Judge of each bench of the World Court sitting at the primary seat of the World Supreme Court. The composition of the Superior Tribunal may be continued unchanged for a second year by decision of the Presiding Council of World Judges.
 Any party to any dispute, issue, case or litigation coming under the jurisdiction of the World Supreme Court, may apply to any particular bench of the World Supreme Court or to the Presiding Council of World Judges for the assignment or transfer of the case to the Superior Tribunal on the grounds of extra-ordinary public importance. If the application is granted, the case shall be heard and disposed of by the Superior Tribunal. Also, any bench taking any particular case, if satisfied that the case is of extra-ordinary public importance, may of its own discretion transfer the case to the Superior Tribunal.
 
 
 # Article 10 — The Enforcement System
-Sec. A — Basic Principles
+
+### Sec. A — Basic Principles
 
 The enforcement of world law and world legislation shall apply directly to individual, and individuals shall be held responsible for compliance with world law and world legislation regardless of whether the individuals are acting in their own capacity or as agents or officials of governments at any level or of the institutions of governments, or as agents or officials of corporations, organizations, associations or groups of any kind.
 When world law or world legislation or decisions of the world courts are violated, the Enforcement System shall operate to identify and apprehend the individuals responsible for violations.
@@ -505,7 +540,8 @@ Any enforcement action shall not violate the civil and human rights guaranteed u
 The enforcement of world law and world legislation shall be carried out in the context of a non-military world federation wherein all member nations shall disarm as a condition for joining and benefiting from the world federation, subject to Article X VII, Sec. C-8 and D-6. The World Republic and World Government under this World Constitution shall neither keep nor use weapons of mass destruction.
 Those agents of the enforcement system whose function shall be to apprehend and bring to court violators of world law and world legislation shall be equipped only with such weapons as are appropriate for the apprehension of the individuals responsible for violations.
 The enforcement of world law and world legislation under this World Constitution shall be conceived and developed primarily as the processes of effective design and administration of world law and world legislation to serve the welfare of all people on Earth, with equity and justice for all, in which the resources of Earth and the funds and the credits of the World Government are used only to serve peaceful human needs, and none used for weapons of mass destruction or for war making capabilities.
-Sec. B — The Structure for Enforcement: World Attorneys General
+
+### Sec. B — The Structure for Enforcement: World Attorneys General
 
 The Enforcement System shall be headed by an Office of World Attorneys General and a Commission of Regional World Attorneys.
 The Office of World Attorneys General shall be comprised of five members, one of whom shall be designated as the World Attorney General and the other four shall each be designated an Associate World Attorney General.
@@ -522,7 +558,8 @@ Remedies and correction.
 Conflict resolution.
 Qualifications for a member of the Office of World Attorneys General and for the Regional World Attorneys shall be at least thirty years of age, at least seven years legal experience, and education in law and the humanities.
 The World Attorney General, the Associate World Attorneys General, and the Regional World Attorneys shall at all times be responsible to the World Parliament. Any member of the Office of World Attorneys General and any Regional World Attorney can be removed from office for cause by a simple majority vote of the three Houses of the World Parliament in joint session.
-Sec. C — The World Police
+
+### Sec. C — The World Police
 
 That section of the staff of the Office of World Attorneys General and of the Offices of Regional World Attorneys responsible for the apprehension and arrest of violators of world law and world legislation, shall be designated as World Police.
 Each regional staff of the World Police shall be headed by a Regional World Police Captain, who shall be appointed by the Regional World Attorney.
@@ -531,7 +568,8 @@ Searches and arrests to be made by World Police shall be made only upon warrants
 World Police shall be armed only with weapons appropriate for the apprehension of the individuals responsible for violation of world law.
 Employment in the capacity of World Police Captain and World Police Supervisor shall be limited to ten years.
 The World Police Supervisor and any Regional World Police Captain may be removed from office for cause by decision of the Office of World Attorneys General or by absolute majority vote of the three Houses of the World Parliament in joint session.
-Sec. D — The Means of Enforcement
+
+### Sec. D — The Means of Enforcement
 
 Non-military means of enforcement of world law and world legislation shall be developed by the World Parliament and by the Office of World Attorneys General in consultation with the Commission of Regional World Attorneys, the Collegium of World Judges , the World Presidium, and the World Ombudsmus. The actual means of enforcement shall require legislation by the World Parliament.
 Non-military means of enforcement which can be developed may include: Denial of financial credit; denial of material resources and personnel; revocation of licenses, charters, or corporate rights; impounding of equipment; fines and damage payments; performance of work to rectify damages; imprisonment or isolation; and other means appropriate to the specific situations.
@@ -540,7 +578,8 @@ A basic condition for preventing outbreaks of violence which the Enforcement Sys
 
 
 # Article 11 — The World Ombudsmus
-Sec. A — Functions and Powers of the World Ombudsmus
+
+### Sec. A — Functions and Powers of the World Ombudsmus
 
 The functions and powers of the World Ombudsmus, as public defender, shall include the following:
 
@@ -555,7 +594,8 @@ To request the Office of World Attorneys General or any Regional World Attorney 
 To directly initiate legal actions and court proceedings whenever the World Ombudsmus deems necessary.
 To review the functioning of the departments, bureaus, offices, commissions, institutes, organs and agencies of the World Government to ascertain whether the procedures of the World government are adequately fulfilling their purposes and serving the welfare of humanity in optimum fashion, and to make recommendations for improvements.
 To present an annual report to the World Parliament and to the Presidium on the activities of the World Ombudsmus, together with any recommendations for legislative measures to improve the functioning of the World Government for the purpose of better serving the welfare of the People of Earth.
-Sec. B — Composition of the World Ombudsmus
+
+### Sec. B — Composition of the World Ombudsmus
 
 The World Ombudsmus shall be headed by a Council of World Ombudsen of five members, one of whom shall be designated as Principal World Ombudsan, while the other four shall each be designated as an Associate World Ombudsan.
 Members to compose the Council of World Ombudsen shall be nominated by the House of Counsellors, with three nominees from each Continental Division of Earth. One member of the Council shall be elected from each of five Continental Divisions by plurality vote of the three Houses of the World Parliament in joint session.
@@ -569,6 +609,7 @@ Qualifications for World Ombudsan and for World Advocate shall be at least thirt
 
 
 # Article 12 — Bill of Rights for the Citizens of Earth
+
 The inhabitants and citizens of Earth who are within the World Republic shall have certain inalienable rights defined hereunder. It shall be mandatory for the World Parliament, the World Executive, and all organs and agencies of the World Government to honor, implement and enforce these rights, as well as for the national governments of all member nations in the World Republic to do likewise. Individuals or groups suffering violation or neglect of such rights shall have full recourse through the World Ombudsmus, the Enforcement System and the World Courts for redress of grievances. The inalienable rights shall include the following:
 
 Equal rights for all citizens of the World Republic, with no discrimination on grounds of race, color, caste, nationality, sex, religion, political affiliation, property, or social status.
@@ -592,6 +633,7 @@ Right of privacy of person, family and association; prohibition against surveill
 
 
 # Article 13 — Directive Principles for the World Government
+
 It shall be the aim of the World Government to secure certain other rights for all inhabitants within the World Republic, but without immediate guarantee of universal achievement and enforcement. These rights are defined as Directive Principles, obligating the World Government to pursue every reasonable means for universal realization and implementation, and shall include the following:
 
 Equal opportunity for useful employment for everyone, with wages or remuneration sufficient to assure human dignity.
@@ -616,7 +658,8 @@ Prohibition against the death penalty.
 
 
 # Article 14 — Safeguards and Reservations
-Sec. A — Certain Safeguards
+
+### Sec. A — Certain Safeguards
 
 The World Government shall operate to secure for all nations and peoples within the World Republic the safeguards which are defined hereunder:
 
@@ -624,24 +667,27 @@ Guarantee that full faith and credit shall be given to the public acts, records,
 Assure freedom of choice within the member nations and countries of the World Republic to determine their internal political, economic and social systems, consistent with the guarantees and protections given under this World Constitution to assure civil liberties and human rights and a safe environment for life, and otherwise consistent with the several provisions of this World Constitution.
 Grant the right of asylum within the World Republic for persons who may seek refuge from countries or nations which are not yet included within the World Republic.
 Grant the right of individuals and groups, after the World Republic includes 90 percent of the territory of Earth, to peacefully leave the hegemony of the World Republic and to live in suitable territory set aside by the Federation neither restricted nor protected by the World Government, provided that such territory does not extend beyond five percent of Earth’s habitable territory, is kept completely disarmed and not used as a base for inciting violence or insurrection within or against the World Republic or any member nation, and is kept free of acts of environmental or technological damage which seriously affect Earth outside such territory.
-Sec. B — Reservation of Powers
+
+### Sec. B — Reservation of Powers
 
 The powers not delegated to the World Government by this World Constitution shall be reserved to the nations of the World Republic and to the people of Earth.
 
 
-
 # Article 15 — World Federal Zones and the World Capitals
-Sec. A — World Federal Zones
+
+### Sec. A — World Federal Zones
 
 Twenty World Federal Zones shall be established within the twenty World Electoral and Administrative Regions, for the purposes of the location of the several organs of the World Government and of the administrative departments, the world courts, the offices of the Regional World Attorneys, the offices of the World Advocates, and for the location of other branches, departments, institutes, offices, bureaus, commissions, agencies and parts of the World Government.
 The World Federal Zones shall be established as the needs and resources of the World Government develop and expand. World Federal Zones shall be established first within each of five Continental Divisions.
 The location and administration of the World Federal Zones, including the first five, shall be determined by the World Parliament.
-Sec. B — The World Capitals
+
+### Sec. B — The World Capitals
 
 Five World Capitals shall be established in each of five Continental Divisions of Earth, to be located in each of the five World Federal Zones which are established first as provided in Article 15 of this World Constitution.
 One of the World Capitals shall be designated by the World Parliament as the Primary World Capital, and the other four shall be designated as Secondary World Capitals.
 The primary seats of all organs of the World Government shall be located in the Primary World Capital, and other major seats of the several organs of the World Government shall be located in the Secondary World Capitals.
-Sec. C — Locational Procedures
+
+### Sec. C — Locational Procedures
 
 Choices for location of the twenty World Federal Zones and for the five World Capitals shall be proposed by the Presidium, and then shall be decided by a simple majority vote of the three Houses of the World Parliament in joint session. The Presidium shall offer choices of two or three locations in each of the twenty World Electoral and Administrative Regions to be World Federal Zones, and shall offer two alternative choices for each of the five World Capitals.
 The Presidium in consultation with the Executive Cabinet shall then propose which of the five World Capitals shall be the Primary World Capital, to be decided by a simply majority vote of the three Houses of the World Parliament in joint session.
@@ -653,7 +699,8 @@ Additional World Federal Zones may be designated if found necessary by proposal 
 
 
 # Article 16 — World Territories and Exterior Relations
-Sec. A — World Territory
+
+### Sec. A — World Territory
 
 Those areas of the Earth and Earth’s moon which are not under the jurisdiction of existing nations at the time of forming the World Republic, or which are not reasonably within the province of national ownership and administration, or which are declared to be World Territory subsequent to establishment of the World Republic, shall be designated as World Territory and shall belong to all of the people of Earth.
 The administration of World Territory shall be determined by the World Parliament and implemented by the World Executive, and shall apply to the following areas:
@@ -663,7 +710,8 @@ The atmosphere enveloping Earth, beginning at an elevation of one kilometer abov
 Man-made satellites and Earth’s moon.
 Colonies which may choose the status of World Territory; non-independent territories under the trust administration of nations or of the United Nations; any islands or atolls which are unclaimed by any nation; independent lands or countries which choose the status of World Territory; and disputed lands which choose the status of World Territory.
 The residents of any World Territory, except designated World Federal Zones, shall have the right within reason to decide by plebiscite to become a self-governing nation within the World Republic, either singly or in combination with other World Territories, or to unite with an existing nation with the World Republic.
-Sec. B — Exterior Relations
+
+### Sec. B — Exterior Relations
 
 The World Government shall maintain exterior relations with those nations of Earth which have not joined the World Republic. Exterior relations shall be under the administration of the Presidium, subject at all times to specific instructions and approval by the World Parliament.
 All treaties and agreements with nations remaining outside the World Republic shall be negotiated by the Presidium and must be ratified by a simple majority vote of the three Houses of the World Parliament.
@@ -672,7 +720,8 @@ All explorations into outer space, both within and beyond the solar system in wh
 
 
 # Article 17 — Ratification and Implementation
-Sec. A — Ratification of the World Constitution
+
+### Sec. A — Ratification of the World Constitution
 
 This World Constitution shall be submitted to the nations and people of Earth for ratification by the following procedures:
 
@@ -687,14 +736,16 @@ Prior to the Full Operative Stage of World Government, as defined under Section 
 In the case of those nations currently involved in serious international disputes or where traditional enmities and chronic disputes may exist among two or more nations, a procedure for concurrent paired ratification shall be instituted whereby the nations which are parties to a current or chronic international dispute or conflict may simultaneously ratify the World Constitution. In such cases, the paired nations shall be admitted into the World Republic simultaneously, with the obligation for each such nation to immediately turn over all weapons of mass destruction to the World Government, and to turn over the conflict or dispute for mandatory peaceful settlement by the World Government.
 Each nation or political unit which ratifies this World Constitution, either by preliminary ratification or final ratification, shall be bound never to use any armed forces or weapons of mass destruction against another member or unit of the World Republic, regardless of how long it may take to achieve full disarmament of all the nations and political units which ratify this World Constitution.
 When ratified, the Constitution for the World Republic becomes the supreme law of Earth. By the act of ratifying this Earth Constitution, any provision in the Constitution or Legislation of any country so ratifying, which is contrary to this Earth Constitution, is either repealed or amended to conform with the Constitution for the World Republic, effective as soon as 25 countries have so ratified. The amendment of National or State Constitutions to allow entry into World Federation is not necessary prior to ratification of the Constitution for the World Republic.
-Sec. B — Stages of Implementation
+
+### Sec. B — Stages of Implementation
 
 Implementation of this World Constitution and the establishment of World Government pursuant to the terms of this World Constitution, may be accomplished in three stages, as follows, in addition to the stage of a Provisional World Government as provided under Article 19:
 First Operative Stage of World Government.
 Second Operative Stage of World Government.
 Full Operative Stage of World Government.
 At the beginning and during each stage, the World Parliament and the World Executive together shall establish goals and develop means for the progressive implementation of the World Constitution, and for the implementation of legislation enacted by the World Parliament.
-Sec. C — First Operative Stage of World Government
+
+### Sec. C — First Operative Stage of World Government
 
 The first operative stage of World Government under this World Constitution shall be implemented when the World Constitution is ratified by a sufficient number of nations and/or people to meet one or the other of the following conditions or equivalent:
 Preliminary or final ratification by a minimum of twenty-five nations, each having a population of more than 100,000.
@@ -734,7 +785,8 @@ Outlaw and find ways to completely terminate the production of nuclear weapons a
 Push forward programs to assure adequate and non-polluted water supplies and clean air supplies for everybody on Earth;
 Push forward a global program to conserve and recycle the resources of Earth.
 Develop an acceptable program to bring population growth under control, especially by raising standards of living.
-Sec. D — Second Operative Stage of World Government
+
+### Sec. D — Second Operative Stage of World Government
 
 The second operative stage of World Government shall be implemented when fifty percent or more of the nations of Earth have given either preliminary or final ratification to this World Constitution, provided that fifty percent of the total population of Earth is included either within the ratifying nations or within the ratifying nations together with additional World Electoral and Administrative Districts where people have ratified the World Constitution by direct referendum.
 The election and appointment of Members of the World Parliament to the several Houses of the World Parliament shall proceed in the same manner as specified for the first operative stage in Section C-2,3,4 and 5 of Article 17.
@@ -752,7 +804,8 @@ Declare the polar caps and surrounding polar areas, including the continent of A
 Outlaw the possession, stockpiling, sale and use of all nuclear weapons, all weapons of mass destruction, and all other military weapons and equipment.
 Establish an ever-normal granary and food supply system for the people of Earth.
 Develop and carry forward insofar as feasible all actions defined under Sec. C-10 and C-12 of the First Operative Stage.
-Sec. E — Full Operative Stage of World Government
+
+### Sec. E — Full Operative Stage of World Government
 
 The full operative stage of World Government shall be implemented when this World Constitution is given either preliminary or final ratification by meeting either condition (a) or (b):
 Ratification by eighty percent or more of the nations of Earth comprising at least ninety percent of the population of Earth; or
@@ -768,12 +821,14 @@ All nations which have not already done so shall immediately transfer all milita
 All armies and military forces of every kind shall be completely disarmed, and either disbanded or converted and integrated on a voluntary basis into the non-military World Service Corps.
 All viable agencies of the United Nations Organization and other viable international agencies established among national governments, together with their personnel, facilities and resources, shall be transferred to the World Government and reconstituted and integrated as may be useful into the organs, departments, offices, institutes, commissions, bureaus and agencies of the World Government.
 The World Parliament and the World Executive shall continue to develop the activities and projects which are already underway from the second operative stage of World Government, with such amendments as deemed necessary; and shall proceed with a complete and full scale program to solve world problems and serve the welfare of all people on Earth, in accordance with the provisions of this World Constitution.
-Sec. F — Costs of Ratification
+
+### Sec. F — Costs of Ratification
 
 The work and costs of private Citizens of Earth for the achievement of a ratified Constitution for the World Republic, are recognized as legitimate costs for the establishment of constitutional world government by which present and future generations will benefit, and shall be repaid double the original amount by the World Financial Administration of the World Government when it becomes operational after 25 countries have ratified this Constitution for the World Republic. Repayment specifically includes contributions to the World Government Funding Corporation and other costs and expenses recognized by standards and procedures to be established by the World Financial Administration.
 
 
 # Article 18 — Amendments
+
 Following completion of the first operative stage of World Government, amendments to this World Constitution may be proposed for consideration in two ways:
 By a simple majority vote of any House of the World Parliament.
 By petitions signed by a total of 200,000 persons eligible to vote in world elections from a total of at least twenty World Electoral and Administrative Districts where the World Constitution has received final ratification.
@@ -785,7 +840,8 @@ Except by following the amendment procedures specified herein, no part of this W
 
 
 # Article 19 — Provisional World Government
-Sec. A — Actions to be Taken by the World Constituent Assembly
+
+### Sec. A — Actions to be Taken by the World Constituent Assembly
 
 Upon adoption of the World Constitution by the World Constituent Assembly, the Assembly and such continuing agency or agencies as it shall designate shall do the following, without being limited thereto:
 
@@ -805,7 +861,8 @@ Convene Sessions of a Provisional World Parliament when feasible under the follo
 Seek the commitment of 500 or more delegates to attend, representing people in 20 countries from five continents, and having credentials defined by Article 19, Section C;
 The minimum funds necessary to organize the sessions of the Provisional World Parliament are either on hand or firmly pledged.
 Suitable locations are confirmed at least nine months in advance, unless emergency conditions justify shorter advance notice.
-Sec. B — Work of the Preparatory Commissions
+
+### Sec. B — Work of the Preparatory Commissions
 
 The Ratification Commission shall carry out a worldwide campaign for the ratification of the World Constitution, both to obtain preliminary ratification by national governments, including national legislatures, and to obtain final ratification by people, including communities. The ratification commission shall continue its work until the full operative stage of World Government is reached.
 The World Elections Commission shall prepare a provisional global map of World Electoral and Administrative Districts and Regions which may be revised during the first or second operative stage of World Government, and shall prepare and proceed with plans to obtain the election of Members of the World Parliament to the House of Peoples and to the House of Counsellors. The World Elections Commission shall in due course be converted into the World Boundaries and Elections Administration.
@@ -817,7 +874,8 @@ The World Problems Commission shall prepare an agenda of urgent world problems, 
 The Nominating Commission shall prepare, in advance of convening the Provisional World Parliament, a list of nominees to compose the Presidium and the Executive Cabinet for the Provisional World Government.
 The Finance Commission shall work on ways and means for financing the Provisional World Government.
 The several commissions on particular world problems shall work on the preparation of proposed world legislation and action on each problem, to present to the Provisional World Parliament when it convenes.
-Sec. C — Composition of the Provisional World Parliament
+
+### Sec. C — Composition of the Provisional World Parliament
 
 The Provisional World Parliament shall be composed of the following members:
 All those who were accredited as delegates to the 1977 and 1991 Sessions of the World Constituent Assembly, as well as to any previous Session of the Provisional World Parliament, and who re-confirm their support for the Constitution for the World Republic, as amended.
@@ -826,7 +884,8 @@ Members of the World Parliament to the House of Peoples who are elected from Wor
 Members of the World Parliament to the House of Nations who are elected by national legislatures or appointed by national governments up to the time of convening the Provisional World Parliament. Members of the World Parliament to the House of Nation s may continue to be added to the Provisional World Parliament until the first operative stage of World Government is reached.
 Those universities and colleges which have ratified the World Constitution may nominate persons to serve as Members of the World Parliament to the House of Counsellors. The House of Peoples and House of Nations together may then elect from such nominees up to fifty Members of the World Parliament to serve in the House of Counsellors of the Provisional World Government.
 Members of the Provisional World Parliament in categories (a) and (b) as defined above, shall serve only until the first operative stage of World Government is declared, but may be duly elected to continue as Members of the World Parliament during the first operative stage.
-Sec. D — Formation of the Provisional World Executive
+
+### Sec. D — Formation of the Provisional World Executive
 
 As soon as the Provisional World Parliament next convenes, it will elect a new Presidium for the Provisional World Parliament and Provisional World Government from among the nominees submitted by the Nominating Commission.
 Members of the Provisional World Presidium shall serve terms of three years, and may be re-elected by the Provisional World Parliament, but in any case shall serve only until the Presidium is elected under the First Operative Stage of World Government.
@@ -834,7 +893,8 @@ The Presidium may make additional nominations for the Executive Cabinet.
 The Provisional World Parliament shall then elect the members of the Executive Cabinet.
 The Presidium shall then assign ministerial posts among the members of the Executive Cabinet and of the Presidium.
 When steps (1) through (4) of section D are completed, the Provisional World Government shall be declared in operation to serve the welfare of humanity.
-Sec. E — First Actions of the Provisional World Government
+
+### Sec. E — First Actions of the Provisional World Government
 
 The Presidium, in consultation with the Executive Cabinet, the commissions on particular world problems and the World Parliament, shall define a program for action on urgent world problems.
 The Provisional World Parliament shall go to work on the agenda of world problems, and shall take any and all actions it considers appropriate and feasible, in accordance with the provisions of this World Constitution.
@@ -853,7 +913,7 @@ In all of its work and activities, the Provisional World Government shall functi
       <div class="mb-6">
         <h1 class="font-display mb-2">The World Constitution</h1>
       </div>
-      <UiMarkdown :body="constitution" />
+      <UiConstitutionMarkdown :body="constitution" />
     </UiContainer>
   </div>
 </template>
