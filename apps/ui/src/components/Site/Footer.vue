@@ -6,12 +6,12 @@ import ICX from '~icons/c/x';
 const COMMIT_SHA = import.meta.env.VITE_COMMIT_SHA || '';
 
 const SOCIALS = [
+  // {
+  //   href: 'https://t.me/worldrepublicorg',
+  //   icon: ICTelegram
+  // },
   {
-    href: 'https://t.me/worldrepublicorg',
-    icon: ICTelegram
-  },
-  {
-    href: 'https://x.com/worldassociation',
+    href: 'https://x.com/worldrepublicx',
     icon: ICX
   },
   {
