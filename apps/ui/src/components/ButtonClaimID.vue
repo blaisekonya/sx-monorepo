@@ -338,7 +338,7 @@ const handleStartVerification = () => {
       <div class="flex flex-col gap-4 p-4">
         <div class="flex flex-col items-center text-center gap-3">
           <div class="text-skin-text text-sm">
-            Claim your digital voter ID and start experimenting with global democracy.
+            Claim your Global Voter ID and start experimenting with global democracy.
           </div>
         </div>
 
@@ -363,7 +363,7 @@ const handleStartVerification = () => {
             </div>
             <div>
               <h4 class="font-medium text-[18px] mb-1">Receive your ID</h4>
-              <p class="text-sm text-skin-text">Get your non-transferable Global Voter ID</p>
+              <p class="text-sm text-skin-text">Collect your non-transferable Global Voter ID</p>
             </div>
           </div>
 
@@ -374,8 +374,8 @@ const handleStartVerification = () => {
             </div>
             <div>
               <h4 class="font-medium text-[18px] mb-1">Make your voice heard</h4>
-              <p class="text-sm text-skin-text">Vote on global governance proposals and start shaping the future of
-                humanity</p>
+              <p class="text-sm text-skin-text">Participate in our experiments and shape the future of global governance
+              </p>
             </div>
           </div>
         </div>
