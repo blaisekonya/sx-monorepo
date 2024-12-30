@@ -2,23 +2,27 @@
 const FAQ = [
   {
     question: 'What is the World Republic?',
-    answer: 'The World Republic is a crypto-powered global democracy laboratory experimenting with innovative governance solutions to address humanity\'s most pressing challenges, such as climate change, geopolitical instability, and technological risks.'
+    answer: 'The World Republic is a crypto-powered global democracy laboratory that experiments with innovative governance solutions to tackle pressing challenges like climate change, geopolitical instability, and technological risks.'
   },
   {
     question: 'What is the world drachma?',
-    answer: 'The world drachma is the World Republic\'s official digital currency. Backed by global democratic principles, it aims to compete with major currencies, provide a trusted medium of exchange, and support transformative projects.'
+    answer: 'The world drachma is our digital currency, designed to support transformative projects in global governance.'
   },
   {
     question: 'What types of experiments does the World Republic run?',
-    answer: 'We support a wide range of projects focused on democratic global solutions, translating theoretical ideas into actionable projects and encouraging the development of new initiatives.'
+    answer: 'We conduct experiments that bring theoretical governance ideas into practice, supporting both established proposals and new initiatives, as well as projects that develop innovative tools for democratic solutions.'
+  },
+  {
+    question: 'What kind of support does the World Republic offer?',
+    answer: 'We provide access to funding, resources, and cutting-edge tools to help teams and individuals implement their governance proposals effectively.'
   },
   {
     question: 'Who can participate in the World Republic?',
-    answer: 'Participation in the World Republic is open to individuals, organizations, and governments that share our vision for more democratic and collaborative global governance.'
+    answer: 'Participation in the World Republic is open to everyone who shares our vision for more democratic and collaborative global governance.'
   },
   {
     question: 'How can I get involved?',
-    answer: 'There are several ways to get involved with the World Republic. You can join our community, participate in governance experiments, and invest in our digital currency.'
+    answer: 'Participate in our experiments, secure funding for your projects, and join our community to discuss and shape the future of global governance.'
   }
 ];
 

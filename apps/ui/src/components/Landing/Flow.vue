@@ -6,13 +6,13 @@ const STEPS = [
   {
     title: 'Join',
     about:
-      'Connect with the community, discuss ideas, and collaborate on solutions to humanity\'s most pressing challenges.',
+      'Join us to access cutting-edge tools and funding for your democratic governance ideas and solutions to global challenges.',
     icon: ISUserPlus
   },
   {
     title: 'Experiment',
     about:
-      'Refine proposals, apply for funding, and experiment with new tools and frameworks for global democracy.',
+      'Turn your proposals into actionable experiments, demonstrating the feasibility of democratic processes on a global scale.',
     icon: ISBeaker
   }
 ];
