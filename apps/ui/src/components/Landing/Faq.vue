@@ -2,27 +2,23 @@
 const FAQ = [
   {
     question: 'What is the World Republic?',
-    answer: 'The World Republic is an experiment in global democracy. It seeks to create a system of governance that encourages collective action to address global challenges through participatory decision-making and equitable representation.'
+    answer: 'The World Republic is a crypto-powered global democracy laboratory experimenting with innovative governance solutions to address humanity\'s most pressing challenges, such as climate change, geopolitical instability, and technological risks.'
   },
   {
-    question: 'Why is the World Republic needed?',
-    answer: 'The World Republic addresses global challenges like climate change, nuclear threats, pandemics, and AI advancement that demand a unified approach to ensure effective solutions.'
+    question: 'What is the world drachma?',
+    answer: 'The world drachma is the World Republic\'s official digital currency. Backed by global democratic principles, it aims to compete with major currencies, provide a trusted medium of exchange, and support transformative projects.'
   },
   {
-    question: 'How does the World Republic ensure democratic participation?',
-    answer: 'The World Republic facilitates democratic participation using proof-of-personhood systems, to ensure secure, anonymous, and verifiable engagement in global decision-making.'
+    question: 'What types of experiments does the World Republic run?',
+    answer: 'We support a wide range of projects focused on democratic global solutions, translating theoretical ideas into actionable projects and encouraging the development of new initiatives.'
   },
   {
-    question: 'How is the World Republic funded?',
-    answer: 'The World Republic is self-financed through its digital currency, which is designed to support the Republic’s activities within a decentralized and transparent economic framework.'
+    question: 'Who can participate in the World Republic?',
+    answer: 'Participation in the World Republic is open to individuals, organizations, and governments that share our vision for more democratic and collaborative global governance.'
   },
   {
-    question: 'Does the World Republic aim to replace existing governments?',
-    answer: 'No, the World Republic does not seek to replace existing governments. Its goal is to complement and enhance global governance through democratic processes while respecting the sovereignty of individual nations.'
-  },
-  {
-    question: 'Is establishing democratic global governance realistic?',
-    answer: 'While there are significant challenges, there is <a href="https://academic.oup.com/isq/article/68/3/sqae105/7732859" target="_blank" rel="noopener">growing public support</a> and advancements in technology that make the establishment of a democratic global federation increasingly feasible.'
+    question: 'How can I get involved?',
+    answer: 'There are several ways to get involved with the World Republic. You can join our community, participate in governance experiments, and invest in our digital currency.'
   }
 ];
 
@@ -46,7 +42,7 @@ function toggleQuestion(id) {
       <UiContainer class="!max-w-screen-lg py-4">
         <div v-for="(question, i) in FAQ" :key="i" class="border-b last:border-b-0">
           <button type="button" class="flex items-center w-full text-left" @click="toggleQuestion(i)">
-            <h3 class="py-3 flex-auto text-[21px]" v-text="question.question" />
+            <h3 class="py-3 flex-auto text-[20px]" v-text="question.question" />
             <IH-minus-sm v-if="currentQuestion === i" class="text-skin-text" />
             <IH-plus-sm v-else class="text-skin-text" />
           </button>

@@ -1,19 +1,19 @@
 <script setup lang="ts">
-import ISLibrary from '~icons/heroicons-solid/building-library';
+import ISBeaker from '~icons/heroicons-solid/beaker';
 import ISUserPlus from '~icons/heroicons-solid/user-plus';
 
 const STEPS = [
   {
     title: 'Join',
     about:
-      'Accept our constitution, create your Global Voter ID, and discuss solutions to pressing global challenges – all while preserving your privacy by default.',
+      'Connect with the community, discuss ideas, and collaborate on solutions to humanity\'s most pressing challenges.',
     icon: ISUserPlus
   },
   {
-    title: 'Govern',
+    title: 'Experiment',
     about:
-      'Create referendums, run on elections, or make your voice heard by voting. Decisions are turned into action using our official currency, the world drachma.',
-    icon: ISLibrary
+      'Refine proposals, apply for funding, and experiment with new tools and frameworks for global democracy.',
+    icon: ISBeaker
   }
 ];
 </script>
@@ -23,7 +23,7 @@ const STEPS = [
     <UiContainer class="!max-w-screen-lg">
       <div class="pb-6 max-w-[640px] text-center mx-auto">
         <h1 class="mb-4 font-display text-[36px] xs:text-[44px]">
-          Democratizing global governance
+          The crypto-powered global democracy laboratory
         </h1>
       </div>
     </UiContainer>

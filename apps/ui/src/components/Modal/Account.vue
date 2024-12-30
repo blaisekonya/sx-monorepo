@@ -129,13 +129,13 @@ function handleSignup() {
               <div class="m-4">
                 <!-- Introduction -->
                 <div class="text-skin-text text-sm text-center">
-                  To get started, first we'll create you a Smart Wallet.
+                  To get started, first we'll create you a smart wallet.
                 </div>
 
 
                 <!-- Wallet Benefits -->
                 <div class="px-3 py-4">
-                  <h4 class="mb-2 text-[18px] font-medium pt-2 pb-1.5">Your Smart Wallet enables you to:</h4>
+                  <h4 class="mb-2 text-[18px] font-medium pt-2 pb-1.5">Your smart wallet enables you to:</h4>
                   <div class="space-y-2.5">
                     <div class="flex items-center gap-3">
                       <div class="bg-skin-primary rounded-full p-2">
@@ -147,7 +147,7 @@ function handleSignup() {
                       <div class="bg-skin-primary rounded-full p-2">
                         <IH-banknotes class="w-[20px] h-[20px] text-skin-bg" />
                       </div>
-                      <div class="text-sm">Receive a basic income</div>
+                      <div class="text-sm">Receive world drachma</div>
                     </div>
                     <div class="flex items-center gap-3">
                       <div class="bg-skin-primary rounded-full p-2">
@@ -160,7 +160,7 @@ function handleSignup() {
 
                 <!-- Passkeys Benefits -->
                 <div class="px-3 pt-2 pb-4">
-                  <h4 class="mb-2 text-[18px] font-medium pb-1.5">Why Smart Wallet?</h4>
+                  <h4 class="mb-2 text-[18px] font-medium pb-1.5">Why smart wallet?</h4>
                   <div class="space-y-2.5">
                     <div class="flex items-center gap-3">
                       <div class="bg-skin-primary rounded-full p-2">
@@ -180,7 +180,7 @@ function handleSignup() {
                       <div class="bg-skin-primary rounded-full p-2">
                         <IH-device-phone-mobile class="w-[20px] h-[20px] text-skin-bg" />
                       </div>
-                      <div class="text-sm">Zero cost, unified account across apps</div>
+                      <div class="text-sm">Zero cost, unified wallet across apps</div>
                     </div>
                   </div>
                 </div>

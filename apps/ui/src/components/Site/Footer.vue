@@ -11,11 +11,11 @@ const SOCIALS = [
   //   icon: ICTelegram
   // },
   {
-    href: 'https://x.com/worldrepublicx',
+    href: 'https://x.com/worldrepublic_',
     icon: ICX
   },
   {
-    href: 'https://github.com/worldassociation',
+    href: 'https://github.com/worldrepublicorg',
     icon: ICGithub
   }
 ];
@@ -28,9 +28,6 @@ const SOCIALS = [
         <div class="space-y-2">
           <div class="eyebrow">Organization</div>
           <div class="space-y-1">
-            <div>
-              <AppLink :to="{ name: 'site-constitution' }">Constitution</AppLink>
-            </div>
             <div>
               <AppLink :to="{ name: 'site-terms' }">Terms of use</AppLink>
             </div>

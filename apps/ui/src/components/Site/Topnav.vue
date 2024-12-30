@@ -11,17 +11,12 @@ const { toggleSkin, currentMode } = useUserSkin();
         </div>
       </AppLink>
     </div>
-    <ul class="text-md text-skin-link space-x-4 mr-4 sm:mr-6">
-      <li>
-        <AppLink :to="{ name: 'site-constitution' }">Constitution</AppLink>
-      </li>
-    </ul>
     <div class="shrink-0 space-x-3 items-center flex">
       <UiButton class="!px-0 w-[46px]" @click="toggleSkin">
         <IH-light-bulb v-if="currentMode === 'dark'" class="inline-block" />
         <IH-moon v-else class="inline-block" />
       </UiButton>
-      <UiButton :to="{ name: 'my-home' }" class="primary hidden sm:flex">
+      <UiButton :to="{ name: 'my-home' }" class="primary flex">
         Launch
         <span class="hidden md:inline-block">&nbsp;app</span>
       </UiButton>
