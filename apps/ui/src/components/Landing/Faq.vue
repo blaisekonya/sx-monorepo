@@ -5,16 +5,16 @@ const FAQ = [
     answer: 'The World Republic is a crypto-powered global democracy laboratory that experiments with innovative governance solutions to tackle pressing challenges like climate change, geopolitical instability, and technological risks.'
   },
   {
-    question: 'What is the world drachma?',
-    answer: 'The world drachma is our digital currency, designed to support transformative projects in global governance.'
-  },
-  {
     question: 'What types of experiments does the World Republic run?',
     answer: 'We conduct experiments that bring theoretical governance ideas into practice, supporting both established proposals and new initiatives, as well as projects that develop innovative tools for democratic solutions.'
   },
   {
-    question: 'What kind of support does the World Republic offer?',
+    question: 'What kind of support does the World Republic offer for projects?',
     answer: 'We provide access to funding, resources, and cutting-edge tools to help teams and individuals implement their governance proposals effectively.'
+  },
+  {
+    question: 'What is the world drachma?',
+    answer: 'The world drachma is the World Republic\'s digital currency, designed to support transformative projects in global governance.'
   },
   {
     question: 'Who can participate in the World Republic?',
