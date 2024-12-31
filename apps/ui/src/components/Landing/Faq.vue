@@ -14,11 +14,7 @@ const FAQ = [
   },
   {
     question: 'What is the world drachma?',
-    answer: 'The world drachma is the World Republic\'s digital currency, designed to support transformative projects in global governance.'
-  },
-  {
-    question: 'Who can participate in the World Republic?',
-    answer: 'Participation in the World Republic is open to everyone who shares our vision for more democratic and collaborative global governance.'
+    answer: 'The world drachma is the World Republic\'s digital currency, designed to support the democratization of global governance.'
   },
   {
     question: 'How can I get involved?',
