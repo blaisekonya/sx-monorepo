@@ -12,7 +12,7 @@ const STEPS = [
   {
     title: 'Experiment',
     about:
-      'Turn your proposals into experiments and demonstrate the feasibility of global democracy.',
+      'Bring governance ideas into practice and demonstrate the feasibility of global democracy.',
     icon: ISBeaker
   }
 ];
