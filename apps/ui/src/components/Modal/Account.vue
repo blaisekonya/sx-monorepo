@@ -122,14 +122,14 @@ function handleSignup() {
             <UiModal :open="showSignupInfo" @close="showSignupInfo = false">
               <template #header>
                 <div class="relative">
-                  <h3 class="text-[22px]">Welcome to the World Republic</h3>
+                  <h3 class="text-[22px] px-7">Welcome to the World Republic</h3>
                 </div>
               </template>
 
               <div class="m-4">
                 <!-- Introduction -->
                 <div class="text-skin-text text-sm text-center">
-                  To get started, first we'll create you a smart wallet.
+                  To get started, first you'll need to create a smart wallet.
                 </div>
 
 

@@ -13,7 +13,7 @@ const FEATURES = [
   {
     title: 'Global Voter ID',
     about:
-      'Blockchain-based proof of each participant\'s uniqueness, ensuring integrity in the voting process.',
+      'Blockchain-based proof of a person\'s uniqueness, ensuring integrity in the voting process.',
     icon: ISIdentification
   },
   {
@@ -30,7 +30,7 @@ const FEATURES = [
     <UiContainer class="!max-w-screen-lg">
       <div class="pb-6 max-w-[640px]">
         <h1 class="mb-4 font-display text-[36px] xs:text-[44px]">
-          Free and open-source tools for digital democracy
+          Open-source tools for digital democracy
         </h1>
       </div>
     </UiContainer>

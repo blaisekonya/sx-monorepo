@@ -12,7 +12,7 @@ const STEPS = [
   {
     title: 'Experiment',
     about:
-      'Put theories into practice and discover the most effective frameworks for global governance.',
+      'Put theory into practice and discover the most effective frameworks for global governance.',
     icon: ISBeaker
   }
 ];
