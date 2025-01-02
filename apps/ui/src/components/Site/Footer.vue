@@ -11,7 +11,7 @@ const SOCIALS = [
   //   icon: ICTelegram
   // },
   {
-    href: 'https://x.com/worldrepublic_',
+    href: 'https://x.com/worldrepublichq',
     icon: ICX
   },
   {
