@@ -13,7 +13,7 @@ const FEATURES = [
   {
     title: 'Global Voter ID',
     about:
-      'Blockchain-powered identity verification ensures fairness and integrity in every vote.',
+      'Blockchain-powered proof of uniqueness to ensure fairness and integrity in every vote.',
     icon: ISIdentification
   },
   {
