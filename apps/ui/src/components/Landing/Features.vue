@@ -7,19 +7,19 @@ const FEATURES = [
   {
     title: 'World Republic App',
     about:
-      'Battle-tested voting platform that enables secure decision-making on a global scale.',
+      'A secure, battle-tested platform for transparent decision-making on a global scale.',
     icon: ISCursorClick
   },
   {
     title: 'Global Voter ID',
     about:
-      'Blockchain-based proof of a person\'s uniqueness that ensures integrity in the voting process.',
+      'Blockchain-powered identity verification ensures fairness and integrity in every vote.',
     icon: ISIdentification
   },
   {
     title: 'World Drachma',
     about:
-      'Digital currency, designed to support the democratization of global governance.',
+      'A next-generation digital currency designed to support the democratization of global governance.',
     icon: ISBanknotes
   },
 ];
@@ -30,7 +30,7 @@ const FEATURES = [
     <UiContainer class="!max-w-screen-lg">
       <div class="pb-6 max-w-[640px]">
         <h1 class="mb-4 font-display text-[36px] xs:text-[44px]">
-          Open-source tools for global democracy
+          Open-source tools for a new era of democracy
         </h1>
       </div>
     </UiContainer>

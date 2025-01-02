@@ -8,6 +8,7 @@ const { toggleSkin, currentMode } = useUserSkin();
       <AppLink :to="{ name: 'site-landing' }" class="inline-block">
         <div class="flex justify-center items-center">
           <div class="box-border h-[36px] w-[36px] rounded-full border-[6px] border-skin-primary"></div>
+          <!-- <span class="text-[26px] font-display tracking-tight ml-2">World Republic</span> -->
         </div>
       </AppLink>
     </div>

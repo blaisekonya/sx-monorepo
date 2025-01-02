@@ -12,7 +12,7 @@ const STEPS = [
   {
     title: 'Experiment',
     about:
-      'Use our free tools and test new forms of global governance and democratic engagement.',
+      'Dive into innovative solutions for democratic governance designed to empower individuals worldwide.',
     icon: ISBeaker
   }
 ];
