@@ -129,7 +129,7 @@ function handleSignup() {
               <div class="m-4">
                 <!-- Introduction -->
                 <div class="text-skin-text text-sm text-center">
-                  To get started, first you'll need to create a smart wallet.
+                  To get started, first we'll create a smart wallet for you.
                 </div>
 
 
@@ -166,21 +166,22 @@ function handleSignup() {
                       <div class="bg-skin-primary rounded-full p-2">
                         <IH-finger-print class="w-[20px] h-[20px] text-skin-bg" />
                       </div>
-                      <div class="text-sm leading-[22px]">You can create an account in seconds with just your device's
-                        biometrics</div>
+                      <div class="text-sm leading-[22px]">You can simply create and manage your account with your
+                        device's biometrics</div>
                     </div>
                     <div class="flex items-center gap-3">
                       <div class="bg-skin-primary rounded-full p-2">
                         <IH-shield-check class="w-[20px] h-[20px] text-skin-bg" />
                       </div>
-                      <div class="text-sm leading-[22px]">Your keys are generated and stored securely on your device
+                      <div class="text-sm leading-[22px]">Your cryptographic keys are generated and stored securely on
+                        your device
                       </div>
                     </div>
                     <div class="flex items-center gap-3">
                       <div class="bg-skin-primary rounded-full p-2">
                         <IH-device-phone-mobile class="w-[20px] h-[20px] text-skin-bg" />
                       </div>
-                      <div class="text-sm">Zero cost, unified wallet across apps</div>
+                      <div class="text-sm leading-[22px]">Zero cost, unified wallet across different apps</div>
                     </div>
                   </div>
                 </div>
