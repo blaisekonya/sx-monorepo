@@ -6,7 +6,7 @@ const STEPS = [
   {
     title: 'Join',
     about:
-      'Connect with a global community addressing humanity’s most pressing issues through democratic solutions.',
+      'Connect with our global community addressing humanity’s most pressing issues through democratic solutions.',
     icon: ISUserPlus
   },
   {
