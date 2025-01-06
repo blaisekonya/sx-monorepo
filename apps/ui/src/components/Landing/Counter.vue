@@ -24,7 +24,9 @@
           <h3 class="font-heading !text-[36px]">5k</h3>
           <div class="eyebrow">Organizations</div>
         </div>
-        <div class="border-r-0 sm:border-r border-b sm:border-b-0 p-4 space-y-2">
+        <div
+          class="border-r-0 sm:border-r border-b sm:border-b-0 p-4 space-y-2"
+        >
           <h3 class="font-heading !text-[36px]">41k</h3>
           <div class="eyebrow">Proposals</div>
         </div>
