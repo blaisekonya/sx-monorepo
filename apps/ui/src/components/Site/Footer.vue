@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import { repository, version } from '@/../package.json';
-import ICTelegram from '~icons/c/telegram';
 import ICGithub from '~icons/c/github';
+import ICTelegram from '~icons/c/telegram';
 import ICX from '~icons/c/x';
 const COMMIT_SHA = import.meta.env.VITE_COMMIT_SHA || '';
 
 const SOCIALS = [
-  {
-    href: 'https://t.me/worldrepublicannouncements',
-    icon: ICTelegram
-  },
+  // {
+  //   href: 'https://t.me/worldrepublicannouncements',
+  //   icon: ICTelegram
+  // },
   {
     href: 'https://x.com/worldrepublichq',
     icon: ICX
@@ -48,7 +48,9 @@ const SOCIALS = [
             <div>
               <a href="https://v1.snapshot.box/#/setup" target="_blank">
                 Create a space
-                <IH-arrow-sm-right class="inline-block -rotate-45 mb-0.5 -ml-0.5" />
+                <IH-arrow-sm-right
+                  class="inline-block -rotate-45 mb-0.5 -ml-0.5"
+                />
               </a>
             </div>
             <div>
@@ -61,7 +63,10 @@ const SOCIALS = [
           <div class="space-y-1">
             <div>
               <a href="https://help.snapshot.box" target="_blank">
-                Helpdesk <IH-arrow-sm-right class="inline-block -rotate-45 mb-0.5 -ml-0.5" />
+                Helpdesk
+                <IH-arrow-sm-right
+                  class="inline-block -rotate-45 mb-0.5 -ml-0.5"
+                />
               </a>
             </div>
           </div>
@@ -72,19 +77,25 @@ const SOCIALS = [
             <div>
               <a href="https://docs.snapshot.box" target="_blank">
                 Platform docs
-                <IH-arrow-sm-right class="inline-block -rotate-45 mb-0.5 -ml-0.5" />
+                <IH-arrow-sm-right
+                  class="inline-block -rotate-45 mb-0.5 -ml-0.5"
+                />
               </a>
             </div>
             <div>
               <a href="https://github.com/worldassociation" target="_blank">
                 GitHub
-                <IH-arrow-sm-right class="inline-block -rotate-45 mb-0.5 -ml-0.5" />
+                <IH-arrow-sm-right
+                  class="inline-block -rotate-45 mb-0.5 -ml-0.5"
+                />
               </a>
             </div>
             <div>
               <a href="https://status.snapshot.org" target="_blank">
                 Status
-                <IH-arrow-sm-right class="inline-block -rotate-45 mb-0.5 -ml-0.5" />
+                <IH-arrow-sm-right
+                  class="inline-block -rotate-45 mb-0.5 -ml-0.5"
+                />
               </a>
             </div>
           </div>
@@ -92,19 +103,31 @@ const SOCIALS = [
       </div>
       <div class="flex max-sm:flex-col max-sm:space-y-5">
         <div class="flex-grow flex items-center">
-          <div class="box-border size-[24px] mr-3 rounded-full border-[4px] border-skin-primary">
-          </div>
+          <div
+            class="box-border size-[24px] mr-3 rounded-full border-[4px] border-skin-primary"
+          ></div>
           © {{ new Date().getFullYear() }} World Association
-          <a :href="`https://github.com/${repository}${COMMIT_SHA && `/tree/${COMMIT_SHA}`}`" target="_blank"
-            class="ml-1.5">
-            <span v-text="`v${version}${COMMIT_SHA ? `#${COMMIT_SHA.slice(0, 7)}` : ''}`
-              " />
+          <a
+            :href="`https://github.com/${repository}${COMMIT_SHA && `/tree/${COMMIT_SHA}`}`"
+            target="_blank"
+            class="ml-1.5"
+          >
+            <span
+              v-text="
+                `v${version}${COMMIT_SHA ? `#${COMMIT_SHA.slice(0, 7)}` : ''}`
+              "
+            />
             <IH-arrow-sm-right class="inline-block -rotate-45 ml-0.5 mb-0.5" />
           </a>
         </div>
         <div class="flex space-x-3">
-          <a v-for="social in SOCIALS" :key="social.href" :href="social.href" target="_blank"
-            class="text-[#606060] hover:text-skin-link">
+          <a
+            v-for="social in SOCIALS"
+            :key="social.href"
+            :href="social.href"
+            target="_blank"
+            class="text-[#606060] hover:text-skin-link"
+          >
             <component :is="social.icon" class="size-[28px] text-skin-link" />
           </a>
         </div>

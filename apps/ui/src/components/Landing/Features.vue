@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import ISBanknotes from '~icons/heroicons-solid/banknotes';
-import ISIdentification from '~icons/heroicons-solid/identification';
 import ISCursorClick from '~icons/heroicons-solid/cursor-click';
+import ISIdentification from '~icons/heroicons-solid/identification';
 
 const FEATURES = [
   {
@@ -13,15 +13,15 @@ const FEATURES = [
   {
     title: 'Global Voter ID',
     about:
-      'Blockchain-powered proof of uniqueness to ensure fairness and integrity in every vote.',
+      'Blockchain-based proof of uniqueness to ensure fairness and integrity in every vote.',
     icon: ISIdentification
   },
   {
     title: 'World Drachma',
     about:
-      'A next-generation digital currency designed to support the democratization of global governance.',
+      'The currency of global democracy, fueling the day-to-day operations of the World Republic.',
     icon: ISBanknotes
-  },
+  }
 ];
 </script>
 
@@ -30,17 +30,26 @@ const FEATURES = [
     <UiContainer class="!max-w-screen-lg">
       <div class="pb-6 max-w-[640px]">
         <h1 class="mb-4 font-display text-[36px] xs:text-[44px]">
-          Open-source tools for a new era of democracy
+          Open-source tools for onchain democracy
         </h1>
       </div>
     </UiContainer>
     <div class="border-t">
       <UiContainer class="!max-w-screen-lg !px-0">
         <div class="grid grid-cols-1 text-[18px] lg:grid-cols-3">
-          <div v-for="(feature, i) in FEATURES" :key="i"
-            class="px-4 py-5 border-b last:border-b-0 border-r-0 lg:border-r lg:[&:nth-child(3n)]:border-r-0 lg:[&:nth-child(n+1)]:border-b-0">
-            <component :is="feature.icon" class="text-skin-link size-[22px] mb-4" />
-            <h3 class="text-skin-link font-heading !text-[18px] mb-2" v-text="feature.title" />
+          <div
+            v-for="(feature, i) in FEATURES"
+            :key="i"
+            class="px-4 py-5 border-b last:border-b-0 border-r-0 lg:border-r lg:[&:nth-child(3n)]:border-r-0 lg:[&:nth-child(n+1)]:border-b-0"
+          >
+            <component
+              :is="feature.icon"
+              class="text-skin-link size-[22px] mb-4"
+            />
+            <h3
+              class="text-skin-link font-heading !text-[18px] mb-2"
+              v-text="feature.title"
+            />
             <div v-text="feature.about" />
           </div>
         </div>
