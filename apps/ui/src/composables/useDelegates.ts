@@ -129,13 +129,10 @@ export function useDelegates(
       getNames(addresses),
       metadataNetwork.api.loadStatements(space.network, space.id, addresses)
     ]);
-    const indexedStatements = statements.reduce(
-      (acc, statement) => {
-        acc[statement.delegate.toLowerCase()] = statement;
-        return acc;
-      },
-      {} as Record<Statement['delegate'], Statement>
-    );
+    const indexedStatements = statements.reduce((acc, statement) => {
+      acc[statement.delegate.toLowerCase()] = statement;
+      return acc;
+    }, {} as Record<Statement['delegate'], Statement>);
 
     return delegatesData.map((delegate: ApiDelegate) => {
       const delegatorsPercentage =

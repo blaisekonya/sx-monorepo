@@ -74,8 +74,8 @@ const votingPowerDefinition = computed(() => ({
       type: 'string',
       title: 'Voting power symbol',
       examples: ['e.g. VP'],
-      maxLength: isOffchainNetwork ? 16 : MAX_SYMBOL_LENGTH,
-      minLength: isOffchainNetwork ? 1 : undefined
+      maxLength: isOffchainNetwork.value ? 16 : MAX_SYMBOL_LENGTH,
+      minLength: isOffchainNetwork.value ? 1 : undefined
     }
   }
 }));
@@ -154,17 +154,35 @@ onMounted(() => {
 <template>
   <UiInputStampCover v-model="(form as any).cover" :space="space" />
   <div class="s-box p-4 mt-[-80px] max-w-[640px]">
-    <UiInputStamp v-model="(form as any).avatar" :definition="{
-      type: 'string',
-      format: 'stamp',
-      title: 'Avatar',
-      default: `${space?.network || 'eth'}:${props.id || '0x2121212121212121212121212121212121212121212121212121212121212121'}`
-    }" />
+    <UiInputStamp
+      v-model="(form as any).avatar"
+      :definition="{
+        type: 'string',
+        format: 'stamp',
+        title: 'Avatar',
+        default: `${space?.network || 'eth'}:${
+          props.id ||
+          '0x2121212121212121212121212121212121212121212121212121212121212121'
+        }`
+      }"
+    />
     <h4 class="eyebrow mb-2 font-medium">Profile</h4>
-    <UiForm :model-value="form" :error="formErrors" :definition="profileDefinition" />
+    <UiForm
+      :model-value="form"
+      :error="formErrors"
+      :definition="profileDefinition"
+    />
     <h4 class="eyebrow mt-4 mb-2 font-medium">Voting power</h4>
-    <UiForm :model-value="form" :error="formErrors" :definition="votingPowerDefinition" />
+    <UiForm
+      :model-value="form"
+      :error="formErrors"
+      :definition="votingPowerDefinition"
+    />
     <h4 class="eyebrow mt-4 mb-2 font-medium">Social accounts</h4>
-    <UiForm :model-value="form" :error="formErrors" :definition="socialAccountsDefinition" />
+    <UiForm
+      :model-value="form"
+      :error="formErrors"
+      :definition="socialAccountsDefinition"
+    />
   </div>
 </template>

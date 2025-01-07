@@ -1,12 +1,12 @@
 <script lang="ts">
 type ValidationDetails = {
   key:
-  | 'any'
-  | 'only-members'
-  | 'basic'
-  | 'passport-gated'
-  | 'arbitrum'
-  | 'karma-eas-attestation';
+    | 'any'
+    | 'only-members'
+    | 'basic'
+    | 'passport-gated'
+    | 'arbitrum'
+    | 'karma-eas-attestation';
   schema: Record<string, any> | null;
   proposalValidationOnly?: boolean;
 };
@@ -247,25 +247,45 @@ watch(
     </template>
     <div class="p-4 flex flex-col gap-2.5">
       <UiLoading v-if="isLoading" class="m-auto" />
-      <div v-else-if="hasError" class="flex w-full justify-center items-center gap-2 text-skin-text">
+      <div
+        v-else-if="hasError"
+        class="flex w-full justify-center items-center gap-2 text-skin-text"
+      >
         <IH-exclamation-circle class="inline-block shrink-0" />
         <span>Failed to load strategies.</span>
       </div>
       <div v-else-if="selectedValidation" class="s-box">
-        <UiForm v-if="definition" v-model="form" :error="formErrors" :definition="definition" />
-        <UiTextarea v-else v-model:model-value="rawParams" :definition="{
-          type: 'string',
-          title: 'Strategy parameters'
-        }" :error="formErrors.rawParams" />
+        <UiForm
+          v-if="definition"
+          v-model="form"
+          :error="formErrors"
+          :definition="definition"
+        />
+        <UiTextarea
+          v-else
+          v-model:model-value="rawParams"
+          :definition="{
+            type: 'string',
+            title: 'Strategy parameters'
+          }"
+          :error="formErrors.rawParams"
+        />
         <template v-if="selectedValidation.key === 'basic'">
           <div class="flex items-center gap-1 mb-2">
             <h4 class="eyebrow font-medium">Custom strategies</h4>
-            <UiTooltip title="Calculate the score with a different configuration of Voting Strategies">
+            <UiTooltip
+              title="Calculate the score with a different configuration of Voting Strategies"
+            >
               <IH-question-mark-circle class="shrink-0" />
             </UiTooltip>
           </div>
-          <UiStrategiesConfiguratorOffchain v-model="customStrategies" class="mt-3" allow-duplicates
-            :network-id="networkId" :default-chain-id="defaultChainId">
+          <UiStrategiesConfiguratorOffchain
+            v-model="customStrategies"
+            class="mt-3"
+            allow-duplicates
+            :network-id="networkId"
+            :default-chain-id="defaultChainId"
+          >
             <template #empty>
               <div class="p-3 border border-dashed rounded-lg text-center">
                 No custom strategies added, space voting strategies will be used
@@ -275,28 +295,46 @@ watch(
           </UiStrategiesConfiguratorOffchain>
         </template>
       </div>
-      <UiSelector v-for="validation in filteredValidations" v-else :key="validation.key"
-        :is-active="current?.name === validation.key" @click="handleSelect(validation)">
+      <UiSelector
+        v-for="validation in filteredValidations"
+        v-else
+        :key="validation.key"
+        :is-active="current?.name === validation.key"
+        @click="handleSelect(validation)"
+      >
         <div class="w-full">
           <div class="flex items-center gap-1 overflow-hidden">
-            <h4 class="text-skin-link truncate" v-text="VALIDATION_TYPES_INFO[
-                validation.key === 'any' ? `any-${type}` : validation.key
-              ].label
-              " />
-            <span v-if="validation.key === 'passport-gated'"
-              class="bg-skin-text text-skin-accent-foreground rounded-full px-1.5 py-0.5 text-[13px] leading-[13px] h-fit">
+            <h4
+              class="text-skin-link truncate"
+              v-text="
+                VALIDATION_TYPES_INFO[
+                  validation.key === 'any' ? `any-${type}` : validation.key
+                ].label
+              "
+            />
+            <span
+              v-if="validation.key === 'passport-gated'"
+              class="bg-skin-text text-skin-accent-foreground rounded-full px-1.5 py-0.5 text-[13px] leading-[13px] h-fit"
+            >
               Beta
             </span>
           </div>
-          <div v-text="VALIDATION_TYPES_INFO[
-              validation.key === 'any' ? `any-${type}` : validation.key
-            ].description
-            " />
+          <div
+            v-text="
+              VALIDATION_TYPES_INFO[
+                validation.key === 'any' ? `any-${type}` : validation.key
+              ].description
+            "
+          />
         </div>
       </UiSelector>
     </div>
     <template v-if="selectedValidation" #footer>
-      <UiButton class="w-full" :disabled="Object.keys(formErrors).length > 0" @click="handleApply">
+      <UiButton
+        class="w-full"
+        :disabled="Object.keys(formErrors).length > 0"
+        @click="handleApply"
+      >
         Apply changes
       </UiButton>
     </template>

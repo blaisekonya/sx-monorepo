@@ -52,18 +52,15 @@ export const useFollowedSpacesStore = defineStore('followedSpaces', () => {
   const followedSpaceIdsByNetwork = computed(() =>
     followedSpacesIds.value
       .map(id => id.split(':') as [NetworkID, string])
-      .reduce(
-        (acc, [networkId, spaceId]) => {
-          acc[networkId] ||= [];
-          acc[networkId].push(
-            offchainNetworks.includes(networkId)
-              ? spaceId
-              : `${networkId}:${spaceId}`
-          );
-          return acc;
-        },
-        {} as Record<NetworkID, string[]>
-      )
+      .reduce((acc, [networkId, spaceId]) => {
+        acc[networkId] ||= [];
+        acc[networkId].push(
+          offchainNetworks.includes(networkId)
+            ? spaceId
+            : `${networkId}:${spaceId}`
+        );
+        return acc;
+      }, {} as Record<NetworkID, string[]>)
   );
 
   async function fetchSpacesData(ids: string[]) {

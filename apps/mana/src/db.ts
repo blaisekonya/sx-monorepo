@@ -7,8 +7,9 @@ export async function createTables() {
   const registeredTransactionsTableExists = await knex.schema.hasTable(
     REGISTERED_TRANSACTIONS
   );
-  const registeredProposalsTableExists =
-    await knex.schema.hasTable(REGISTERED_PROPOSALS);
+  const registeredProposalsTableExists = await knex.schema.hasTable(
+    REGISTERED_PROPOSALS
+  );
 
   if (!registeredTransactionsTableExists) {
     await knex.schema.createTable(REGISTERED_TRANSACTIONS, t => {

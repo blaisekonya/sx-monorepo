@@ -122,42 +122,80 @@ watchEffect(() => {
     <template #header>
       <h3>Edit strategy</h3>
       <template v-if="showPicker">
-        <button type="button" class="absolute left-0 -top-1 p-4" @click="showPicker = false">
+        <button
+          type="button"
+          class="absolute left-0 -top-1 p-4"
+          @click="showPicker = false"
+        >
           <IH-arrow-narrow-left class="mr-2" />
         </button>
         <div class="flex items-center border-t px-2 py-3 mt-3 -mb-3">
           <IH-search class="mx-2" />
-          <input ref="searchInput" v-model="searchValue" type="text" placeholder="Search"
-            class="flex-auto bg-transparent text-skin-link" />
+          <input
+            ref="searchInput"
+            v-model="searchValue"
+            type="text"
+            placeholder="Search"
+            class="flex-auto bg-transparent text-skin-link"
+          />
         </div>
       </template>
     </template>
     <div v-if="isDefinitionLoading" class="p-4 flex">
       <UiLoading class="m-auto" />
     </div>
-    <PickerContact v-else-if="showPicker" :loading="false" :search-value="searchValue" @pick="handlePickerSelect" />
+    <PickerContact
+      v-else-if="showPicker"
+      :loading="false"
+      :search-value="searchValue"
+      @pick="handlePickerSelect"
+    />
 
     <div v-else class="s-box p-4">
-      <UiMessage v-if="formErrors[CUSTOM_ERROR_SYMBOL]" type="danger" class="mb-3">
+      <UiMessage
+        v-if="formErrors[CUSTOM_ERROR_SYMBOL]"
+        type="danger"
+        class="mb-3"
+      >
         {{ formErrors[CUSTOM_ERROR_SYMBOL] }}
       </UiMessage>
-      <UiSelectorNetwork v-if="withNetworkSelector" v-model="network" :definition="{
-        type: ['string', 'number'],
-        title: 'Network',
-        examples: ['Select network'],
-        networkId,
-        networksListKind: 'offchain'
-      }" />
-      <UiForm v-if="definition" v-model="form" :error="formErrors" :definition="definition" @pick="handlePickerClick" />
-      <UiTextarea v-else v-model:model-value="rawParams" :definition="{
-        type: 'string',
-        title: 'Strategy parameters'
-      }" :error="formErrors.rawParams" />
+      <UiSelectorNetwork
+        v-if="withNetworkSelector"
+        v-model="network"
+        :definition="{
+          type: ['string', 'number'],
+          title: 'Network',
+          examples: ['Select network'],
+          networkId,
+          networksListKind: 'offchain'
+        }"
+      />
+      <UiForm
+        v-if="definition"
+        v-model="form"
+        :error="formErrors"
+        :definition="definition"
+        @pick="handlePickerClick"
+      />
+      <UiTextarea
+        v-else
+        v-model:model-value="rawParams"
+        :definition="{
+          type: 'string',
+          title: 'Strategy parameters'
+        }"
+        :error="formErrors.rawParams"
+      />
     </div>
     <template v-if="!showPicker && !isDefinitionLoading" #footer>
-      <UiButton class="w-full" :disabled="Object.keys(formErrors).length > 0 ||
-        !!formErrors[CUSTOM_ERROR_SYMBOL]
-        " @click="handleSubmit">
+      <UiButton
+        class="w-full"
+        :disabled="
+          Object.keys(formErrors).length > 0 ||
+          !!formErrors[CUSTOM_ERROR_SYMBOL]
+        "
+        @click="handleSubmit"
+      >
         Confirm
       </UiButton>
     </template>

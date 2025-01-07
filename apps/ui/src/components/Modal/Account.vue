@@ -94,27 +94,44 @@ function handleSignup() {
   <UiModal :open="open" @close="$emit('close')">
     <template #header>
       <div class="relative">
-        <h3 v-text="isLoggedOut
-          ? showConnectors
-            ? 'Connect wallet'
-            : 'Sign in'
-          : 'Account'
-          " />
+        <h3
+          v-text="
+            isLoggedOut
+              ? showConnectors
+                ? 'Connect wallet'
+                : 'Sign in'
+              : 'Account'
+          "
+        />
       </div>
     </template>
     <div class="m-4 flex flex-col gap-2">
       <template v-if="isLoggedOut">
         <template v-if="!showConnectors">
-          <UiButton class="w-full flex justify-center items-center gap-2" @click="handleLogin('walletlink')">
-            <img :src="getConnectorIconUrl(connectors.walletlink.icon)" height="28" width="28"
-              :alt="connectors.walletlink.name" />
+          <UiButton
+            class="w-full flex justify-center items-center gap-2"
+            @click="handleLogin('walletlink')"
+          >
+            <img
+              :src="getConnectorIconUrl(connectors.walletlink.icon)"
+              height="28"
+              width="28"
+              :alt="connectors.walletlink.name"
+            />
             Log in
           </UiButton>
 
           <div class="relative">
-            <UiButton class="w-full flex justify-center items-center gap-2" @click="showSignupInfo = true">
-              <img :src="getConnectorIconUrl(connectors.walletlink.icon)" height="28" width="28"
-                :alt="connectors.walletlink.name" />
+            <UiButton
+              class="w-full flex justify-center items-center gap-2"
+              @click="showSignupInfo = true"
+            >
+              <img
+                :src="getConnectorIconUrl(connectors.walletlink.icon)"
+                height="28"
+                width="28"
+                :alt="connectors.walletlink.name"
+              />
               Sign up
             </UiButton>
 
@@ -122,7 +139,9 @@ function handleSignup() {
             <UiModal :open="showSignupInfo" @close="showSignupInfo = false">
               <template #header>
                 <div class="relative">
-                  <h3 class="text-[22px] px-7">Welcome to the World Republic</h3>
+                  <h3 class="text-[22px] px-7">
+                    Welcome to the World Republic
+                  </h3>
                 </div>
               </template>
 
@@ -132,16 +151,19 @@ function handleSignup() {
                   To get started, first we'll create a smart wallet for you.
                 </div>
 
-
                 <!-- Wallet Benefits -->
                 <div class="px-3 py-4">
-                  <h4 class="mb-2 text-[18px] font-medium pt-2 pb-1.5">Your smart wallet enables you to:</h4>
+                  <h4 class="mb-2 text-[18px] font-medium pt-2 pb-1.5">
+                    Your smart wallet enables you to:
+                  </h4>
                   <div class="space-y-2.5">
                     <div class="flex items-center gap-3">
                       <div class="bg-skin-primary rounded-full p-2">
                         <IH-user class="w-[20px] h-[20px] text-skin-bg" />
                       </div>
-                      <div class="text-sm">Create and hold your Global Voter ID</div>
+                      <div class="text-sm">
+                        Create and hold your Global Voter ID
+                      </div>
                     </div>
                     <div class="flex items-center gap-3">
                       <div class="bg-skin-primary rounded-full p-2">
@@ -151,37 +173,54 @@ function handleSignup() {
                     </div>
                     <div class="flex items-center gap-3">
                       <div class="bg-skin-primary rounded-full p-2">
-                        <IH-check-badge class="w-[20px] h-[20px] text-skin-bg" />
+                        <IH-check-badge
+                          class="w-[20px] h-[20px] text-skin-bg"
+                        />
                       </div>
-                      <div class="text-sm">Experiment with global democracy</div>
+                      <div class="text-sm">
+                        Experiment with global democracy
+                      </div>
                     </div>
                   </div>
                 </div>
 
                 <!-- Passkeys Benefits -->
                 <div class="px-3 pt-2 pb-4">
-                  <h4 class="mb-2 text-[18px] font-medium pb-1.5">Why smart wallet?</h4>
+                  <h4 class="mb-2 text-[18px] font-medium pb-1.5">
+                    Why smart wallet?
+                  </h4>
                   <div class="space-y-2.5">
                     <div class="flex items-center gap-3">
                       <div class="bg-skin-primary rounded-full p-2">
-                        <IH-finger-print class="w-[20px] h-[20px] text-skin-bg" />
+                        <IH-finger-print
+                          class="w-[20px] h-[20px] text-skin-bg"
+                        />
                       </div>
-                      <div class="text-sm leading-[22px]">You can simply create and manage your account with your
-                        device's biometrics</div>
-                    </div>
-                    <div class="flex items-center gap-3">
-                      <div class="bg-skin-primary rounded-full p-2">
-                        <IH-shield-check class="w-[20px] h-[20px] text-skin-bg" />
-                      </div>
-                      <div class="text-sm leading-[22px]">Your cryptographic keys are generated and stored securely on
-                        your device
+                      <div class="text-sm leading-[22px]">
+                        You can simply create and manage your account with your
+                        device's biometrics
                       </div>
                     </div>
                     <div class="flex items-center gap-3">
                       <div class="bg-skin-primary rounded-full p-2">
-                        <IH-device-phone-mobile class="w-[20px] h-[20px] text-skin-bg" />
+                        <IH-shield-check
+                          class="w-[20px] h-[20px] text-skin-bg"
+                        />
                       </div>
-                      <div class="text-sm leading-[22px]">Zero cost, unified wallet across different apps</div>
+                      <div class="text-sm leading-[22px]">
+                        Your cryptographic keys are generated and stored
+                        securely on your device
+                      </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <div class="bg-skin-primary rounded-full p-2">
+                        <IH-device-phone-mobile
+                          class="w-[20px] h-[20px] text-skin-bg"
+                        />
+                      </div>
+                      <div class="text-sm leading-[22px]">
+                        Zero cost, unified wallet across different apps
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -206,10 +245,19 @@ function handleSignup() {
           <UiButton @click="handleLoginClick">Connect wallet</UiButton>
         </template>
         <template v-else>
-          <button v-for="connector in availableConnectors" :key="connector.id" type="button"
-            @click="handleLogin(connector.id)">
+          <button
+            v-for="connector in availableConnectors"
+            :key="connector.id"
+            type="button"
+            @click="handleLogin(connector.id)"
+          >
             <UiButton class="w-full flex justify-center items-center gap-2">
-              <img :src="getConnectorIconUrl(connector.icon)" height="28" width="28" :alt="connector.name" />
+              <img
+                :src="getConnectorIconUrl(connector.icon)"
+                height="28"
+                width="28"
+                :alt="connector.name"
+              />
               {{ connector.name }}
             </UiButton>
           </button>
@@ -218,31 +266,45 @@ function handleSignup() {
             <span class="mx-2 text-skin-content text-sm">OR</span>
             <div class="flex-grow border-t border-skin-border"></div>
           </div>
-          <UiButton class="w-full flex justify-center items-center gap-2" @click="showConnectors = false">
+          <UiButton
+            class="w-full flex justify-center items-center gap-2"
+            @click="showConnectors = false"
+          >
             Sign in
           </UiButton>
         </template>
       </template>
       <template v-else>
-        <UiButton :to="{ name: 'user', params: { user: web3.account } }" class="gap-2" @click="emit('close')">
+        <UiButton
+          :to="{ name: 'user', params: { user: web3.account } }"
+          class="gap-2"
+          @click="emit('close')"
+        >
           <UiStamp :id="user.id" :size="18" :cb="cb" />
           My profile
         </UiButton>
         <UiButton :to="{ name: 'settings-spaces' }" @click="emit('close')">
           Settings
         </UiButton>
-        <UiButton @click="() => {
-          step = 'connect';
-          showConnectors = true;
-        }
-          ">
+        <UiButton
+          @click="
+            () => {
+              step = 'connect';
+              showConnectors = true;
+            }
+          "
+        >
           {{ web3.account ? 'Change wallet' : 'Log in' }}
         </UiButton>
-        <UiButton class="!text-skin-danger" @click="() => {
-          handleLogout();
-          handleLoginClick();
-        }
-          ">
+        <UiButton
+          class="!text-skin-danger"
+          @click="
+            () => {
+              handleLogout();
+              handleLoginClick();
+            }
+          "
+        >
           Log out
         </UiButton>
       </template>

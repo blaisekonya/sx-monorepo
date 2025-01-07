@@ -80,9 +80,18 @@ watch(
 );
 
 watch(
-  [() => web3.value.account, () => web3.value.authLoading, () => authInitiated.value],
+  [
+    () => web3.value.account,
+    () => web3.value.authLoading,
+    () => authInitiated.value
+  ],
   ([account, authLoading, initiated]) => {
-    if (initiated && !account && !authLoading && !modalAccountWithoutDismissOpen.value) {
+    if (
+      initiated &&
+      !account &&
+      !authLoading &&
+      !modalAccountWithoutDismissOpen.value
+    ) {
       modalAccountOpen.value = true;
     }
   },
@@ -96,31 +105,55 @@ onUnmounted(() => {
 
 <template>
   <UiTopnav v-bind="$attrs" class="gap-4 pr-4">
-    <div class="flex items-center h-full truncate" :class="{
-      'lg:border-r lg:pr-4 lg:w-[240px] shrink-0': hasAppNav,
-      'border-r pr-4 w-[240px]': hasAppNav && uiStore.sideMenuOpen
-    }">
+    <div
+      class="flex items-center h-full truncate"
+      :class="{
+        'lg:border-r lg:pr-4 lg:w-[240px] shrink-0': hasAppNav,
+        'border-r pr-4 w-[240px]': hasAppNav && uiStore.sideMenuOpen
+      }"
+    >
       <slot name="toggle-sidebar-button" />
-      <Breadcrumb :class="[
-        'ml-4',
-        { 'hidden lg:flex': searchConfig && !uiStore.sideMenuOpen }
-      ]" />
+      <Breadcrumb
+        :class="[
+          'ml-4',
+          { 'hidden lg:flex': searchConfig && !uiStore.sideMenuOpen }
+        ]"
+      />
     </div>
-    <form v-if="searchConfig" id="search-form" class="flex flex-1 py-3 h-full" @submit="handleSearchSubmit">
+    <form
+      v-if="searchConfig"
+      id="search-form"
+      class="flex flex-1 py-3 h-full"
+      @submit="handleSearchSubmit"
+    >
       <label class="flex items-center w-full space-x-2.5">
         <IH-search class="shrink-0 opacity-60" />
-        <input ref="searchInput" v-model.trim="searchValue" type="text" :placeholder="searchConfig.placeholder"
-          class="bg-transparent text-skin-link text-[18px] md:mt-1 w-full" />
+        <input
+          ref="searchInput"
+          v-model.trim="searchValue"
+          type="text"
+          :placeholder="searchConfig.placeholder"
+          class="bg-transparent text-skin-link text-[18px] md:mt-1 w-full"
+        />
       </label>
     </form>
 
     <div class="flex space-x-2 shrink-0">
       <UiButton v-if="loading || web3.authLoading" loading />
-      <UiButton v-else class="float-left !px-0 w-[46px] sm:w-auto sm:!px-3 text-center"
-        @click="modalAccountOpen = true">
-        <span v-if="auth.isAuthenticated.value" class="sm:flex items-center space-x-2">
+      <UiButton
+        v-else
+        class="float-left !px-0 w-[46px] sm:w-auto sm:!px-3 text-center"
+        @click="modalAccountOpen = true"
+      >
+        <span
+          v-if="auth.isAuthenticated.value"
+          class="sm:flex items-center space-x-2"
+        >
           <UiStamp :id="user.id" :size="18" :cb="cb" />
-          <span class="hidden sm:block truncate max-w-[120px]" v-text="user.name || shorten(user.id)" />
+          <span
+            class="hidden sm:block truncate max-w-[120px]"
+            v-text="user.name || shorten(user.id)"
+          />
         </span>
         <template v-else>
           <span class="hidden sm:block" v-text="'Sign in'" />
@@ -135,8 +168,11 @@ onUnmounted(() => {
     </div>
   </UiTopnav>
   <teleport to="#modal">
-    <ModalAccount :open="modalAccountOpen || modalAccountWithoutDismissOpen"
-      :closeable="!modalAccountWithoutDismissOpen" @close="modalAccountOpen = false" />
+    <ModalAccount
+      :open="modalAccountOpen || modalAccountWithoutDismissOpen"
+      :closeable="!modalAccountWithoutDismissOpen"
+      @close="modalAccountOpen = false"
+    />
   </teleport>
 </template>
 

@@ -2193,7 +2193,8 @@
         "contractKind": "contract",
         "fullyImplemented": true,
         "linearizedBaseContracts": [
-          50813, 29865, 29809, 29108, 32208, 29926, 28858, 29890, 28936, 31384, 26372
+          50813, 29865, 29809, 29108, 32208, 29926, 28858, 29890, 28936, 31384,
+          26372
         ],
         "name": "CompToken",
         "nameLocation": "189:9:114",

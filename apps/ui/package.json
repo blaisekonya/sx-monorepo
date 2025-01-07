@@ -66,6 +66,7 @@
     "buffer": "^6.0.3",
     "dayjs": "^1.11.10",
     "electron": "^26.2.3",
+    "ethers": "^6.13.5",
     "events": "^3.3.0",
     "graphql": "^16.8.1",
     "graphql-tag": "^2.12.6",

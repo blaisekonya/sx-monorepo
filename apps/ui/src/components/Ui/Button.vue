@@ -19,16 +19,27 @@ withDefaults(
 </script>
 
 <template>
-  <AppLink v-if="to" :to="to" :class="{
-    primary: primary
-  }" class="button inline-flex items-center justify-center px-3.5">
+  <AppLink
+    v-if="to"
+    :to="to"
+    :class="{
+      primary: primary
+    }"
+    class="button inline-flex items-center justify-center px-3.5"
+  >
     <slot />
   </AppLink>
-  <button v-else :type="type" :disabled="disabled || loading" :class="{
-    primary: primary,
-    'w-[46px] px-0': loading,
-    'px-3.5': !loading || ($attrs.class as 'string')?.includes('w-full')
-  }" class="button leading-[100%] ">
+  <button
+    v-else
+    :type="type"
+    :disabled="disabled || loading"
+    :class="{
+      primary: primary,
+      'w-[46px] px-0': loading,
+      'px-3.5': !loading || ($attrs.class as 'string')?.includes('w-full')
+    }"
+    class="button leading-[100%]"
+  >
     <UiLoading v-if="loading" :inverse="primary" />
     <slot v-else />
   </button>

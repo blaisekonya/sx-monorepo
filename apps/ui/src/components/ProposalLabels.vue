@@ -24,26 +24,44 @@ const validLabels = computed(() => {
 </script>
 <template>
   <div v-if="inline" class="inline space-y-1">
-    <UiProposalLabel v-for="label in validLabels" :key="label.id" :label="label.name" :color="label.color" :to="withLink
-        ? {
-          name: 'space-proposals',
-          params: { space: `${space.network}:${space.id}` },
-          query: { labels: label.id }
-        }
-        : undefined
-      " v-bind="$attrs" class="inline-flex !max-w-[160px] mr-1 last:mr-0" />
-  </div>
-  <ul v-else-if="validLabels.length" class="flex flex-wrap gap-1" v-bind="$attrs">
-    <li v-for="label in validLabels" :key="label.id">
-      <UiTooltip :title="label.description" class="inline">
-        <UiProposalLabel :label="label.name" :color="label.color" :to="withLink
-            ? {
+    <UiProposalLabel
+      v-for="label in validLabels"
+      :key="label.id"
+      :label="label.name"
+      :color="label.color"
+      :to="
+        withLink
+          ? {
               name: 'space-proposals',
               params: { space: `${space.network}:${space.id}` },
               query: { labels: label.id }
             }
-            : undefined
-          " />
+          : undefined
+      "
+      v-bind="$attrs"
+      class="inline-flex !max-w-[160px] mr-1 last:mr-0"
+    />
+  </div>
+  <ul
+    v-else-if="validLabels.length"
+    class="flex flex-wrap gap-1"
+    v-bind="$attrs"
+  >
+    <li v-for="label in validLabels" :key="label.id">
+      <UiTooltip :title="label.description" class="inline">
+        <UiProposalLabel
+          :label="label.name"
+          :color="label.color"
+          :to="
+            withLink
+              ? {
+                  name: 'space-proposals',
+                  params: { space: `${space.network}:${space.id}` },
+                  query: { labels: label.id }
+                }
+              : undefined
+          "
+        />
       </UiTooltip>
     </li>
   </ul>

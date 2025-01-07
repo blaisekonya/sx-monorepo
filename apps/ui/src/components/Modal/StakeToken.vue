@@ -144,9 +144,18 @@ watch(
       </div>
       <template v-else>
         <div class="relative w-full">
-          <UiInputAmount :model-value="form.amount" :definition="AMOUNT_DEFINITION" :error="formErrors.amount"
-            @update:model-value="handleAmountUpdate" />
-          <button type="button" class="absolute right-3 top-1" href="#" @click.prevent="handleMaxClick">
+          <UiInputAmount
+            :model-value="form.amount"
+            :definition="AMOUNT_DEFINITION"
+            :error="formErrors.amount"
+            @update:model-value="handleAmountUpdate"
+          />
+          <button
+            type="button"
+            class="absolute right-3 top-1"
+            href="#"
+            @click.prevent="handleMaxClick"
+          >
             max
           </button>
           <div class="absolute right-3 top-[26px] flex items-center gap-x-2">
@@ -155,14 +164,26 @@ watch(
           </div>
         </div>
         <div class="relative w-full">
-          <UiInputAmount :model-value="form.amount" disabled :definition="{
-            type: 'number',
-            title: 'Receive',
-            examples: ['0']
-          }" />
+          <UiInputAmount
+            :model-value="form.amount"
+            disabled
+            :definition="{
+              type: 'number',
+              title: 'Receive',
+              examples: ['0']
+            }"
+          />
           <div class="absolute right-3 top-[28px] flex items-center gap-x-2">
-            <UiStamp :id="`${networkId}:${stakingContract.address}`" type="token" :size="20" />
-            <UiStamp :id="`eip155:${network}:${stakingContract.address}`" type="token" :size="20" />
+            <UiStamp
+              :id="`${networkId}:${stakingContract.address}`"
+              type="token"
+              :size="20"
+            />
+            <UiStamp
+              :id="`eip155:${network}:${stakingContract.address}`"
+              type="token"
+              :size="20"
+            />
             stETH
           </div>
         </div>

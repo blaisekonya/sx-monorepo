@@ -168,21 +168,37 @@ watchEffect(() => setTitle('Create space'));
 
 <template>
   <div>
-    <CreateDeploymentProgress v-if="confirming && salt && predictedSpaceAddress && validationStrategy"
-      :network-id="selectedNetworkId" :salt="salt" :predicted-space-address="predictedSpaceAddress"
-      :metadata="metadataForm" :settings="settingsForm" :authenticators="authenticators"
-      :validation-strategy="validationStrategy" :voting-strategies="votingStrategies"
-      :execution-strategies="executionStrategies" :controller="controller" />
+    <CreateDeploymentProgress
+      v-if="confirming && salt && predictedSpaceAddress && validationStrategy"
+      :network-id="selectedNetworkId"
+      :salt="salt"
+      :predicted-space-address="predictedSpaceAddress"
+      :metadata="metadataForm"
+      :settings="settingsForm"
+      :authenticators="authenticators"
+      :validation-strategy="validationStrategy"
+      :voting-strategies="votingStrategies"
+      :execution-strategies="executionStrategies"
+      :controller="controller"
+    />
     <div v-else class="pt-5 flex max-w-[50rem] mx-auto px-4">
       <div
-        class="flex fixed lg:sticky top-[72px] inset-x-0 p-3 border-b z-10 bg-skin-bg lg:top-auto lg:inset-x-auto lg:p-0 lg:pr-5 lg:border-0 lg:flex-col gap-1 min-w-[180px] overflow-auto">
-        <button v-for="page in PAGES" ref="pagesRefs" :key="page.id" type="button" :disabled="!accessiblePages[page.id]"
+        class="flex fixed lg:sticky top-[72px] inset-x-0 p-3 border-b z-10 bg-skin-bg lg:top-auto lg:inset-x-auto lg:p-0 lg:pr-5 lg:border-0 lg:flex-col gap-1 min-w-[180px] overflow-auto"
+      >
+        <button
+          v-for="page in PAGES"
+          ref="pagesRefs"
+          :key="page.id"
+          type="button"
+          :disabled="!accessiblePages[page.id]"
           class="px-3 py-1 block lg:w-full rounded text-left scroll-mr-3 first:ml-auto last:mr-auto whitespace-nowrap"
           :class="{
             'bg-skin-active-bg': page.id === currentPage,
             'hover:bg-skin-hover-bg': page.id !== currentPage,
             'text-skin-link': accessiblePages[page.id]
-          }" @click="currentPage = page.id">
+          }"
+          @click="currentPage = page.id"
+        >
           {{ page.title }}
         </button>
       </div>
@@ -190,41 +206,100 @@ watchEffect(() => setTitle('Create space'));
         <div class="mt-8 lg:mt-0">
           <template v-if="currentPage === 'profile'">
             <h3 class="mb-4">Space profile</h3>
-            <FormSpaceProfile :form="metadataForm" @errors="v => handleErrors('profile', v)" />
+            <FormSpaceProfile
+              :form="metadataForm"
+              @errors="v => handleErrors('profile', v)"
+            />
             <div class="s-box p-4 -mt-6">
-              <FormSpaceTreasuries v-model="metadataForm.treasuries" :network-id="selectedNetworkId" />
-              <FormSpaceDelegations v-model="metadataForm.delegations" :network-id="selectedNetworkId" class="mt-2" />
+              <FormSpaceTreasuries
+                v-model="metadataForm.treasuries"
+                :network-id="selectedNetworkId"
+              />
+              <FormSpaceDelegations
+                v-model="metadataForm.delegations"
+                :network-id="selectedNetworkId"
+                class="mt-2"
+              />
             </div>
           </template>
-          <FormNetwork v-else-if="currentPage === 'network'" v-model="selectedNetworkId" />
-          <FormStrategies v-else-if="currentPage === 'strategies'" v-model="votingStrategies"
-            :network-id="selectedNetworkId" :available-strategies="selectedNetwork.constants.EDITOR_VOTING_STRATEGIES
-              " title="Voting strategies"
-            description="Voting strategies are customizable contracts used to define how much voting power each user has when casting a vote." />
-          <FormStrategies v-else-if="currentPage === 'auths'" v-model="authenticators" unique
-            :network-id="selectedNetworkId" :available-strategies="selectedNetwork.constants.EDITOR_AUTHENTICATORS
-              " title="Authenticators"
-            description="Authenticators are customizable contracts that verify user identity for proposing and voting using different methods." />
-          <FormValidation v-else-if="currentPage === 'validations'" v-model="validationStrategy"
-            :network-id="selectedNetworkId" :available-strategies="selectedNetwork.constants.EDITOR_PROPOSAL_VALIDATIONS
-              " :available-voting-strategies="selectedNetwork.constants
+          <FormNetwork
+            v-else-if="currentPage === 'network'"
+            v-model="selectedNetworkId"
+          />
+          <FormStrategies
+            v-else-if="currentPage === 'strategies'"
+            v-model="votingStrategies"
+            :network-id="selectedNetworkId"
+            :available-strategies="
+              selectedNetwork.constants.EDITOR_VOTING_STRATEGIES
+            "
+            title="Voting strategies"
+            description="Voting strategies are customizable contracts used to define how much voting power each user has when casting a vote."
+          />
+          <FormStrategies
+            v-else-if="currentPage === 'auths'"
+            v-model="authenticators"
+            unique
+            :network-id="selectedNetworkId"
+            :available-strategies="
+              selectedNetwork.constants.EDITOR_AUTHENTICATORS
+            "
+            title="Authenticators"
+            description="Authenticators are customizable contracts that verify user identity for proposing and voting using different methods."
+          />
+          <FormValidation
+            v-else-if="currentPage === 'validations'"
+            v-model="validationStrategy"
+            :network-id="selectedNetworkId"
+            :available-strategies="
+              selectedNetwork.constants.EDITOR_PROPOSAL_VALIDATIONS
+            "
+            :available-voting-strategies="
+              selectedNetwork.constants
                 .EDITOR_PROPOSAL_VALIDATION_VOTING_STRATEGIES
-                " title="Proposal validation"
-            description="Proposal validation strategies are used to determine if a user is allowed to create a proposal." />
-          <FormStrategies v-else-if="currentPage === 'executions'" v-model="executionStrategies"
-            :network-id="selectedNetworkId" :available-strategies="selectedNetwork.constants.EDITOR_EXECUTION_STRATEGIES
-              " :default-params="{ controller }" title="Execution strategies"
-            description="Execution strategies are used to determine the status of a proposal and execute its payload if it's accepted." />
-          <FormVoting v-else-if="currentPage === 'voting'" :form="settingsForm" :selected-network-id="selectedNetworkId"
-            @errors="v => handleErrors('voting', v)" />
-          <FormController v-else-if="currentPage === 'controller'" v-model="controller"
-            @errors="v => handleErrors('controller', v)" />
+            "
+            title="Proposal validation"
+            description="Proposal validation strategies are used to determine if a user is allowed to create a proposal."
+          />
+          <FormStrategies
+            v-else-if="currentPage === 'executions'"
+            v-model="executionStrategies"
+            :network-id="selectedNetworkId"
+            :available-strategies="
+              selectedNetwork.constants.EDITOR_EXECUTION_STRATEGIES
+            "
+            :default-params="{ controller }"
+            title="Execution strategies"
+            description="Execution strategies are used to determine the status of a proposal and execute its payload if it's accepted."
+          />
+          <FormVoting
+            v-else-if="currentPage === 'voting'"
+            :form="settingsForm"
+            :selected-network-id="selectedNetworkId"
+            @errors="v => handleErrors('voting', v)"
+          />
+          <FormController
+            v-else-if="currentPage === 'controller'"
+            v-model="controller"
+            @errors="v => handleErrors('controller', v)"
+          />
         </div>
 
-        <UiButton v-if="showCreate" class="w-full" :loading="sending" :disabled="submitDisabled" @click="handleSubmit">
+        <UiButton
+          v-if="showCreate"
+          class="w-full"
+          :loading="sending"
+          :disabled="submitDisabled"
+          @click="handleSubmit"
+        >
           Create
         </UiButton>
-        <UiButton v-else class="w-full" :disabled="nextDisabled" @click="handleNextClick">
+        <UiButton
+          v-else
+          class="w-full"
+          :disabled="nextDisabled"
+          @click="handleNextClick"
+        >
           Next
         </UiButton>
       </div>

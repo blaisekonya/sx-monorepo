@@ -44,8 +44,12 @@ function handleAcceptTerms() {
 <template>
   <div>
     <div class="border-b mx-3 sm:mx-4 py-[14px] flex">
-      <ProposalsListItemHeading :proposal="proposal" :show-author="showAuthor" :show-space="showSpace"
-        class="flex-auto mr-1 w-0" />
+      <ProposalsListItemHeading
+        :proposal="proposal"
+        :show-author="showAuthor"
+        :show-space="showSpace"
+        class="flex-auto mr-1 w-0"
+      />
       <div class="hidden md:block">
         <ProposalVote :proposal="proposal">
           <template #wrong-safe-network>
@@ -64,23 +68,44 @@ function handleAcceptTerms() {
             <div />
           </template>
           <template #voted>
-            <ProposalResults v-if="proposal.type === 'basic'" :proposal="proposal" />
+            <ProposalResults
+              v-if="proposal.type === 'basic'"
+              :proposal="proposal"
+            />
             <div v-else />
           </template>
           <template #ended>
-            <ProposalResults v-if="proposal.type === 'basic'" :proposal="proposal" />
+            <ProposalResults
+              v-if="proposal.type === 'basic'"
+              :proposal="proposal"
+            />
             <div v-else />
           </template>
-          <ProposalVoteBasic v-if="proposal.type === 'basic'" :choices="proposal.choices" :size="40" class="py-2"
-            @vote="handleVoteClick" />
+          <ProposalVoteBasic
+            v-if="proposal.type === 'basic'"
+            :choices="proposal.choices"
+            :size="40"
+            class="py-2"
+            @vote="handleVoteClick"
+          />
         </ProposalVote>
       </div>
     </div>
   </div>
   <teleport to="#modal">
-    <ModalTerms v-if="proposal.space.terms" :open="modalOpenTerms" :space="proposal.space"
-      @close="modalOpenTerms = false" @accept="handleAcceptTerms" />
-    <ModalVote :choice="selectedChoice" :proposal="proposal" :open="modalOpenVote" @close="modalOpenVote = false"
-      @voted="selectedChoice = null" />
+    <ModalTerms
+      v-if="proposal.space.terms"
+      :open="modalOpenTerms"
+      :space="proposal.space"
+      @close="modalOpenTerms = false"
+      @accept="handleAcceptTerms"
+    />
+    <ModalVote
+      :choice="selectedChoice"
+      :proposal="proposal"
+      :open="modalOpenVote"
+      @close="modalOpenVote = false"
+      @voted="selectedChoice = null"
+    />
   </teleport>
 </template>

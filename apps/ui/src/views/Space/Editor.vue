@@ -190,7 +190,7 @@ const proposalMinEnd = computed(
   () =>
     proposal.value?.min_end ??
     proposalStart.value +
-    (props.space.min_voting_period || defaultVotingDelay.value)
+      (props.space.min_voting_period || defaultVotingDelay.value)
 );
 
 const proposalMaxEnd = computed(() => {
@@ -199,7 +199,7 @@ const proposalMaxEnd = computed(() => {
   return (
     proposal.value?.max_end ??
     proposalStart.value +
-    (props.space.max_voting_period || defaultVotingDelay.value)
+      (props.space.max_voting_period || defaultVotingDelay.value)
   );
 });
 
@@ -311,7 +311,7 @@ function handleTransactionAccept() {
 
   const transactions =
     proposal.value.executions[
-    walletConnectTransactionExecutionStrategy.value.address
+      walletConnectTransactionExecutionStrategy.value.address
     ] ?? [];
 
   proposal.value.executions[
@@ -385,114 +385,251 @@ watchEffect(() => {
 <template>
   <div v-if="proposal">
     <UiTopnav class="gap-2 px-4">
-      <UiButton :to="{ name: 'space-overview', params: { space: spaceKey } }" class="w-[46px] !px-0 mr-2 shrink-0">
+      <UiButton
+        :to="{ name: 'space-overview', params: { space: spaceKey } }"
+        class="w-[46px] !px-0 mr-2 shrink-0"
+      >
         <IH-arrow-narrow-left />
       </UiButton>
-      <h4 class="grow truncate" v-text="proposal?.proposalId ? 'Update proposal' : 'New proposal'" />
+      <h4
+        class="grow truncate"
+        v-text="proposal?.proposalId ? 'Update proposal' : 'New proposal'"
+      />
       <IndicatorPendingTransactions />
       <UiTooltip title="Drafts">
         <UiButton class="leading-3 !px-0 w-[46px]" @click="modalOpen = true">
           <IH-collection class="inline-block" />
         </UiButton>
       </UiTooltip>
-      <UiButton class="primary min-w-[46px] flex gap-2 justify-center items-center !px-0 md:!px-3" :loading="!!web3.account &&
-        (sending ||
-          !propositionPower ||
-          propositionPower.status === 'loading')
-        " :disabled="!canSubmit" @click="handleProposeClick">
-        <span class="hidden md:inline-block" v-text="proposal?.proposalId ? 'Update' : 'Publish'" />
+      <UiButton
+        class="primary min-w-[46px] flex gap-2 justify-center items-center !px-0 md:!px-3"
+        :loading="
+          !!web3.account &&
+          (sending ||
+            !propositionPower ||
+            propositionPower.status === 'loading')
+        "
+        :disabled="!canSubmit"
+        @click="handleProposeClick"
+      >
+        <span
+          class="hidden md:inline-block"
+          v-text="proposal?.proposalId ? 'Update' : 'Publish'"
+        />
         <IH-paper-airplane class="rotate-90 relative left-[2px]" />
       </UiButton>
     </UiTopnav>
     <div class="flex items-stretch md:flex-row flex-col w-full md:h-full">
       <div class="flex-1 grow min-w-0">
         <UiContainer class="pt-5 !max-w-[710px] mx-0 md:mx-auto s-box">
-          <MessageVotingPower v-if="propositionPower" class="mb-4" :voting-power="propositionPower" action="propose"
-            @fetch-voting-power="handleFetchPropositionPower" />
-          <UiAlert v-if="
-            propositionPower &&
-            spaceType === 'default' &&
-            proposalLimitReached
-          " type="error" class="mb-4">
-            <span>Please verify your space to publish more proposals.
-              <a :href="VERIFIED_URL" target="_blank" class="text-rose-500 dark:text-neutral-100 font-semibold">Verify
-                space</a>.</span>
+          <MessageVotingPower
+            v-if="propositionPower"
+            class="mb-4"
+            :voting-power="propositionPower"
+            action="propose"
+            @fetch-voting-power="handleFetchPropositionPower"
+          />
+          <UiAlert
+            v-if="
+              propositionPower &&
+              spaceType === 'default' &&
+              proposalLimitReached
+            "
+            type="error"
+            class="mb-4"
+          >
+            <span
+              >Please verify your space to publish more proposals.
+              <a
+                :href="VERIFIED_URL"
+                target="_blank"
+                class="text-rose-500 dark:text-neutral-100 font-semibold"
+                >Verify space</a
+              >.</span
+            >
           </UiAlert>
-          <UiAlert v-else-if="
-            propositionPower && spaceType !== 'turbo' && proposalLimitReached
-          " type="error" class="mb-4">
-            <span>You can publish up to {{ MAX_1D_PROPOSALS.verified }} proposals
+          <UiAlert
+            v-else-if="
+              propositionPower && spaceType !== 'turbo' && proposalLimitReached
+            "
+            type="error"
+            class="mb-4"
+          >
+            <span
+              >You can publish up to {{ MAX_1D_PROPOSALS.verified }} proposals
               per day and {{ MAX_30D_PROPOSALS.verified }} proposals per month.
-              <a :href="TURBO_URL" target="_blank" class="text-rose-500 dark:text-neutral-100 font-semibold">Increase
-                limit</a>.</span>
+              <a
+                :href="TURBO_URL"
+                target="_blank"
+                class="text-rose-500 dark:text-neutral-100 font-semibold"
+                >Increase limit</a
+              >.</span
+            >
           </UiAlert>
-          <UiInputString :key="proposalKey || ''" v-model="proposal.title" :definition="TITLE_DEFINITION"
-            :error="formErrors.title" />
+          <UiInputString
+            :key="proposalKey || ''"
+            v-model="proposal.title"
+            :definition="TITLE_DEFINITION"
+            :error="formErrors.title"
+          />
           <div class="flex space-x-3">
             <button type="button" @click="previewEnabled = false">
-              <UiLink :is-active="!previewEnabled" text="Write" class="border-transparent" />
+              <UiLink
+                :is-active="!previewEnabled"
+                text="Write"
+                class="border-transparent"
+              />
             </button>
             <button type="button" @click="previewEnabled = true">
-              <UiLink :is-active="previewEnabled" text="Preview" class="border-transparent" />
+              <UiLink
+                :is-active="previewEnabled"
+                text="Preview"
+                class="border-transparent"
+              />
             </button>
           </div>
-          <UiMarkdown v-if="previewEnabled" class="px-3 py-2 border rounded-lg mb-[14px] min-h-[260px]"
-            :body="proposal.body" />
-          <UiComposer v-else v-model="proposal.body" :definition="bodyDefinition" :error="formErrors.body">
-            <template v-if="!space?.turbo &&
-              isOffchainSpace &&
-              formErrors.body?.startsWith('Must not have more than')
-              " #error-suffix>
-              <a :href="TURBO_URL" target="_blank" class="ml-1 text-skin-danger font-semibold">Increase limit</a>.
+          <UiMarkdown
+            v-if="previewEnabled"
+            class="px-3 py-2 border rounded-lg mb-[14px] min-h-[260px]"
+            :body="proposal.body"
+          />
+          <UiComposer
+            v-else
+            v-model="proposal.body"
+            :definition="bodyDefinition"
+            :error="formErrors.body"
+          >
+            <template
+              v-if="
+                !space?.turbo &&
+                isOffchainSpace &&
+                formErrors.body?.startsWith('Must not have more than')
+              "
+              #error-suffix
+            >
+              <a
+                :href="TURBO_URL"
+                target="_blank"
+                class="ml-1 text-skin-danger font-semibold"
+                >Increase limit</a
+              >.
             </template>
           </UiComposer>
           <div class="s-base mb-5">
-            <UiInputString :key="proposalKey || ''" v-model="proposal.discussion" :definition="DISCUSSION_DEFINITION"
-              :error="formErrors.discussion" />
-            <UiLinkPreview :key="proposalKey || ''" :url="proposal.discussion" />
+            <UiInputString
+              :key="proposalKey || ''"
+              v-model="proposal.discussion"
+              :definition="DISCUSSION_DEFINITION"
+              :error="formErrors.discussion"
+            />
+            <UiLinkPreview
+              :key="proposalKey || ''"
+              :url="proposal.discussion"
+            />
           </div>
-          <div v-if="
-            network &&
-            strategiesWithTreasuries &&
-            strategiesWithTreasuries.length > 0
-          ">
+          <div
+            v-if="
+              network &&
+              strategiesWithTreasuries &&
+              strategiesWithTreasuries.length > 0
+            "
+          >
             <h4 class="eyebrow mb-2">Execution</h4>
-            <EditorExecution v-for="execution in editorExecutions" :key="execution.address"
-              :model-value="execution.transactions" :disabled="!supportsMultipleTreasuries &&
+            <EditorExecution
+              v-for="execution in editorExecutions"
+              :key="execution.address"
+              :model-value="execution.transactions"
+              :disabled="
+                !supportsMultipleTreasuries &&
                 hasExecution &&
                 execution.transactions.length === 0
-                " :space="space" :strategy="execution" :extra-contacts="extraContacts" class="mb-3" @update:model-value="value => handleExecutionUpdated(execution.address, value)
-                " />
+              "
+              :space="space"
+              :strategy="execution"
+              :extra-contacts="extraContacts"
+              class="mb-3"
+              @update:model-value="
+                value => handleExecutionUpdated(execution.address, value)
+              "
+            />
           </div>
         </UiContainer>
       </div>
 
-      <Affix :class="['shrink-0 md:w-[340px] border-l-0 md:border-l -mb-6']" :top="72" :bottom="64">
+      <Affix
+        :class="['shrink-0 md:w-[340px] border-l-0 md:border-l -mb-6']"
+        :top="72"
+        :bottom="64"
+      >
         <div class="flex flex-col p-4 space-y-4">
-          <EditorVotingType v-model="proposal" :voting-types="enforcedVoteType ? [enforcedVoteType] : space.voting_types
-            " />
-          <EditorChoices v-model="proposal" :minimum-basic-choices="offchainNetworks.includes(space.network) ? 2 : 3
-            " :definition="choicesDefinition" :error="proposal.choices.length > choicesDefinition.maxItems
-                ? `Must not have more than ${_n(choicesDefinition.maxItems)} items.`
+          <EditorVotingType
+            v-model="proposal"
+            :voting-types="
+              enforcedVoteType ? [enforcedVoteType] : space.voting_types
+            "
+          />
+          <EditorChoices
+            v-model="proposal"
+            :minimum-basic-choices="
+              offchainNetworks.includes(space.network) ? 2 : 3
+            "
+            :definition="choicesDefinition"
+            :error="
+              proposal.choices.length > choicesDefinition.maxItems
+                ? `Must not have more than ${_n(
+                    choicesDefinition.maxItems
+                  )} items.`
                 : ''
-              ">
+            "
+          >
             <template v-if="!space?.turbo && isOffchainSpace" #error-suffix>
-              <a :href="TURBO_URL" target="_blank" class="ml-1 text-skin-danger font-semibold">Increase limit</a>.
+              <a
+                :href="TURBO_URL"
+                target="_blank"
+                class="ml-1 text-skin-danger font-semibold"
+                >Increase limit</a
+              >.
             </template>
           </EditorChoices>
-          <EditorLabels v-if="space.labels?.length" v-model="proposal.labels" :space="space" />
-          <EditorTimeline v-model="proposal" :space="space" :created="proposal.created || unixTimestamp"
-            :start="proposalStart" :min_end="proposalMinEnd" :max_end="proposalMaxEnd"
-            :editable="!proposal.proposalId" />
+          <EditorLabels
+            v-if="space.labels?.length"
+            v-model="proposal.labels"
+            :space="space"
+          />
+          <EditorTimeline
+            v-model="proposal"
+            :space="space"
+            :created="proposal.created || unixTimestamp"
+            :start="proposalStart"
+            :min_end="proposalMinEnd"
+            :max_end="proposalMaxEnd"
+            :editable="!proposal.proposalId"
+          />
         </div>
       </Affix>
     </div>
     <teleport to="#modal">
-      <ModalTerms v-if="space.terms" :open="modalOpenTerms" :space="space" @close="modalOpenTerms = false"
-        @accept="handleAcceptTerms" />
-      <ModalDrafts :open="modalOpen" :network-id="space.network" :space="space.id" @close="modalOpen = false" />
-      <ModalTransaction v-if="transaction && walletConnectNetwork" :open="!!transaction" :network="walletConnectNetwork"
-        :initial-state="transaction._form" @add="handleTransactionAccept" @close="reset" />
+      <ModalTerms
+        v-if="space.terms"
+        :open="modalOpenTerms"
+        :space="space"
+        @close="modalOpenTerms = false"
+        @accept="handleAcceptTerms"
+      />
+      <ModalDrafts
+        :open="modalOpen"
+        :network-id="space.network"
+        :space="space.id"
+        @close="modalOpen = false"
+      />
+      <ModalTransaction
+        v-if="transaction && walletConnectNetwork"
+        :open="!!transaction"
+        :network="walletConnectNetwork"
+        :initial-state="transaction._form"
+        @add="handleTransactionAccept"
+        @close="reset"
+      />
     </teleport>
   </div>
 </template>

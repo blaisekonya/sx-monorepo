@@ -13,7 +13,9 @@ export class SplitUint256 {
   }
 
   static fromUint(uint: bigint): SplitUint256 {
-    const low = `0x${(uint & ((BigInt(1) << BigInt(128)) - BigInt(1))).toString(16)}`;
+    const low = `0x${(uint & ((BigInt(1) << BigInt(128)) - BigInt(1))).toString(
+      16
+    )}`;
     const high = `0x${(uint >> BigInt(128)).toString(16)}`;
     return new SplitUint256(low, high);
   }

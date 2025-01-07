@@ -550,7 +550,9 @@ export function createActions(
         convertToMetaTransactions(proposal.executions[0].transactions)
       );
 
-      const executionHash = `${executionParams[2]}${executionParams[1].slice(2)}`;
+      const executionHash = `${executionParams[2]}${executionParams[1].slice(
+        2
+      )}`;
 
       return executionCall('eth', l1ChainId, 'executeStarknetProposal', {
         space: proposal.space.id,

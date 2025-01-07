@@ -155,41 +155,70 @@ router.afterEach(() => {
 </script>
 
 <template>
-  <div ref="el" class="min-h-screen" :class="{ 'overflow-clip': scrollDisabled }">
+  <div
+    ref="el"
+    class="min-h-screen"
+    :class="{ 'overflow-clip': scrollDisabled }"
+  >
     <UiLoading v-if="app.loading || !app.init" class="overlay big" />
     <div v-else :class="['flex min-h-screen']">
-      <AppBottomNav v-if="web3.account && !isWhiteLabel"
-        class="fixed bottom-0 inset-x-0 hidden app-bottom-nav z-20 app-bottom-nav-open" />
-      <AppSidebar v-if="hasSidebar" :class="[
-        `hidden lg:flex app-sidebar fixed inset-y-0`,
-        { '!flex app-sidebar-open': uiStore.sideMenuOpen }
-      ]" />
+      <AppBottomNav
+        v-if="web3.account && !isWhiteLabel"
+        class="fixed bottom-0 inset-x-0 hidden app-bottom-nav z-20 app-bottom-nav-open"
+      />
+      <AppSidebar
+        v-if="hasSidebar"
+        :class="[
+          `hidden lg:flex app-sidebar fixed inset-y-0`,
+          { '!flex app-sidebar-open': uiStore.sideMenuOpen }
+        ]"
+      />
       <AppTopnav :has-app-nav="hasAppNav" :class="{ hidden: !hasTopNav }">
         <template #toggle-sidebar-button>
-          <button v-if="hasSwipeableContent" type="button" class="text-skin-link lg:hidden ml-4"
-            @click="uiStore.toggleSidebar">
+          <button
+            v-if="hasSwipeableContent"
+            type="button"
+            class="text-skin-link lg:hidden ml-4"
+            @click="uiStore.toggleSidebar"
+          >
             <IH-menu-alt-2 />
           </button>
         </template>
       </AppTopnav>
-      <AppNav v-if="hasAppNav" :class="[
-        'top-[72px] inset-y-0 z-10 hidden lg:block fixed app-nav',
-        {
-          '!block app-nav-open': uiStore.sideMenuOpen
-        }
-      ]" />
-      <button v-if="uiStore.sideMenuOpen" type="button" class="backdrop" @click="uiStore.sideMenuOpen = false" />
+      <AppNav
+        v-if="hasAppNav"
+        :class="[
+          'top-[72px] inset-y-0 z-10 hidden lg:block fixed app-nav',
+          {
+            '!block app-nav-open': uiStore.sideMenuOpen
+          }
+        ]"
+      />
+      <button
+        v-if="uiStore.sideMenuOpen"
+        type="button"
+        class="backdrop"
+        @click="uiStore.sideMenuOpen = false"
+      />
       <main class="flex-auto w-full flex">
         <div class="flex-auto w-0 mt-[72px]">
           <router-view class="pb-6" />
         </div>
-        <div v-if="hasPlaceHolderSidebar" class="app-placeholder-sidebar hidden xl:block" />
+        <div
+          v-if="hasPlaceHolderSidebar"
+          class="app-placeholder-sidebar hidden xl:block"
+        />
       </main>
     </div>
     <AppNotifications />
-    <ModalTransaction v-if="route.name !== 'space-editor' && transaction && network" :open="!!transaction"
-      :network="network" :initial-state="transaction._form" @add="handleTransactionAccept"
-      @close="handleTransactionReject" />
+    <ModalTransaction
+      v-if="route.name !== 'space-editor' && transaction && network"
+      :open="!!transaction"
+      :network="network"
+      :initial-state="transaction._form"
+      @add="handleTransactionAccept"
+      @close="handleTransactionReject"
+    />
   </div>
 </template>
 
@@ -204,7 +233,7 @@ $placeholderSidebarWidth: 240px;
 
   @media (max-width: 1011px) {
     &-open {
-      &~ :deep(*) {
+      & ~ :deep(*) {
         @apply translate-x-[#{$sidebarWidth}];
 
         .app-toolbar-bottom {
@@ -212,7 +241,7 @@ $placeholderSidebarWidth: 240px;
         }
       }
 
-      &:has(~ .app-nav)~.app-nav~ :deep(*) {
+      &:has(~ .app-nav) ~ .app-nav ~ :deep(*) {
         @apply translate-x-[#{$sidebarWidth + $navWidth}];
       }
     }
@@ -224,7 +253,7 @@ $placeholderSidebarWidth: 240px;
 
   @media (max-width: 1011px) {
     &-open {
-      &~ :deep(*) {
+      & ~ :deep(*) {
         @apply translate-x-[#{$navWidth}];
 
         .app-toolbar-bottom {
@@ -242,9 +271,9 @@ $placeholderSidebarWidth: 240px;
     &-open {
       @apply grid;
 
-      &~.backdrop,
-      &~.app-nav-open,
-      &~.app-sidebar-open {
+      & ~ .backdrop,
+      & ~ .app-nav-open,
+      & ~ .app-sidebar-open {
         @apply bottom-[#{$mobileMenuHeight}];
       }
     }
@@ -262,37 +291,35 @@ $placeholderSidebarWidth: 240px;
 }
 
 @media (screen(xl)) {
-  main>div:has(+ .app-placeholder-sidebar) :deep(.app-toolbar-bottom) {
+  main > div:has(+ .app-placeholder-sidebar) :deep(.app-toolbar-bottom) {
     @apply right-[#{$placeholderSidebarWidth}];
   }
 }
 
 @media (screen(lg)) {
   .app-sidebar {
-
-    &~ :deep(main),
-    &~.backdrop,
-    &~ :deep(header.fixed),
-    &~ :deep(main header.fixed),
-    &~ :deep(main .app-toolbar-bottom),
-    &~ :deep(.app-nav) {
+    & ~ :deep(main),
+    & ~ .backdrop,
+    & ~ :deep(header.fixed),
+    & ~ :deep(main header.fixed),
+    & ~ :deep(main .app-toolbar-bottom),
+    & ~ :deep(.app-nav) {
       @apply ml-[#{$sidebarWidth}];
     }
 
-    &:has(~ .app-nav)~.app-nav {
-
-      &~ :deep(main),
-      &~.backdrop,
-      &~ :deep(header.fixed),
-      &~ :deep(main header.fixed),
-      &~ :deep(main .app-toolbar-bottom),
-      &~ :deep(.app-nav) {
+    &:has(~ .app-nav) ~ .app-nav {
+      & ~ :deep(main),
+      & ~ .backdrop,
+      & ~ :deep(header.fixed),
+      & ~ :deep(main header.fixed),
+      & ~ :deep(main .app-toolbar-bottom),
+      & ~ :deep(.app-nav) {
         @apply ml-[#{$sidebarWidth + $navWidth}];
       }
     }
   }
 
-  .app-nav~ :deep(*) {
+  .app-nav ~ :deep(*) {
     @apply ml-[#{$navWidth}];
   }
 }

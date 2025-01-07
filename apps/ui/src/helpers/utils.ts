@@ -476,7 +476,10 @@ export function getSalt() {
   const buffer = new Uint8Array(30);
   crypto.getRandomValues(buffer);
 
-  return `0x${buffer.reduce((acc, val) => acc + val.toString(16).padStart(2, '0'), '')}`;
+  return `0x${buffer.reduce(
+    (acc, val) => acc + val.toString(16).padStart(2, '0'),
+    ''
+  )}`;
 }
 
 export function getCacheHash(value?: string) {
@@ -498,7 +501,9 @@ export function getStampUrl(
 
   const cacheParam = hash ? `&cb=${hash}` : '';
 
-  return `https://cdn.stamp.fyi/${type}/${formatAddress(id)}${sizeParam}${cacheParam}`;
+  return `https://cdn.stamp.fyi/${type}/${formatAddress(
+    id
+  )}${sizeParam}${cacheParam}`;
 }
 
 export async function imageUpload(file: File) {

@@ -1220,24 +1220,12 @@
     "absolutePath": "src/execution-strategies/AvatarExecutionStrategy.sol",
     "id": 39014,
     "exportedSymbols": {
-      "AvatarExecutionStrategy": [
-        39013
-      ],
-      "IAvatar": [
-        35789
-      ],
-      "MetaTransaction": [
-        43220
-      ],
-      "Proposal": [
-        43182
-      ],
-      "ProposalStatus": [
-        43204
-      ],
-      "SimpleQuorumExecutionStrategy": [
-        39655
-      ]
+      "AvatarExecutionStrategy": [39013],
+      "IAvatar": [35789],
+      "MetaTransaction": [43220],
+      "Proposal": [43182],
+      "ProposalStatus": [43204],
+      "SimpleQuorumExecutionStrategy": [39655]
     },
     "nodeType": "SourceUnit",
     "src": "33:4580:75",
@@ -1247,12 +1235,7 @@
         "nodeType": "PragmaDirective",
         "src": "33:24:75",
         "nodes": [],
-        "literals": [
-          "solidity",
-          "^",
-          "0.8",
-          ".18"
-        ]
+        "literals": ["solidity", "^", "0.8", ".18"]
       },
       {
         "id": 38754,
@@ -1608,9 +1591,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    38797
-                  ],
+                  "assignments": [38797],
                   "declarations": [
                     {
                       "constant": false,
@@ -1973,12 +1954,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    38820,
-                    38822,
-                    38825,
-                    38827
-                  ],
+                  "assignments": [38820, 38822, 38825, 38827],
                   "declarations": [
                     {
                       "constant": false,
@@ -2643,9 +2619,7 @@
                 "modifierName": {
                   "id": 38816,
                   "name": "initializer",
-                  "nameLocations": [
-                    "1985:11:75"
-                  ],
+                  "nameLocations": ["1985:11:75"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 26211,
                   "src": "1985:11:75"
@@ -2827,9 +2801,7 @@
                 "modifierName": {
                   "id": 38875,
                   "name": "onlyOwner",
-                  "nameLocations": [
-                    "2586:9:75"
-                  ],
+                  "nameLocations": ["2586:9:75"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 25665,
                   "src": "2586:9:75"
@@ -2898,9 +2870,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    38909
-                  ],
+                  "assignments": [38909],
                   "declarations": [
                     {
                       "constant": false,
@@ -2923,9 +2893,7 @@
                         "pathNode": {
                           "id": 38907,
                           "name": "ProposalStatus",
-                          "nameLocations": [
-                            "3384:14:75"
-                          ],
+                          "nameLocations": ["3384:14:75"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 43204,
                           "src": "3384:14:75"
@@ -3329,9 +3297,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              39514
-            ],
+            "baseFunctions": [39514],
             "documentation": {
               "id": 38888,
               "nodeType": "StructuredDocumentation",
@@ -3348,9 +3314,7 @@
                 "modifierName": {
                   "id": 38904,
                   "name": "onlySpace",
-                  "nameLocations": [
-                    "3364:9:75"
-                  ],
+                  "nameLocations": ["3364:9:75"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 44338,
                   "src": "3364:9:75"
@@ -3419,9 +3383,7 @@
                     "pathNode": {
                       "id": 38891,
                       "name": "Proposal",
-                      "nameLocations": [
-                        "3199:8:75"
-                      ],
+                      "nameLocations": ["3199:8:75"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 43182,
                       "src": "3199:8:75"
@@ -3569,9 +3531,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    38949
-                  ],
+                  "assignments": [38949],
                   "declarations": [
                     {
                       "constant": false,
@@ -3595,9 +3555,7 @@
                           "pathNode": {
                             "id": 38946,
                             "name": "MetaTransaction",
-                            "nameLocations": [
-                              "3913:15:75"
-                            ],
+                            "nameLocations": ["3913:15:75"],
                             "nodeType": "IdentifierPath",
                             "referencedDeclaration": 43220,
                             "src": "3913:15:75"
@@ -3740,9 +3698,7 @@
                     "src": "4053:378:75",
                     "statements": [
                       {
-                        "assignments": [
-                          38970
-                        ],
+                        "assignments": [38970],
                         "declarations": [
                           {
                             "constant": false,
@@ -4219,9 +4175,7 @@
                   },
                   "id": 39000,
                   "initializationExpression": {
-                    "assignments": [
-                      38959
-                    ],
+                    "assignments": [38959],
                     "declarations": [
                       {
                         "constant": false,
@@ -4399,9 +4353,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              39654
-            ],
+            "baseFunctions": [39654],
             "documentation": {
               "id": 39003,
               "nodeType": "StructuredDocumentation",
@@ -4472,9 +4424,7 @@
             "baseName": {
               "id": 38762,
               "name": "SimpleQuorumExecutionStrategy",
-              "nameLocations": [
-                "526:29:75"
-              ],
+              "nameLocations": ["526:29:75"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 39655,
               "src": "526:29:75"
@@ -4495,23 +4445,12 @@
         },
         "fullyImplemented": true,
         "linearizedBaseContracts": [
-          39013,
-          39655,
-          44339,
-          25751,
-          26771,
-          26309,
-          42387,
-          42490
+          39013, 39655, 44339, 25751, 26771, 26309, 42387, 42490
         ],
         "name": "AvatarExecutionStrategy",
         "nameLocation": "499:23:75",
         "scope": 39014,
-        "usedErrors": [
-          42486,
-          42489,
-          44202
-        ]
+        "usedErrors": [42486, 42489, 44202]
       }
     ],
     "license": "MIT"

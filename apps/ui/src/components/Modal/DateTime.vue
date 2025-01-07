@@ -75,7 +75,9 @@ function validateForm() {
   const minDate = dayjs.unix(props.min).startOf('minute');
 
   if (date.value < minDate.unix()) {
-    formError.value = `Time must be equal or greater than ${minDate.format(TIME_FORMAT)}`;
+    formError.value = `Time must be equal or greater than ${minDate.format(
+      TIME_FORMAT
+    )}`;
     return;
   }
 

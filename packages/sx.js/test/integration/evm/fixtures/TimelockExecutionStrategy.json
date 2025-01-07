@@ -2010,36 +2010,16 @@
     "absolutePath": "src/execution-strategies/timelocks/TimelockExecutionStrategy.sol",
     "id": 42233,
     "exportedSymbols": {
-      "Enum": [
-        35702
-      ],
-      "IERC1155Receiver": [
-        28796
-      ],
-      "IERC165": [
-        33288
-      ],
-      "IERC721Receiver": [
-        31545
-      ],
-      "MetaTransaction": [
-        43220
-      ],
-      "Proposal": [
-        43182
-      ],
-      "ProposalStatus": [
-        43204
-      ],
-      "SimpleQuorumExecutionStrategy": [
-        39655
-      ],
-      "SpaceManager": [
-        44339
-      ],
-      "TimelockExecutionStrategy": [
-        42232
-      ]
+      "Enum": [35702],
+      "IERC1155Receiver": [28796],
+      "IERC165": [33288],
+      "IERC721Receiver": [31545],
+      "MetaTransaction": [43220],
+      "Proposal": [43182],
+      "ProposalStatus": [43204],
+      "SimpleQuorumExecutionStrategy": [39655],
+      "SpaceManager": [44339],
+      "TimelockExecutionStrategy": [42232]
     },
     "nodeType": "SourceUnit",
     "src": "33:10618:83",
@@ -2049,12 +2029,7 @@
         "nodeType": "PragmaDirective",
         "src": "33:24:83",
         "nodes": [],
-        "literals": [
-          "solidity",
-          "^",
-          "0.8",
-          ".18"
-        ]
+        "literals": ["solidity", "^", "0.8", ".18"]
       },
       {
         "id": 41615,
@@ -2392,9 +2367,7 @@
                     "pathNode": {
                       "id": 41650,
                       "name": "MetaTransaction",
-                      "nameLocations": [
-                        "1485:15:83"
-                      ],
+                      "nameLocations": ["1485:15:83"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 43220,
                       "src": "1485:15:83"
@@ -2481,9 +2454,7 @@
                     "pathNode": {
                       "id": 41658,
                       "name": "MetaTransaction",
-                      "nameLocations": [
-                        "1687:15:83"
-                      ],
+                      "nameLocations": ["1687:15:83"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 43220,
                       "src": "1687:15:83"
@@ -3509,13 +3480,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    41751,
-                    41753,
-                    41756,
-                    41758,
-                    41760
-                  ],
+                  "assignments": [41751, 41753, 41756, 41758, 41760],
                   "declarations": [
                     {
                       "constant": false,
@@ -4286,9 +4251,7 @@
                 "modifierName": {
                   "id": 41747,
                   "name": "initializer",
-                  "nameLocations": [
-                    "4595:11:83"
-                  ],
+                  "nameLocations": ["4595:11:83"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 26211,
                   "src": "4595:11:83"
@@ -4356,9 +4319,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    41832
-                  ],
+                  "assignments": [41832],
                   "declarations": [
                     {
                       "constant": false,
@@ -4381,9 +4342,7 @@
                         "pathNode": {
                           "id": 41830,
                           "name": "ProposalStatus",
-                          "nameLocations": [
-                            "5825:14:83"
-                          ],
+                          "nameLocations": ["5825:14:83"],
                           "nodeType": "IdentifierPath",
                           "referencedDeclaration": 43204,
                           "src": "5825:14:83"
@@ -4860,9 +4819,7 @@
                   }
                 },
                 {
-                  "assignments": [
-                    41868
-                  ],
+                  "assignments": [41868],
                   "declarations": [
                     {
                       "constant": false,
@@ -5038,9 +4995,7 @@
                   "src": "6296:68:83"
                 },
                 {
-                  "assignments": [
-                    41885
-                  ],
+                  "assignments": [41885],
                   "declarations": [
                     {
                       "constant": false,
@@ -5064,9 +5019,7 @@
                           "pathNode": {
                             "id": 41882,
                             "name": "MetaTransaction",
-                            "nameLocations": [
-                              "6375:15:83"
-                            ],
+                            "nameLocations": ["6375:15:83"],
                             "nodeType": "IdentifierPath",
                             "referencedDeclaration": 43220,
                             "src": "6375:15:83"
@@ -5364,9 +5317,7 @@
                   },
                   "id": 41913,
                   "initializationExpression": {
-                    "assignments": [
-                      41895
-                    ],
+                    "assignments": [41895],
                     "declarations": [
                       {
                         "constant": false,
@@ -5523,9 +5474,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              39514
-            ],
+            "baseFunctions": [39514],
             "documentation": {
               "id": 41811,
               "nodeType": "StructuredDocumentation",
@@ -5542,9 +5491,7 @@
                 "modifierName": {
                   "id": 41827,
                   "name": "onlySpace",
-                  "nameLocations": [
-                    "5805:9:83"
-                  ],
+                  "nameLocations": ["5805:9:83"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 44338,
                   "src": "5805:9:83"
@@ -5613,9 +5560,7 @@
                     "pathNode": {
                       "id": 41814,
                       "name": "Proposal",
-                      "nameLocations": [
-                        "5640:8:83"
-                      ],
+                      "nameLocations": ["5640:8:83"],
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 43182,
                       "src": "5640:8:83"
@@ -5763,9 +5708,7 @@
               "nodes": [],
               "statements": [
                 {
-                  "assignments": [
-                    41927
-                  ],
+                  "assignments": [41927],
                   "declarations": [
                     {
                       "constant": false,
@@ -5849,9 +5792,7 @@
                   "src": "7238:49:83"
                 },
                 {
-                  "assignments": [
-                    41933
-                  ],
+                  "assignments": [41933],
                   "declarations": [
                     {
                       "constant": false,
@@ -6205,9 +6146,7 @@
                   "src": "7605:47:83"
                 },
                 {
-                  "assignments": [
-                    41965
-                  ],
+                  "assignments": [41965],
                   "declarations": [
                     {
                       "constant": false,
@@ -6231,9 +6170,7 @@
                           "pathNode": {
                             "id": 41962,
                             "name": "MetaTransaction",
-                            "nameLocations": [
-                              "7663:15:83"
-                            ],
+                            "nameLocations": ["7663:15:83"],
                             "nodeType": "IdentifierPath",
                             "referencedDeclaration": 43220,
                             "src": "7663:15:83"
@@ -6376,9 +6313,7 @@
                     "src": "7803:517:83",
                     "statements": [
                       {
-                        "assignments": [
-                          41986
-                        ],
+                        "assignments": [41986],
                         "declarations": [
                           {
                             "constant": false,
@@ -6713,9 +6648,7 @@
                                     "isLValue": false,
                                     "isPure": false,
                                     "lValueRequested": false,
-                                    "names": [
-                                      "value"
-                                    ],
+                                    "names": ["value"],
                                     "nodeType": "FunctionCallOptions",
                                     "options": [
                                       {
@@ -7219,9 +7152,7 @@
                   },
                   "id": 42045,
                   "initializationExpression": {
-                    "assignments": [
-                      41975
-                    ],
+                    "assignments": [41975],
                     "declarations": [
                       {
                         "constant": false,
@@ -7686,9 +7617,7 @@
                 "modifierName": {
                   "id": 42056,
                   "name": "onlyVetoGuardian",
-                  "nameLocations": [
-                    "8560:16:83"
-                  ],
+                  "nameLocations": ["8560:16:83"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 42127,
                   "src": "8560:16:83"
@@ -7886,9 +7815,7 @@
                 "modifierName": {
                   "id": 42084,
                   "name": "onlyOwner",
-                  "nameLocations": [
-                    "8942:9:83"
-                  ],
+                  "nameLocations": ["8942:9:83"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 25665,
                   "src": "8942:9:83"
@@ -8081,9 +8008,7 @@
                 "modifierName": {
                   "id": 42101,
                   "name": "onlyOwner",
-                  "nameLocations": [
-                    "9127:9:83"
-                  ],
+                  "nameLocations": ["9127:9:83"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 25665,
                   "src": "9127:9:83"
@@ -8307,9 +8232,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              39654
-            ],
+            "baseFunctions": [39654],
             "documentation": {
               "id": 42128,
               "nodeType": "StructuredDocumentation",
@@ -8469,9 +8392,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              28777
-            ],
+            "baseFunctions": [28777],
             "functionSelector": "f23a6e61",
             "implemented": true,
             "kind": "function",
@@ -8723,9 +8644,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              28795
-            ],
+            "baseFunctions": [28795],
             "functionSelector": "bc197c81",
             "implemented": true,
             "kind": "function",
@@ -8995,9 +8914,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              31544
-            ],
+            "baseFunctions": [31544],
             "functionSelector": "150b7a02",
             "implemented": true,
             "kind": "function",
@@ -9497,9 +9414,7 @@
                 }
               ]
             },
-            "baseFunctions": [
-              33287
-            ],
+            "baseFunctions": [33287],
             "documentation": {
               "id": 42202,
               "nodeType": "StructuredDocumentation",
@@ -9592,9 +9507,7 @@
             "baseName": {
               "id": 41631,
               "name": "SimpleQuorumExecutionStrategy",
-              "nameLocations": [
-                "774:29:83"
-              ],
+              "nameLocations": ["774:29:83"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 39655,
               "src": "774:29:83"
@@ -9607,9 +9520,7 @@
             "baseName": {
               "id": 41633,
               "name": "IERC1155Receiver",
-              "nameLocations": [
-                "805:16:83"
-              ],
+              "nameLocations": ["805:16:83"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 28796,
               "src": "805:16:83"
@@ -9622,9 +9533,7 @@
             "baseName": {
               "id": 41635,
               "name": "IERC721Receiver",
-              "nameLocations": [
-                "823:15:83"
-              ],
+              "nameLocations": ["823:15:83"],
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 31545,
               "src": "823:15:83"
@@ -9645,30 +9554,13 @@
         },
         "fullyImplemented": true,
         "linearizedBaseContracts": [
-          42232,
-          31545,
-          28796,
-          33288,
-          39655,
-          44339,
-          25751,
-          26771,
-          26309,
-          42387,
+          42232, 31545, 28796, 33288, 39655, 44339, 25751, 26771, 26309, 42387,
           42490
         ],
         "name": "TimelockExecutionStrategy",
         "nameLocation": "745:25:83",
         "scope": 42233,
-        "usedErrors": [
-          41639,
-          41642,
-          41645,
-          41648,
-          42486,
-          42489,
-          44202
-        ]
+        "usedErrors": [41639, 41642, 41645, 41648, 42486, 42489, 44202]
       }
     ],
     "license": "MIT"

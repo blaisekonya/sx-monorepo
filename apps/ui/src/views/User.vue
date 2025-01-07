@@ -127,11 +127,15 @@ async function loadActivities(userId: string) {
 
 async function fetchVoterIdBalance(userId: string) {
   try {
-    const provider = new ethers.providers.JsonRpcProvider('https://mainnet.base.org');
-    const abi = [
-      "function balanceOf(address owner) view returns (uint256)"
-    ];
-    const contract = new ethers.Contract(GLOBAL_VOTER_ID_ZKME_ADDRESS, abi, provider);
+    const provider = new ethers.providers.JsonRpcProvider(
+      'https://mainnet.base.org'
+    );
+    const abi = ['function balanceOf(address owner) view returns (uint256)'];
+    const contract = new ethers.Contract(
+      GLOBAL_VOTER_ID_ZKME_ADDRESS,
+      abi,
+      provider
+    );
 
     const balance = await contract.balanceOf(userId);
     voterIdBalance.value = ethers.utils.formatUnits(balance, 18);
@@ -150,7 +154,7 @@ async function checkUserAttestation(userId: string) {
     const response = await fetch('https://base.easscan.org/graphql', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({
         query: `
@@ -186,7 +190,6 @@ async function checkUserAttestation(userId: string) {
 
     hasAttestation.value = !!validAttestation;
     attestationId.value = validAttestation?.id || null;
-
   } catch (error) {
     console.error('Error checking attestation:', error);
     hasAttestation.value = false;
@@ -197,11 +200,15 @@ async function checkUserAttestation(userId: string) {
 
 async function fetchBabtBalance(userId: string) {
   try {
-    const provider = new ethers.providers.JsonRpcProvider('https://bsc-dataseed.bnbchain.org');
-    const abi = [
-      "function balanceOf(address owner) view returns (uint256)"
-    ];
-    const contract = new ethers.Contract('0x2B09d47D550061f995A3b5C6F0Fd58005215D7c8', abi, provider);
+    const provider = new ethers.providers.JsonRpcProvider(
+      'https://bsc-dataseed.bnbchain.org'
+    );
+    const abi = ['function balanceOf(address owner) view returns (uint256)'];
+    const contract = new ethers.Contract(
+      '0x2B09d47D550061f995A3b5C6F0Fd58005215D7c8',
+      abi,
+      provider
+    );
 
     const balance = await contract.balanceOf(userId);
     babtBalance.value = ethers.utils.formatUnits(balance, 0);
@@ -255,22 +262,33 @@ watchEffect(() => setTitle(`${user.value?.name || id.value} user profile`));
     <span>This user does not exist</span>
   </div>
   <div v-else>
-    <div class="relative bg-skin-border h-[156px] md:h-[140px] mb-[-86px] md:mb-[-70px] top-[-1px]">
+    <div
+      class="relative bg-skin-border h-[156px] md:h-[140px] mb-[-86px] md:mb-[-70px] top-[-1px]"
+    >
       <div class="size-full overflow-hidden">
         <UserCover :user="user" class="!rounded-none w-full min-h-full" />
       </div>
-      <div class="relative bg-skin-bg h-[16px] -top-3 rounded-t-[16px] md:hidden" />
+      <div
+        class="relative bg-skin-bg h-[16px] -top-3 rounded-t-[16px] md:hidden"
+      />
       <div class="absolute right-4 top-4 space-x-2 flex">
         <UiTooltip title="Share">
           <DropdownShare :shareable="user" type="user" class="!px-0 w-[46px]" />
         </UiTooltip>
-        <UiTooltip v-if="compareAddresses(web3.account, user.id)" title="Edit profile">
+        <UiTooltip
+          v-if="compareAddresses(web3.account, user.id)"
+          title="Edit profile"
+        >
           <UiButton class="!px-0 w-[46px]" @click="modalOpenEditUser = true">
             <IH-cog class="inline-block" />
           </UiButton>
         </UiTooltip>
         <UiTooltip title="Logout">
-          <UiButton v-if="compareAddresses(web3.account, user.id)" class="!px-0 w-[46px]" @click="logout">
+          <UiButton
+            v-if="compareAddresses(web3.account, user.id)"
+            class="!px-0 w-[46px]"
+            @click="logout"
+          >
             <IH-logout class="inline-block" />
           </UiButton>
         </UiTooltip>
@@ -278,13 +296,21 @@ watchEffect(() => setTitle(`${user.value?.name || id.value} user profile`));
     </div>
     <div class="px-4">
       <div class="mb-5 relative">
-        <UiStamp :id="user.id" :size="90" :cb="cb"
-          class="relative mb-2 border-[4px] border-skin-bg !bg-skin-border !rounded-full left-[-4px]" />
+        <UiStamp
+          :id="user.id"
+          :size="90"
+          :cb="cb"
+          class="relative mb-2 border-[4px] border-skin-bg !bg-skin-border !rounded-full left-[-4px]"
+        />
         <h1 class="break-words" v-text="user.name || shortenAddress(user.id)" />
         <div class="mb-3 flex items-center space-x-2">
           <span class="text-skin-text" v-text="shortenAddress(user.id)" />
           <UiTooltip title="Copy address">
-            <button type="button" class="text-skin-text" @click.prevent="copy(user.id)">
+            <button
+              type="button"
+              class="text-skin-text"
+              @click.prevent="copy(user.id)"
+            >
               <IH-duplicate v-if="!copied" class="inline-block" />
               <IH-check v-else class="inline-block" />
             </button>
@@ -316,11 +342,18 @@ watchEffect(() => setTitle(`${user.value?.name || id.value} user profile`));
             </a>
           </span>
         </div>
-        <div v-if="user.about" class="max-w-[540px] text-skin-link text-md leading-[26px] mb-3 break-words"
-          v-html="autoLinkText(user.about)" />
+        <div
+          v-if="user.about"
+          class="max-w-[540px] text-skin-link text-md leading-[26px] mb-3 break-words"
+          v-html="autoLinkText(user.about)"
+        />
         <div v-if="socials.length" class="space-x-2 flex">
           <template v-for="social in socials" :key="social.key">
-            <a :href="social.href" target="_blank" class="text-[#606060] hover:text-skin-link">
+            <a
+              :href="social.href"
+              target="_blank"
+              class="text-[#606060] hover:text-skin-link"
+            >
               <component :is="social.icon" class="size-[26px]" />
             </a>
           </template>
@@ -342,17 +375,28 @@ watchEffect(() => setTitle(`${user.value?.name || id.value} user profile`));
                     </div>
                   </span>
                 </div>
-                <div v-else-if="!voterIdBalance || parseFloat(voterIdBalance) === 0"
-                  class="flex items-center justify-between w-full">
+                <div
+                  v-else-if="
+                    !voterIdBalance || parseFloat(voterIdBalance) === 0
+                  "
+                  class="flex items-center justify-between w-full"
+                >
                   <span>Global Voter ID</span>
                   <div class="2xl:ml-3">
-                    <ButtonClaimID :user="true" @voter-id-claimed="balance => voterIdBalance = balance" />
+                    <ButtonClaimID
+                      :user="true"
+                      @voter-id-claimed="balance => (voterIdBalance = balance)"
+                    />
                   </div>
                 </div>
                 <div v-else class="flex items-center justify-between w-full">
                   <span>Global Voter ID</span>
                   <div class="2xl:ml-3">
-                    <ButtonClaimID :user="true" :done="true" @voter-id-claimed="balance => voterIdBalance = balance" />
+                    <ButtonClaimID
+                      :user="true"
+                      :done="true"
+                      @voter-id-claimed="balance => (voterIdBalance = balance)"
+                    />
                   </div>
                 </div>
               </div>
@@ -367,8 +411,10 @@ watchEffect(() => setTitle(`${user.value?.name || id.value} user profile`));
                     </div>
                   </span>
                 </div>
-                <div v-else-if="babtBalance && parseFloat(babtBalance) > 0"
-                  class="flex items-center justify-between w-full">
+                <div
+                  v-else-if="babtBalance && parseFloat(babtBalance) > 0"
+                  class="flex items-center justify-between w-full"
+                >
                   <span>Binance Account Bound Token</span>
                   <div class="2xl:ml-3">
                     <a href="https://www.binance.com/en/BABT" target="_blank">
@@ -400,10 +446,16 @@ watchEffect(() => setTitle(`${user.value?.name || id.value} user profile`));
                     </div>
                   </span>
                 </div>
-                <div v-else-if="hasAttestation" class="flex items-center justify-between w-full">
+                <div
+                  v-else-if="hasAttestation"
+                  class="flex items-center justify-between w-full"
+                >
                   <span>Coinbase Verification</span>
                   <div class="2xl:ml-3">
-                    <a :href="`https://base.easscan.org/attestation/view/${attestationId}`" target="_blank">
+                    <a
+                      :href="`https://base.easscan.org/attestation/view/${attestationId}`"
+                      target="_blank"
+                    >
                       <UiButton class="!px-0 w-[46px]">
                         <IH-check class="inline-block" />
                       </UiButton>
@@ -413,7 +465,10 @@ watchEffect(() => setTitle(`${user.value?.name || id.value} user profile`));
                 <div v-else class="flex items-center justify-between w-full">
                   <span>Coinbase Verification</span>
                   <div class="2xl:ml-3">
-                    <a href="https://www.coinbase.com/onchain-verify" target="_blank">
+                    <a
+                      href="https://www.coinbase.com/onchain-verify"
+                      target="_blank"
+                    >
                       <UiButton class="!px-0 w-[46px]">
                         <IH-plus class="inline-block" />
                       </UiButton>
@@ -432,10 +487,14 @@ watchEffect(() => setTitle(`${user.value?.name || id.value} user profile`));
               <div class="flex items-center justify-between w-full">
                 <span>Trade world drachma on Uniswap</span>
                 <div class="2xl:ml-3">
-                  <a href="https://app.uniswap.org/explore/tokens/base/0x2ce6f5e18EE4278Dc33DF82A28286F006d7d5730"
-                    target="_blank">
+                  <a
+                    href="https://app.uniswap.org/explore/tokens/base/0x2ce6f5e18EE4278Dc33DF82A28286F006d7d5730"
+                    target="_blank"
+                  >
                     <UiButton class="!px-0 w-[46px]">
-                      <IH-arrow-sm-right class="mt-0.5 inline-block -rotate-45" />
+                      <IH-arrow-sm-right
+                        class="mt-0.5 inline-block -rotate-45"
+                      />
                     </UiButton>
                   </a>
                 </div>
@@ -461,51 +520,89 @@ watchEffect(() => setTitle(`${user.value?.name || id.value} user profile`));
     </div>
     <div v-if="loadingActivities" class="animate-pulse">
       <div v-for="i in 2" :key="i" class="mx-4 border-b flex space-x-1 py-3">
-        <div class="flex items-center gap-x-3 leading-[22px] w-[60%] lg:w-[50%] font-semibold truncate">
+        <div
+          class="flex items-center gap-x-3 leading-[22px] w-[60%] lg:w-[50%] font-semibold truncate"
+        >
           <!-- Space Avatar Skeleton -->
           <UiSkeleton class="size-[32px] !rounded-[4px]" />
           <!-- Space Name Skeleton -->
           <UiSkeleton class="h-[18px] w-[120px]" />
         </div>
         <!-- Proposals Column -->
-        <div class="flex flex-col justify-center text-right w-[20%] lg:w-[25%] leading-[22px] truncate">
+        <div
+          class="flex flex-col justify-center text-right w-[20%] lg:w-[25%] leading-[22px] truncate"
+        >
           <UiSkeleton class="h-[22px] w-[24px] ml-auto" />
           <UiSkeleton class="h-[17px] w-[32px] ml-auto mt-[5px]" />
         </div>
         <!-- Votes Column -->
-        <div class="flex flex-col justify-center text-right w-[20%] lg:w-[25%] leading-[22px] truncate">
+        <div
+          class="flex flex-col justify-center text-right w-[20%] lg:w-[25%] leading-[22px] truncate"
+        >
           <UiSkeleton class="h-[22px] w-[24px] ml-auto" />
           <UiSkeleton class="h-[17px] w-[32px] ml-auto mt-[5px]" />
         </div>
       </div>
     </div>
-    <div v-else-if="!activities.length" class="px-4 py-3 flex items-center space-x-2">
+    <div
+      v-else-if="!activities.length"
+      class="px-4 py-3 flex items-center space-x-2"
+    >
       <IH-exclamation-circle class="inline-block" />
       <span>This user does not have any activities yet.</span>
     </div>
-    <AppLink v-for="(activity, i) in activities" v-else :key="i" :to="{
-      name: 'space-user-statement',
-      params: {
-        space: activity.spaceId,
-        user: user.id
-      }
-    }" class="mx-4 border-b flex space-x-1 py-3">
-      <div class="flex items-center gap-x-3 leading-[22px] w-[60%] lg:w-[50%] font-semibold text-skin-link truncate">
-        <SpaceAvatar :space="activity.space" :size="32" class="!rounded-[4px]" />
+    <AppLink
+      v-for="(activity, i) in activities"
+      v-else
+      :key="i"
+      :to="{
+        name: 'space-user-statement',
+        params: {
+          space: activity.spaceId,
+          user: user.id
+        }
+      }"
+      class="mx-4 border-b flex space-x-1 py-3"
+    >
+      <div
+        class="flex items-center gap-x-3 leading-[22px] w-[60%] lg:w-[50%] font-semibold text-skin-link truncate"
+      >
+        <SpaceAvatar
+          :space="activity.space"
+          :size="32"
+          class="!rounded-[4px]"
+        />
         <span class="flex-auto w-0 truncate" v-text="activity.space.name" />
       </div>
-      <div class="flex flex-col justify-center text-right w-[20%] lg:w-[25%] leading-[22px] truncate">
-        <h4 class="text-skin-link truncate" v-text="_n(activity.proposal_count)" />
-        <div class="text-[17px] truncate" v-text="_p(activity.proposal_percentage)" />
+      <div
+        class="flex flex-col justify-center text-right w-[20%] lg:w-[25%] leading-[22px] truncate"
+      >
+        <h4
+          class="text-skin-link truncate"
+          v-text="_n(activity.proposal_count)"
+        />
+        <div
+          class="text-[17px] truncate"
+          v-text="_p(activity.proposal_percentage)"
+        />
       </div>
-      <div class="flex flex-col justify-center text-right w-[20%] lg:w-[25%] leading-[22px] truncate">
+      <div
+        class="flex flex-col justify-center text-right w-[20%] lg:w-[25%] leading-[22px] truncate"
+      >
         <h4 class="text-skin-link truncate" v-text="_n(activity.vote_count)" />
-        <div class="text-[17px] truncate" v-text="_p(activity.vote_percentage)" />
+        <div
+          class="text-[17px] truncate"
+          v-text="_p(activity.vote_percentage)"
+        />
       </div>
     </AppLink>
     <teleport to="#modal">
-      <ModalEditUser v-if="compareAddresses(web3.account, user.id)" :open="modalOpenEditUser" :user="user"
-        @close="modalOpenEditUser = false" />
+      <ModalEditUser
+        v-if="compareAddresses(web3.account, user.id)"
+        :open="modalOpenEditUser"
+        :user="user"
+        @close="modalOpenEditUser = false"
+      />
     </teleport>
   </div>
 </template>

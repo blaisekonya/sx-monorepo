@@ -108,7 +108,9 @@ const SOCIALS = [
           ></div>
           © {{ new Date().getFullYear() }} World Association
           <a
-            :href="`https://github.com/${repository}${COMMIT_SHA && `/tree/${COMMIT_SHA}`}`"
+            :href="`https://github.com/${repository}${
+              COMMIT_SHA && `/tree/${COMMIT_SHA}`
+            }`"
             target="_blank"
             class="ml-1.5"
           >

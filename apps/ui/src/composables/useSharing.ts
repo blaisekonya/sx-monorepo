@@ -78,7 +78,9 @@ export function useSharing() {
   }
 
   function getProposalMessage(proposal: Proposal): string {
-    return `${proposal.space.name}: ${proposal.title} ${getProposalUrl(proposal)}`;
+    return `${proposal.space.name}: ${proposal.title} ${getProposalUrl(
+      proposal
+    )}`;
   }
 
   function getUserMessage(user: User): string {

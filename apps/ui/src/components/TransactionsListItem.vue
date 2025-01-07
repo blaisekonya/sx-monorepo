@@ -11,16 +11,23 @@ const expanded = ref(false);
 
 const title = computed(() => {
   if (props.tx._type === 'sendToken') {
-    return `Send <b>${_n(formatUnits(props.tx._form.amount, props.tx._form.token.decimals), 'standard', { formatDust: true })}</b> ${props.tx._form.token.symbol
-      } to <b>_NAME_</b>`;
+    return `Send <b>${_n(
+      formatUnits(props.tx._form.amount, props.tx._form.token.decimals),
+      'standard',
+      { formatDust: true }
+    )}</b> ${props.tx._form.token.symbol} to <b>_NAME_</b>`;
   }
 
   if (props.tx._type === 'sendNft') {
-    return `Send <b>${_n(formatUnits(props.tx._form.amount, 0))}</b> NFT to <b>_NAME_</b>`;
+    return `Send <b>${_n(
+      formatUnits(props.tx._form.amount, 0)
+    )}</b> NFT to <b>_NAME_</b>`;
   }
 
   if (props.tx._type === 'stakeToken') {
-    return `Stake <b>${_n(formatUnits(props.tx.value, 18), 'standard', { formatDust: true })} ETH</b> with <b>Lido</b>`;
+    return `Stake <b>${_n(formatUnits(props.tx.value, 18), 'standard', {
+      formatDust: true
+    })} ETH</b> with <b>Lido</b>`;
   }
 
   if (props.tx._type === 'contractCall') {
@@ -138,16 +145,13 @@ const data = computed(() => {
   return null;
 });
 
-const parsedTitle = computedAsync(
-  async () => {
-    const { recipient } = props.tx._form;
-    const names = await getNames([recipient]);
-    const name = names[recipient] || shorten(recipient);
+const parsedTitle = computedAsync(async () => {
+  const { recipient } = props.tx._form;
+  const names = await getNames([recipient]);
+  const name = names[recipient] || shorten(recipient);
 
-    return title.value.replace('_NAME_', name);
-  },
-  title.value.replace('_NAME_', shorten(props.tx._form.recipient))
-);
+  return title.value.replace('_NAME_', name);
+}, title.value.replace('_NAME_', shorten(props.tx._form.recipient)));
 </script>
 
 <template>
@@ -156,7 +160,10 @@ const parsedTitle = computedAsync(
       <div class="shrink-0">
         <slot name="left" />
       </div>
-      <button class="flex gap-2 truncate items-center flex-auto" @click="expanded = !expanded">
+      <button
+        class="flex gap-2 truncate items-center flex-auto"
+        @click="expanded = !expanded"
+      >
         <IH-cash v-if="tx._type === 'sendToken'" class="shrink-0" />
         <IH-photograph v-else-if="tx._type === 'sendNft'" class="shrink-0" />
         <IC-stake v-else-if="tx._type === 'stakeToken'" class="shrink-0" />
@@ -172,17 +179,27 @@ const parsedTitle = computedAsync(
           call.name
         }}</code>
         on
-        <a class="inline-flex items-center" target="_blank" :href="getGenericExplorerUrl(chainId, call.to, 'address') || undefined
-          ">
+        <a
+          class="inline-flex items-center"
+          target="_blank"
+          :href="
+            getGenericExplorerUrl(chainId, call.to, 'address') || undefined
+          "
+        >
           {{ shorten(call.to) }}
           <IH-arrow-sm-right class="inline-block ml-1 -rotate-45" />
         </a>
       </div>
       <div v-else-if="interaction" class="text-skin-link">
         Interaction with
-        <a class="inline-flex items-center" target="_blank" :href="getGenericExplorerUrl(chainId, interaction.to, 'address') ||
-          undefined
-          ">
+        <a
+          class="inline-flex items-center"
+          target="_blank"
+          :href="
+            getGenericExplorerUrl(chainId, interaction.to, 'address') ||
+            undefined
+          "
+        >
           {{ shorten(interaction.to) }}
           <IH-arrow-sm-right class="inline-block ml-1 -rotate-45" />
         </a>
@@ -191,9 +208,15 @@ const parsedTitle = computedAsync(
         <h4 class="font-medium mt-3">Parameters</h4>
         <div v-for="param in params" :key="param.name" class="flex space-x-2">
           <span class="text-skin-link">{{ param.name }}</span>
-          <a v-if="param.type === 'address'" class="inline-flex items-center" target="_blank" :href="getGenericExplorerUrl(chainId, param.value, 'address') ||
-            undefined
-            ">
+          <a
+            v-if="param.type === 'address'"
+            class="inline-flex items-center"
+            target="_blank"
+            :href="
+              getGenericExplorerUrl(chainId, param.value, 'address') ||
+              undefined
+            "
+          >
             {{ shorten(param.value) }}
             <IH-arrow-sm-right class="inline-block ml-1 -rotate-45" />
           </a>

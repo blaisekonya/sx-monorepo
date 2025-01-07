@@ -85,26 +85,45 @@ watch(
     <UiLoading v-if="!loaded" class="p-4 block text-center" />
     <div v-else>
       <div v-if="votes.length > 0">
-        <UiContainerInfiniteScroll :loading-more="loadingMore" @end-reached="handleEndReached">
-          <div v-for="(vote, i) in votes" :key="i" class="py-3 px-4 border-b relative flex gap-2"
-            :class="{ 'last:border-b-0': !loadingMore }">
-            <div v-if="!isEncrypted" class="absolute inset-y-0 right-0 h-[8px] z-[-1]" :style="{
-              width: `${((100 / proposal.scores_total) * vote.vp).toFixed(2)}%`
-            }" :class="proposal.type === 'basic'
+        <UiContainerInfiniteScroll
+          :loading-more="loadingMore"
+          @end-reached="handleEndReached"
+        >
+          <div
+            v-for="(vote, i) in votes"
+            :key="i"
+            class="py-3 px-4 border-b relative flex gap-2"
+            :class="{ 'last:border-b-0': !loadingMore }"
+          >
+            <div
+              v-if="!isEncrypted"
+              class="absolute inset-y-0 right-0 h-[8px] z-[-1]"
+              :style="{
+                width: `${((100 / proposal.scores_total) * vote.vp).toFixed(
+                  2
+                )}%`
+              }"
+              :class="
+                proposal.type === 'basic'
                   ? `choice-bg opacity-20 _${vote.choice}`
                   : 'bg-skin-border'
-                " />
-            <AppLink :to="{
-              name: 'space-user-statement',
-              params: {
-                space: `${proposal.network}:${proposal.space.id}`,
-                user: vote.voter.id
-              }
-            }" class="grow flex space-x-2 items-center" @click="$emit('close')">
+              "
+            />
+            <AppLink
+              :to="{
+                name: 'space-user-statement',
+                params: {
+                  space: `${proposal.network}:${proposal.space.id}`,
+                  user: vote.voter.id
+                }
+              }"
+              class="grow flex space-x-2 items-center"
+              @click="$emit('close')"
+            >
               <UiStamp :id="vote.voter.id" :size="24" />
               <span>{{
                 vote.voter.name || shortenAddress(vote.voter.id)
-                }}</span>
+              }}</span>
             </AppLink>
 
             <template v-if="isEncrypted">
@@ -113,7 +132,11 @@ watch(
                 <IH-lock-closed class="size-[16px] shrink-0" />
               </div>
             </template>
-            <UiTooltip v-else class="text-skin-link truncate" :title="getChoiceText(proposal.choices, vote.choice)">
+            <UiTooltip
+              v-else
+              class="text-skin-link truncate"
+              :title="getChoiceText(proposal.choices, vote.choice)"
+            >
               {{ getChoiceText(proposal.choices, vote.choice) }}
             </UiTooltip>
           </div>

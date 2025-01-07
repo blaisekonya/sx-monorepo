@@ -93,8 +93,9 @@ export default function createOzVotesStorageProofStrategy({
         OzVotesToken,
         provider
       );
-      const numCheckpoints: number =
-        await tokenContract.numCheckpoints(signerAddress);
+      const numCheckpoints: number = await tokenContract.numCheckpoints(
+        signerAddress
+      );
       if (numCheckpoints === 0) throw new Error('No checkpoints found');
 
       const voteEnvelope = envelope as Envelope<Vote>;
@@ -176,8 +177,9 @@ export default function createOzVotesStorageProofStrategy({
         provider
       );
 
-      const numCheckpoints: number =
-        await tokenContract.numCheckpoints(voterAddress);
+      const numCheckpoints: number = await tokenContract.numCheckpoints(
+        voterAddress
+      );
       if (numCheckpoints === 0) return 0n;
 
       const contract = new Contract(

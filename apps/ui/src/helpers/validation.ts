@@ -302,7 +302,9 @@ function getErrorMessage(errorObject: Partial<ErrorObject>): string {
 
   if (errorObject.keyword === 'maxLength') {
     if (!errorObject.params) return 'Invalid format.';
-    return `Must not have more than ${_n(errorObject.params.limit)} characters.`;
+    return `Must not have more than ${_n(
+      errorObject.params.limit
+    )} characters.`;
   }
 
   if (errorObject.keyword === 'minimum') {
@@ -315,9 +317,9 @@ function getErrorMessage(errorObject: Partial<ErrorObject>): string {
     return `Must be at most ${_n(errorObject.params.limit)}.`;
   }
 
-  return `${errorObject.message.charAt(0).toLocaleUpperCase()}${errorObject.message
-    .slice(1)
-    .toLocaleLowerCase()}.`;
+  return `${errorObject.message
+    .charAt(0)
+    .toLocaleUpperCase()}${errorObject.message.slice(1).toLocaleLowerCase()}.`;
 }
 
 const getFormValues = (schema: any, form: any, opts: Opts) => {

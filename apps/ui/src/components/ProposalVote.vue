@@ -56,30 +56,56 @@ const isEditable = computed(() => {
 
 <template>
   <slot v-if="currentVote && !editMode" name="voted" :vote="currentVote">
-    <UiButton class="!h-[48px] text-left w-full flex items-center justify-between rounded-lg space-x-2" :class="{
-      'border-skin-link': isEditable
-    }" :disabled="!isEditable" @click="$emit('enterEditMode')">
-      <div v-if="proposal.privacy" class="flex space-x-2 items-center grow truncate text-skin-link">
+    <UiButton
+      class="!h-[48px] text-left w-full flex items-center justify-between rounded-lg space-x-2"
+      :class="{
+        'border-skin-link': isEditable
+      }"
+      :disabled="!isEditable"
+      @click="$emit('enterEditMode')"
+    >
+      <div
+        v-if="proposal.privacy"
+        class="flex space-x-2 items-center grow truncate text-skin-link"
+      >
         <IH-lock-closed class="size-[16px] shrink-0" />
         <span class="truncate">Encrypted choice</span>
       </div>
       <div v-else class="flex items-center gap-2 overflow-hidden">
-        <div v-if="proposal.type === 'basic'" class="shrink-0 rounded-full choice-bg inline-block size-[18px]"
-          :class="`_${currentVote.choice}`">
-          <IH-check v-if="currentVote.choice === 1" class="text-white size-[14px] mt-0.5 ml-0.5" />
-          <IH-x v-else-if="currentVote.choice === 2" class="text-white size-[14px] mt-0.5 ml-0.5" />
-          <IH-minus-sm v-else-if="currentVote.choice === 3" class="text-white size-[14px] mt-0.5 ml-0.5" />
+        <div
+          v-if="proposal.type === 'basic'"
+          class="shrink-0 rounded-full choice-bg inline-block size-[18px]"
+          :class="`_${currentVote.choice}`"
+        >
+          <IH-check
+            v-if="currentVote.choice === 1"
+            class="text-white size-[14px] mt-0.5 ml-0.5"
+          />
+          <IH-x
+            v-else-if="currentVote.choice === 2"
+            class="text-white size-[14px] mt-0.5 ml-0.5"
+          />
+          <IH-minus-sm
+            v-else-if="currentVote.choice === 3"
+            class="text-white size-[14px] mt-0.5 ml-0.5"
+          />
         </div>
-        <div class="grow truncate text-skin-link" v-text="getChoiceText(proposal.choices, currentVote.choice)" />
+        <div
+          class="grow truncate text-skin-link"
+          v-text="getChoiceText(proposal.choices, currentVote.choice)"
+        />
       </div>
       <IH-pencil v-if="isEditable" class="shrink-0" />
     </UiButton>
   </slot>
-  <slot v-else-if="
-    !isEditable &&
-    pendingVotes[proposal.id] &&
-    !offchainNetworks.includes(props.proposal.network)
-  " name="voted-pending">
+  <slot
+    v-else-if="
+      !isEditable &&
+      pendingVotes[proposal.id] &&
+      !offchainNetworks.includes(props.proposal.network)
+    "
+    name="voted-pending"
+  >
     You have already voted for this proposal
   </slot>
   <slot v-else-if="proposal.state === 'pending'" name="waiting">
@@ -87,11 +113,16 @@ const isEditable = computed(() => {
     {{ _t(start) }}.
   </slot>
 
-  <slot v-else-if="['passed', 'rejected', 'executed'].includes(proposal.state)" name="ended">
+  <slot
+    v-else-if="['passed', 'rejected', 'executed'].includes(proposal.state)"
+    name="ended"
+  >
     Proposal voting window has ended
   </slot>
 
-  <slot v-else-if="proposal.cancelled" name="cancelled">This proposal has been cancelled</slot>
+  <slot v-else-if="proposal.cancelled" name="cancelled"
+    >This proposal has been cancelled</slot
+  >
 
   <slot v-else-if="!isSupported" name="unsupported">
     Voting for this proposal is not supported

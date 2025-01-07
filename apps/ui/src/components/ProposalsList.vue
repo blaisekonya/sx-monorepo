@@ -35,17 +35,36 @@ const currentLimit = computed(() => {
 <template>
   <div>
     <UiLabel v-if="title" :label="title" />
-    <ProposalsListSkeleton v-if="loading" :count="3" :is-home="$route.path === '/home'" />
+    <ProposalsListSkeleton
+      v-if="loading"
+      :count="3"
+      :is-home="$route.path === '/home'"
+    />
     <div v-else>
-      <UiContainerInfiniteScroll :loading-more="loadingMore" @end-reached="emit('endReached')">
-        <ProposalsListItem v-for="(proposal, i) in proposals.slice(0, currentLimit)" :key="i" :proposal="proposal"
-          :show-space="showSpace" :show-author="showAuthor" />
+      <UiContainerInfiniteScroll
+        :loading-more="loadingMore"
+        @end-reached="emit('endReached')"
+      >
+        <ProposalsListItem
+          v-for="(proposal, i) in proposals.slice(0, currentLimit)"
+          :key="i"
+          :proposal="proposal"
+          :show-space="showSpace"
+          :show-author="showAuthor"
+        />
       </UiContainerInfiniteScroll>
-      <div v-if="!proposals.length" class="px-4 py-3 flex items-center text-skin-link gap-2">
+      <div
+        v-if="!proposals.length"
+        class="px-4 py-3 flex items-center text-skin-link gap-2"
+      >
         <IH-exclamation-circle />
         <span v-text="'There are no proposals here.'" />
       </div>
-      <AppLink v-else-if="route && proposals.length > currentLimit" :to="{ name: route.name }" class="px-4 py-2 block">
+      <AppLink
+        v-else-if="route && proposals.length > currentLimit"
+        :to="{ name: route.name }"
+        class="px-4 py-2 block"
+      >
         {{ route.linkTitle }}
       </AppLink>
     </div>

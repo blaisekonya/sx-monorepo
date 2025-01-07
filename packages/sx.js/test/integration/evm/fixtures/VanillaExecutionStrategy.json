@@ -2440,7 +2440,9 @@
           "text": "@title Vanilla Execution Strategy"
         },
         "fullyImplemented": true,
-        "linearizedBaseContracts": [39013, 38896, 43568, 25214, 26234, 25772, 41616, 41719],
+        "linearizedBaseContracts": [
+          39013, 38896, 43568, 25214, 26234, 25772, 41616, 41719
+        ],
         "name": "VanillaExecutionStrategy",
         "nameLocation": "249:24:78",
         "scope": 39014,

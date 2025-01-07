@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { ref, computed, watch } from 'vue';
+import { Engine } from '@thirdweb-dev/engine';
 import { ZkMeWidget } from '@zkmelabs/widget';
 import { ethers } from 'ethers';
+import { computed, ref, watch } from 'vue';
 import {
   CFA_V1_FORWARDER_ABI,
   CFA_V1_FORWARDER_ADDRESS,
@@ -12,8 +13,7 @@ import {
   GLOBAL_VOTER_ID_ZKME_ADDRESS,
   STREAM_LINK_TEMPLATE
 } from '../helpers/constants';
-import { Engine } from '@thirdweb-dev/engine';
-import '@zkmelabs/widget/dist/style.css'
+import '@zkmelabs/widget/dist/style.css';
 import ModalBasicIncomeStream from './Modal/BasicIncomeStream.vue';
 
 const {
@@ -60,11 +60,20 @@ const fetchFlowrateData = async () => {
   }
 
   isLoading.value = true;
-  const provider = new ethers.providers.JsonRpcProvider('https://mainnet.base.org');
-  const contract = new ethers.Contract(CFA_V1_FORWARDER_ADDRESS, CFA_V1_FORWARDER_ABI, provider);
+  const provider = new ethers.providers.JsonRpcProvider(
+    'https://mainnet.base.org'
+  );
+  const contract = new ethers.Contract(
+    CFA_V1_FORWARDER_ADDRESS,
+    CFA_V1_FORWARDER_ABI,
+    provider
+  );
 
   try {
-    const flowrate = await contract.getAccountFlowrate(DRACHMA_CONTRACT_ADDRESS, web3Account.value);
+    const flowrate = await contract.getAccountFlowrate(
+      DRACHMA_CONTRACT_ADDRESS,
+      web3Account.value
+    );
     flowrateData.value = flowrate;
     isBasicIncomeSetUp.value = flowrate.gt(ethers.constants.Zero);
   } catch (error) {
@@ -79,9 +88,15 @@ const fetchBalanceData = async () => {
     return;
   }
 
-  const provider = new ethers.providers.JsonRpcProvider('https://mainnet.base.org');
-  const abi = ["function balanceOf(address owner) view returns (uint256)"];
-  const contract = new ethers.Contract(GLOBAL_VOTER_ID_ZKME_ADDRESS, abi, provider);
+  const provider = new ethers.providers.JsonRpcProvider(
+    'https://mainnet.base.org'
+  );
+  const abi = ['function balanceOf(address owner) view returns (uint256)'];
+  const contract = new ethers.Contract(
+    GLOBAL_VOTER_ID_ZKME_ADDRESS,
+    abi,
+    provider
+  );
 
   try {
     const balance = await contract.balanceOf(web3Account.value);
@@ -91,10 +106,14 @@ const fetchBalanceData = async () => {
   }
 };
 
-watch(() => web3Account.value, () => {
-  fetchFlowrateData();
-  fetchBalanceData();
-}, { immediate: true });
+watch(
+  () => web3Account.value,
+  () => {
+    fetchFlowrateData();
+    fetchBalanceData();
+  },
+  { immediate: true }
+);
 
 const initializeWidget = async () => {
   if (!web3Account.value) {
@@ -132,10 +151,7 @@ const initializeWidget = async () => {
 
 watch(web3Account, initializeWidget, { immediate: true });
 
-async function createDrachmaStream(
-  address: string,
-  flowRate: bigint
-) {
+async function createDrachmaStream(address: string, flowRate: bigint) {
   const engine = new Engine({
     url: VITE_THIRDWEB_ENGINE_URL as string,
     accessToken: VITE_THIRDWEB_ENGINE_ACCESS_TOKEN as string
@@ -201,7 +217,7 @@ const handleLaunchWidget = async () => {
   const widgetInstance = toRaw(widget.value);
   if (widgetInstance) {
     widgetInstance.launch();
-    widgetInstance.on('meidFinished', async (results) => {
+    widgetInstance.on('meidFinished', async results => {
       if (results.isGrant) {
         await handleCreateDrachmaStream();
       }
@@ -304,7 +320,10 @@ const handleStartVerification = () => {
         <div class="flex items-center justify-between w-full">
           <span>Claim your basic income</span>
           <div class="2xl:ml-3">
-            <UiButton class="!px-0 w-[46px]" @click="showBasicIncomeInfo = true">
+            <UiButton
+              class="!px-0 w-[46px]"
+              @click="showBasicIncomeInfo = true"
+            >
               <IH-plus class="inline-block" />
             </UiButton>
           </div>
@@ -313,8 +332,11 @@ const handleStartVerification = () => {
     </span>
 
     <Teleport to="body">
-      <ModalBasicIncomeStream :open="showStreamModal" :stream-url="getUserStreamLink"
-        @close="showStreamModal = false" />
+      <ModalBasicIncomeStream
+        :open="showStreamModal"
+        :stream-url="getUserStreamLink"
+        @close="showStreamModal = false"
+      />
     </Teleport>
   </template>
 
@@ -326,13 +348,21 @@ const handleStartVerification = () => {
       <div class="p-4 flex flex-col items-center space-y-3 text-center">
         <template v-if="isProcessing">
           <UiLoading class="mb-2" />
-          <p class="text-muted-foreground text-sm">{{ resultDialogContent.description }}</p>
+          <p class="text-muted-foreground text-sm">
+            {{ resultDialogContent.description }}
+          </p>
         </template>
         <template v-else>
-          <div v-if="resultDialogContent.title === 'Stream created'" class="bg-skin-success rounded-full p-[12px]">
+          <div
+            v-if="resultDialogContent.title === 'Stream created'"
+            class="bg-skin-success rounded-full p-[12px]"
+          >
             <IS-check :width="28" :height="28" class="text-skin-bg" />
           </div>
-          <div v-else-if="resultDialogContent.title === 'Error'" class="bg-skin-danger rounded-full p-[12px]">
+          <div
+            v-else-if="resultDialogContent.title === 'Error'"
+            class="bg-skin-danger rounded-full p-[12px]"
+          >
             <IS-x-mark :width="28" :height="28" class="text-skin-bg" />
           </div>
           <p class="text-muted-foreground text-sm">
@@ -341,15 +371,37 @@ const handleStartVerification = () => {
         </template>
       </div>
       <template #footer>
-        <div class="flex flex-row items-center gap-2" :class="isSuccess ? 'justify-between' : 'justify-center'">
-          <UiButton @click="closeResultDialog" class="w-40" :variant="isSuccess ? 'outline' : 'default'">
+        <div
+          class="flex flex-row items-center gap-2"
+          :class="isSuccess ? 'justify-between' : 'justify-center'"
+        >
+          <UiButton
+            class="w-40"
+            :variant="isSuccess ? 'outline' : 'default'"
+            @click="closeResultDialog"
+          >
             Close
           </UiButton>
           <template v-if="isSuccess">
-            <a :href="getUserStreamLink" target="_blank" rel="noopener noreferrer" class="w-40 sm:w-auto">
-              <UiButton class="w-[160px] flex items-center justify-center" :disabled="isButtonDisabled">
-                {{ isButtonDisabled ? `View stream (${countdown}s)` : 'View stream' }}
-                <IH-arrow-up-right v-if="!isButtonDisabled" class="ml-1 h-[12px] w-[12px]" />
+            <a
+              :href="getUserStreamLink"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-40 sm:w-auto"
+            >
+              <UiButton
+                class="w-[160px] flex items-center justify-center"
+                :disabled="isButtonDisabled"
+              >
+                {{
+                  isButtonDisabled
+                    ? `View stream (${countdown}s)`
+                    : 'View stream'
+                }}
+                <IH-arrow-up-right
+                  v-if="!isButtonDisabled"
+                  class="ml-1 h-[12px] w-[12px]"
+                />
               </UiButton>
             </a>
           </template>
@@ -358,7 +410,11 @@ const handleStartVerification = () => {
     </UiModal>
   </Teleport>
 
-  <UiModal :open="showBasicIncomeInfo" @close="closeBasicIncomeInfo" :maxWidth="480">
+  <UiModal
+    :open="showBasicIncomeInfo"
+    :max-width="480"
+    @close="closeBasicIncomeInfo"
+  >
     <template #header>
       <div class="relative">
         <h3 class="text-[22px]">Set up your basic income</h3>
@@ -369,7 +425,8 @@ const handleStartVerification = () => {
       <!-- Hero Section -->
       <div class="flex flex-col items-center text-center gap-3">
         <div class="text-skin-text text-sm">
-          Join our basic income program and receive a continuous stream of our official currency.
+          Join our basic income program and receive a continuous stream of our
+          official currency.
         </div>
       </div>
 
@@ -377,38 +434,44 @@ const handleStartVerification = () => {
       <div>
         <div class="flex items-start gap-3 py-2">
           <div
-            class="flex-shrink-0 w-5 h-5 flex items-center justify-center rounded-full bg-skin-primary text-skin-bg font-medium">
+            class="flex-shrink-0 w-5 h-5 flex items-center justify-center rounded-full bg-skin-primary text-skin-bg font-medium"
+          >
             1
           </div>
           <div>
             <h4 class="font-medium text-[18px] mb-1">Prove your personhood</h4>
-            <p class="text-sm text-skin-text">Complete a privacy-preserving biometric check to ensure fair distribution
-              -
-              one
-              person,
-              one income</p>
+            <p class="text-sm text-skin-text">
+              Complete a privacy-preserving biometric check to ensure fair
+              distribution - one person, one income
+            </p>
           </div>
         </div>
 
         <div class="flex items-start gap-3 py-2">
           <div
-            class="flex-shrink-0 w-5 h-5 flex items-center justify-center rounded-full bg-skin-primary text-skin-bg font-medium">
+            class="flex-shrink-0 w-5 h-5 flex items-center justify-center rounded-full bg-skin-primary text-skin-bg font-medium"
+          >
             2
           </div>
           <div>
             <h4 class="font-medium text-[18px] mb-1">Activate your stream</h4>
-            <p class="text-sm text-skin-text">Your income starts flowing immediately after verification</p>
+            <p class="text-sm text-skin-text">
+              Your income starts flowing immediately after verification
+            </p>
           </div>
         </div>
 
         <div class="flex items-start gap-3 pt-2">
           <div
-            class="flex-shrink-0 w-5 h-5 flex items-center justify-center rounded-full bg-skin-primary text-skin-bg font-medium">
+            class="flex-shrink-0 w-5 h-5 flex items-center justify-center rounded-full bg-skin-primary text-skin-bg font-medium"
+          >
             3
           </div>
           <div>
             <h4 class="font-medium text-[18px] mb-1">Spend anywhere</h4>
-            <p class="text-sm text-skin-text">Use your drachma freely for everyday transactions</p>
+            <p class="text-sm text-skin-text">
+              Use your drachma freely for everyday transactions
+            </p>
           </div>
         </div>
       </div>

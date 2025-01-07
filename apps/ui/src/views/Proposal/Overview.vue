@@ -55,7 +55,7 @@ const editable = computed(() => {
   return (
     compareAddresses(props.proposal.author.id, web3.value.account) &&
     props.proposal[pivotName] >
-    (getCurrent(props.proposal.network) || Number.POSITIVE_INFINITY)
+      (getCurrent(props.proposal.network) || Number.POSITIVE_INFINITY)
   );
 });
 
@@ -249,22 +249,28 @@ onBeforeUnmount(() => destroyAudio());
       <ProposalStatus :state="proposal.state" class="top-[7.5px] mb-4" />
 
       <div class="flex justify-between items-center mb-4">
-        <AppLink :to="{
-          name: 'space-user-statement',
-          params: {
-            space: `${proposal.network}:${proposal.space.id}`,
-            user: proposal.author.id
-          }
-        }" class="flex items-center py-3">
+        <AppLink
+          :to="{
+            name: 'space-user-statement',
+            params: {
+              space: `${proposal.network}:${proposal.space.id}`,
+              user: proposal.author.id
+            }
+          }"
+          class="flex items-center py-3"
+        >
           <UiStamp :id="proposal.author.id" :size="32" class="mr-1" />
           <div class="flex flex-col ml-2 leading-4 gap-1">
             {{ proposal.author.name || shortenAddress(proposal.author.id) }}
             <span class="text-skin-text text-sm">
               In
-              <AppLink :to="{
-                name: 'space-overview',
-                params: { space: `${proposal.network}:${proposal.space.id}` }
-              }" class="text-skin-text">
+              <AppLink
+                :to="{
+                  name: 'space-overview',
+                  params: { space: `${proposal.network}:${proposal.space.id}` }
+                }"
+                class="text-skin-text"
+              >
                 {{ proposal.space.name }}
               </AppLink>
               <span> · {{ _rt(proposal.created) }}</span>
@@ -273,24 +279,43 @@ onBeforeUnmount(() => destroyAudio());
           </div>
         </AppLink>
         <div class="flex gap-2 items-center">
-          <UiTooltip v-if="
-            offchainNetworks.includes(props.proposal.network) &&
-            props.proposal.body.length > 500
-          " :title="'AI summary'">
-            <UiButton class="!p-0 !border-0 !h-auto !w-[22px]" :disabled="aiSummaryState.loading"
-              :loading="aiSummaryState.loading" @click="handleAiSummaryClick">
-              <IH-sparkles class="inline-block size-[22px]"
-                :class="aiSummaryOpen ? 'text-skin-link' : 'text-skin-text'" />
+          <UiTooltip
+            v-if="
+              offchainNetworks.includes(props.proposal.network) &&
+              props.proposal.body.length > 500
+            "
+            :title="'AI summary'"
+          >
+            <UiButton
+              class="!p-0 !border-0 !h-auto !w-[22px]"
+              :disabled="aiSummaryState.loading"
+              :loading="aiSummaryState.loading"
+              @click="handleAiSummaryClick"
+            >
+              <IH-sparkles
+                class="inline-block size-[22px]"
+                :class="aiSummaryOpen ? 'text-skin-link' : 'text-skin-text'"
+              />
             </UiButton>
           </UiTooltip>
-          <UiTooltip v-if="
-            offchainNetworks.includes(props.proposal.network) &&
-            props.proposal.body.length > 0 &&
-            props.proposal.body.length < 4096
-          " :title="audioState === 'playing' ? 'Pause' : 'Listen'">
-            <UiButton class="!p-0 !border-0 !h-auto !w-[22px]" :disabled="aiSpeechState.loading"
-              :loading="aiSpeechState.loading" @click="handleAiSpeechClick">
-              <IH-pause v-if="audioState === 'playing'" class="inline-block size-[22px] text-skin-link" />
+          <UiTooltip
+            v-if="
+              offchainNetworks.includes(props.proposal.network) &&
+              props.proposal.body.length > 0 &&
+              props.proposal.body.length < 4096
+            "
+            :title="audioState === 'playing' ? 'Pause' : 'Listen'"
+          >
+            <UiButton
+              class="!p-0 !border-0 !h-auto !w-[22px]"
+              :disabled="aiSpeechState.loading"
+              :loading="aiSpeechState.loading"
+              @click="handleAiSpeechClick"
+            >
+              <IH-pause
+                v-if="audioState === 'playing'"
+                class="inline-block size-[22px] text-skin-link"
+              />
               <IH-play v-else class="inline-block text-skin-text size-[22px]" />
             </UiButton>
           </UiTooltip>
@@ -304,7 +329,9 @@ onBeforeUnmount(() => destroyAudio());
           <UiDropdown>
             <template #button>
               <UiButton class="!p-0 !border-0 !h-auto">
-                <IH-dots-vertical class="text-skin-text inline-block size-[22px]" />
+                <IH-dots-vertical
+                  class="text-skin-text inline-block size-[22px]"
+                />
               </UiButton>
             </template>
             <template #items>
@@ -320,22 +347,38 @@ onBeforeUnmount(() => destroyAudio());
                 </button>
               </UiDropdownItem>
               <UiDropdownItem v-if="editable" v-slot="{ active }">
-                <button type="button" class="flex items-center gap-2" :class="{ 'opacity-80': active }"
-                  @click="handleEditClick">
+                <button
+                  type="button"
+                  class="flex items-center gap-2"
+                  :class="{ 'opacity-80': active }"
+                  @click="handleEditClick"
+                >
                   <IS-pencil :width="16" />
                   Edit proposal
                 </button>
               </UiDropdownItem>
-              <UiDropdownItem v-if="cancellable" v-slot="{ active, disabled }" :disabled="cancelling">
-                <button type="button" class="flex items-center gap-2"
-                  :class="{ 'opacity-80': active, 'opacity-40': disabled }" @click="handleCancelClick">
+              <UiDropdownItem
+                v-if="cancellable"
+                v-slot="{ active, disabled }"
+                :disabled="cancelling"
+              >
+                <button
+                  type="button"
+                  class="flex items-center gap-2"
+                  :class="{ 'opacity-80': active, 'opacity-40': disabled }"
+                  @click="handleCancelClick"
+                >
                   <IS-x-mark :width="16" />
                   Cancel proposal
                 </button>
               </UiDropdownItem>
               <UiDropdownItem v-if="proposalMetadataUrl" v-slot="{ active }">
-                <a :href="proposalMetadataUrl" target="_blank" class="flex items-center gap-2"
-                  :class="{ 'opacity-80': active }">
+                <a
+                  :href="proposalMetadataUrl"
+                  target="_blank"
+                  class="flex items-center gap-2"
+                  :class="{ 'opacity-80': active }"
+                >
                   <IH-arrow-sm-right class="-rotate-45" :width="16" />
                   View metadata
                 </a>
@@ -372,22 +415,44 @@ onBeforeUnmount(() => destroyAudio());
           <span>Execution</span>
         </h4>
         <div class="mb-4">
-          <ProposalExecutionsList :proposal="proposal" :executions="proposal.executions" />
+          <ProposalExecutionsList
+            :proposal="proposal"
+            :executions="proposal.executions"
+          />
         </div>
       </div>
       <div>
-        <button type="button" class="text-skin-text" @click="modalOpenVotes = true">
+        <button
+          type="button"
+          class="text-skin-text"
+          @click="modalOpenVotes = true"
+        >
           {{ _n(proposal.vote_count) }}
           {{ proposal.vote_count !== 1 ? 'votes' : 'vote' }}
         </button>
         ·
-        <button type="button" class="text-skin-text" @click="modalOpenTimeline = true" v-text="votingTime" />
+        <button
+          type="button"
+          class="text-skin-text"
+          @click="modalOpenTimeline = true"
+          v-text="votingTime"
+        />
         <template v-if="proposal.edited"> · (edited)</template>
       </div>
     </div>
   </UiContainer>
   <teleport to="#modal">
-    <ModalVotes v-if="proposal" :open="modalOpenVotes" :proposal="proposal" @close="modalOpenVotes = false" />
-    <ModalTimeline v-if="proposal" :open="modalOpenTimeline" :proposal="proposal" @close="modalOpenTimeline = false" />
+    <ModalVotes
+      v-if="proposal"
+      :open="modalOpenVotes"
+      :proposal="proposal"
+      @close="modalOpenVotes = false"
+    />
+    <ModalTimeline
+      v-if="proposal"
+      :open="modalOpenTimeline"
+      :proposal="proposal"
+      @close="modalOpenTimeline = false"
+    />
   </teleport>
 </template>

@@ -31,7 +31,7 @@ const networkData = computed<NetworkData | null>(() => {
         name: network.name,
         avatar: network.avatar
       };
-    } catch { }
+    } catch {}
   }
 
   if (props.chainId && typeof props.chainId === 'number') {
@@ -55,11 +55,17 @@ const networkData = computed<NetworkData | null>(() => {
 
 <template>
   <div class="relative">
-    <img v-if="networkData" :src="getUrl(networkData.avatar) ?? undefined" :title="networkData.name" :style="{
-      width: `${size}px`,
-      height: `${size}px`
-    }" :alt="networkData.name"
-      class="absolute rounded-full -bottom-1 -right-1 border-2 bg-skin-border border-skin-bg" />
+    <img
+      v-if="networkData"
+      :src="getUrl(networkData.avatar) ?? undefined"
+      :title="networkData.name"
+      :style="{
+        width: `${size}px`,
+        height: `${size}px`
+      }"
+      :alt="networkData.name"
+      class="absolute rounded-full -bottom-1 -right-1 border-2 bg-skin-border border-skin-bg"
+    />
     <slot />
   </div>
 </template>

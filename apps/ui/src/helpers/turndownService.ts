@@ -29,7 +29,9 @@ export default function (options: { discussion?: string } = {}) {
       if (node.classList.contains('quote')) {
         const image = node.querySelector('.title img');
         node.querySelector('.title img')?.remove();
-        return `> ### ![discourse-emoji](${image?.src}) ${turndownService.turndown(node.querySelector('.title')?.innerHTML)}
+        return `> ### ![discourse-emoji](${
+          image?.src
+        }) ${turndownService.turndown(node.querySelector('.title')?.innerHTML)}
         > ${node.querySelector('blockquote')?.textContent}
          `;
       } else if (node.classList.contains('twitterstatus')) {
@@ -40,7 +42,9 @@ export default function (options: { discussion?: string } = {}) {
         const tweet = node.querySelector('.tweet')?.innerHTML;
         return `
         > ### [${date}](${screenName?.href})
-        > ![discourse-thumbnail](${image}) ${displayName} ([${screenName?.textContent}](${screenName?.href}))
+        > ![discourse-thumbnail](${image}) ${displayName} ([${
+          screenName?.textContent
+        }](${screenName?.href}))
         >
         > ${turndownService.turndown(tweet)}
         `;
@@ -84,7 +88,9 @@ export default function (options: { discussion?: string } = {}) {
         }
 
         if (node.querySelector('img')) {
-          return `[![${node.querySelector('img').alt}](${node.querySelector('img').src}) ${node.textContent}](${node.href})`;
+          return `[![${node.querySelector('img').alt}](${
+            node.querySelector('img').src
+          }) ${node.textContent}](${node.href})`;
         }
 
         return `[${node.textContent}](${node.href})`;

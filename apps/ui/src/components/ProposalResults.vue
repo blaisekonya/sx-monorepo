@@ -80,13 +80,19 @@ const otherResultsSummary = computed(() => {
 </script>
 
 <template>
-  <div v-if="!!props.proposal.privacy && !props.proposal.completed && withDetails">
+  <div
+    v-if="!!props.proposal.privacy && !props.proposal.completed && withDetails"
+  >
     <div class="mb-1">
       All votes are encrypted and will be decrypted only after the voting period
       is over, making the results visible.
     </div>
     <div>
-      <a :href="SHUTTER_URL" class="flex items-center text-skin-link" target="_blank">
+      <a
+        :href="SHUTTER_URL"
+        class="flex items-center text-skin-link"
+        target="_blank"
+      >
         <IC-Shutter class="w-[80px]" />
         <IH-arrow-sm-right class="-rotate-45" />
       </a>
@@ -98,41 +104,74 @@ const otherResultsSummary = computed(() => {
   </div>
   <template v-else>
     <div v-if="withDetails" class="flex flex-col gap-2">
-      <div v-for="result in visibleResults" :key="result.choice"
+      <div
+        v-for="result in visibleResults"
+        :key="result.choice"
         class="flex gap-2 border rounded-lg px-3 py-2.5 last:mb-0 text-skin-link relative overflow-hidden items-center"
         :class="{
           [`_${result.choice} choice-border`]: proposal.type === 'basic'
-        }">
-        <div class="absolute bg-skin-border inset-y-0 left-0 pointer-events-none -z-10" :class="{
-          [`_${result.choice} choice-bg opacity-20`]:
-            proposal.type === 'basic'
-        }" :style="{
+        }"
+      >
+        <div
+          class="absolute bg-skin-border inset-y-0 left-0 pointer-events-none -z-10"
+          :class="{
+            [`_${result.choice} choice-bg opacity-20`]:
+              proposal.type === 'basic'
+          }"
+          :style="{
             width: `${result.progress.toFixed(2)}%`
-          }" />
-        <div v-if="proposal.type === 'basic'" class="rounded-full choice-bg inline-block size-[18px]"
-          :class="`_${result.choice}`">
-          <IH-check v-if="result.choice === 1" class="text-white size-[14px] mt-0.5 ml-0.5" />
-          <IH-x v-else-if="result.choice === 2" class="text-white size-[14px] mt-0.5 ml-0.5" />
-          <IH-minus-sm v-else-if="result.choice === 3" class="text-white size-[14px] mt-0.5 ml-0.5" />
+          }"
+        />
+        <div
+          v-if="proposal.type === 'basic'"
+          class="rounded-full choice-bg inline-block size-[18px]"
+          :class="`_${result.choice}`"
+        >
+          <IH-check
+            v-if="result.choice === 1"
+            class="text-white size-[14px] mt-0.5 ml-0.5"
+          />
+          <IH-x
+            v-else-if="result.choice === 2"
+            class="text-white size-[14px] mt-0.5 ml-0.5"
+          />
+          <IH-minus-sm
+            v-else-if="result.choice === 3"
+            class="text-white size-[14px] mt-0.5 ml-0.5"
+          />
         </div>
-        <div class="truncate grow" v-text="proposal.choices[result.choice - 1]" />
+        <div
+          class="truncate grow"
+          v-text="proposal.choices[result.choice - 1]"
+        />
         <div>
           {{ _vp(result.score / 10 ** decimals) }}
         </div>
         <div v-text="_p(result.progress / 100)" />
       </div>
-      <button v-if="!displayAllChoices && otherResultsSummary.count > 0" type="button"
+      <button
+        v-if="!displayAllChoices && otherResultsSummary.count > 0"
+        type="button"
         class="flex gap-2 border rounded-lg px-3 py-2.5 last:mb-0 text-skin-link relative overflow-hidden items-center text-left group"
-        @click="displayAllChoices = true">
-        <div class="absolute bg-skin-border inset-y-0 left-0 pointer-events-none -z-10" :style="{
-          width: `${otherResultsSummary.progress.toFixed(2)}%`
-        }" />
+        @click="displayAllChoices = true"
+      >
+        <div
+          class="absolute bg-skin-border inset-y-0 left-0 pointer-events-none -z-10"
+          :style="{
+            width: `${otherResultsSummary.progress.toFixed(2)}%`
+          }"
+        />
         <div class="truncate grow">
           Others
-          <span class="inline-block bg-skin-border text-skin-link text-[13px] rounded-full px-1.5 ml-2"
-            v-text="_n(otherResultsSummary.count, 'compact')" />
+          <span
+            class="inline-block bg-skin-border text-skin-link text-[13px] rounded-full px-1.5 ml-2"
+            v-text="_n(otherResultsSummary.count, 'compact')"
+          />
         </div>
-        <div class="group-hover:hidden" v-text="_p(otherResultsSummary.progress / 100)" />
+        <div
+          class="group-hover:hidden"
+          v-text="_p(otherResultsSummary.progress / 100)"
+        />
         <div class="hidden group-hover:flex items-center gap-1">
           See all <IH-arrow-down class="size-[16px]" />
         </div>
@@ -142,23 +181,47 @@ const otherResultsSummary = computed(() => {
         <span class="text-skin-link">{{ formatQuorum(totalProgress) }}</span>
       </div>
       <div v-if="proposal.privacy === 'shutter'" class="mt-2.5">
-        <a :href="SHUTTER_URL" class="flex items-center text-skin-link" target="_blank">
+        <a
+          :href="SHUTTER_URL"
+          class="flex items-center text-skin-link"
+          target="_blank"
+        >
           <IC-Shutter class="w-[80px]" />
           <IH-arrow-sm-right class="-rotate-45" />
         </a>
       </div>
     </div>
-    <div v-else-if="!props.proposal.privacy || props.proposal.completed" class="h-full flex items-center">
-      <div class="rounded-full h-[6px] overflow-hidden" :style="{
-        width: `${width}px`
-      }">
-        <div v-for="result in results" :key="result.choice" :title="props.proposal.choices[result.choice - 1]"
-          class="choice-bg float-left h-full" :style="{
-            width: `${quorumChoiceProgress(props.proposal.quorum_type, result, totalProgress).toFixed(3)}%`
-          }" :class="`_${result.choice}`" />
-        <div title="Quorum left" class="choice-bg _quorum float-left h-full" :style="{
-          width: `${(100 * (1 - totalProgress)).toFixed(3)}%`
-        }" />
+    <div
+      v-else-if="!props.proposal.privacy || props.proposal.completed"
+      class="h-full flex items-center"
+    >
+      <div
+        class="rounded-full h-[6px] overflow-hidden"
+        :style="{
+          width: `${width}px`
+        }"
+      >
+        <div
+          v-for="result in results"
+          :key="result.choice"
+          :title="props.proposal.choices[result.choice - 1]"
+          class="choice-bg float-left h-full"
+          :style="{
+            width: `${quorumChoiceProgress(
+              props.proposal.quorum_type,
+              result,
+              totalProgress
+            ).toFixed(3)}%`
+          }"
+          :class="`_${result.choice}`"
+        />
+        <div
+          title="Quorum left"
+          class="choice-bg _quorum float-left h-full"
+          :style="{
+            width: `${(100 * (1 - totalProgress)).toFixed(3)}%`
+          }"
+        />
       </div>
     </div>
   </template>

@@ -49,12 +49,20 @@ function checkColorProximity(color: string): {
 </script>
 
 <template>
-  <AppLink :to="to" class="rounded-full w-fit max-w-[220px] shrink-0 flex" :class="{
-    border: colorProperties.showBorder
-  }" :style="{
+  <AppLink
+    :to="to"
+    class="rounded-full w-fit max-w-[220px] shrink-0 flex"
+    :class="{
+      border: colorProperties.showBorder
+    }"
+    :style="{
       backgroundColor: colorProperties.backgroundColor,
       color: colorProperties.textColor
-    }">
-    <span class="truncate text-sm leading-[11px] whitespace-nowrap px-2 py-[6px]" v-text="label" />
+    }"
+  >
+    <span
+      class="truncate text-sm leading-[11px] whitespace-nowrap px-2 py-[6px]"
+      v-text="label"
+    />
   </AppLink>
 </template>

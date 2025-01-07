@@ -149,46 +149,73 @@ watchEffect(() => {
 </script>
 
 <template>
-  <div :class="[
-    'flex items-stretch md:flex-row flex-col w-full md:h-full',
-    { '!pb-0': withoutBottomPadding }
-  ]">
+  <div
+    :class="[
+      'flex items-stretch md:flex-row flex-col w-full md:h-full',
+      { '!pb-0': withoutBottomPadding }
+    ]"
+  >
     <UiLoading v-if="!proposal" class="ml-4 mt-3" />
     <template v-else>
       <div class="flex-1 grow min-w-0">
         <UiScrollerHorizontal with-buttons gradient="xxl" :sticky-offset="72">
           <div class="flex px-4 bg-skin-bg border-b space-x-3 min-w-max">
-            <AppLink :to="{
-              name: 'space-proposal-overview',
-              params: {
-                proposal: proposal.proposal_id,
-                space: `${proposal.network}:${proposal.space.id}`
-              }
-            }">
-              <UiLink :is-active="route.name === 'space-proposal-overview'" text="Overview" />
-            </AppLink>
-            <AppLink :to="{
-              name: 'space-proposal-votes',
-              params: {
-                proposal: proposal.proposal_id,
-                space: `${proposal.network}:${proposal.space.id}`
-              }
-            }" class="flex items-center">
-              <UiLink :is-active="route.name === 'space-proposal-votes'" :count="proposal.vote_count" text="Votes"
-                class="inline-block" />
-            </AppLink>
-            <template v-if="discussion">
-              <AppLink v-if="discourseTopic?.posts_count" :to="{
-                name: 'space-proposal-discussion',
+            <AppLink
+              :to="{
+                name: 'space-proposal-overview',
                 params: {
                   proposal: proposal.proposal_id,
                   space: `${proposal.network}:${proposal.space.id}`
                 }
-              }" class="flex items-center">
-                <UiLink :is-active="route.name === 'space-proposal-discussion'" :count="discourseTopic.posts_count"
-                  text="Discussion" class="inline-block" />
+              }"
+            >
+              <UiLink
+                :is-active="route.name === 'space-proposal-overview'"
+                text="Overview"
+              />
+            </AppLink>
+            <AppLink
+              :to="{
+                name: 'space-proposal-votes',
+                params: {
+                  proposal: proposal.proposal_id,
+                  space: `${proposal.network}:${proposal.space.id}`
+                }
+              }"
+              class="flex items-center"
+            >
+              <UiLink
+                :is-active="route.name === 'space-proposal-votes'"
+                :count="proposal.vote_count"
+                text="Votes"
+                class="inline-block"
+              />
+            </AppLink>
+            <template v-if="discussion">
+              <AppLink
+                v-if="discourseTopic?.posts_count"
+                :to="{
+                  name: 'space-proposal-discussion',
+                  params: {
+                    proposal: proposal.proposal_id,
+                    space: `${proposal.network}:${proposal.space.id}`
+                  }
+                }"
+                class="flex items-center"
+              >
+                <UiLink
+                  :is-active="route.name === 'space-proposal-discussion'"
+                  :count="discourseTopic.posts_count"
+                  text="Discussion"
+                  class="inline-block"
+                />
               </AppLink>
-              <a v-else :href="discussion" target="_blank" class="flex items-center">
+              <a
+                v-else
+                :href="discussion"
+                target="_blank"
+                class="flex items-center"
+              >
                 <h4 class="eyebrow text-skin-text" v-text="'Discussion'" />
                 <IH-arrow-sm-right class="-rotate-45 text-skin-text" />
               </a>
@@ -206,18 +233,24 @@ watchEffect(() => {
         </UiScrollerHorizontal>
         <router-view :proposal="proposal" />
       </div>
-      <Affix :class="[
-        'shrink-0 md:w-[340px] border-l-0 md:border-l',
-        {
-          'hidden md:block': route.name === 'space-proposal-votes',
-          '-mb-6': !withoutBottomPadding
-        }
-      ]" :top="72" :bottom="64">
+      <Affix
+        :class="[
+          'shrink-0 md:w-[340px] border-l-0 md:border-l',
+          {
+            'hidden md:block': route.name === 'space-proposal-votes',
+            '-mb-6': !withoutBottomPadding
+          }
+        ]"
+        :top="72"
+        :bottom="64"
+      >
         <div class="flex flex-col space-y-4 p-4">
-          <div v-if="
-            !proposal.cancelled &&
-            ['pending', 'active'].includes(proposal.state)
-          ">
+          <div
+            v-if="
+              !proposal.cancelled &&
+              ['pending', 'active'].includes(proposal.state)
+            "
+          >
             <h4 class="mb-2.5 eyebrow flex items-center space-x-2">
               <template v-if="editMode">
                 <IH-cursor-click />
@@ -233,16 +266,23 @@ watchEffect(() => {
               </template>
             </h4>
             <div class="space-y-2">
-              <IndicatorVotingPower v-if="web3.account && (!currentVote || editMode)" v-slot="votingPowerProps"
-                :network-id="proposal.network" :voting-power="votingPower" class="mb-2 flex items-center"
-                @fetch-voting-power="handleFetchVotingPower">
-                <div v-if="
-                  votingPower?.error &&
-                  votingPower.error.details === 'NOT_READY_YET' &&
-                  ['evmSlotValue', 'ozVotesStorageProof'].includes(
-                    votingPower.error.source
-                  )
-                ">
+              <IndicatorVotingPower
+                v-if="web3.account && (!currentVote || editMode)"
+                v-slot="votingPowerProps"
+                :network-id="proposal.network"
+                :voting-power="votingPower"
+                class="mb-2 flex items-center"
+                @fetch-voting-power="handleFetchVotingPower"
+              >
+                <div
+                  v-if="
+                    votingPower?.error &&
+                    votingPower.error.details === 'NOT_READY_YET' &&
+                    ['evmSlotValue', 'ozVotesStorageProof'].includes(
+                      votingPower.error.source
+                    )
+                  "
+                >
                   <span class="inline-flex align-top h-[27px] items-center">
                     <IH-exclamation-circle class="mr-1" />
                   </span>
@@ -251,51 +291,101 @@ watchEffect(() => {
                 </div>
                 <div v-else class="flex gap-1.5 items-center">
                   <span class="shrink-0">Voting power:</span>
-                  <button type="button" class="truncate" @click="votingPowerProps.onClick">
-                    <UiLoading v-if="!votingPower || votingPower.status === 'loading'" />
-                    <IH-exclamation v-else-if="votingPower.status === 'error'" class="inline-block text-rose-500" />
-                    <span v-else class="text-skin-link" v-text="getFormattedVotingPower(votingPower)" />
+                  <button
+                    type="button"
+                    class="truncate"
+                    @click="votingPowerProps.onClick"
+                  >
+                    <UiLoading
+                      v-if="!votingPower || votingPower.status === 'loading'"
+                    />
+                    <IH-exclamation
+                      v-else-if="votingPower.status === 'error'"
+                      class="inline-block text-rose-500"
+                    />
+                    <span
+                      v-else
+                      class="text-skin-link"
+                      v-text="getFormattedVotingPower(votingPower)"
+                    />
                   </button>
-                  <a v-if="
-                    votingPower?.status === 'success' &&
-                    votingPower.totalVotingPower === BigInt(0)
-                  " :href="`${HELPDESK_URL}/en/articles/9566904-why-do-i-have-0-voting-power`" target="_blank">
+                  <a
+                    v-if="
+                      votingPower?.status === 'success' &&
+                      votingPower.totalVotingPower === BigInt(0)
+                    "
+                    :href="`${HELPDESK_URL}/en/articles/9566904-why-do-i-have-0-voting-power`"
+                    target="_blank"
+                  >
                     <IH-question-mark-circle />
                   </a>
                 </div>
               </IndicatorVotingPower>
-              <ProposalVote v-if="proposal" :proposal="proposal" :edit-mode="editMode"
-                @enter-edit-mode="editMode = true">
-                <ProposalVoteBasic v-if="proposal.type === 'basic'" :choices="proposal.choices"
-                  @vote="handleVoteClick" />
-                <ProposalVoteSingleChoice v-else-if="proposal.type === 'single-choice'" :proposal="proposal"
-                  :default-choice="currentVote?.choice" @vote="handleVoteClick" />
-                <ProposalVoteApproval v-else-if="proposal.type === 'approval'" :proposal="proposal"
-                  :default-choice="currentVote?.choice" @vote="handleVoteClick" />
-                <ProposalVoteRankedChoice v-else-if="proposal.type === 'ranked-choice'" :proposal="proposal"
-                  :default-choice="currentVote?.choice" @vote="handleVoteClick" />
-                <ProposalVoteWeighted v-else-if="['weighted', 'quadratic'].includes(proposal.type)" :proposal="proposal"
-                  :default-choice="currentVote?.choice" @vote="handleVoteClick" />
+              <ProposalVote
+                v-if="proposal"
+                :proposal="proposal"
+                :edit-mode="editMode"
+                @enter-edit-mode="editMode = true"
+              >
+                <ProposalVoteBasic
+                  v-if="proposal.type === 'basic'"
+                  :choices="proposal.choices"
+                  @vote="handleVoteClick"
+                />
+                <ProposalVoteSingleChoice
+                  v-else-if="proposal.type === 'single-choice'"
+                  :proposal="proposal"
+                  :default-choice="currentVote?.choice"
+                  @vote="handleVoteClick"
+                />
+                <ProposalVoteApproval
+                  v-else-if="proposal.type === 'approval'"
+                  :proposal="proposal"
+                  :default-choice="currentVote?.choice"
+                  @vote="handleVoteClick"
+                />
+                <ProposalVoteRankedChoice
+                  v-else-if="proposal.type === 'ranked-choice'"
+                  :proposal="proposal"
+                  :default-choice="currentVote?.choice"
+                  @vote="handleVoteClick"
+                />
+                <ProposalVoteWeighted
+                  v-else-if="['weighted', 'quadratic'].includes(proposal.type)"
+                  :proposal="proposal"
+                  :default-choice="currentVote?.choice"
+                  @vote="handleVoteClick"
+                />
               </ProposalVote>
             </div>
           </div>
-          <div v-if="
-            !proposal.cancelled &&
-            proposal.state !== 'pending' &&
-            proposal.vote_count
-          ">
+          <div
+            v-if="
+              !proposal.cancelled &&
+              proposal.state !== 'pending' &&
+              proposal.vote_count
+            "
+          >
             <h4 class="mb-2.5 eyebrow flex items-center gap-2">
               <IH-chart-square-bar />
               Results
             </h4>
-            <ProposalResults with-details :proposal="proposal" :decimals="votingPowerDecimals" />
+            <ProposalResults
+              with-details
+              :proposal="proposal"
+              :decimals="votingPowerDecimals"
+            />
           </div>
           <div v-if="space.labels?.length && proposal.labels?.length">
             <h4 class="mb-2.5 eyebrow flex items-center gap-2">
               <IH-tag />
               Labels
             </h4>
-            <ProposalLabels :labels="proposal.labels" :space="space" with-link />
+            <ProposalLabels
+              :labels="proposal.labels"
+              :space="space"
+              with-link
+            />
           </div>
           <div>
             <h4 class="mb-2.5 eyebrow flex items-center gap-2">
@@ -305,14 +395,23 @@ watchEffect(() => {
             <ProposalTimeline :data="proposal" />
           </div>
         </div>
-        <ModalTerms v-if="space.terms" :open="modalOpenTerms" :space="space" @close="modalOpenTerms = false"
-          @accept="handleAcceptTerms" />
-        <ModalVote v-if="proposal" :choice="selectedChoice" :proposal="proposal" :open="modalOpenVote"
-          @close="modalOpenVote = false" @voted="handleVoteSubmitted" />
+        <ModalTerms
+          v-if="space.terms"
+          :open="modalOpenTerms"
+          :space="space"
+          @close="modalOpenTerms = false"
+          @accept="handleAcceptTerms"
+        />
+        <ModalVote
+          v-if="proposal"
+          :choice="selectedChoice"
+          :proposal="proposal"
+          :open="modalOpenVote"
+          @close="modalOpenVote = false"
+          @voted="handleVoteSubmitted"
+        />
       </Affix>
     </template>
-    <teleport to="#modal">
-
-    </teleport>
+    <teleport to="#modal"> </teleport>
   </div>
 </template>

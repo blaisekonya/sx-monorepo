@@ -229,37 +229,74 @@ watchEffect(async () => {
     <template #header>
       <h3 v-text="'Send token'" />
       <template v-if="showPicker">
-        <button type="button" class="absolute left-0 -top-1 p-4" @click="showPicker = false">
+        <button
+          type="button"
+          class="absolute left-0 -top-1 p-4"
+          @click="showPicker = false"
+        >
           <IH-arrow-narrow-left class="mr-2" />
         </button>
         <div class="flex items-center border-t px-2 py-3 mt-3 -mb-3">
           <IH-search class="mx-2" />
-          <input ref="searchInput" v-model="searchValue" type="text" :placeholder="pickerType === 'token' ? 'Search name or paste address' : 'Search'
-            " class="flex-auto bg-transparent text-skin-link" />
+          <input
+            ref="searchInput"
+            v-model="searchValue"
+            type="text"
+            :placeholder="
+              pickerType === 'token' ? 'Search name or paste address' : 'Search'
+            "
+            class="flex-auto bg-transparent text-skin-link"
+          />
         </div>
       </template>
     </template>
     <template v-if="showPicker">
-      <PickerToken v-if="pickerType === 'token'" :assets="allAssets" :address="address" :network="network"
-        :loading="loading" :search-value="searchValue" @pick="
+      <PickerToken
+        v-if="pickerType === 'token'"
+        :assets="allAssets"
+        :address="address"
+        :network="network"
+        :loading="loading"
+        :search-value="searchValue"
+        @pick="
           form.token = $event;
-        showPicker = false;
-        " @add="handleAddCustomToken" />
-      <PickerContact v-else-if="pickerType === 'contact'" :loading="false" :search-value="searchValue"
-        :extra-contacts="extraContacts" @pick="
+          showPicker = false;
+        "
+        @add="handleAddCustomToken"
+      />
+      <PickerContact
+        v-else-if="pickerType === 'contact'"
+        :loading="false"
+        :search-value="searchValue"
+        :extra-contacts="extraContacts"
+        @pick="
           form.to = $event;
-        showPicker = false;
-        " />
+          showPicker = false;
+        "
+      />
     </template>
     <div v-if="!showPicker" class="s-box p-4">
-      <UiInputAddress v-model="form.to" :definition="RECIPIENT_DEFINITION" :error="formErrors.to"
-        @pick="handlePickerClick('contact')" />
+      <UiInputAddress
+        v-model="form.to"
+        :definition="RECIPIENT_DEFINITION"
+        :error="formErrors.to"
+        @pick="handlePickerClick('contact')"
+      />
       <div class="s-base">
         <div class="s-label" v-text="'Token'" />
-        <button type="button" class="s-input text-left h-[61px]" @click="handlePickerClick('token')">
+        <button
+          type="button"
+          class="s-input text-left h-[61px]"
+          @click="handlePickerClick('token')"
+        >
           <div class="flex items-center">
-            <UiStamp v-if="currentToken" :id="`eip155:${network}:${currentToken.contractAddress}`" type="token"
-              class="mr-2" :size="20" />
+            <UiStamp
+              v-if="currentToken"
+              :id="`eip155:${network}:${currentToken.contractAddress}`"
+              type="token"
+              class="mr-2"
+              :size="20"
+            />
             <div class="truncate">
               {{ currentToken?.symbol || 'Select token' }}
             </div>
@@ -268,13 +305,25 @@ watchEffect(async () => {
       </div>
       <div class="flex gap-2.5">
         <div class="relative w-full">
-          <UiInputAmount :model-value="form.amount" :definition="amountDefinition" :error="formErrors.amount"
-            @update:model-value="handleAmountUpdate" />
-          <button type="button" class="absolute right-3 top-1" @click="handleMaxClick" v-text="'max'" />
+          <UiInputAmount
+            :model-value="form.amount"
+            :definition="amountDefinition"
+            :error="formErrors.amount"
+            @update:model-value="handleAmountUpdate"
+          />
+          <button
+            type="button"
+            class="absolute right-3 top-1"
+            @click="handleMaxClick"
+            v-text="'max'"
+          />
         </div>
         <div v-if="currentToken.price !== 0" class="w-full">
-          <UiInputAmount :model-value="form.value" :definition="{ type: 'number', title: 'USD', examples: ['0'] }"
-            @update:model-value="handleValueUpdate" />
+          <UiInputAmount
+            :model-value="form.value"
+            :definition="{ type: 'number', title: 'USD', examples: ['0'] }"
+            @update:model-value="handleValueUpdate"
+          />
         </div>
       </div>
     </div>

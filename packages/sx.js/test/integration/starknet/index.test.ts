@@ -621,7 +621,9 @@ describe('sx-starknet', () => {
         }
       );
 
-      const executionHash = `${executionParams[2]}${executionParams[1].slice(2)}`;
+      const executionHash = `${executionParams[2]}${executionParams[1].slice(
+        2
+      )}`;
 
       const proposal = {
         startTimestamp: message_payload[3],

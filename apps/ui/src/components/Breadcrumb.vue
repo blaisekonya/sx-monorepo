@@ -30,10 +30,19 @@ const space = computed(() => {
 </script>
 
 <template>
-  <AppLink v-if="space" :to="{
-    name: 'space-overview'
-  }" class="flex item-center space-x-2.5 truncate text-[24px]" v-bind="$attrs">
-    <SpaceAvatar :space="{ ...space, network: networkId as NetworkID }" :size="36" class="!rounded-[4px] shrink-0" />
+  <AppLink
+    v-if="space"
+    :to="{
+      name: 'space-overview'
+    }"
+    class="flex item-center space-x-2.5 truncate text-[24px]"
+    v-bind="$attrs"
+  >
+    <SpaceAvatar
+      :space="{ ...space, network: networkId as NetworkID }"
+      :size="36"
+      class="!rounded-[4px] shrink-0"
+    />
     <span class="truncate" v-text="space.name" />
   </AppLink>
 </template>

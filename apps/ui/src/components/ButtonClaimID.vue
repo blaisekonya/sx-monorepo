@@ -1,10 +1,15 @@
 <script setup lang="ts">
-import { ref, watch, toRaw } from 'vue';
-import { ZkMeWidget, verifyMeidWithZkMeServices } from '@zkmelabs/widget';
 import { Engine } from '@thirdweb-dev/engine';
-import { CHAIN, GLOBAL_VOTER_ID_ZKME_ADDRESS, DRACHMA_CONTRACT_ADDRESS, REFERRAL_REWARD } from '../helpers/constants';
+import { verifyMeidWithZkMeServices, ZkMeWidget } from '@zkmelabs/widget';
 import { ethers } from 'ethers';
-import '@zkmelabs/widget/dist/style.css'
+import { ref, toRaw, watch } from 'vue';
+import {
+  CHAIN,
+  DRACHMA_CONTRACT_ADDRESS,
+  GLOBAL_VOTER_ID_ZKME_ADDRESS,
+  REFERRAL_REWARD
+} from '../helpers/constants';
+import '@zkmelabs/widget/dist/style.css';
 
 const ZKME_API_KEY = import.meta.env.VITE_ZKME_API_KEY;
 
@@ -32,11 +37,15 @@ const props = defineProps<{
 async function fetchVoterIdBalance() {
   if (!web3Account.value) return;
 
-  const provider = new ethers.providers.JsonRpcProvider('https://mainnet.base.org');
-  const abi = [
-    "function balanceOf(address owner) view returns (uint256)"
-  ];
-  const contract = new ethers.Contract(GLOBAL_VOTER_ID_ZKME_ADDRESS, abi, provider);
+  const provider = new ethers.providers.JsonRpcProvider(
+    'https://mainnet.base.org'
+  );
+  const abi = ['function balanceOf(address owner) view returns (uint256)'];
+  const contract = new ethers.Contract(
+    GLOBAL_VOTER_ID_ZKME_ADDRESS,
+    abi,
+    provider
+  );
 
   const balance = await contract.balanceOf(web3Account.value);
   balanceData.value = ethers.utils.formatUnits(balance, 18);
@@ -110,7 +119,8 @@ const launchWidget = async () => {
     console.error('Widget is not initialized');
     resultDialogContent.value = {
       title: 'Error',
-      description: 'Widget is not initialized. Please refresh the page and try again.'
+      description:
+        'Widget is not initialized. Please refresh the page and try again.'
     };
     showResultDialog.value = true;
     return;
@@ -135,7 +145,8 @@ const launchWidget = async () => {
     if (isGrant) {
       resultDialogContent.value = {
         title: 'Verification complete',
-        description: 'You have already completed the verification check. Creating your Global Voter ID now...'
+        description:
+          'You have already completed the verification check. Creating your Global Voter ID now...'
       };
       showResultDialog.value = true;
       isProcessing.value = true;
@@ -155,7 +166,9 @@ const launchWidget = async () => {
     console.error('Error launching widget:', error);
     resultDialogContent.value = {
       title: 'Error',
-      description: `Failed to launch widget: ${(error as Error).message || 'Unknown error'}. Please try again later or contact support.`
+      description: `Failed to launch widget: ${
+        (error as Error).message || 'Unknown error'
+      }. Please try again later or contact support.`
     };
     showResultDialog.value = true;
   }
@@ -193,7 +206,7 @@ const emit = defineEmits<{
 const mintMembership = async (updateDialog = true) => {
   if (
     !web3Account.value ||
-    (balanceData &&
+    (balanceData.value &&
       balanceData.value !== null &&
       balanceData.value !== undefined &&
       parseFloat(balanceData.value) > 0)
@@ -220,7 +233,11 @@ const mintMembership = async (updateDialog = true) => {
     const referrer = urlParams.get('ref');
 
     // Send referral reward if applicable
-    if (referrer && ethers.utils.isAddress(referrer) && referrer !== web3Account.value) {
+    if (
+      referrer &&
+      ethers.utils.isAddress(referrer) &&
+      referrer !== web3Account.value
+    ) {
       const engine = new Engine({
         url: THIRDWEB_ENGINE_URL as string,
         accessToken: THIRDWEB_ENGINE_ACCESS_TOKEN as string
@@ -278,9 +295,15 @@ const handleStartVerification = () => {
   <span class="cursor-pointer text-skin-link flex items-center gap-2.5">
     <template v-if="props.user">
       <template v-if="props.done">
-        <a href="https://basescan.org/token/0x762CEc1f35e517Da6C178262F8864Fd92b70A20b" target="_blank"
-          rel="noopener noreferrer" class="!px-0 w-[46px] inline-flex items-center justify-center">
-          <UiButton class="!px-0 w-[46px]"><IH-check class="inline-block" /></UiButton>
+        <a
+          href="https://basescan.org/token/0x762CEc1f35e517Da6C178262F8864Fd92b70A20b"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="!px-0 w-[46px] inline-flex items-center justify-center"
+        >
+          <UiButton class="!px-0 w-[46px]"
+            ><IH-check class="inline-block"
+          /></UiButton>
         </a>
       </template>
       <template v-else>
@@ -290,8 +313,9 @@ const handleStartVerification = () => {
       </template>
     </template>
     <template v-else>
-      <span @click="showVoterIdInfo = true"><span class="text-skin-text">Create your</span>
-        Global Voter ID</span>
+      <span @click="showVoterIdInfo = true"
+        ><span class="text-skin-text">Create your</span> Global Voter ID</span
+      >
     </template>
   </span>
 
@@ -308,10 +332,16 @@ const handleStartVerification = () => {
           </p>
         </template>
         <template v-else>
-          <div v-if="resultDialogContent.title === 'Success'" class="bg-skin-success rounded-full p-[12px]">
+          <div
+            v-if="resultDialogContent.title === 'Success'"
+            class="bg-skin-success rounded-full p-[12px]"
+          >
             <IS-check :width="28" :height="28" class="text-skin-bg" />
           </div>
-          <div v-else-if="resultDialogContent.title === 'Error'" class="bg-skin-danger rounded-full p-[12px]">
+          <div
+            v-else-if="resultDialogContent.title === 'Error'"
+            class="bg-skin-danger rounded-full p-[12px]"
+          >
             <IS-x-mark :width="28" :height="28" class="text-skin-bg" />
           </div>
           <p class="text-muted-foreground text-sm">
@@ -321,14 +351,14 @@ const handleStartVerification = () => {
       </div>
       <template #footer>
         <div class="flex flex-row items-center justify-center">
-          <UiButton @click="closeResultDialog" class="w-40" variant="white">
+          <UiButton class="w-40" variant="white" @click="closeResultDialog">
             Close
           </UiButton>
         </div>
       </template>
     </UiModal>
 
-    <UiModal :open="showVoterIdInfo" @close="closeVoterIdInfo" :maxWidth="480">
+    <UiModal :open="showVoterIdInfo" :max-width="480" @close="closeVoterIdInfo">
       <template #header>
         <div class="relative">
           <h3 class="text-[22px]">Create your Global Voter ID</h3>
@@ -338,43 +368,56 @@ const handleStartVerification = () => {
       <div class="flex flex-col gap-4 p-4">
         <div class="flex flex-col items-center text-center gap-3">
           <div class="text-skin-text text-sm">
-            Claim your Global Voter ID and start experimenting with global democracy.
+            Claim your Global Voter ID and start experimenting with global
+            democracy.
           </div>
         </div>
 
         <div>
           <div class="flex items-start gap-3 py-2">
             <div
-              class="flex-shrink-0 w-5 h-5 flex items-center justify-center rounded-full bg-skin-primary text-skin-bg font-medium">
+              class="flex-shrink-0 w-5 h-5 flex items-center justify-center rounded-full bg-skin-primary text-skin-bg font-medium"
+            >
               1
             </div>
             <div>
-              <h4 class="font-medium text-[18px] mb-1">Prove your personhood</h4>
-              <p class="text-sm text-skin-text">Complete a privacy-preserving biometric check to verify that you are a
-                real and unique person
+              <h4 class="font-medium text-[18px] mb-1">
+                Prove your personhood
+              </h4>
+              <p class="text-sm text-skin-text">
+                Complete a privacy-preserving biometric check to verify that you
+                are a real and unique person
               </p>
             </div>
           </div>
 
           <div class="flex items-start gap-3 py-2">
             <div
-              class="flex-shrink-0 w-5 h-5 flex items-center justify-center rounded-full bg-skin-primary text-skin-bg font-medium">
+              class="flex-shrink-0 w-5 h-5 flex items-center justify-center rounded-full bg-skin-primary text-skin-bg font-medium"
+            >
               2
             </div>
             <div>
               <h4 class="font-medium text-[18px] mb-1">Receive your ID</h4>
-              <p class="text-sm text-skin-text">Collect your non-transferable Global Voter ID</p>
+              <p class="text-sm text-skin-text">
+                Collect your non-transferable Global Voter ID
+              </p>
             </div>
           </div>
 
           <div class="flex items-start gap-3 pt-2">
             <div
-              class="flex-shrink-0 w-5 h-5 flex items-center justify-center rounded-full bg-skin-primary text-skin-bg font-medium">
+              class="flex-shrink-0 w-5 h-5 flex items-center justify-center rounded-full bg-skin-primary text-skin-bg font-medium"
+            >
               3
             </div>
             <div>
-              <h4 class="font-medium text-[18px] mb-1">Make your voice heard</h4>
-              <p class="text-sm text-skin-text">Participate in our experiments and shape the future of global governance
+              <h4 class="font-medium text-[18px] mb-1">
+                Make your voice heard
+              </h4>
+              <p class="text-sm text-skin-text">
+                Participate in our experiments and shape the future of global
+                governance
               </p>
             </div>
           </div>

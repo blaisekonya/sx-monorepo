@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue';
-import { useWeb3 } from '@/composables/useWeb3';
+import { computed } from 'vue';
 import { useToast } from '@/composables/useToast';
+import { useWeb3 } from '@/composables/useWeb3';
 
 const { web3Account } = useWeb3();
 const { toast } = useToast();
@@ -56,15 +56,24 @@ const shareOptions = [
 
   <div class="space-y-2.5">
     <div class="flex gap-2">
-      <input type="text" :value="referralLink" readonly
-        class="flex-1 px-3 py-2 rounded-lg border bg-skin-bg text-skin-text font-mono text-sm" />
-      <UiButton @click="copyReferralLink" class="!px-0 w-[46px]">
+      <input
+        type="text"
+        :value="referralLink"
+        readonly
+        class="flex-1 px-3 py-2 rounded-lg border bg-skin-bg text-skin-text font-mono text-sm"
+      />
+      <UiButton class="!px-0 w-[46px]" @click="copyReferralLink">
         <IH-clipboard-document class="inline-block" />
       </UiButton>
     </div>
 
     <div class="flex gap-2">
-      <UiButton v-for="option in shareOptions" :key="option.name" @click="option.action" class="flex-1 !py-2 !px-0">
+      <UiButton
+        v-for="option in shareOptions"
+        :key="option.name"
+        class="flex-1 !py-2 !px-0"
+        @click="option.action"
+      >
         <component :is="option.icon" class="h-4 w-4" />
         Share on {{ option.name }}
       </UiButton>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import IHBell from '~icons/heroicons-outline/bell';
-import IHSearch from '~icons/heroicons-outline/search';
 import IHHome from '~icons/heroicons-outline/home';
+import IHSearch from '~icons/heroicons-outline/search';
 import IHUser from '~icons/heroicons-outline/user';
 
 const { web3 } = useWeb3();
@@ -46,12 +46,30 @@ const menu = [
 <template>
   <nav class="fixed bottom-0 inset-x-0 z-50 bg-skin-bg border-t text-xs">
     <div class="flex px-4 justify-between">
-      <AppLink v-for="(item, i) in menu" :key="i" :to="item.link"
+      <AppLink
+        v-for="(item, i) in menu"
+        :key="i"
+        :to="item.link"
         class="inline-flex flex-col text-center truncate justify-center max-w-[120px]"
-        :class="(item.link.name ? route.name === item.link.name : route.path === item.link.path) ? 'text-skin-link' : 'text-skin-text'">
-        <component :is="item.icon"
-          :is-active="item.link.name ? route.name === item.link.name : route.path === item.link.path"
-          class="mx-auto size-4" />
+        :class="
+          (
+            item.link.name
+              ? route.name === item.link.name
+              : route.path === item.link.path
+          )
+            ? 'text-skin-link'
+            : 'text-skin-text'
+        "
+      >
+        <component
+          :is="item.icon"
+          :is-active="
+            item.link.name
+              ? route.name === item.link.name
+              : route.path === item.link.path
+          "
+          class="mx-auto size-4"
+        />
       </AppLink>
     </div>
   </nav>

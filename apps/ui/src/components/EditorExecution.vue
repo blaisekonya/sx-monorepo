@@ -111,33 +111,65 @@ watch(
 <template>
   <div class="space-y-3">
     <div class="overflow-hidden border rounded-lg">
-      <div v-if="treasury && network" class="w-full flex justify-between items-center px-4 py-3">
-        <UiBadgeNetwork :chain-id="treasury.network" class="mr-3 shrink-0 size-fit" :class="{
-          'opacity-40': disabled
-        }">
-          <UiStamp :id="treasury.wallet" type="avatar" :size="32" class="rounded-md" />
+      <div
+        v-if="treasury && network"
+        class="w-full flex justify-between items-center px-4 py-3"
+      >
+        <UiBadgeNetwork
+          :chain-id="treasury.network"
+          class="mr-3 shrink-0 size-fit"
+          :class="{
+            'opacity-40': disabled
+          }"
+        >
+          <UiStamp
+            :id="treasury.wallet"
+            type="avatar"
+            :size="32"
+            class="rounded-md"
+          />
         </UiBadgeNetwork>
         <div class="flex-1 leading-[22px] overflow-hidden">
-          <h4 class="text-skin-link truncate" :class="{
-            'text-skin-border': disabled
-          }" v-text="treasury.name || shorten(treasury.wallet)" />
-          <div class="text-skin-text text-[17px] truncate" :class="{
-            'text-skin-border': disabled
-          }" v-text="getExecutionName(props.space.network, strategy.type)" />
+          <h4
+            class="text-skin-link truncate"
+            :class="{
+              'text-skin-border': disabled
+            }"
+            v-text="treasury.name || shorten(treasury.wallet)"
+          />
+          <div
+            class="text-skin-text text-[17px] truncate"
+            :class="{
+              'text-skin-border': disabled
+            }"
+            v-text="getExecutionName(props.space.network, strategy.type)"
+          />
         </div>
         <div class="space-x-2 shrink-0">
           <UiTooltip title="Send token">
-            <UiButton :disabled="!treasury || disabled" class="!px-0 w-[46px]" @click="openModal('sendToken')">
+            <UiButton
+              :disabled="!treasury || disabled"
+              class="!px-0 w-[46px]"
+              @click="openModal('sendToken')"
+            >
               <IH-cash class="inline-block" />
             </UiButton>
           </UiTooltip>
           <UiTooltip title="Send NFT">
-            <UiButton :disabled="!treasury || disabled" class="!px-0 w-[46px]" @click="openModal('sendNft')">
+            <UiButton
+              :disabled="!treasury || disabled"
+              class="!px-0 w-[46px]"
+              @click="openModal('sendNft')"
+            >
               <IH-photograph class="inline-block" />
             </UiButton>
           </UiTooltip>
           <UiTooltip title="Contract call">
-            <UiButton :disabled="!treasury || disabled" class="!px-0 w-[46px]" @click="openModal('contractCall')">
+            <UiButton
+              :disabled="!treasury || disabled"
+              class="!px-0 w-[46px]"
+              @click="openModal('contractCall')"
+            >
               <IH-code class="inline-block" />
             </UiButton>
           </UiTooltip>
@@ -146,12 +178,18 @@ watch(
       <template v-if="model.length > 0 && treasury">
         <UiLabel label="Transactions" class="border-t" />
         <div>
-          <Draggable v-model="model" handle=".handle" :item-key="() => undefined">
+          <Draggable
+            v-model="model"
+            handle=".handle"
+            :item-key="() => undefined"
+          >
             <template #item="{ element: tx, index: i }">
               <TransactionsListItem :tx="tx" :chain-id="treasury.network">
                 <template #left>
-                  <div v-if="model.length > 1"
-                    class="handle text-skin-link cursor-pointer opacity-50 hover:opacity-100">
+                  <div
+                    v-if="model.length > 1"
+                    class="handle text-skin-link cursor-pointer opacity-50 hover:opacity-100"
+                  >
                     <IH-switch-vertical />
                   </div>
                 </template>
@@ -168,24 +206,38 @@ watch(
               </TransactionsListItem>
             </template>
           </Draggable>
-          <div class="border-t px-4 py-2 space-x-2 flex items-center justify-between">
+          <div
+            class="border-t px-4 py-2 space-x-2 flex items-center justify-between"
+          >
             <div class="flex items-center max-w-[70%]">
               {{ model.length }}
               {{ model.length === 1 ? 'transaction' : 'transactions' }}
             </div>
-            <UiTooltip v-if="!network?.supportsSimulation" title="Simulation not supported on this network">
+            <UiTooltip
+              v-if="!network?.supportsSimulation"
+              title="Simulation not supported on this network"
+            >
               <IH-shield-exclamation />
             </UiTooltip>
-            <UiTooltip v-else-if="simulationState === null" title="Simulate execution">
+            <UiTooltip
+              v-else-if="simulationState === null"
+              title="Simulate execution"
+            >
               <button type="button" class="flex" @click="handleSimulateClick">
                 <IH-shield-check class="text-skin-link" />
               </button>
             </UiTooltip>
             <UiLoading v-else-if="simulationState === 'SIMULATING'" />
-            <UiTooltip v-if="simulationState === 'SIMULATION_SUCCEDED'" title="Execution simulation succeeded">
+            <UiTooltip
+              v-if="simulationState === 'SIMULATION_SUCCEDED'"
+              title="Execution simulation succeeded"
+            >
               <IH-shield-check class="text-skin-success" />
             </UiTooltip>
-            <UiTooltip v-if="simulationState === 'SIMULATION_FAILED'" title="Execution simulation failed">
+            <UiTooltip
+              v-if="simulationState === 'SIMULATION_FAILED'"
+              title="Execution simulation failed"
+            >
               <IH-shield-check class="text-skin-danger" />
             </UiTooltip>
           </div>
@@ -194,18 +246,44 @@ watch(
     </div>
 
     <teleport to="#modal">
-      <ModalSendToken v-if="treasury" :open="modalOpen.sendToken" :address="treasury.wallet" :network="treasury.network"
-        :extra-contacts="extraContacts" :initial-state="modalState.sendToken" @close="modalOpen.sendToken = false"
-        @add="addTx" />
-      <ModalSendNft v-if="treasury" :open="modalOpen.sendNft" :address="treasury.wallet" :network="treasury.network"
-        :extra-contacts="extraContacts" :initial-state="modalState.sendNft" @close="modalOpen.sendNft = false"
-        @add="addTx" />
-      <ModalStakeToken v-if="treasury" :open="modalOpen.stakeToken" :address="treasury.wallet"
-        :network="treasury.network" :initial-state="modalState.stakeToken" @close="modalOpen.stakeToken = false"
-        @add="addTx" />
-      <ModalTransaction v-if="treasury" :open="modalOpen.contractCall" :network="treasury.network"
-        :extra-contacts="extraContacts" :initial-state="modalState.contractCall" @close="modalOpen.contractCall = false"
-        @add="addTx" />
+      <ModalSendToken
+        v-if="treasury"
+        :open="modalOpen.sendToken"
+        :address="treasury.wallet"
+        :network="treasury.network"
+        :extra-contacts="extraContacts"
+        :initial-state="modalState.sendToken"
+        @close="modalOpen.sendToken = false"
+        @add="addTx"
+      />
+      <ModalSendNft
+        v-if="treasury"
+        :open="modalOpen.sendNft"
+        :address="treasury.wallet"
+        :network="treasury.network"
+        :extra-contacts="extraContacts"
+        :initial-state="modalState.sendNft"
+        @close="modalOpen.sendNft = false"
+        @add="addTx"
+      />
+      <ModalStakeToken
+        v-if="treasury"
+        :open="modalOpen.stakeToken"
+        :address="treasury.wallet"
+        :network="treasury.network"
+        :initial-state="modalState.stakeToken"
+        @close="modalOpen.stakeToken = false"
+        @add="addTx"
+      />
+      <ModalTransaction
+        v-if="treasury"
+        :open="modalOpen.contractCall"
+        :network="treasury.network"
+        :extra-contacts="extraContacts"
+        :initial-state="modalState.contractCall"
+        @close="modalOpen.contractCall = false"
+        @add="addTx"
+      />
     </teleport>
   </div>
 </template>

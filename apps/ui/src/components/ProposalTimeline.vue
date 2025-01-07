@@ -97,15 +97,30 @@ function isInThePast(timestamp: number): boolean {
 <template>
   <div class="flex">
     <div class="mt-1 ml-2">
-      <div v-for="(state, i) in states" :key="state.id" class="flex relative h-[60px]">
-        <div class="absolute size-[15px] inline-block rounded-full left-[-7px] border-4 border-skin-bg" :class="isInThePast(state.value) ? 'bg-skin-heading' : 'bg-skin-border'
-          " />
-        <div v-if="states[i + 1]" class="border-l pr-4 mt-3"
-          :class="isInThePast(states[i + 1].value) && 'border-skin-heading'" />
+      <div
+        v-for="(state, i) in states"
+        :key="state.id"
+        class="flex relative h-[60px]"
+      >
+        <div
+          class="absolute size-[15px] inline-block rounded-full left-[-7px] border-4 border-skin-bg"
+          :class="
+            isInThePast(state.value) ? 'bg-skin-heading' : 'bg-skin-border'
+          "
+        />
+        <div
+          v-if="states[i + 1]"
+          class="border-l pr-4 mt-3"
+          :class="isInThePast(states[i + 1].value) && 'border-skin-heading'"
+        />
       </div>
     </div>
     <div class="flex-auto leading-6">
-      <div v-for="state in states" :key="state.id" class="mb-3 last:mb-0 h-[44px]">
+      <div
+        v-for="state in states"
+        :key="state.id"
+        class="mb-3 last:mb-0 h-[44px]"
+      >
         <h4 v-text="LABELS[state.id]" />
         <div class="flex gap-2 items-center">
           <div v-text="_t(state.value)" />

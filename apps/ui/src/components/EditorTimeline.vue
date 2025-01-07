@@ -98,7 +98,9 @@ function formatVotingDuration(
       <template v-if="editable" #start-date-suffix>
         <UiTooltip
           v-if="space.voting_delay"
-          :title="`This space has enforced a ${formatVotingDuration('voting_delay')} voting delay`"
+          :title="`This space has enforced a ${formatVotingDuration(
+            'voting_delay'
+          )} voting delay`"
         >
           <IH-exclamation-circle />
         </UiTooltip>
@@ -112,7 +114,9 @@ function formatVotingDuration(
       <template v-if="editable" #end-date-suffix>
         <UiTooltip
           v-if="space.min_voting_period"
-          :title="`This space has enforced a ${formatVotingDuration('min_voting_period')} voting period`"
+          :title="`This space has enforced a ${formatVotingDuration(
+            'min_voting_period'
+          )} voting period`"
         >
           <IH-exclamation-circle />
         </UiTooltip>
@@ -125,14 +129,18 @@ function formatVotingDuration(
       </template>
       <template v-if="editable && space.min_voting_period" #min_end-date-suffix>
         <UiTooltip
-          :title="`This space has enforced a ${formatVotingDuration('min_voting_period')} minimum voting period`"
+          :title="`This space has enforced a ${formatVotingDuration(
+            'min_voting_period'
+          )} minimum voting period`"
         >
           <IH-exclamation-circle />
         </UiTooltip>
       </template>
       <template v-if="editable && space.max_voting_period" #max_end-date-suffix>
         <UiTooltip
-          :title="`This space has enforced a ${formatVotingDuration('max_voting_period')} maximum voting period`"
+          :title="`This space has enforced a ${formatVotingDuration(
+            'max_voting_period'
+          )} maximum voting period`"
         >
           <IH-exclamation-circle />
         </UiTooltip>

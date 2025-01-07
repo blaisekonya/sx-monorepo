@@ -1229,7 +1229,7 @@ Upon adoption of the World Constitution by the World Constituent Assembly, the A
 19.5.7. The several preparatory commissions on urgent world problems may be reconstituted as Administrative Departments of the Provisional World Government.
 
 19.5.8. In all of its work and activities, the Provisional World Government shall function in accordance with the provisions of this Constitution for the Federation of Earth.
-`
+`;
 </script>
 
 <template>

@@ -10,8 +10,5 @@ withDefaults(
 </script>
 
 <template>
-  <div :class="[
-    'animate-pulse rounded-md bg-skin-border/50',
-    className
-  ]" />
+  <div :class="['animate-pulse rounded-md bg-skin-border/50', className]" />
 </template>

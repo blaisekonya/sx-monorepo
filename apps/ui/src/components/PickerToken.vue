@@ -40,7 +40,7 @@ const filteredAssets = computed(() => {
           .toLocaleLowerCase()
           .includes(props.searchValue.toLocaleLowerCase()) ||
         asset.contractAddress.toLocaleLowerCase() ===
-        props.searchValue.toLocaleLowerCase()
+          props.searchValue.toLocaleLowerCase()
       );
     })
     .sort((a, b) => {
@@ -119,27 +119,49 @@ watch(
 </script>
 
 <template>
-  <div v-if="loading || customTokenLoading" class="px-4 py-3 flex justify-center">
+  <div
+    v-if="loading || customTokenLoading"
+    class="px-4 py-3 flex justify-center"
+  >
     <UiLoading />
   </div>
   <template v-else>
-    <div v-if="
-      filteredAssets.length === 0 &&
-      (!isSearchValueAddress || !isSearchValueValidToken)
-    " class="text-center py-3" v-text="'No results'" />
-    <button v-for="(asset, i) in filteredAssets" :key="i" type="button"
-      class="w-full px-3 py-2.5 border-b last:border-0 flex justify-between text-start" @click="handlePick(asset)">
+    <div
+      v-if="
+        filteredAssets.length === 0 &&
+        (!isSearchValueAddress || !isSearchValueValidToken)
+      "
+      class="text-center py-3"
+      v-text="'No results'"
+    />
+    <button
+      v-for="(asset, i) in filteredAssets"
+      :key="i"
+      type="button"
+      class="w-full px-3 py-2.5 border-b last:border-0 flex justify-between text-start"
+      @click="handlePick(asset)"
+    >
       <div class="flex items-center min-w-0 pr-2">
         <UiBadgeNetwork :chain-id="network">
-          <UiStamp :id="`eip155:${network}:${asset.contractAddress}`" type="token" :size="32" />
+          <UiStamp
+            :id="`eip155:${network}:${asset.contractAddress}`"
+            type="token"
+            :size="32"
+          />
         </UiBadgeNetwork>
         <div class="flex flex-col ml-3 leading-5 min-w-0">
-          <div class="text-skin-link" v-text="shorten(asset.symbol, 'symbol')" />
+          <div
+            class="text-skin-link"
+            v-text="shorten(asset.symbol, 'symbol')"
+          />
           <div class="text-[17px] truncate" v-text="shorten(asset.name, 24)" />
         </div>
       </div>
       <div class="flex flex-col items-end leading-5">
-        <div class="text-skin-link" v-text="_n(formatUnits(asset.tokenBalance || 0, asset.decimals || 0))" />
+        <div
+          class="text-skin-link"
+          v-text="_n(formatUnits(asset.tokenBalance || 0, asset.decimals || 0))"
+        />
         <div class="text-[17px]" v-text="`$${_n(asset.price)}`" />
       </div>
     </button>

@@ -33,31 +33,51 @@ function handleContactEdit(contact) {
       </div>
     </div>
     <UiLabel label="Contacts" />
-    <div v-for="contact in contactsStore.contacts" :key="contact.address" class="mx-4 py-3 border-b flex group">
+    <div
+      v-for="contact in contactsStore.contacts"
+      :key="contact.address"
+      class="mx-4 py-3 border-b flex group"
+    >
       <div class="flex-auto flex items-center min-w-0">
         <UiStamp :id="contact.address" type="avatar" :size="32" />
         <div class="flex flex-col ml-3 leading-[22px] min-w-0 pr-2 md:pr-0">
           <h4 class="text-skin-link" v-text="shorten(contact.name, 24)" />
-          <div class="text-[17px] truncate" v-text="shortenAddress(contact.address)" />
+          <div
+            class="text-[17px] truncate"
+            v-text="shortenAddress(contact.address)"
+          />
         </div>
       </div>
       <div class="flex flex-row items-center content-center gap-x-3">
-        <button type="button" class="invisible group-hover:visible" @click="handleContactEdit(contact)">
+        <button
+          type="button"
+          class="invisible group-hover:visible"
+          @click="handleContactEdit(contact)"
+        >
           <IH-pencil />
         </button>
-        <button type="button" class="invisible group-hover:visible"
-          @click="contactsStore.deleteContact(contact.address)">
+        <button
+          type="button"
+          class="invisible group-hover:visible"
+          @click="contactsStore.deleteContact(contact.address)"
+        >
           <IH-trash />
         </button>
       </div>
     </div>
-    <div v-if="!contactsStore.contacts.length" class="flex items-center px-4 py-3 text-skin-link gap-2">
+    <div
+      v-if="!contactsStore.contacts.length"
+      class="flex items-center px-4 py-3 text-skin-link gap-2"
+    >
       <IH-exclamation-circle />
       <span v-text="'There are no contacts here.'" />
     </div>
     <teleport to="#modal">
-      <ModalEditContact :open="modalOpen.editContact" :initial-state="modalState.editContact"
-        @close="modalOpen.editContact = false" />
+      <ModalEditContact
+        :open="modalOpen.editContact"
+        :initial-state="modalState.editContact"
+        @close="modalOpen.editContact = false"
+      />
     </teleport>
   </div>
 </template>

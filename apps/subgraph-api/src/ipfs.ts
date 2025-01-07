@@ -206,7 +206,10 @@ export function handleVotingPowerValidationStrategyMetadata(content: Bytes): voi
 
   updateStrategiesParsedMetadata(
     spaceId,
-    strategies_metadata.toArray().filter(metadata => metadata.kind === JSONValueKind.STRING).map<string>((metadata) => metadata.toString()),
+    strategies_metadata
+      .toArray()
+      .filter((metadata) => metadata.kind === JSONValueKind.STRING)
+      .map<string>((metadata) => metadata.toString()),
     0,
     blockNumber,
     'VotingPowerValidationStrategiesParsedMetadata'

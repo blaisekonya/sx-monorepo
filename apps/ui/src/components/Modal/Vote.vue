@@ -69,7 +69,7 @@ const offchainProposal = computed<boolean>(() =>
 
 const canSubmit = computed<boolean>(
   () =>
-    formValidated &&
+    formValidated.value &&
     !!props.choice &&
     Object.keys(formErrors.value).length === 0 &&
     !!votingPower.value?.canVote
@@ -168,13 +168,20 @@ watchEffect(async () => {
       <h3>Cast your vote</h3>
     </template>
     <div class="m-4 mb-3 flex flex-col space-y-3">
-      <MessageVotingPower v-if="votingPower" :voting-power="votingPower" action="vote"
-        @fetch-voting-power="handleFetchVotingPower" />
+      <MessageVotingPower
+        v-if="votingPower"
+        :voting-power="votingPower"
+        action="vote"
+        @fetch-voting-power="handleFetchVotingPower"
+      />
       <dl>
         <dt class="text-sm leading-5">Choice</dt>
         <dd class="text-skin-heading text-[20px] leading-6">
-          <span v-if="choice" class="test-skin-heading font-semibold"
-            v-text="getChoiceText(proposal.choices, choice)" />
+          <span
+            v-if="choice"
+            class="test-skin-heading font-semibold"
+            v-text="getChoiceText(proposal.choices, choice)"
+          />
           <div v-else class="flex gap-1 text-skin-danger items-center">
             <IH-exclamation-circle />
             No choice selected
@@ -184,22 +191,41 @@ watchEffect(async () => {
         <dd v-if="!votingPower || votingPower.status === 'loading'">
           <UiLoading />
         </dd>
-        <dd v-else-if="votingPower.status === 'success'" class="font-semibold text-skin-heading text-[20px] leading-6"
-          v-text="formattedVotingPower" />
-        <dd v-else-if="votingPower.status === 'error'" class="font-semibold text-skin-heading text-[20px] leading-6"
-          v-text="formattedVotingPower" />
+        <dd
+          v-else-if="votingPower.status === 'success'"
+          class="font-semibold text-skin-heading text-[20px] leading-6"
+          v-text="formattedVotingPower"
+        />
+        <dd
+          v-else-if="votingPower.status === 'error'"
+          class="font-semibold text-skin-heading text-[20px] leading-6"
+          v-text="formattedVotingPower"
+        />
       </dl>
       <div v-if="!proposal.privacy" class="s-box">
-        <UiForm v-model="form" :error="formErrors" :definition="{ properties: { reason: REASON_DEFINITION } }" />
+        <UiForm
+          v-model="form"
+          :error="formErrors"
+          :definition="{ properties: { reason: REASON_DEFINITION } }"
+        />
       </div>
     </div>
 
     <template #footer>
       <div class="flex flex-col xs:flex-row gap-3">
-        <UiButton class="w-full order-last xs:order-none" @click="$emit('close')">
+        <UiButton
+          class="w-full order-last xs:order-none"
+          @click="$emit('close')"
+        >
           Cancel
         </UiButton>
-        <UiButton primary class="w-full" :disabled="!canSubmit" :loading="loading" @click="handleSubmit">
+        <UiButton
+          primary
+          class="w-full"
+          :disabled="!canSubmit"
+          :loading="loading"
+          @click="handleSubmit"
+        >
           Confirm
         </UiButton>
       </div>
@@ -207,12 +233,25 @@ watchEffect(async () => {
   </UiModal>
 
   <teleport to="#modal">
-    <ModalTransactionProgress :open="modalTransactionOpen" :network-id="proposal.network" :messages="{
-      approveTitle: 'Confirm vote'
-    }" :execute="voteFn" @confirmed="handleConfirmed" @close="modalTransactionOpen = false" />
-    <ModalShare :open="modalShareOpen" :tx-id="txId" :show-icon="true"
-      :shareable="{ proposal, choice: selectedChoice! }" :messages="{
+    <ModalTransactionProgress
+      :open="modalTransactionOpen"
+      :network-id="proposal.network"
+      :messages="{
+        approveTitle: 'Confirm vote'
+      }"
+      :execute="voteFn"
+      @confirmed="handleConfirmed"
+      @close="modalTransactionOpen = false"
+    />
+    <ModalShare
+      :open="modalShareOpen"
+      :tx-id="txId"
+      :show-icon="true"
+      :shareable="{ proposal, choice: selectedChoice! }"
+      :messages="{
         title: 'Vote success!'
-      }" @close="modalShareOpen = false" />
+      }"
+      @close="modalShareOpen = false"
+    />
   </teleport>
 </template>
