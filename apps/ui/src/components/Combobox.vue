@@ -72,20 +72,38 @@ watch(model, () => {
 
 <template>
   <UiWrapperInput
-    :definition="definition"
+    :definition="inline ? omit(definition, ['title']) : definition"
     :error="error"
     :dirty="dirty"
-    class="relative mb-[14px]"
+    class="relative mb-[14px] w-auto"
   >
     <Combobox v-slot="{ open }" v-model="inputValue" as="div" nullable>
-      <Float adaptive-width strategy="fixed" placement="bottom-end">
-        <div>
-          <ComboboxButton class="w-full">
+      <Float
+        :adaptive-width="inline ? false : true"
+        strategy="fixed"
+        placement="bottom-start"
+        :offset="gap && inline ? gap : 0"
+      >
+        <div
+          :class="{
+            relative: inline
+          }"
+        >
+          <ComboboxButton
+            class="w-full"
+            as="div"
+            :data-value="content"
+            :class="{
+              sizer: inline
+            }"
+          >
             <ComboboxInput
               class="s-input !flex items-center justify-between !mb-0"
               :class="{
-                '!rounded-b-none': open
+                '!rounded-b-none': !gap && open,
+                'h-[42px] min-w-11': inline
               }"
+              :size="'1'"
               autocomplete="off"
               :placeholder="definition.examples?.[0]"
               :display-value="item => getDisplayValue(item as T)"
@@ -114,9 +132,9 @@ watch(model, () => {
           <div class="max-h-[208px] overflow-y-auto">
             <div
               v-if="filteredOptions.length === 0 && query !== ''"
-              class="relative cursor-default select-none text-center py-2"
+              class="relative cursor-default select-none text-center py-2 px-3"
             >
-              No result for your search query
+              No results for your search
             </div>
 
             <ComboboxOption
@@ -134,7 +152,7 @@ watch(model, () => {
               >
                 <component :is="item.icon" class="size-[20px] mr-2" />
                 <span
-                  class="w-full py-2 text-skin-link"
+                  class="w-full py-2 text-skin-link truncate"
                   :class="{
                     'opacity-40': disabled,
                     'cursor-pointer': !disabled

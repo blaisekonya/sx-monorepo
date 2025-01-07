@@ -239,7 +239,11 @@ onMounted(() => deploy());
     <div>Do not refresh this page until process is complete.</div>
 
     <div class="flex flex-col mt-4">
-      <div v-for="(step, i) in uiSteps" :key="step.id" class="flex items-center gap-4 mb-3 last:mb-0">
+      <div
+        v-for="(step, i) in uiSteps"
+        :key="step.id"
+        class="flex items-center gap-4 mb-3 last:mb-0"
+      >
         <div>
           <IH-check v-if="i < currentStep" class="text-skin-success" />
           <IH-clock v-else-if="i > currentStep" />
@@ -250,14 +254,25 @@ onMounted(() => deploy());
         </div>
         <div>
           <h4 v-text="step.title" />
-          <button v-if="failed && i === currentStep" type="button" class="text-skin-text" @click="deploy(currentStep)">
+          <button
+            v-if="failed && i === currentStep"
+            type="button"
+            class="text-skin-text"
+            @click="deploy(currentStep)"
+          >
             Retry
           </button>
-          <a v-if="txIds[step.id]" class="inline-flex items-center" target="_blank" :href="getStepNetwork(step).helpers.getExplorerUrl(
-            txIds[step.id],
-            'transaction'
-          )
-            ">
+          <a
+            v-if="txIds[step.id]"
+            class="inline-flex items-center"
+            target="_blank"
+            :href="
+              getStepNetwork(step).helpers.getExplorerUrl(
+                txIds[step.id],
+                'transaction'
+              )
+            "
+          >
             {{ shorten(txIds[step.id]) }}
             <IH-arrow-sm-right class="inline-block ml-1 -rotate-45" />
           </a>
@@ -273,12 +288,19 @@ onMounted(() => deploy());
     </UiButton>
     <div v-if="completed" class="mt-4">
       You can now access your space
-      <AppLink :to="{
-        name: 'space-overview',
-        params: { space: `${networkId}:${predictedSpaceAddress}` }
-      }" text="here" />.
+      <AppLink
+        :to="{
+          name: 'space-overview',
+          params: { space: `${networkId}:${predictedSpaceAddress}` }
+        }"
+        text="here"
+      />.
     </div>
   </div>
-  <ModalConnector :open="connectorModalOpen" :supported-connectors="connectorModalConnectors"
-    @close="handleConnectorClose" @pick="handleConnectorPick" />
+  <ModalConnector
+    :open="connectorModalOpen"
+    :supported-connectors="connectorModalConnectors"
+    @close="handleConnectorClose"
+    @pick="handleConnectorPick"
+  />
 </template>

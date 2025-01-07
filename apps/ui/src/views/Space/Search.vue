@@ -73,6 +73,12 @@ watchEffect(() => setTitle(`Search - ${props.space.name}`));
 </script>
 
 <template>
-  <ProposalsList title="Proposals" limit="off" :loading="!loaded" :loading-more="loadingMore" :proposals="proposals"
-    @end-reached="handleEndReached" />
+  <ProposalsList
+    title="Proposals"
+    limit="off"
+    :loading="!loaded"
+    :loading-more="loadingMore"
+    :proposals="proposals"
+    @end-reached="handleEndReached"
+  />
 </template>

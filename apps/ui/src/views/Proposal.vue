@@ -165,7 +165,12 @@ watchEffect(() => {
 </script>
 
 <template>
-  <div class="flex items-stretch md:flex-row flex-col w-full md:h-full !pb-0">
+  <div
+    :class="[
+      'flex items-stretch md:flex-row flex-col w-full md:h-full',
+      { '!pb-0': withoutBottomPadding }
+    ]"
+  >
     <UiLoading v-if="!proposal" class="ml-4 mt-3" />
     <template v-else>
       <div class="flex-1 grow min-w-0">
@@ -247,7 +252,10 @@ watchEffect(() => {
       <Affix
         :class="[
           'shrink-0 md:w-[340px] border-l-0 md:border-l',
-          { 'hidden md:block': route.name === 'space-proposal-votes' }
+          {
+            'hidden md:block': route.name === 'space-proposal-votes',
+            '-mb-6': !withoutBottomPadding
+          }
         ]"
         :top="72"
         :bottom="64"
@@ -389,7 +397,11 @@ watchEffect(() => {
               <IH-tag />
               Labels
             </h4>
-            <ProposalLabels :labels="proposal.labels" :space="space" />
+            <ProposalLabels
+              :labels="proposal.labels"
+              :space="space"
+              with-link
+            />
           </div>
           <div>
             <h4 class="mb-2.5 eyebrow flex items-center gap-2">
@@ -399,6 +411,21 @@ watchEffect(() => {
             <ProposalTimeline :data="proposal" />
           </div>
         </div>
+        <ModalTerms
+          v-if="space.terms"
+          :open="modalOpenTerms"
+          :space="space"
+          @close="modalOpenTerms = false"
+          @accept="handleAcceptTerms"
+        />
+        <ModalVote
+          v-if="proposal"
+          :choice="selectedChoice"
+          :proposal="proposal"
+          :open="modalOpenVote"
+          @close="modalOpenVote = false"
+          @voted="handleVoteSubmitted"
+        />
       </Affix>
     </template>
     <teleport to="#modal"> </teleport>

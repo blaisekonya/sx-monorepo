@@ -117,7 +117,8 @@ const launchWidget = async () => {
     console.error('Widget is not initialized');
     resultDialogContent.value = {
       title: 'Error',
-      description: 'Widget is not initialized. Please refresh the page and try again.'
+      description:
+        'Widget is not initialized. Please refresh the page and try again.'
     };
     showResultDialog.value = true;
     return;
@@ -142,7 +143,8 @@ const launchWidget = async () => {
     if (isGrant) {
       resultDialogContent.value = {
         title: 'Verification complete',
-        description: 'You have already completed the verification check. Creating your Global Voter ID now...'
+        description:
+          'You have already completed the verification check. Creating your Global Voter ID now...'
       };
       showResultDialog.value = true;
       isProcessing.value = true;
@@ -162,7 +164,9 @@ const launchWidget = async () => {
     console.error('Error launching widget:', error);
     resultDialogContent.value = {
       title: 'Error',
-      description: `Failed to launch widget: ${(error as Error).message || 'Unknown error'}. Please try again later or contact support.`
+      description: `Failed to launch widget: ${
+        (error as Error).message || 'Unknown error'
+      }. Please try again later or contact support.`
     };
     showResultDialog.value = true;
     return;

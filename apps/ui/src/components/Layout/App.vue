@@ -173,7 +173,7 @@ router.afterEach(() => {
           { '!flex app-sidebar-open': uiStore.sideMenuOpen }
         ]"
       />
-      <AppTopnav v-if="hasTopNav" :has-app-nav="hasAppNav">
+      <AppTopnav :has-app-nav="hasAppNav" :class="{ hidden: !hasTopNav }">
         <template #toggle-sidebar-button>
           <button
             v-if="hasSwipeableContent"

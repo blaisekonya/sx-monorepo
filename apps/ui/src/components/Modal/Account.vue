@@ -183,9 +183,10 @@ function handleSignup() {
                     </div>
                     <div class="flex items-center gap-3">
                       <div class="bg-skin-primary rounded-full p-2">
-                        <IH-check-badge class="w-[20px] h-[20px] text-skin-bg" />
+                        <IH-check-badge
+                          class="w-[20px] h-[20px] text-skin-bg"
+                        />
                       </div>
-                      <div class="text-sm">Experiment with global democracy</div>
                     </div>
                   </div>
                 </div>
@@ -292,18 +293,25 @@ function handleSignup() {
         <UiButton :to="{ name: 'settings-spaces' }" @click="emit('close')">
           Settings
         </UiButton>
-        <UiButton @click="() => {
-          step = 'connect';
-          showConnectors = true;
-        }
-          ">
+        <UiButton
+          @click="
+            () => {
+              step = 'connect';
+              showConnectors = true;
+            }
+          "
+        >
           {{ web3.account ? 'Change wallet' : 'Log in' }}
         </UiButton>
-        <UiButton class="!text-skin-danger" @click="() => {
-          handleLogout();
-          handleLoginClick();
-        }
-          ">
+        <UiButton
+          class="!text-skin-danger"
+          @click="
+            () => {
+              handleLogout();
+              handleLoginClick();
+            }
+          "
+        >
           Log out
         </UiButton>
       </template>

@@ -30,16 +30,24 @@ function toggleSelectedChoice(choice: number) {
 <template>
   <div class="flex flex-col space-y-3">
     <div class="flex flex-col space-y-2">
-      <UiButton v-for="(choice, index) in proposal.choices" :key="index"
+      <UiButton
+        v-for="(choice, index) in proposal.choices"
+        :key="index"
         class="!h-[48px] text-left w-full flex items-center"
-        :class="{ 'border-skin-text': selectedChoices.includes(index + 1) }" @click="toggleSelectedChoice(index + 1)">
+        :class="{ 'border-skin-text': selectedChoices.includes(index + 1) }"
+        @click="toggleSelectedChoice(index + 1)"
+      >
         <div class="grow truncate">
           {{ choice }}
         </div>
         <IH-check v-if="selectedChoices.includes(index + 1)" class="shrink-0" />
       </UiButton>
     </div>
-    <UiButton primary class="!h-[48px] w-full" @click="emit('vote', selectedChoices)">
+    <UiButton
+      primary
+      class="!h-[48px] w-full"
+      @click="emit('vote', selectedChoices)"
+    >
       Vote
     </UiButton>
   </div>

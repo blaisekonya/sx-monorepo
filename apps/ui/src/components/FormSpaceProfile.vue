@@ -167,10 +167,22 @@ onMounted(() => {
       }"
     />
     <h4 class="eyebrow mb-2 font-medium">Profile</h4>
-    <UiForm :model-value="form" :error="formErrors" :definition="profileDefinition" />
+    <UiForm
+      :model-value="form"
+      :error="formErrors"
+      :definition="profileDefinition"
+    />
     <h4 class="eyebrow mt-4 mb-2 font-medium">Voting power</h4>
-    <UiForm :model-value="form" :error="formErrors" :definition="votingPowerDefinition" />
+    <UiForm
+      :model-value="form"
+      :error="formErrors"
+      :definition="votingPowerDefinition"
+    />
     <h4 class="eyebrow mt-4 mb-2 font-medium">Social accounts</h4>
-    <UiForm :model-value="form" :error="formErrors" :definition="socialAccountsDefinition" />
+    <UiForm
+      :model-value="form"
+      :error="formErrors"
+      :definition="socialAccountsDefinition"
+    />
   </div>
 </template>

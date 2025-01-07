@@ -44,9 +44,7 @@ const network = computed(() => getNetwork(props.proposal.network));
       <a
         class="inline-flex items-center"
         target="_blank"
-        :href="
-          executionNetwork.helpers.getExplorerUrl(executionTx, 'transaction')
-        "
+        :href="executionTxUrl || undefined"
       >
         {{ shorten(executionTx) }}
         <IH-arrow-sm-right class="inline-block ml-1 -rotate-45" />

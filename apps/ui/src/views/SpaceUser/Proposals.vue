@@ -69,6 +69,12 @@ watchEffect(() =>
 </script>
 
 <template>
-  <ProposalsList limit="off" :loading="!loaded" :loading-more="loadingMore" :proposals="proposals" :show-author="false"
-    @end-reached="handleEndReached" />
+  <ProposalsList
+    limit="off"
+    :loading="!loaded"
+    :loading-more="loadingMore"
+    :proposals="proposals"
+    :show-author="false"
+    @end-reached="handleEndReached"
+  />
 </template>

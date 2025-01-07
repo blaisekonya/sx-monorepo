@@ -33,7 +33,11 @@ watch(model, () => {
   <UiWrapperInput :definition="definition" :error="error" :dirty="dirty">
     <select v-model="inputValue" class="s-input">
       <option disabled value="">Please select one</option>
-      <option v-for="option in definition.options" :key="option.id" :value="option.id">
+      <option
+        v-for="option in definition.options"
+        :key="option.id"
+        :value="option.id"
+      >
         {{ option.name ?? option.id }}
       </option>
     </select>

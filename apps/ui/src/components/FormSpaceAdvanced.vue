@@ -148,7 +148,7 @@ watchEffect(() => {
   <h4 class="eyebrow mb-2 font-medium">Sub-spaces</h4>
   <UiMessage
     type="info"
-    :learn-more-link="'https://docs.snapshot.org/user-guides/spaces/sub-spaces'"
+    :learn-more-link="'https://docs.snapshot.box/user-guides/spaces/sub-spaces'"
   >
     Add a sub-space to display its proposals within your space. If you want the
     current space to be displayed on the sub-space's page, the space need to be
