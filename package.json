@@ -32,5 +32,6 @@
       "**/@graphprotocol/graph-ts",
       "**/assemblyscript"
     ]
-  }
+  },
+  "packageManager": "yarn@1.22.22"
 }
