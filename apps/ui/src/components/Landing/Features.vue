@@ -19,7 +19,7 @@ const FEATURES = [
   {
     title: 'World Drachma',
     about:
-      'The currency of global democracy, fueling the day-to-day operations of the World Republic.',
+      'The currency of global democracy, fueling the operations of the World Republic.',
     icon: ISBanknotes
   }
 ];
@@ -30,7 +30,7 @@ const FEATURES = [
     <UiContainer class="!max-w-screen-lg">
       <div class="pb-6 max-w-[640px]">
         <h1 class="mb-4 font-display text-[36px] xs:text-[44px]">
-          Open-source tools for onchain democracy
+          Open-source tools for digital democracy
         </h1>
       </div>
     </UiContainer>

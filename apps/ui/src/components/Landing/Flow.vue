@@ -12,7 +12,7 @@ const STEPS = [
   {
     title: 'Experiment',
     about:
-      'Apply for grants and test your governance proposals using our cutting-edge tools and infrastructure.',
+      'Apply for grants and test your governance ideas using cutting-edge tools and infrastructure.',
     icon: ISBeaker
   }
 ];
@@ -23,7 +23,7 @@ const STEPS = [
     <UiContainer class="!max-w-screen-lg">
       <div class="pb-6 max-w-[640px] text-center mx-auto">
         <h1 class="mb-4 font-display text-[36px] xs:text-[44px]">
-          The crypto-powered global democracy laboratory
+          The onchain global democracy laboratory
         </h1>
       </div>
     </UiContainer>
