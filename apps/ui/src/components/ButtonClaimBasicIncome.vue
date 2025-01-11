@@ -191,10 +191,10 @@ const handleCreateDrachmaStream = async () => {
     description: 'Creating your basic income stream...'
   };
 
-  const newFlowRate = ethers.BigNumber.from(FLOW_RATE);
+  const newFlowRate = BigInt(FLOW_RATE);
 
   try {
-    await createDrachmaStream(web3Account.value, newFlowRate.toBigInt());
+    await createDrachmaStream(web3Account.value, newFlowRate);
     resultDialogContent.value = {
       title: 'Stream created',
       description: 'Your basic income stream has been successfully created.'
