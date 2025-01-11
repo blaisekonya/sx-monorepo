@@ -37,9 +37,7 @@ const props = defineProps<{
 async function fetchVoterIdBalance() {
   if (!web3Account.value) return;
 
-  const provider = new ethers.providers.JsonRpcProvider(
-    'https://mainnet.base.org'
-  );
+  const provider = new ethers.JsonRpcProvider('https://mainnet.base.org');
   const abi = ['function balanceOf(address owner) view returns (uint256)'];
   const contract = new ethers.Contract(
     GLOBAL_VOTER_ID_ZKME_ADDRESS,
@@ -48,7 +46,7 @@ async function fetchVoterIdBalance() {
   );
 
   const balance = await contract.balanceOf(web3Account.value);
-  balanceData.value = ethers.utils.formatUnits(balance, 18);
+  balanceData.value = ethers.formatUnits(balance, 18);
 }
 
 watch(() => web3Account, fetchVoterIdBalance, { immediate: true });
@@ -200,7 +198,7 @@ async function mintMembershipZkMe(address: string) {
 }
 
 const emit = defineEmits<{
-  (e: 'voter-id-claimed', balance: string): void;
+  (e: 'voterIdClaimed', balance: string): void;
 }>();
 
 const mintMembership = async (updateDialog = true) => {
@@ -235,7 +233,7 @@ const mintMembership = async (updateDialog = true) => {
     // Send referral reward if applicable
     if (
       referrer &&
-      ethers.utils.isAddress(referrer) &&
+      ethers.isAddress(referrer) &&
       referrer !== web3Account.value
     ) {
       const engine = new Engine({
@@ -249,7 +247,7 @@ const mintMembership = async (updateDialog = true) => {
         THIRDWEB_BACKEND_WALLET_ADDRESS as string,
         {
           toAddress: referrer,
-          amount: ethers.utils.formatUnits(REFERRAL_REWARD, 18)
+          amount: ethers.formatUnits(REFERRAL_REWARD, 18)
         },
         false,
         '',
@@ -261,7 +259,7 @@ const mintMembership = async (updateDialog = true) => {
       title: 'Success',
       description: 'Your Global Voter ID has been successfully created!'
     };
-    emit('voter-id-claimed', '1');
+    emit('voterIdClaimed', '1');
   } catch (error) {
     console.error('Error in membership process:', error);
     resultDialogContent.value = {
