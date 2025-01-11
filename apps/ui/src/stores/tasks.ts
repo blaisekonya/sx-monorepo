@@ -1,12 +1,12 @@
+import { ethers } from 'ethers';
 import { defineStore } from 'pinia';
 import { ref } from 'vue';
 import { useWeb3 } from '@/composables/useWeb3';
-import { ethers } from 'ethers';
 import {
-  GLOBAL_VOTER_ID_ZKME_ADDRESS,
+  CFA_V1_FORWARDER_ABI,
   CFA_V1_FORWARDER_ADDRESS,
   DRACHMA_CONTRACT_ADDRESS,
-  CFA_V1_FORWARDER_ABI
+  GLOBAL_VOTER_ID_ZKME_ADDRESS
 } from '@/helpers/constants';
 
 export const useTasksStore = defineStore('tasks', () => {
@@ -19,9 +19,7 @@ export const useTasksStore = defineStore('tasks', () => {
     if (!web3.value.account) return;
 
     try {
-      const provider = new ethers.providers.JsonRpcProvider(
-        'https://mainnet.base.org'
-      );
+      const provider = new ethers.JsonRpcProvider('https://mainnet.base.org');
       const abi = ['function balanceOf(address owner) view returns (uint256)'];
       const contract = new ethers.Contract(
         GLOBAL_VOTER_ID_ZKME_ADDRESS,
@@ -30,7 +28,7 @@ export const useTasksStore = defineStore('tasks', () => {
       );
 
       const balance = await contract.balanceOf(web3.value.account);
-      voterIdBalance.value = ethers.utils.formatUnits(balance, 18);
+      voterIdBalance.value = ethers.formatUnits(balance, 18);
     } catch (error) {
       console.error('Error fetching voter ID balance:', error);
       voterIdBalance.value = '0';
@@ -43,9 +41,7 @@ export const useTasksStore = defineStore('tasks', () => {
     if (!web3.value.account) return;
 
     try {
-      const provider = new ethers.providers.JsonRpcProvider(
-        'https://mainnet.base.org'
-      );
+      const provider = new ethers.JsonRpcProvider('https://mainnet.base.org');
       const contract = new ethers.Contract(
         CFA_V1_FORWARDER_ADDRESS,
         CFA_V1_FORWARDER_ABI,
@@ -56,7 +52,7 @@ export const useTasksStore = defineStore('tasks', () => {
         DRACHMA_CONTRACT_ADDRESS,
         web3.value.account
       );
-      basicIncomeSetUp.value = flowrate.gt(ethers.constants.Zero);
+      basicIncomeSetUp.value = flowrate > 0n;
     } catch (error) {
       console.error('Error fetching basic income status:', error);
       basicIncomeSetUp.value = false;

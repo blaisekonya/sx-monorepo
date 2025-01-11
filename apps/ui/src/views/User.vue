@@ -1,4 +1,9 @@
 <script setup lang="ts">
+import { ethers } from 'ethers';
+import { computed, ref, watch } from 'vue';
+import ButtonClaimID from '@/components/ButtonClaimID.vue';
+import ButtonReferral from '@/components/ButtonReferral.vue';
+import { GLOBAL_VOTER_ID_ZKME_ADDRESS } from '@/helpers/constants';
 import { getUserStats } from '@/helpers/efp';
 import {
   _n,
@@ -12,11 +17,6 @@ import {
 import { addressValidator as isValidAddress } from '@/helpers/validation';
 import { enabledNetworks, getNetwork } from '@/networks';
 import { Space, UserActivity } from '@/types';
-import { ref, computed, watch } from 'vue';
-import { ethers } from 'ethers';
-import { GLOBAL_VOTER_ID_ZKME_ADDRESS } from '@/helpers/constants';
-import ButtonClaimID from '@/components/ButtonClaimID.vue';
-import ButtonReferral from '@/components/ButtonReferral.vue';
 
 const route = useRoute();
 const usersStore = useUsersStore();
@@ -127,9 +127,7 @@ async function loadActivities(userId: string) {
 
 async function fetchVoterIdBalance(userId: string) {
   try {
-    const provider = new ethers.providers.JsonRpcProvider(
-      'https://mainnet.base.org'
-    );
+    const provider = new ethers.JsonRpcProvider('https://mainnet.base.org');
     const abi = ['function balanceOf(address owner) view returns (uint256)'];
     const contract = new ethers.Contract(
       GLOBAL_VOTER_ID_ZKME_ADDRESS,
@@ -138,7 +136,7 @@ async function fetchVoterIdBalance(userId: string) {
     );
 
     const balance = await contract.balanceOf(userId);
-    voterIdBalance.value = ethers.utils.formatUnits(balance, 18);
+    voterIdBalance.value = ethers.formatUnits(balance, 18);
   } catch (error) {
     console.error('Error fetching voter ID balance:', error);
     voterIdBalance.value = '0';
@@ -200,7 +198,7 @@ async function checkUserAttestation(userId: string) {
 
 async function fetchBabtBalance(userId: string) {
   try {
-    const provider = new ethers.providers.JsonRpcProvider(
+    const provider = new ethers.JsonRpcProvider(
       'https://bsc-dataseed.bnbchain.org'
     );
     const abi = ['function balanceOf(address owner) view returns (uint256)'];
@@ -211,7 +209,7 @@ async function fetchBabtBalance(userId: string) {
     );
 
     const balance = await contract.balanceOf(userId);
-    babtBalance.value = ethers.utils.formatUnits(balance, 0);
+    babtBalance.value = ethers.formatUnits(balance, 0);
   } catch (error) {
     console.error('Error fetching BABT balance:', error);
     babtBalance.value = '0';
