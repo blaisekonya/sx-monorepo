@@ -22,7 +22,6 @@ const props = defineProps<{
 const emit = defineEmits<{
   (e: 'close');
   (e: 'voted');
-  (e: 'error', message: string);
 }>();
 
 const { vote } = useActions();
@@ -80,11 +79,6 @@ async function handleSubmit() {
     try {
       await voteFn();
       handleConfirmed();
-    } catch (error) {
-      console.error('Voting error:', error);
-      const errorMessage =
-        error?.message || 'Something went wrong while submitting your vote';
-      emit('error', errorMessage);
     } finally {
       loading.value = false;
     }
@@ -100,21 +94,12 @@ async function voteFn() {
 
   const appName = (route.query.app as LocationQueryValue) || '';
 
-  try {
-    return await vote(
-      props.proposal,
-      selectedChoice.value,
-      form.value.reason,
-      appName.length <= 128 ? appName : ''
-    );
-  } catch (error) {
-    console.error('Vote function error:', error);
-    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-    if (isSafari) {
-      console.error('Safari specific voting error:', error);
-    }
-    throw error;
-  }
+  return vote(
+    props.proposal,
+    selectedChoice.value,
+    form.value.reason,
+    appName.length <= 128 ? appName : ''
+  );
 }
 
 async function handleConfirmed(tx?: string | null) {
