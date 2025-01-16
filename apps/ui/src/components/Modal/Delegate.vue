@@ -178,6 +178,17 @@ watchEffect(async () => {
       />
     </template>
     <div v-else class="s-box p-4">
+      <Combobox
+        v-if="!delegation && props.space.delegations.length > 1"
+        v-model="form.selectedIndex"
+        :definition="{
+          type: ['number'],
+          title: 'Delegation scheme',
+          examples: ['Select delegation scheme'],
+          enum: spaceDelegationsOptions.map(d => d.id),
+          options: spaceDelegationsOptions
+        }"
+      />
       <UiInputAddress
         v-model="form.delegatee"
         :definition="DELEGATEE_DEFINITION"

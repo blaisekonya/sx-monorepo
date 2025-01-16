@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { Engine } from '@thirdweb-dev/engine';
 import { verifyMeidWithZkMeServices, ZkMeWidget } from '@zkmelabs/widget';
-import { ethers } from 'ethers';
 import { computed, ref, watch } from 'vue';
 import {
   CFA_V1_FORWARDER_ADDRESS,

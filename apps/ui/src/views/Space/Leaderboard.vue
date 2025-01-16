@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useScrollVisibility } from '@/composables/useScrollVisibility';
 import { getNames } from '@/helpers/stamp';
 import { _n, _p, shorten } from '@/helpers/utils';
 import { getNetwork } from '@/networks';

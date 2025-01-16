@@ -5,9 +5,9 @@ const titles: Record<ProposalState, string> = {
   pending: 'Pending',
   active: 'Active',
   passed: 'Passed',
-  closed: 'Closed',
   rejected: 'Rejected',
-  executed: 'Executed'
+  executed: 'Executed',
+  closed: 'Closed'
 };
 
 const props = withDefaults(
@@ -36,6 +36,11 @@ const style = computed(() => ({
     <IS-status-online
       v-else-if="state === 'active'"
       class="text-skin-success bg-skin-bg rounded-full border-2 border-skin-bg"
+      :style="style"
+    />
+    <IS-minus-circle
+      v-else-if="state === 'closed'"
+      class="text-skin-link bg-skin-bg rounded-full border-[1px] border-skin-bg"
       :style="style"
     />
     <IS-check-circle

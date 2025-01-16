@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useScrollVisibility } from '@/composables/useScrollVisibility';
 import { explorePageProtocols } from '@/networks';
 import { ExplorePageProtocol, ProtocolConfig } from '@/networks/types';
 

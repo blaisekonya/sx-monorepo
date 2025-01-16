@@ -77,7 +77,13 @@ watch(model, () => {
     :dirty="dirty"
     class="relative mb-[14px] w-auto"
   >
-    <Combobox v-slot="{ open }" v-model="inputValue" as="div" nullable>
+    <Combobox
+      v-slot="{ open }"
+      v-model="inputValue"
+      :definition="definition"
+      as="div"
+      nullable
+    >
       <Float
         :adaptive-width="inline ? false : true"
         strategy="fixed"

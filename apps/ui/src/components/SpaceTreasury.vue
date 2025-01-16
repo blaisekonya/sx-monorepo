@@ -1,10 +1,15 @@
 <script setup lang="ts">
-import { useScrollVisibility } from '@/composables/useScrollVisibility';
 import { Token } from '@/helpers/alchemy';
 import { ETH_CONTRACT } from '@/helpers/constants';
 import { _c, _n, sanitizeUrl, shorten } from '@/helpers/utils';
-import { evmNetworks } from '@/networks';
-import { Contact, Space, SpaceMetadataTreasury, Transaction } from '@/types';
+import { enabledNetworks, evmNetworks, getNetwork } from '@/networks';
+import {
+  ChainId,
+  Contact,
+  Space,
+  SpaceMetadataTreasury,
+  Transaction
+} from '@/types';
 
 const STAKING_CHAIN_IDS: ChainId[] = [1, 11155111];
 const EVM_CHAIN_IDS: ChainId[] = evmNetworks
@@ -219,18 +224,14 @@ watchEffect(() => setTitle(`Treasury - ${props.space.name}`));
                 v-if="totalChange > 0"
                 class="text-skin-success"
                 v-text="
-                  `+${_n(totalChange, 'standard', {
-                    maximumFractionDigits: 2
-                  })}%`
+                  `+${_n(totalChange, 'standard', { maximumFractionDigits: 2 })}%`
                 "
               />
               <div
                 v-if="totalChange < 0"
                 class="text-skin-danger"
                 v-text="
-                  `${_n(totalChange, 'standard', {
-                    maximumFractionDigits: 2
-                  })}%`
+                  `${_n(totalChange, 'standard', { maximumFractionDigits: 2 })}%`
                 "
               />
             </div>
@@ -325,9 +326,7 @@ watchEffect(() => setTitle(`Treasury - ${props.space.name}`));
               <h4
                 class="text-skin-link"
                 v-text="
-                  `$${_n(asset.price, 'standard', {
-                    maximumFractionDigits: 2
-                  })}`
+                  `$${_n(asset.price, 'standard', { maximumFractionDigits: 2 })}`
                 "
               />
               <div v-if="asset.change" class="text-[17px]">
@@ -335,18 +334,14 @@ watchEffect(() => setTitle(`Treasury - ${props.space.name}`));
                   v-if="asset.change > 0"
                   class="text-skin-success"
                   v-text="
-                    `+${_n(asset.change, 'standard', {
-                      maximumFractionDigits: 2
-                    })}%`
+                    `+${_n(asset.change, 'standard', { maximumFractionDigits: 2 })}%`
                   "
                 />
                 <div
                   v-if="asset.change < 0"
                   class="text-skin-danger"
                   v-text="
-                    `${_n(asset.change, 'standard', {
-                      maximumFractionDigits: 2
-                    })}%`
+                    `${_n(asset.change, 'standard', { maximumFractionDigits: 2 })}%`
                   "
                 />
               </div>
@@ -357,19 +352,17 @@ watchEffect(() => setTitle(`Treasury - ${props.space.name}`));
               <h4
                 class="text-skin-link truncate"
                 v-text="
-                  `${_c(
-                    asset.tokenBalance || 0n,
-                    asset.decimals || 0
-                  )} ${shorten(asset.symbol, 'symbol')}`
+                  `${_c(asset.tokenBalance || 0n, asset.decimals || 0)} ${shorten(
+                    asset.symbol,
+                    'symbol'
+                  )}`
                 "
               />
               <div
                 v-if="asset.value"
                 class="text-[17px] text-skin-text"
                 v-text="
-                  `$${_n(asset.value, 'standard', {
-                    maximumFractionDigits: 2
-                  })}`
+                  `$${_n(asset.value, 'standard', { maximumFractionDigits: 2 })}`
                 "
               />
             </div>

@@ -9,7 +9,6 @@ import {
   shortenAddress
 } from '@/helpers/utils';
 import { offchainNetworks } from '@/networks';
-import { SNAPSHOT_URLS } from '@/networks/offchain';
 import { Proposal } from '@/types';
 
 const props = defineProps<{

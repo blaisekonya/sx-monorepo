@@ -237,7 +237,7 @@ watchEffect(() => {
   <teleport to="#modal">
     <ModalDeleteSpace
       :open="isDeleteSpaceModalOpen"
-      :space-id="spaceId"
+      :space-id="props.space.id"
       @confirm="emit('deleteSpace')"
       @close="isDeleteSpaceModalOpen = false"
     />

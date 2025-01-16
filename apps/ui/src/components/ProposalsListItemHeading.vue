@@ -39,7 +39,8 @@ const space = computed(() =>
           :space="{
             id: proposal.space.id,
             avatar: proposal.space.avatar,
-            network: proposal.network
+            network: proposal.network,
+            active_proposals: null
           }"
           :size="40"
           class="my-1"
@@ -95,6 +96,7 @@ const space = computed(() =>
             :space="space"
             inline
             with-link
+            class="ml-1"
           />
           <IH-check
             v-if="

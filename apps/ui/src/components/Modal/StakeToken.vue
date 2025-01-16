@@ -175,12 +175,12 @@ watch(
           />
           <div class="absolute right-3 top-[28px] flex items-center gap-x-2">
             <UiStamp
-              :id="`${networkId}:${stakingContract.address}`"
+              :id="`${props.network}:${stakingContract.address}`"
               type="token"
               :size="20"
             />
             <UiStamp
-              :id="`eip155:${network}:${stakingContract.address}`"
+              :id="`eip155:${props.network}:${stakingContract.address}`"
               type="token"
               :size="20"
             />

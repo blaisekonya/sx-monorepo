@@ -35,8 +35,8 @@ if (!VITE_THIRDWEB_BACKEND_SMART_ACCOUNT_ADDRESS)
 const { web3Account } = useWeb3();
 
 const isBasicIncomeSetUp = ref(false);
-const flowrateData = ref<ethers.BigNumber | null>(null);
-const balanceData = ref<ethers.BigNumber | null>(null);
+const flowrateData = ref<bigint | null>(null);
+const balanceData = ref<bigint | null>(null);
 
 const widget = ref<ZkMeWidget | null>(null);
 
@@ -60,9 +60,7 @@ const fetchFlowrateData = async () => {
   }
 
   isLoading.value = true;
-  const provider = new ethers.providers.JsonRpcProvider(
-    'https://mainnet.base.org'
-  );
+  const provider = new ethers.JsonRpcProvider('https://mainnet.base.org');
   const contract = new ethers.Contract(
     CFA_V1_FORWARDER_ADDRESS,
     CFA_V1_FORWARDER_ABI,
@@ -75,7 +73,7 @@ const fetchFlowrateData = async () => {
       web3Account.value
     );
     flowrateData.value = flowrate;
-    isBasicIncomeSetUp.value = flowrate.gt(ethers.constants.Zero);
+    isBasicIncomeSetUp.value = flowrate > 0n;
   } catch (error) {
     console.error('Error fetching flowrate:', error);
   } finally {
@@ -88,9 +86,7 @@ const fetchBalanceData = async () => {
     return;
   }
 
-  const provider = new ethers.providers.JsonRpcProvider(
-    'https://mainnet.base.org'
-  );
+  const provider = new ethers.JsonRpcProvider('https://mainnet.base.org');
   const abi = ['function balanceOf(address owner) view returns (uint256)'];
   const contract = new ethers.Contract(
     GLOBAL_VOTER_ID_ZKME_ADDRESS,
@@ -239,10 +235,10 @@ const handleCreateDrachmaStream = async () => {
     description: 'Creating your basic income stream...'
   };
 
-  const newFlowRate = ethers.BigNumber.from(FLOW_RATE);
+  const newFlowRate = BigInt(FLOW_RATE);
 
   try {
-    await createDrachmaStream(web3Account.value, newFlowRate.toBigInt());
+    await createDrachmaStream(web3Account.value, newFlowRate);
     resultDialogContent.value = {
       title: 'Stream created',
       description: 'Your basic income stream has been successfully created.'

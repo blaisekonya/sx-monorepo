@@ -769,6 +769,7 @@ watchEffect(() => setTitle(`Edit settings - ${props.space.name}`));
         v-model:is-private="isPrivate"
         :network-id="space.network"
         :space-id="space.id"
+        :space="space"
         :is-controller="isController"
         @delete-space="handleSpaceDelete"
         @update-validity="

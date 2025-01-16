@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { sanitizeUrl } from '@braintree/sanitize-url';
 import removeMarkdown from 'remove-markdown';
-import { useScrollVisibility } from '@/composables/useScrollVisibility';
 import { getGenericExplorerUrl } from '@/helpers/explorer';
 import { _n, _p, _vp, shorten } from '@/helpers/utils';
 import { DelegationType, Space, SpaceMetadataDelegation } from '@/types';
