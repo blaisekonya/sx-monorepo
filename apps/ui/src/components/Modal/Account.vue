@@ -148,7 +148,7 @@ function handleSignup() {
               <div class="m-4">
                 <!-- Introduction -->
                 <div class="text-skin-text text-sm text-center">
-                  To get started, first we'll create a smart wallet for you.
+                  To get started, we will first create a smart wallet for you.
                 </div>
 
                 <!-- Wallet Benefits -->
