@@ -1,7 +1,7 @@
 type Skin = 'dark' | 'light' | 'none';
 
 export function useUserSkin() {
-  const store = useStorage<Skin>('skin', 'none');
+  const store = useStorage<Skin>('skin', 'dark');
   const currentMode = computed(() =>
     ['light', 'none'].includes(store.value) ? 'light' : 'dark'
   );
