@@ -181,13 +181,6 @@ function handleSignup() {
                         Experiment with global democracy
                       </div>
                     </div>
-                    <div class="flex items-center gap-3">
-                      <div class="bg-skin-primary rounded-full p-2">
-                        <IH-check-badge
-                          class="w-[20px] h-[20px] text-skin-bg"
-                        />
-                      </div>
-                    </div>
                   </div>
                 </div>
 

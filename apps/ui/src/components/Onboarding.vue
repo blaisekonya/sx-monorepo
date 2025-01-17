@@ -22,7 +22,6 @@ const user = computed(() => {
 });
 
 const voterIdBalance = ref<string | null>(null);
-const loading = ref(true);
 
 async function fetchVoterIdBalance() {
   if (!web3.value.account) return;
