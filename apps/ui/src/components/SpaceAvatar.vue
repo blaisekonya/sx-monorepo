@@ -25,7 +25,7 @@ const cb = computed(() => getCacheHash(props.space.avatar));
 </script>
 
 <template>
-  <div class="relative w-fit">
+  <div class="relative shrink-0" :style="{ width: `${size}px` }">
     <UiStamp
       v-bind="$attrs"
       :id="`${space.network}:${space.id}`"

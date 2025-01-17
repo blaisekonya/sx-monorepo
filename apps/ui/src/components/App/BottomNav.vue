@@ -33,20 +33,6 @@ const menu = [
     })
   },
   {
-    link: { path: '/s:worldassociation.eth' },
-    icon: defineComponent({
-      props: {
-        isActive: Boolean
-      },
-      render() {
-        return h('div', {
-          class:
-            'box-border h-[18px] w-[18px] rounded-full border-[3px] border-skin-primary'
-        });
-      }
-    })
-  },
-  {
     link: { name: 'my-notifications' },
     icon: IHBell
   },

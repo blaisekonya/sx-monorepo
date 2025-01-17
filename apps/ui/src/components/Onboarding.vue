@@ -41,34 +41,6 @@ async function fetchVoterIdBalance() {
 
 watch(() => web3.value.account, fetchVoterIdBalance, { immediate: true });
 
-const basicIncomeSetUp = ref(false);
-
-async function fetchBasicIncomeStatus() {
-  if (!web3.value.account) return;
-
-  try {
-    const provider = new ethers.providers.JsonRpcProvider(
-      'https://mainnet.base.org'
-    );
-    const contract = new ethers.Contract(
-      CFA_V1_FORWARDER_ADDRESS,
-      CFA_V1_FORWARDER_ABI,
-      provider
-    );
-
-    const flowrate = await contract.getAccountFlowrate(
-      DRACHMA_CONTRACT_ADDRESS,
-      web3.value.account
-    );
-    basicIncomeSetUp.value = flowrate.gt(ethers.constants.Zero);
-  } catch (error) {
-    console.error('Error fetching basic income status:', error);
-    basicIncomeSetUp.value = false;
-  }
-}
-
-watch(() => web3.value.account, fetchBasicIncomeStatus, { immediate: true });
-
 const tasks = computed(() => ({
   voterId:
     !tasksStore.voterIdBalance || parseFloat(tasksStore.voterIdBalance) === 0,

@@ -53,7 +53,7 @@ onUnmounted(() => notificationsStore.markAllAsRead());
           :class="{ 'bg-skin-border/20': notification.unread }"
         >
           <div class="flex flex-col">
-            <div class="flex items-start">
+            <div class="flex items-start space-x-2">
               <SpaceAvatar
                 :space="{
                   id: notification.proposal.space.id,
@@ -62,7 +62,7 @@ onUnmounted(() => notificationsStore.markAllAsRead());
                   active_proposals: null
                 }"
                 :size="32"
-                class="mr-2 relative top-1.5"
+                class="relative top-1.5"
               />
               <div class="flex flex-col">
                 <div class="flex items-baseline gap-1">

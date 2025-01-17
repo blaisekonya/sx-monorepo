@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useScrollVisibility } from '@/composables/useScrollVisibility';
 import { _n, _rt, _t, _vp, shortenAddress } from '@/helpers/utils';
 import { getNetwork, offchainNetworks } from '@/networks';
 import { Proposal as ProposalType, Vote } from '@/types';
@@ -116,8 +115,7 @@ watch([sortBy, choiceFilter], () => {
 <template>
   <div
     ref="votesHeader"
-    class="bg-skin-bg sticky z-40 border-b overflow-hidden transition-[top] duration-300"
-    :class="stickyHeaderClass"
+    class="bg-skin-bg sticky top-[112px] lg:top-[113px] z-40 border-b overflow-hidden"
   >
     <div class="flex space-x-3 font-medium min-w-[735px]">
       <div class="ml-4 max-w-[218px] w-[218px] truncate">Voter</div>
@@ -202,9 +200,7 @@ watch([sortBy, choiceFilter], () => {
             <div
               class="right-0 h-[8px] absolute"
               :style="{
-                width: `${((100 / proposal.scores_total) * vote.vp).toFixed(
-                  2
-                )}%`
+                width: `${((100 / proposal.scores_total) * vote.vp).toFixed(2)}%`
               }"
               :class="
                 proposal.type === 'basic'
