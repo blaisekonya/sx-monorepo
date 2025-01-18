@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ISBeaker from '~icons/heroicons-solid/beaker';
+import ISBuildingLibrary from '~icons/heroicons-solid/building-library';
 import ISUserPlus from '~icons/heroicons-solid/user-plus';
 
 const STEPS = [
@@ -10,10 +10,10 @@ const STEPS = [
     icon: ISUserPlus
   },
   {
-    title: 'Experiment',
+    title: 'Govern',
     about:
       'Apply for grants and test your global governance proposals using our cutting-edge tools and infrastructure.',
-    icon: ISBeaker
+    icon: ISBuildingLibrary
   }
 ];
 </script>
@@ -23,7 +23,7 @@ const STEPS = [
     <UiContainer class="!max-w-screen-lg">
       <div class="pb-6 max-w-[640px] text-center mx-auto">
         <h1 class="mb-4 font-display text-[36px] xs:text-[44px]">
-          The onchain global democracy laboratory
+          The onchain global democracy experiment
         </h1>
       </div>
     </UiContainer>
