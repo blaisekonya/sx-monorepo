@@ -11,7 +11,8 @@ const FEATURES = [
   },
   {
     title: 'Global Voter ID',
-    about: 'Soulbound governance token secured by zkMe’s anti-sybil verification.',
+    about:
+      'Soulbound governance token secured by zkMe’s anti-sybil verification.',
     icon: ISIdentification
   },
   {
