@@ -156,7 +156,7 @@ onUnmounted(() => {
           />
         </span>
         <template v-else>
-          <span class="hidden sm:block" v-text="'Sign in'" />
+          <span class="hidden sm:block" v-text="'Connect wallet'" />
           <IH-login class="sm:hidden inline-block" />
         </template>
       </UiButton>
