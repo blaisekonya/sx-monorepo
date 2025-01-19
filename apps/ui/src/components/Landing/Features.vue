@@ -11,12 +11,12 @@ const FEATURES = [
   },
   {
     title: 'Global Voter ID',
-    about: 'Governance SBT secured by zkMe’s anti-sybil verification.',
+    about: 'Soulbound governance token secured by zkMe’s anti-sybil verification.',
     icon: ISIdentification
   },
   {
     title: 'World Drachma',
-    about: 'The first currency democratically managed by humanity.',
+    about: 'The world’s first currency managed by global democracy.',
     icon: ISBanknotes
   }
 ];
