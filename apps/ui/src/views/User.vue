@@ -3,7 +3,10 @@ import { ethers } from 'ethers';
 import { computed, ref, watch } from 'vue';
 import ButtonClaimID from '@/components/ButtonClaimID.vue';
 import ButtonReferral from '@/components/ButtonReferral.vue';
-import { GLOBAL_VOTER_ID_ZKME_ADDRESS } from '@/helpers/constants';
+import {
+  DRACHMA_CONTRACT_ADDRESS,
+  GLOBAL_VOTER_ID_ZKME_ADDRESS
+} from '@/helpers/constants';
 import { getUserStats } from '@/helpers/efp';
 import {
   _n,
@@ -486,7 +489,7 @@ watchEffect(() => setTitle(`${user.value?.name || id.value} user profile`));
                 <span>Trade world drachma on Uniswap</span>
                 <div class="2xl:ml-3">
                   <a
-                    href="https://app.uniswap.org/explore/tokens/base/0x2ce6f5e18EE4278Dc33DF82A28286F006d7d5730"
+                    :href="`https://app.uniswap.org/explore/tokens/base/${DRACHMA_CONTRACT_ADDRESS}`"
                     target="_blank"
                   >
                     <UiButton class="!px-0 w-[46px]">
