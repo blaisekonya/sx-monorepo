@@ -361,10 +361,9 @@ watchEffect(() => setTitle(`${user.value?.name || id.value} user profile`));
         </div>
       </div>
       <div v-if="compareAddresses(web3.account, user.id)" class="mb-3">
-        <div class="flex flex-col gap-3 2xl:flex-row 2xl:gap-6">
-          <!-- First column -->
+        <div class="flex flex-col gap-3 max-w-[480px] 2xl:flex-row 2xl:gap-6">
           <div class="flex-1">
-            <h4 class="mb-2 eyebrow leading-8">Proofs of Personhood</h4>
+            <h4 class="mb-2 eyebrow leading-8">Proofs of personhood</h4>
             <div class="flex flex-col gap-2.5">
               <!-- First proof -->
               <div>
@@ -478,35 +477,6 @@ watchEffect(() => setTitle(`${user.value?.name || id.value} user profile`));
                 </div>
               </div>
             </div>
-          </div>
-
-          <!-- Second column -->
-          <div class="flex-1">
-            <h4 class="mb-2 eyebrow leading-8">World Drachma</h4>
-            <div class="flex flex-col gap-2.5">
-              <!-- <ButtonUserBasicIncome /> -->
-              <div class="flex items-center justify-between w-full">
-                <span>Trade world drachma on Uniswap</span>
-                <div class="2xl:ml-3">
-                  <a
-                    :href="`https://app.uniswap.org/explore/tokens/base/${DRACHMA_CONTRACT_ADDRESS}`"
-                    target="_blank"
-                  >
-                    <UiButton class="!px-0 w-[46px]">
-                      <IH-arrow-sm-right
-                        class="mt-0.5 inline-block -rotate-45"
-                      />
-                    </UiButton>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Third column -->
-          <div class="flex-1">
-            <h4 class="mb-2 eyebrow leading-8">Referrals</h4>
-            <ButtonReferral />
           </div>
         </div>
       </div>
