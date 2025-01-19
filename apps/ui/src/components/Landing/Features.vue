@@ -6,20 +6,17 @@ import ISIdentification from '~icons/heroicons-solid/identification';
 const FEATURES = [
   {
     title: 'World Republic App',
-    about:
-      'A fork of Snapshot, the popular voting platform, with global democracy features built in.',
+    about: 'A fork of Snapshot with global democracy features built in.',
     icon: ISCursorClick
   },
   {
     title: 'Global Voter ID',
-    about:
-      'Governance SBT using zkMe’s anti-sybil solution to ensure the integrity of every vote.',
+    about: 'Governance SBT secured by zkMe’s anti-sybil verification.',
     icon: ISIdentification
   },
   {
     title: 'World Drachma',
-    about:
-      'The currency of global democracy, fueling the operations of the World Republic.',
+    about: 'The first currency democratically controlled by all humanity.',
     icon: ISBanknotes
   }
 ];
@@ -30,7 +27,7 @@ const FEATURES = [
     <UiContainer class="!max-w-screen-lg">
       <div class="pb-6 max-w-[800px]">
         <h1 class="mb-4 font-display text-[36px] xs:text-[44px]">
-          Our current projects
+          Current projects
         </h1>
       </div>
     </UiContainer>

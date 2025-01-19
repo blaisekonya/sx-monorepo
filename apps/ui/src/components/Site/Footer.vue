@@ -53,9 +53,6 @@ const SOCIALS = [
                 />
               </a>
             </div>
-            <div>
-              <AppLink :to="{ name: 'site-ecosystem' }">Ecosystem</AppLink>
-            </div>
           </div>
         </div>
         <div class="space-y-2">
@@ -90,14 +87,6 @@ const SOCIALS = [
                 />
               </a>
             </div>
-            <div>
-              <a href="https://status.snapshot.org" target="_blank">
-                Status
-                <IH-arrow-sm-right
-                  class="inline-block -rotate-45 mb-0.5 -ml-0.5"
-                />
-              </a>
-            </div>
           </div>
         </div>
       </div>
@@ -106,21 +95,7 @@ const SOCIALS = [
           <div
             class="box-border size-[24px] mr-3 rounded-full border-[4px] border-skin-primary"
           ></div>
-          © {{ new Date().getFullYear() }} World Association
-          <a
-            :href="`https://github.com/${repository}${
-              COMMIT_SHA && `/tree/${COMMIT_SHA}`
-            }`"
-            target="_blank"
-            class="ml-1.5"
-          >
-            <span
-              v-text="
-                `v${version}${COMMIT_SHA ? `#${COMMIT_SHA.slice(0, 7)}` : ''}`
-              "
-            />
-            <IH-arrow-sm-right class="inline-block -rotate-45 ml-0.5 mb-0.5" />
-          </a>
+          © {{ new Date().getFullYear() }} World Republic
         </div>
         <div class="flex space-x-3">
           <a

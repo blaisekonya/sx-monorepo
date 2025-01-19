@@ -6,13 +6,13 @@ const STEPS = [
   {
     title: 'Join',
     about:
-      'Be part of an open community addressing humanity’s most pressing global challenges.',
+      'Become part of an open, democratic community addressing humanity’s most pressing global challenges.',
     icon: ISUserPlus
   },
   {
     title: 'Govern',
     about:
-      'Get your voice heard and participate in onchain global democracy experiments.',
+      'Shape the future of the World Republic and participate in onchain global democracy experiments.',
     icon: ISBuildingLibrary
   }
 ];
