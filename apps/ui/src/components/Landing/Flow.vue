@@ -6,13 +6,13 @@ const STEPS = [
   {
     title: 'Join',
     about:
-      'Connect with a global community creating democratic solutions to humanity’s most pressing challenges.',
+      'Be part of an open community addressing humanity’s most pressing global challenges.',
     icon: ISUserPlus
   },
   {
     title: 'Govern',
     about:
-      'Apply for grants and test your global governance proposals using our cutting-edge tools and infrastructure.',
+      'Get your voice heard and participate in onchain global democracy experiments.',
     icon: ISBuildingLibrary
   }
 ];
@@ -21,7 +21,7 @@ const STEPS = [
 <template>
   <div id="community" class="pt-8">
     <UiContainer class="!max-w-screen-lg">
-      <div class="pb-6 max-w-[640px] text-center mx-auto">
+      <div class="pb-6 max-w-[800px] text-center mx-auto">
         <h1 class="mb-4 font-display text-[36px] xs:text-[44px]">
           The DAO of global democracy
         </h1>

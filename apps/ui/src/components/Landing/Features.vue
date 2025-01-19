@@ -7,13 +7,13 @@ const FEATURES = [
   {
     title: 'World Republic App',
     about:
-      'A secure, battle-tested platform for transparent decision-making on a global scale.',
+      'A fork of Snapshot, the popular voting platform, with global democracy features built in.',
     icon: ISCursorClick
   },
   {
     title: 'Global Voter ID',
     about:
-      'Blockchain-based proof of uniqueness to ensure fairness and integrity in every vote.',
+      'Governance SBT using zkMe’s anti-sybil solution to ensure the integrity of every vote.',
     icon: ISIdentification
   },
   {
@@ -28,7 +28,7 @@ const FEATURES = [
 <template>
   <div id="features" class="pt-8 border-b">
     <UiContainer class="!max-w-screen-lg">
-      <div class="pb-6 max-w-[640px]">
+      <div class="pb-6 max-w-[800px]">
         <h1 class="mb-4 font-display text-[36px] xs:text-[44px]">
           Our current projects
         </h1>
