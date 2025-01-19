@@ -16,7 +16,7 @@ const FEATURES = [
   },
   {
     title: 'World Drachma',
-    about: 'The first currency democratically controlled by all humanity.',
+    about: 'The first currency democratically managed by humanity.',
     icon: ISBanknotes
   }
 ];

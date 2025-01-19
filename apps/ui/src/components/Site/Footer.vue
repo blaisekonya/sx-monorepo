@@ -1,9 +1,7 @@
 <script setup lang="ts">
-import { repository, version } from '@/../package.json';
 import ICGithub from '~icons/c/github';
 import ICTelegram from '~icons/c/telegram';
 import ICX from '~icons/c/x';
-const COMMIT_SHA = import.meta.env.VITE_COMMIT_SHA || '';
 
 const SOCIALS = [
   // {
