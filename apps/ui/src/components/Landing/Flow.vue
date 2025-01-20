@@ -6,13 +6,13 @@ const STEPS = [
   {
     title: 'Join',
     about:
-      'Be part of an open community with the mission to democratize global governance.',
+      'Be part of an open, democratic community shaping the future of global governance.',
     icon: ISUserPlus
   },
   {
     title: 'Govern',
     about:
-      'Shape the future of the Republic and help us tackle humanity’s most pressing global challenges.',
+      'Help us tackle humanity’s most pressing challenges by participating in global democracy.',
     icon: ISBuildingLibrary
   }
 ];
