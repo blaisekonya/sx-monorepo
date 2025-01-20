@@ -6,7 +6,7 @@ import ISIdentification from '~icons/heroicons-solid/identification';
 const FEATURES = [
   {
     title: 'World Republic App',
-    about: 'A fork of Snapshot with built-in global democracy features.',
+    about: 'A fork of Snapshot with global democracy features built in.',
     icon: ISCursorClick
   },
   {
