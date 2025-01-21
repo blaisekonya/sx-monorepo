@@ -5,14 +5,13 @@ import ISUserPlus from '~icons/heroicons-solid/user-plus';
 const STEPS = [
   {
     title: 'Join',
-    about:
-      'Be part of an open, democratic community shaping the future of global governance.',
+    about: 'Be part of an open community making the world more democratic.',
     icon: ISUserPlus
   },
   {
     title: 'Govern',
     about:
-      'Vote on democratic elections and referendums and help us tackle humanity’s most pressing global problems.',
+      'Shape the future of the Republic by participating in our global democracy experiments.',
     icon: ISBuildingLibrary
   }
 ];
