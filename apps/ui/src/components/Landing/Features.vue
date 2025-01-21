@@ -17,7 +17,7 @@ const FEATURES = [
   },
   {
     title: 'World Drachma',
-    about: 'The world’s first currency managed by global democracy.',
+    about: 'The first cryptocurrency managed by global democracy.',
     icon: ISBanknotes
   }
 ];

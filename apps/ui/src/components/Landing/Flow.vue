@@ -12,7 +12,7 @@ const STEPS = [
   {
     title: 'Govern',
     about:
-      'Help us tackle humanity’s most pressing challenges by participating in global democracy.',
+      'Participate in global democracy and help us tackle humanity’s most pressing challenges.',
     icon: ISBuildingLibrary
   }
 ];
