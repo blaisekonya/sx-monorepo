@@ -6,13 +6,13 @@ import ISIdentification from '~icons/heroicons-solid/identification';
 const FEATURES = [
   {
     title: 'World Republic App',
-    about: 'A fork of Snapshot with global democracy features built in.',
+    about:
+      'A battle-tested voting platform with global democracy features built in.',
     icon: ISCursorClick
   },
   {
     title: 'Global Voter ID',
-    about:
-      'Soulbound governance token secured by zkMe’s anti-sybil verification.',
+    about: 'Our blockchain-based proof of personhood solution.',
     icon: ISIdentification
   },
   {
@@ -26,7 +26,7 @@ const FEATURES = [
 <template>
   <div id="features" class="pt-8 border-b">
     <UiContainer class="!max-w-screen-lg">
-      <div class="pb-6 max-w-[800px]">
+      <div class="pb-6 max-w-[640px]">
         <h1 class="mb-4 font-display text-[36px] xs:text-[44px]">
           Current projects
         </h1>

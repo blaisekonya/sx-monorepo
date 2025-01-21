@@ -12,7 +12,7 @@ const STEPS = [
   {
     title: 'Govern',
     about:
-      'Participate in global democracy and help us tackle humanity’s most pressing challenges.',
+      'Vote on democratic elections and referendums and help us tackle humanity’s most pressing global problems.',
     icon: ISBuildingLibrary
   }
 ];
@@ -21,9 +21,9 @@ const STEPS = [
 <template>
   <div id="community" class="pt-8">
     <UiContainer class="!max-w-screen-lg">
-      <div class="pb-6 max-w-[800px] text-center mx-auto">
+      <div class="pb-6 max-w-[640px] text-center mx-auto">
         <h1 class="mb-4 font-display text-[36px] xs:text-[44px]">
-          The DAO of global democracy
+          The organization of global democracy
         </h1>
       </div>
     </UiContainer>
