@@ -5,13 +5,14 @@ import ISUserPlus from '~icons/heroicons-solid/user-plus';
 const STEPS = [
   {
     title: 'Join',
-    about: 'Be part of an open community making the world more democratic.',
+    about:
+      'Join a global community pioneering global democracy to solve humanity’s greatest challenges.',
     icon: ISUserPlus
   },
   {
     title: 'Govern',
     about:
-      'Shape the future of the Republic by participating in our global democracy experiments.',
+      'Shape the future of the World Republic by participating in onchain global democracy experiments.',
     icon: ISBuildingLibrary
   }
 ];
@@ -20,7 +21,7 @@ const STEPS = [
 <template>
   <div id="community" class="pt-8">
     <UiContainer class="!max-w-screen-lg">
-      <div class="pb-6 max-w-[640px] text-center mx-auto">
+      <div class="pb-6 max-w-[800px] text-center mx-auto">
         <h1 class="mb-4 font-display text-[36px] xs:text-[44px]">
           The DAO of global democracy
         </h1>

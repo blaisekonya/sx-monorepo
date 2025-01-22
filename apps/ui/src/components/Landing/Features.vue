@@ -17,7 +17,7 @@ const FEATURES = [
   },
   {
     title: 'World Drachma',
-    about: 'The first cryptocurrency managed by global democracy.',
+    about: 'The world’s first currency managed by global democracy.',
     icon: ISBanknotes
   }
 ];
@@ -26,9 +26,9 @@ const FEATURES = [
 <template>
   <div id="features" class="pt-8 border-b">
     <UiContainer class="!max-w-screen-lg">
-      <div class="pb-6 max-w-[640px]">
+      <div class="pb-6 max-w-[800px]">
         <h1 class="mb-4 font-display text-[36px] xs:text-[44px]">
-          Current projects
+          Our current projects
         </h1>
       </div>
     </UiContainer>
