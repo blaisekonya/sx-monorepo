@@ -21,7 +21,7 @@ const { toggleSkin, currentMode } = useUserSkin();
         <IH-light-bulb v-if="currentMode === 'dark'" class="inline-block" />
         <IH-moon v-else class="inline-block" />
       </UiButton>
-      <UiButton :to="{ name: 'my-home' }" class="primary flex">
+      <UiButton :to="{ name: 'my-explore' }" class="primary flex">
         Launch
         <span class="hidden md:inline-block">&nbsp;app</span>
       </UiButton>

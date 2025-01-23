@@ -9,7 +9,7 @@
         <h1 class="mb-4 font-display text-[36px] xs:text-[44px]">
           Shape the future of global governance
         </h1>
-        <UiButton :to="{ name: 'my-home' }" class="primary">
+        <UiButton :to="{ name: 'my-explore' }" class="primary">
           Launch app
         </UiButton>
       </div>
