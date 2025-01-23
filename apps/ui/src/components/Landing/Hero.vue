@@ -12,7 +12,7 @@
         <h1 class="mb-4 font-display text-[60px] xs:text-[68px]">
           World Republic
         </h1>
-        <UiButton :to="{ name: 'my-home' }" class="primary">
+        <UiButton :to="{ name: 'my-explore' }" class="primary">
           Get started
         </UiButton>
       </div>
