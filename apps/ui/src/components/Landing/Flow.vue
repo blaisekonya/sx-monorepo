@@ -6,7 +6,7 @@ const STEPS = [
   {
     title: 'Join',
     about:
-      'Join the movement creating democracy’s next evolution - borderless, transparent, unstoppable.',
+      'Be part of a movement pioneering the new era of democracy - borderless, transparent, unstoppable.',
     icon: ISUserPlus
   },
   {
