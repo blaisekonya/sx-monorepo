@@ -6,8 +6,7 @@ import ISIdentification from '~icons/heroicons-solid/identification';
 const FEATURES = [
   {
     title: 'World Republic App',
-    about:
-      'A battle-tested voting platform with global democracy features built in.',
+    about: 'A free and open-source platform for global democracy.',
     icon: ISCursorClick
   },
   {
