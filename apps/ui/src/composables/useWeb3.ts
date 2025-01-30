@@ -1,3 +1,9 @@
+declare global {
+  interface Window {
+    ethereum?: any;
+  }
+}
+
 import { Web3Provider } from '@ethersproject/providers';
 import { formatUnits } from '@ethersproject/units';
 import { getInstance } from '@snapshot-labs/lock/plugins/vue3';
@@ -72,9 +78,12 @@ export function useWeb3() {
     if (!connector) return;
 
     state.authLoading = true;
-    await auth.autoLogin(connector as string);
-    await registerProvider();
-    state.authLoading = false;
+    try {
+      await auth.autoLogin(connector as string);
+      await registerProvider();
+    } finally {
+      state.authLoading = false;
+    }
   }
 
   function logout() {

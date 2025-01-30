@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import IHBell from '~icons/heroicons-outline/bell';
-import IHGlobe from '~icons/heroicons-outline/globe-americas';
 import IHHome from '~icons/heroicons-outline/home';
+import IHSearch from '~icons/heroicons-outline/search';
 import IHUser from '~icons/heroicons-outline/user';
 
 const { web3 } = useWeb3();
@@ -9,22 +9,34 @@ const route = useRoute();
 
 const menu = [
   {
-    label: 'Home',
     link: { name: 'my-home' },
     icon: IHHome
   },
   {
-    label: 'Explore',
     link: { name: 'my-explore' },
-    icon: IHGlobe
+    icon: IHSearch
   },
   {
-    label: 'Notifications',
+    link: { path: '/s:worldrepublic.eth' },
+    icon: defineComponent({
+      props: {
+        isActive: Boolean
+      },
+      render() {
+        return h('div', {
+          class: [
+            'box-border h-[18px] w-[18px] rounded-full border-[3px]',
+            this.isActive ? 'border-skin-link' : 'border-skin-text'
+          ]
+        });
+      }
+    })
+  },
+  {
     link: { name: 'my-notifications' },
     icon: IHBell
   },
   {
-    label: 'Profile',
     link: { name: 'user', params: { user: web3.value.account } },
     icon: IHUser
   }
@@ -32,19 +44,32 @@ const menu = [
 </script>
 
 <template>
-  <nav class="bg-skin-bg border-t text-xs">
-    <div class="flex gap-2 px-3 justify-center">
+  <nav class="fixed bottom-0 inset-x-0 z-50 bg-skin-bg border-t text-xs">
+    <div class="flex px-4 justify-between">
       <AppLink
         v-for="(item, i) in menu"
         :key="i"
         :to="item.link"
-        class="inline-flex flex-col text-center gap-1 truncate justify-center w-[25%] max-w-[120px]"
+        class="inline-flex flex-col text-center truncate justify-center max-w-[120px]"
         :class="
-          route.name === item.link.name ? 'text-skin-link' : 'text-skin-text'
+          (
+            item.link.name
+              ? route.name === item.link.name
+              : route.path === item.link.path
+          )
+            ? 'text-skin-link'
+            : 'text-skin-text'
         "
       >
-        <component :is="item.icon" class="mx-auto" />
-        <span class="truncate" v-text="item.label" />
+        <component
+          :is="item.icon"
+          :is-active="
+            item.link.name
+              ? route.name === item.link.name
+              : route.path === item.link.path
+          "
+          class="mx-auto size-4"
+        />
       </AppLink>
     </div>
   </nav>

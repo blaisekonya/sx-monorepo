@@ -45,6 +45,6 @@ const space = computed(() => {
         class="!rounded-[4px]"
       />
     </div>
-    <span class="truncate" v-text="space.name" />
+    <span class="truncate mt-[1px]" v-text="space.name" />
   </AppLink>
 </template>

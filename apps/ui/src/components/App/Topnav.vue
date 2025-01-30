@@ -13,7 +13,7 @@ const auth = getInstance();
 const uiStore = useUiStore();
 const { modalAccountOpen, modalAccountWithoutDismissOpen, resetAccountModal } =
   useModal();
-const { login, web3 } = useWeb3();
+const { web3, authInitiated } = useWeb3();
 const { toggleSkin, currentMode } = useUserSkin();
 
 const SEARCH_CONFIG = {
@@ -56,13 +56,6 @@ const searchConfig = computed(() => {
   return null;
 });
 
-async function handleLogin(connector) {
-  resetAccountModal();
-  loading.value = true;
-  await login(connector);
-  loading.value = false;
-}
-
 function handleSearchSubmit(e: Event) {
   e.preventDefault();
 
@@ -83,6 +76,25 @@ function handleSearchSubmit(e: Event) {
 watch(
   () => (route.query.q as string) || '',
   searchQuery => (searchValue.value = searchQuery),
+  { immediate: true }
+);
+
+watch(
+  [
+    () => web3.value.account,
+    () => web3.value.authLoading,
+    () => authInitiated.value
+  ],
+  ([account, authLoading, initiated]) => {
+    if (
+      initiated &&
+      !account &&
+      !authLoading &&
+      !modalAccountWithoutDismissOpen.value
+    ) {
+      modalAccountOpen.value = true;
+    }
+  },
   { immediate: true }
 );
 
@@ -115,13 +127,13 @@ onUnmounted(() => {
       @submit="handleSearchSubmit"
     >
       <label class="flex items-center w-full space-x-2.5">
-        <IH-search class="shrink-0" />
+        <IH-search class="shrink-0 opacity-60" />
         <input
           ref="searchInput"
           v-model.trim="searchValue"
           type="text"
           :placeholder="searchConfig.placeholder"
-          class="bg-transparent text-skin-link text-[19px] w-full"
+          class="bg-transparent text-skin-link text-[18px] md:mt-1 w-full"
         />
       </label>
     </form>
@@ -144,7 +156,7 @@ onUnmounted(() => {
           />
         </span>
         <template v-else>
-          <span class="hidden sm:block" v-text="'Log in'" />
+          <span class="hidden sm:block" v-text="'Sign in'" />
           <IH-login class="sm:hidden inline-block" />
         </template>
       </UiButton>
@@ -160,7 +172,6 @@ onUnmounted(() => {
       :open="modalAccountOpen || modalAccountWithoutDismissOpen"
       :closeable="!modalAccountWithoutDismissOpen"
       @close="modalAccountOpen = false"
-      @login="handleLogin"
     />
   </teleport>
 </template>

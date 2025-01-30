@@ -192,8 +192,8 @@ onMounted(() => {
       </UiTooltip>
     </div>
     <div>
-      <UiLabel label="Spaces" sticky />
-      <UiLoading v-if="spacesStore.loading" class="block m-4" />
+      <UiLabel label="Explore" sticky />
+      <SpacesListSkeleton v-if="spacesStore.loading" />
       <div v-else-if="spacesStore.loaded">
         <UiContainerInfiniteScroll
           v-if="spacesStore.explorePageSpaces.length"

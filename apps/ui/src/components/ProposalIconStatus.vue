@@ -5,9 +5,9 @@ const titles: Record<ProposalState, string> = {
   pending: 'Pending',
   active: 'Active',
   passed: 'Passed',
-  closed: 'Closed',
   rejected: 'Rejected',
-  executed: 'Executed'
+  executed: 'Executed',
+  closed: 'Closed'
 };
 
 const props = withDefaults(
@@ -28,30 +28,34 @@ const style = computed(() => ({
 
 <template>
   <UiTooltip :title="titles[state]">
-    <IS-clock v-if="state === 'pending'" class="text-gray-400" :style="style" />
-    <IS-status-online
-      v-else-if="state === 'active'"
-      class="text-skin-success"
+    <IS-clock
+      v-if="state === 'pending'"
+      class="text-gray-400 bg-skin-bg rounded-full border-[1px] border-skin-bg"
       :style="style"
     />
-    <IS-check-circle
-      v-else-if="state === 'passed'"
-      class="text-skin-link"
+    <IS-status-online
+      v-else-if="state === 'active'"
+      class="text-skin-success bg-skin-bg rounded-full border-2 border-skin-bg"
       :style="style"
     />
     <IS-minus-circle
       v-else-if="state === 'closed'"
-      class="text-skin-link"
+      class="text-skin-link bg-skin-bg rounded-full border-[1px] border-skin-bg"
+      :style="style"
+    />
+    <IS-check-circle
+      v-else-if="state === 'passed'"
+      class="text-skin-link bg-skin-bg rounded-full border-[1px] border-skin-bg"
       :style="style"
     />
     <IS-play
       v-else-if="state === 'executed'"
-      class="text-purple-500"
+      class="text-purple-500 bg-skin-bg rounded-full border-2 border-skin-bg"
       :style="style"
     />
     <IS-x-circle
       v-else-if="state === 'rejected'"
-      class="text-skin-danger"
+      class="text-skin-danger bg-skin-bg rounded-full border-[1px] border-skin-bg"
       :style="style"
     />
   </UiTooltip>

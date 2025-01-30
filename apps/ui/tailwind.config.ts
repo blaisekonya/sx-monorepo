@@ -92,7 +92,7 @@ export default {
       xl: '28px',
       lg: '22px',
       md: '20px',
-      base: '18px',
+      base: '17px',
       sm: '16px',
       xs: '14px'
     }

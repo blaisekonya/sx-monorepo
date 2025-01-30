@@ -1,4 +1,12 @@
 <script setup lang="ts">
+import { ethers } from 'ethers';
+import { computed, ref, watch } from 'vue';
+import ButtonClaimID from '@/components/ButtonClaimID.vue';
+import ButtonReferral from '@/components/ButtonReferral.vue';
+import {
+  DRACHMA_CONTRACT_ADDRESS,
+  GLOBAL_VOTER_ID_ZKME_ADDRESS
+} from '@/helpers/constants';
 import { getUserStats } from '@/helpers/efp';
 import {
   _n,
@@ -16,7 +24,7 @@ import { Space, UserActivity } from '@/types';
 const route = useRoute();
 const usersStore = useUsersStore();
 const spacesStore = useSpacesStore();
-const { web3 } = useWeb3();
+const { logout, web3 } = useWeb3();
 const { setTitle } = useTitle();
 const { copy, copied } = useClipboard();
 
@@ -30,6 +38,13 @@ const activities = ref<
 const loadingActivities = ref(false);
 const modalOpenEditUser = ref(false);
 const loaded = ref(false);
+const voterIdBalance = ref<string | null>(null);
+const loadingVoterId = ref(true);
+const hasAttestation = ref<boolean>(false);
+const loadingAttestation = ref(true);
+const attestationId = ref<string | null>(null);
+const loadingBabt = ref(true);
+const babtBalance = ref<string | null>(null);
 
 const userMetadata = reactive({
   loading: false,
@@ -113,6 +128,99 @@ async function loadActivities(userId: string) {
   }
 }
 
+async function fetchVoterIdBalance(userId: string) {
+  try {
+    const provider = new ethers.JsonRpcProvider('https://mainnet.base.org');
+    const abi = ['function balanceOf(address owner) view returns (uint256)'];
+    const contract = new ethers.Contract(
+      GLOBAL_VOTER_ID_ZKME_ADDRESS,
+      abi,
+      provider
+    );
+
+    const balance = await contract.balanceOf(userId);
+    voterIdBalance.value = ethers.formatUnits(balance, 18);
+  } catch (error) {
+    console.error('Error fetching voter ID balance:', error);
+    voterIdBalance.value = '0';
+  } finally {
+    loadingVoterId.value = false;
+  }
+}
+
+async function checkUserAttestation(userId: string) {
+  try {
+    loadingAttestation.value = true;
+
+    const response = await fetch('https://base.easscan.org/graphql', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        query: `
+          query {
+            attestations(
+              where: {
+                schemaId: { equals: "0xf8b05c79f090979bf4a80270aba232dff11a10d9ca55c4f88de95317970f0de9" },
+                recipient: { equals: "${userId}" }
+              }
+            ) {
+              id
+              attester
+              recipient
+              revoked
+            }
+          }
+        `
+      })
+    });
+
+    const result = await response.json();
+    console.log('Attestation response:', result);
+
+    if (result.errors) {
+      console.error('GraphQL Errors:', result.errors);
+      return;
+    }
+
+    // Find first valid attestation and store its ID
+    const validAttestation = result.data?.attestations?.find(
+      attestation => !attestation.revoked
+    );
+
+    hasAttestation.value = !!validAttestation;
+    attestationId.value = validAttestation?.id || null;
+  } catch (error) {
+    console.error('Error checking attestation:', error);
+    hasAttestation.value = false;
+  } finally {
+    loadingAttestation.value = false;
+  }
+}
+
+async function fetchBabtBalance(userId: string) {
+  try {
+    const provider = new ethers.JsonRpcProvider(
+      'https://bsc-dataseed.bnbchain.org'
+    );
+    const abi = ['function balanceOf(address owner) view returns (uint256)'];
+    const contract = new ethers.Contract(
+      '0x2B09d47D550061f995A3b5C6F0Fd58005215D7c8',
+      abi,
+      provider
+    );
+
+    const balance = await contract.balanceOf(userId);
+    babtBalance.value = ethers.formatUnits(balance, 0);
+  } catch (error) {
+    console.error('Error fetching BABT balance:', error);
+    babtBalance.value = '0';
+  } finally {
+    loadingBabt.value = false;
+  }
+}
+
 watch(
   id,
   async userId => {
@@ -129,6 +237,18 @@ watch(
     loadUserMetadata(userId);
 
     loaded.value = true;
+  },
+  { immediate: true }
+);
+
+watch(
+  id,
+  userId => {
+    if (isValidAddress(userId)) {
+      fetchVoterIdBalance(userId);
+      checkUserAttestation(userId);
+      fetchBabtBalance(userId);
+    }
   },
   { immediate: true }
 );
@@ -153,13 +273,24 @@ watchEffect(() => setTitle(`${user.value?.name || id.value} user profile`));
         class="relative bg-skin-bg h-[16px] -top-3 rounded-t-[16px] md:hidden"
       />
       <div class="absolute right-4 top-4 space-x-2 flex">
-        <DropdownShare :shareable="user" type="user" class="!px-0 w-[46px]" />
+        <UiTooltip title="Share">
+          <DropdownShare :shareable="user" type="user" class="!px-0 w-[46px]" />
+        </UiTooltip>
         <UiTooltip
           v-if="compareAddresses(web3.account, user.id)"
           title="Edit profile"
         >
           <UiButton class="!px-0 w-[46px]" @click="modalOpenEditUser = true">
             <IH-cog class="inline-block" />
+          </UiButton>
+        </UiTooltip>
+        <UiTooltip title="Logout">
+          <UiButton
+            v-if="compareAddresses(web3.account, user.id)"
+            class="!px-0 w-[46px]"
+            @click="logout"
+          >
+            <IH-logout class="inline-block" />
           </UiButton>
         </UiTooltip>
       </div>
@@ -185,7 +316,21 @@ watchEffect(() => setTitle(`${user.value?.name || id.value} user profile`));
               <IH-check v-else class="inline-block" />
             </button>
           </UiTooltip>
-          <span v-if="userMetadata.loaded">
+          <span v-if="userMetadata.loading">
+            <span class="flex items-center space-x-[3px]">
+              <span class="text-skin-text">·</span>
+              <span class="flex items-center space-x-[3px]">
+                <UiSkeleton class="h-[18px] w-[11px]" />
+                <span class="text-skin-text">following</span>
+              </span>
+              <span class="text-skin-text ml-[3px]">·</span>
+              <span class="flex items-center space-x-[3px]">
+                <UiSkeleton class="h-[18px] w-[11px]" />
+                <span class="text-skin-text">followers</span>
+              </span>
+            </span>
+          </span>
+          <span v-else-if="userMetadata.loaded">
             ·
             <a :href="`https://ethfollow.xyz/${user.id}`" target="_blank">
               {{ _n(userMetadata.following_count) }}
@@ -215,6 +360,126 @@ watchEffect(() => setTitle(`${user.value?.name || id.value} user profile`));
           </template>
         </div>
       </div>
+      <div v-if="compareAddresses(web3.account, user.id)" class="mb-3">
+        <div class="flex flex-col gap-3 max-w-[480px] 2xl:flex-row 2xl:gap-6">
+          <div class="flex-1">
+            <h4 class="mb-2 eyebrow leading-8">Proofs of personhood</h4>
+            <div class="flex flex-col gap-2.5">
+              <!-- First proof -->
+              <div>
+                <div v-if="loadingVoterId">
+                  <span class="flex items-center justify-between w-full">
+                    <span>Global Voter ID</span>
+                    <div class="2xl:ml-3">
+                      <UiSkeleton class="h-[46px] w-[46px] !rounded-full" />
+                    </div>
+                  </span>
+                </div>
+                <div
+                  v-else-if="
+                    !voterIdBalance || parseFloat(voterIdBalance) === 0
+                  "
+                  class="flex items-center justify-between w-full"
+                >
+                  <span>Global Voter ID</span>
+                  <div class="2xl:ml-3">
+                    <ButtonClaimID
+                      :user="true"
+                      @voter-id-claimed="balance => (voterIdBalance = balance)"
+                    />
+                  </div>
+                </div>
+                <div v-else class="flex items-center justify-between w-full">
+                  <span>Global Voter ID</span>
+                  <div class="2xl:ml-3">
+                    <ButtonClaimID
+                      :user="true"
+                      :done="true"
+                      @voter-id-claimed="balance => (voterIdBalance = balance)"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Second proof -->
+              <div>
+                <div v-if="loadingBabt">
+                  <span class="flex items-center justify-between w-full">
+                    <span>Binance Account Bound Token</span>
+                    <div class="2xl:ml-3">
+                      <UiSkeleton class="h-[46px] w-[46px] !rounded-full" />
+                    </div>
+                  </span>
+                </div>
+                <div
+                  v-else-if="babtBalance && parseFloat(babtBalance) > 0"
+                  class="flex items-center justify-between w-full"
+                >
+                  <span>Binance Account Bound Token</span>
+                  <div class="2xl:ml-3">
+                    <a href="https://www.binance.com/en/BABT" target="_blank">
+                      <UiButton class="!px-0 w-[46px]">
+                        <IH-check class="inline-block" />
+                      </UiButton>
+                    </a>
+                  </div>
+                </div>
+                <div v-else class="flex items-center justify-between w-full">
+                  <span>Binance Account Bound Token</span>
+                  <div class="2xl:ml-3">
+                    <a href="https://www.binance.com/en/BABT" target="_blank">
+                      <UiButton class="!px-0 w-[46px]">
+                        <IH-plus class="inline-block" />
+                      </UiButton>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Third proof -->
+              <div>
+                <div v-if="loadingAttestation">
+                  <span class="flex items-center justify-between w-full">
+                    <span>Coinbase Verification</span>
+                    <div class="2xl:ml-3">
+                      <UiSkeleton class="h-[46px] w-[46px] !rounded-full" />
+                    </div>
+                  </span>
+                </div>
+                <div
+                  v-else-if="hasAttestation"
+                  class="flex items-center justify-between w-full"
+                >
+                  <span>Coinbase Verification</span>
+                  <div class="2xl:ml-3">
+                    <a
+                      :href="`https://base.easscan.org/attestation/view/${attestationId}`"
+                      target="_blank"
+                    >
+                      <UiButton class="!px-0 w-[46px]">
+                        <IH-check class="inline-block" />
+                      </UiButton>
+                    </a>
+                  </div>
+                </div>
+                <div v-else class="flex items-center justify-between w-full">
+                  <span>Coinbase Verification</span>
+                  <div class="2xl:ml-3">
+                    <a
+                      href="https://www.coinbase.com/onchain-verify"
+                      target="_blank"
+                    >
+                      <UiButton class="!px-0 w-[46px]">
+                        <IH-plus class="inline-block" />
+                      </UiButton>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <h4 class="mb-2 eyebrow leading-8">Activity</h4>
     </div>
     <div class="border-b w-full">
@@ -224,7 +489,32 @@ watchEffect(() => setTitle(`${user.value?.name || id.value} user profile`));
         <span class="w-[20%] lg:w-[25%] text-right truncate">Votes</span>
       </div>
     </div>
-    <UiLoading v-if="loadingActivities" class="px-4 py-3 block" />
+    <div v-if="loadingActivities" class="animate-pulse">
+      <div v-for="i in 2" :key="i" class="mx-4 border-b flex space-x-1 py-3">
+        <div
+          class="flex items-center gap-x-3 leading-[22px] w-[60%] lg:w-[50%] font-semibold truncate"
+        >
+          <!-- Space Avatar Skeleton -->
+          <UiSkeleton class="size-[32px] !rounded-[4px]" />
+          <!-- Space Name Skeleton -->
+          <UiSkeleton class="h-[18px] w-[120px]" />
+        </div>
+        <!-- Proposals Column -->
+        <div
+          class="flex flex-col justify-center text-right w-[20%] lg:w-[25%] leading-[22px] truncate"
+        >
+          <UiSkeleton class="h-[22px] w-[24px] ml-auto" />
+          <UiSkeleton class="h-[17px] w-[32px] ml-auto mt-[5px]" />
+        </div>
+        <!-- Votes Column -->
+        <div
+          class="flex flex-col justify-center text-right w-[20%] lg:w-[25%] leading-[22px] truncate"
+        >
+          <UiSkeleton class="h-[22px] w-[24px] ml-auto" />
+          <UiSkeleton class="h-[17px] w-[32px] ml-auto mt-[5px]" />
+        </div>
+      </div>
+    </div>
     <div
       v-else-if="!activities.length"
       class="px-4 py-3 flex items-center space-x-2"

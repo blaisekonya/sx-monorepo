@@ -131,8 +131,8 @@ html.dark {
 }
 
 .markdown-body:deep() {
-  font-size: 22px;
-  line-height: 1.3;
+  font-size: 18px;
+  line-height: 1.4;
   word-wrap: break-word;
   color: var(--content);
 
@@ -153,6 +153,7 @@ html.dark {
     color: inherit;
     text-decoration: none;
   }
+
   img[alt^='discourse-emoji'] {
     display: inline;
     width: 20px;
@@ -164,6 +165,7 @@ html.dark {
     width: 35px;
     height: 35px;
   }
+
   p,
   blockquote,
   ul,
@@ -215,7 +217,7 @@ html.dark {
 
   h1,
   h2 {
-    font-size: 1.25em;
+    font-size: 1.2em;
   }
 
   h3,

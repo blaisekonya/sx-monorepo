@@ -1,72 +1,6 @@
 @tailwind base;
 @tailwind utilities;
 
-:root {
-  color-scheme: light;
-
-  // backgrounds
-  --bg: 255, 255, 255;
-  --block-bg: 255, 255, 255;
-  --input-bg: 251, 251, 251;
-  --hover-bg: 247, 247, 247;
-  --active-bg: 237, 237, 237;
-  --border: 229, 229, 230;
-
-  // text
-  --heading: 17, 17, 17;
-  --link: 17, 17, 17;
-  --text: 87, 96, 106;
-  --content: rgba(17, 17, 17, 0.8);
-
-  // accents
-  --primary: 17, 17, 17;
-  --accent-foreground: 251, 251, 251;
-  --danger: 235, 76, 91;
-  --success: 87, 179, 117;
-
-  --accent-hover: rgba(250, 249, 252, 0.12);
-  --accent-active: rgba(250, 249, 252, 0.32);
-  --danger-border: rgba(235, 76, 91, 0.4);
-  --danger-hover: rgba(235, 76, 91, 0.04);
-  --danger-active: rgba(235, 76, 91, 0.12);
-  --success-border: rgba(87, 179, 117, 0.4);
-  --success-hover: rgba(87, 179, 117, 0.04);
-  --success-active: rgba(87, 179, 117, 0.12);
-}
-
-.dark {
-  color-scheme: dark;
-
-  // backgrounds
-  --bg: 24, 23, 28;
-  --block-bg: 28, 27, 32;
-  --input-bg: 35, 34, 39;
-  --hover-bg: 37, 36, 41;
-  --active-bg: 41, 40, 46;
-  --border: 47, 46, 51;
-
-  // text
-  --heading: 251, 251, 251;
-  --link: 251, 251, 251;
-  --text: 160, 159, 164;
-  --content: rgba(250, 249, 252, 0.8);
-
-  // accents
-  --primary: 251, 251, 251;
-  --accent-foreground: 17, 17, 17;
-  --danger: 235, 76, 91;
-  --success: 87, 179, 117;
-
-  --accent-hover: rgba(28, 27, 32, 0.12);
-  --accent-active: rgba(28, 27, 32, 0.32);
-  --danger-border: rgba(235, 76, 91, 0.4);
-  --danger-hover: rgba(235, 76, 91, 0.04);
-  --danger-active: rgba(235, 76, 91, 0.12);
-  --success-border: rgba(87, 179, 117, 0.4);
-  --success-hover: rgba(87, 179, 117, 0.04);
-  --success-active: rgba(87, 179, 117, 0.12);
-}
-
 @font-face {
   font-family: 'Calibre';
   src: url('./assets/fonts/Calibre-Medium-Custom.woff2') format('woff2');
@@ -85,6 +19,7 @@
   font-family: 'Stolzl Display';
   font-style: normal;
   font-weight: 700;
+  font-display: block;
   src: url('./assets/fonts/StolzlDisplay-Medium.woff2') format('woff2');
 }
 
@@ -92,7 +27,74 @@
   font-family: 'Stolzl';
   font-style: normal;
   font-weight: 700;
+  font-display: block;
   src: url('./assets/fonts/Stolzl-Medium.woff2') format('woff2');
+}
+
+:root {
+  color-scheme: light;
+
+  // backgrounds
+  --bg: 255, 255, 255;
+  --block-bg: 255, 255, 255;
+  --input-bg: 251, 251, 251;
+  --hover-bg: 247, 247, 247;
+  --active-bg: 237, 237, 237;
+  --border: 229, 229, 230;
+
+  // text
+  --heading: 20, 20, 20;
+  --link: 20, 20, 20;
+  --text: 100, 100, 100;
+  --content: rgba(20, 20, 20);
+
+  // accents
+  --primary: 20, 20, 20;
+  --accent-foreground: 251, 251, 251;
+  --danger: 235, 76, 91;
+  --success: 87, 179, 117;
+
+  --accent-hover: rgba(250, 249, 252, 0.12);
+  --accent-active: rgba(250, 249, 252, 0.32);
+  --danger-border: rgba(235, 76, 91, 0.4);
+  --danger-hover: rgba(235, 76, 91, 0.04);
+  --danger-active: rgba(235, 76, 91, 0.12);
+  --success-border: rgba(87, 179, 117, 0.4);
+  --success-hover: rgba(87, 179, 117, 0.04);
+  --success-active: rgba(87, 179, 117, 0.12);
+}
+
+.dark {
+  color-scheme: dark;
+
+  // backgrounds
+  --bg: 0, 0, 0;
+  --block-bg: 32, 32, 32;
+  --input-bg: 39, 39, 39;
+  --hover-bg: 41, 41, 41;
+  --active-bg: 46, 46, 46;
+  --border: 51, 51, 51;
+
+  // text
+  --heading: 238, 238, 238;
+  --link: 238, 238, 238;
+  --text: 119, 119, 119;
+  --content: rgba(238, 238, 238);
+
+  // accents
+  --primary: 238, 238, 238;
+  --accent-foreground: 17, 17, 17;
+  --danger: 235, 76, 91;
+  --success: 87, 179, 117;
+
+  --accent-hover: rgba(28, 27, 32, 0.12);
+  --accent-active: rgba(28, 27, 32, 0.32);
+  --danger-border: rgba(235, 76, 91, 0.4);
+  --danger-hover: rgba(235, 76, 91, 0.04);
+  --danger-active: rgba(235, 76, 91, 0.12);
+  --success-border: rgba(87, 179, 117, 0.4);
+  --success-hover: rgba(87, 179, 117, 0.04);
+  --success-active: rgba(87, 179, 117, 0.12);
 }
 
 body {
@@ -166,12 +168,15 @@ input {
   &._1 {
     @apply bg-skin-success;
   }
+
   &._2 {
     @apply bg-skin-danger;
   }
+
   &._3 {
     @apply bg-skin-text;
   }
+
   &._quorum {
     @apply bg-skin-border;
   }
@@ -181,12 +186,15 @@ input {
   &._1 {
     @apply text-skin-success;
   }
+
   &._2 {
     @apply text-skin-danger;
   }
+
   &._3 {
     @apply text-skin-text;
   }
+
   &._quorum {
     @apply text-skin-border;
   }
@@ -196,12 +204,15 @@ input {
   &._1 {
     @apply border-skin-success;
   }
+
   &._2 {
     @apply border-skin-danger;
   }
+
   &._3 {
     @apply border-skin-text;
   }
+
   &._quorum {
     @apply border-skin-text;
   }
@@ -284,8 +295,10 @@ input:placeholder-shown {
 }
 
 .no-scrollbar {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 // Shot UI kit
@@ -421,4 +434,11 @@ input:placeholder-shown {
 // Fix for long text in tippy.js
 div[data-tippy-root] {
   @apply break-words;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }

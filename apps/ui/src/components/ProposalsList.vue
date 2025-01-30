@@ -35,7 +35,11 @@ const currentLimit = computed(() => {
 <template>
   <div>
     <UiLabel v-if="title" :label="title" sticky />
-    <UiLoading v-if="loading" class="block px-4 py-3" />
+    <ProposalsListSkeleton
+      v-if="loading"
+      :count="3"
+      :is-home="$route.path === '/home'"
+    />
     <div v-else>
       <UiContainerInfiniteScroll
         :loading-more="loadingMore"

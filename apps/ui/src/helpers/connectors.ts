@@ -20,7 +20,7 @@ export default {
     network: '1',
     icon: walletconnectIcon,
     options: {
-      projectId: 'e6454bd61aba40b786e866a69bd4c5c6',
+      projectId: 'cc8fce167e9b87d538f58ac46a9f30ba',
       chains: [],
       optionalChains: [
         1, 10, 56, 100, 250, 4002, 8453, 42161, 137, 1088, 11155111

@@ -8,10 +8,10 @@ import IHBell from '~icons/heroicons-outline/bell';
 import IHCash from '~icons/heroicons-outline/cash';
 import IHCog from '~icons/heroicons-outline/cog';
 import IHGlobeAlt from '~icons/heroicons-outline/globe-alt';
-import IHGlobe from '~icons/heroicons-outline/globe-americas';
 import IHHome from '~icons/heroicons-outline/home';
 import IHLightningBolt from '~icons/heroicons-outline/lightning-bolt';
 import IHNewspaper from '~icons/heroicons-outline/newspaper';
+import IHSearch from '~icons/heroicons-outline/search';
 import IHStop from '~icons/heroicons-outline/stop';
 import IHUser from '~icons/heroicons-outline/user';
 import IHUserGroup from '~icons/heroicons-outline/user-group';
@@ -63,6 +63,7 @@ const canSeeSettings = computed(() => {
 
     return admins.includes(web3.value.account.toLowerCase());
   }
+  return false;
 });
 
 const navigationConfig = computed<
@@ -136,7 +137,7 @@ const navigationConfig = computed<
     },
     explore: {
       name: 'Explore',
-      icon: IHGlobe
+      icon: IHSearch
     },
     notifications: {
       name: 'Notifications',

@@ -43,20 +43,30 @@ function handleAcceptTerms() {
 </script>
 <template>
   <div>
-    <div class="border-b mx-4 py-[14px] flex">
+    <div class="border-b mx-3 sm:mx-4 py-[14px] flex">
       <ProposalsListItemHeading
         :proposal="proposal"
         :show-author="showAuthor"
         :show-space="showSpace"
-        class="flex-auto mr-4 w-0"
+        class="flex-auto mr-1 w-0"
       />
       <div class="hidden md:block">
         <ProposalVote :proposal="proposal">
-          <template #wrong-safe-network><div /></template>
-          <template #unsupported><div /></template>
-          <template #waiting><div /></template>
-          <template #cancelled><div /></template>
-          <template #voted-pending><div /></template>
+          <template #wrong-safe-network>
+            <div />
+          </template>
+          <template #unsupported>
+            <div />
+          </template>
+          <template #waiting>
+            <div />
+          </template>
+          <template #cancelled>
+            <div />
+          </template>
+          <template #voted-pending>
+            <div />
+          </template>
           <template #voted>
             <ProposalResults
               v-if="proposal.type === 'basic'"
