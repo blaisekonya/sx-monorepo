@@ -6,7 +6,7 @@ import {
   VoteTypeInfo
 } from '@/types';
 
-export const APP_NAME = 'Snapshot';
+export const APP_NAME = 'World Republic';
 
 export const SIDEKICK_URL = 'https://sh5.co';
 
@@ -169,3 +169,14 @@ export const VALIDATION_TYPES_INFO: Record<
     description: 'Use EAS attest.sh to determine if user can create a proposal.'
   }
 };
+
+export const CHAIN = 'base';
+
+export const DRACHMA_CONTRACT_ADDRESS =
+  '0x2ce6f5e18ee4278dc33df82a28286f006d7d5730';
+export const DRACHMA_TREASURY_ADDRESS =
+  '0x0a5aaedf418b08a5cd1adeba1d0d8739c7ea8000';
+export const GLOBAL_VOTER_ID_ZKME_ADDRESS =
+  '0x762CEc1f35e517Da6C178262F8864Fd92b70A20b';
+
+export const REFERRAL_REWARD = '10000000000000000000';

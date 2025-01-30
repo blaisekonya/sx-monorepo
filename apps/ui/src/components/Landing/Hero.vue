@@ -8,12 +8,11 @@
     <UiContainer
       class="relative w-full !max-w-screen-lg flex items-center py-8"
     >
-      <div class="max-w-[560px]">
-        <div class="eyebrow mb-3">Turn chaos to consensus</div>
-        <h1 class="mb-5 font-display text-[40px] xs:text-[56px]">
-          The governance stack for your organization
+      <div class="max-w-[800px]">
+        <h1 class="mb-4 font-display text-[60px] xs:text-[68px]">
+          World Republic
         </h1>
-        <UiButton :to="{ name: 'my-home' }" class="primary">
+        <UiButton :to="{ name: 'my-explore' }" class="primary">
           Get started
         </UiButton>
       </div>

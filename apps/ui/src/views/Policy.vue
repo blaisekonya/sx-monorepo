@@ -7,9 +7,9 @@ This Privacy Notice (“Privacy Notice”) explains and sets out the basis for o
 If you provide information to us about any person other than yourself, you must ensure that the data is accurate and that these people understand how their information will be used, that they have given their permission for you to disclose it to us and for you to allow us, and our service providers, to use it. You are welcome to provide them with a copy of this Privacy Notice.
 
 ## Who we are
-The responsible person for processing your data under this Privacy Notice (“Controller”) unless we tell you otherwise in an individual case is: Snapshot AG, c/o Sielva Management SA, Gubelstrasse 11, 6300 Zug.
+The responsible person for processing your data under this Privacy Notice (“Controller”) unless we tell you otherwise in an individual case is: World Republic, Weinberghöhe 31, 6340 Baar, Switzerland.
 
-You may contact us regarding data protection matters and exercise your rights at admin@snapshot.org
+You may contact us regarding data protection matters and exercise your rights at info@worldassociation.org
 
 ## What kind of data do we process about you and why
 We process the following data about you for the purposes outlined below:
@@ -18,7 +18,7 @@ We process the following data about you for the purposes outlined below:
 When you visit our website(s) or platform, we collect personal data that is necessary for the functionality and security of our website/platform (e.g. IP address and information about the operating system of your end device, referrer URL, date, region and time of the server request, browser type and version, name of your Internet provider).
 
 ## Data collection when you use our voting platform
-When you create spaces, proposals and take part in organization’s governance, we collect the data that is required to allow DAO’s, DeFi protocols or NFT communities etc. to vote in a way that is easy to verify and hard to contest, e.g. ENS name, wallet address, your number of tokens, the name of your DAO and further optional information for your profile, like a description or avatar, the roles to manage a space, such as controller, admin or author.  Please note that a space serves as a hub for all proposals related to the organization and a source of information for the users. Therefore, it can be viewed by anyone visiting the platform.
+When you create spaces, proposals and take part in organization’s governance, we collect the data that is required to allow organizations or communities etc. to vote in a way that is easy to verify and hard to contest, e.g. ENS name, wallet address, your number of tokens, the name of your organization and further optional information for your profile, like a description or avatar, the roles to manage a space, such as controller, admin or author.  Please note that a space serves as a hub for all proposals related to the organization and a source of information for the users. Therefore, it can be viewed by anyone visiting the platform.
 
 ## Communication and contact forms etc.
 When you contact us by email, telephone, chat, letter, or other means of communication, we collect the data exchanged between you and us for the purposes of communicating with you and provide our services to you, in particular, to respond to your enquiries. By providing us with this information, you acknowledge that we use your personal information in accordance with this Privacy Notice.
@@ -89,7 +89,7 @@ We take appropriate organizational and technical security measures to prevent yo
 
 ## Your choices and your rights
 To the extent provided for by applicable law, you may request information free of charge about the data stored relating to you, its origin and recipients and the purpose of the data processing. You may also have the right to correction, deletion, restriction or objection to processing, as well as to the transfer of the data to another controller.
-Furthermore, you can revoke your consent at any time with effect for the future. All you need to do is send us an e-mail at admin@snapshot.org.
+Furthermore, you can revoke your consent at any time with effect for the future. All you need to do is send us an e-mail at info@worldassociation.org.
 Please note that the foregoing rights are subject to legal restrictions and may interfere with or make impossible the provision of our services.
 
 ## How you can update your information

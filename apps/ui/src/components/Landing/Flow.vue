@@ -1,51 +1,39 @@
 <script setup lang="ts">
-import ICAnnotation from '~icons/heroicons-solid/annotation';
-import ISCheck from '~icons/heroicons-solid/check';
-import ISLightningBolt from '~icons/heroicons-solid/lightning-bolt';
-import ISPlay from '~icons/heroicons-solid/play';
+import ISBuildingLibrary from '~icons/heroicons-solid/building-library';
+import ISUserPlus from '~icons/heroicons-solid/user-plus';
 
 const STEPS = [
   {
-    title: 'Discuss',
+    title: 'Join',
     about:
-      "Stay connected to your community's conversations with our Discourse integration. Access forum discussions directly within Snapshot, participate in debates and refine ideas before they become proposals.",
-    icon: ICAnnotation
+      'Be part of a movement pioneering the new era of democracy - borderless, transparent, unstoppable.',
+    icon: ISUserPlus
   },
   {
-    title: 'Delegate',
+    title: 'Govern',
     about:
-      'Amplify your governance impact. Become a delegate or choose one to represent your interests. Track delegate performance, read their statements, and make informed decisions about voting power allocation.',
-    icon: ISLightningBolt
-  },
-  {
-    title: 'Vote',
-    about:
-      "Shape your DAO's future with ease. Cast votes on key proposals through our intuitive interface. Stay informed with AI summaries, analyze trends, and see real-time results – all in one place.",
-    icon: ISCheck
-  },
-  {
-    title: 'Execute',
-    about:
-      'Transform decisions into action. After a proposal passes, seamlessly implement changes on-chain. Create and review transaction batches, then execute with confidence.',
-    icon: ISPlay
+      'Influence solutions to humanity’s most pressing global challenges, from climate action to AI governance.',
+    icon: ISBuildingLibrary
   }
 ];
 </script>
 
 <template>
-  <div>
+  <div id="community" class="pt-8">
     <UiContainer class="!max-w-screen-lg">
-      <h1 class="font-display max-w-[680px] py-9 text-[36px] xs:text-[44px]">
-        A fully integrated suite to manage DAO governance.
-      </h1>
+      <div class="pb-6 max-w-[800px] text-center mx-auto">
+        <h1 class="mb-4 font-display text-[36px] xs:text-[44px]">
+          Crypto-powered global democracy
+        </h1>
+      </div>
     </UiContainer>
     <div class="border-y">
       <UiContainer class="!max-w-screen-lg !px-0">
-        <div class="grid grid-cols-1 lg:grid-cols-2 text-md flow">
+        <div class="grid grid-cols-1 lg:grid-cols-2 text-[19px] flow">
           <div
             v-for="(step, i) in STEPS"
             :key="i"
-            class="border-b border-r-0 last:border-b-0 lg:border-r lg:[&:nth-child(2n)]:border-r-0 lg:[&:nth-child(n+3)]:border-b-0"
+            class="border-b border-r-0 last:border-b-0 lg:border-r lg:[&:nth-child(2n)]:border-r-0 lg:[&:nth-child(n+1)]:border-b-0"
           >
             <div class="px-4 py-5">
               <div class="flex space-x-2.5">
@@ -60,7 +48,7 @@ const STEPS = [
               </div>
               <div class="mb-3 max-w-[457px]">
                 <div
-                  class="bg-contain flow w-full h-[260px]"
+                  class="bg-contain flow w-full max-h-[260px] h-[calc(50vw)]"
                   :class="`step-${i + 1}`"
                 />
               </div>
@@ -78,30 +66,25 @@ const STEPS = [
   .step-1 {
     background-image: url('@/assets/site/flow-1-light.png');
   }
+
   .step-2 {
     background-image: url('@/assets/site/flow-2-light.png');
-  }
-  .step-3 {
-    background-image: url('@/assets/site/flow-3-light.png');
-  }
-  .step-4 {
-    background-image: url('@/assets/site/flow-4-light.png');
   }
 }
 
 .dark {
   .flow {
+    .step-1,
+    .step-2 {
+      filter: contrast(1.2) brightness(0.95);
+    }
+
     .step-1 {
       background-image: url('@/assets/site/flow-1-dark.png');
     }
+
     .step-2 {
       background-image: url('@/assets/site/flow-2-dark.png');
-    }
-    .step-3 {
-      background-image: url('@/assets/site/flow-3-dark.png');
-    }
-    .step-4 {
-      background-image: url('@/assets/site/flow-4-dark.png');
     }
   }
 }

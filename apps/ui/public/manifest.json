@@ -1,11 +1,11 @@
 {
-  "short_name": "Snapshot",
-  "name": "Snapshot",
-  "description": "Where decisions get made",
-  "iconPath": "favicon.svg",
+  "short_name": "World Republic",
+  "name": "World Republic",
+  "description": "Crypto-powered global democracy",
+  "iconPath": "favicon.png",
   "icons": [
     {
-      "src": "favicon.svg",
+      "src": "favicon.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     }
