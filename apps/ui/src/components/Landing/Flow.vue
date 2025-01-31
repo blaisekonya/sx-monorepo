@@ -6,7 +6,7 @@ const STEPS = [
   {
     title: 'Join',
     about:
-      'Be part of a movement pioneering the new era of democracy - borderless, transparent, unstoppable.',
+      'Be part of a community pioneering the new era of democracy - borderless, transparent, unstoppable.',
     icon: ISUserPlus
   },
   {
@@ -23,7 +23,7 @@ const STEPS = [
     <UiContainer class="!max-w-screen-lg">
       <div class="pb-6 max-w-[800px] text-center mx-auto">
         <h1 class="mb-4 font-display text-[36px] xs:text-[44px]">
-          Crypto-powered global democracy
+          Crypto-powered movement for global democracy
         </h1>
       </div>
     </UiContainer>
