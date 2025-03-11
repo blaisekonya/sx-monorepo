@@ -22,7 +22,7 @@ const { toggleSkin, currentMode } = useUserSkin();
         <IH-moon v-else class="inline-block" />
       </UiButton>
       <UiButton
-        href="https://worldcoin.org/ecosystem/app_66c83ab8c851fb1e54b1b1b62c6ce39d"
+        :to="'https://worldcoin.org/ecosystem/app_66c83ab8c851fb1e54b1b1b62c6ce39d'"
         target="_blank"
         rel="noopener noreferrer"
         class="primary"
