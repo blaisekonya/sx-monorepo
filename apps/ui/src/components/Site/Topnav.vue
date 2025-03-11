@@ -21,9 +21,13 @@ const { toggleSkin, currentMode } = useUserSkin();
         <IH-light-bulb v-if="currentMode === 'dark'" class="inline-block" />
         <IH-moon v-else class="inline-block" />
       </UiButton>
-      <UiButton :to="{ name: 'my-explore' }" class="primary flex">
-        Launch
-        <span class="hidden md:inline-block">&nbsp;app</span>
+      <UiButton
+        href="https://worldcoin.org/ecosystem/app_66c83ab8c851fb1e54b1b1b62c6ce39d"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="primary"
+      >
+        Launch app
       </UiButton>
     </div>
   </div>
