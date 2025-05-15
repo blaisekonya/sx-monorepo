@@ -94,6 +94,23 @@ const SOCIALS = [
             class="box-border size-[24px] mr-3 rounded-full border-[4px] border-skin-primary"
           ></div>
           © {{ new Date().getFullYear() }} World Republic
+          <span class="ml-3 text-[#606060]">•</span>
+          <span class="ml-3">
+            Sponsored by
+            <a
+              href="https://vercel.com"
+              target="_blank"
+              class="hover:text-skin-link"
+              >Vercel</a
+            >
+            and the
+            <a
+              href="https://foundation.world.org"
+              target="_blank"
+              class="hover:text-skin-link"
+              >World Foundation</a
+            >
+          </span>
         </div>
         <div class="flex space-x-3">
           <a
