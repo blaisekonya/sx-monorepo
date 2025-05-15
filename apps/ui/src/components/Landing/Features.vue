@@ -1,23 +1,23 @@
 <script setup lang="ts">
 import ISBanknotes from '~icons/heroicons-solid/banknotes';
 import ISCursorClick from '~icons/heroicons-solid/cursor-click';
-import ISIdentification from '~icons/heroicons-solid/identification';
+import ISGift from '~icons/heroicons-solid/gift';
 
 const FEATURES = [
-  {
-    title: 'World Republic App',
-    about: 'A free and open-source platform for global democracy.',
-    icon: ISCursorClick
-  },
-  {
-    title: 'Global Voter ID',
-    about: 'Our blockchain-based proof of personhood solution.',
-    icon: ISIdentification
-  },
   {
     title: 'World Drachma',
     about: 'The world’s first currency managed by global democracy.',
     icon: ISBanknotes
+  },
+  {
+    title: 'World Republic Mini App',
+    about: 'A free and open-source platform for global democracy.',
+    icon: ISCursorClick
+  },
+  {
+    title: 'Global Basic Income',
+    about: 'Universal economic support for for every person on the planet.',
+    icon: ISGift
   }
 ];
 </script>
