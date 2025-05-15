@@ -57,8 +57,8 @@ const SOCIALS = [
           <div class="eyebrow">Resources</div>
           <div class="space-y-1">
             <div>
-              <a href="https://help.snapshot.box" target="_blank">
-                Helpdesk
+              <a href="https://t.me/worldrepublicsupport" target="_blank">
+                Support
                 <IH-arrow-sm-right
                   class="inline-block -rotate-45 mb-0.5 -ml-0.5"
                 />
@@ -69,14 +69,6 @@ const SOCIALS = [
         <div class="space-y-2">
           <div class="eyebrow">Developers</div>
           <div class="space-y-1">
-            <div>
-              <a href="https://docs.snapshot.box" target="_blank">
-                Snapshot docs
-                <IH-arrow-sm-right
-                  class="inline-block -rotate-45 mb-0.5 -ml-0.5"
-                />
-              </a>
-            </div>
             <div>
               <a href="https://github.com/worldrepublicorg" target="_blank">
                 GitHub
