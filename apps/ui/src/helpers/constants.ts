@@ -10,7 +10,7 @@ export const APP_NAME = 'World Republic';
 
 export const SIDEKICK_URL = 'https://sh5.co';
 
-export const HELPDESK_URL = 'https://help.snapshot.box';
+export const HELPDESK_URL = 'https://t.me/worldrepublicsupport';
 
 export const ETH_CONTRACT = '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee';
 

@@ -16,7 +16,7 @@ const FEATURES = [
   },
   {
     title: 'Global Basic Income',
-    about: 'Universal economic support for for every person on the planet.',
+    about: 'Universal economic support for every person on the planet.',
     icon: ISGift
   }
 ];
