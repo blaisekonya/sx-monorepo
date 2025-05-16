@@ -4,10 +4,10 @@ import ICTelegram from '~icons/c/telegram';
 import ICX from '~icons/c/x';
 
 const SOCIALS = [
-  // {
-  //   href: 'https://t.me/worldrepublicannouncements',
-  //   icon: ICTelegram
-  // },
+  {
+    href: 'https://t.me/worldrepubliccommunity',
+    icon: ICTelegram
+  },
   {
     href: 'https://x.com/worldrepublicen',
     icon: ICX
