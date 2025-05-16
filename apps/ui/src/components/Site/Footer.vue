@@ -38,14 +38,19 @@ const SOCIALS = [
           </div>
         </div>
         <div class="space-y-2">
-          <div class="eyebrow">Voting platform</div>
+          <div class="eyebrow">Sponsors</div>
           <div class="space-y-1">
             <div>
-              <AppLink :to="{ name: 'my-explore' }">Explore spaces</AppLink>
+              <a href="https://foundation.world.org" target="_blank">
+                World Foundation
+                <IH-arrow-sm-right
+                  class="inline-block -rotate-45 mb-0.5 -ml-0.5"
+                />
+              </a>
             </div>
             <div>
-              <a href="https://v1.snapshot.box/#/setup" target="_blank">
-                Create a space
+              <a href="https://vercel.com" target="_blank">
+                Vercel
                 <IH-arrow-sm-right
                   class="inline-block -rotate-45 mb-0.5 -ml-0.5"
                 />
@@ -67,11 +72,36 @@ const SOCIALS = [
           </div>
         </div>
         <div class="space-y-2">
-          <div class="eyebrow">Developers</div>
+          <div class="eyebrow">Code</div>
           <div class="space-y-1">
             <div>
-              <a href="https://github.com/worldrepublicorg" target="_blank">
-                GitHub
+              <a
+                href="https://github.com/worldrepublicorg/mini-app"
+                target="_blank"
+              >
+                Mini app
+                <IH-arrow-sm-right
+                  class="inline-block -rotate-45 mb-0.5 -ml-0.5"
+                />
+              </a>
+            </div>
+            <div>
+              <a
+                href="https://github.com/worldrepublicorg/smart-contracts"
+                target="_blank"
+              >
+                Smart contracts
+                <IH-arrow-sm-right
+                  class="inline-block -rotate-45 mb-0.5 -ml-0.5"
+                />
+              </a>
+            </div>
+            <div>
+              <a
+                href="https://github.com/worldrepublicorg/sx-monorepo"
+                target="_blank"
+              >
+                Website
                 <IH-arrow-sm-right
                   class="inline-block -rotate-45 mb-0.5 -ml-0.5"
                 />
@@ -81,28 +111,15 @@ const SOCIALS = [
         </div>
       </div>
       <div class="flex max-sm:flex-col max-sm:space-y-5">
-        <div class="flex-grow flex items-center">
-          <div
-            class="box-border size-[24px] mr-3 rounded-full border-[4px] border-skin-primary"
-          ></div>
-          © {{ new Date().getFullYear() }} World Republic
-          <span class="ml-3 text-[#606060]">•</span>
-          <span class="ml-3">
-            Sponsored by
-            <a
-              href="https://vercel.com"
-              target="_blank"
-              class="hover:text-skin-link"
-              >Vercel</a
-            >
-            and the
-            <a
-              href="https://foundation.world.org"
-              target="_blank"
-              class="hover:text-skin-link"
-              >World Foundation</a
-            >
-          </span>
+        <div
+          class="flex-grow flex max-sm:flex-col max-sm:items-start items-center"
+        >
+          <div class="flex items-center">
+            <div
+              class="box-border size-[24px] mr-3 rounded-full border-[4px] border-skin-primary"
+            ></div>
+            © {{ new Date().getFullYear() }} World Republic
+          </div>
         </div>
         <div class="flex space-x-3">
           <a
