@@ -11,7 +11,7 @@ const FEATURES = [
   },
   {
     title: 'World Republic Mini App',
-    about: 'A free and open-source platform for global democracy.',
+    about: 'An open-source global democracy platform inside the World App.',
     icon: ISCursorClick
   },
   {
