@@ -10,7 +10,7 @@ const FEATURES = [
     icon: ISBanknotes
   },
   {
-    title: 'World Republic Mini App',
+    title: 'Republic Mini App',
     about: 'An open-source global democracy platform inside the World App.',
     icon: ISCursorClick
   },
