@@ -33,7 +33,7 @@ const SOCIALS = [
               <AppLink :to="{ name: 'site-policy' }">Privacy policy</AppLink>
             </div>
             <div>
-              <a href="mailto:info@worldassociation.org"> Contact us </a>
+              <a href="mailto:info@worldrepublic.org"> Contact us </a>
             </div>
           </div>
         </div>
