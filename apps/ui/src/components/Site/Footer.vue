@@ -44,7 +44,7 @@ const SOCIALS = [
               <a href="https://foundation.world.org" target="_blank">
                 World Foundation
                 <IH-arrow-sm-right
-                  class="inline-block -rotate-45 mb-0.5 -ml-0.5"
+                  class="inline-block -rotate-45 mb-0.5 -ml-[3px]"
                 />
               </a>
             </div>
@@ -52,7 +52,7 @@ const SOCIALS = [
               <a href="https://www.optimism.io/" target="_blank">
                 Optimism Collective
                 <IH-arrow-sm-right
-                  class="inline-block -rotate-45 mb-0.5 -ml-0.5"
+                  class="inline-block -rotate-45 mb-0.5 -ml-[3px]"
                 />
               </a>
             </div>
@@ -60,7 +60,7 @@ const SOCIALS = [
               <a href="https://vercel.com" target="_blank">
                 Vercel
                 <IH-arrow-sm-right
-                  class="inline-block -rotate-45 mb-0.5 -ml-0.5"
+                  class="inline-block -rotate-45 mb-0.5 -ml-[3px]"
                 />
               </a>
             </div>
@@ -73,7 +73,7 @@ const SOCIALS = [
               <a href="https://t.me/worldrepublicsupport" target="_blank">
                 Support
                 <IH-arrow-sm-right
-                  class="inline-block -rotate-45 mb-0.5 -ml-0.5"
+                  class="inline-block -rotate-45 mb-0.5 -ml-[3px]"
                 />
               </a>
             </div>
@@ -89,7 +89,7 @@ const SOCIALS = [
               >
                 Mini app
                 <IH-arrow-sm-right
-                  class="inline-block -rotate-45 mb-0.5 -ml-0.5"
+                  class="inline-block -rotate-45 mb-0.5 -ml-[3px]"
                 />
               </a>
             </div>
@@ -100,7 +100,7 @@ const SOCIALS = [
               >
                 Smart contracts
                 <IH-arrow-sm-right
-                  class="inline-block -rotate-45 mb-0.5 -ml-0.5"
+                  class="inline-block -rotate-45 mb-0.5 -ml-[3px]"
                 />
               </a>
             </div>
@@ -111,7 +111,7 @@ const SOCIALS = [
               >
                 Website
                 <IH-arrow-sm-right
-                  class="inline-block -rotate-45 mb-0.5 -ml-0.5"
+                  class="inline-block -rotate-45 mb-0.5 -ml-[3px]"
                 />
               </a>
             </div>
