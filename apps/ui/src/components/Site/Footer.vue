@@ -49,6 +49,14 @@ const SOCIALS = [
               </a>
             </div>
             <div>
+              <a href="https://www.optimism.io/" target="_blank">
+                Optimism Collective
+                <IH-arrow-sm-right
+                  class="inline-block -rotate-45 mb-0.5 -ml-0.5"
+                />
+              </a>
+            </div>
+            <div>
               <a href="https://vercel.com" target="_blank">
                 Vercel
                 <IH-arrow-sm-right
