@@ -9,7 +9,7 @@ If you provide information to us about any person other than yourself, you must 
 ## Who we are
 The responsible person for processing your data under this Privacy Notice (“Controller”) unless we tell you otherwise in an individual case is: World Republic, Weinberghöhe 31, 6340 Baar, Switzerland.
 
-You may contact us regarding data protection matters and exercise your rights at info@worldassociation.org
+You may contact us regarding data protection matters and exercise your rights at info@worldrepublic.org
 
 ## What kind of data do we process about you and why
 We process the following data about you for the purposes outlined below:
@@ -89,7 +89,7 @@ We take appropriate organizational and technical security measures to prevent yo
 
 ## Your choices and your rights
 To the extent provided for by applicable law, you may request information free of charge about the data stored relating to you, its origin and recipients and the purpose of the data processing. You may also have the right to correction, deletion, restriction or objection to processing, as well as to the transfer of the data to another controller.
-Furthermore, you can revoke your consent at any time with effect for the future. All you need to do is send us an e-mail at info@worldassociation.org.
+Furthermore, you can revoke your consent at any time with effect for the future. All you need to do is send us an e-mail at info@worldrepublic.org.
 Please note that the foregoing rights are subject to legal restrictions and may interfere with or make impossible the provision of our services.
 
 ## How you can update your information
