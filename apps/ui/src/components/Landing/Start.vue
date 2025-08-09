@@ -10,7 +10,7 @@
           Shape the future of global governance
         </h1>
         <UiButton
-          :to="'https://world.org/mini-app?app_id=app_66c83ab8c851fb1e54b1b1b62c6ce39d'"
+          :to="'https://app.worldrepublic.org'"
           target="_blank"
           rel="noopener noreferrer"
           class="primary"
