@@ -7,7 +7,7 @@
       <div class="text-center max-w-[800px] mx-auto">
         <div class="eyebrow mb-3">Join the World Republic</div>
         <h1 class="mb-4 font-display text-[36px] xs:text-[44px]">
-          Shape the future of global governance
+          Start shaping the future of humanity
         </h1>
         <UiButton
           :to="'https://app.worldrepublic.org'"
