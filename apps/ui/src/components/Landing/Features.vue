@@ -5,14 +5,14 @@ import ISGift from '~icons/heroicons-solid/gift';
 
 const FEATURES = [
   {
-    title: 'World Drachma',
-    about: 'The world’s first currency managed by global democracy.',
-    icon: ISBanknotes
-  },
-  {
     title: 'World Republic App',
     about: 'An online platform for global governance.',
     icon: ISCursorClick
+  },
+  {
+    title: 'World Drachma',
+    about: 'The world’s first currency managed by global democracy.',
+    icon: ISBanknotes
   },
   {
     title: 'Basic Income',
