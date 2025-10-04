@@ -9,7 +9,7 @@
         <div
           class="border-r-0 sm:border-r border-b sm:border-b-0 p-4 space-y-2"
         >
-          <h3 class="font-heading !text-[36px]">411k</h3>
+          <h3 class="font-heading !text-[36px]">356k</h3>
           <div class="eyebrow">Weekly UBI Claimants</div>
         </div>
         <div class="border-r p-4 space-y-2">
